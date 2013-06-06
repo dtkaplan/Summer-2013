@@ -1,0 +1,23 @@
+Applied Calculus Ch. 1 §2 Prob. 30
+========================================================
+```{r include=FALSE}
+require(WriteScoreR)
+require(mosaic)
+newScorerSet("AC-1-02-30-SD")
+```
+
+```{r include=FALSE}
+f= newMC(totalPts=1)
+```
+What can be said about the ages of a male and a female with the same
+maximum heart rate?
+
+`r I(f(FALSE))` The male will be older by 6 years.     
+`r I(f(TRUE))` The male will be younger by 6 years.     
+`r I(f(FALSE))` It depends on the heart rate.      
+
+```{r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+`r I(closeProblem())`

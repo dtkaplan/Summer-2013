@@ -21,5 +21,42 @@ What is the meaning of the number 3.5 in Okun's law?
 I(f(finish=TRUE))
 ```
 
+`r I(closeProblem())`
 
+```{r include=FALSE}
+g = newMC(totalPts=1)
+```
+What is the effect on national production of a year when
+  unemployment rises from 5% to 8%?
 
+National production will ...     
+`r I(g(FALSE))` Go up by 3.5 percent     
+`r I(g(FALSE))` Go down by 3.5 percent     
+`r I(g(FALSE))` Go up by 2.5 percent     
+`r I(g(TRUE))` Go down by 2.5 percent     
+
+```{r results="hide", include=FALSE}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`
+
+```{r include=FALSE}
+h = selectSet(name="unemployment", totalPts=1, "Up by 1.75"=TRUE, "Down by 1.75"=FALSE, "Up by 3.5"=FALSE, "Down by 3.5"=FALSE)
+```
+
+What change in unemployment rate corresponds to a year when
+  production is the same as the year before?
+`r I(h)`  
+
+```{r results="hide", include=FALSE}
+```
+`r I(closeProblem())`
+
+```{r eval=FALSE, include=FALSE}
+I(textItem(name="okunslaw",rows=3,totalPts=2))`
+```
+What is the meaning of the coefficient $-2$ in Okun's law?     
+`r I(textItem(name="okunslaw",rows=3, totalPts=2))`
+
+`r I(closeProblem())`

@@ -1,0 +1,23 @@
+Applied Calculus Ch.1 §2 Prob.28
+========================================================
+```{r include=FALSE}
+require(WriteScoreR)
+require(mosaic)
+newScorerSet("AC-1-02-28-SD")
+```
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+ Which of the following is the correct statement?
+
+`r I(f(FALSE))` As you age, your maximum heart rate decreases by one beat per year.      
+`r I(f(FALSE))` As you age, your maximum heart rate decreases by one beat per minute.      
+`r I(f(TRUE))` As you age, your maximum heart rate decreases by one beat per minute per year.
+
+``` {r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+`r I(closeProblem())`
