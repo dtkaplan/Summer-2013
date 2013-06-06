@@ -21,3 +21,5 @@ Which is an equation for the line that passes through points $(0,0)$ and $(1,1)$
 ```{r results = "hide", include=FALSE}
 I(f(finish=TRUE))
 ```
+
+`r I(closeProblem())`
