@@ -26,3 +26,10 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 18](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S5-P18.html)
 
 * [HH Problem 24](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S5-P24.html)
+
+#### Section 6
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S6-P2.html)
+
+* [HH Problem 24](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S6-P24.html)
+
+* [HH Problem 28](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C-1-S6-P28.html)

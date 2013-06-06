@@ -1,0 +1,25 @@
+Applied Calculus Ch.1 §6 Prob. 28
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-1-6-28-SD")
+```
+
+Put the function $P(t) = 10(1.7)^t$  in the form $P(t)=P_0 e^{kt}$.
+
+```{r include=FALSE}
+conversion3 = selectNumber(choices=c(5.31,5.47,10,15.31,17), correct=c(10), name="convert3", totalPts=1)
+```
+
+$P_0$ is `r I(conversion3)`
+
+`r I(closeProblem())`
+
+```{r include=FALSE}
+conversion4 = selectNumber(choices=c(0.531,0.547,1.531,5.47), correct=c(0.531), name="convert4", totalPts=1)
+```
+
+$k$ is `r I(conversion4)`
+
+`r I(closeProblem())`

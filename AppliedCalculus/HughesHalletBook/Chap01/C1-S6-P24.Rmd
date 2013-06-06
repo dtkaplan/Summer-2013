@@ -1,0 +1,24 @@
+Applied Calculus Ch. 1 §6 Prob. 24
+========================================================
+
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-1-6-24-SD")
+```
+
+Put the function $P(t) = 2 e^{-0.5 t}$  in the form $P(t)=P_0 a^t$.
+
+```{r include=FALSE}
+conversion = selectNumber(choices=c(0.607, 1.213, 1.648, 2.000, 3.297), correct=c(2.000), name="convert1", totalPts=1)
+```
+$P_0$ is `r I(conversion)`
+
+`r I(closeProblem())`
+
+```{r include=FALSE}
+conversion2 = selectNumber(choices=c(0.607,1.213,1.648,2.000,3.297), correct=c(2.000), name="convert2",totalPts=1)
+```
+$a$ is `r I(conversion2)`
+
+`r I(closeProblem())`

@@ -1,0 +1,16 @@
+Applied Calculus Ch. 1 §6 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-1-6-2-SD")
+```
+
+```{r include=FALSE}
+newequation = selectSet(name="numbers", totalPts=1, "0.301"=FALSE, "1.353"=FALSE, "3.322"=TRUE, "5.000"=FALSE)
+```
+
+$10 = 2^t$ gives $t=$    `r I(newequation)`
+
+`r I(closeProblem())`
+
