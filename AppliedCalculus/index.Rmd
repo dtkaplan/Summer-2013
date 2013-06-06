@@ -1,7 +1,12 @@
 Problems for Applied Calculus
 ========================================================
 
-Give an explanation here of how the problems are arranged.
+The problems for Applied Calculus will be arranged according to their level of difficulty within their corresponding chapter and section.  
 
-This also would be a good place to put an index to the problems, with links.
+## Chapter 1  
+#### Section 1
+
+#### Section 2     
+* [HH Prob. 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S2-P6.html)      
+* [HH Prob. 8](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S2-P8.html)
 
