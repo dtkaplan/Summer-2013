@@ -1,0 +1,7 @@
+Problems for Statistical Modeling
+========================================================
+
+Give an explanation here of how the problems are arranged.
+
+This also would be a good place to put an index to the problems, with links.
+
