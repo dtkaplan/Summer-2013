@@ -1,0 +1,31 @@
+Applied Calculus Ch. 1 §5 Prob. 6
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-01-05-06-SD")
+```
+
+``` {r eval=FALSE, include=FALSE}
+I(textItem(name="fourdollarsperday",rows=2,totalPts=2))
+```
+
+A product costs \$80 today.  How much will the product cost in $t$ days if the price is reduced by 
+
+* \$4 a day?
+
+Write a formula in the form $c(t) =$  for your function of $t$.
+
+`r I(textItem(name="fourdollarsperday", rows=2, totalPts=2))`
+
+
+```{r eval=FALSE, include=FALSE}
+I(textItem(name="fivepercenteperday", rows=2, totalPts=2))
+```
+
+* 5% a day?
+
+Write a formula in the form $c(t) =$  for your function of $t$.
+
+`r I(textItem(name="fivepercentperday", rows=2, totalPts=2))`
+
