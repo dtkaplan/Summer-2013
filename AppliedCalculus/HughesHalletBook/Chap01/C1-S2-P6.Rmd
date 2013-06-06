@@ -1,0 +1,18 @@
+Applied Calculus, Ch 1, §2, Prob XXX
+===============================================
+
+
+```{r include=FALSE}
+require(WriteStartR)
+```
+\paragraph{\bf \S 1.2 Prob. 6} \acroSetItemPrefix{1.2-6-}
+
+\begin{itemize}
+\item Line through $(0,0)$ and $(1,1)$
+\begin{MultipleChoice}
+\correct{$y = 0 + 1 x$}
+\wrong{$y = 1 + 0 x$}
+\wrong{$y = 1 + 1 x$}
+\wrong{$y = 1 + 2 x$}
+\end{MultipleChoice}
+\end{itemize}  
