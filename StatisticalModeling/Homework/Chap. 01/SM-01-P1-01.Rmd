@@ -1,0 +1,19 @@
+Intro to Statistical Modeling Ch. 1 Prob. 1.01
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-01-1.01-SD")
+```
+
+Many fields of natural and social science have principles that are identified by name.  Sometimes these are called "laws", sometimes "principles", "theories", etc.  Some examples include:
+
+Kepler's Law |Newton's Laws of Motion |---
+---|---|---
+Ohm's Law | Grimm's Law | Nernst Equation
+Raoult's Law | Nash Equilibrium | Boyle's Law
+Zipf's Law | Law of Diminishing Marginal Utility | Pareto Principle      
+Snell's Law | Hooke's Law | Fitt's Law
+Laws of Supply and Demand | Ideal Gas Law | Newton's Law of Cooling     
+Le Chatelier's Principle | Poiseuille's Law | ---
+

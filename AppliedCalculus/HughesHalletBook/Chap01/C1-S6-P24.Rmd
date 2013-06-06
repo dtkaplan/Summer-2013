@@ -14,8 +14,6 @@ conversion = selectNumber(choices=c(0.607, 1.213, 1.648, 2.000, 3.297), correct=
 ```
 $P_0$ is `r I(conversion)`
 
-`r I(closeProblem())`
-
 ```{r include=FALSE}
 conversion2 = selectNumber(choices=c(0.607,1.213,1.648,2.000,3.297), correct=c(2.000), name="convert2",totalPts=1)
 ```

@@ -21,8 +21,6 @@ What is the meaning of the number 3.5 in Okun's law?
 I(f(finish=TRUE))
 ```
 
-`r I(closeProblem())`
-
 ```{r include=FALSE}
 g = newMC(totalPts=1)
 ```
@@ -39,8 +37,6 @@ National production will ...
 I(g(finish=TRUE))
 ```
 
-`r I(closeProblem())`
-
 ```{r include=FALSE}
 h = selectSet(name="unemployment", totalPts=1, "Up by 1.75"=TRUE, "Down by 1.75"=FALSE, "Up by 3.5"=FALSE, "Down by 3.5"=FALSE)
 ```
@@ -51,7 +47,6 @@ What change in unemployment rate corresponds to a year when
 
 ```{r results="hide", include=FALSE}
 ```
-`r I(closeProblem())`
 
 ```{r eval=FALSE, include=FALSE}
 I(textItem(name="okunslaw",rows=3,totalPts=2))`

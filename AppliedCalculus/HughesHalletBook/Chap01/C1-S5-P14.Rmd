@@ -6,7 +6,6 @@ require(WriteScoreR)
 newScorerSet("AC-01-5-14-SD")
 ```
 
-just a change
 
 #### Graph $y = 100 e^{-0.4 x}$.  Describe what you see.
 
@@ -23,8 +22,6 @@ The graph...
 I(f(finish=TRUE))
 ```
 
-`r I(closeProblem())`
-
 #### Approximate the answers to these questions by reading from your graph. 
 
 ```{r include=FALSE}
@@ -33,15 +30,11 @@ approximate = selectSet(name="atwhatvalue", totalPts=1, "1"=FALSE, "2"=FALSE, "4
 
 At what value of $x$ does the function reach a value of $y=20$? `r I(approximate)`
 
-`r I(closeProblem())`
-
 ```{r include=FALSE}
 yvalue = selectNumber(choices=c(0,50,100,150), correct=c(100), name="valueofy", totalPts=1)
 ```
 
 When $x=0$ the function has a value $y$ of what? `r I(yvalue)`
-
-`r I(closeProblem())`
 
 ```{r include=FALSE}
 halfofvalue=selectNumber(choices=c(1, 1.75, 2.5, 3.25, 3.75), correct=c(1.75), name="halfvalue", totalPts=1)
