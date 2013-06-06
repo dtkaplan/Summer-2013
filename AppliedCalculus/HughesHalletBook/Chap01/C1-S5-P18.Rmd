@@ -1,0 +1,17 @@
+Applied Calculus Ch. 1 §5 Prob. 18
+========================================================
+```{r include=FALSE}
+require(WriteScoreR)
+require(mosaic)
+newScorerSet("AC-1-5-18-SD")
+```
+
+Enter your formula here:
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="formula",rows=2, totalPts=2))
+```
+
+`r I(textItem(name="formula",rows=2, totalPts=2))`
+
+`r I(closeProblem())`
+

@@ -18,6 +18,7 @@ Write a formula in the form $c(t) =$  for your function of $t$.
 
 `r I(textItem(name="fourdollarsperday", rows=2, totalPts=2))`
 
+`r I(closeProblem())`
 
 ```{r eval=FALSE, include=FALSE}
 I(textItem(name="fivepercenteperday", rows=2, totalPts=2))
@@ -29,3 +30,5 @@ Write a formula in the form $c(t) =$  for your function of $t$.
 
 `r I(textItem(name="fivepercentperday", rows=2, totalPts=2))`
 
+
+`r I(closeProblem())`

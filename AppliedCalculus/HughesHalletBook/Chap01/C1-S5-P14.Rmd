@@ -1,0 +1,49 @@
+Applied Calculus Ch. 1 §5 Prob. 14
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-01-5-14-SD")
+```
+
+#### Graph $y = 100 e^{-0.4 x}$.  Describe what you see.
+
+```{r include=FALSE}
+f= newMC(totalPts=1)
+```
+The graph...     
+
+`r I(f(FALSE))` Falls at a constant slope     
+`r I(f(FALSE))` Falls rapidly for small $x$ then suddenly levels out.           
+`r I(f(TRUE))` Falls rapidly for small $x$, smoothly decreasing in slope as $x$ gets bigger.          
+
+```{r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+`r I(closeProblem())`
+
+#### Approximate the answers to these questions by reading from your graph. 
+
+```{r include=FALSE}
+approximate = selectSet(name="atwhatvalue", totalPts=1, "1"=FALSE, "2"=FALSE, "4"=TRUE, "8"=FALSE, "16"=FALSE)
+```
+
+At what value of $x$ does the function reach a value of $y=20$? `r I(approximate)`
+
+`r I(closeProblem())`
+
+```{r include=FALSE}
+yvalue = selectNumber(choices=c(0,50,100,150), correct=c(100), name="valueofy", totalPts=1)
+```
+
+When $x=0$ the function has a value $y$ of what? `r I(yvalue)`
+
+`r I(closeProblem())`
+
+```{r include=FALSE}
+halfofvalue=selectNumber(choices=c(1, 1.75, 2.5, 3.25, 3.75), correct=c(1.75), name="halfvalue", totalPts=1)
+```
+At what value of $x$ does the value of $y$ fall to half what it was at $x=0$? `r I(halfofvalue)`
+
+`r I(closeProblem())`

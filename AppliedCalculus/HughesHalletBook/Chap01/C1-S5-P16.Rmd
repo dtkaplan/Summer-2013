@@ -1,0 +1,33 @@
+Applied Calculus Ch.1 §5 Prob. 16
+========================================================
+```{r include=FALSE}
+require(WriteScoreR)
+require(mosaic)
+newScorerSet("AC-1-5-16-SD")
+```
+
+Find a possible formula for the function represented by the data in the table shown in the book for problem 16.
+
+t    |    g(t)     
+----:|:----     
+0    |    5.50     
+1    |    4.40     
+2    |    3.52     
+3    |    2.82     
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+`r I(f(FALSE))` $g(t) = 5.50 - 1.10 t$     
+`r I(f(FALSE))` $g(t) = 5.50 - 0.98 t$     
+`r I(f(TRUE))` $g(t) = 5.50  \times 0.8^t$     
+`r I(f(FALSE))` $g(t) = 5.50  \times 1.2^t$     
+`r I(f(FALSE))` None of the above is a good approximation.
+
+```{r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+`r I(closeProblem())`
+

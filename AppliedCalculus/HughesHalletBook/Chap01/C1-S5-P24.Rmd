@@ -1,0 +1,65 @@
+Applied Calculus Ch. 1 §5 Prob. 24
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("AC-1-5-24-SD")
+```
+
+#### $f(x)$ 
+
+```{r include=FALSE}
+linear = selectSet(name="neither", totalPts=1, "linear"=FALSE, "exponential"=FALSE, "neither"=TRUE)
+```
+`r I(linear)`
+
+`r I(closeProblem())`
+
+If form is linear or exponential, give the formula:
+
+```{r eval=FALSE, include=FALSE}
+I(textItem(name="formula1", rows=2, totalPts=2))
+```
+`r I(textItem(name="formula1", rows=2, totalPts=2))`
+
+`r I(closeProblem())`
+
+#### $g(x)$
+```{r include=FALSE}
+linear2 = selectSet(name="exponentialform", totalPts=1, "linear"=FALSE, "exponential"=TRUE, "neither"=FALSE)
+```
+`r I(linear2)`
+
+`r I(closeProblem())`
+
+If form is linear or exponential, give the formula:
+
+```{r eval=FALSE, include=FALSE}
+I(textItem(name="formula2", rows=2, totalPts=2))
+```
+
+`r I(textItem(name="formula2", rows=2, totalPts=2))`
+
+`r I(closeProblem())`
+
+#### $h(x)$
+
+```{r include=FALSE}
+linear3 = selectSet(name="linear", totalPts=1, "linear"=TRUE, "exponential"=FALSE, "neither"=FALSE)
+```
+`r I(linear3)`
+
+`r I(closeProblem())`
+
+If form is linear or exponential, give the formula: 
+
+````{r eval=FALSE, include=FALSE}
+I(textItem(name="formula3", rows=2, totalPts=2))
+```
+
+`r I(textItem(name="formula3", rows=2, totalPts=2))`
+
+`r I(closeProblem())`
+
+
+
