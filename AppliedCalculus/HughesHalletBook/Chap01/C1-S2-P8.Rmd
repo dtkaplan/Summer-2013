@@ -1,0 +1,24 @@
+Applied Calculus Ch.1 §2 Prob. 8  
+========================================================
+
+```{r include = FALSE}
+require(WriteScoreR)
+newScorerSet("AC-1-02-08-SD")
+```
+
+```{r include=FALSE}
+f= newMC(totalPts=1)
+```
+
+Which is an equation for the line through the points $(4,5)$ and $(2,-1)$?
+
+`r I(f(FALSE))` $y = 7 - 3x$     
+`r I(f(TRUE))` $y = -7 + 3x$     
+`r I(f(FALSE))` $y = 7 + 3x$     
+`r I(f(FALSE))` $y = -7 - 3x$     
+
+```{r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+

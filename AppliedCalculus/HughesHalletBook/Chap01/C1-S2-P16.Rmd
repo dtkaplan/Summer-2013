@@ -1,0 +1,25 @@
+Applied Calculus Ch.1 §2 Prob.16
+========================================================
+```{r include=FALSE}
+require(WriteScoreR)
+require(mosaic)
+newScorerSet("AC-1-02-16-SD")
+```
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+What is the meaning of the number 3.5 in Okun's law?     
+
+`r I(f(FALSE))` The yearly percentage increase in production when unemployment is zero.     
+`r I(f(TRUE))` The yearly percentage increase in production when unemployment does not change from the previous year.     
+`r I(f(FALSE))` The unemployment rate when production does not grow.     
+`r I(f(FALSE))` The typical unemployment rate.
+
+```{r results="hide", include=FALSE}
+I(f(finish=TRUE))
+```
+
+
+
