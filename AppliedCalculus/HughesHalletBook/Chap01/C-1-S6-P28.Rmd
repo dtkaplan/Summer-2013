@@ -1,4 +1,4 @@
-Applied Calculus Ch.1 §6 Prob. 28
+Applied Calculus Ch.1 §6 Prob. 28 TESTING
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
