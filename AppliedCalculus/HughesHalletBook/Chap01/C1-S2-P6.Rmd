@@ -1,18 +1,23 @@
-Applied Calculus, Ch 1, §2, Prob XXX
+Applied Calculus, Ch. 1, §2, Prob. 6
 ===============================================
 
 
 ```{r include=FALSE}
-require(WriteStartR)
+require(WriteScoreR)
+newScorerSet("AC-2013-06-06-SD")
+require(mosaic)
 ```
-\paragraph{\bf \S 1.2 Prob. 6} \acroSetItemPrefix{1.2-6-}
 
-\begin{itemize}
-\item Line through $(0,0)$ and $(1,1)$
-\begin{MultipleChoice}
-\correct{$y = 0 + 1 x$}
-\wrong{$y = 1 + 0 x$}
-\wrong{$y = 1 + 1 x$}
-\wrong{$y = 1 + 2 x$}
-\end{MultipleChoice}
-\end{itemize}  
+```{r include = FALSE}
+f = newMC(totalPts=1)
+```
+
+Which is an equation for the line that passes through points $(0,0)$ and $(1,1)$?      
+`r I(f(TRUE))` $y = 0 + 1x$      
+`r I(f(FALSE))` $y = 1 + 0x$   
+`r I(f(FALSE))` $y = 1 + 1x$     
+`r I(f(FALSE))` $y = 1 + 2x$     
+
+```{r results = "hide", include=FALSE}
+I(f(finish=TRUE))
+```
