@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch.2 Prob. 2.04</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch.2 Prob. 2.04</h1>
+
+<p>Here is a small data frame about automobiles.</p>
+
+<p>\bigskip
+\centerline{\small\begin{tabular}{|rrrrll|}\hline
+Make and &amp; Vehicle &amp; Trans. &amp; # of &amp; City &amp; Hwy \
+model &amp; type &amp; type &amp; cyl. &amp; MPG &amp; MPG \ \hline \hline
+Kia Optima &amp; compact &amp; Man. &amp; 4 &amp; 21 &amp; 31\
+Kia Optima &amp; compact &amp; Auto. &amp; 6 &amp; 20 &amp; 28\
+Saab 9-7X AWD &amp; SUV &amp; Auto. &amp; 6 &amp; 14 &amp; 20\
+Saab 9-7X AWD &amp; SUV &amp; Auto. &amp; 8 &amp; 12 &amp; 16\
+Ford Focus &amp; compact &amp; Man. &amp; 4 &amp; 24 &amp; 35\
+Ford Focus &amp; compact  &amp; Auto. &amp; 4 &amp; 24 &amp; 33\
+Ford F150 2WD &amp; pickup  &amp; Auto. &amp; 8 &amp; 13 &amp; 17\hline
+\end{tabular}}</p>
+
+<ul>
+<li>What are the cases in the data frame?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> Individual car companies<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> Individual makes and models of cars<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Individual configurations of cars<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> Different sizes of cars     </p>
+
+<p><aside>
+Answer: 
+Each case is a different make and model in a particular
+configuration.  For instance, there are two cases that are Kia
+Optimas.  One of these cases has a manual transmission, the other an
+automatic transmission.  For the Saab, the two cases have different
+numbers of cylinders, even though both are automatic transmissions.
+</aside></p>
+
+<p>For each case, what variables are given?  Are they categorical 
+or quantitative?</p>
+
+<ul>
+<li><p>Kia Optima:</p>
+
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "catorquant",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "catorquant",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      1,
+"name": "catorquant",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><aside>
+Answer:
+The Kia Optima is not a variable, it&#39;s a level of the <em>Make and
+  model</em> variable.
+</aside></p>
+
+<ul>
+<li><p>City MPG:</p>
+
+<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "catorquant2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "catorquant2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "catorquant2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>Vehicle type:</p>
+
+<p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      3,
+"name": "catorquant3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      3,
+"name": "catorquant3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      3,
+"name": "catorquant3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>SUV:</p>
+
+<p><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      4,
+"name": "catorquant4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      4,
+"name": "catorquant4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      4,
+"name": "catorquant4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><aside>
+Answer:
+SUV is a level of the <em>Vehicle type</em> variable.
+</aside></p>
+
+<ul>
+<li><p>Trans. type:</p>
+
+<p><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      5,
+"name": "catorquant5",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      5,
+"name": "catorquant5",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      5,
+"name": "catorquant5",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p># of cyl.:</p>
+
+<p><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      6,
+"name": "catorquant6",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not a variable" 
+}'>Not a variable</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      6,
+"name": "catorquant6",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Categorical" 
+}'>Categorical</option> <option value='{
+"itemInfo": {
+"setID": "SM-02-P2-24-SD",
+"itemN":      6,
+"name": "catorquant6",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Quantitative" 
+}'>Quantitative</option> </select><span id='out6' class='shiny-html-output'> </span></p>
+
+<ul>
+<li>Why are some cars listed twice?  Is this a mistake in the table?</li>
+</ul></li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> Yes, it&#39;s a mistake.<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> A car brand might be listed more than once, but the cases have different attributes on other variables.<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Some cars are more in demand than others.     </p>
+
+<p><aside> Answer:
+As explained above, the cases with the same make and model are
+different in other variables.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "MC1", "MC2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

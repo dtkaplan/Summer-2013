@@ -1,0 +1,64 @@
+Intro to Statistical Modeling Ch. 2 Prob. 2.22
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-02-P2-22-SD")
+```
+
+Since the computer has to represent numbers that are both very large
+and very small, scientific notation is often used.  The number
+<code>7.23e4</code> means $7.23\times 10^4 = 72300$.  The number
+<code>1.37e-2</code> means $1.37\times 10^{-2} = 0.0137$.
+
+For each of the following numbers written in computer scientific
+notation, say what is the corresponding number.
+
+* <code>3e1</code> 
+```{r include=FALSE}
+scinote= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(30), name="a", totalPts=1)
+```
+
+`r I(scinote)`
+
+* <code>1e3</code>
+
+```{r include=FALSE}
+scinote2= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(100), name="b", totalPts=1)
+```
+`r I(scinote2)`
+
+* <code>0.1e3</code>
+
+```{r include=FALSE}
+scinote3= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(10), name="c", totalPts=1)
+```
+`r I(scinote3)`
+
+* <code>0.3e-2</code>
+```{r include=FALSE}
+scinote4= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(0.003), name="d", totalPts=1)
+```
+`r I(scinote4)`
+
+* <code>10e3</code>
+```{r include=FALSE}
+scinote5= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(10000), name="f", totalPts=1)
+```
+`r I(scinote5)`
+
+* <code>10e-3</code>
+```{r include=FALSE}
+scinote6= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(0.01), name="g", totalPts=1)
+```
+`r I(scinote6)`
+
+* <code>0.0003e3</code>
+```{r include=FALSE}
+scinote7= selectNumber(choices=c(.0001,0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000,3000,10000), correct=c(0.3), name="h", totalPts=1)
+```
+`r I(scinote7)`
+
+`r I(closeProblem())`
+
+

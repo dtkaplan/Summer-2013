@@ -1,0 +1,127 @@
+Intro to Statistical Modeling Ch.2 Prob. 2.04
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-02-P2-24-SD")
+```
+
+Here is a small data frame about automobiles.
+
+
+\bigskip
+\centerline{\small\begin{tabular}{|rrrrll|}\hline
+Make and & Vehicle & Trans. & \# of & City & Hwy \\
+model & type & type & cyl. & MPG & MPG \\ \hline \hline
+Kia Optima & compact & Man. & 4 & 21 & 31\\
+Kia Optima & compact & Auto. & 6 & 20 & 28\\
+Saab 9-7X AWD & SUV & Auto. & 6 & 14 & 20\\
+Saab 9-7X AWD & SUV & Auto. & 8 & 12 & 16\\
+Ford Focus & compact & Man. & 4 & 24 & 35\\
+Ford Focus & compact  & Auto. & 4 & 24 & 33\\
+Ford F150 2WD & pickup  & Auto. & 8 & 13 & 17\\\hline
+\end{tabular}}
+
+* What are the cases in the data frame?
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+`r I(f(FALSE))` Individual car companies     
+`r I(f(FALSE))` Individual makes and models of cars     
+`r I(f(TRUE))` Individual configurations of cars     
+`r I(f(FALSE))` Different sizes of cars     
+
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+<aside>
+Answer: 
+Each case is a different make and model in a particular
+configuration.  For instance, there are two cases that are Kia
+Optimas.  One of these cases has a manual transmission, the other an
+automatic transmission.  For the Saab, the two cases have different
+numbers of cylinders, even though both are automatic transmissions.
+</aside>
+
+For each case, what variables are given?  Are they categorical 
+or quantitative?
+
+ * Kia Optima:
+ 
+```{r include=FALSE}
+kiaoptima=selectSet(name="catorquant", totalPts=1, "Not a variable"=TRUE, "Categorical"=FALSE, "Quantitative"=FALSE)
+```
+
+ `r I(kiaoptima)`
+
+<aside>
+Answer:
+The Kia Optima is not a variable, it's a level of the *Make and
+  model* variable.
+</aside>
+
+ * City MPG:
+```{r include=FALSE}
+citympg=selectSet(name="catorquant2", totalPts=1, "Not a variable"=FALSE, "Categorical"=FALSE, "Quantitative"=TRUE)
+```
+
+ `r I(citympg)`
+
+ * Vehicle type:
+```{r include=FALSE}
+vehicletype=selectSet(name="catorquant3", totalPts=1, "Not a variable"=FALSE, "Categorical"=TRUE, "Quantitative"=FALSE)
+```
+ 
+ `r I(vehicletype)`
+
+ * SUV:
+ 
+```{r include=FALSE}
+SUV=selectSet(name="catorquant4", totalPts=1, "Not a variable"=TRUE, "Categorical"=FALSE, "Quantitative"=FALSE)
+```
+
+ `r I(SUV)`
+
+<aside>
+Answer:
+SUV is a level of the *Vehicle type* variable.
+</aside>
+
+ * Trans. type:
+ 
+```{r include=FALSE}
+transtype=selectSet(name="catorquant5", totalPts=1, "Not a variable"=FALSE, "Categorical"=TRUE, "Quantitative"=FALSE)
+```
+ `r I(transtype)`
+
+ * \# of cyl.:
+ 
+```{r include=FALSE}
+cyl=selectSet(name="catorquant6", totalPts=1, "Not a variable"=FALSE, "Categorical"=FALSE, "Quantitative"=TRUE)
+```
+ `r I(cyl)`
+
+* Why are some cars listed twice?  Is this a mistake in the table?
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+`r I(f(FALSE))` Yes, it's a mistake.   
+`r I(f(TRUE))` A car brand might be listed more than once, but the cases have different attributes on other variables.     
+`r I(f(FALSE))` Some cars are more in demand than others.     
+
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+<aside> Answer:
+As explained above, the cases with the same make and model are
+different in other variables.
+</aside>
+
+`r I(closeProblem())`
+
+

@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 2 Prob. 2.22</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 2 Prob. 2.22</h1>
+
+<p>Since the computer has to represent numbers that are both very large
+and very small, scientific notation is often used.  The number
+<code>7.23e4</code> means \( 7.23\times 10^4 = 72300 \).  The number
+<code>1.37e-2</code> means \( 1.37\times 10^{-2} = 0.0137 \).</p>
+
+<p>For each of the following numbers written in computer scientific
+notation, say what is the corresponding number.</p>
+
+<ul>
+<li><code>3e1</code> </li>
+</ul>
+
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      1,
+"name": "a",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>1e3</code></li>
+</ul>
+
+<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      2,
+"name": "b",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out2' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>0.1e3</code></li>
+</ul>
+
+<p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      3,
+"name": "c",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>0.3e-2</code></li>
+</ul>
+
+<p><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      4,
+"name": "d",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>10e3</code></li>
+</ul>
+
+<p><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      5,
+"name": "f",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out5' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>10e-3</code></li>
+</ul>
+
+<p><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      6,
+"name": "g",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out6' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><code>0.0003e3</code></li>
+</ul>
+
+<p><select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.003" 
+}'>0.003</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1000" 
+}'>1000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3000" 
+}'>3000</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-02-P2-22-SD",
+"itemN":      7,
+"name": "h",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> </select><span id='out7' class='shiny-html-output'> </span></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

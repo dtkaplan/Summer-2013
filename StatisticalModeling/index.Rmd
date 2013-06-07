@@ -25,3 +25,9 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 2
 
+* [Problem 2.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-04.html) need to clean up a little bit, also, need to figure out how to make a data table
+
+* [Problem 2.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-22.html) working
+
+* 
+
