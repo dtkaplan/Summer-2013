@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Problems for Statistical Modeling</title>
+<title>Intro to Statistical Modeling Ch.1 Prob. 1.12</title>
 
 <style type="text/css">
 body, td {
@@ -141,24 +141,71 @@ hr {
 </head>
 
 <body>
-<h1>Problems for Statistical Modeling</h1>
+<h1>Intro to Statistical Modeling Ch.1 Prob. 1.12</h1>
 
-<p>Problems will be arranged according to their level of difficulty within their corresponding chapter and section.  </p>
+<p>The following statement gives a result that some people are surprised by:<br/>
+<code> &gt;10e3 == 1000<br/>
+[1] FALSE</code>     </p>
 
-<h2>Chapter 1</h2>
+<p>Explain why the result was FALSE rather than TRUE.</p>
 
-<ul>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-ReadingQuestions.html">Reading Questions</a> working </p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html">Problem 1.01</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html">Problem 1.02</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-04.html">Problem 1.04</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-05.html">Problem 1.05</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-10.html">Problem 1.10</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-11.html">Problem 1.11</a> working</p></li>
-<li><p><a href="http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-12.html">Problem 1.12</a> working</p></li>
-</ul>
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-AC1-02-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 10e3 is 100, not 1000<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-AC1-02-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 10e3 is 10000, not 1000<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-AC1-02-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 10e3 is not a valid number<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-AC1-02-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> It should be true; there&#39;s a bug in the software.     </p>
 
-<h2>Chapter 2</h2>
+<p><aside> ANSWER: The computer returns <code>FALSE</code> because the quantities being compared with <code>==</code> are not equal.  <code>10e3</code> is ten-thousand in scientific notation.  It&#39;s <code>1e3</code> that is one-thousand.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1" ]'>Ignore me</option></select></p>
 
 </body>
 

@@ -1,0 +1,29 @@
+Intro to Statistical Modeling Ch.1 Prob. 1.10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-01-P1-10-SD")
+```
+
+Try the following command:     
+<code>seq(1,5, by=.5, length=2)
+</code>
+
+Why do you think the computer responded the way it did?
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="response", rows=4, totalPts=2))
+```
+
+`r I(textItem(name="response", rows=4, totalPts=2))`
+
+<aside>
+The command specifies **both** of the arguments <code>by</code> and
+<code>length</code>.  These arguments are inconsistent with one another:
+they would result in different sequences.
+The person who wrote the <code>seq</code> software was polite enough to
+warn you of such situations so that you can fix them.
+</aside>
+
+`r I(closeProblem())`

@@ -1,0 +1,47 @@
+Intro to Statistical Modeling Ch. 1 Prob. 1.01
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-01-1.01-SD")
+```
+
+Many fields of natural and social science have principles that are identified by name.  Sometimes these are called "laws", sometimes "principles", "theories", etc.  Some examples include:
+
+Kepler's Law      
+Newton's Laws of Motion      
+Ohm's Law      
+Grimm's Law      
+Nernst Equation     
+Raoult's Law      
+Nash Equilibrium      
+Boyle's Law     
+Zipf's Law      
+Law of Diminishing Marginal Utility      
+Pareto Principle           
+Snell's Law      
+Hooke's Law      
+Fitt's Law     
+Laws of Supply and Demand      
+Ideal Gas Law      
+Newton's Law of Cooling          
+Le Chatelier's Principle      
+Poiseuille's Law      
+
+These laws and principles can be thought of as models.  Each is a
+description of a relationship.  For instance, Hooke's law relates the extension and stiffness of a spring to the force exerted by the spring.  The laws of supply and demand relate the quantity of a good to the price and postulates that the market price is established at the equilibrium of supply and demand.
+
+Pick a law or principle from an area of interest to you --- chemistry, linguistics, sociology, physics, ... whatever.  Describe the law, what quantities or qualities it relates to one another, and the ways in which the law is a model, that is, a representation that is suitable for some purposes or situations and not others.
+
+```{r eval=FALSE, include=FALSE}
+I(textItem(name="laworprinciple", rows=4, totalPts=2))
+```
+
+Enter your answer here:      
+`r I(textItem(name="laworprinciple", rows=4, totalPts=2))`
+
+An example is given below:
+
+>EXAMPLE: As described in the text, Hooke's Law, $f = -k x$, relates the force ($f$), the stiffness ($k$) and the extension past resting length ($x$) for a spring.  It is a useful and accurate approximation for small extensions.  For large extensions, however, springs are permanently distorted or break.  Springs involve friction, which is not included in the law.  Some springs, such as passive muscle, are really composites and show a different pattern, e.g., $f = -  k \ {x^3} / {|x|}$ for moderate sized extensions.
+
+`r I(closeProblem())`

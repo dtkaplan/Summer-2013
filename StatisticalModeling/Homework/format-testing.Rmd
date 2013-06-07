@@ -1,0 +1,38 @@
+Testing formatting
+========================================================
+
+### Models
+
+*height* ~ *father* + *nkids*
+
+### Variable names
+
+*height*
+
+### Data sets
+
+markup like \datasetCPS should go to `CPS85`  (the current name in the mosaic package) in single backquotes.
+
+To find out what names there are:
+```{r eval=FALSE}
+data(package="mosaic")
+```
+
+### paragraphs
+
+Mark with 4 hashes
+
+#### like this
+
+### texttt
+
+Things preceded with texttt should be rendered as <code>the thing</code>
+
+The markup \verb+some stuff+ goes to <code>some stuf</code>
+
+### Lists
+
+Description lists might look like this:
+
+* **The description** and the following text
+* **The second item's description** and the following text.

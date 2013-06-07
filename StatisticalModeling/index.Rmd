@@ -1,8 +1,27 @@
 Problems for Statistical Modeling
 ========================================================
 
-Give an explanation here of how the problems are arranged.
+Problems will be arranged according to their level of difficulty within their corresponding chapter and section.  
 
-This also would be a good place to put an index to the problems, with links.
+## Chapter 1
 
-This is a change.
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-ReadingQuestions.html) working 
+
+* [Problem 1.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html) working
+
+* [Problem 1.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html) working
+
+* [Problem 1.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-04.html) working
+
+* [Problem 1.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-05.html) working
+
+* [Problem 1.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-10.html) working
+
+* [Problem 1.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-11.html) working
+
+* [Problem 1.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-12.html) working
+
+
+
+## Chapter 2
+

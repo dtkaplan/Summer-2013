@@ -1,0 +1,38 @@
+Intro to Statistical Modeling Ch.1 Problem 1.11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-01-AC1-03-SD")
+```
+<code>1e6</code> and <code>10e5</code> are two different ways of writing one-million.  Write 5 more different forms of one-million using scientific notation.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="scinotation", rows=6, totalPts=2))
+```
+
+`r I(textItem(name="scinotation", rows=6, totalPts=2))`
+
+<aside>
+ANSWER: All of the following are possible ways of writing one-million in scientific notation.
+
+<code>
+.0001e10     
+.001e9     
+.01e8     
+.1e7     
+1e6     
+10e5     
+100e4     
+1000e3     
+10000e2     
+100000e1      
+1000000e0     
+10000000e-1     
+</code>
+
+and so on...
+
+</aside>
+
+`r I(closeProblem())`
