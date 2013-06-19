@@ -1,8 +1,6 @@
 Problems for Statistical Modeling
 ========================================================
 
-Danny and Suzanne updating.
-
 Problems will be arranged according to their level of difficulty within their corresponding chapter and section.  
 
 ## Chapter 1
@@ -27,9 +25,72 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 2
 
-* [Problem 2.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-04.html) need to clean up a little bit, also, need to figure out how to make a data table
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-ReadingQuestions.html) working
+
+* [Problem 2.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-02.html) some error messages in the answer text
+
+* [Problem 2.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-04.html) working
+
+* [Problem 2.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-09.html) working
+
+* [Problem 2.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-14.html) working
+
+* [Problem 2.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-14.html) working, but this is a problem that wasn't on the online homework but was in the folder in R. Therefore, I wrote it up and gave it a (temporary?) number of its own.
 
 * [Problem 2.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-22.html) working
 
-* 
 
+
+## Chapter 3
+
+* [Problem 3.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-01.html) working
+
+* [Problem 3.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-02.html) working
+
+* [Problem 3.08](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-08.html) problems with commands for image
+ 
+* [Problem 3.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-09.html) some issues in the r commands for the box plot (at top of page)
+
+* [Problem 3.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-10.html) not complete. Need to determine if this is 10a or 10b to finish
+
+* [Problem 3.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-11.html) working, but do we want to adjust the formatting on the multiple choice problems?
+
+* [Problem 3.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-12.html) working 
+
+* [Problem 3.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-13.html) working
+
+* [Problem 3.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-14.html) issues with converting the commands for box plots (top of page)
+
+* [Problem 3.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-15.html) issues with converting the commands for box plots
+
+* [Problem 3.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-16.html) working
+
+* [Problem 3.17](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-17.html) issues with converting the commands for box plots 
+
+* [Problem 3.18](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-18) issues with image commands
+
+* [Problem 3.19](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-19.html) working
+
+* [Problem 3.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-20.html) working
+
+* [Problem 3.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-23.html) working
+
+* [Problem 3.24](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-24.html) working
+
+* [Problem 3.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-24.html) working
+
+* [Problem 3.28](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-24.html) comment formatting?
+
+* [Problem 3.29](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
+
+* [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) issues with image commands/comments, also, formatting of last question (the one with no correct answer)
+
+* [Problem 3.36](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-36.html) working
+
+* [Problem 3.50](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-50.html) issues with command for image
+
+* [Problem 3.53](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-53.html) this problem called for >10 selectSets (and the system is only configured to support 10), therefore, had to do some interesting formatting to still include all of the problems.  Select sets would be best (i believe). Is there a way to get more >10 selectSets on an Rmd file?
+
+* [Proble 3.54](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-54.html) **NOT COMPLETE**
+
+* [Problem 3.56](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-56.html) this problem was in R but not on the website, therefore I gave it the number 3.56
