@@ -9,16 +9,21 @@ newScorerSet("SM-02-P2-24-SD")
 Here is a small data frame about automobiles.
 
 
+```{r}
+emphasize.cols=2,4,6
+```
 
-Make and model | Vehicle type | Trans. type | \# of cyl. | City MPG | Hwy MPG
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----: 
-Kia Optima | compact | Man. | 4 | 21 | 31
-Kia Optima | compact | Auto. | 6 | 20 | 28
-Saab 9-7X AWD | SUV | Auto. | 6 | 14 | 20
-Saab 9-7X AWD | SUV | Auto. | 8 | 12 | 16
-Ford Focus | compact | Man. | 4 | 24 | 35
-Ford Focus | compact  | Auto. | 4 | 24 | 33
-Ford F150 2WD | pickup  | Auto. | 8 | 13 | 17
+Make and model  |  Vehicle type | Trans. type | \# of cyl. |  City MPG |  Hwy MPG
+:-----: | :-----: | :-----: | :-----: | :-----: | :-----: 
+Kia Optima  |  compact  | Man.  | 4 | 21  | 31
+Kia Optima  | compact | Auto. | 6 | 20  | 28
+Saab 9-7X AWD | SUV | Auto. | 6 | 14  | 20
+Saab 9-7X AWD | SUV | Auto. | 8 | 12  | 16
+Ford Focus  | compact | Man.  | 4 | 24  | 35
+Ford Focus  | compact | Auto. | 4 | 24  | 33
+Ford F150 2WD | pickup  | Auto. | 8 | 13  | 17     
+
+
 
 What are the cases in the data frame?
 
