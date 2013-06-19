@@ -16,10 +16,10 @@ Explain why the result was FALSE rather than TRUE.
 f= newMC(totalPts=1)
 ```
 
-`r I(f(FALSE))` 10e3 is 100, not 1000     
-`r I(f(TRUE))` 10e3 is 10000, not 1000     
-`r I(f(FALSE))` 10e3 is not a valid number     
-`r I(f(FALSE))` It should be true; there's a bug in the software.     
+`r I(f(FALSE))`10e3 is 100, not 1000     
+`r I(f(TRUE))`10e3 is 10000, not 1000     
+`r I(f(FALSE))`10e3 is not a valid number     
+`r I(f(FALSE))`It should be true; there's a bug in the software.     
 
 ```{r results="hide", include=FALSE}
 I(f(finish=TRUE))

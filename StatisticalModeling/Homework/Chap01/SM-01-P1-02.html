@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Intro to Statistical Modeling Ch. 1 Prob. 1.01</title>
+<title>Intro to Statistical Modeling Ch. 1 Prob. 1.02</title>
 
 <style type="text/css">
 body, td {
@@ -141,7 +141,7 @@ hr {
 </head>
 
 <body>
-<h1>Intro to Statistical Modeling Ch. 1 Prob. 1.01</h1>
+<h1>Intro to Statistical Modeling Ch. 1 Prob. 1.02</h1>
 
 <p>NOTE: Remember to load the <code>mosaic</code> package before starting:</p>
 
@@ -154,17 +154,16 @@ statements properly and give a sentence saying what was wrong. (Cut and paste th
 
 <blockquote>
 <p>QUESTION: What&#39;s wrong with this statement?<br/>
-<code>a = fetchData(myfile.csv)</code>       </p>
+<code>a = fetchData(myfile.csv)</code>     </p>
 
-<p>ANSWER: It should be <code>a =fetchData(&quot;myfile.csv&quot;)</code>  The file name is a character string and therefore should be in quotes.  Otherwise it&#39;s treated as an object name and there is no object called myfile.csv.</p>
+<p>ANSWER: It should be <code>a =fetchData(&quot;myfile.csv&quot;)</code>  The file name is a character string and therefore should be in quotes.  Otherwise it&#39;s treated as an object name and there is no object called myfile.csv.     </p>
 </blockquote>
 
 <p>Now for the real thing.  Say what&#39;s wrong with each of these
 statements for the purpose given:</p>
 
 <ul>
-<li>A<br/>
-<code>seq(5;8)</code> to give <code>[1] 5 6 7 8</code></li>
+<li><code>seq(5;8)</code> to give <code>[1] 5 6 7 8</code></li>
 </ul>
 
 <p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
@@ -226,8 +225,7 @@ ANSWER: The semicolon is not a valid separator between arguments.  The statement
 </aside></p>
 
 <ul>
-<li>B<br/>
-<code>cos 1.5</code> to calculate the cosine of 1.5 radians</li>
+<li><code>cos 1.5</code> to calculate the cosine of 1.5 radians</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
@@ -249,8 +247,7 @@ ANSWER:The parentheses have been left out.  It should be <code>cos(1.5)</code>.
 </aside></p>
 
 <ul>
-<li>C<br/>
-<code>3 + 5 = x</code> to make x take the value 3 + 5</li>
+<li><code>3 + 5 = x</code> to make x take the value 3 + 5</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
@@ -272,8 +269,7 @@ ANSWER: Assignment statements should have the object name on the left: <code>x =
 </aside></p>
 
 <ul>
-<li>D<br/>
-<code>sqrt[4*98]</code> to find the square root of 392</li>
+<li><code>sqrt[4*98]</code> to find the square root of 392</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
@@ -295,8 +291,7 @@ ANSWER: Use parentheses, not square brackets, to invoke an operator: <code>sqrt(
 </aside></p>
 
 <ul>
-<li>E<br/>
-<code>10,000 + 4,000</code> adding two numbers to get 14,000</li>
+<li><code>10,000 + 4,000</code> adding two numbers to get 14,000</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
@@ -318,8 +313,7 @@ ANSWER: Don&#39;t punctuate numbers with commas, just the digits: <code>10000 + 
 </aside></p>
 
 <ul>
-<li>F<br/>
-<code>sqrt(c(4,15,25,36)) = 4</code> intended to give
+<li><code>sqrt(c(4,15,25,36)) = 4</code> intended to give
 <code>[1] FALSE TRUE FALSE FALSE</code></li>
 </ul>
 
@@ -342,8 +336,7 @@ ANSWER: Only a single <code>=</code> was used, the assignment operator rather th
 </aside></p>
 
 <ul>
-<li>G<br/>
-<code>fruit = c(apple, berry, cherry)</code> to create a collection of names
+<li><code>fruit = c(apple, berry, cherry)</code> to create a collection of names
 <code>[1] &quot;apple&quot; &quot;berry&quot; &quot;cherry&quot;</code></li>
 </ul>
 
@@ -366,8 +359,7 @@ ANSWER: The character strings have to be quoted to distinguish them from object 
 </aside></p>
 
 <ul>
-<li>H<br/>
-<code>x = 4(3+2)</code> where x is intended to be assigned the value 20</li>
+<li><code>x = 4(3+2)</code> where x is intended to be assigned the value 20</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info8'><option value='{
@@ -389,8 +381,7 @@ ANSWER: The multiplication operator needs to be specified explicitly and not imp
 </aside></p>
 
 <ul>
-<li>I<br/>
-<code>x/4 = 3+2</code> where x is intended to be assigned the value 20</li>
+<li><code>x/4 = 3+2</code> where x is intended to be assigned the value 20</li>
 </ul>
 
 <p><textarea cols='30' rows='4' id='text9' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info9'><option value='{
