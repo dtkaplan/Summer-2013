@@ -44,7 +44,7 @@ temperature=selectNumber(name="min", totalPts=1, choices=c(96.1,96.3,97.1,98.6,9
 * Minimum: `r I(temperature)`
 
 ```{r include=FALSE}
-temperature2=selectNumber(name="max", totalPts=1, choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(100.9))
+temperature2=selectNumber(name="max", totalPts=1, choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(100.8))
 ```
 * Maximum: `r I(temperature2)` 
 

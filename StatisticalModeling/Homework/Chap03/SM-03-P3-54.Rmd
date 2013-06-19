@@ -229,7 +229,7 @@ ans6=selectNumber(choices=c(3.72,4.00,4.03,4.07,5.21), correct=c(4.00), totalPts
 ```
 * What fraction of runners have a *net* time BELOW 4000
   seconds?  (That is, don't include those who are at exactly 4000
-  seconds.) In percent: `r I(ans)` 
+  seconds.) In percent: `r I(ans6)` 
 
 
 `r I(closeProblem())`
