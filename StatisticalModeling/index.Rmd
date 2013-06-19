@@ -1,6 +1,8 @@
 Problems for Statistical Modeling
 ========================================================
 
+Danny and Suzanne updating.
+
 Problems will be arranged according to their level of difficulty within their corresponding chapter and section.  
 
 ## Chapter 1
