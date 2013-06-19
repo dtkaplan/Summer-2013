@@ -1,0 +1,29 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.25
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P25-SD")
+```
+
+Use the Internet to find "normal" ranges for some measurements used
+in clinical medicine.  Pick one of the following or choose one of
+particular interest to you: blood pressure (systolic, diastolic,
+pulse), hematocrit, blood sodium and potassium levels, HDL and LDL
+cholesterol, white blood cell counts, clotting times, blood sugar
+levels, vital respiratory capacity, urine production, and so on.  In addition to the normal range, find out what
+"normal" means, e.g., a 95% coverage interval on the population or
+a range inconsistent with proper physiological function.  You may find
+out that there are differing views of what "normal" means --- try to
+indicate the range of such views.  You may also find out that
+"normal" ranges can be different depending on age, sex, and other
+demographic variables.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="normalrange", totalPts=2, rows=5))
+```
+
+`r I(textItem(name="normalrange", totalPts=2, rows=5))`
+
+`r I(closeProblem())`
+

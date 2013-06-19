@@ -1,0 +1,108 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.15
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P15-SD")
+```
+
+The plot purports to show the density of a distribution of data.  If this is
+true, the fraction of the data that falls between any two values on
+the $x$ axis should be the area under the curve between those two
+values.
+
+```{r eval=FALSE}
+<<plot1,fig=true,pdf=true,include=false,height=5,width=6,echo=false>>=
+graph.paper( xticks=seq(5,20,by=1), yticks=seq(0,.2,by=.01),xlab="  x  ", ylab="Density???")
+xpts = seq(5,20,length=1000)
+lines(xpts,dnorm(xpts,mean=12,sd=2),lwd=2)
+```
+
+```{r eval=FALSE}
+\centerline{\includegraphics[width=3.5in]{Figures/B106-plot1}}
+```
+
+Answer the following questions. In doing so, keep in mind that the area of each
+little box on the graph paper has been arranged to be $0.01$, so you
+can calculate the area by counting boxes.  You don't need to be too
+fanatical about dealing with boxes where only a portion in under the
+curve; just eyeball things and estimate.
+
+* The total area under a density curve should be 1.
+  Assuming that the density curve has height zero outside of the area
+  of the plot, is the area under the entire curve consistent with
+  this?
+```{r include=FALSE}
+densitycurve=selectSet(name="consistentArea", totalPts=1, "Yes"=TRUE, "No"=FALSE)
+```
+
+ `r I(densitycurve)`
+
+* What fraction of the data falls in the range $12 \leq x \leq
+  14$?
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+ `r I(f(FALSE))` 14%     
+ `r I(f(FALSE))` 22%      
+ `r I(f(TRUE))` 34%      
+ `r I(f(FALSE))` 56%     
+ `r I(f(FALSE))` Can't tell from this graph.     
+
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+
+* What fraction of the data falls in the range $14 \leq x \leq
+  16$?
+```{r include=FALSE}
+g = newMC(totalPts=1)
+```
+
+ `r I(g(TRUE))` 14%     
+ `r I(g(FALSE))` 22%     
+ `r I(g(FALSE))` 34%     
+ `r I(g(FALSE))` 56%     
+ `r I(g(FALSE))` Can't tell from this graph.
+
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+* What fraction of the data has $x \geq 16$?
+
+```{r include=FALSE}
+h = newMC(totalPts=1)
+```
+
+ `r I(h(FALSE))` 1%     
+ `r I(h(TRUE))` 2%     
+ `r I(h(FALSE))` 5%     
+ `r I(h(FALSE))` 10%     
+ `r I(h(FALSE))` Can't tell from this graph.     
+ 
+```{r include=FALSE, results="hide"}
+I(h(finish=TRUE))
+```
+
+* What is the width of the 95% coverage interval.  (Note: The
+  coverage interval itself has top and bottom ends.  This problem asks
+  for the spacing between the two ends.)
+  
+```{r include=FALSE}
+i = newMC(totalPts=1)
+```
+
+ `r I(i(FALSE))` 2     
+ `r I(i(FALSE))` 4     
+ `r I(i(TRUE))` 8      
+ `r I(i(FALSE))` 12     
+ `r I(i(FALSE))` Can't tell from the graph.
+
+```{r include=FALSE, results="hide"}
+I(i(finish=TRUE))
+```
+
+`r I(closeProblem())`

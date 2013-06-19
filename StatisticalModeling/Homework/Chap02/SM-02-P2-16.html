@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 2 Prob. 2.16</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 2 Prob. 2.16</h1>
+
+<p>Read in the file <code>KidsFeet</code>.  For each of the following, hand
+in the R statements to find what is asked for.  Provide both the
+command you give and the output of the command.</p>
+
+<ul>
+<li><p>The names of the variables.</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      1,
+"name": "names",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>The mean of the foot <em>width</em> variable.</p>
+
+<p><textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      2,
+"name": "width",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>Which of the cases are girls.</p>
+
+<p><textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      3,
+"name": "girls",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>The mean foot <em>width</em> for the subset of data for the
+girls.</p>
+
+<p><textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      4,
+"name": "girlfeet",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p>Of no particular statistical value, but to review the use of logical
+operators: </p>
+
+<ul>
+<li><p>The mean foot <em>width</em> for the subset of data for people
+whose bigger foot is left and dominant hand is also left.</p>
+
+<p><textarea cols='30' rows='3' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      5,
+"name": "review",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p>And, for some extra practice in using logical operators:</p>
+
+<ul>
+<li><p>The mean foot <em>width</em> for the subset of data for people
+who are either male or whose bigger foot matches the dominant hand. </p>
+
+<p><textarea cols='30' rows='3' id='text6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info6'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      6,
+"name": "extrapractice",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout6' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>The mean foot <em>width</em> for the subset of data for people
+whose bigger foot does NOT match the dominant hand.</p>
+
+<p><textarea cols='30' rows='3' id='text7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info7'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-2-P16-SD",
+"itemN":      7,
+"name": "extrapractice2",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout7' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4", "text5", "text6", "text7" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

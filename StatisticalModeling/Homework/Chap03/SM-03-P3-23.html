@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.23</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.23</h1>
+
+<p>Here are some familiar quantities.  For each of them, indicate what is
+a typical value, how far a typical case is from this typical value,
+and what is an extreme but not impossible case.</p>
+
+<p>Example: Adult height.  Typical value, 1.7 meters (68 inches).  Typical case
+is about 7cm (3 inches) from the typical value.  An extreme height is
+2.2 meters (87 inches).</p>
+
+<ul>
+<li><p>An adult&#39;s weight.</p>
+
+<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      1,
+"name": "weight",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+Let&#39;s answer for women.  A typical weight is about 130 lbs, with a
+typical spread about 20 lbs from the center.  An extreme weight is 350
+lbs on the high side and 80 lbs on the low side.
+</aside></p>
+
+<ul>
+<li><p>Income of a full-time employed person.</p>
+
+<p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      2,
+"name": "income",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+Writing this in 2011, a typical income for a full-time employed person
+is around $40,000 USD per year.  Typical spread is about $20,000 USD
+from the center.  Given minimum wage laws, an extreme case on the low
+side is about $15,000 USD.  On the high side, the sky is the limit,
+with some people having an income of billions of dollars per year.
+</aside></p>
+
+<ul>
+<li><p>Speed of cars on a highway in good conditions.</p>
+
+<p><textarea cols='30' rows='4' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      3,
+"name": "speed",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+A typical car goes about 60 mph in the US (depending on the state and
+the highway).  Cars typically go at roughly the same speed, so the
+typical spread might be just 3-5 mph above or below the center value.
+Speeders rarely go above 100 mph &mdash; that&#39;s an extreme value.</p>
+
+<p>If there is a traffic jam, the situation is completely different.  The
+typical speed might be 10 mph, with 0 not being particularly extreme.
+</aside></p>
+
+<ul>
+<li><p>Systolic blood pressure in adults.  [You might need to look this
+up on the Internet.]</p>
+
+<p><textarea cols='30' rows='4' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      4,
+"name": "bp",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+A typical systolic BP is roughly 110 mmHg, which a typical spread of
+perhaps 10-20 mmHG on either side.  An extremely high blood pressure
+is 200 mmHg.  A systolic blood pressure below 90 mmHg is considered
+abnormally low and can lead to dizziness or fainting.
+</aside></p>
+
+<ul>
+<li><p>Blood cholesterol LDL levels. [Again, you might need the
+Internet.]</p>
+
+<p><textarea cols='30' rows='4' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      5,
+"name": "cholesterol",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+Web sites list an LDL cholesterol level of less than 200 mg/dL as
+<code>desirable,&#39;&#39; without indicating what fraction of the population is
+in this group and what a typical value is.  They list a level of 240
+mg/dL as</code>high risk&#39;&#39;, again without saying what fraction of people
+are at high risk.<br/>
+</aside></p>
+
+<ul>
+<li><p>Fuel economy among different models of
+cars.</p>
+
+<p><textarea cols='30' rows='4' id='text6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info6'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      6,
+"name": "car",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout6' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+A typical car gets something like 20 mile-per-gallon, with most cars
+getting somewhere from 10 to 35.  An extreme low value for a car is 5
+mpg.  A very high value is 50 mpg.
+</aside></p>
+
+<ul>
+<li><p>Wind speed on a summer day.</p>
+
+<p><textarea cols='30' rows='4' id='text7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info7'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      7,
+"name": "wind",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout7' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+A typical summer day has a wind speed of 0 to 15 miles per hour
+(depending of course on where you are).  So the typical value might be
+5 mph with a spread of about 5 around that.  0 is not so unusual, and
+of course you can&#39;t have a negative wind speed.  A speed of 60 mph is
+quite extreme.  Above that is hurricane levels, even more extreme.<br/>
+</aside></p>
+
+<ul>
+<li><p>Hours of sleep per night for college students.</p>
+
+<p><textarea cols='30' rows='4' id='text8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info8'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P23-SD",
+"itemN":      8,
+"name": "sleep",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout8' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+Of course, some college students go without sleep for a day or two,
+but it seems reasonable to think that most students get an average of
+5 to 10 hours per night.  Perhaps 6-7 is typical (although not
+necessarily healthy!), with a spread of 2 hours on either side of
+that.  An extreme value is 15 hours &mdash; though this can happen.
+Obviously 24 is the limit.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4", "text5", "text6", "text7", "text8" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

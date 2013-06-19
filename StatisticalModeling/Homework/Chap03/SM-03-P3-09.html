@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.09</title>
 
 <style type="text/css">
 body, td {
@@ -178,45 +178,364 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.09</h1>
 
-<h3>Models</h3>
+<p>Here is a boxplot:</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
-
-<h3>Variable names</h3>
-
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">plot1, fig=true,include=false,width=4,height=4,echo=false
+x = rbinom(1000,10, .2)
+boxplot(x)
 </code></pre>
 
-<h3>paragraphs</h3>
+<pre><code class="r">includegraphics[width=2.5in]{Figures/AC128-plot1.pdf
+</code></pre>
 
-<p>Mark with 4 hashes</p>
-
-<h4>like this</h4>
-
-<h3>texttt</h3>
-
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
-
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
-
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
+<p>Reading from the graph, answer the following:</p>
 
 <ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
+<li><p>What is the median?</p>
+
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "median",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Can't estimate from this graph" 
+}'>Can&#39;t estimate from this graph</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
 </ul>
+
+<p><aside> ANSWER:
+The boxplot displays the 25th, 50th, and 75th percentiles as the
+bottom, middle, and top of the box.<br/>
+the 
+</aside></p>
+
+<ul>
+<li><p>What is the 75th percentile?</p>
+
+<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      2,
+"name": "75percentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Can't estimate from this graph" 
+}'>Can&#39;t estimate from this graph</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>What is the IQR?</p>
+
+<p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      3,
+"name": "IQR",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Can't estimate from this graph" 
+}'>Can&#39;t estimate from this graph</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+The IQR is the distance between the 25th and 75th percentiles.
+</aside></p>
+
+<ul>
+<li><p>What is the 40th percentile?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> Between 0 and 1<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> Between 1 and 2<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Between 2 and 3<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> Between 3 and 4<br/>
+<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> Between 4 and 6<br/>
+<label for='MCitem6'><input type='radio' name='MC1' id='MCitem6' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P9-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> Can&#39;t estimate from this graph     </p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+The 40th percentile <strong>must</strong> be somewhere between the 25th and 50th
+percentiles, both of which can be read off the graph.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "MC1" ]'>Ignore me</option></select></p>
 
 </body>
 

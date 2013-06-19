@@ -145,22 +145,75 @@ hr {
 
 <p>Here is a small data frame about automobiles.</p>
 
-<p>\bigskip
-\centerline{\small\begin{tabular}{|rrrrll|}\hline
-Make and &amp; Vehicle &amp; Trans. &amp; # of &amp; City &amp; Hwy \
-model &amp; type &amp; type &amp; cyl. &amp; MPG &amp; MPG \ \hline \hline
-Kia Optima &amp; compact &amp; Man. &amp; 4 &amp; 21 &amp; 31\
-Kia Optima &amp; compact &amp; Auto. &amp; 6 &amp; 20 &amp; 28\
-Saab 9-7X AWD &amp; SUV &amp; Auto. &amp; 6 &amp; 14 &amp; 20\
-Saab 9-7X AWD &amp; SUV &amp; Auto. &amp; 8 &amp; 12 &amp; 16\
-Ford Focus &amp; compact &amp; Man. &amp; 4 &amp; 24 &amp; 35\
-Ford Focus &amp; compact  &amp; Auto. &amp; 4 &amp; 24 &amp; 33\
-Ford F150 2WD &amp; pickup  &amp; Auto. &amp; 8 &amp; 13 &amp; 17\hline
-\end{tabular}}</p>
+<table><thead>
+<tr>
+<th align="center">Make and model</th>
+<th align="center">Vehicle type</th>
+<th align="center">Trans. type</th>
+<th align="center"># of cyl.</th>
+<th align="center">City MPG</th>
+<th align="center">Hwy MPG</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Kia Optima</td>
+<td align="center">compact</td>
+<td align="center">Man.</td>
+<td align="center">4</td>
+<td align="center">21</td>
+<td align="center">31</td>
+</tr>
+<tr>
+<td align="center">Kia Optima</td>
+<td align="center">compact</td>
+<td align="center">Auto.</td>
+<td align="center">6</td>
+<td align="center">20</td>
+<td align="center">28</td>
+</tr>
+<tr>
+<td align="center">Saab 9-7X AWD</td>
+<td align="center">SUV</td>
+<td align="center">Auto.</td>
+<td align="center">6</td>
+<td align="center">14</td>
+<td align="center">20</td>
+</tr>
+<tr>
+<td align="center">Saab 9-7X AWD</td>
+<td align="center">SUV</td>
+<td align="center">Auto.</td>
+<td align="center">8</td>
+<td align="center">12</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">Ford Focus</td>
+<td align="center">compact</td>
+<td align="center">Man.</td>
+<td align="center">4</td>
+<td align="center">24</td>
+<td align="center">35</td>
+</tr>
+<tr>
+<td align="center">Ford Focus</td>
+<td align="center">compact</td>
+<td align="center">Auto.</td>
+<td align="center">4</td>
+<td align="center">24</td>
+<td align="center">33</td>
+</tr>
+<tr>
+<td align="center">Ford F150 2WD</td>
+<td align="center">pickup</td>
+<td align="center">Auto.</td>
+<td align="center">8</td>
+<td align="center">13</td>
+<td align="center">17</td>
+</tr>
+</tbody></table>
 
-<ul>
-<li>What are the cases in the data frame?</li>
-</ul>
+<p>What are the cases in the data frame?</p>
 
 <p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
  "pts":      0,
@@ -175,7 +228,7 @@ Ford F150 2WD &amp; pickup  &amp; Auto. &amp; 8 &amp; 13 &amp; 17\hline
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Individual car companies<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
 "itemInfo": {
@@ -188,7 +241,7 @@ Ford F150 2WD &amp; pickup  &amp; Auto. &amp; 8 &amp; 13 &amp; 17\hline
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Individual makes and models of cars<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
 "itemInfo": {
@@ -201,7 +254,7 @@ Ford F150 2WD &amp; pickup  &amp; Auto. &amp; 8 &amp; 13 &amp; 17\hline
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> Individual configurations of cars<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
 "itemInfo": {
@@ -478,12 +531,10 @@ SUV is a level of the <em>Vehicle type</em> variable.
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out6' class='shiny-html-output'> </span></p>
-
-<ul>
-<li>Why are some cars listed twice?  Is this a mistake in the table?</li>
-</ul></li>
+}'>Quantitative</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
 </ul>
+
+<p>Why are some cars listed twice?  Is this a mistake in the table?</p>
 
 <p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
  "pts":      0,
@@ -498,7 +549,7 @@ SUV is a level of the <em>Vehicle type</em> variable.
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Yes, it&#39;s a mistake.<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ <label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
 "itemInfo": {
@@ -511,7 +562,7 @@ SUV is a level of the <em>Vehicle type</em> variable.
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> A car brand might be listed more than once, but the cases have different attributes on other variables.<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ <label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
 "itemInfo": {

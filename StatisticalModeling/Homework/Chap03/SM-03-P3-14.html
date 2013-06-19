@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob 3.14</title>
 
 <style type="text/css">
 body, td {
@@ -178,45 +178,97 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob 3.14</h1>
 
-<h3>Models</h3>
+<p>The boxplots below are all made from exactly the same data.  One of
+them is made correctly, according to the &ldquo;1.5 IQR&#39;&#39; convention for
+drawing the whiskers.  The others are drawn differently.</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
-
-<h3>Variable names</h3>
-
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">dd = c(jitter(seq(-10, 10, by = 1)), runif(1000, -3, 3))
 </code></pre>
 
-<h3>paragraphs</h3>
+<pre><code class="r">\centerline{\begin{tabular}{cccc}
+{\bf Plot 1} &amp; {\bf Plot 2} &amp; {\bf Plot 3} &amp; {\bf Plot 4}\\
+ &amp; &amp; \\
+&lt;&lt;b1,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false&gt;&gt;=
+boxplot(dd,range=2.5,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b1}
+&amp;
+&lt;&lt;b2,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false&gt;&gt;=
+boxplot(dd,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b2}
+&amp;
+&lt;&lt;b3,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false&gt;&gt;=
+boxplot(dd,range=1,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b3}
+&amp;
+&lt;&lt;b4,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false&gt;&gt;=
+boxplot(dd,range=0,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b4}
+</code></pre>
 
-<p>Mark with 4 hashes</p>
+<p>Which of the plots is correct?</p>
 
-<h4>like this</h4>
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P14-SD",
+"itemN":      1,
+"name": "correctplot",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P14-SD",
+"itemN":      1,
+"name": "correctplot",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P14-SD",
+"itemN":      1,
+"name": "correctplot",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P14-SD",
+"itemN":      1,
+"name": "correctplot",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> </select><span id='out1' class='shiny-html-output'> </span></p>
 
-<h3>texttt</h3>
-
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
-
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
-
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
-
-<ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
-</ul>
+<p><aside>
+ANSWER:
+The height of the box gives the IQR.  If there are outliers, the whisker length should be 1.5
+times the IQR.  So look for the plot that has a whisker length
+somewhat taller than the box itself.
+</aside></p>
 
 </body>
 

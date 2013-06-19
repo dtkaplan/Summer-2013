@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.50</title>
 
 <style type="text/css">
 body, td {
@@ -173,50 +173,482 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 
 
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.50</h1>
 
-<h3>Models</h3>
+<p>What&#39;s a &ldquo;normal&rdquo; body temperature?  Depending on whether you
+use the Celsius or Fahrenheit scale, you are probably used to the
+numbers \( 37^\circ \) C or \( 98.6^\circ \) F.  These numbers come from
+the work of Carl Wunderlich, published in <em>Das Verhalten der Eigenwarme
+in Krankenheiten</em> in 1868 based on more than a million measurements
+made under the armpit.  According to Wunderlich, &ldquo;When the organism (man) is in a normal condition,
+the general temperature of the body maintains itself at the
+physiologic point: \( 37^\circ \) C \( =98.6^\circ \) F.&rdquo;</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
+<p>Since 1868, not only have the techniques for measuring temperatures
+improved, but so has the understanding that &ldquo;normal&rdquo; is not a single
+temperature but a range of temperatures.</p>
 
-<h3>Variable names</h3>
+<p>A 1992 article in the Journal of the American Medical Association (PA
+Mackowiak et al., &ldquo;A Critical Appraisal of \( 98.6^\circ \) F &hellip;&#39;&#39;  JAMA
+v. 268(12) pp. 1578-1580) examined temperature measurements made
+orally with an electronic thermometer.  The subjects were 148 healthy
+volunteers between age 18 and 40.</p>
 
-<p><em>height</em></p>
+<p>The figure shows the distribution of temperatures, separately for
+males and females.  Note that the horizontal scale is given in both C
+and F &mdash; this problem will use F.</p>
 
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">\bigskip
+\centerline{\includegraphics[width=4in]{../Figures/f2009-p107-Fig1.png}}
+%\centerline{\pnggraphicsfile[width=4in]{f2009-p107-Fig1}{png}{90}}
+\bigskip
 </code></pre>
 
-<h3>paragraphs</h3>
-
-<p>Mark with 4 hashes</p>
-
-<h4>like this</h4>
-
-<h3>texttt</h3>
-
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
-
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
-
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
+<p>What&#39;s the absolute range for females?</p>
 
 <ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
+<li><p>Minimum: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.1" 
+}'>96.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "96.3" 
+}'>96.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "97.1" 
+}'>97.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "98.6" 
+}'>98.6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "99.9" 
+}'>99.9</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "min",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100.8" 
+}'>100.8</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>Maximum: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.1" 
+}'>96.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.3" 
+}'>96.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "97.1" 
+}'>97.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "98.6" 
+}'>98.6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "99.9" 
+}'>99.9</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "max",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100.8" 
+}'>100.8</option> </select><span id='out2' class='shiny-html-output'> </span> </p></li>
 </ul>
+
+<p>And for males?</p>
+
+<ul>
+<li><p>Minimum:  <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "96.1" 
+}'>96.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.3" 
+}'>96.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "97.1" 
+}'>97.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "98.6" 
+}'>98.6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "99.9" 
+}'>99.9</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "min1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100.8" 
+}'>100.8</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>Maximum: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.1" 
+}'>96.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "96.3" 
+}'>96.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "97.1" 
+}'>97.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "98.6" 
+}'>98.6</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "99.9" 
+}'>99.9</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P50-SD",
+"itemN":      4,
+"name": "max1",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100.8" 
+}'>100.8</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>Notice that there is an outlier for the females&#39; temperature, as
+evidenced by a big gap in temperature between that bar and the next closest bar.  How
+big is the gap?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> About \( 0.01^\circ \) F.<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> About \( 0.1^\circ \) F.<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Almost \( 1^\circ \) F.</p>
+
+<p>Give a 95% coverage interval for females.  Hint: The interval will
+exclude the most extreme 2.5% of cases on each of the left and right
+sides of the distribution.  You can find the left endpoint of the 95%
+interval by scanning in from the left, adding up the heights of the
+bars until they total 0.025.  Similarly, the right endpoint can be
+marked by scanning in from the right until the bars total 0.025.</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> About \( 96.2^\circ \) F to about \( 99.0^\circ \) F<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> About \( 96.8^\circ \) F to about \( 100.0^\circ \) F<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> About \( 96.8^\circ \) F to about \( 100.0^\circ \) F     </p>
+
+<p>And for males?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> About \( 96.2^\circ \) F to about \( 99.2^\circ \) F<br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> About \( 96.7^\circ \) F to about  \( 99.4^\circ \) F.<br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P50-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> About \( 97.5^\circ \) F to about \( 99.6^\circ \) F</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "MC1", "MC2", "MC3" ]'>Ignore me</option></select></p>
 
 </body>
 

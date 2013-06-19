@@ -1,0 +1,137 @@
+Intro to Statistical Modeling Ch. 2 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-02-P2-SD")
+```
+
+Using the <code>table</code> operator and the comparison operators (such as
+<code>></code> or <code>==</code>), answer the following questions about the CO2 data.  You can read in the CO2 data with the statement 
+
+```{r}
+CO2 = fetchData("CO2") 
+```
+You can see the data set itself by giving the command
+
+```{r results="hide"}
+CO2
+```
+
+In this exercise, you will use R commands to count how many of the
+cases satisfy various criteria:
+
+How many of the plants in CO2 are Mc1 for *Plant*?
+
+```{r include=FALSE}
+numberplants=selectNumber(choices=c(7,12,14,21,28,34), correct=c(7), name="MC1", totalPts=1)
+```
+
+`r I(numberplants)`
+
+<aside>
+ANSWER:
+```{r}
+table(co2$Plant=='MC1')
+```
+</aside>
+
+How many of the plants in CO2 are either Mc1 or Mn1?
+
+```{r include=FALSE}
+numberplants2=selectNumber(choices=c(8,12,14,16,23,54,92), correct=c(14), name="Mc1orMn1", totalPts=1)
+```
+
+`r I(numberplants2)`
+
+<aside>
+ANSWER:
+```{r}
+table( CO2$Plant == 'Mc1' | CO2$Plant == 'Mn1')
+```
+</aside>
+
+How many are Quebec for *Type* and nonchilled for *Treatment*?
+
+```{r include=FALSE}
+numberplants3=selectNumber(choices=c(8,12,14,16,21,23,54,92), correct=c(21), name="Quebec", totalPts=1)
+```
+
+`r I(numberplants3)`
+
+<aside>
+ANSWER:
+```{r}
+table( CO2$Type=="Quebec" & CO2$Treatment=="nonchilled")
+```   
+or, another way
+
+```{r}
+with(CO2,table(Type, Treatment))
+``` 
+</aside>
+
+How many have a concentration (*conc*) of 300 or bigger?
+
+```{r include=FALSE}
+numberplants4=selectNumber(choices=c(12,24,36,48,60), correct=c(48), name="concentration", totalPts=1)
+```
+
+`r I(numberplants4)`
+
+<aside>
+ANSWER:
+```{r}
+table( co2$conc >= 300)
+```
+</aside>
+
+How many have a concentration between 300 and 450 (inclusive)?
+
+```{r include=FALSE}
+numberplants5=selectNumber(choices=c(12,24,36,48,60), correct=c(12), name="conc300to450", totalPts=1)
+```
+
+`r I(numberplants5)`
+
+<aside>
+ANSWER:
+```{r}
+table( CO2$conc >= 300 & CO2$conc <=450)
+```
+</aside>
+
+How many have a concentration between 300 and 450 (inclusive) and are nonchilled?
+
+```{r include=FALSE}
+numberplants6=selectNumber(choices=c(6,8,10,12,14,16), correct=c(6), name="concNonchilled", totalPts=1)
+```
+
+`r I(numberplants6)`
+
+<aside>
+ANSWER:
+```{r}
+table( CO2$Treatment == 'chilled' & 
+      CO2$conc >= 300 & CO2$conc <=450)
+```   
+</aside>
+
+
+How many have an *uptake* that is less than 1/10 of the concentration
+(in the units reported)?
+
+```{r include=FALSE}
+numberplants7=selectNumber(choices=c(17,33,34,51,68), correct=c(51), name="uptake", totalPts=1)
+```
+
+`r I(numberplants7)`
+
+<aside>
+ANSWER:
+```{r}
+table(CO2$uptake < 0.1*CO2$conc)
+```
+</aside>
+
+`r I(closeProblem())`

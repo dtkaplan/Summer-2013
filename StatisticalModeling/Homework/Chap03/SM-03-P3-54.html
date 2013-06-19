@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.54</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.54</h1>
+
+<p>There are two kinds of questions that are often asked relating to
+percentiles:</p>
+
+<ul>
+<li>What is the value that falls at a given percentage?  For
+instance, in the <code>ten-mile-race.csv</code> running data, how fast are the
+fastest 10% of runners?    In R, you would ask in this way:</li>
+</ul>
+
+<p><code>
+&gt; run = fetchData(&quot;ten-mile-race.csv&quot;)<br/>
+&gt; qdata(0.10, run$net)<br/>
+ 10%<br/>
+4409<br/>
+</code></p>
+
+<p>The answers is in the units of the  variable, in this case seconds.
+So 10% of the runners have net times faster than or equal to 4409 seconds.</p>
+
+<ul>
+<li>What percentage falls at a given value?  For instance, what
+fraction of runners are faster than 4000 seconds?</li>
+</ul>
+
+<p><code>
+&gt; pdata(4000, run$net)<br/>
+[1] 0.04029643
+</code></p>
+
+<p>The answer includes those whose <em>net</em> time is exactly <strong>equal to</strong> or
+<strong>less than</strong> 4000 seconds.</p>
+
+<p>It&#39;s important to pay attention to the <code>p</code> and <code>q</code> in
+the statement.  <code>pdata</code> and <code>qdata</code> ask related but
+different questions.</p>
+
+<p>\vspace{bigskipamount}</p>
+
+<p>Use <code>pdata</code> and <code>qdata</code> to answer the following
+questions about the running data.</p>
+
+<ul>
+<li><p>Below (or equal to)  what age are the youngest 35% of
+runners?</p>
+
+<ul>
+<li>Which statement will do the correct calculation?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <code>pdata(0.35,run$age)</code><br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <code>qdata(0.35,run$age)</code><br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <code>pdata(35,run$age)</code><br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <code>qdata(35,run$age)</code></p>
+
+<ul>
+<li>What will the answer be? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "28" 
+}'>28</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "29" 
+}'>29</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30" 
+}'>30</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "31" 
+}'>31</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "32" 
+}'>32</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "33" 
+}'>33</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      1,
+"name": "answer",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "35" 
+}'>35</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+</ul></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li><p>What&#39;s the <em>net</em> time that divides the slowest 20% of
+runners from the rest of the runners?</p>
+
+<ul>
+<li>Which statement will do the correct calculation?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <code>pdata(0.20,run$net)</code><br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <code>qdata(0.20, run$net)</code><br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <code>pdata(0.80,run$net)</code><br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <code>qdata(0.80, run$net)</code>    </p>
+
+<ul>
+<li>What will the answer be? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4921" 
+}'>4921</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5318" 
+}'>5318</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5988" 
+}'>5988</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "6346" 
+}'>6346</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7123" 
+}'>7123</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7431" 
+}'>7431</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li><p>What is the 95% coverage interval on age?</p>
+
+<ul>
+<li>Which statement will do the correct calculation?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <code>pdata(c(0.025,0.975),run$age)</code><br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <code>qdata(c(0.025,0.975),run$age)</code><br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <code>pdata(c(0.050,0.950),run$age)</code><br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <code>qdata(c(0.050,0.950),run$age)</code></p>
+
+<ul>
+<li>What will the answer be?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 22 to 60<br/>
+<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 20 to 65<br/>
+<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 25 to 59<br/>
+<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 20 to 60     </p></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li><p>What fraction of runners are 30 or younger?</p>
+
+<ul>
+<li>Which statement will do the correct calculation?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC5' id='MCitem1' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <code>pdata(30, run$age)</code>
+<label for='MCitem2'><input type='radio' name='MC5' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <code>qdata(30, run$age)</code><br/>
+<label for='MCitem3'><input type='radio' name='MC5' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <code>pdata(30.1, run$age)</code><br/>
+<label for='MCitem4'><input type='radio' name='MC5' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <code>qdata(30.1, run$age)</code></p>
+
+<ul>
+<li>What will the answer be? In percent: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "29.3" 
+}'>29.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30.1" 
+}'>30.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "33.7" 
+}'>33.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "35.9" 
+}'>35.9</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "38" 
+}'>38</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      3,
+"name": "<30",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "39.3" 
+}'>39.3</option> </select><span id='out3' class='shiny-html-output'> </span> </li>
+</ul></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li><p>What fraction of runners are 65 or older?  (Caution: This isn&#39;t
+yet in the form of a BELOW question.)</p>
+
+<ul>
+<li>Which statement will do the correct calculation?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC6' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <code>pdata(65, run$age)</code><br/>
+<label for='MCitem2'><input type='radio' name='MC6' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <code>pdata(64.99, run$age)</code><br/>
+<label for='MCitem3'><input type='radio' name='MC6' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <code>pdata(65.01, run$age)</code> 
+<label for='MCitem4'><input type='radio' name='MC6' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <code>1-pdata(65, run$age)</code><br/>
+<label for='MCitem5'><input type='radio' name='MC6' id='MCitem5' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> <code>1-pdata(64.99, run$age)</code><br/>
+<label for='MCitem6'><input type='radio' name='MC6' id='MCitem6' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> <code>1-pdata(65.01, run$age)</code>     </p></li>
+</ul>
+
+<p><aside>
+ANSWER:
+Since <code>pdata</code> answers a <em>below</em> question, the first step is
+to ask a relevant question in that form.  You want the runners who are
+65 or older, which is related to the fraction who are younger than
+65.  So, <code>pdata(64.99, run\( age)</code>  % \) 
+which works because the ages
+are in integer years.  Subtract that answer from 1 to get the final answer.</p>
+
+<p></aside></p>
+
+<ul>
+<li><p>What will the answer be? In percent: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "65plus",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "65plus",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1.1" 
+}'>1.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "65plus",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.7" 
+}'>1.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "65plus",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.3" 
+}'>2.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      4,
+"name": "65plus",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.9" 
+}'>2.9</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+
+<ul>
+<li>The time it takes for a runner to get to the start line after
+the starting gun is fired is
+the difference between the <em>time</em> and <em>net</em>.<br/>
+<code>
+run$to.start = run$time - run$net
+</code></li>
+</ul></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li>How long is it before 75% of runners get to the start line? In seconds: <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "164" 
+}'>164</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "192" 
+}'>192</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "213" 
+}'>213</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "294" 
+}'>294</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "324" 
+}'>324</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      5,
+"name": "startline",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "351" 
+}'>351</option> </select><span id='out5' class='shiny-html-output'> </span> </li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li>What fraction of runners get to the start line before one
+minute?  (Caution: the times are measured in seconds.) In percent: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "19" 
+}'>19</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "25" 
+}'>25</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "31" 
+}'>31</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      6,
+"name": "fraction",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out6' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li><p>What is the 95% coverage interval on the ages of female
+runners?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC7' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      7,
+"name": "7",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 19 to 61 years<br/>
+<label for='MCitem2'><input type='radio' name='MC7' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      7,
+"name": "7",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 22 to 61 years<br/>
+<label for='MCitem3'><input type='radio' name='MC7' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      7,
+"name": "7",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 19 to 56 years<br/>
+<label for='MCitem4'><input type='radio' name='MC7' id='MCitem4' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      7,
+"name": "7",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 22 to 56 years     </p></li>
+</ul>
+
+<p>\vspace{bigskipamount}</p>
+
+<ul>
+<li>What fraction of runners have a <em>net</em> time BELOW 4000
+seconds?  (That is, don&#39;t include those who are at exactly 4000
+seconds.) In percent: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4921" 
+}'>4921</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5318" 
+}'>5318</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5988" 
+}'>5988</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "6346" 
+}'>6346</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7123" 
+}'>7123</option> <option value='{
+"itemInfo": {
+"setID": "SM-03-P54-SD",
+"itemN":      2,
+"name": "nettime",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7431" 
+}'>7431</option> </select><span id='out2' class='shiny-html-output'> </span> </li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6", "MC7" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

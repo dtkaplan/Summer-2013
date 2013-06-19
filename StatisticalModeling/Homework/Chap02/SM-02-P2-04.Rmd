@@ -9,29 +9,27 @@ newScorerSet("SM-02-P2-24-SD")
 Here is a small data frame about automobiles.
 
 
-\bigskip
-\centerline{\small\begin{tabular}{|rrrrll|}\hline
-Make and & Vehicle & Trans. & \# of & City & Hwy \\
-model & type & type & cyl. & MPG & MPG \\ \hline \hline
-Kia Optima & compact & Man. & 4 & 21 & 31\\
-Kia Optima & compact & Auto. & 6 & 20 & 28\\
-Saab 9-7X AWD & SUV & Auto. & 6 & 14 & 20\\
-Saab 9-7X AWD & SUV & Auto. & 8 & 12 & 16\\
-Ford Focus & compact & Man. & 4 & 24 & 35\\
-Ford Focus & compact  & Auto. & 4 & 24 & 33\\
-Ford F150 2WD & pickup  & Auto. & 8 & 13 & 17\\\hline
-\end{tabular}}
 
-* What are the cases in the data frame?
+Make and model | Vehicle type | Trans. type | \# of cyl. | City MPG | Hwy MPG
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----: 
+Kia Optima | compact | Man. | 4 | 21 | 31
+Kia Optima | compact | Auto. | 6 | 20 | 28
+Saab 9-7X AWD | SUV | Auto. | 6 | 14 | 20
+Saab 9-7X AWD | SUV | Auto. | 8 | 12 | 16
+Ford Focus | compact | Man. | 4 | 24 | 35
+Ford Focus | compact  | Auto. | 4 | 24 | 33
+Ford F150 2WD | pickup  | Auto. | 8 | 13 | 17
+
+What are the cases in the data frame?
 
 ```{r include=FALSE}
 f = newMC(totalPts=1)
 ```
 
-`r I(f(FALSE))` Individual car companies     
-`r I(f(FALSE))` Individual makes and models of cars     
-`r I(f(TRUE))` Individual configurations of cars     
-`r I(f(FALSE))` Different sizes of cars     
+ `r I(f(FALSE))` Individual car companies     
+ `r I(f(FALSE))` Individual makes and models of cars     
+ `r I(f(TRUE))` Individual configurations of cars     
+ `r I(f(FALSE))` Different sizes of cars     
 
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))
@@ -104,14 +102,14 @@ cyl=selectSet(name="catorquant6", totalPts=1, "Not a variable"=FALSE, "Categoric
 ```
  `r I(cyl)`
 
-* Why are some cars listed twice?  Is this a mistake in the table?
+Why are some cars listed twice?  Is this a mistake in the table?
 
 ```{r include=FALSE}
 f = newMC(totalPts=1)
 ```
-`r I(f(FALSE))` Yes, it's a mistake.   
-`r I(f(TRUE))` A car brand might be listed more than once, but the cases have different attributes on other variables.     
-`r I(f(FALSE))` Some cars are more in demand than others.     
+ `r I(f(FALSE))` Yes, it's a mistake.   
+ `r I(f(TRUE))` A car brand might be listed more than once, but the cases have different attributes on other variables.     
+ `r I(f(FALSE))` Some cars are more in demand than others.     
 
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))

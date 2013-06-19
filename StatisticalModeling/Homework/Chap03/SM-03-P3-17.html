@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.17</title>
 
 <style type="text/css">
 body, td {
@@ -178,45 +178,435 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.17</h1>
 
-<h3>Models</h3>
+<p>As the name suggests, the Old Faithful geyser in Yellowstone National
+Park has eruptions that come at fairly predictable intervals, making
+it particularly attractive to tourists.</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
+<pre><code class="r">\centerline{\hbox{\includegraphics[width=1.5in]{../Figures/graph-AC129-1.png}
+   \hspace*{.25in}\includegraphics[width=1in]{../Figures/old-faithful.jpg}}}
 
-<h3>Variable names</h3>
-
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+% The figure is from the National Park Service web site.
+% www.cr.nps.gov/.../hampton/images/fig3.jpg
 </code></pre>
 
-<h3>paragraphs</h3>
+<ul>
+<li><p>You are a busy tourist and have only 10 minutes to sit around and
+watch the geyser.  But you can choose when to arrive.  If the last
+eruption occurred at noon, what time should you arrive at the geyser
+to maximize your chances of seeing an eruption?</p>
 
-<p>Mark with 4 hashes</p>
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 12:50<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 1:00<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 1:05<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 1:15<br/>
+<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> 1:25     </p></li>
+<li><p>Roughly, what is the probability that in the best 10-minute interval,
+you will actually see the eruption:</p>
 
-<h4>like this</h4>
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 5%<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 10%<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 20%<br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 30%<br/>
+<label for='MCitem5'><input type='radio' name='MC2' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> 50%<br/>
+<label for='MCitem6'><input type='radio' name='MC2' id='MCitem6' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> 75%     </p></li>
+<li><p>A simple measure of how faithful is Old Faithful is the interquartile
+range.  What is the interquartile range, according to the
+boxplot above?</p>
 
-<h3>texttt</h3>
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 10 minutes<br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 15 minutes<br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 25 minutes<br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 35 minutes<br/>
+<label for='MCitem5'><input type='radio' name='MC3' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> 50 minutes<br/>
+<label for='MCitem6'><input type='radio' name='MC3' id='MCitem6' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> 75 minutes     </p></li>
+<li><p>Not only are you a busy tourist, you are a smart tourist.  Having read
+about Old Faithful, you understand that the time between eruptions
+depends on how long the previous eruption lasted.   Here&#39;s a box
+plot indicating the distribution of inter-eruption times when the
+previous eruption duration was less than three minutes.  (That is, &ldquo;TRUE&#39;&#39; means the previous eruption lasted less than three minutes.)</p></li>
+</ul>
 
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
+<pre><code class="r">centerline{\includegraphics[width=20in]{../Figures/graph-AC129-2.png}}
+</code></pre>
 
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
+<p>You can easily ask the ranger what was the duration of the previous
+eruption. </p>
 
-<h3>Lists</h3>
+<p>What is the best 10-minute interval to return (after a noon eruption)
+so that you will be most likely to see the next eruption, given that
+the previous eruption was less than three minutes in duration (the
+TRUE&#39;&#39; category).</p>
 
-<p>Description lists might look like this:</p>
+<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 1:00 to 1:10<br/>
+ <label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 1:05 to 1:15<br/>
+ <label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 1:10 to 1:20<br/>
+ <label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 1:15 to 1:25<br/>
+ <label for='MCitem5'><input type='radio' name='MC4' id='MCitem5' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> 1:20 to 1:30<br/>
+ <label for='MCitem6'><input type='radio' name='MC4' id='MCitem6' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P17-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> 1:25 to 1:35     </p>
 
 <ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
+<li><p>How likely are you to see an eruption if you return for the most
+likely 10-minute interval?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC5' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> About 5%<br/>
+<label for='MCitem2'><input type='radio' name='MC5' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> About 10%<br/>
+<label for='MCitem3'><input type='radio' name='MC5' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> About 20%<br/>
+<label for='MCitem4'><input type='radio' name='MC5' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> About 30%<br/>
+<label for='MCitem5'><input type='radio' name='MC5' id='MCitem5' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> About 50%<br/>
+<label for='MCitem6'><input type='radio' name='MC5' id='MCitem6' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P17-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> About 75%</p></li>
 </ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3", "MC4", "MC5" ]'>Ignore me</option></select></p>
 
 </body>
 

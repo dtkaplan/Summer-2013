@@ -1,0 +1,78 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.09
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P9-SD")
+```
+
+
+Here is a boxplot:
+```{r, eval=FALSE}
+plot1, fig=true,include=false,width=4,height=4,echo=false
+x = rbinom(1000,10, .2)
+boxplot(x)
+```
+
+```{r, eval=FALSE}
+includegraphics[width=2.5in]{Figures/AC128-plot1.pdf
+```
+
+
+Reading from the graph, answer the following:
+
+* What is the median?
+```{r include=FALSE}
+graph=selectSet(name="median", totalPts=1, "0"=FALSE, "1"=FALSE, "2"=TRUE, "3"=FALSE, "6"=FALSE, "Can't estimate from this graph"=FALSE)
+```
+
+ `r I(graph)`
+                             
+<aside> ANSWER:
+The boxplot displays the 25th, 50th, and 75th percentiles as the
+bottom, middle, and top of the box.  
+the 
+</aside>
+
+* What is the 75th percentile?
+```{r include=FALSE}
+graph2=selectSet(name="75percentile", totalPts=1, "0"=FALSE, "1"=FALSE, "2"=FALSE, "3"=TRUE, "6"=FALSE, "Can't estimate from this graph"=FALSE)
+```
+
+ `r I(graph2)`
+
+* What is the IQR?
+```{r include=FALSE}
+graph3=selectSet(name="IQR", totalPts=1, "0"=FALSE, "1"=FALSE, "2"=TRUE, "3"=FALSE, "4"=FALSE, "6"=FALSE, "Can't estimate from this graph"=FALSE)
+```
+
+ `r I(graph3)`
+
+<aside>
+ANSWER:
+The IQR is the distance between the 25th and 75th percentiles.
+</aside>
+
+* What is the 40th percentile?
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+
+ `r I(f(FALSE))` Between 0 and 1     
+ `r I(f(TRUE))` Between 1 and 2      
+ `r I(f(FALSE))` Between 2 and 3      
+ `r I(f(FALSE))` Between 3 and 4     
+ `r I(f(FALSE))` Between 4 and 6      
+ `r I(f(FALSE))` Can't estimate from this graph     
+ 
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:
+The 40th percentile **must** be somewhere between the 25th and 50th
+percentiles, both of which can be read off the graph.
+</aside>
+
+`r I(closeProblem())`

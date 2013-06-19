@@ -1,0 +1,53 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P10-SD")
+```
+
+##### This is either 10a or 10b, but because I can't tell what the plot looks like, I can't tell which one it is.  I'll finish this later.
+
+
+The plot shows two different displays of density.  The displays might
+be from the same distribution or two different distributions.
+
+```{r eval=FALSE}
+<<exp,fig=TRUE,pdf=TRUE,include=false,width=5,height=4,echo=false>>=
+one = rnorm(150,mean=5,sd=2)
+x = seq(-2,12,length=100)
+plot(x,pnorm(x,mean=5,sd=2),ylab="???",xlab="Value",main="",type="l",lwd=2)
+rug(one)
+```
+
+```{r eval=FALSE}
+\centerline{\includegraphics[width=4in]{Figures/B103-2-exp.pdf}}
+```
+
+\begin{enumerate}[(a)]
+\item What are the two displays?
+
+\begin{MultipleChoice}
+\wrong{Density and cumulative}
+\correct{Rug and cumulative}
+\wrong{Cumulative and box plot}
+\wrong{Density and rug plot}
+\wrong{Rug and box plot}
+\end{MultipleChoice}
+
+\begin{AnswerText}
+The rug plot is the small ticks on the horizontal axis.  The other
+distribution has a shape that increases steadily --- never decreasing --- starting from 0 on
+the left and going to 1 on the right.  That's the shape of a
+cumulative distribution.  
+\end{AnswerText}
+
+\item 
+The two displays show the same distribution. \TorF{true} 
+
+
+\item Describe briefly any sign of mismatch or what features convince you
+that the two displays are equivalent. \\
+\TextEntry
+\end{enumerate}
+

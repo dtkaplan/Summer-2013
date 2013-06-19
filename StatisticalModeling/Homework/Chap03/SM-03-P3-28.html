@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.28</title>
 
 <style type="text/css">
 body, td {
@@ -178,45 +178,56 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.28</h1>
 
-<h3>Models</h3>
+<p>An advertisement for &ldquo;America&#39;s premier weight loss destination&rdquo;
+states that &ldquo;a typical two week stay results in a loss of 7-14 lbs.&rdquo;
+(The <em>New Yorker</em>, 7 April 2008, p 38.)  </p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
+<p>The advertisement gives no details about the meaning of &ldquo;typical.&rdquo;
+Give two or three plausible interpretations of the quoted 7-14 pound
+figure in terms of &ldquo;typical.&rdquo;  What interpretation would be most
+useful to a person trying to predict how much weight he or she might
+lose?</p>
 
-<h3>Variable names</h3>
+<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P28-SD",
+"itemN":      1,
+"name": "typicalweight",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
 
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">% See s2008-conf6 for another take on this problem
 </code></pre>
 
-<h3>paragraphs</h3>
+<p><aside>
+ANSWER:
+A standard meaning for &ldquo;typical&rdquo; is the center of the distribution,
+as might be measured by the mean or median.  Judging from the ad, the
+mean or median might be 10.5 pounds, but stating this would
+misleadingly imply too high a level of precision.  The statement
+&ldquo;7-14 lbs&rdquo; indicates that the weight loss varies significantly from person to
+person.  If &ldquo;typical&rdquo; is taken to refer to the varation in weight
+loss, the interval might be pointing to how much a typical person
+varies from the mean, as could be measured by the standard deviation.  </p>
 
-<p>Mark with 4 hashes</p>
+<p>An obvious interpretation is that a &ldquo;typical&rdquo; person&#39;s weight
+loss will fall into the range 7-14 pounds.  It seems reasonable that
+this interval should cover the majority of people involved.  At a
+minimum, it should therefore be a 50% coverage interval.</p>
 
-<h4>like this</h4>
+<p>The interval would be most useful to a prospective client if it covers
+a substantial majority of the people involved, say 75% or 95%.
+</aside></p>
 
-<h3>texttt</h3>
-
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
-
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
-
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
-
-<ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
-</ul>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1" ]'>Ignore me</option></select></p>
 
 </body>
 

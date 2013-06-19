@@ -1,0 +1,80 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.56
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P56-SD")
+```
+To exercise your ability to extract subsets of data, 
+take each of the following subsets of the swimming records in 
+`SwimRecords`
+ and calculate
+the mean and minimum swimming time for the subset.  (Answers have been
+rounded to one decimal place.)
+
+* All records between 1920 and 1940 (including 1920 and 1940).
+
+```{r include=FALSE}
+records=selectNumber(choices=c(54.6,60.2,64.7,69.6,71.3), correct=c(64.7), totalPts=1, name="mean")
+```
+
+  Mean: `r I(records)`
+
+```{r include=FALSE}
+records2=selectNumber(choices=c(56.4,60.2,64.7,69.6,71.3), correct=c(56.4), totalPts=1, name="min")
+```
+
+  Min: `r I(records2)` 
+
+* Female records in the 1970s and 1980s
+
+```{r include=FALSE}
+records3=selectNumber(choices=c(54.1,54.7,56.2,60.2,64.7,69.6,71.3), correct=c(56.2), totalPts=1, name="mean2")
+```
+
+  Mean: `r I(records3)`
+
+```{r include=FALSE}
+records4=selectNumber(choices=c(54.1,54.7,56.2,60.2,64.7,69.6,71.3), correct=c(54.7), totalPts=1, name="min2")
+```
+
+  Min: `r I(records4)`
+
+* All records that are **slower** than 60 seconds.  (Hint: Think
+  what "slower" means in terms of the swimming times.)
+
+```{r include=FALSE}
+slowrecords=selectNumber(choices=c(56.2,60.2,64.7,69.6,71.3,73.2,75.8), correct=c(69.6), totalPts=1, name="mean3")
+```
+  
+  Mean: `r I(slowrecords)`
+
+```{r include=FALSE}
+slowrecords2=selectNumber(choices=c(56.2,60.2,61.5,64.7,69.6,71.3), correct=c(60.2), name="min3", totalPts=1)
+```
+
+  Min: `r I(slowrecords2)`
+  
+
+<aside>
+<code>
+\> s = subset( swim, year >=1920 & year <=1940)     
+\> mean(s$time)     
+[1] 64.675     
+\> min(s$time)     
+[1] 56.4     
+\> s = subset( swim, sex == 'F' & year >=1970 & year < 1990)     
+\> mean(s$time)     
+[1] 56.22571     
+\> min(s$time)     
+[1] 54.73     
+\> s = subset( swim, time > 60)     
+\> mean(s$time)     
+[1] 69.61667     
+\> min(s$time)     
+[1] 60.2     
+
+</code>
+</aside>
+
+`r I(closeProblem())`

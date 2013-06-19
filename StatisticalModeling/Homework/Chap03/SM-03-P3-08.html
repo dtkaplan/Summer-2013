@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.08</title>
 
 <style type="text/css">
 body, td {
@@ -178,45 +178,157 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.08</h1>
 
-<h3>Models</h3>
+<p>The figure shows the results from the medal winners in the
+women&#39;s 10m air-rifle competition in the 2008 Olympics.  (Figure from
+the New York Times, Aug. 10, 2008)</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
-
-<h3>Variable names</h3>
-
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">\medskip
+\centerline{\includegraphics[width=2.5in]{../Figures/shooting.png}}
+\medskip
 </code></pre>
 
-<h3>paragraphs</h3>
+<p>The location of each of 10 shots is shown as transluscent light
+circles in each target.  The
+objective is to hit the bright target dot in the center.  There is random
+scatter (variance) as well as steady deviations (bias) from the target.</p>
 
-<p>Mark with 4 hashes</p>
+<p>What is the direction of the apparent bias in Katerina Emmons&#39;s
+results? (Directions are indicated as compass directions, E=east,
+NE=north east, etc.)</p>
 
-<h4>like this</h4>
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      1,
+"name": "compass",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "NE" 
+}'>NE</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      1,
+"name": "compass",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "NW" 
+}'>NW</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      1,
+"name": "compass",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "SW" 
+}'>SW</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      1,
+"name": "compass",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "SE" 
+}'>SE</option> </select><span id='out1' class='shiny-html-output'> </span></p>
 
-<h3>texttt</h3>
+<p>To measure the size of the bias, find the center of the shots and
+measure how far that is from the target dot.  Take the distance
+between the concentric circles as one unit. </p>
 
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
+<p>What is the size of the bias in Katerina Emmon&#39;s results?</p>
 
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
+<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> </select><span id='out2' class='shiny-html-output'> </span></p>
 
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
-
-<ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
-</ul>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2" ]'>Ignore me</option></select></p>
 
 </body>
 

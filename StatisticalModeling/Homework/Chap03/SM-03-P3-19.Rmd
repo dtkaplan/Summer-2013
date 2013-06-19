@@ -1,0 +1,43 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.19
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P19-SD")
+```
+
+Consider a large company where the average wage of workers is $15 per hour, but there is a spread of wages from minimum wage to $35 per hour.  
+
+
+After a contract negotiation, all workers receive a $2 per hour raise.
+What happens to the standard deviation of hourly wages?
+
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+ `r I(f(TRUE))` No change.     
+ `r I(f(FALSE))` It goes up by $2 per hour.     
+ `r I(f(FALSE))` It goes up by $4 per hour.     
+ `r I(f(FALSE))` It goes up by 4 dollars-square per hour.     
+ `r I(f(FALSE))` It goes up by $4 per hour-square.     
+ `r I(f(FALSE))` Can't tell from the information given.     
+ 
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+The annual cost-of-living adjustment is 3%.  After the cost-of-living adjustment, what happens to the standard deviation of hourly wages?
+
+```{r include=FALSE}
+g = newMC(totalPts=1)
+```
+ `r I(g(FALSE))` No change.     
+ `r I(g(TRUE))` It goes up by 3%.     
+ `r I(g(FALSE))` It goes up by 9%.     
+ `r I(g(FALSE))` Can't tell from the information given.     
+ 
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`

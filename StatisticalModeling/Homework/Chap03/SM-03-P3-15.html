@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Testing formatting</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.15</title>
 
 <style type="text/css">
 body, td {
@@ -173,50 +173,343 @@ hljs.initHighlightingOnLoad();
 </script>
 
 
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 
 
 </head>
 
 <body>
-<h1>Testing formatting</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.15</h1>
 
-<h3>Models</h3>
+<p>The plot purports to show the density of a distribution of data.  If this is
+true, the fraction of the data that falls between any two values on
+the \( x \) axis should be the area under the curve between those two
+values.</p>
 
-<p><em>height</em> ~ <em>father</em> + <em>nkids</em></p>
-
-<h3>Variable names</h3>
-
-<p><em>height</em></p>
-
-<h3>Data sets</h3>
-
-<p>markup like \datasetCPS should go to <code>CPS85</code>  (the current name in the mosaic package) in single backquotes.</p>
-
-<p>To find out what names there are:</p>
-
-<pre><code class="r">data(package = &quot;mosaic&quot;)
+<pre><code class="r">&lt;&lt;plot1,fig=true,pdf=true,include=false,height=5,width=6,echo=false&gt;&gt;=
+graph.paper( xticks=seq(5,20,by=1), yticks=seq(0,.2,by=.01),xlab=&quot;  x  &quot;, ylab=&quot;Density???&quot;)
+xpts = seq(5,20,length=1000)
+lines(xpts,dnorm(xpts,mean=12,sd=2),lwd=2)
 </code></pre>
 
-<h3>paragraphs</h3>
+<pre><code class="r">\centerline{\includegraphics[width=3.5in]{Figures/B106-plot1}}
+</code></pre>
 
-<p>Mark with 4 hashes</p>
-
-<h4>like this</h4>
-
-<h3>texttt</h3>
-
-<p>Things preceded with texttt should be rendered as <code>the thing</code></p>
-
-<p>The markup \verb+some stuff+ goes to <code>some stuf</code></p>
-
-<h3>Lists</h3>
-
-<p>Description lists might look like this:</p>
+<p>Answer the following questions. In doing so, keep in mind that the area of each
+little box on the graph paper has been arranged to be \( 0.01 \), so you
+can calculate the area by counting boxes.  You don&#39;t need to be too
+fanatical about dealing with boxes where only a portion in under the
+curve; just eyeball things and estimate.</p>
 
 <ul>
-<li><strong>The description</strong> and the following text</li>
-<li><strong>The second item&#39;s description</strong> and the following text.</li>
+<li><p>The total area under a density curve should be 1.
+Assuming that the density curve has height zero outside of the area
+of the plot, is the area under the entire curve consistent with
+this?</p>
+
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "consistentArea",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Yes" 
+}'>Yes</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "consistentArea",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No" 
+}'>No</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>What fraction of the data falls in the range \( 12 \leq x \leq
+  14 \)?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 14%<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 22%<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 34%<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 56%<br/>
+<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> Can&#39;t tell from this graph.     </p></li>
+<li><p>What fraction of the data falls in the range \( 14 \leq x \leq
+  16 \)?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 14%<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 22%<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 34%<br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 56%<br/>
+<label for='MCitem5'><input type='radio' name='MC2' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> Can&#39;t tell from this graph.</p></li>
+<li><p>What fraction of the data has \( x \geq 16 \)?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 1%<br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 2%<br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 5%<br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 10%<br/>
+<label for='MCitem5'><input type='radio' name='MC3' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> Can&#39;t tell from this graph.     </p></li>
+<li><p>What is the width of the 95% coverage interval.  (Note: The
+coverage interval itself has top and bottom ends.  This problem asks
+for the spacing between the two ends.)</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> 2<br/>
+<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> 4<br/>
+<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+"pts":      1,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> 8<br/>
+<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> 12<br/>
+<label for='MCitem5'><input type='radio' name='MC4' id='MCitem5' value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P15-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> Can&#39;t tell from the graph.</p></li>
 </ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "MC1", "MC2", "MC3", "MC4" ]'>Ignore me</option></select></p>
 
 </body>
 
