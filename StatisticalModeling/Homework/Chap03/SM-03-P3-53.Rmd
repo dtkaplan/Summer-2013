@@ -1,0 +1,227 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.53
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P53-SD")
+```
+
+There are many different numerical descriptions of distributions:
+mean, median, standard deviation, variance, IQR, coverage interval,
+...   And these are just the ones we have touched on so far.  We'll
+also encounter "standard error,"  "margin of error,"  "confidence
+interval."  There are so many that it becomes a significant challenge to students to keep them straight.  Eventually, statistical workers learn the subtleties of the different descriptions and when each is appropriate.  Then, like using near synonyms in English, it becomes second nature.  
+
+As an example, consider the verb "spread."  Here are some
+synonyms from the thesaurus, each of which is appropriate in a particular context:
+broadcast, scatter, propagate, sprawl, extend, stretch, cover, daub, ...  If you
+were talking to a farmer about sewing seeds, the words "broadcast"
+or "scatter" would be appropriate, but it would be silly to say the
+seeds are being "daubbed" or "sprawled".  On the other hand, to an urbanite
+concerned with congestion in traffic, the growth of the city might
+well be summarized with "sprawl."  You have to know the context and
+the intent to choose the correct term.  
+
+To help to understand the different context and intents, here are
+two important ways of categorizing what a particular description captures:
+
+##### Location and scatter
+
+* What is a typical value? ("center")
+* What are the top and bottom range of the values? ("range")
+* How far are the values scattered? ("scatter")
+* What is high? or What is low? ("non-central")
+
+
+##### Including the "extremes"
+
+* All inclusive, and sensitive to outliers. ("not-robust")
+* All inclusive, but not sensitive to outliers. ("robust")
+* Leaves out the very extremes. ("plausible")
+* Focuses on the middle. ("mainstream")
+
+Note that descriptors of both the "plausible" and the "mainstream"
+type are necessarily robust, since they leave out the outliers.
+
+##### Individual versus whole sample.
+
+* Description relevant to individual cases
+* Description or summary of entire samples, combining many cases.
+
+You won't have to deal with this until later, where it explains terms
+that you haven't yet encountered like like "standard error",
+"margin of error", "confidence interval."
+
+
+
+
+**Example:** The **mean** describes the *center* of a
+distribution.  It is calculated from all the data and *not-robust*
+against outliers.
+
+
+
+For each of the following descriptors of a distribution , choose the
+items that best characterize the descriptor.
+
+
+**Median:**      
+
+*Location and Scatter*
+```{r include=FALSE}
+k=newMC(totalPts=1)
+```
+   `r I(k(TRUE))` center     
+   `r I(k(FALSE))` range     
+   `r I(k(FALSE))` scatter     
+   `r I(k(FALSE))` non-central     
+```{r include=FALSE, results="hide"}
+I(k(finish=TRUE))
+```
+
+*Extremes*
+```{r include=FALSE}
+l=newMC(totalPts=1)
+```
+   `r I(l(TRUE))` robust     
+   `r I(l(FALSE))` not-robust          
+   `r I(l(FALSE))` plausible     
+   `r I(l(FALSE))` mainstream    
+```{r include=FALSE, results="hide"}
+I(l(finish=TRUE))
+```
+
+**Standard Deviation:**
+```{r include=FALSE}
+distrib3=selectSet(name="stdev", totalPts=1, "center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
+```
+*Location and Scatter*
+* `r I(distrib3)`
+
+```{r include=FALSE}
+distrib4=selectSet(name="stdev2", totalPts=1,"robust"=FALSE,"not-robust"=TRUE,"plausible"=FALSE,"mainstream"=FALSE )
+```
+*Extremes*
+* `r I(distrib4)`
+
+**IQR:**
+```{r include=FALSE}
+distrib5=selectSet(name="iqr", totalPts=1,"center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
+```
+*Location and Scatter*
+* `r I(distrib5)`
+
+```{r include=FALSE}
+distrib6=selectSet(name="iqr2", totalPts=1,"robust"=TRUE,"not-robust"=FALSE,"plausible"=FALSE,"mainstream"=FALSE)
+```
+*Extremes*
+* `r I(distrib6)`
+
+**Variance:**
+```{r include=FALSE}
+distrib7=selectSet(name="var", totalPts=1,"center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
+```
+*Location and Scatter*
+* `r I(distrib7)`
+
+```{r include=FALSE}
+distrib8=selectSet(name="var2", totalPts=1, "robust"=FALSE,"not-robust"=TRUE,"plausible"=FALSE,"mainstream"=FALSE)
+```
+*Extremes*
+* `r I(distrib8)`
+
+**95% coverage interval:**
+```{r include=FALSE}
+distrib9=selectSet(name="95per", totalPts=1,"center"=FALSE,"range"=TRUE,"scatter"=FALSE,"non-central"=FALSE)
+```
+*Location and Scatter*
+* `r I(distrib9)`
+
+```{r include=FALSE}
+distrib10=selectSet(name="95per2", totalPts=1, "robust"=FALSE,"not-robust"=FALSE,"plausible"=TRUE,"mainstream"=FALSE)
+```
+*Extremes*
+* `r I(distrib10)`
+
+**50% coverage interval:**
+```{r include=FALSE}
+distrib11=selectSet(name="50per", totalPts=1,"center"=FALSE,"range"=TRUE,"scatter"=FALSE,"non-central"=FALSE)
+```
+*Location and Scatter*
+* `r I(distrib11)`
+
+```{r include=FALSE}
+distrib12=selectSet(name="50per2", totalPts=1,"robust"=FALSE,"not-robust"=FALSE,"plausible"=FALSE,"mainstream"=TRUE)
+```
+*Extremes*
+* `r I(distrib12)`
+
+**50th percentile:**     
+
+*Location and Scatter*
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` center     
+`r I(f(FALSE))` range     
+`r I(f(FALSE))` scatter     
+`r I(f(TRUE))` non-central     
+
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+**80th percentile:**
+
+*Location and Scatter*
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+`r I(g(FALSE))` center     
+`r I(g(FALSE))` range     
+`r I(g(FALSE))` scatter     
+`r I(g(TRUE))` non-central     
+
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+
+**99th percentile:**
+
+*Location and Scatter*
+```{r include=FALSE}
+h=newMC(totalPts=1)
+```
+`r I(h(FALSE))` center     
+`r I(h(FALSE))` range     
+`r I(h(FALSE))` scatter     
+`r I(h(TRUE))` non-central     
+
+```{r include=FALSE, results="hide"}
+I(h(finish=TRUE))
+```
+
+
+**10th percentile:**
+
+*Location and Scatter*
+```{r include=FALSE}
+j=newMC(totalPts=1)
+```
+`r I(j(FALSE))` center     
+`r I(j(FALSE))` range          
+`r I(j(FALSE))` scatter     
+`r I(j(TRUE))` non-central          
+
+```{r include=FALSE, results="hide"}
+I(j(finish=TRUE))
+```
+
+
+One of the reasons why there are so many descriptive terms is that
+they have different roles in theory.  For example, the variance turns
+out to have simple theoretical properties that make it useful when
+describing sums of variables.  It's much simpler than, say, the IQR.
+
+`r I(closeProblem())`

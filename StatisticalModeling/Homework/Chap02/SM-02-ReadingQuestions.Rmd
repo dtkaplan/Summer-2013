@@ -1,0 +1,47 @@
+Intro to Statistical Modeling Ch. 2 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-02-ReadingQuestions-SD")
+```
+
+* What are the two major different kinds of variables?
+```{r include=FALSE, eval=FALSE}
+I(textItem(rows=3, totalPts=2, name="variables"))
+```
+
+  `r I(textItem(rows=3, totalPts=2, name="variables"))`
+
+* How are variables and cases arranged in a data frame?
+```{r include=FALSE, eval=FALSE}
+I(textItem(rows=3, totalPts=2, name="arrangement"))
+```
+
+  `r I(textItem(rows=3, totalPts=2, name="arrangement"))`
+
+* How is the relationship between these things: population,
+  sampling frame, sample, census?
+```{r include=FALSE, eval=FALSE}
+I(textItem(rows=3, totalPts=2, name="relationship"))
+```
+
+  `r I(textItem(rows=3, totalPts=2, name="relationship"))`
+
+* What's the difference between a longitudinal and cross-sectional
+  sample?
+```{r include=FALSE, eval=FALSE}
+I(textItem(rows=3, totalPts=2, name="difference"))
+```
+
+  `r I(textItem(rows=3, totalPts=2, name="difference"))`
+
+* Describe some types of sampling that lead to the sample
+  potentially being unrepresentative of the population?
+```{r include=FALSE, eval=FALSE}
+I(textItem(rows=3, totalPts=2, name="unrepresentative"))
+```
+
+  `r I(textItem(rows=3, totalPts=2, name="unrepresentative"))`
+
+`r I(closeProblem())`

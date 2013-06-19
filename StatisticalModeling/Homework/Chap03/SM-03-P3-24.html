@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.24</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.24</h1>
+
+<p>Data on the distribution of economic variables, such as income, is often presented in quintiles: divisions of the group into five equal-sized parts.  </p>
+
+<p>Here is a table from the US Census Bureau (Historical Income Tables from March 21, 2002) giving the distribution of income across US households in year 2000.</p>
+
+<table><thead>
+<tr>
+<th align="center">Quintile</th>
+<th align="center">Upper Boundary</th>
+<th align="center">Mean Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Lowest</td>
+<td align="center">$17,955</td>
+<td align="center">$10,190</td>
+</tr>
+<tr>
+<td align="center">Second</td>
+<td align="center">$33,006</td>
+<td align="center">$25,334</td>
+</tr>
+<tr>
+<td align="center">Third</td>
+<td align="center">$52,272</td>
+<td align="center">$42,361</td>
+</tr>
+<tr>
+<td align="center">Fourth</td>
+<td align="center">$81,960</td>
+<td align="center">$65,729</td>
+</tr>
+<tr>
+<td align="center">Fifth</td>
+<td align="center">&mdash;</td>
+<td align="center">$141,260</td>
+</tr>
+</tbody></table>
+
+<p>Based on this table, calculate:</p>
+
+<ul>
+<li><p>The 20th percentile of family income. </p>
+
+<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10190" 
+}'>10190</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "17955" 
+}'>17955</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "33006" 
+}'>33006</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "25334" 
+}'>25334</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "52272" 
+}'>52272</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "42361" 
+}'>42361</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "81960" 
+}'>81960</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "20percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "141260" 
+}'>141260</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>The 80th percentile of family income.</p>
+
+<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10190" 
+}'>10190</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17955" 
+}'>17955</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "33006" 
+}'>33006</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "25334" 
+}'>25334</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "52272" 
+}'>52272</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "42361" 
+}'>42361</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "81960" 
+}'>81960</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "80percent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "141260" 
+}'>141260</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>The table doesn&#39;t specify the median family income but you can
+make a reasonable estimate of it.  Pick the closest one.</p>
+
+<p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10000" 
+}'>10000</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "18000" 
+}'>18000</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "25500" 
+}'>25500</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "42500" 
+}'>42500</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "53000" 
+}'>53000</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      3,
+"name": "medfaminc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "65700" 
+}'>65700</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>Note that there is no upper boundary reported for the fifth
+quintile, and no lower boundary reported for the first quintile.
+Why?</p>
+
+<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      1,
+"name": "noUpnoLow",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>From this table, what evidence is there that family income has a
+skew rather than &ldquo;normal&#39;&#39; distribution?</p>
+
+<p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-3-P24-SD",
+"itemN":      2,
+"name": "skew",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "text1", "text2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

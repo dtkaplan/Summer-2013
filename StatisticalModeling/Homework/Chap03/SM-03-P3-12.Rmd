@@ -1,0 +1,43 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P12-SD")
+```
+
+A standard deviation contest.  For (a) and (b) below, you can choose
+numbers from the set $0,1,2,3,4,5,6,7,8$, and $9$.  Repeats are
+allowed.
+
+* Which list of 4 numbers has the largest standard
+  deviation such a list can possibly have?
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+  
+  `r I(f(FALSE))` $0,3,6,9$     
+  `r I(f(FALSE))` $0,0,0,9$     
+  `r I(f(TRUE))` $0,0,9,9$      
+  `r I(f(FALSE))` $0,9,9,9$
+  
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+* Which list of 4 numbers has the smallest standard
+  deviation such a list can possibly have?
+```{r include=FALSE}
+g = newMC(totalPts=1)
+```
+
+  `r I(g(FALSE))` $0,3,6,9$     
+  `r I(g(FALSE))` $0,1,2,3$     
+  `r I(g(FALSE))` $5,5,6,6$     
+  `r I(g(TRUE))` $9,9,9,9$
+  
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`

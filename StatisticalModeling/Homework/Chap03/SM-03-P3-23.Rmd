@@ -1,0 +1,150 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.23
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P23-SD")
+```
+
+Here are some familiar quantities.  For each of them, indicate what is
+a typical value, how far a typical case is from this typical value,
+and what is an extreme but not impossible case.
+
+Example: Adult height.  Typical value, 1.7 meters (68 inches).  Typical case
+is about 7cm (3 inches) from the typical value.  An extreme height is
+2.2 meters (87 inches).
+
+* An adult's weight.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="weight", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="weight", totalPts=2, rows=4))`
+  
+<aside>
+ANSWER:
+Let's answer for women.  A typical weight is about 130 lbs, with a
+typical spread about 20 lbs from the center.  An extreme weight is 350
+lbs on the high side and 80 lbs on the low side.
+</aside>
+
+* Income of a full-time employed person.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="income", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="income", totalPts=2, rows=4))`
+
+<aside>
+ANSWER:
+Writing this in 2011, a typical income for a full-time employed person
+is around $40,000 USD per year.  Typical spread is about $20,000 USD
+from the center.  Given minimum wage laws, an extreme case on the low
+side is about $15,000 USD.  On the high side, the sky is the limit,
+with some people having an income of billions of dollars per year.
+</aside>
+
+* Speed of cars on a highway in good conditions.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="speed", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="speed", totalPts=2, rows=4))`
+  
+<aside>
+ANSWER:
+A typical car goes about 60 mph in the US (depending on the state and
+the highway).  Cars typically go at roughly the same speed, so the
+typical spread might be just 3-5 mph above or below the center value.
+Speeders rarely go above 100 mph --- that's an extreme value.
+
+If there is a traffic jam, the situation is completely different.  The
+typical speed might be 10 mph, with 0 not being particularly extreme.
+</aside>
+
+* Systolic blood pressure in adults.  [You might need to look this
+  up on the Internet.]
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="bp", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="bp", totalPts=2, rows=4))`
+  
+<aside>
+ANSWER:
+A typical systolic BP is roughly 110 mmHg, which a typical spread of
+perhaps 10-20 mmHG on either side.  An extremely high blood pressure
+is 200 mmHg.  A systolic blood pressure below 90 mmHg is considered
+abnormally low and can lead to dizziness or fainting.
+</aside>
+
+
+* Blood cholesterol LDL levels. [Again, you might need the
+  Internet.]
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="cholesterol", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="cholesterol", totalPts=2, rows=4))`
+
+<aside>
+ANSWER:
+Web sites list an LDL cholesterol level of less than 200 mg/dL as
+``desirable,'' without indicating what fraction of the population is
+in this group and what a typical value is.  They list a level of 240
+mg/dL as ``high risk'', again without saying what fraction of people
+are at high risk.  
+</aside>
+
+* Fuel economy among different models of
+  cars.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="car", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="car", totalPts=2, rows=4))`
+  
+<aside>
+ANSWER:
+A typical car gets something like 20 mile-per-gallon, with most cars
+getting somewhere from 10 to 35.  An extreme low value for a car is 5
+mpg.  A very high value is 50 mpg.
+</aside>
+
+* Wind speed on a summer day.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="wind", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="wind", totalPts=2, rows=4))`
+
+<aside>
+ANSWER:
+A typical summer day has a wind speed of 0 to 15 miles per hour
+(depending of course on where you are).  So the typical value might be
+5 mph with a spread of about 5 around that.  0 is not so unusual, and
+of course you can't have a negative wind speed.  A speed of 60 mph is
+quite extreme.  Above that is hurricane levels, even more extreme.  
+</aside>
+
+* Hours of sleep per night for college students.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="sleep", totalPts=2, rows=4))
+```
+
+  `r I(textItem(name="sleep", totalPts=2, rows=4))`
+
+<aside>
+ANSWER:
+Of course, some college students go without sleep for a day or two,
+but it seems reasonable to think that most students get an average of
+5 to 10 hours per night.  Perhaps 6-7 is typical (although not
+necessarily healthy!), with a spread of 2 hours on either side of
+that.  An extreme value is 15 hours --- though this can happen.
+Obviously 24 is the limit.
+</aside>
+
+`r I(closeProblem())`
+
+
+

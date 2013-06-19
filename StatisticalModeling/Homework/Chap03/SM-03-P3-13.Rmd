@@ -1,0 +1,36 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.13 
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P13-SD")
+```
+* From what kinds of variables would side-by-side boxplots be
+  generated?
+```{r include=FALSE}
+f = newMC(totalPts=1)
+```
+  `r I(f(FALSE))` Categorical only     
+  `r I(f(FALSE))` Quantitative only     
+  `r I(f(TRUE))` One categorical and one quantitative     
+  `r I(f(FALSE))` Varies according to situation     
+  
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+* From what kinds of variables would a histogram be generated?
+```{r include=FALSE}
+g = newMC(totalPts=1)
+```
+
+  `r I(g(FALSE))` Categorical only     
+  `r I(g(TRUE))` Quantitative only     
+  `r I(g(FALSE))` One categorical and one quantitative     
+  `r I(g(FALSE))` Varies according to situation     
+
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`

@@ -1,0 +1,41 @@
+Intro to Statistical Modeling Ch. 3 Prob 3.36
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P36-SD")
+```
+
+Elevators typically have a close-door button.  Some people claim that
+this button has no mechanical function; it's there just to give
+impatient people some sense of control over the elevator.  
+
+Design and conduct an experiment to test whether the button does cause
+the elevator door to close.  Pick an elevator with such a button and
+record some details about the elevator itself: place installed, year
+installed, model number, etc.  
+
+Describe your experiment along with the measurements you made and your
+conclusions.  You may want to do the experiment in small teams and use
+a stopwatch in order to make accurate measurements.  Presumably, you
+will want to measure the time between when the button is pressed and
+when the door closes, but you might want to measure other quantities
+as well, for instance the time from when the door first opened to when
+you press the button.  
+
+Store the data from your experiment in a spreadsheet in Google Docs.
+Set the permissions for the spreadsheet so that anyone with the link
+can read your data.  Make sure to **paste the link** into the
+textbox so that your data can be accessed.
+
+Please don't inconvenience other elevator users with the experiment.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="elevator", totalPts=5, rows=3))
+```
+
+`r I(textItem(name="elevator", totalPts=5, rows=3))`
+
+`r I(closeProblem())`
+
+

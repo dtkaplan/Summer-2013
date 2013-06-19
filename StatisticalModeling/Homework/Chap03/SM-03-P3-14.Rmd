@@ -1,0 +1,55 @@
+Intro to Statistical Modeling Ch. 3 Prob 3.14
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P14-SD")
+```
+
+The boxplots below are all made from exactly the same data.  One of
+them is made correctly, according to the ``1.5 IQR'' convention for
+drawing the whiskers.  The others are drawn differently.
+
+```{r, echo="false"}
+dd = c( jitter(seq(-10,10,by=1)), runif(1000,-3,3) )
+```
+
+```{r eval=FALSE}
+\centerline{\begin{tabular}{cccc}
+{\bf Plot 1} & {\bf Plot 2} & {\bf Plot 3} & {\bf Plot 4}\\
+ & & \\
+<<b1,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+boxplot(dd,range=2.5,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b1}
+&
+<<b2,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+boxplot(dd,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b2}
+&
+<<b3,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+boxplot(dd,range=1,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b3}
+&
+<<b4,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+boxplot(dd,range=0,pch=20)
+@ 
+\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b4}
+```
+
+
+Which of the plots is correct?
+```{r include=FALSE}
+plots=selectNumber(choices=c(1,2,3,4), correct=c(2), name="correctplot", totalPts=1)
+```
+
+ `r I(plots)`
+
+<aside>
+ANSWER:
+The height of the box gives the IQR.  If there are outliers, the whisker length should be 1.5
+times the IQR.  So look for the plot that has a whisker length
+somewhat taller than the box itself.
+</aside>

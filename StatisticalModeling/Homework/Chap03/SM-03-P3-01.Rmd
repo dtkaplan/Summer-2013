@@ -1,0 +1,69 @@
+Intro to Statistical Modeling Ch. 3 Prob. 3.01
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P1-SD")
+```
+
+Here is a small table of percentiles of typical daily calorie consumption 
+of college students.
+
+
+Percentile  | Calories
+:-----:|:-----:
+0 | 1400
+5 | 1800
+10 | 2000
+25 | 2400
+50 | 2600
+75 |  2900
+90 |  3100
+95 |  3300
+100 | 3700
+
+
+
+What is the 50%-coverage interval?
+```{r include=FALSE}
+college=selectNumber(name="50percentLow", totalPts=1, choices=c(1800,1900,2000,2200,2400,2500,2600), correct=c(2400))
+```
+* Lower Boundary `r I(college)`
+```{r include=FALSE}
+college2=selectNumber(name="50percentUp", totalPts=1, choices=c(2600,2750,2900,3000,3100,3200,3500), correct=c(2900))
+```
+* Upper Boundary `r I(college2)`
+
+
+What percentage of cases lie between 2900 and 3300? 
+```{r include=FALSE}
+college3=selectNumber(name="between", totalPts=1, choices=c(10,20,25,30,40,50,60,70,80,90,95), correct=c(20))
+```
+`r I(college3)`
+
+What is the percentile
+that marks the upper end of the
+95%-coverage interval?
+```{r include=FALSE}
+college4=selectNumber(name="UpperEnd", totalPts=1, choices=c(75,90,92.5,95,97.5,100), correct=c(97.5))
+```
+`r I(college4)`
+
+Estimate the corresponding calorie value from the table.
+```{r include=FALSE}
+estimate=selectNumber(name="calvalue", totalPts=1, choices=c(2900,3000,3100,3300,3500,3700), correct=c(3500))
+```
+`r I(estimate)`
+
+Using the 1.5 IQR rule-of-thumb for identifying an outlier,
+what would be the threshold for identifying a low calorie consumption as 
+an outlier?
+```{r include=FALSE}
+estimate2=selectNumber(name="IQR", totalPts=1, choices=c(1450,1500,1650,1750,1800,2000), correct=c(1650))
+```
+
+`r I(estimate2)`
+
+
+`r I(closeProblem())`
+

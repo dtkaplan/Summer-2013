@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 3 Prob. 3.53</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 3.53</h1>
+
+<p>There are many different numerical descriptions of distributions:
+mean, median, standard deviation, variance, IQR, coverage interval,
+&hellip;   And these are just the ones we have touched on so far.  We&#39;ll
+also encounter &ldquo;standard error,&rdquo;  &ldquo;margin of error,&rdquo;  &ldquo;confidence
+interval.&rdquo;  There are so many that it becomes a significant challenge to students to keep them straight.  Eventually, statistical workers learn the subtleties of the different descriptions and when each is appropriate.  Then, like using near synonyms in English, it becomes second nature.  </p>
+
+<p>As an example, consider the verb &ldquo;spread.&rdquo;  Here are some
+synonyms from the thesaurus, each of which is appropriate in a particular context:
+broadcast, scatter, propagate, sprawl, extend, stretch, cover, daub, &hellip;  If you
+were talking to a farmer about sewing seeds, the words &ldquo;broadcast&rdquo;
+or &ldquo;scatter&rdquo; would be appropriate, but it would be silly to say the
+seeds are being &ldquo;daubbed&rdquo; or &ldquo;sprawled&rdquo;.  On the other hand, to an urbanite
+concerned with congestion in traffic, the growth of the city might
+well be summarized with &ldquo;sprawl.&rdquo;  You have to know the context and
+the intent to choose the correct term.  </p>
+
+<p>To help to understand the different context and intents, here are
+two important ways of categorizing what a particular description captures:</p>
+
+<h5>Location and scatter</h5>
+
+<ul>
+<li>What is a typical value? (&ldquo;center&rdquo;)</li>
+<li>What are the top and bottom range of the values? (&ldquo;range&rdquo;)</li>
+<li>How far are the values scattered? (&ldquo;scatter&rdquo;)</li>
+<li>What is high? or What is low? (&ldquo;non-central&rdquo;)</li>
+</ul>
+
+<h5>Including the &ldquo;extremes&rdquo;</h5>
+
+<ul>
+<li>All inclusive, and sensitive to outliers. (&ldquo;not-robust&rdquo;)</li>
+<li>All inclusive, but not sensitive to outliers. (&ldquo;robust&rdquo;)</li>
+<li>Leaves out the very extremes. (&ldquo;plausible&rdquo;)</li>
+<li>Focuses on the middle. (&ldquo;mainstream&rdquo;)</li>
+</ul>
+
+<p>Note that descriptors of both the &ldquo;plausible&rdquo; and the &ldquo;mainstream&rdquo;
+type are necessarily robust, since they leave out the outliers.</p>
+
+<h5>Individual versus whole sample.</h5>
+
+<ul>
+<li>Description relevant to individual cases</li>
+<li>Description or summary of entire samples, combining many cases.</li>
+</ul>
+
+<p>You won&#39;t have to deal with this until later, where it explains terms
+that you haven&#39;t yet encountered like like &ldquo;standard error&rdquo;,
+&ldquo;margin of error&rdquo;, &ldquo;confidence interval.&rdquo;</p>
+
+<p><strong>Example:</strong> The <strong>mean</strong> describes the <em>center</em> of a
+distribution.  It is calculated from all the data and <em>not-robust</em>
+against outliers.</p>
+
+<p>For each of the following descriptors of a distribution , choose the
+items that best characterize the descriptor.</p>
+
+<p><strong>Median:</strong>      </p>
+
+<p><em>Location and Scatter</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> center<br/>
+   <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> range<br/>
+   <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> scatter<br/>
+   <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> non-central     </p>
+
+<p><em>Extremes</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> robust<br/>
+   <label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> not-robust<br/>
+   <label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> plausible<br/>
+   <label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> mainstream    </p>
+
+<p><strong>Standard Deviation:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<ul>
+<li><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      1,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><em>Extremes</em></p>
+
+<ul>
+<li><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      2,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><strong>IQR:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<ul>
+<li><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "iqr",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "iqr",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "iqr",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "iqr",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><em>Extremes</em></p>
+
+<ul>
+<li><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "iqr2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "iqr2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "iqr2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "iqr2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><strong>Variance:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<ul>
+<li><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "var",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "var",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "var",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "var",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out5' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><em>Extremes</em></p>
+
+<ul>
+<li><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "var2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "var2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "var2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "var2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out6' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><strong>95% coverage interval:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<ul>
+<li><select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      7,
+"name": "95per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      7,
+"name": "95per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      7,
+"name": "95per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      7,
+"name": "95per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out7' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><em>Extremes</em></p>
+
+<ul>
+<li><select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      8,
+"name": "95per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      8,
+"name": "95per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      8,
+"name": "95per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      8,
+"name": "95per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out8' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><strong>50% coverage interval:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<ul>
+<li><select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      9,
+"name": "50per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      9,
+"name": "50per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      9,
+"name": "50per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      9,
+"name": "50per",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out9' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><em>Extremes</em></p>
+
+<ul>
+<li><select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":     10,
+"name": "50per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":     10,
+"name": "50per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":     10,
+"name": "50per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":     10,
+"name": "50per2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out10' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><strong>50th percentile:</strong>     </p>
+
+<p><em>Location and Scatter</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> center<br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> range<br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> scatter<br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> non-central     </p>
+
+<p><strong>80th percentile:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> center<br/>
+<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> range<br/>
+<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> scatter<br/>
+<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "4",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> non-central     </p>
+
+<p><strong>99th percentile:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC5' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> center<br/>
+<label for='MCitem2'><input type='radio' name='MC5' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> range<br/>
+<label for='MCitem3'><input type='radio' name='MC5' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> scatter<br/>
+<label for='MCitem4'><input type='radio' name='MC5' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      5,
+"name": "5",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> non-central     </p>
+
+<p><strong>10th percentile:</strong></p>
+
+<p><em>Location and Scatter</em></p>
+
+<p><label for='MCitem1'><input type='radio' name='MC6' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> center<br/>
+<label for='MCitem2'><input type='radio' name='MC6' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> range<br/>
+<label for='MCitem3'><input type='radio' name='MC6' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> scatter<br/>
+<label for='MCitem4'><input type='radio' name='MC6' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-3-P53-SD",
+"itemN":      6,
+"name": "6",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> non-central          </p>
+
+<p>One of the reasons why there are so many descriptive terms is that
+they have different roles in theory.  For example, the variance turns
+out to have simple theoretical properties that make it useful when
+describing sums of variables.  It&#39;s much simpler than, say, the IQR.</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
