@@ -1,0 +1,181 @@
+Intro to Statistical Modeling Ch.3 Prob. 3
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P3-SD")
+```
+Here are Galton’s data on heights of adult children and their parents.
+
+```{r eval=FALSE}
+require(mosaic)     
+galton = fetchData("Galton")  
+```
+
+Which one of these commands will give the 95th percentile of the
+children's heights in Galton's data? `Galton`
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+  `r I(f(FALSE))` <code>quantile(galton$height, 95)</code>     
+  `r I(f(TRUE))` <code>quantile(galton$height, 0.95)</code>     
+  `r I(f(FALSE))` <code>quantile(galton$father, 95)</code>     
+  `r I(f(FALSE))` <code>quantile(galton$father, 0.95)</code>    
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+<aside>
+>ANSWER:
+>What's key here is to remember that percentiles need to be specified
+as a fraction: the 95th percentile is 0.95.
+
+
+>The children's heights are contained in the *height* variable, not
+*father* (which has the heights of the fathers).
+
+>To make the command work, you will have to read in the Galton data
+that is contained in the ISM software distribution.  (See the
+instructions in the book for getting this file and loading it into R.)
+You can store the data in an object called ``galton'' so that your
+commands will match those given here, but of course you could use any
+name you like.      
+<code>
+\> galton = ISMdata("galton.csv")     
+</code>
+</aside>
+
+<bigskip>
+
+Which of these command will give the 90-percent coverage interval of the children's heights in Galton's data?
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+  `r I(g(TRUE))` <code>quantile(galton$height, c(0.05, 0.95))</code>     
+  `r I(g(FALSE))` <code>quantile(galton$height, c(0.025, 0.975))</code>     
+  `r I(g(FALSE))` <code>quantile(galton$height, 0.90)</code>     
+  `r I(g(FALSE))` <code>quantile(galton$height, 90)</code>     
+```{r include=FALSE, results="hide"}
+I(g(finish=TRUE))
+```
+
+<aside>
+>ANSWER:
+>Since you're looking for a 90-percent coverage interval to cover the
+center of the data, you want to
+leave 5 percent on the left and 5 percent on the right.  This means
+that the interval will run from the 5th percentile to the 95th percentile.
+</aside>
+
+
+ 
+Find the 50-percent coverage interval of the following variables in Galton's height data:
+```{r include=FALSE}
+h=newMC(totalPts=1)
+```
+* Father's heights     
+    `r I(h(FALSE))` 59 to 73 inches     
+    `r I(h(TRUE))` 68 to 71 inches     
+    `r I(h(FALSE))` 63 to 65.5 inches     
+    `r I(h(FALSE))` 68 to 74 inches    
+```{r include=FALSE, results="hide"}
+I(h(finish=TRUE))
+```
+<aside>
+>ANSWER:
+>A 50-percent coverage interval will leave 25 percent of the data to
+the left and another 25 percent to the right, so the interval runs
+from the 25th to the 75th percentile.      
+<code>
+\> quantile( galton$father, c(0.25, 0.75))     
+25% 75%      
+ 68  71      
+</code>
+
+>Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
+BOTH percentiles.  If you wanted, you could do one at a time:     
+<code>
+\> quantile( galton$father, 0.25 )     
+25%      
+ 68      
+\> quantile( galton$father, 0.75 )     
+75%      
+ 71      
+</code>
+>But it's nicer to have both ends of the interval reported in one statement.
+</aside>
+
+* Mother's heights
+```{r include=FALSE}
+j=newMC(totalPts=1)
+```
+    `r I(j(FALSE))` 59 to 73 inches     
+    `r I(j(FALSE))` 68 to 71 inches     
+    `r I(j(TRUE))` 63 to 65.5 inches     
+    `r I(j(FALSE))` 68 to 74 inches     
+```{r include=FALSE, results="hide"}
+I(j(finish=TRUE))
+```
+
+<aside>
+>ANSWER:
+>Just like with the fathers' heights, but now ask for the quantiles on
+the mothers' height:     
+<code>
+\> quantile( galton$mother, c(0.25, 0.75))     
+ 25%  75%      
+63.0 65.5     
+</code>
+</aside>
+
+
+
+
+Find the 95-percent coverage interval of
+* Father's heights
+```{r include=FALSE}
+k=newMC(totalPts=1)
+```
+    `r I(k(FALSE))` 65 to 73 inches     
+    `r I(k(TRUE))` 65 to 74 inches     
+    `r I(k(FALSE))` 68 to 73 inches    
+    `r I(k(FALSE))` 59 to 69 inches     
+```{r include=FALSE, results="hide"}
+I(k(finish=TRUE))
+```
+
+<aside>
+>ANSWER:
+>For a 95-percent coverage interval, look at the 2.5 and 97.5
+percentile.     
+<code>
+\> quantile( galton$father, c(0.025, 0.975))     
+ 2.5% 97.5%      
+   65    74      
+</code>
+</aside>
+
+* Mother's heights
+```{r include=FALSE}
+l=newMC(totalPts=1)
+```
+    `r I(l(FALSE))` 62.5 to 68.5 inches         
+    `r I(l(TRUE))` 65 to 69 inches      
+    `r I(l(FALSE))` 63 to 68.5 inches     
+    `r I(l(TRUE))` 59 to 69 inches     
+```{r include=FALSE, results="hide"}
+I(l(finish=TRUE))
+```
+
+<aside>
+>ANSWER:      
+><code>
+\> quantile( galton$mother, c(0.025, 0.975))      
+ 2.5% 97.5%       
+   59    69       
+</code>
+</aside>
+
+`r I(closeProblem())`
+

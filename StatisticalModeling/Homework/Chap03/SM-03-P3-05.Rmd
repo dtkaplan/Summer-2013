@@ -1,0 +1,99 @@
+Intro to Statistical Modeling Ch. 3 Prob. 5 
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P5-SD")
+```
+
+Use R to generate the sequence of 101 numbers: $0, 1, 2, 3, \cdots, 100$.
+
+<aside>
+ANSWER:
+```{r}
+s1 = seq(0,100)
+```
+</aside>
+
+```{r include=FALSE}
+sequence=selectNumber(choices=c(25,50,75,100), correct=c(50), name="meanvalue", totalPts=1)
+```
+1. What's the mean value? `r I(sequence)`
+
+<aside>
+ANSWER:
+```{r}
+mean(s1)
+```
+</aside>
+
+```{r include=FALSE}
+sequence2=selectNumber(choices=c(25,50,75,100), correct=c(50), name="medianvalue", totalPts=1)
+```
+2. What's the median value? `r I(sequence2)`
+
+
+<aside>
+ANSWER:
+```{r}
+median(s1)
+```
+</aside>
+
+```{r include=FALSE}
+sequence3=selectNumber(choices=c(10.7,29.3,41.2,53.8), correct=c(29.3), name="StdDev", totalPts=1)
+```
+3. What's the standard deviation? `r I(sequence3)`
+
+<aside>
+ANSWER:
+```{r}
+sd(s1)
+```
+</aside>
+
+```{r include=FALSE}
+sequence4=selectNumber(choices=c(5050,20251,103450,338350,585200), correct=c(338350), name="SumoftheSquares", totalPts=1)
+```
+4. What's the sum of squares? `r I(sequence4)`
+
+<aside>
+ANSWER:
+```{r}
+sum( s1^2 )
+```
+</aside>
+
+Now generate the sequence of perfect squares $0, 1, 4, 9, \cdots, 10000$,
+or, written another way, $0^2, 1^2, 2^2, 3^2, \cdots, 100^2$.  (Hint:
+Make a simple sequence 0 to 100 and square it.)
+
+<aside>
+ANSWER:
+```{r}
+s2 = seq(0,100)^2
+```
+</aside>
+
+
+```{r include=FALSE}
+perfectsquares=selectNumber(choices=c(50,2500,3350,4750,7860), correct=c(3350), name="meanvalue2", totalPts=1)
+```
+1. What's the mean value? `r I(perfectsquares)` 
+
+```{r include=FALSE}
+perfectsquares2=selectNumber(choices=c(50,2500,3350,4750,7860), correct=c(2500), name="medianvalue2", totalPts=1)
+```
+2. What's the median value? `r I(perfectsquares2)`
+
+```{r include=FALSE}
+perfectsquares3=selectNumber(choices=c(29.3,456.2,3028,4505,6108), correct=c(3028), name="StdDev2", totalPts=1)
+```
+3. What's the standard deviation? `r I(perfectsquares3)`
+
+```{r include=FALSE}
+perfectsquares4=selectNumber(choices=c(5050,20251,338350,585200,2050333330), correct=c(2050333330), name="SumoftheSquares2", totalPts=1)
+```
+4. What's the sum of squares? `r I(perfectsquares4)`
+
+`r I(closeProblem())`

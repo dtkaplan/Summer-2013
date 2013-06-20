@@ -1,0 +1,85 @@
+Intro to Statistical Modeling Ch.3 Prob. 6
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P6-SD")
+```
+Using Galton's height `Galton`, compute the answers to these
+questions about outliers using the 1.5 IQR rule of
+thumb and the <code>outlier</code> function.
+
+1. Which of these statements will compute the number of cases that
+  are outliers with respect to *height*?  (Assume that the data
+  frame is named <code>galton</code>.)
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+  `r I(f(FALSE))` <code>outlier(galton$height)</code>     
+  `r I(f(TRUE))` <code>table(outlier(galton$height))</code>     
+  `r I(f(FALSE))` <code>outlier(table(galton$height))</code>     
+  `r I(f(FALSE))` <code>subset(galton, outlier(galton$height))</code>     
+  `r I(f(FALSE))` <code>outlier(subset(galton, galton$height))</code>
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+ 
+```{r include=FALSE}
+outliers=selectNumber(choices=c(0,1,2,3,5,10,15,20), correct=c(1), name="height", totalPts=1)
+```
+2. How many of the cases are outliers in *height* ? `r I(outliers)`
+
+<aside>
+>ANSWER:     
+<code>
+>table( outlier( galton$height ) )      
+FALSE  TRUE       
+  897     1       
+</code>
+</aside>
+
+```{r include=FALSE}
+outliers2=selectNumber(choices=c(0,11,22,33,44,55,66), correct=c(44), name="mother", totalPts=1)
+```
+3. How many of the cases are outliers in *mother*? `r I(outliers2)`
+
+<aside>
+>ANSWER:
+<code>
+>\> table( outlier( galton$mother ) )      
+>FALSE  TRUE      
+  854    44      
+</code>
+</aside>
+
+```{r include=FALSE}
+outliers3=selectNumber(choices=c(0,4,9,14,19,24,29), correct=c(9), name="father", totalPts=1)
+```
+4. How many of the cases are outliers in *father*? `r I(outliers3)`
+
+<aside>
+>ANSWER:
+<code>
+>table( outlier( galton$father ) )     
+>FALSE  TRUE      
+>  889     9      
+</code>
+</aside>
+
+```{r include=FALSE}
+outliers4=selectNumber(choices=c(0,5,10,15,20,25,30,35), correct=c(20), name="female", totalPts=1)
+```
+5. Looking just at the cases where *mother* is an outlier, how
+  many of the children involved (variable *sex*) are female? `r I(outliers4)`
+  
+<aside>
+>ANSWER:
+<code>
+>\> foo = subset(galton, outlier( galton$mother) )      
+>\> table(foo$sex)     
+ F  M      
+20 24      
+</code>
+</aside>
+
+`r I(closeProblem())`

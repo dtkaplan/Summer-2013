@@ -43,9 +43,19 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 3
 
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-ReadingQuestions.html) issue with boxplot
+
 * [Problem 3.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-01.html) working
 
 * [Problem 3.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-02.html) working
+
+* [Problem 3.03](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-03.html) working
+
+* [Problem 3.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-04.html) working
+
+* [Problem 3.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-05.html) numbering?
+
+* [Problem 3.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-06.html) numbering?
 
 * [Problem 3.08](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-08.html) problems with commands for image
  
@@ -83,6 +93,8 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.29](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
 
+*[Problem 3.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
+
 * [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) issues with image commands/comments, also, formatting of last question (the one with no correct answer)
 
 * [Problem 3.36](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-36.html) working
@@ -91,6 +103,6 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.53](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-53.html) this problem called for >10 selectSets (and the system is only configured to support 10), therefore, had to do some interesting formatting to still include all of the problems.  Select sets would be best (i believe). Is there a way to get more >10 selectSets on an Rmd file?
 
-* [Proble 3.54](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-54.html) **NOT COMPLETE**
+* [Proble 3.54](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-54.html) working
 
 * [Problem 3.56](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-56.html) this problem was in R but not on the website, therefore I gave it the number 3.56

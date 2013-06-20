@@ -1,0 +1,52 @@
+Intro to Statistical Modeling Ch.3 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-3-P4-SD")
+```
+
+In Galton's data, are the sons typically taller than their fathers? 
+Create a variable that is
+the difference between the son's height and the father's height.
+(Arrange it so that a positive number refers to a son who is taller
+than his father.)
+
+```{r include=FALSE}
+galtondata=selectNumber(choices=c(-2.47,-0.31,0.06,66.76,69.23), correct=c(0.06), name="meanDifference", totalPts=1)
+```
+1. What's the mean height difference (in inches)? `r I(galtondata)`
+
+```{r include=FALSE}
+galtondata2=selectNumber(choices=c(1.32,2.63,2.74,3.58,3.75), correct=c(2.74), name="StdDev", totalPts=1)
+```
+2. What's the standard deviation (in inches)? `r I(galtondata2)`
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+3. What is the 95-percent coverage interval (in inches)?      
+  `r I(f(FALSE))` -3.7 to 4.8      
+  `r I(f(FALSE))` -4.6 to 4.9     
+  `r I(f(TRUE))` -5.2 to 5.6     
+  `r I(f(FALSE))` -9.5 to 4.5     
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:
+First, you need to pull out the data for males.     
+<code>
+\> males = subset( galton, sex=='M')     
+\> mean(males$height - males$father)     
+[1] 0.06065     
+\> sd(males$height - males$father)     
+[1] 2.735     
+\> quantile(males$height - males$father, c(.025,.975))     
+ 2.5% 97.5%      
+-5.18  5.58      
+</code>
+</aside>
+
+`r I(closeProblem())`
