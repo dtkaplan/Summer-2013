@@ -186,6 +186,9 @@ hljs.initHighlightingOnLoad();
 galton = fetchData(&quot;Galton&quot;)
 </code></pre>
 
+<pre><code>## Data Galton found in package.
+</code></pre>
+
 <p>Which one of these commands will give the 95th percentile of the
 children&#39;s heights in Galton&#39;s data? <code>Galton</code></p>
 
@@ -242,27 +245,14 @@ children&#39;s heights in Galton&#39;s data? <code>Galton</code></p>
 "content": "D" 
 }'> <b>D</b></label> <code>quantile(galton$father, 0.95)</code>    </p>
 
-<p><aside></p>
-
-<blockquote>
-<p>ANSWER:
+<p><aside>
+ANSWER:
 What&#39;s key here is to remember that percentiles need to be specified
 as a fraction: the 95th percentile is 0.95.</p>
 
 <p>The children&#39;s heights are contained in the <em>height</em> variable, not
-<em>father</em> (which has the heights of the fathers).</p>
-
-<p>To make the command work, you will have to read in the Galton data
-that is contained in the ISM software distribution.  (See the
-instructions in the book for getting this file and loading it into R.)
-You can store the data in an object called &ldquo;galton&#39;&#39; so that your
-commands will match those given here, but of course you could use any
-name you like.<br/>
-<code>
-&gt; galton = ISMdata(&quot;galton.csv&quot;)<br/>
-</code>
+<em>father</em> (which has the heights of the fathers).
 </aside></p>
-</blockquote>
 
 <p><bigskip></p>
 
@@ -390,19 +380,17 @@ that the interval will run from the 5th percentile to the 95th percentile.
 }'> <b>D</b></label> 68 to 74 inches<br/></li>
 </ul>
 
-<p><aside></p>
+<p><aside>
+ANSWER: A 50-percent coverage interval will leave 25 percent of the data to the left and another 25 percent to the right, so the interval runs from the 25th to the 75th percentile.      </p>
+
+<pre><code class="r">qdata(c(0.25, 0.75), father, data = galton)
+</code></pre>
+
+<pre><code>## 25% 75% 
+##  68  71
+</code></pre>
 
 <blockquote>
-<p>ANSWER:
-A 50-percent coverage interval will leave 25 percent of the data to
-the left and another 25 percent to the right, so the interval runs
-from the 25th to the 75th percentile.<br/>
-<code>
-&gt; quantile( galton$father, c(0.25, 0.75))<br/>
-25% 75%<br/>
- 68  71<br/>
-</code></p>
-
 <p>Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
 BOTH percentiles.  If you wanted, you could do one at a time:<br/>
 <code>
@@ -547,11 +535,8 @@ the mothers&#39; height:<br/>
 }'> <b>D</b></label> 59 to 69 inches     </p></li>
 </ul>
 
-<p><aside></p>
-
-<blockquote>
-<p>ANSWER:
-For a 95-percent coverage interval, look at the 2.5 and 97.5
+<p><aside>
+ANSWER:For a 95-percent coverage interval, look at the 2.5 and 97.5
 percentile.<br/>
 <code>
 &gt; quantile( galton$father, c(0.025, 0.975))<br/>
@@ -559,7 +544,6 @@ percentile.<br/>
    65    74<br/>
 </code>
 </aside></p>
-</blockquote>
 
 <ul>
 <li><p>Mother&#39;s heights</p>
@@ -578,7 +562,7 @@ percentile.<br/>
 "content": "A" 
 }'> <b>A</b></label> 62.5 to 68.5 inches<br/>
 <label for='MCitem2'><input type='radio' name='MC6' id='MCitem2' value='{
-"pts":      1,
+"pts":      0,
 "hint": "",
 "itemInfo": {
 "setID": "SM-3-P3-SD",

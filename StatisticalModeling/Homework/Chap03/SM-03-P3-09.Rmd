@@ -7,15 +7,10 @@ newScorerSet("SM-3-P9-SD")
 ```
 
 
-Here is a boxplot:
-```{r, eval=FALSE}
-plot1, fig=true,include=false,width=4,height=4,echo=false
+Here is a boxplot:    
+```{r plot1, fig.width=4,fig.height=4,echo=FALSE,dev="svg",out.width="70%"}
 x = rbinom(1000,10, .2)
 boxplot(x)
-```
-
-```{r, eval=FALSE}
-includegraphics[width=2.5in]{Figures/AC128-plot1.pdf
 ```
 
 

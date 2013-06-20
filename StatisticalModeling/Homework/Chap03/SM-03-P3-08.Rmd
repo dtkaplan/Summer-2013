@@ -9,11 +9,7 @@ The figure shows the results from the medal winners in the
 women's 10m air-rifle competition in the 2008 Olympics.  (Figure from
 the New York Times, Aug. 10, 2008)
 
-```{r eval=FALSE}
-\medskip
-\centerline{\includegraphics[width=2.5in]{../Figures/shooting.png}}
-\medskip
-```
+![some tect](shooting.png)
 
 The location of each of 10 shots is shown as transluscent light
 circles in each target.  The

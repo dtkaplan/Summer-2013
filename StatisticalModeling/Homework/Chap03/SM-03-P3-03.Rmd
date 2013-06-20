@@ -7,7 +7,7 @@ newScorerSet("SM-3-P3-SD")
 ```
 Here are Galton’s data on heights of adult children and their parents.
 
-```{r eval=FALSE}
+```{r messages=FALSE,warning=FALSE}
 require(mosaic)     
 galton = fetchData("Galton")  
 ```
@@ -27,23 +27,13 @@ I(f(finish=TRUE))
 ```
 
 <aside>
->ANSWER:
->What's key here is to remember that percentiles need to be specified
+ANSWER:
+What's key here is to remember that percentiles need to be specified
 as a fraction: the 95th percentile is 0.95.
 
 
->The children's heights are contained in the *height* variable, not
+The children's heights are contained in the *height* variable, not
 *father* (which has the heights of the fathers).
-
->To make the command work, you will have to read in the Galton data
-that is contained in the ISM software distribution.  (See the
-instructions in the book for getting this file and loading it into R.)
-You can store the data in an object called ``galton'' so that your
-commands will match those given here, but of course you could use any
-name you like.      
-<code>
-\> galton = ISMdata("galton.csv")     
-</code>
 </aside>
 
 <bigskip>
@@ -83,15 +73,10 @@ h=newMC(totalPts=1)
 I(h(finish=TRUE))
 ```
 <aside>
->ANSWER:
->A 50-percent coverage interval will leave 25 percent of the data to
-the left and another 25 percent to the right, so the interval runs
-from the 25th to the 75th percentile.      
-<code>
-\> quantile( galton$father, c(0.25, 0.75))     
-25% 75%      
- 68  71      
-</code>
+ANSWER: A 50-percent coverage interval will leave 25 percent of the data to the left and another 25 percent to the right, so the interval runs from the 25th to the 75th percentile.      
+```{r}
+qdata(  c(0.25, 0.75), father, data=galton)     
+```
 
 >Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
 BOTH percentiles.  If you wanted, you could do one at a time:     
@@ -146,8 +131,7 @@ I(k(finish=TRUE))
 ```
 
 <aside>
->ANSWER:
->For a 95-percent coverage interval, look at the 2.5 and 97.5
+ANSWER:For a 95-percent coverage interval, look at the 2.5 and 97.5
 percentile.     
 <code>
 \> quantile( galton$father, c(0.025, 0.975))     
@@ -161,7 +145,7 @@ percentile.
 l=newMC(totalPts=1)
 ```
     `r I(l(FALSE))` 62.5 to 68.5 inches         
-    `r I(l(TRUE))` 65 to 69 inches      
+    `r I(l(FALSE))` 65 to 69 inches      
     `r I(l(FALSE))` 63 to 68.5 inches     
     `r I(l(TRUE))` 59 to 69 inches     
 ```{r include=FALSE, results="hide"}

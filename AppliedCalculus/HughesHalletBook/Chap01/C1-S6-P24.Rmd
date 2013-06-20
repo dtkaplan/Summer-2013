@@ -1,4 +1,4 @@
-Applied Calculus Ch. 1 §6 Prob. 24
+Applied Calculus Ch. 1 Sec. 6 Prob. 24
 ========================================================
 
 ```{r include=FALSE}
