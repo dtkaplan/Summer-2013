@@ -29,12 +29,7 @@ The figure shows the distribution of temperatures, separately for
 males and females.  Note that the horizontal scale is given in both C
 and F --- this problem will use F.
 
-```{r eval=FALSE}
-\bigskip
-\centerline{\includegraphics[width=4in]{../Figures/f2009-p107-Fig1.png}}
-%\centerline{\pnggraphicsfile[width=4in]{f2009-p107-Fig1}{png}{90}}
-\bigskip
-```
+![dist](f2009-p107-Fig1.png)
 
 What's the absolute range for females?
 ```{r include=FALSE}

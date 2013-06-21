@@ -22,9 +22,9 @@ I(textItem(name="typweight", totalPts=2, rows=4))
 
 `r I(textItem(name="typicalweight", totalPts=2, rows=4))`
 
-```{r, eval=FALSE}
-% See s2008-conf6 for another take on this problem
-```
+<aside>
+See s2008-conf6 for another take on this problem
+</aside>
 
 <aside>
 ANSWER:
@@ -32,10 +32,7 @@ A standard meaning for "typical" is the center of the distribution,
 as might be measured by the mean or median.  Judging from the ad, the
 mean or median might be 10.5 pounds, but stating this would
 misleadingly imply too high a level of precision.  The statement
-"7-14 lbs" indicates that the weight loss varies significantly from person to
-person.  If "typical" is taken to refer to the varation in weight
-loss, the interval might be pointing to how much a typical person
-varies from the mean, as could be measured by the standard deviation.  
+"7-14 lbs" indicates that the weight loss varies significantly from person to person.  If "typical" is taken to refer to the varation in weight loss, the interval might be pointing to how much a typical person varies from the mean, as could be measured by the standard deviation.  
 
 An obvious interpretation is that a "typical" person's weight
 loss will fall into the range 7-14 pounds.  It seems reasonable that
