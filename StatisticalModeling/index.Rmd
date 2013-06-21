@@ -93,9 +93,9 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.29](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
 
-*[Problem 3.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
+* [Problem 3.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
 
-* [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) issues with image commands/comments
+* [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) needs cleaning
 
 * [Problem 3.36](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-36.html) working
 

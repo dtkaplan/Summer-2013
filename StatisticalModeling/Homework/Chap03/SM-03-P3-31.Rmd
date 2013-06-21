@@ -19,7 +19,7 @@ In many fields, pie charts are used as "statistical graphics"
 Here's a pie chart of the weight loss:
 
 ```{r pie,fig.width=5,fig.height=4,echo=FALSE, dev="svg", out.width="70%"}
-w = mosaic("WeightLoss.csv")
+w = fetchData("WeightLoss.csv")
 ww = subset(w, w$Days==14)
 foo = cut( ww$WeightLoss, breaks=c(0,2,4,6,8,10,12,16))
 pie(table(foo),main='Weight Loss in lbs',col=topo.colors(7))
@@ -137,7 +137,7 @@ graphicstyle=selectSet(name="no.correct.answer", totalPts=0, "pie chart"=TRUE, "
 ```
 `r I(graphicstyle)`
 
-```{r, eval=FALSE}
+<!--
 % e-mail May 31, 2008 from 
 % Erin Knutson, 
 % Media Relations Specialist, 
@@ -147,9 +147,7 @@ graphicstyle=selectSet(name="no.correct.answer", totalPts=0, "pie chart"=TRUE, "
 % The spreadsheet containing weight loss data. 
 % [dataset WeightLoss.csv] % in Problems/S2008
 % email June 3, 2008 from Courtney Bell, getserious@hhhealth.com
-
-
-\begin{comment}
+```{r eval=FALSE}
 w = read.csv('WeightLoss.csv')
 ww = subset(w, w$Days==14)
 foo = cut( ww$WeightLoss, breaks=c(0,2,4,6,8,10,12,16))
@@ -158,15 +156,11 @@ hist( ww$WeightLoss/2.2, main='Weight Loss in kg',
    freq=FALSE,xlab='kg',cex.lab=1.3)
 boxplot( ww$WeightLoss/14,ylab='Stones',cex.lab=1.3,cex.axis=1.3,
   main='Weight Loss in Stones')
+```
+-->
 
-\end{comment}
 
 
-
-<<echo=false,results=hide>>=
-options(prompt = "> ")
-options(continue = "+  ")
-``` 
 
 `r I(closeProblem())`
 
