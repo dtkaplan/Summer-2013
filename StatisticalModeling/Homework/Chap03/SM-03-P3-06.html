@@ -180,20 +180,28 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Intro to Statistical Modeling Ch.3 Prob. 6</h1>
 
-<pre><code class="r">galton = fetchData(&quot;Galton&quot;)
-</code></pre>
-
-<pre><code>## Data Galton found in package.
-</code></pre>
-
 <p>Using Galton&#39;s height <code>Galton</code>, compute the answers to these
 questions about outliers using the 1.5 IQR rule of
-thumb and the <code>outlier</code> function.</p>
+thumb.  To help, you execute the following command to create a function <code>outlier()</code> that indicates whether each case is an outlier. </p>
+
+<pre><code class="r">fetchData(&quot;outlier-function.R&quot;)
+</code></pre>
+
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/outlier-function.R
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>tally(~outlier(father), data=Galton)
+</code></pre>
 
 <ol>
 <li><p>Which of these statements will compute the number of cases that
-are outliers with respect to <em>height</em>?  (Assume that the data
-frame is named <code>galton</code>.)</p>
+are outliers with respect to <em>height</em>?  (Remember that the data
+frame is named <code>Galton</code>.)</p>
 
 <p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
 "pts":      0,
@@ -362,10 +370,12 @@ frame is named <code>galton</code>.)</p>
 <p><aside>
 ANSWER:         </p>
 
-<pre><code class="r">table(outlier(galton$height))
+<pre><code class="r">tally(~outlier(height), data = Galton)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;outlier&quot;
+<pre><code>## 
+##  TRUE FALSE Total 
+##     1   897   898
 </code></pre>
 
 <p></aside></p>
@@ -464,7 +474,7 @@ ANSWER:</p>
 <pre><code class="r">table(outlier(galton$mother))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;outlier&quot;
+<pre><code>## Error: object &#39;galton&#39; not found
 </code></pre>
 
 <p></aside></p>
@@ -563,7 +573,7 @@ ANSWER:</p>
 <pre><code class="r">table(outlier(galton$father))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;outlier&quot;
+<pre><code>## Error: object &#39;galton&#39; not found
 </code></pre>
 
 <p></aside></p>
@@ -678,7 +688,7 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 <pre><code class="r">foo = subset(galton, outlier(galton$mother))
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;outlier&quot;
+<pre><code>## Error: object &#39;galton&#39; not found
 </code></pre>
 
 <pre><code class="r">table(foo$sex)

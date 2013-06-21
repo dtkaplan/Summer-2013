@@ -55,7 +55,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-05.html) numbering?
 
-* [Problem 3.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-06.html) errors in r commands (outlier, foo)
+* [Problem 3.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-06.html) This is based on an `outlier()` function contained in `outlier-function.R` that can be created with the command `fetchData("outlier-function.R")`
 
 * [Problem 3.08](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-08.html) working **image inserted**
  
