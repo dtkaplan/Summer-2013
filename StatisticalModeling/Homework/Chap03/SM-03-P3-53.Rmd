@@ -66,157 +66,95 @@ items that best characterize the descriptor.
 
 
 **Median:**      
-
-*Location and Scatter*
 ```{r include=FALSE}
-k=newMC(totalPts=1)
+distrib=selectSet(name="med", totalPts=1, "center"=TRUE, "range"=FALSE, "scatter"=FALSE, "non-central"=FALSE)
 ```
-   `r I(k(TRUE))` center     
-   `r I(k(FALSE))` range     
-   `r I(k(FALSE))` scatter     
-   `r I(k(FALSE))` non-central     
-```{r include=FALSE, results="hide"}
-I(k(finish=TRUE))
-```
+* `r I(distrib)`
 
-*Extremes*
 ```{r include=FALSE}
-l=newMC(totalPts=1)
+distrib2=selectSet(name="med2", totalPts=1, "robust"=TRUE, "not-robust"=FALSE, "plausible"=FALSE, "mainstream"=FALSE)
 ```
-   `r I(l(TRUE))` robust     
-   `r I(l(FALSE))` not-robust          
-   `r I(l(FALSE))` plausible     
-   `r I(l(FALSE))` mainstream    
-```{r include=FALSE, results="hide"}
-I(l(finish=TRUE))
-```
+* `r I(distrib2)`
+
 
 **Standard Deviation:**
 ```{r include=FALSE}
 distrib3=selectSet(name="stdev", totalPts=1, "center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
 ```
-*Location and Scatter*
 * `r I(distrib3)`
 
 ```{r include=FALSE}
 distrib4=selectSet(name="stdev2", totalPts=1,"robust"=FALSE,"not-robust"=TRUE,"plausible"=FALSE,"mainstream"=FALSE )
 ```
-*Extremes*
 * `r I(distrib4)`
 
 **IQR:**
 ```{r include=FALSE}
 distrib5=selectSet(name="iqr", totalPts=1,"center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
 ```
-*Location and Scatter*
 * `r I(distrib5)`
 
 ```{r include=FALSE}
 distrib6=selectSet(name="iqr2", totalPts=1,"robust"=TRUE,"not-robust"=FALSE,"plausible"=FALSE,"mainstream"=FALSE)
 ```
-*Extremes*
 * `r I(distrib6)`
 
 **Variance:**
 ```{r include=FALSE}
 distrib7=selectSet(name="var", totalPts=1,"center"=FALSE,"range"=FALSE,"scatter"=TRUE,"non-central"=FALSE)
 ```
-*Location and Scatter*
 * `r I(distrib7)`
 
 ```{r include=FALSE}
 distrib8=selectSet(name="var2", totalPts=1, "robust"=FALSE,"not-robust"=TRUE,"plausible"=FALSE,"mainstream"=FALSE)
 ```
-*Extremes*
 * `r I(distrib8)`
 
 **95% coverage interval:**
 ```{r include=FALSE}
 distrib9=selectSet(name="95per", totalPts=1,"center"=FALSE,"range"=TRUE,"scatter"=FALSE,"non-central"=FALSE)
 ```
-*Location and Scatter*
 * `r I(distrib9)`
 
 ```{r include=FALSE}
 distrib10=selectSet(name="95per2", totalPts=1, "robust"=FALSE,"not-robust"=FALSE,"plausible"=TRUE,"mainstream"=FALSE)
 ```
-*Extremes*
 * `r I(distrib10)`
 
 **50% coverage interval:**
 ```{r include=FALSE}
 distrib11=selectSet(name="50per", totalPts=1,"center"=FALSE,"range"=TRUE,"scatter"=FALSE,"non-central"=FALSE)
 ```
-*Location and Scatter*
 * `r I(distrib11)`
 
 ```{r include=FALSE}
 distrib12=selectSet(name="50per2", totalPts=1,"robust"=FALSE,"not-robust"=FALSE,"plausible"=FALSE,"mainstream"=TRUE)
 ```
-*Extremes*
 * `r I(distrib12)`
 
 **50th percentile:**     
-
-*Location and Scatter*
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+distrib13=selectSet(name="50percent", totalPts=1, "center"=FALSE, "range"=FALSE, "scatter"=FALSE, "non-central"=TRUE)
 ```
-`r I(f(FALSE))` center     
-`r I(f(FALSE))` range     
-`r I(f(FALSE))` scatter     
-`r I(f(TRUE))` non-central     
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+* `r I(distrib13)`
 
 **80th percentile:**
-
-*Location and Scatter*
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+distrib14=selectSet(name="80percent", totalPts=1, "center"=FALSE, "range"=FALSE, "scatter"=FALSE, "non-central"=TRUE)
 ```
-`r I(g(FALSE))` center     
-`r I(g(FALSE))` range     
-`r I(g(FALSE))` scatter     
-`r I(g(TRUE))` non-central     
-
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
-
+* `r I(distrib14)`
 
 **99th percentile:**
-
-*Location and Scatter*
 ```{r include=FALSE}
-h=newMC(totalPts=1)
+distrib15=selectSet(name="99percent", totalPts=1, "center"=FALSE, "range"=FALSE, "scatter"=FALSE, "non-central"=TRUE)
 ```
-`r I(h(FALSE))` center     
-`r I(h(FALSE))` range     
-`r I(h(FALSE))` scatter     
-`r I(h(TRUE))` non-central     
-
-```{r include=FALSE, results="hide"}
-I(h(finish=TRUE))
-```
-
+* `r I(distrib15)`
 
 **10th percentile:**
-
-*Location and Scatter*
 ```{r include=FALSE}
-j=newMC(totalPts=1)
+distrib16=selectSet(name="10percent", totalPts=1, "center"=FALSE, "range"=FALSE, "scatter"=FALSE, "non-central"=TRUE)
 ```
-`r I(j(FALSE))` center     
-`r I(j(FALSE))` range          
-`r I(j(FALSE))` scatter     
-`r I(j(TRUE))` non-central          
-
-```{r include=FALSE, results="hide"}
-I(j(finish=TRUE))
-```
+* `r I(distrib16)`
 
 
 One of the reasons why there are so many descriptive terms is that

@@ -203,130 +203,16 @@ items that best characterize the descriptor.</p>
 
 <p><strong>Median:</strong>      </p>
 
-<p><em>Location and Scatter</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
- "pts":      1,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> center<br/>
-   <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> range<br/>
-   <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> scatter<br/>
-   <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> non-central     </p>
-
-<p><em>Extremes</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
- "pts":      1,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> robust<br/>
-   <label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> not-robust<br/>
-   <label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> plausible<br/>
-   <label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> mainstream    </p>
-
-<p><strong>Standard Deviation:</strong></p>
-
-<p><em>Location and Scatter</em></p>
-
 <ul>
-<li><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+<li><p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      1,
-"name": "stdev",
+"name": "med",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
-"pts":      0,
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "center" 
@@ -334,7 +220,7 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      1,
-"name": "stdev",
+"name": "med",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
@@ -346,11 +232,11 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      1,
-"name": "stdev",
+"name": "med",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
-"pts":      1,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "scatter" 
@@ -358,7 +244,7 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      1,
-"name": "stdev",
+"name": "med",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
@@ -366,21 +252,16 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "non-central" 
-}'>non-central</option> </select><span id='out1' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><em>Extremes</em></p>
-
-<ul>
-<li><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+}'>non-central</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      2,
-"name": "stdev2",
+"name": "med2",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
-"pts":      0,
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "robust" 
@@ -388,11 +269,11 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      2,
-"name": "stdev2",
+"name": "med2",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
-"pts":      1,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "not-robust" 
@@ -400,7 +281,7 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      2,
-"name": "stdev2",
+"name": "med2",
 "totalpts":      1 
 },
 "type": "Fixed Choice",
@@ -412,6 +293,109 @@ items that best characterize the descriptor.</p>
 "itemInfo": {
 "setID": "SM-3-P53-SD",
 "itemN":      2,
+"name": "med2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "mainstream" 
+}'>mainstream</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><strong>Standard Deviation:</strong></p>
+
+<ul>
+<li><p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      3,
+"name": "stdev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "non-central" 
+}'>non-central</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "robust" 
+}'>robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "not-robust" 
+}'>not-robust</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
+"name": "stdev2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "plausible" 
+}'>plausible</option> <option value='{
+"itemInfo": {
+"setID": "SM-3-P53-SD",
+"itemN":      4,
 "name": "stdev2",
 "totalpts":      1 
 },
@@ -420,18 +404,16 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "mainstream" 
-}'>mainstream</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+}'>mainstream</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
 </ul>
 
 <p><strong>IQR:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
 <ul>
-<li><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+<li><p><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      3,
+"itemN":      5,
 "name": "iqr",
 "totalpts":      1 
 },
@@ -443,7 +425,7 @@ items that best characterize the descriptor.</p>
 }'>center</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      3,
+"itemN":      5,
 "name": "iqr",
 "totalpts":      1 
 },
@@ -455,7 +437,7 @@ items that best characterize the descriptor.</p>
 }'>range</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      3,
+"itemN":      5,
 "name": "iqr",
 "totalpts":      1 
 },
@@ -467,7 +449,7 @@ items that best characterize the descriptor.</p>
 }'>scatter</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      3,
+"itemN":      5,
 "name": "iqr",
 "totalpts":      1 
 },
@@ -476,16 +458,11 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "non-central" 
-}'>non-central</option> </select><span id='out3' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><em>Extremes</em></p>
-
-<ul>
-<li><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+}'>non-central</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      4,
+"itemN":      6,
 "name": "iqr2",
 "totalpts":      1 
 },
@@ -497,7 +474,7 @@ items that best characterize the descriptor.</p>
 }'>robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      4,
+"itemN":      6,
 "name": "iqr2",
 "totalpts":      1 
 },
@@ -509,7 +486,7 @@ items that best characterize the descriptor.</p>
 }'>not-robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      4,
+"itemN":      6,
 "name": "iqr2",
 "totalpts":      1 
 },
@@ -521,7 +498,7 @@ items that best characterize the descriptor.</p>
 }'>plausible</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      4,
+"itemN":      6,
 "name": "iqr2",
 "totalpts":      1 
 },
@@ -530,18 +507,16 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "mainstream" 
-}'>mainstream</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+}'>mainstream</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
 </ul>
 
 <p><strong>Variance:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
 <ul>
-<li><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+<li><p><select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      5,
+"itemN":      7,
 "name": "var",
 "totalpts":      1 
 },
@@ -553,7 +528,7 @@ items that best characterize the descriptor.</p>
 }'>center</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      5,
+"itemN":      7,
 "name": "var",
 "totalpts":      1 
 },
@@ -565,7 +540,7 @@ items that best characterize the descriptor.</p>
 }'>range</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      5,
+"itemN":      7,
 "name": "var",
 "totalpts":      1 
 },
@@ -577,7 +552,7 @@ items that best characterize the descriptor.</p>
 }'>scatter</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      5,
+"itemN":      7,
 "name": "var",
 "totalpts":      1 
 },
@@ -586,16 +561,11 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "non-central" 
-}'>non-central</option> </select><span id='out5' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><em>Extremes</em></p>
-
-<ul>
-<li><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+}'>non-central</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      6,
+"itemN":      8,
 "name": "var2",
 "totalpts":      1 
 },
@@ -607,7 +577,7 @@ items that best characterize the descriptor.</p>
 }'>robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      6,
+"itemN":      8,
 "name": "var2",
 "totalpts":      1 
 },
@@ -619,7 +589,7 @@ items that best characterize the descriptor.</p>
 }'>not-robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      6,
+"itemN":      8,
 "name": "var2",
 "totalpts":      1 
 },
@@ -631,7 +601,7 @@ items that best characterize the descriptor.</p>
 }'>plausible</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      6,
+"itemN":      8,
 "name": "var2",
 "totalpts":      1 
 },
@@ -640,18 +610,16 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "mainstream" 
-}'>mainstream</option> </select><span id='out6' class='shiny-html-output'> </span></li>
+}'>mainstream</option> </select><span id='out8' class='shiny-html-output'> </span></p></li>
 </ul>
 
 <p><strong>95% coverage interval:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
 <ul>
-<li><select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+<li><p><select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      7,
+"itemN":      9,
 "name": "95per",
 "totalpts":      1 
 },
@@ -663,7 +631,7 @@ items that best characterize the descriptor.</p>
 }'>center</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      7,
+"itemN":      9,
 "name": "95per",
 "totalpts":      1 
 },
@@ -675,7 +643,7 @@ items that best characterize the descriptor.</p>
 }'>range</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      7,
+"itemN":      9,
 "name": "95per",
 "totalpts":      1 
 },
@@ -687,7 +655,7 @@ items that best characterize the descriptor.</p>
 }'>scatter</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      7,
+"itemN":      9,
 "name": "95per",
 "totalpts":      1 
 },
@@ -696,16 +664,11 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "non-central" 
-}'>non-central</option> </select><span id='out7' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><em>Extremes</em></p>
-
-<ul>
-<li><select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+}'>non-central</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      8,
+"itemN":     10,
 "name": "95per2",
 "totalpts":      1 
 },
@@ -717,7 +680,7 @@ items that best characterize the descriptor.</p>
 }'>robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      8,
+"itemN":     10,
 "name": "95per2",
 "totalpts":      1 
 },
@@ -729,7 +692,7 @@ items that best characterize the descriptor.</p>
 }'>not-robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      8,
+"itemN":     10,
 "name": "95per2",
 "totalpts":      1 
 },
@@ -741,7 +704,7 @@ items that best characterize the descriptor.</p>
 }'>plausible</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      8,
+"itemN":     10,
 "name": "95per2",
 "totalpts":      1 
 },
@@ -750,18 +713,16 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "mainstream" 
-}'>mainstream</option> </select><span id='out8' class='shiny-html-output'> </span></li>
+}'>mainstream</option> </select><span id='out10' class='shiny-html-output'> </span></p></li>
 </ul>
 
 <p><strong>50% coverage interval:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
 <ul>
-<li><select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+<li><p><select name='in11'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      9,
+"itemN":     11,
 "name": "50per",
 "totalpts":      1 
 },
@@ -773,7 +734,7 @@ items that best characterize the descriptor.</p>
 }'>center</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      9,
+"itemN":     11,
 "name": "50per",
 "totalpts":      1 
 },
@@ -785,7 +746,7 @@ items that best characterize the descriptor.</p>
 }'>range</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      9,
+"itemN":     11,
 "name": "50per",
 "totalpts":      1 
 },
@@ -797,7 +758,7 @@ items that best characterize the descriptor.</p>
 }'>scatter</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":      9,
+"itemN":     11,
 "name": "50per",
 "totalpts":      1 
 },
@@ -806,16 +767,11 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "non-central" 
-}'>non-central</option> </select><span id='out9' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><em>Extremes</em></p>
-
-<ul>
-<li><select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+}'>non-central</option> </select><span id='out11' class='shiny-html-output'> </span></p></li>
+<li><p><select name='in12'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":     10,
+"itemN":     12,
 "name": "50per2",
 "totalpts":      1 
 },
@@ -827,7 +783,7 @@ items that best characterize the descriptor.</p>
 }'>robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":     10,
+"itemN":     12,
 "name": "50per2",
 "totalpts":      1 
 },
@@ -839,7 +795,7 @@ items that best characterize the descriptor.</p>
 }'>not-robust</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":     10,
+"itemN":     12,
 "name": "50per2",
 "totalpts":      1 
 },
@@ -851,7 +807,7 @@ items that best characterize the descriptor.</p>
 }'>plausible</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P53-SD",
-"itemN":     10,
+"itemN":     12,
 "name": "50per2",
 "totalpts":      1 
 },
@@ -860,243 +816,231 @@ items that best characterize the descriptor.</p>
 "hint": "",
 "reward": "Right!",
 "content": "mainstream" 
-}'>mainstream</option> </select><span id='out10' class='shiny-html-output'> </span></li>
+}'>mainstream</option> </select><span id='out12' class='shiny-html-output'> </span></p></li>
 </ul>
 
 <p><strong>50th percentile:</strong>     </p>
 
-<p><em>Location and Scatter</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
- "pts":      0,
-"hint": "",
+<ul>
+<li><select name='in13'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      3,
-"name": "3",
+"setID": "SM-3-P53-SD",
+"itemN":     13,
+"name": "50percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> center<br/>
-<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      3,
-"name": "3",
+"setID": "SM-3-P53-SD",
+"itemN":     13,
+"name": "50percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> range<br/>
-<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      3,
-"name": "3",
+"setID": "SM-3-P53-SD",
+"itemN":     13,
+"name": "50percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> scatter<br/>
-<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
- "pts":      1,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      3,
-"name": "3",
+"setID": "SM-3-P53-SD",
+"itemN":     13,
+"name": "50percent",
 "totalpts":      1 
 },
-"type": "MC",
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
 "reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> non-central     </p>
+"content": "non-central" 
+}'>non-central</option> </select><span id='out13' class='shiny-html-output'> </span></li>
+</ul>
 
 <p><strong>80th percentile:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
- "pts":      0,
-"hint": "",
+<ul>
+<li><select name='in14'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      4,
-"name": "4",
+"setID": "SM-3-P53-SD",
+"itemN":     14,
+"name": "80percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> center<br/>
-<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      4,
-"name": "4",
+"setID": "SM-3-P53-SD",
+"itemN":     14,
+"name": "80percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> range<br/>
-<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      4,
-"name": "4",
+"setID": "SM-3-P53-SD",
+"itemN":     14,
+"name": "80percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> scatter<br/>
-<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
- "pts":      1,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      4,
-"name": "4",
+"setID": "SM-3-P53-SD",
+"itemN":     14,
+"name": "80percent",
 "totalpts":      1 
 },
-"type": "MC",
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
 "reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> non-central     </p>
+"content": "non-central" 
+}'>non-central</option> </select><span id='out14' class='shiny-html-output'> </span></li>
+</ul>
 
 <p><strong>99th percentile:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC5' id='MCitem1' value='{
- "pts":      0,
-"hint": "",
+<ul>
+<li><select name='in15'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      5,
-"name": "5",
+"setID": "SM-3-P53-SD",
+"itemN":     15,
+"name": "99percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> center<br/>
-<label for='MCitem2'><input type='radio' name='MC5' id='MCitem2' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      5,
-"name": "5",
+"setID": "SM-3-P53-SD",
+"itemN":     15,
+"name": "99percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> range<br/>
-<label for='MCitem3'><input type='radio' name='MC5' id='MCitem3' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      5,
-"name": "5",
+"setID": "SM-3-P53-SD",
+"itemN":     15,
+"name": "99percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> scatter<br/>
-<label for='MCitem4'><input type='radio' name='MC5' id='MCitem4' value='{
- "pts":      1,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      5,
-"name": "5",
+"setID": "SM-3-P53-SD",
+"itemN":     15,
+"name": "99percent",
 "totalpts":      1 
 },
-"type": "MC",
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
 "reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> non-central     </p>
+"content": "non-central" 
+}'>non-central</option> </select><span id='out15' class='shiny-html-output'> </span></li>
+</ul>
 
 <p><strong>10th percentile:</strong></p>
 
-<p><em>Location and Scatter</em></p>
-
-<p><label for='MCitem1'><input type='radio' name='MC6' id='MCitem1' value='{
- "pts":      0,
-"hint": "",
+<ul>
+<li><select name='in16'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      6,
-"name": "6",
+"setID": "SM-3-P53-SD",
+"itemN":     16,
+"name": "10percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> center<br/>
-<label for='MCitem2'><input type='radio' name='MC6' id='MCitem2' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "center" 
+}'>center</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      6,
-"name": "6",
+"setID": "SM-3-P53-SD",
+"itemN":     16,
+"name": "10percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> range<br/>
-<label for='MCitem3'><input type='radio' name='MC6' id='MCitem3' value='{
- "pts":      0,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "range" 
+}'>range</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      6,
-"name": "6",
+"setID": "SM-3-P53-SD",
+"itemN":     16,
+"name": "10percent",
 "totalpts":      1 
 },
-"type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> scatter<br/>
-<label for='MCitem4'><input type='radio' name='MC6' id='MCitem4' value='{
- "pts":      1,
+"type": "Fixed Choice",
+"pts":      0,
 "hint": "",
+"reward": "Right!",
+"content": "scatter" 
+}'>scatter</option> <option value='{
 "itemInfo": {
- "setID": "SM-3-P53-SD",
-"itemN":      6,
-"name": "6",
+"setID": "SM-3-P53-SD",
+"itemN":     16,
+"name": "10percent",
 "totalpts":      1 
 },
-"type": "MC",
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
 "reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> non-central          </p>
+"content": "non-central" 
+}'>non-central</option> </select><span id='out16' class='shiny-html-output'> </span></li>
+</ul>
 
 <p>One of the reasons why there are so many descriptive terms is that
 they have different roles in theory.  For example, the variance turns
 out to have simple theoretical properties that make it useful when
 describing sums of variables.  It&#39;s much simpler than, say, the IQR.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12", "in13", "in14", "in15", "in16" ]'>Ignore me</option></select></p>
 
 </body>
 

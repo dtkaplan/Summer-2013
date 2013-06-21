@@ -14,7 +14,7 @@ I(textItem(name="disadvantage", totalPts=2, rows=4))
   `r I(textItem(name="100perc", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 A 100-percent coverage interval needs to include **all** the
 possibilities.  There are situations when this can be useful, but in
 general it's more useful to have an interval that includes "typical"
@@ -31,10 +31,10 @@ I(textItem(name="relat", totalPts=2, rows=4))
   `r I(textItem(name="relat", totalPts=2, rows=4))`
   
 <aside>
->ANSWER:
->The standard deviation is just the square root of the variance.  
+ANSWER:
+The standard deviation is just the square root of the variance.  
 
->You might be wondering ... so why use both?  The reason is that the standard deviation has the same
+You might be wondering ... so why use both?  The reason is that the standard deviation has the same
 units as the variable in question and quantifies how far a typical
 case is from the mean.  But the variance has simpler
 mathematical properties.  The situation is much like that encountered
@@ -52,7 +52,7 @@ I(textItem(name="resid", totalPts=2, rows=4))
   `r I(textItem(name="resid", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 The residual is the difference between the model value for a
 particular case and the actual value.  Residuals tell how far the
 model values are from the actual values.  As you can imagine, in
@@ -68,14 +68,14 @@ I(textItem(name="dens", totalPts=2, rows=4))
   `r I(textItem(name="dens", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 "Frequency" is just a count of how many cases fall into the bin.
 That's a simple thing to calculate --- just count!  But it's not so
 useful, since it depends on how many cases are in your sample and how
 wide the bin is.  If you change these things, the number reported on
 the frequency axis will also change. 
 
->In contrast, the "density" tells what fraction of cases fall into
+In contrast, the "density" tells what fraction of cases fall into
 the bin and also takes into account the width of the bin.  The density
 scale doesn't change if you had a bigger or smaller sample or if you
 changed the bin widths.
@@ -89,12 +89,12 @@ I(textItem(name="normal", totalPts=2, rows=4))
   `r I(textItem(name="normal", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 The "normal" distribution is a bell-shape pattern: most cases fall
 near the typical value.  As you move away from the typical value, the
 number of cases falls off steadily in that bell-shaped way.
 
->The word "normal" stems from the fact that the bell-shaped
+The word "normal" stems from the fact that the bell-shaped
 distribution is encountered in a wide number of settings: it's normal!
 But the fact that it's widely encountered doesn't mean it's the only
 thing going on.  There are many other kinds of distributions.
@@ -104,11 +104,8 @@ thing going on.  There are many other kinds of distributions.
 height broken down according to sex as well as 
 for both males and females together. 
 
-```{r eval=FALSE}
-\bigskip
-\centerline{\includegraphics[width=2in]{../Figures/fig-reading-03a.png}}
-\bigskip
-```
+![boxplots](fig-reading-03a.png)
+
 
 Which components of the boxplot for
 "All" match up exactly with the boxplot for "M" or "F"?  Explain
@@ -120,7 +117,7 @@ I(textItem(name="boxplot", totalPts=2, rows=4))
   `r I(textItem(name="boxplot", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 Notice that the minimum value of the "All" distribution matches
 exactly with the minimum value of "F", and the maximum in "All"
 matches with the maximum in "M".  That makes sense, because the
@@ -140,13 +137,13 @@ I(textItem(name="units", totalPts=2, rows=4))
   `r I(textItem(name="units", totalPts=2, rows=4))`
 
 <aside>
->ANSWER:
+ANSWER:
 The units of the standard deviation are always the same as the units
 of the variable.  So if the variable has units of degrees celsius,
 then the standard deviation will be in degrees celsius.
 
->The variance is the square of the standard deviation.  So the units of
-variance would be ``degrees celsius squared.''  That is, admittedly, a
+The variance is the square of the standard deviation.  So the units of
+variance would be "degrees celsius squared."  That is, admittedly, a
 strange sort of unit, which is why most people prefer to talk about
 standard deviations rather than variances.  But the variance has other
 advantages.
