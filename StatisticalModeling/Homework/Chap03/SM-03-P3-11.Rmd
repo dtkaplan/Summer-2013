@@ -14,34 +14,16 @@ deviation of each of the following sets of numbers:
   ( B ) $1, 3$
 
   ( C ) $1, 2, 3$.
-
-* Which of the 3 sets of numbers --- A, B, or C --- is the most spread out according to the range? 
+  
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+range=selectSet(name="spread", totalPts=1, "A"=FALSE, "B"=FALSE, "C"=FALSE, "No way to know"=FALSE, "All the same"=TRUE)
 ```
-  `r I(f(FALSE))` A     
-  `r I(f(FALSE))` B      
-  `r I(f(FALSE))` C     
-  `r I(f(FALSE))` No way to know     
-  `r I(f(TRUE))` All the same       
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+* Which of the 3 sets of numbers --- A, B, or C --- is the most spread out according to the range? `r I(range)`
 
-
-* Which of the 3 sets of numbers  --- A, B, or C --- is the most spread out according to the standard deviation?
 ```{r include=FALSE}
-g = newMC(totalPts=1)
+range2=selectSet(name="StdDev", totalPts=1, "A"=FALSE, "B"=TRUE, "C"=FALSE, "No way to know"=FALSE, "All the same"=FALSE)
 ```
-  `r I(g(FALSE))` A     
-  `r I(g(TRUE))` B     
-  `r I(g(FALSE))` C     
-  `r I(g(FALSE))` No way to know     
-  `r I(g(FALSE))` All the same
-
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
+* Which of the 3 sets of numbers  --- A, B, or C --- is the most spread out according to the standard deviation? `r I(range2)`
 
 `r I(closeProblem())`
 

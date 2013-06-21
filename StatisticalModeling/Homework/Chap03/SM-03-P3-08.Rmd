@@ -9,12 +9,10 @@ The figure shows the results from the medal winners in the
 women's 10m air-rifle competition in the 2008 Olympics.  (Figure from
 the New York Times, Aug. 10, 2008)
 
-![some tect](shooting.png)
+![Olympic Air Rifle](shooting.png)
 
 The location of each of 10 shots is shown as transluscent light
-circles in each target.  The
-objective is to hit the bright target dot in the center.  There is random
-scatter (variance) as well as steady deviations (bias) from the target.
+circles in each target.  The objective is to hit the bright target dot in the center.  There is random scatter (variance) as well as steady deviations (bias) from the target.
 
 
 
