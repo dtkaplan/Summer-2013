@@ -53,7 +53,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-04.html) working
 
-* [Problem 3.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-05.html) numbering?
+* [Problem 3.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-05.html) working
 
 * [Problem 3.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-06.html) This is based on an `outlier()` function contained in `outlier-function.R` that can be created with the command `fetchData("outlier-function.R")`
 
@@ -61,7 +61,7 @@ Problems will be arranged according to their level of difficulty within their co
  
 * [Problem 3.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-09.html) working **box plot inserted**
 
-* [Problem 3.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-10.html) not complete. Need to determine if this is 10a or 10b to finish
+* [Problem 3.10b](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-10.html) working
 
 * [Problem 3.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-11.html) working
 
@@ -71,7 +71,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-14.html) working
 
-* [Problem 3.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-15.html) issues with converting the commands for box plots
+* [Problem 3.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-15.html) working
 
 * [Problem 3.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-16.html) working
 
@@ -95,7 +95,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 3.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-29.html) working
 
-* [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) needs cleaning
+* [Problem 3.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-31.html) working
 
 * [Problem 3.36](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-03-P3-36.html) working
 
