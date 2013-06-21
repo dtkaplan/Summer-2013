@@ -73,13 +73,13 @@ tally( ~outlier( Galton$father ) )
 ```{r include=FALSE}
 outliers4=selectNumber(choices=c(0,5,10,15,20,25,30,35), correct=c(20), name="female", totalPts=1)
 ```
-5. Looking just at the cases where *mother* is an outlier, how
+(5) Looking just at the cases where *mother* is an outlier, how
   many of the children involved (variable *sex*) are female? `r I(outliers4)`
   
 <aside>
 >ANSWER:
 ```{r}
-foo = subset(Galton, ~outlier( Galton$mother) )      
+foo = subset(Galton, outlier( mother) )      
 tally(foo$sex)     
 ```
 </aside>

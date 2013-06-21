@@ -577,16 +577,15 @@ ANSWER:</p>
 
 <pre><code>## 
 ##  TRUE FALSE Total 
-##    13   885   898
+##     9   889   898
 </code></pre>
 
 <p></aside></p>
 
-<ol>
-<li>Looking just at the cases where <em>mother</em> is an outlier, how
-many of the children involved (variable <em>sex</em>) are female? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+<p>(5) Looking just at the cases where <em>mother</em> is an outlier, how
+  many of the children involved (variable <em>sex</em>) are female? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -597,8 +596,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -609,8 +608,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "5" 
 }'>5</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -621,8 +620,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "10" 
 }'>10</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -633,8 +632,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "15" 
 }'>15</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -645,8 +644,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "20" 
 }'>20</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -657,8 +656,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "25" 
 }'>25</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -669,8 +668,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "30" 
 }'>30</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -680,8 +679,7 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "hint": "",
 "reward": "Right!",
 "content": "35" 
-}'>35</option> </select><span id='out4' class='shiny-html-output'> </span></li>
-</ol>
+}'>35</option> </select><span id='out4' class='shiny-html-output'> </span></p>
 
 <p><aside></p>
 
@@ -689,17 +687,13 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 <p>ANSWER:</p>
 </blockquote>
 
-<pre><code class="r">foo = subset(Galton, ~outlier(Galton$mother))
+<pre><code class="r">foo = subset(Galton, outlier(mother))
+tally(foo$sex)
 </code></pre>
 
-<pre><code>## Error: &#39;subset&#39; must be logical
-</code></pre>
-
-<pre><code class="r">tally(foo$sex)
-</code></pre>
-
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;tally&#39;: Error: object &#39;foo&#39; not found
+<pre><code>## 
+##     F     M Total 
+##    20    24    44
 </code></pre>
 
 <p></aside></p>
