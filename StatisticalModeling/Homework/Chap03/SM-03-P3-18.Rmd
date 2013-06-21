@@ -13,9 +13,7 @@ standard deviation, and 95% coverage interval.  Also, calculate the variance.
 
 ## Part 1.
 
-```{r eval=FALSE}
-\centerline{\includegraphics[width=2in]{../Figures/M103part1.png}}
-```
+![dist1](M103part1.png)
 
 ```{r include=FALSE}
 eyeball=selectNumber(choices=c(10,15,20,25,30), correct=c(20), name="mean", totalPts=1)
@@ -47,11 +45,10 @@ eyeball5=selectNumber(choices=c(2,7,10,20,25,70,140,300), correct=c(25), name="v
 
 
 
-Part 2.
+## Part 2.
 
-```{r eval=FALSE}
-\centerline{\includegraphics[width=2in]{../Figures/M103part2.png}}
-```
+![dist2](M103part2.png)
+
 
 ```{r include=FALSE}
 part2=selectNumber(choices=c(0.004,150,180,250), correct=c(180), name="mean2", totalPts=1)

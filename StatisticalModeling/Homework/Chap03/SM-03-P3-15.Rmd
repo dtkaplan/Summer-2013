@@ -11,16 +11,12 @@ true, the fraction of the data that falls between any two values on
 the $x$ axis should be the area under the curve between those two
 values.
 
-```{r eval=FALSE}
-<<plot1,fig=true,pdf=true,include=false,height=5,width=6,echo=false>>=
-graph.paper( xticks=seq(5,20,by=1), yticks=seq(0,.2,by=.01),xlab="  x  ", ylab="Density???")
+```{r plot1, fig.width=4, fig.height=4, echo=FALSE, dev="svg", out.width="70%"}
 xpts = seq(5,20,length=1000)
 lines(xpts,dnorm(xpts,mean=12,sd=2),lwd=2)
 ```
 
-```{r eval=FALSE}
-\centerline{\includegraphics[width=3.5in]{Figures/B106-plot1}}
-```
+
 
 Answer the following questions. In doing so, keep in mind that the area of each
 little box on the graph paper has been arranged to be $0.01$, so you

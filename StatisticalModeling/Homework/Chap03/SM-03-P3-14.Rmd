@@ -14,30 +14,26 @@ drawing the whiskers.  The others are drawn differently.
 dd = c( jitter(seq(-10,10,by=1)), runif(1000,-3,3) )
 ```
 
-```{r eval=FALSE}
-\centerline{\begin{tabular}{cccc}
-{\bf Plot 1} & {\bf Plot 2} & {\bf Plot 3} & {\bf Plot 4}\\
- & & \\
-<<b1,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+### Plot 1     
+```{r b1,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
 boxplot(dd,range=2.5,pch=20)
-@ 
-\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b1}
-&
-<<b2,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
+```     
+     
+### Plot 2     
+```{r b2,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
 boxplot(dd,pch=20)
-@ 
-\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b2}
-&
-<<b3,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
-boxplot(dd,range=1,pch=20)
-@ 
-\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b3}
-&
-<<b4,fig=TRUE,pdf=TRUE,include=false,width=3,height=5,echo=false>>=
-boxplot(dd,range=0,pch=20)
-@ 
-\includegraphics[width=.8in,trim=35 30 25 30]{Figures/B101-b4}
 ```
+
+### Plot 3     
+```{r b3,fig.width=3,fig.height=5,echo=FALSE,dev="svg", out.width="20%"}
+boxplot(dd,range=1,pch=20)
+```
+
+### Plot 4     
+```{r b4,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
+boxplot(dd,range=0,pch=20)
+```
+
 
 
 Which of the plots is correct?
