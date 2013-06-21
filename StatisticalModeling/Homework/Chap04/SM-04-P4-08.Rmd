@@ -1,0 +1,88 @@
+Intro to Statistical Modeling Ch.4 Prob. 8
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-4-P8-SD")
+```
+
+Create a spreadsheet with the three variables *distance*, *team*, and *position*, in the following way:
+
+
+
+
+*distance* | *team* | *position*
+:-----:|:-----:|:-----:
+5 | Eagles | center
+12 | Eagles | forward
+11 | Eagles | end
+2 | Doves | center
+18 | Doves | end
+12 | Penguins | forward
+15 | Penguins | end
+19 | Eagles | back
+5 | Penguins | center
+12 | Penguins | back
+
+
+
+
+**A.** After entering the data, you can calculate the mean *distance* in various ways.
+
+```{r include=FALSE}
+distance=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(11.1), name="grandmean", totalPts=1)
+```
+
+* What is the grand mean distance? `r I(distance)`
+
+```{r include=FALSE}
+distance2=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(11.75), name="groupmean", totalPts=1)
+```
+* What is the group mean distance for the three teams?
+  * Eagles `r I(distance2)`
+  
+```{r include=FALSE}
+distance3=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(10), name="groupmean2", totalPts=1)
+```
+  * Doves `r I(distance3)`
+
+```{r include=FALSE}
+distance4=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(11), name="groupmean3", totalPts=1)
+```
+  * Penguins `r I(distance4)`     
+  
+
+
+* What is the group mean distance for the following positions?
+```{r include=FALSE}
+distance5=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(15.5), name="back", totalPts=1)
+```
+  * back `r I(distance5)`
+  
+```{r include=FALSE}
+distance6=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(4), name="center", totalPts=1)
+```
+  * center `r I(distance6)`
+  
+```{r include=FALSE}
+distance7=selectNumber(choices=c(4,9.25,10,11,11.1,11.75,12,14.67,15.5), correct=c(14.67), name="end", totalPts=1)
+```
+  * end `r I(distance7)`     
+
+
+**B.** Now, just for the sake of developing an understanding of group means, you are going to change the *dist* data.  Make up values for *dist* so that the mean *dist* for Eagles is 14, for Penguins is 13, and for Doves is 15.
+
+Cut and paste the output from R showing the means for these groups and then the means taken group-wise according to *position*.  
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="means", totalPts=2, rows=4))
+```
+`r I(textItem(name="means", totalPts=2, rows=4))`
+
+
+**C.** Now arrange things so that the means are as stated in (B) but **every** case has a residual of either $1$ or $-1$.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="means2", totalPts=2, rows=4))
+```
+`r I(textItem(name="means2", totalPts=2, rows=4))`
+
+`r I(closeProblem())`

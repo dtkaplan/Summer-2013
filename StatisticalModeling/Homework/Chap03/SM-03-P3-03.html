@@ -180,7 +180,7 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Intro to Statistical Modeling Ch.3 Prob. 3</h1>
 
-<p>Here are Galtons data on heights of adult children and their parents.</p>
+<p>Here are Galton&#39;s data on heights of adult children and their parents.</p>
 
 <pre><code class="r">require(mosaic)
 galton = fetchData(&quot;Galton&quot;)
@@ -311,16 +311,13 @@ as a fraction: the 95th percentile is 0.95.</p>
 "content": "D" 
 }'> <b>D</b></label> <code>quantile(galton$height, 90)</code>     </p>
 
-<p><aside></p>
-
-<blockquote>
-<p>ANSWER:
+<p><aside>
+ANSWER:
 Since you&#39;re looking for a 90-percent coverage interval to cover the
 center of the data, you want to
 leave 5 percent on the left and 5 percent on the right.  This means
 that the interval will run from the 5th percentile to the 95th percentile.
 </aside></p>
-</blockquote>
 
 <p>Find the 50-percent coverage interval of the following variables in Galton&#39;s height data:</p>
 
@@ -390,20 +387,25 @@ ANSWER: A 50-percent coverage interval will leave 25 percent of the data to the 
 ##  68  71
 </code></pre>
 
-<blockquote>
 <p>Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
-BOTH percentiles.  If you wanted, you could do one at a time:<br/>
-<code>
-&gt; quantile( galton$father, 0.25 )<br/>
-25%<br/>
- 68<br/>
-&gt; quantile( galton$father, 0.75 )<br/>
-75%<br/>
- 71<br/>
-</code>
-But it&#39;s nicer to have both ends of the interval reported in one statement.
+BOTH percentiles.  If you wanted, you could do one at a time:     </p>
+
+<pre><code class="r">qdata(c(0.25), father, data = galton)
+</code></pre>
+
+<pre><code>## 25% 
+##  68
+</code></pre>
+
+<pre><code class="r">qdata(c(0.75), father, data = galton)
+</code></pre>
+
+<pre><code>## 75% 
+##  71
+</code></pre>
+
+<p>But it&#39;s nicer to have both ends of the interval reported in one statement.
 </aside></p>
-</blockquote>
 
 <ul>
 <li><p>Mother&#39;s heights</p>
@@ -462,19 +464,19 @@ But it&#39;s nicer to have both ends of the interval reported in one statement.
 }'> <b>D</b></label> 68 to 74 inches     </p></li>
 </ul>
 
-<p><aside></p>
-
-<blockquote>
-<p>ANSWER:
+<p><aside>
+ANSWER:
 Just like with the fathers&#39; heights, but now ask for the quantiles on
-the mothers&#39; height:<br/>
-<code>
-&gt; quantile( galton$mother, c(0.25, 0.75))<br/>
- 25%  75%<br/>
-63.0 65.5<br/>
-</code>
-</aside></p>
-</blockquote>
+the mothers&#39; height:     </p>
+
+<pre><code class="r">qdata(c(0.25, 0.75), mother, data = galton)
+</code></pre>
+
+<pre><code>##  25%  75% 
+## 63.0 65.5
+</code></pre>
+
+<p></aside></p>
 
 <p>Find the 95-percent coverage interval of</p>
 
@@ -537,13 +539,16 @@ the mothers&#39; height:<br/>
 
 <p><aside>
 ANSWER:For a 95-percent coverage interval, look at the 2.5 and 97.5
-percentile.<br/>
-<code>
-&gt; quantile( galton$father, c(0.025, 0.975))<br/>
- 2.5% 97.5%<br/>
-   65    74<br/>
-</code>
-</aside></p>
+percentile. </p>
+
+<pre><code class="r">qdata(c(0.025, 0.975), father, data = galton)
+</code></pre>
+
+<pre><code>##  2.5% 97.5% 
+##    65    74
+</code></pre>
+
+<p></aside></p>
 
 <ul>
 <li><p>Mother&#39;s heights</p>
@@ -602,17 +607,17 @@ percentile.<br/>
 }'> <b>D</b></label> 59 to 69 inches     </p></li>
 </ul>
 
-<p><aside></p>
+<p><aside>
+ANSWER:</p>
 
-<blockquote>
-<p>ANSWER:<br/>
-<code>
-&gt; quantile( galton$mother, c(0.025, 0.975))<br/>
- 2.5% 97.5%<br/>
-   59    69<br/>
-</code>
-</aside></p>
-</blockquote>
+<pre><code class="r">qdata(c(0.025, 0.975), mother, data = galton)
+</code></pre>
+
+<pre><code>##  2.5% 97.5% 
+##    59    69
+</code></pre>
+
+<p></aside></p>
 
 <p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" ]'>Ignore me</option></select></p>
 

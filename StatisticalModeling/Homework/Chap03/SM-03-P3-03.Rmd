@@ -5,7 +5,7 @@ require(mosaic)
 require(WriteScoreR)
 newScorerSet("SM-3-P3-SD")
 ```
-Here are Galton’s data on heights of adult children and their parents.
+Here are Galton's data on heights of adult children and their parents.
 
 ```{r messages=FALSE,warning=FALSE}
 require(mosaic)     
@@ -51,8 +51,8 @@ I(g(finish=TRUE))
 ```
 
 <aside>
->ANSWER:
->Since you're looking for a 90-percent coverage interval to cover the
+ANSWER:
+Since you're looking for a 90-percent coverage interval to cover the
 center of the data, you want to
 leave 5 percent on the left and 5 percent on the right.  This means
 that the interval will run from the 5th percentile to the 95th percentile.
@@ -78,17 +78,17 @@ ANSWER: A 50-percent coverage interval will leave 25 percent of the data to the 
 qdata(  c(0.25, 0.75), father, data=galton)     
 ```
 
->Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
+Note how the command uses <code>c(0.25, 0.75)</code> to create a set with
 BOTH percentiles.  If you wanted, you could do one at a time:     
-<code>
-\> quantile( galton$father, 0.25 )     
-25%      
- 68      
-\> quantile( galton$father, 0.75 )     
-75%      
- 71      
-</code>
->But it's nicer to have both ends of the interval reported in one statement.
+```{r}
+qdata(c(0.25), father, data=galton)
+```
+
+```{r}
+qdata(c(0.75), father, data=galton)
+```
+
+But it's nicer to have both ends of the interval reported in one statement.
 </aside>
 
 * Mother's heights
@@ -104,14 +104,12 @@ I(j(finish=TRUE))
 ```
 
 <aside>
->ANSWER:
->Just like with the fathers' heights, but now ask for the quantiles on
+ANSWER:
+Just like with the fathers' heights, but now ask for the quantiles on
 the mothers' height:     
-<code>
-\> quantile( galton$mother, c(0.25, 0.75))     
- 25%  75%      
-63.0 65.5     
-</code>
+```{r}
+qdata(c(0.25, 0.75), mother, data=galton)
+```
 </aside>
 
 
@@ -132,12 +130,10 @@ I(k(finish=TRUE))
 
 <aside>
 ANSWER:For a 95-percent coverage interval, look at the 2.5 and 97.5
-percentile.     
-<code>
-\> quantile( galton$father, c(0.025, 0.975))     
- 2.5% 97.5%      
-   65    74      
-</code>
+percentile. 
+```{r}
+qdata(c(0.025,0.975), father, data=galton)
+```
 </aside>
 
 * Mother's heights
@@ -153,12 +149,10 @@ I(l(finish=TRUE))
 ```
 
 <aside>
->ANSWER:      
-><code>
-\> quantile( galton$mother, c(0.025, 0.975))      
- 2.5% 97.5%       
-   59    69       
-</code>
+ANSWER:
+```{r}
+qdata(c(0.025, 0.975), mother, data=galton)
+```
 </aside>
 
 `r I(closeProblem())`

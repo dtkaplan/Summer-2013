@@ -276,10 +276,12 @@ cases satisfy various criteria:</p>
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(co2$Plant == &quot;MC1&quot;)
+<pre><code class="r">table(CO2$Plant == &quot;MC1&quot;)
 </code></pre>
 
-<pre><code>## Error: $ operator is invalid for atomic vectors
+<pre><code>## 
+## FALSE 
+##    84
 </code></pre>
 
 <p></aside></p>
@@ -576,10 +578,12 @@ ANSWER:</p>
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(co2$conc &gt;= 300)
+<pre><code class="r">table(CO2$conc &gt;= 300)
 </code></pre>
 
-<pre><code>## Error: $ operator is invalid for atomic vectors
+<pre><code>## 
+## FALSE  TRUE 
+##    36    48
 </code></pre>
 
 <p></aside></p>

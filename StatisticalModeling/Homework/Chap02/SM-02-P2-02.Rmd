@@ -32,7 +32,7 @@ numberplants=selectNumber(choices=c(7,12,14,21,28,34), correct=c(7), name="MC1",
 <aside>
 ANSWER:
 ```{r}
-table(co2$Plant=='MC1')
+table(CO2$Plant=='MC1')
 ```
 </aside>
 
@@ -82,7 +82,7 @@ numberplants4=selectNumber(choices=c(12,24,36,48,60), correct=c(48), name="conce
 <aside>
 ANSWER:
 ```{r}
-table( co2$conc >= 300)
+table( CO2$conc >= 300)
 ```
 </aside>
 
