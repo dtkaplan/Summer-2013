@@ -16,6 +16,7 @@ xpts = seq(5,20,length=1000)
 lines(xpts,dnorm(xpts,mean=12,sd=2),lwd=2)
 ```
 
+![plot](B106-plot1.pdf)
 
 
 Answer the following questions. In doing so, keep in mind that the area of each

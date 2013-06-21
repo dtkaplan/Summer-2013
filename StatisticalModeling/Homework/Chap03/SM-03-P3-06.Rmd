@@ -25,11 +25,11 @@ tally(~outlier(father), data=Galton)
 ```{r include=FALSE}
 f=newMC(totalPts=1)
 ```
-  `r I(f(FALSE))` <code>outlier(galton$height)</code>     
-  `r I(f(TRUE))` <code>table(outlier(galton$height))</code>     
-  `r I(f(FALSE))` <code>outlier(table(galton$height))</code>     
+  `r I(f(FALSE))` <code>~outlier(galton$height)</code>     
+  `r I(f(TRUE))` <code>tally(~outlier(galton$height))</code>     
+  `r I(f(FALSE))` <code>~outlier(tally(galton$height))</code>     
   `r I(f(FALSE))` <code>subset(galton, outlier(galton$height))</code>     
-  `r I(f(FALSE))` <code>outlier(subset(galton, galton$height))</code>
+  `r I(f(FALSE))` <code>~outlier(subset(galton, galton$height))</code>
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))
 ```
@@ -54,7 +54,7 @@ outliers2=selectNumber(choices=c(0,11,22,33,44,55,66), correct=c(44), name="moth
 <aside>
 ANSWER:
 ```{r}
-table( outlier( galton$mother ) )      
+tally( ~outlier( Galton$mother ) )      
 ```
 </aside>
 
@@ -66,7 +66,7 @@ outliers3=selectNumber(choices=c(0,4,9,14,19,24,29), correct=c(9), name="father"
 <aside>
 ANSWER:
 ```{r}
-table( outlier( galton$father ) )     
+tally( ~outlier( Galton$father ) )     
 ```
 </aside>
 
@@ -79,8 +79,8 @@ outliers4=selectNumber(choices=c(0,5,10,15,20,25,30,35), correct=c(20), name="fe
 <aside>
 >ANSWER:
 ```{r}
-foo = subset(galton, outlier( galton$mother) )      
-table(foo$sex)     
+foo = subset(Galton, ~outlier( Galton$mother) )      
+tally(foo$sex)     
 ```
 </aside>
 
