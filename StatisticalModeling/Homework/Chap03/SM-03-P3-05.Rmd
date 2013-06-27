@@ -18,7 +18,7 @@ s1 = seq(0,100)
 ```{r include=FALSE}
 sequence=selectNumber(choices=c(25,50,75,100), correct=c(50), name="meanvalue", totalPts=1)
 ```
-1. What's the mean value? `r I(sequence)`
+(1) What's the mean value? `r I(sequence)`
 
 <aside>
 ANSWER:
@@ -30,7 +30,7 @@ mean(s1)
 ```{r include=FALSE}
 sequence2=selectNumber(choices=c(25,50,75,100), correct=c(50), name="medianvalue", totalPts=1)
 ```
-2. What's the median value? `r I(sequence2)`
+(2) What's the median value? `r I(sequence2)`
 
 
 <aside>
@@ -43,7 +43,7 @@ median(s1)
 ```{r include=FALSE}
 sequence3=selectNumber(choices=c(10.7,29.3,41.2,53.8), correct=c(29.3), name="StdDev", totalPts=1)
 ```
-3. What's the standard deviation? `r I(sequence3)`
+(3) What's the standard deviation? `r I(sequence3)`
 
 <aside>
 ANSWER:
@@ -55,7 +55,7 @@ sd(s1)
 ```{r include=FALSE}
 sequence4=selectNumber(choices=c(5050,20251,103450,338350,585200), correct=c(338350), name="SumoftheSquares", totalPts=1)
 ```
-4. What's the sum of squares? `r I(sequence4)`
+(4) What's the sum of squares? `r I(sequence4)`
 
 <aside>
 ANSWER:

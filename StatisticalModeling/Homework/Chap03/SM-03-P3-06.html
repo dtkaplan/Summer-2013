@@ -215,7 +215,7 @@ frame is named <code>Galton</code>.)</p>
 "type": "MC",
 "reward": "Right!",
 "content": "A" 
-}'> <b>A</b></label> <code>outlier(galton$height)</code><br/>
+}'> <b>A</b></label> <code>~outlier(galton$height)</code><br/>
 <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
@@ -228,7 +228,7 @@ frame is named <code>Galton</code>.)</p>
 "type": "MC",
 "reward": "Right!",
 "content": "B" 
-}'> <b>B</b></label> <code>table(outlier(galton$height))</code><br/>
+}'> <b>B</b></label> <code>tally(~outlier(galton$height))</code><br/>
 <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
@@ -241,7 +241,7 @@ frame is named <code>Galton</code>.)</p>
 "type": "MC",
 "reward": "Right!",
 "content": "C" 
-}'> <b>C</b></label> <code>outlier(table(galton$height))</code><br/>
+}'> <b>C</b></label> <code>~outlier(tally(galton$height))</code><br/>
 <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
@@ -267,7 +267,7 @@ frame is named <code>Galton</code>.)</p>
 "type": "MC",
 "reward": "Right!",
 "content": "E" 
-}'> <b>E</b></label> <code>outlier(subset(galton, galton$height))</code></p></li>
+}'> <b>E</b></label> <code>~outlier(subset(galton, galton$height))</code></p></li>
 <li><p>How many of the cases are outliers in <em>height</em> ? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "itemInfo": {
 "setID": "SM-3-P6-SD",
@@ -471,10 +471,12 @@ ANSWER:         </p>
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(outlier(galton$mother))
+<pre><code class="r">tally(~outlier(Galton$mother))
 </code></pre>
 
-<pre><code>## Error: object &#39;galton&#39; not found
+<pre><code>## 
+##  TRUE FALSE Total 
+##    44   854   898
 </code></pre>
 
 <p></aside></p>
@@ -570,19 +572,20 @@ ANSWER:</p>
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(outlier(galton$father))
+<pre><code class="r">tally(~outlier(Galton$father))
 </code></pre>
 
-<pre><code>## Error: object &#39;galton&#39; not found
+<pre><code>## 
+##  TRUE FALSE Total 
+##     9   889   898
 </code></pre>
 
 <p></aside></p>
 
-<ol>
-<li>Looking just at the cases where <em>mother</em> is an outlier, how
-many of the children involved (variable <em>sex</em>) are female? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+<p>(5) Looking just at the cases where <em>mother</em> is an outlier, how
+  many of the children involved (variable <em>sex</em>) are female? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -593,8 +596,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -605,8 +608,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "5" 
 }'>5</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -617,8 +620,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "10" 
 }'>10</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -629,8 +632,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "15" 
 }'>15</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -641,8 +644,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "20" 
 }'>20</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -653,8 +656,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "25" 
 }'>25</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -665,8 +668,8 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "reward": "Right!",
 "content": "30" 
 }'>30</option> <option value='{
-"itemInfo": {
-"setID": "SM-3-P6-SD",
+ "itemInfo": {
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "female",
 "totalpts":      1 
@@ -676,8 +679,7 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 "hint": "",
 "reward": "Right!",
 "content": "35" 
-}'>35</option> </select><span id='out4' class='shiny-html-output'> </span></li>
-</ol>
+}'>35</option> </select><span id='out4' class='shiny-html-output'> </span></p>
 
 <p><aside></p>
 
@@ -685,16 +687,13 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 <p>ANSWER:</p>
 </blockquote>
 
-<pre><code class="r">foo = subset(galton, outlier(galton$mother))
+<pre><code class="r">foo = subset(Galton, outlier(mother))
+tally(foo$sex)
 </code></pre>
 
-<pre><code>## Error: object &#39;galton&#39; not found
-</code></pre>
-
-<pre><code class="r">table(foo$sex)
-</code></pre>
-
-<pre><code>## Error: object &#39;foo&#39; not found
+<pre><code>## 
+##     F     M Total 
+##    20    24    44
 </code></pre>
 
 <p></aside></p>

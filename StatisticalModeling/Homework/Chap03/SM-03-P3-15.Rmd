@@ -11,11 +11,7 @@ true, the fraction of the data that falls between any two values on
 the $x$ axis should be the area under the curve between those two
 values.
 
-```{r plot1, fig.width=4, fig.height=4, echo=FALSE, dev="svg", out.width="70%"}
-xpts = seq(5,20,length=1000)
-lines(xpts,dnorm(xpts,mean=12,sd=2),lwd=2)
-```
-
+![plot](B106-plot1.png)
 
 
 Answer the following questions. In doing so, keep in mind that the area of each
@@ -24,81 +20,36 @@ can calculate the area by counting boxes.  You don't need to be too
 fanatical about dealing with boxes where only a portion in under the
 curve; just eyeball things and estimate.
 
-* The total area under a density curve should be 1.
-  Assuming that the density curve has height zero outside of the area
-  of the plot, is the area under the entire curve consistent with
-  this?
 ```{r include=FALSE}
 densitycurve=selectSet(name="consistentArea", totalPts=1, "Yes"=TRUE, "No"=FALSE)
 ```
+* The total area under a density curve should be 1.
+  Assuming that the density curve has height zero outside of the area
+  of the plot, is the area under the entire curve consistent with
+  this?  `r I(densitycurve)`
 
- `r I(densitycurve)`
-
+```{r include=FALSE}
+graph=selectSet(name="range12", totalPts=1, "14%"=FALSE, "22%"=FALSE, "34%"=TRUE, "56%"=FALSE, "Can't tell from this graph."=FALSE)
+```
 * What fraction of the data falls in the range $12 \leq x \leq
-  14$?
+  14$? `r I(graph)`
+
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+graph2=selectSet(name="range14", totalPts=1, "14%"=TRUE, "22%"=FALSE, "34%"=FALSE, "56%"=FALSE, "Can't tell from this graph."=FALSE)
 ```
-
- `r I(f(FALSE))` 14%     
- `r I(f(FALSE))` 22%      
- `r I(f(TRUE))` 34%      
- `r I(f(FALSE))` 56%     
- `r I(f(FALSE))` Can't tell from this graph.     
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
-
-
 * What fraction of the data falls in the range $14 \leq x \leq
-  16$?
-```{r include=FALSE}
-g = newMC(totalPts=1)
-```
-
- `r I(g(TRUE))` 14%     
- `r I(g(FALSE))` 22%     
- `r I(g(FALSE))` 34%     
- `r I(g(FALSE))` 56%     
- `r I(g(FALSE))` Can't tell from this graph.
-
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
-
-* What fraction of the data has $x \geq 16$?
+  16$? `r I(graph2)`
 
 ```{r include=FALSE}
-h = newMC(totalPts=1)
+graph3=selectSet(name="equalto16", totalPts=1, "1%"=FALSE, "2%"=TRUE, "5%"=FALSE, "10%"=FALSE, "Can't tell from this graph."=FALSE)
 ```
+* What fraction of the data has $x \geq 16$? `r I(graph3)`
 
- `r I(h(FALSE))` 1%     
- `r I(h(TRUE))` 2%     
- `r I(h(FALSE))` 5%     
- `r I(h(FALSE))` 10%     
- `r I(h(FALSE))` Can't tell from this graph.     
- 
-```{r include=FALSE, results="hide"}
-I(h(finish=TRUE))
+```{r include=FALSE}
+graph4=selectSet(name="95per", totalPts=1, "2"=FALSE, "4"=FALSE, "8"=TRUE, "12"=FALSE, "Can't tell from the graph."=FALSE)
 ```
-
 * What is the width of the 95% coverage interval.  (Note: The
   coverage interval itself has top and bottom ends.  This problem asks
-  for the spacing between the two ends.)
+  for the spacing between the two ends.) `r I(graph4)`
   
-```{r include=FALSE}
-i = newMC(totalPts=1)
-```
-
- `r I(i(FALSE))` 2     
- `r I(i(FALSE))` 4     
- `r I(i(TRUE))` 8      
- `r I(i(FALSE))` 12     
- `r I(i(FALSE))` Can't tell from the graph.
-
-```{r include=FALSE, results="hide"}
-I(i(finish=TRUE))
-```
-
 `r I(closeProblem())`
