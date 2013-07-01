@@ -109,6 +109,8 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 4
 
+* [Problem 4.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-04-06.html) working
+
 * [Problem 4.08](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap03/SM-04-P4-08.html) working
 
 * [Problem 4.00]

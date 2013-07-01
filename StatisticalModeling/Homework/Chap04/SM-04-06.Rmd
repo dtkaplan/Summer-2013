@@ -1,0 +1,68 @@
+Intro to Statistical Modeling Ch. 4 Prob. 6
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-4-P6-SD")
+```
+
+Read in the Current Population Survey wage data:
+`CPS85`
+
+```{r}
+w = fetchData("CPS85")
+```
+
+```{r include=FALSE}
+pop=selectNumber(choices=c(7.68,7.88,8.26,8.31,9.02,9.40,10.88), correct=c(9.02), totalPts=1, name="grandmean")
+```
+* What is the grand mean of *wage*? `r I(pop)`
+
+<aside>
+ANSWER:
+```{r}
+mean(wage, data=w)
+```
+</aside>
+
+```{r include=FALSE}
+pop2=selectNumber(choices=c(7.68,7.88,8.26,8.31,9.02,9.40,10.88), correct=c(7.88), totalPts=1, name="groupwisemean")
+```
+
+* What is the group-wise mean of *wage* for females? `r I(pop2)`
+
+<aside>
+ANSWER:     
+```{r}
+mean(wage~sex, data=w)
+``` 
+</aside>
+
+```{r include=FALSE}
+pop3=selectNumber(choices=c(7.68,7.88,8.26,8.31,9.02,9.40,10.88), correct=c(9.40), totalPts=1, name="marriedpeople")
+```
+
+* What is the group-wise mean of *wage* for married people?  `r I(pop3)`
+
+<aside>
+ANSWER:
+```{r}
+mean(wage~married, data=w)
+```
+</aside>
+
+```{r include=FALSE}
+pop4=selectNumber(choices=c(7.68,7.88,8.26,8.31,9.02,9.40,10.88), correct=c(7.68), totalPts=1, name="marriedfemales")
+```
+
+* What is the group-wise mean of *wage* for married females? `r I(pop4)` 
+
+<aside>
+ANSWER:
+```{r}
+mean(wage~married+sex, data=w)
+```
+</aside>
+
+`r I(closeProblem())`
+
