@@ -1,0 +1,67 @@
+Intro to Statistical Modeling Ch.5 Prob. 17
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-05-30-SD")
+```
+
+Standard errors and confidence interval apply not just to model
+coefficients, but to any numerical description of a variable.
+Consider, for instance, the median or IQR or standard deviation, and
+so on.
+
+A quick and effective way to find a standard error is a method called
+**bootstrapping**, which involves repeatedly resampling the
+variable and calculating the description on each resample.  This gives the
+sampling distribution of the description.  From the sampling
+distribution, the standard error --- which is just the standard
+deviation of the sampling distribution --- can be computed.
+
+Here's an example, based on the inter-quartile range
+of the kids' foot length measurements.
+
+First, compute the desired sample statistic on the actual data
+
+```{r}
+IQR(kids$length)
+```
+
+Next, modify the statement to incorporate resampling of the data:
+
+```{r}
+IQR(resample(kids$length))
+```
+
+
+Finally, run this statement many times to generate the sampling
+distribution and find the standard error of this distribution:
+
+```{r}
+samps = do(1000) * IQR(resample(kids$length))
+sd(samps)
+```
+
+Use the bootstrapping method  to find an estimate of the standard error of each of these
+sample statistics on the kids' foot length data:
+
+```{r include=FALSE}
+boot=selectNumber(choices=c(0.01,0.07,0.14,0.24,0.34,0.71,1.29,1.32,24.6), correct=c(0.24), totalPts=1, name="median")
+```
+* The sample median.  (Pick the closest answer.) `r I(boot)`
+
+```{r include=FALSE}
+boot2=selectNumber(choices=c(0.01,0.07,0.14,0.24,0.34,0.71,1.29,1.32,24.6), correct=c(0.14), totalPts=1, name="stdev")
+```
+* The sample standard deviation. (Pick the closest answer.) `r I(boot2)`
+
+```{r include=FALSE}
+boot3=selectNumber(choices=c(0.01,0.07,0.14,0.24,0.34,0.71,1.29,1.32,24.6), correct=c(0.34), name="75perc", totalPts=1)
+```
+* The sample 75th percentile. `r I(boot3)`
+
+Bootstrapping works well in a broad set of circumstances, but if you
+have a very small sample, say less than a dozen cases, you should be
+skeptical of the result.
+
+`r I(closeProblem())`

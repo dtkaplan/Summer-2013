@@ -118,3 +118,9 @@ Problems will be arranged according to their level of difficulty within their co
 ## Chapter 5
 
 * [Problem 5.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-09.html) working
+
+* [Problem 5.17](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-17.html) issues with r commands
+
+* [Problem 5.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-30.html) working
+
+* [Problem 5.40](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-40.html) working

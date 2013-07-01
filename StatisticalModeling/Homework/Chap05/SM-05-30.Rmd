@@ -1,0 +1,21 @@
+Intro to statistical Modeling Ch. 5 Prob. 30
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-05-30-SD")
+```
+
+
+```{r include=FALSE}
+measure=selectNumber(name="plants", totalPts=1, choices=c(40,80,160,320,640), correct=c(160))
+```
+After a month's hard work in the laboratory, you have measured a
+growth hormone from each of 40 plants and computed a confidence interval on
+the grand mean hormone concentration of $36 \pm 8$ ng/ml.  Your advisor asks you
+to collect more samples until the margin of error is $4$ ng/ml.
+Assuming the typical $1/\sqrt{n}$ relationship between the number of cases in the sample and the size of the margin of error, how many plants, including
+the 40 you have already processed, will you need to measure? `r I(measure)`
+
+`r I(closeProblem())`
+
