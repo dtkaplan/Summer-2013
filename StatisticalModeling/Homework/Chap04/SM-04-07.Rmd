@@ -1,0 +1,77 @@
+Intro to Statistical Modeling Ch. 4 Prob. 7
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-4-07-SD")
+```
+
+Read in the Galton height data
+
+```{r}
+g = fetchData("Galton")
+```
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="StdDev", totalPts=2, rows=3))
+```
+
+* What is the standard deviation of the height?      
+`r I(textItem(name="StdDev", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="GrandMean", totalPts=2, rows=3))
+```
+
+* Calculate the grand mean and, from that, the residuals of the
+  actual heights from the grand mean.      
+`r I(textItem(name="GrandMean", totalPts=2, rows=3))`
+
+<aside>
+```{r}
+mean(height, data=g)
+
+res0 = g$height - 66.76069
+sd(res0)
+```
+</aside>
+
+```{r include=FALSE}
+stddev=selectNumber(choices=c(2.51,2.58,2.92,3.58,3.82), correct=c(3.58), totalPts=1, name="residuals")
+```
+What is the standard deviation of the residuals from this "grand mean"
+model? `r I(stddev)` 
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="group-wiseMean", totalPts=2, rows=3))
+```
+* Calculate the group-wise mean for the different sexes and, from
+  that, the residuals of the actual heights from this group-wise
+  model.     
+  `r I(textItem(name="group-wiseMean", totalPts=2, rows=3))`
+
+<aside>
+```{r}
+mod1 = mean( height ~ sex, data=g)
+res1 = g$height - fitted( mod1, data=g)
+sd(res1)
+```
+</aside>
+
+```{r include=FALSE}
+stddev2=selectNumber(choices=c(2.51,2.58,2.92,3.58,3.82), correct=c(2.51), totalPts=1, name="residuals2")
+```
+
+What is the standard deviation of the residuals from this group-wise
+model? `r I(stddev2)`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="explain", totalPts=2, rows=4))
+```
+
+* Explain why the standard deviation of the residuals of the
+  group-wise model less than the standard deviation of the residuals
+  of the "grand mean" model.      
+  `r I(textItem(name="explain", totalPts=2, rows=4))`
+  
+`r I(closeProblem())`
