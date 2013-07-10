@@ -1,0 +1,84 @@
+Intro to Statistical Modeling Ch.6 Prob.12 
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-12-SD")
+```
+
+*Time Magazine* reported the results of a poll of people's opinions about the U.S. economy in July 2008.  The results are summarized in the graph.
+
+
+![Opinions About the Economy](time-poll-july-2008.png)
+
+[Source: *Time*, July 28, 2008, p. 41]
+
+
+The variables depicted in the graph are:
+
+* *Pessimism*, as indicated by agreeing with the statement that
+the U.S. was a better place to live in the 1990s and will continue to
+decline. 
+* *Ethnicity*, with three levels: White, African American, Hispanic.
+* *Income*, with five levels.
+* *Age*, with four levels.
+
+```{r include=FALSE}
+statements=selectSet(name="PessimismIncome", totalPts=1, "Pessimism declines as incomes get higher"=TRUE, " Pessimism increases as incomes get higher"=FALSE, "Pessimism is unrelated to income"=FALSE) 
+```
+Judging from the information in the graph, which of these statements
+best describes the model *pessimism* ~ *income*? `r I(statements)`
+
+```{r include=FALSE}
+statements2=selectSet(name="PessimismAge", totalPts=1, "Pessimism is highest in the 18-29 age group."=TRUE, "Pessimism is highest in the 64 and older group."=FALSE, "Pessimism is lowest among whites."=FALSE, "Pessimism is unrelated to age."=FALSE)
+```
+
+Again, judging from the information in the graph, which of these
+statements best describes the model *pessimism* ~ *age*? `r I(statements2)`
+
+
+Poll results such as this are almost always reported using just one
+explanatory variable at a time, as in this graphic.  However, it can
+be more informative to know the effect of one variable while *adjusting for* other variables.  For example, in looking at the
+connection between *pessimism* and *age*, it would be useful to
+be able to untangle the influence of *income*.
+
+<aside>
+
+Imagine that the poll were reported in terms of a model 
+*pessimism* ~ *age* + *income*. Keep in mind
+that there is a strong correlation between *age* and *income*, with
+people in the 18-29 age group typically having smaller incomes than
+people in older age groups.
+
+Which of the following is true about the *age* coefficients from
+such a model?
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` They would be exactly the same as in the *pessimism* ~ *age*?     
+`r I(f(TRUE))` They would display the relationship between *pessimism* and *age* adjusting for *income*.     
+`r I(f(FALSE))` They would display the relationship between *pessimism* and *income* adjusting for *age*.
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="conclusions", totalPts=2, rows=4))
+```
+How do you think the conclusions suggested by the poll might be different if the results were presented in terms of the model *pessimism* ~ *age* + *income* rather than the two separate models *pessimism* ~ *age* and *pessimism* ~ *income*?      
+`r I(textItem(name="conclusions", totalPts=2, rows=4))`
+
+<aside>
+ANSWER:
+Taking into account that younger people tend to have lower incomes, and that lower income people tend to be more pessimistic, it is likely that the model *pessimism* ~ *age* + *income* would show a different relationship between *pessimism* and *age* than the model *pessimism* ~ *age*.  For example,
+Simpson's paradox might apply and it could be that, when adjusting for income, younger people are *less* pessimistic than older people.
+
+Unfortunately, it's not possible to reconstruct the multi-variable
+models from the single-variable summaries that are typical of polls.
+It would be helpful if results were presented after adjusting for the
+other variables involved.
+</aside>
+
+`r I(closeProblem())`
+
