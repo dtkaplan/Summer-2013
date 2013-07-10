@@ -1,0 +1,101 @@
+Intro to Statistical Modeling Ch.5 Prob.23
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-5-23-SD")
+```
+
+Robert Hooke (1635-1703) was a contemporary of Isaac Newton.  He is famous for his law of elasticity (Hooke's Law) and is considered the father of microscopy.  He was the first to use the word "cell" to name the components of plant tissue;  the structures he observed during his observations through a microscope reminded him of monks' cells in a monastery.   He drew this picture of cork cells under the microscope:
+
+![cork cells](RobertHookeMicrographial1665.jpg)
+
+\centerline{\includegraphics[width=2in]{../Figures/RobertHookeMicrographia1665.jpg}}
+
+Regarding these observations of cork, Hooke wrote:
+> *I could exceedingly plainly perceive it to be all perforated and porous, much like a Honey-comb, but that the pores of it were not regular. . . . these pores, or cells, . . . were indeed the first *microscopical* pores I ever saw, and perhaps, that were ever seen, for I had not met with any Writer or Person, that had made any mention of them before this ....*
+
+He went on to measure the cell size.
+
+> *But, to return to our Observation, I told several lines of these pores, and found that there were usually about threescore of these small Cells placed end-ways in the eighteenth part of an Inch in length, whence i concluded that there must be neer eleven hundred of them, or somewhat more then a thousand in the length of an Inch, and therefore in a square Inch above a Million, or 1166400. and in a Cubick Inch, above twelve hundred Millions, or 1259712000. a thing almost incredible, did not our *Microscope* assure us of it by ocular demonstration ....* --- from Robert Hooke, *Micrographia*, 1665
+
+
+There are several aspects of Hooke's statement that reflect its
+origins at the start of modern science.  Some are quaint, such as the
+spelling and 
+obsolete use of Capitalization and the hyperbolic language ("a thing
+almost incredible," which, to be honest, is true enough, but not a
+style accepted today in scientific writing).  Hooke worked before the
+development of the 
+modern notion of precision.  The seeming exactness of the number
+1,259,712,000 for the count of cork cells in a cubic inch leaves a
+modern reader to wonder: did he really count over a billion cells?
+
+It's easy enough to trace through Hooke's calculation.  The observation at the base of the calculation is threescore cells --- that's 60 cells ---  in 1/18 of an inch.  This comes out to $60 \times 18 = 1080$ cells per linear inch.  Modeling each cell as a little cube allows this to be translated into the number of cells covering a square inch: $1080^2$ or 1,116,400.  To estimate the number of cells in a cubic inch of cork material, the calculation is $1080^3$ or
+1,259,712,000.  
+
+To find the precision of these estimates, you need to go back to the
+precision of the basic observation: 60 cells in 1/18th of an inch.
+Hooke didn't specify the precision of this, but it seems reasonable to
+think it might be something like $60 \pm 5$ or so, at a confidence
+level of 95%.
+
+
+When you change the units of a measurement (say, miles into
+  kilometers), both the point estimate and the margin of error are
+  multiplied by the conversion factor.
+
+Translate Hooke's count of the number of cells in 1/18 inch,  $60 \pm 5$ into
+  a confidence interval on the number of cells per linear inch.  
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+
+`r I(f(FALSE))` $1080 \pm 5$     
+`r I(f(TRUE))` $1080 \pm 90$     
+`r I(f(FALSE))` $1080 \pm 180$
+
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+In calculating the number of cells to cover a square inch, Hooke simply squared the number of cells per inch.  That's a reasonable approximation.  
+
+To carry this calculation through a confidence interval, you can't just square the point estimate and the margin of error separately. Instead, a reasonable way to proceed is to take the endpoints of the interval (e.g., 55 to 65 for the count of cells in 1/18 inch), and square those endpoints. Then convert back to $\pm$ format.
+
+What is a reasonable confidence interval for the number of cells
+covering a square inch?
+
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+`r I(g(FALSE))` $1,200,000 \pm 500,000$     
+`r I(g(TRUE))` $1,170,000 \pm 190,000$    
+`r I(g(FALSE))` $1,166,000 \pm 19,000$     
+`r I(g(FALSE))` $1,166,400 \pm 1,900$     
+```{r include=FALSE, results='hide'}
+I(g(finish=TRUE))
+```
+
+What is a reasonable confidence interval for the number of cork
+  cells that fit into a cubic inch?
+
+```{r include=FALSE}
+h=newMC(totalPts=1)
+```
+`r I(h(TRUE))` $1,300,000,000 \pm 160,000,000$     
+`r I(h(FALSE))` $1,260,000,000 \pm 16,000,000$    
+`r I(h(FALSE))` $1,260,000,000 \pm 1,600,000$     
+`r I(h(FALSE))` $1,259,700,000 \pm 160,000$     
+`r I(h(FALSE))` $1,259,710,000 \pm 16,000$     
+`r I(h(FALSE))` $1,259,712,000 \pm 1,600$     
+```{r include=FALSE, results='hide'}
+I(h(finish=TRUE))
+```
+
+It's usually better to write such numbers in scientific notation, so
+that the reader doesn't have to count digits to make sense of them.
+For example, $1,260,000,000 \pm 16,000,000$ might be more clearly
+written  as $1260 \pm 16 \times 10^6$.
+
+`r I(closeProblem())`

@@ -1,0 +1,28 @@
+Intro to Statistical Modeling Ch.5 Prob.31
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-5-31-SD")
+```
+
+You are calculating the mean of a variable *B* and you want to know the
+standard error, that is, the standard deviation of the sampling
+distribution of the mean.  Which of the following statements will estimate the standard error by bootstrapping?
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` <code>sd(do(500)*resample(mean(B)))</code>     
+`r I(f(FALSE))` <code>resample(do(500)*mean(sd(B)))</code>     
+`r I(f(FALSE))` <code>mean(do(500)*mean(resample(B)))</code>     
+`r I(f(TRUE))` <code>sd(do(500)*mean(resample(B)))</code>     
+`r I(f(FALSE))` <code>resample(sd(do(500)*mean(B)))</code>    
+
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+`r I(closeProblem())`
+
+

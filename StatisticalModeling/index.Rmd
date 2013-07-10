@@ -119,13 +119,18 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 5.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-09.html) working
 
+* [Problem 5.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-12.html) errors in creating boxplots.  Can't find the figures to insert into a table format
+
+* [Problem 5.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-13.html) mostly working, what is the new name for weightLoss.csv
+
 * [Problem 5.17](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-17.html) issues with r commands
 
-<<<<<<< HEAD
 * [Problem 5.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-20.html) working
 
-=======
->>>>>>> 769f321c7f1563682359afb6c0e0e00f469385ed
+* [Problem 5.23](htpp//dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-23.html) image?
+
 * [Problem 5.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-30.html) working
+
+* [Problem 5.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-31.html) working
 
 * [Problem 5.40](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-40.html) working

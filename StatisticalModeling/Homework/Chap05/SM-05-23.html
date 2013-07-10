@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch.5 Prob.23</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch.5 Prob.23</h1>
+
+<p>Robert Hooke (1635-1703) was a contemporary of Isaac Newton.  He is famous for his law of elasticity (Hooke&#39;s Law) and is considered the father of microscopy.  He was the first to use the word &ldquo;cell&rdquo; to name the components of plant tissue;  the structures he observed during his observations through a microscope reminded him of monks&#39; cells in a monastery.   He drew this picture of cork cells under the microscope:</p>
+
+<p><img src="RobertHookeMicrographial1665.jpg" alt="cork cells"/></p>
+
+<p>\centerline{\includegraphics[width=2in]{../Figures/RobertHookeMicrographia1665.jpg}}</p>
+
+<p>Regarding these observations of cork, Hooke wrote:</p>
+
+<blockquote>
+<p><em>I could exceedingly plainly perceive it to be all perforated and porous, much like a Honey-comb, but that the pores of it were not regular&hellip; . these pores, or cells, &hellip; were indeed the first *microscopical</em> pores I ever saw, and perhaps, that were ever seen, for I had not met with any Writer or Person, that had made any mention of them before this &hellip;.*</p>
+</blockquote>
+
+<p>He went on to measure the cell size.</p>
+
+<blockquote>
+<p><em>But, to return to our Observation, I told several lines of these pores, and found that there were usually about threescore of these small Cells placed end-ways in the eighteenth part of an Inch in length, whence i concluded that there must be neer eleven hundred of them, or somewhat more then a thousand in the length of an Inch, and therefore in a square Inch above a Million, or 1166400. and in a Cubick Inch, above twelve hundred Millions, or 1259712000. a thing almost incredible, did not our *Microscope</em> assure us of it by ocular demonstration &hellip;.* &mdash; from Robert Hooke, <em>Micrographia</em>, 1665</p>
+</blockquote>
+
+<p>There are several aspects of Hooke&#39;s statement that reflect its
+origins at the start of modern science.  Some are quaint, such as the
+spelling and 
+obsolete use of Capitalization and the hyperbolic language (&ldquo;a thing
+almost incredible,&rdquo; which, to be honest, is true enough, but not a
+style accepted today in scientific writing).  Hooke worked before the
+development of the 
+modern notion of precision.  The seeming exactness of the number
+1,259,712,000 for the count of cork cells in a cubic inch leaves a
+modern reader to wonder: did he really count over a billion cells?</p>
+
+<p>It&#39;s easy enough to trace through Hooke&#39;s calculation.  The observation at the base of the calculation is threescore cells &mdash; that&#39;s 60 cells &mdash;  in 1/18 of an inch.  This comes out to \( 60 \times 18 = 1080 \) cells per linear inch.  Modeling each cell as a little cube allows this to be translated into the number of cells covering a square inch: \( 1080^2 \) or 1,116,400.  To estimate the number of cells in a cubic inch of cork material, the calculation is \( 1080^3 \) or
+1,259,712,000.  </p>
+
+<p>To find the precision of these estimates, you need to go back to the
+precision of the basic observation: 60 cells in 1/18th of an inch.
+Hooke didn&#39;t specify the precision of this, but it seems reasonable to
+think it might be something like \( 60 \pm 5 \) or so, at a confidence
+level of 95%.</p>
+
+<p>When you change the units of a measurement (say, miles into
+  kilometers), both the point estimate and the margin of error are
+  multiplied by the conversion factor.</p>
+
+<p>Translate Hooke&#39;s count of the number of cells in 1/18 inch,  \( 60 \pm 5 \) into
+  a confidence interval on the number of cells per linear inch.  </p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 1080 \pm 5 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 1080 \pm 90 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 1080 \pm 180 \)</p>
+
+<p>In calculating the number of cells to cover a square inch, Hooke simply squared the number of cells per inch.  That&#39;s a reasonable approximation.  </p>
+
+<p>To carry this calculation through a confidence interval, you can&#39;t just square the point estimate and the margin of error separately. Instead, a reasonable way to proceed is to take the endpoints of the interval (e.g., 55 to 65 for the count of cells in 1/18 inch), and square those endpoints. Then convert back to \( \pm \) format.</p>
+
+<p>What is a reasonable confidence interval for the number of cells
+covering a square inch?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 1,200,000 \pm 500,000 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 1,170,000 \pm 190,000 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 1,166,000 \pm 19,000 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 1,166,400 \pm 1,900 \)     </p>
+
+<p>What is a reasonable confidence interval for the number of cork
+  cells that fit into a cubic inch?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 1,300,000,000 \pm 160,000,000 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 1,260,000,000 \pm 16,000,000 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 1,260,000,000 \pm 1,600,000 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 1,259,700,000 \pm 160,000 \)<br/>
+<label for='MCitem5'><input type='radio' name='MC3' id='MCitem5' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> \( 1,259,710,000 \pm 16,000 \)<br/>
+<label for='MCitem6'><input type='radio' name='MC3' id='MCitem6' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-5-23-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "F" 
+}'> <b>F</b></label> \( 1,259,712,000 \pm 1,600 \)     </p>
+
+<p>It&#39;s usually better to write such numbers in scientific notation, so
+that the reader doesn&#39;t have to count digits to make sense of them.
+For example, \( 1,260,000,000 \pm 16,000,000 \) might be more clearly
+written  as \( 1260 \pm 16 \times 10^6 \).</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

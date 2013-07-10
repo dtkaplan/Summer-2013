@@ -1,0 +1,122 @@
+Intro to Statistical Modeling Ch. 5 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-5-12-SD")
+```
+
+```{r eval=FALSE}
+set.seed(53)
+A = runif(10,min=5,max=15)+ rnorm(10,0,2)
+B = rnorm(40,mean=15,sd=sd(A))
+heights =c(mean(A),mean(B)) 
+draw.them = function(lowA,highA,lowB,highB) {
+barplot( heights, names.arg=c('Wild-type','Mutant'),
+   width=.6,cex.axis=1,cex.names=1,ylim=c(0,25),space=1,xlim=c(0,2.5))
+positions = c(0.9, 2.15)
+arrows(positions, c(lowA,lowB), positions, c(highA,highB),angle=90,code=3,
+   length=.1,lwd=2 )
+points( rep(positions[1]-.45,length(A)), A, pch=20)
+points( rep(positions[2]-.45,length(B)), B, pch='x')
+```
+
+Scientific papers very often contain graphics with "error bars."
+Unfortunately, there is little standardization of what such error bars
+mean so it is important for the reader to pay careful attention in 
+interpreting the graphs.  
+
+The following four graphs --- A through D ---
+each show a distribution of data along with error bars.  The meaning
+of the bars varies from graph to graph according to different
+conventions used in different areas of the scientific literature.
+In each graph, the height of the filled bar is the mean of the data.
+Your job is to associate each error bar with its meaning.  You can do
+this by comparing the actual data (shown as dots) with the error bar.
+
+Graph A | Graph B | Graph C | Graph D|     
+|:-----:|:-----:|:-----:|:-----:|
+
+
+```{r eval=FALSE}
+\centerline{\begin{tabular}{|cc|cc|}\hline
+{\bf Graph A} & $\ $ & $\ $ &  {\bf Graph B} \\
+<<sderror,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
+# sd error
+draw.them( mean(A)-sd(A)/sqrt(10),mean(A)+sd(A)/sqrt(10),
+   mean(B)-sd(B)/sqrt(30),mean(B)+sd(B)/sqrt(30))
+@ 
+\includegraphics[width=1.5in,trim=10mm 10mm 15mm 10mm]{Figures/conf4-sderror}
+%\pnggraphicsfile[width=1in]{error-bars-sderr}{pdf}{80} 
+& & & 
+<<sd,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
+# sd
+draw.them( mean(A)-sd(A),mean(A)+sd(A),mean(B)-sd(B),mean(B)+sd(B))
+@ 
+% \pnggraphicsfile[width=1in]{error-bars-sd}{pdf}{80}
+\includegraphics[width=1.5in,trim=10mm 10mm 15mm 10mm]{Figures/conf4-sd}
+\\
+& & & \\\hline
+& & & \\
+{\bf Graph C} & & & {\bf Graph D}\\
+<<range,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
+# range
+draw.them( min(A),max(A),min(B),max(B))
+@ 
+%\pnggraphicsfile[width=1in]{error-bars-range}{pdf}{80} 
+\includegraphics[width=1.5in,trim=10mm 10mm 15mm 10mm]{Figures/conf4-range}
+& & & 
+<<confinterval,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
+# conf. interval
+draw.them( mean(A)-2*sd(A)/sqrt(10),mean(A)+2*sd(A)/sqrt(10),
+   mean(B)-2*sd(B)/sqrt(30),mean(B)+2*sd(B)/sqrt(30))
+@ 
+%\pnggraphicsfile[width=1in]{error-bars-ci}{pdf}{80}
+\includegraphics[width=1.5in,trim=10mm 10mm 15mm 10mm]{Figures/conf4-confinterval}
+\\\hline
+\end{tabular}}
+```
+
+```{r include=FALSE}
+scientific=selectSet(name="range", totalPts=1, "Graph A"=FALSE, "Graph B"=FALSE, "Graph C"=TRUE, "Graph D"=FALSE)
+```
+* Range of the data `r I(scientific)`
+
+```{r include=FALSE}
+scientific2=selectSet(name="stddev", totalPts=1, "Graph A"=FALSE, "Graph B"=TRUE, "Graph C"=FALSE, "Graph D"=FALSE)
+```
+* Standard deviation of the data `r I(scientific2)`
+
+```{r include=FALSE}
+scientific3=selectSet(name="stdError", totalPts=1, "Graph A"=TRUE, "Graph B"=FALSE, "Graph C"=FALSE, "Graph D"=FALSE)
+```
+* Standard error of the mean `r I(scientific3)`
+
+```{r include=FALSE}
+scientific4=selectSet(name="confidence", totalPts=1, "Graph A"=FALSE, "Graph B"=FALSE, "Graph C"=FALSE, "Graph D"=TRUE)
+```
+* 95% confidence interval on the mean `r I(scientific4)`
+
+
+This problem is based on *cumming-2007*.
+G. Cumming, F. Fidler, and DL Vaux (2007), "Error bars in
+  experimental biology", {*J. Cell Biology*} {**177**}(1):7-11
+
+<aside>
+ANSWER:
+The easiest one to spot is the range, where the error bars for both
+groups extend to the extreme range of the data. Graph C. 
+
+The standard error of the mean will be the standard deviation divided
+by $\sqrt{n}$ --- it will always be smaller than the standard
+deviation.  Also, typically about 2/3 of the data falls within $\pm$
+one standard deviation.  The bars in Graph B cover about 2/3 of the
+data and are bigger than the bars in Graphs A and D, so the standard
+deviation is shown in Graph B.
+
+By elimination, the graphs A and D must be the standard error and the
+95% confidence interval.  The 95% confidence interval is $2 \times$
+the standard error, so Graph D must be the confidence interval.
+</aside>
+
+`r I(closeProblem())`
