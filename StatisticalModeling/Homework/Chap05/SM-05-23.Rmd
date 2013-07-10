@@ -8,7 +8,7 @@ newScorerSet("SM-5-23-SD")
 
 Robert Hooke (1635-1703) was a contemporary of Isaac Newton.  He is famous for his law of elasticity (Hooke's Law) and is considered the father of microscopy.  He was the first to use the word "cell" to name the components of plant tissue;  the structures he observed during his observations through a microscope reminded him of monks' cells in a monastery.   He drew this picture of cork cells under the microscope:
 
-![cork cells](RobertHookeMicrographial1665.jpg)
+![cork cells](RobertHookeMicrographial1665.png)
 
 \centerline{\includegraphics[width=2in]{../Figures/RobertHookeMicrographia1665.jpg}}
 
