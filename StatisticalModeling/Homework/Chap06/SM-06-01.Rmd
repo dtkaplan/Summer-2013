@@ -1,0 +1,30 @@
+Intro to Statistical Modeling Ch. 6 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-1-SD")
+```
+
+```{r include=FALSE}
+law=selectSet(name="variables", totalPts=1, "Response is quantitative; explanatory variable is quantitative."=FALSE, "Response is quantitative; explanatory variable is categorical."=FALSE, "Response is categorical; explanatory variable is quantitative."=FALSE, "Response is categorical; explanatory variable is categorical."=TRUE, "Response is categorical; explanatory variable is categorical."=FALSE)
+```
+In McClesky vs Georgia, lawyers presented data showing that for convicted murderers, a death sentence was more likely if the victim was white than if the victim was black.  For each case, they tabulated the race of the victim and the sentence (death or life in prison). Which of the following best describe the variables their models? `r I(law)`
+
+<aside>
+ANSWER:
+The first thing is to figure out what is the response variable and what is the explanatory variable.  The wording indicates this: *A death sentence was more likely if ....*   The response is whether a death sentence was given.  That's a categorical variable --- yes or no, death or not death sentence.  
+
+Continuing on to the explanatory variable, the wording is: *... if the victim was white than if the victim was black.*  So the race of the victim is explaining some of the variability in the response variable.  Race --- white or black in this situation --- is also a categorical variable.
+
+Note that it's important to be able to quantify **how much** of the
+variation in the response variable is associated with the explanatory
+variable.  That's a subject for later chapters.
+</aside>
+
+<aside>
+[Note: Based on an example from George Cobb.]
+</aside>
+
+`r I(closeProblem())`
+

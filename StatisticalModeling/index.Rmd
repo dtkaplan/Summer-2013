@@ -134,3 +134,25 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 5.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-31.html) working
 
 * [Problem 5.40](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-40.html) working
+
+## Chapter 6
+
+* [Problem 6.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-01.html) working
+
+* [Problem 6.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-02.html) working
+
+* [Problem 6.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-02.html) **NOT COMPLETE**
+
+* [Problem 6.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-11.html) working
+
+* [Problem 6.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-12.html) working
+
+* [Problem 6.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-13.html) working
+
+* [Problem 6.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-20.html) working
+
+* [Problem 6.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-21.html) working
+
+* [Problem 6.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-23.html) working, but there are not questions, just information (new problem also)
+
+

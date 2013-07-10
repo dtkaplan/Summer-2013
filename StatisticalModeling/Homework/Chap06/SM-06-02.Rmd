@@ -1,0 +1,102 @@
+Intro to Statistical Modeling Ch. 6 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-2-SD")
+```
+
+In studies of employment discrimination, several attributes of
+employees are often relevant:
+>age, sex, race, years of experience, salary, whether promoted, whether laid off 
+
+
+For each of the following questions, indicate
+which is the response variable and which is the explanatory variable.
+
+* Are men paid more than women? 
+
+```{r include=FALSE}
+employment=selectSet(name="responsevar", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=FALSE, "years experience"=FALSE, "salary"=TRUE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Response Variable: `r I(employment)`
+
+```{r include=FALSE}
+employment2=selectSet(name="explanatoryvar", totalPts=1, "age"=FALSE, "sex"=TRUE, "race"=FALSE, "years experience"=FALSE, "salary"=FALSE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Explanatory Variable: `r I(employment2)`
+
+<aside>
+ANSWER:
+For many people, it can be confusing at first to decide what is the
+response variable and what is the explanatory variable.  In this
+question, there are two variables: salary and sex.  There are two
+kinds of questions you might ask with these variables: "Can I tell
+something about how much a person is paid given their sex?" and "Can
+I tell what sex a person is, given how much they are paid?"  Those
+questions are different.  
+
+In examining possible employment discrimination, the issue is whether
+a person's sex influences how much they are paid.  So sex is the
+explanatory variable and pay is the response variable.
+</aside>
+
+* On average, how much extra salary is a year of experience worth? 
+
+```{r include=FALSE}
+employment3=selectSet(name="responsevar2", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=FALSE, "years experience"=FALSE, "salary"=TRUE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Response Variable: `r I(employment3)`
+
+```{r include=FALSE}
+employment4=selectSet(name="explanatoryvar2", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=FALSE, "years experience"=TRUE, "salary"=FALSE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Explanatory Variable: `r I(employment4)` 
+
+
+<aside>
+ANSWER:
+The response variable is the person's salary.  The explanatory
+variable is how much experience they have.
+</aside>
+
+* Are whites more likely than blacks to be promoted? 
+
+```{r include=FALSE}
+employment5=selectSet(name="responsevar3", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=FALSE, "years experience"=FALSE, "salary"=FALSE, "promoted"=TRUE, "laid off"=FALSE)
+```
+  * Response Variable: `r I(employment5)`
+
+```{r include=FALSE}
+employment6=selectSet(name="explanatoryvar3", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=TRUE, "years experience"=FALSE, "salary"=FALSE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Explanatory Variable: `r I(employment6)`
+
+<aside>
+ANSWER:
+The response variable is whether the person was promoted or not.
+</aside>
+
+* Are older employees more likely to be laid off than younger ones?  
+
+```{r include=FALSE}
+employment7=selectSet(name="responsevar4", totalPts=1, "age"=FALSE, "sex"=FALSE, "race"=FALSE, "years experience"=FALSE, "salary"=FALSE, "promoted"=FALSE, "laid off"=TRUE)
+````
+  * Response Variable: `r I(employment7)`
+
+```{r include=FALSE}
+employment8=selectSet(name="explanatoryvar4", totalPts=1, "age"=TRUE, "sex"=FALSE, "race"=FALSE, "years experience"=FALSE, "salary"=FALSE, "promoted"=FALSE, "laid off"=FALSE)
+```
+  * Explanatory Variable: `r I(employment8)` 
+
+<aside>
+ANSWER:
+In these exercises, there is just one explanatory variable in each setting.  However, in real situations you will often be interested in examining **multiple** explanatory variables at the same time.  
+</aside>
+
+<aside>
+[Note: Thanks to George Cobb.]
+</aside>
+
+`r I(closeProblem())`
+
