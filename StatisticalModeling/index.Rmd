@@ -127,7 +127,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 5.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-20.html) working
 
-* [Problem 5.23](htpp//dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-23.html) image?
+* [Problem 5.23](htpp//dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-23.html) working
 
 * [Problem 5.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-30.html) working
 
