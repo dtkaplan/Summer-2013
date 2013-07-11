@@ -165,17 +165,39 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 7
 
+* [Problem 7.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-01.html) working
+
+* [Problem 7.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-02.html) working
+
+* [Problem 7.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-04.html) working
+
+* [Problem 7.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-05.html) some issues with r code, also, the final answer set does not match the previously recorded answer
+
 * [Problem 7.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-10.html) working
+
+* [Problem 7.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-11.html) working
+
+* [Problem 7.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-12.html) working
 
 * [Problem 7.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-13.html) issues with "drawing" plot
 
 * [Problem 7.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-14.html) issues with "drawing" the plot
 
-* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-10.html) where is `diamonds.csv`?
+* [Problem 7.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-15.html) working
+
+* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-16.html) where is `diamonds.csv`?
+
+* [Problem 7.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-20.html) issues with rendering graph, also some odd information at the end of the document
 
 * [Problem 7.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-21.html) some issues with the R commands in the aside at the end
 
-* [Problem 7.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-31.html) **NOT COMPLETE**
+* [Problem 7.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-22.html) working
+
+* [Problem 7.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-23.html) working, but there are only instructions and no free text or other answer entry options.
+
+* [Problem 7.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-30.html) working
+
+* [Problem 7.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-31.html) working
 
 
 

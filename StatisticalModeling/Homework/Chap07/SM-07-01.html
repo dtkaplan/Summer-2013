@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 7 Prob. 1</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 7 Prob. 1</h1>
+
+<p>There is a correspondence between the model formula and the coefficients found when fitting a model.  </p>
+
+<p>For each of the following model formulas, tell what the coefficient is:</p>
+
+<p>\( 3 - 7 x + 4 y + 17 z \)</p>
+
+<ul>
+<li><p>Intercept: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      1,
+"name": "intercept",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-7" 
+}'>-7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      1,
+"name": "intercept",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      1,
+"name": "intercept",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      1,
+"name": "intercept",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> </select><span id='out1' class='shiny-html-output'> </span> </p></li>
+<li><p>\( z \) coef: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      2,
+"name": "zCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-7" 
+}'>-7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      2,
+"name": "zCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      2,
+"name": "zCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      2,
+"name": "zCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> </select><span id='out2' class='shiny-html-output'> </span>  </p></li>
+<li><p>\( y \) coef: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      3,
+"name": "yCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-7" 
+}'>-7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      3,
+"name": "yCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      3,
+"name": "yCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      3,
+"name": "yCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> </select><span id='out3' class='shiny-html-output'> </span> </p></li>
+<li><p>\( x \) coef: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      4,
+"name": "xCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "-7" 
+}'>-7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      4,
+"name": "xCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      4,
+"name": "xCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      4,
+"name": "xCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> </select><span id='out4' class='shiny-html-output'> </span>  </p></li>
+</ul>
+
+<p>\( 1.22 + 0.12 *age* + 0.27 *educ* - 0.04 *age*:*educ* \)</p>
+
+<ul>
+<li><p>Intercept: <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      5,
+"name": "intercept2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-0.04" 
+}'>-0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      5,
+"name": "intercept2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.12" 
+}'>0.12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      5,
+"name": "intercept2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.27" 
+}'>0.27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      5,
+"name": "intercept2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1.22" 
+}'>1.22</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p><em>educ</em> coef: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      6,
+"name": "educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-0.04" 
+}'>-0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      6,
+"name": "educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.12" 
+}'>0.12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      6,
+"name": "educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.27" 
+}'>0.27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      6,
+"name": "educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.22" 
+}'>1.22</option> </select><span id='out6' class='shiny-html-output'> </span> </p></li>
+<li><p><em>age</em> coef: <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      7,
+"name": "ageCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-0.04" 
+}'>-0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      7,
+"name": "ageCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.12" 
+}'>0.12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      7,
+"name": "ageCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.27" 
+}'>0.27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      7,
+"name": "ageCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.22" 
+}'>1.22</option> </select><span id='out7' class='shiny-html-output'> </span> </p></li>
+<li><p><em>age</em>:<em>educ</em> coef: <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      8,
+"name": "age:educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "-0.04" 
+}'>-0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      8,
+"name": "age:educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.12" 
+}'>0.12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      8,
+"name": "age:educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.27" 
+}'>0.27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      8,
+"name": "age:educCoef",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.22" 
+}'>1.22</option> </select><span id='out8' class='shiny-html-output'> </span>  </p></li>
+</ul>
+
+<p>\( 8 + 3 *color*Red -4 *color*Blue \)</p>
+
+<ul>
+<li><p>Intercept: <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      9,
+"name": "intercept3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-4" 
+}'>-4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      9,
+"name": "intercept3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":      9,
+"name": "intercept3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+<li><p>*color*Red coef: <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     10,
+"name": "colorRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-4" 
+}'>-4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     10,
+"name": "colorRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     10,
+"name": "colorRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> </select><span id='out10' class='shiny-html-output'> </span>  </p></li>
+<li><p>*color*Blue coef: <select name='in11'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     11,
+"name": "colorBlue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "-4" 
+}'>-4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     11,
+"name": "colorBlue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-1-SD",
+"itemN":     11,
+"name": "colorBlue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> </select><span id='out11' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,112 @@
+Intro to Statistical Modeling Ch. 7 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-5-SD")
+```
+
+Using the appropriate data set and correct modeling statements, compute each of these quantities and give the model statement you used (eg., *age* ~ *sex*)
+
+```{r include=FALSE}
+CPS=selectNumber(choices=c(28,31,32,35,39), correct=c(32), totalPts=1, name="single")
+```
+From the `CPS85` data, what is the mean age of single people? (Pick the closest answer.) `r I(CPS)` years.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="model", totalPts=2, rows=3))
+```
+What was your model expression?     
+`r I(textItem(name="model", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:
+The model *age* ~ *married* gives an intercept which is the mean age of married people and a *marriedSingle* coefficient which tells the difference in mean ages between the married and single people:
+
+```{r}
+cps = fetchData("CPS85")
+lm( age ~ married, data=cps)
+```
+
+
+Adding these two coefficients gives the mean age of single people, about 32 years.
+</aside>
+
+```{r include=FALSE}
+CPS2=selectSet(name="difference", totalPts=1, "Single people are, on average, 5 years younger."=FALSE, "Single people are, on average, 5 years older."=FALSE, "Single people are, on average, 7 years younger."=TRUE, "Single people are, on average, 7 years older."=FALSE)
+```
+* From the `CPS85` data, what is the difference between the mean ages of married and single people? (Pick the closest answer.) `r I(CPS2)`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="model2", totalPts=2, rows=3))
+```
+What was your model expression?      
+`r I(textItem(name="model2", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:     
+The answer can be read off from the same model used to answer part 1.
+The coefficient $-6.877$ on *marriedSingle* says that single people
+are, on average, about 7 years younger than married people in these data.
+</aside>
+
+```{r include=FALSE}
+swim=selectNumber(choices=c(55,60,65,70,75,80), correct=c(65), totalPts=1, name="meanswim")
+```
+* From the `SwimRecords` data, what is the mean swimming time for women? (Pick the closest.) `r I(swim)` seconds.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="model3", totalPts=2, rows=3))
+```
+What is your model expression?     
+`r I(textItem(name="model3", totalPts=2, rows=3))`
+
+
+<aside>
+ANSWER:      
+```{r}
+swim = fetchData("SwimRecords")
+lm( time ~ sex, data=swim)
+```
+
+Since the reference group is females, the mean swimming time for women
+is given by the intercept.
+</aside>
+
+```{r include=FALSE}
+util=selectNumber(choices=c(-150,-93,42,150,192), correct=c(42), totalPts=1, name="meanCCF")
+```
+* From the `Utilities` data, what is the mean CCF for November? (Pick the closest.)  (Hint: use <code>as.factor(month)</code> to convert the month number to a categorical variable.) `r I(util)`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="utils", totalPts=2, rows=3))
+```
+What is your model expression? 
+`r I(textItem(name="utils", totalPts=2, rows=3))`
+
+# Generated answer does not match previously recorded answer:
+
+<aside>
+ANSWER:     
+```{r}
+u = fetchData("Utilities")
+lm( ccf ~ as.factor(month), data=u)
+```
+SHOULD MATCH >
+Coefficients:
+       (Intercept)   as.factor(month)2   as.factor(month)3  
+           192.000               2.375             -62.250  
+ as.factor(month)4   as.factor(month)5   as.factor(month)6  
+          -113.625            -141.625            -178.111  
+ as.factor(month)7   as.factor(month)8   as.factor(month)9  
+          -182.667            -180.333            -176.556  
+as.factor(month)10  as.factor(month)11  as.factor(month)12  
+          -149.875             -88.778              -0.875  
+
+November is month 10, so the mean value of *ccf* for November is
+the sum of the intercept and the month 10 coefficient: $192 - 149.9\approx 42$.
+</aside>
+
+
+`r I(closeProblem())`
+

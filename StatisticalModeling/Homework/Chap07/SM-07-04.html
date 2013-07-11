@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 7 Prob. 4 </title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 7 Prob. 4 </h1>
+
+<p>For some simple models, the coefficients can be interpreted as grand means, group-wise means, or differences between group-wise means. In each of the following, <em>A</em>, <em>B</em>, and <em>C</em> are quantitative variables and <em>color</em> is a categorical variable with levels &ldquo;red,&rdquo; &ldquo;blue,&rdquo; and &ldquo;green.&rdquo;</p>
+
+<p>The model <em>A</em> ~ <em>color</em> gave these coefficients:</p>
+
+<table><thead>
+<tr>
+<th align="left">Term</th>
+<th align="center">Coefficient</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Intercept</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="left"><em>color</em> Blue</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left"><em>color</em> Green</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>What is the mean of <em>A</em> for those cases that are Blue: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      1,
+"name": "blue",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>What is the mean of <em>A</em> for those cases that are Green: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      2,
+"name": "green",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>What is the mean of <em>A</em> for those cases that are Red: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      3,
+"name": "red",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>What is the grand mean of <em>A</em> for all cases: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "17" 
+}'>17</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      4,
+"name": "grandmean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out4' class='shiny-html-output'> </span>     </p></li>
+</ul>
+
+<p>The model <em>B</em> ~ color - 1 gave these coefficients:</p>
+
+<table><thead>
+<tr>
+<th align="left">Term</th>
+<th align="center">Coefficient</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"><em>color</em> Red</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td align="left"><em>color</em> Blue</td>
+<td align="center">-40</td>
+</tr>
+<tr>
+<td align="left"><em>color</em> Green</td>
+<td align="center">35</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>What is the group mean of <em>B</em> for those cases that are Blue: <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "-40" 
+}'>-40</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-5" 
+}'>-5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "35" 
+}'>35</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "60" 
+}'>60</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "65" 
+}'>65</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "135" 
+}'>135</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      5,
+"name": "Blue2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p>What is the group mean of <em>B</em> for those cases that are Red: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-40" 
+}'>-40</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-5" 
+}'>-5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "35" 
+}'>35</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "60" 
+}'>60</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "65" 
+}'>65</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "135" 
+}'>135</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      6,
+"name": "Red2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out6' class='shiny-html-output'> </span> </p></li>
+<li><p>What is the group mean of <em>B</em> for those cases that are Green: <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-40" 
+}'>-40</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-5" 
+}'>-5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "35" 
+}'>35</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "60" 
+}'>60</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "65" 
+}'>65</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "135" 
+}'>135</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      7,
+"name": "Green2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+<li><p>What is the grand mean of <em>B</em> for all cases: <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-40" 
+}'>-40</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-5" 
+}'>-5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "35" 
+}'>35</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "60" 
+}'>60</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "65" 
+}'>65</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "135" 
+}'>135</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      8,
+"name": "GrandMean2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out8' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>The model <em>C</em> ~ 1 gave this coefficient:**</p>
+
+<table><thead>
+<tr>
+<th align="left">Term</th>
+<th align="center">Coefficient</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Intercept</td>
+<td align="center">4.7</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>What is the group mean of <em>C</em> for those cases that are Blue: <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      9,
+"name": "Blue3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.0" 
+}'>0.0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      9,
+"name": "Blue3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4.7" 
+}'>4.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":      9,
+"name": "Blue3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+<li><p>What is the grand mean of <em>C</em> for all cases: <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":     10,
+"name": "GrandMean3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.0" 
+}'>0.0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":     10,
+"name": "GrandMean3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "4.7" 
+}'>4.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-4-SD",
+"itemN":     10,
+"name": "GrandMean3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "unknown" 
+}'>unknown</option> </select><span id='out10' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

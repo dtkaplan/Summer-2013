@@ -1,0 +1,88 @@
+Intro to Statistical Modeling Ch. 7 Prob. 4 
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-4-SD")
+```
+For some simple models, the coefficients can be interpreted as grand means, group-wise means, or differences between group-wise means. In each of the following, *A*, *B*, and *C* are quantitative variables and *color* is a categorical variable with levels "red," "blue," and "green."
+
+The model *A* ~ *color* gave these coefficients:
+
+Term | Coefficient
+|:----|:----:|
+Intercept | 10
+*color* Blue | 5
+*color* Green | 12
+
+```{r include=FALSE}
+coef=selectSet(name="blue", totalPts=1, "5"=FALSE, "10"=FALSE, "12"=FALSE, "15"=TRUE, "17"=FALSE, "22"=FALSE, "27"=FALSE, "unknown"=FALSE)
+```
+* What is the mean of *A* for those cases that are Blue: `r I(coef)`
+
+```{r include=FALSE}
+coef2=selectSet(name="green", totalPts=1, "5"=FALSE, "10"=FALSE, "12"=FALSE, "15"=FALSE, "17"=TRUE, "22"=FALSE, "27"=FALSE, "unknown"=FALSE)
+```
+* What is the mean of *A* for those cases that are Green: `r I(coef2)`
+
+```{r include=FALSE}
+coef3=selectSet(name="red", totalPts=1, "5"=FALSE, "10"=TRUE, "12"=FALSE, "15"=FALSE, "17"=FALSE, "22"=FALSE, "27"=FALSE, "unknown"=FALSE)
+```
+* What is the mean of *A* for those cases that are Red: `r I(coef3)`
+
+```{r include=FALSE}
+coef4=selectSet(name="grandmean", totalPts=1, "5"=FALSE, "10"=TRUE, "12"=FALSE, "15"=FALSE, "17"=FALSE, "22"=FALSE, "27"=FALSE, "unknown"=FALSE)
+```
+* What is the grand mean of *A* for all cases: `r I(coef4)`     
+
+
+The model *B* ~ color - 1 gave these coefficients:
+
+Term | Coefficient
+|:----|:----:|
+*color* Red | 100
+*color* Blue | -40
+*color* Green | 35
+
+```{r include=FALSE}
+coef5=selectSet(name="Blue2", totalPts=1, "-40"=TRUE, "-5"=FALSE, "0"=FALSE, "35"=FALSE, "60"=FALSE, "65"=FALSE, "100"=FALSE, "135"=FALSE, "unknown"=FALSE)
+```
+* What is the group mean of *B* for those cases that are Blue: `r I(coef5)`
+
+```{r include=FALSE}
+coef6=selectSet(name="Red2", totalPts=1, "-40"=FALSE, "-5"=FALSE, "0"=FALSE, "35"=FALSE, "60"=FALSE, "65"=FALSE, "100"=TRUE, "135"=FALSE, "unknown"=FALSE)
+```
+* What is the group mean of *B* for those cases that are Red: `r I(coef6)` 
+
+```{r include=FALSE}
+coef7=selectSet(name="Green2", totalPts=1, "-40"=FALSE, "-5"=FALSE, "0"=FALSE, "35"=TRUE, "60"=FALSE, "65"=FALSE, "100"=FALSE, "135"=FALSE, "unknown"=FALSE)
+```
+* What is the group mean of *B* for those cases that are Green: `r I(coef7)`
+
+```{r include=FALSE}
+coef8=selectSet(name="GrandMean2",totalPts=1, "-40"=FALSE, "-5"=FALSE, "0"=FALSE, "35"=FALSE, "60"=FALSE, "65"=FALSE, "100"=FALSE, "135"=FALSE, "unknown"=TRUE)
+```
+* What is the grand mean of *B* for all cases: `r I(coef8)`
+
+
+The model *C* ~ 1 gave this coefficient:**
+
+Term | Coefficient
+|:----|:----:|
+Intercept | 4.7
+
+
+```{r include=FALSE}
+coef9=selectSet(name="Blue3", totalPts=1, "0.0"=FALSE, "4.7"=FALSE, "unknown"=TRUE)
+```
+* What is the group mean of *C* for those cases that are Blue: `r I(coef9)`
+
+```{r include=FALSE}
+coef10=selectSet(name="GrandMean3", totalPts=1, "0.0"=FALSE, "4.7"=TRUE, "unknown"=FALSE)
+```
+* What is the grand mean of *C* for all cases: `r I(coef10)`
+
+
+`r I(closeProblem())`
+
+
