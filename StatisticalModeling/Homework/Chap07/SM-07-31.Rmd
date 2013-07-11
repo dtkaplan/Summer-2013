@@ -35,89 +35,91 @@ Commonly in published papers, the raw case-by-case data isn't reported.  Rather 
 | Both Heights | $16 | $26 | $21 |
 
 
+The table gives the mean price of a sample of 10 trees in each of the four overall categories (Tall and Red, Tall and White, Short and Red, Short and White).  So, the ten Tall and Red pines averaged $20, the ten Short and White pines averaged $18, and so on.  The margins show averages over larger groups.  For instance, the 20 white pines, averaged $26, while the 20 short pines averaged $15.  
 
-\centerline{\begin{tabular}{l|rr|r}
-\multicolumn{4}{c}{SUMMARY TABLE}\\\hline
-\multicolumn{4}{c}{Mean Price}\\\hline
-\multicolumn{1}{c}{}   & \multicolumn{2}{c}{Color} & \\
-\multicolumn{1}{l}{Height}        &  \multicolumn{1}{r}{Red} & White & Both Colors\\\hline
-Short & \$12 & \$18 & \$15\\ Tall & \$20 & \$34 & \$27\\\hline Both
-Heights & \$16 & \$26 & \$21\\
-\end{tabular}}
-
-\bigskip
-
-The table gives the mean price of a sample of 10 trees in each of the
-four overall categories (Tall and Red, Tall and White, Short and Red,
-Short and White).  So, the ten Tall and Red pines averaged \$20, the
-ten Short and White pines averaged \$18, and so on.  The margins show
-averages over larger groups.  For instance, the 20 white pines,
-averaged \$26, while the 20 short pines averaged \$15.  
-
-The average price of all 40 trees in the sample was \$21.
-
-\bigskip
+The average price of all 40 trees in the sample was $21.
 
 Based on the summary table, answer these questions:
 
-\begin{enumerate}
-\item In the model \model{\VN{price}}{\VN{color}}, which involves 
-the coefficients ``intercept'' and ``colorWhite'', what 
-will be the values of the coefficients?
+* In the model *price* ~ *color*, which involves the coefficients "intercept" and "colorWhite", what will be the values of the coefficients?
 
-\begin{itemize}
-\item Intercept   \SelectSetHoriz{16}{12,15,16,18,20,21,26,27,34}
-\item colorWhite  \SelectSetHoriz{10}{-10,-8,0,5,8,10}
-\end{itemize}
+```{r include=FALSE}
+trees=selectNumber(choices=c(12,15,16,18,20,21,26,27,34), correct=c(16), totalPts=1, name="int")
+```
+  * Intercept `r I(trees)`   
 
-\item In the model \model{\VN{price}}{\VN{height}}, which involves the 
-coefficients ``intercept'' and ``heightTall'', 
-what will be the values of the coefficients?
+```{r include=FALSE}
+trees2=selectNumber(choices=c(-10,-8,0,5,8,10), correct=c(10), totalPts=1, name="cW")
+```
+  * colorWhite `r I(trees2)`     
+
+
+* In the model *price* ~ *height*, which involves the coefficients "intercept" and "heightTall", what will be the values of the coefficients?
  
-\begin{itemize}
-\item Intercept   \SelectSetHoriz{15}{0,4,8,12,15,16,18,20,21,26,27,34}
-\item heightTall  \SelectSetHoriz{12}{0,4,8,12,15,16,18,20,21,26,27,34}
-\end{itemize}
+```{r include=FALSE}
+trees3=selectNumber(choices=c(0,4,8,12,15,16,18,20,21,26,27,34), correct=c(15), totalPts=1, name="int2")
+```
+  * Intercept `r I(trees3)`
+```{r include=FALSE}
+trees4=selectNumber(choices=c(0,4,8,12,15,16,18,20,21,26,27,34), correct=c(12), totalPts=1, name="hT")
+```
+  * heightTall `r I(trees4)`     
 
-\item The model \model{\VN{price}}{\VN{height} * \VN{color}}, 
-with an interaction
-between \variableName{height} and \variableName{color}, has four coefficients
-and therefore can produce an exact match to the prices of the four
-different kinds of trees.  But they are in a different format: not
-just one coefficient for each kind of tree.  What are the values of
-these coefficients from the model?  (Hint: Start with the kind of tree
-that corresponds to the intercept term.)
-\begin{itemize}
-\item Intercept   \SelectSetHoriz{12}{0,4,6,8,10,12,16}
-\item heightTall  \SelectSetHoriz{8}{0,4,6,8,10,12,16}
-\item colorWhite  \SelectSetHoriz{6}{0,4,6,8,10,12,16}
-\item heightTall:colorWhite \SelectSetHoriz{8}{0,4,6,8,10,12,16}
-\end{itemize}
+* The model *price* ~ *height* $\star$ *color*, with an interaction between *height* and *color*, has four coefficients and therefore can produce an exact match to the prices of the four different kinds of trees.  But they are in a different format: not just one coefficient for each kind of tree.  What are the values of these coefficients from the model?  (Hint: Start with the kind of tree that corresponds to the intercept term.)
 
-\item The model \model{\VN{price}}{\VN{height} + \VN{color}} 
-gives these three coefficients: 
-\begin{itemize}
-\item Intercept  : 10
-\item heightTall : 12
-\item colorWhite : 10
-\end{itemize}
+```{r include=FALSE}
+trees5=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(12), totalPts=1, name="int3")
+```
+  * Intercept `r I(trees5)` 
+  
+```{r include=FALSE}
+trees6=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(8), totalPts=1, name="hT2")
+```
+  * heightTall `r I(trees6)`  
 
-It would be hard to figure out these coefficients by hand because they
-can't be read off from the summary table of Mean Price.
+```{r include=FALSE}
+trees7=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(6), totalPts=1, name="cW2")
+```
+  * colorWhite `r I(trees7)`  
+
+```{r include=FALSE}
+trees8=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(8), totalPts=1, name="hT2")
+```
+  * heightTall:colorWhite `r I(trees8)`
+
+
+* The model *price* ~ *height* + *color* gives these three coefficients: 
+  * Intercept  : 10
+  * heightTall : 12
+  * colorWhite : 10
+
+
+It would be hard to figure out these coefficients by hand because they can't be read off from the summary table of Mean Price.
 
 According to the model, what are the fitted model values for these trees:
-\begin{itemize}
-\item Short Red  \SelectSetHoriz{10}{10,12,15,16,20,22,32,34}
-\item Short White  \SelectSetHoriz{20}{10,12,15,16,20,22,32,34}
-\item Tall Red  \SelectSetHoriz{22}{10,12,15,16,20,22,32,34}
-\item Tall White  \SelectSetHoriz{32}{10,12,15,16,20,22,32,34}
-\end{itemize}
 
-Notice that the fitted model values aren't a perfect match to the
-numbers in the table.  That's because a model with three coefficients
-can't exactly reproduce a set of four numbers.
+```{r include=FALSE}
+trees9=selectNumber(choices=c(10,12,15,16,20,22,32,34), correct=c(10), totalPts=1, name="sRed")
+```
+* Short Red `r I(trees9)` 
+
+```{r include=FALSE}
+trees10=selectNumber(choices=c(10,12,15,16,20,22,32,34), correct=c(20), totalPts=1, name="sWhite")
+```
+* Short White `r I(trees10)`  
+
+```{r include=FALSE}
+trees11=selectNumber(choices=c(10,12,15,16,20,22,32,34), correct=c(22), totalPts=1, name="tRed")
+```
+* Tall Red `r I(trees11)` 
+
+```{r include=FALSE}
+trees12=selectNumber(choices=c(10,12,15,16,20,22,32,34), correct=c(32), totalPts=1, name="tWhite")
+```
+* Tall White `r I(trees12)` 
+
+Notice that the fitted model values aren't a perfect match to the numbers in the table.  That's because a model with three coefficients can't exactly reproduce a set of four numbers.
 
 
 
-\end{enumerate}
-
+`r I(closeProblem())`

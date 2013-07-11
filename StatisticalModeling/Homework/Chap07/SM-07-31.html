@@ -234,88 +234,1244 @@ coefficients will be group means.  More precisely, there will be an intercept th
 </tr>
 </tbody></table>
 
-<p>\centerline{\begin{tabular}{l|rr|r}
-\multicolumn{4}{c}{SUMMARY TABLE}\hline
-\multicolumn{4}{c}{Mean Price}\hline
-\multicolumn{1}{c}{}   &amp; \multicolumn{2}{c}{Color} &amp; \
-\multicolumn{1}{l}{Height}        &amp;  \multicolumn{1}{r}{Red} &amp; White &amp; Both Colors\hline
-Short &amp; $12 &amp; $18 &amp; $15\ Tall &amp; $20 &amp; $34 &amp; $27\hline Both
-Heights &amp; $16 &amp; $26 &amp; $21\
-\end{tabular}}</p>
-
-<p>\bigskip</p>
-
-<p>The table gives the mean price of a sample of 10 trees in each of the
-four overall categories (Tall and Red, Tall and White, Short and Red,
-Short and White).  So, the ten Tall and Red pines averaged $20, the
-ten Short and White pines averaged $18, and so on.  The margins show
-averages over larger groups.  For instance, the 20 white pines,
-averaged $26, while the 20 short pines averaged $15.  </p>
+<p>The table gives the mean price of a sample of 10 trees in each of the four overall categories (Tall and Red, Tall and White, Short and Red, Short and White).  So, the ten Tall and Red pines averaged $20, the ten Short and White pines averaged $18, and so on.  The margins show averages over larger groups.  For instance, the 20 white pines, averaged $26, while the 20 short pines averaged $15.  </p>
 
 <p>The average price of all 40 trees in the sample was $21.</p>
 
-<p>\bigskip</p>
-
 <p>Based on the summary table, answer these questions:</p>
 
-<p>\begin{enumerate}
-\item In the model \model{\VN{price}}{\VN{color}}, which involves 
-the coefficients <code>intercept&#39;&#39; and</code>colorWhite&#39;&#39;, what 
-will be the values of the coefficients?</p>
+<ul>
+<li><p>In the model <em>price</em> ~ <em>color</em>, which involves the coefficients &ldquo;intercept&rdquo; and &ldquo;colorWhite&rdquo;, what will be the values of the coefficients?</p>
 
-<p>\begin{itemize}
-\item Intercept   \SelectSetHoriz{16}{12,15,16,18,20,21,26,27,34}
-\item colorWhite  \SelectSetHoriz{10}{-10,-8,0,5,8,10}
-\end{itemize}</p>
+<ul>
+<li>Intercept <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "18" 
+}'>18</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "21" 
+}'>21</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "26" 
+}'>26</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      1,
+"name": "int",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out1' class='shiny-html-output'> </span><br/></li>
+<li>colorWhite <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-10" 
+}'>-10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "-8" 
+}'>-8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      2,
+"name": "cW",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> </select><span id='out2' class='shiny-html-output'> </span><br/></li>
+</ul></li>
+<li><p>In the model <em>price</em> ~ <em>height</em>, which involves the coefficients &ldquo;intercept&rdquo; and &ldquo;heightTall&rdquo;, what will be the values of the coefficients?</p>
 
-<p>\item In the model \model{\VN{price}}{\VN{height}}, which involves the 
-coefficients <code>intercept&#39;&#39; and</code>heightTall&#39;&#39;, 
-what will be the values of the coefficients?</p>
+<ul>
+<li>Intercept <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "18" 
+}'>18</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "21" 
+}'>21</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "26" 
+}'>26</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      3,
+"name": "int2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+<li>heightTall <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "18" 
+}'>18</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "21" 
+}'>21</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "26" 
+}'>26</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "27" 
+}'>27</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      4,
+"name": "hT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out4' class='shiny-html-output'> </span><br/></li>
+</ul></li>
+<li><p>The model <em>price</em> ~ <em>height</em> \( \star \) <em>color</em>, with an interaction between <em>height</em> and <em>color</em>, has four coefficients and therefore can produce an exact match to the prices of the four different kinds of trees.  But they are in a different format: not just one coefficient for each kind of tree.  What are the values of these coefficients from the model?  (Hint: Start with the kind of tree that corresponds to the intercept term.)</p>
 
-<p>\begin{itemize}
-\item Intercept   \SelectSetHoriz{15}{0,4,8,12,15,16,18,20,21,26,27,34}
-\item heightTall  \SelectSetHoriz{12}{0,4,8,12,15,16,18,20,21,26,27,34}
-\end{itemize}</p>
+<ul>
+<li>Intercept <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      5,
+"name": "int3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> </select><span id='out5' class='shiny-html-output'> </span> </li>
+<li>heightTall <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      6,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> </select><span id='out6' class='shiny-html-output'> </span><br/></li>
+<li>colorWhite <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      7,
+"name": "cW2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> </select><span id='out7' class='shiny-html-output'> </span><br/></li>
+<li>heightTall:colorWhite <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      8,
+"name": "hT2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> </select><span id='out8' class='shiny-html-output'> </span></li>
+</ul></li>
+<li><p>The model <em>price</em> ~ <em>height</em> + <em>color</em> gives these three coefficients: </p>
 
-<p>\item The model \model{\VN{price}}{\VN{height} * \VN{color}}, 
-with an interaction
-between \variableName{height} and \variableName{color}, has four coefficients
-and therefore can produce an exact match to the prices of the four
-different kinds of trees.  But they are in a different format: not
-just one coefficient for each kind of tree.  What are the values of
-these coefficients from the model?  (Hint: Start with the kind of tree
-that corresponds to the intercept term.)
-\begin{itemize}
-\item Intercept   \SelectSetHoriz{12}{0,4,6,8,10,12,16}
-\item heightTall  \SelectSetHoriz{8}{0,4,6,8,10,12,16}
-\item colorWhite  \SelectSetHoriz{6}{0,4,6,8,10,12,16}
-\item heightTall:colorWhite \SelectSetHoriz{8}{0,4,6,8,10,12,16}
-\end{itemize}</p>
+<ul>
+<li>Intercept  : 10</li>
+<li>heightTall : 12</li>
+<li>colorWhite : 10</li>
+</ul></li>
+</ul>
 
-<p>\item The model \model{\VN{price}}{\VN{height} + \VN{color}} 
-gives these three coefficients: 
-\begin{itemize}
-\item Intercept  : 10
-\item heightTall : 12
-\item colorWhite : 10
-\end{itemize}</p>
+<p>It would be hard to figure out these coefficients by hand because they can&#39;t be read off from the summary table of Mean Price.</p>
 
-<p>It would be hard to figure out these coefficients by hand because they
-can&#39;t be read off from the summary table of Mean Price.</p>
+<p>According to the model, what are the fitted model values for these trees:</p>
 
-<p>According to the model, what are the fitted model values for these trees:
-\begin{itemize}
-\item Short Red  \SelectSetHoriz{10}{10,12,15,16,20,22,32,34}
-\item Short White  \SelectSetHoriz{20}{10,12,15,16,20,22,32,34}
-\item Tall Red  \SelectSetHoriz{22}{10,12,15,16,20,22,32,34}
-\item Tall White  \SelectSetHoriz{32}{10,12,15,16,20,22,32,34}
-\end{itemize}</p>
+<ul>
+<li><p>Short Red <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "32" 
+}'>32</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":      9,
+"name": "sRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out9' class='shiny-html-output'> </span> </p></li>
+<li><p>Short White <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "32" 
+}'>32</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     10,
+"name": "sWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out10' class='shiny-html-output'> </span>  </p></li>
+<li><p>Tall Red <select name='in11'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "32" 
+}'>32</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     11,
+"name": "tRed",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out11' class='shiny-html-output'> </span> </p></li>
+<li><p>Tall White <select name='in12'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "15" 
+}'>15</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "16" 
+}'>16</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "22" 
+}'>22</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "32" 
+}'>32</option> <option value='{
+"itemInfo": {
+"setID": "SM-7-31-SD",
+"itemN":     12,
+"name": "tWhite",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "34" 
+}'>34</option> </select><span id='out12' class='shiny-html-output'> </span> </p></li>
+</ul>
 
-<p>Notice that the fitted model values aren&#39;t a perfect match to the
-numbers in the table.  That&#39;s because a model with three coefficients
-can&#39;t exactly reproduce a set of four numbers.</p>
+<p>Notice that the fitted model values aren&#39;t a perfect match to the numbers in the table.  That&#39;s because a model with three coefficients can&#39;t exactly reproduce a set of four numbers.</p>
 
-<p>\end{enumerate}</p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12" ]'>Ignore me</option></select></p>
 
 </body>
 

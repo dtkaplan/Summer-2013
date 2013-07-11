@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 7 Prob. 20  </title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 7 Prob. 20  </h1>
+
+<p>The graph shows data on three variables, SCORE, AGE, and SPECIES. The
+SCORE and AGE are quantitative.  SPECIES is categorical with levels
+<code>x</code> and <code>y</code>.</p>
+
+<p><code></p>
+
+<pre><code>     |                        x     
+     |                        y     
+     |                    y  x     
+     |                y     x     
+</code></pre>
+
+<p>SCORE    |             y      x<br/>
+         | y    y<br/>
+         |                x<br/>
+         |          x<br/>
+         |x   x<br/>
+         |_______________________________________<br/>
+                         AGE     </p>
+
+<p></code></p>
+
+<p>Explain which of the following models is plausibly a candidate to describe the
+data.  (Don&#39;t do any detailed calculuations; you can&#39;t because the axes aren&#39;t marked with a scale.)  Note SPECIESx means that the case has a level of x for variable SPECIES.  For each model explain in what ways it agrees or disagrees with the graphed data.</p>
+
+<ul>
+<li><code>SCORE = 10 - 2.7 AGE + 1.3 SPECIESx</code></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+This formula indicates that score <strong>decreases</strong> with age &mdash; the negative coefficient on AGE.  That&#39;s obviously wrong.  It also indicates that species x typically has a higher score than species y &mdash; the positive coefficient on SPECIESx.  That&#39;s also wrong.
+</aside></p>
+
+<ul>
+<li><code>SCORE = 10 + 5.0 AGE - 2 AGE<sup>2</sup>  - 1.3 SPECIESx</code></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Nice aspects of this formula: the coefficient on SPECIESx is negative, correctly indicated that the score for x is systematically lower than for y at each AGE.  Also, the coefficient on AGE is positive, which reflects the relationship in the graph.  However, the negative coefficient on AGE-squared suggests that the curvature is downward, which is not the case.
+</aside></p>
+
+<ul>
+<li><code>SCORE = 10 + 5.0 AGE + 2 AGE<sup>2</sup>  - 1.3 SPECIESx</code></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Even better than (b).  The positive coefficient on AGE-squared indicates an upward curvature.  What this model is missing is any interaction between AGE and SPECIES.  The graph clearly suggests that there are differently sloped or shaped curves for species x and y, but there is no interaction term in the formula.
+</aside></p>
+
+<ul>
+<li><code>SCORE = 10 + 2.7 AGE + 2 AGE<sup>2</sup> - 1.3 SPECIESx + 0.7 AGE * SPECIESx</code></li>
+</ul>
+
+<p><aside>
+ANSWER:
+This has it all!
+</aside></p>
+
+<p>Enter your answers for all four models here: <textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-7-20-SD",
+"itemN":      1,
+"name": "models",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><aside></p>
+
+<h3>What is this?</h3>
+
+<p>% __ SCORE = 10 + 2.7 AGE + 2 AGE<sup>2</sup> - 1.3 SPECIESx - 0.7 AGE * SPECIESx
+</aside></p>
+
+</body>
+
+</html>
+

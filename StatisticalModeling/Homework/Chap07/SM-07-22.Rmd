@@ -1,0 +1,50 @@
+Intro to Statistical Modeling Ch. 7 Prob. 22
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-22-SD")
+```
+Here is a report from the New York *Times*:
+
+>It has long been said that regular physical activity and better sleep go hand in hand. But only recently have scientists sought to find out precisely to what extent. One extensive study published this year looked for answers by having healthy children wear actigraphs --- devices that measure movement --- and then seeing whether more movement and activity during the day meant improved sleep at night. 
+ 
+>The study found that sleep onset latency --- the time it takes to fall asleep once in bed --- ranged from as little as roughly 10 minutes for some children to more than 40 minutes for others. But physical activity during the day and sleep onset at night were closely linked: every hour of sedentary activity during the day resulted in an additional three minutes in the time it took to fall asleep at night. And the children who fell asleep faster ultimately slept longer, getting an extra hour of sleep for every 10-minute reduction in the time it took them to drift off.   (Anahad O'Connor, Dec. 1, 2009 --- the complete article is at [New York Times](http://www.nytimes.com/2009/12/01/health/01really.html).
+
+
+There are two models described here with two different response variables: sleep onset latency and duration of sleep. 
+
+```{r include=FALSE}
+sleep=selectSet(name="explanatory", totalPts=1, "Time to fall asleep"=FALSE, "Hours of sedentary activity"=TRUE, "Duration of sleep"=FALSE)
+```
+* In the model with sleep onset latency as the response variable, what is the explanatory variable? `r I(sleep)` 
+
+```{r include=FALSE}
+sleep2=selectSet(name="explanatory2", totalPts=1, "Time to fall asleep"=TRUE, "Hours of sedentary activity"=FALSE, "Duration of sleep"=FALSE)
+```
+* In the model with duration of sleep as the response variable, what is the explanatory variable? `r I(sleep2)`
+
+```{r include=FALSE}
+sleep3=selectSet(name="bestSupport", totalPts=1, "The children in Group A will take, on average, 3 minutes less time to fall asleep."=FALSE, "The children in Group B will have, on average, 10 minutes less sleep each night."=FALSE, "The children in Group A will take, on average, 15 minutes less time to fall asleep."=TRUE, "The children in Group B will have, on average, 45 minutes less sleep each night."=FALSE)
+```
+* Suppose you are comparing two groups of children.  Group A has 3 hour of sedentary activity each day, Group B has 8 hours of sedentary activity.  Which of these statements is best supported by the article? `r I(sleep3)`
+
+<aside>
+ANSWER:     
+To answer this question you have to work through how hours of sedentary activity translates into time to fall asleep, and then how time to fall asleep translates to hours of sleep.
+
+The group A children have 5 hours less sedentary activity than the group B children.  In the model of time to fall asleep modeled by hours of sedentary activity, the coefficient on "hours of sedentary activity" is 3 minutes / hour, so the reduction in time to fall asleep for group A children is 5 hours $\times$ 3 minutes per hour,  that is,  15 minutes.
+</aside>
+
+```{r include=FALSE}
+sleep4=selectSet(name="supportedStatement", totalPts=1, "The children in Group A will get, on average, about an hour and a half hours of extra sleep compared to the Group B children."=TRUE, "The children in Group A will get, on average, about 15 minutes more sleep than the Group B children."=FALSE, "The two groups will get about the same amount of sleep."=FALSE)
+```
+* Again comparing the two groups of children, which of these statements is supported by the article? `r I(sleep4)`
+
+<aside>
+ANSWER:     
+According to the article, duration of sleep was modeled by time to fall asleep.  The Group A children fall asleep on average 15 minutes faster than Group B children.  The coefficient on time to fall asleep is 0.1 hour per minute.  So the extra duration of sleep for Group A children is 15 minutes times 0.1 hour per minute or, altogether, 1.5 hours.
+</aside>
+
+`r I(sleep4)`
+

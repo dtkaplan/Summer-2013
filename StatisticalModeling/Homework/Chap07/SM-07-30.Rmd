@@ -1,0 +1,84 @@
+Intro to Statistical Modeling Ch. 7 Prob. 30
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-30-SD")
+```
+
+Here is a news article summarizing a research study by Bingham *et al.*, "Drinking Behavior from High School to Young Adulthood: Differences by College Education," Alcoholism: Clinical & Experimental Research; Dec. 2005; vol. 29; No. 12
+
+After reading the article, answer these questions:
+
+1. The article headline is about "drinking behavior."  Specifically, how are they measuring drinking behavior?
+  
+2. What explanatory variables are being studied?  
+
+3. Are any interactions reported?
+
+4. Imagine that the study was done using a single numerical indicator of
+drinking behavior, a number that would be low for people who drink little and don't binge drink, and would be high for heavy and binge drinkers.  
+For a model with this numerical index of drinking behavior as the output, what structure of model is implied by the article?
+
+5. For the model you wrote down, indicate which coefficients are positive and which negative.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="model", totalPts=2, rows=4))
+```
+
+`r I(textItem(name="model", totalPts=2, rows=4))`
+
+#### Binge Drinking Is Age-Related Phenomenon     
+By Katrina Woznicki, MedPage Today Staff Writer     
+December 14, 2005     
+ 
+ANN ARBOR, Mich., Dec. 14 - Animal House notwithstanding, going to college isn't an excess risk factor for binge drinking any more than being 18 to 24 years old, according to researchers here.
+
+The risks of college drinking may get more publicity, but the college students are just late starters, Raymond Bingham, Ph.D., of the University of Michigan and colleagues reported in the December issue of Alcoholism: Clinical & Experimental Research.
+
+Young adults in the work force or in technical schools are more likely to have started binge drinking in high school and kept it up, they said.
+
+The investigators said the findings indicated that it's incorrect to assume, as some do, that young adults who don't attend college are at a lower risk for alcohol misuse than college students.
+
+"The ones who don't go on to a college education don't change their at-risk alcohol consumption," Dr. Bingham said. "They don't change their binge-drinking and rates of drunkenness."
+
+In their study comparing young adults who went to college with those who did not, they found that men with only a high school education were 91% more likely to have greater alcohol consumption than college students in high school. Men with only a postsecondary education (such as technical school) were 49% more likely to binge drink compared with college students.
+
+There were similar results with females. Women with only a high school education were 88% more likely to have greater alcohol consumption than college students.
+
+The quantity and frequency of alcohol consumption increased significantly from the time of high school graduation at the 12th grade to age 24 ($p<0.001$), investigators reported in the December issue of Alcoholism: Clinical & Experimental Research
+
+College students drank, too, but their alcohol use peaked later than their non-college peers. By age 24, there was little difference between the two groups, the research team reported.
+
+"In essence," said Dr. Bingham, "men and women who did not complete more than a high-school education had high alcohol-related risk, as measured by drunkenness and heavy episodic drinking while in the 12th grade, and remained at the same level into young adulthood, while levels for the other groups increased."
+
+The problem, Dr. Bingham said, is that while it's easier for clinicians to target college students, a homogenous population conveniently located on concentrated college campuses, providing interventions for at-risk young adults who don't go on to college is going to be trickier.
+
+"The kids who don't complete college are everywhere," Dr. Bingham said. "They're in the work force, they're in the military, they're in technical schools."
+
+Dr. Bingham and his team surveyed 1,987 young adults who were part of the 1996 Alcohol Misuse Prevention Study. All participants had attended six school districts in southeastern Michigan. They were interviewed when they were in 12th grade and then again at age 24. All were unmarried and had no children at the end of the study. Fifty-one percent were male and 84.3% were Caucasian.
+
+The 1,987 participants were divided into one of three education status groups: high school or less; post-secondary education such as technical or trade school or community college, but not a four-year degree college; and college completion.
+
+The investigators looked at several factors, including quantity and frequency of alcohol consumption, frequency of drunkenness, frequency of binge-drinking, alcohol use at young adulthood, cigarette smoking and marijuana use.
+
+Overall, the men tend to drink more than the women regardless of education status. The study also showed while lesser-educated young adults may have started heavier drinking earlier on, college students quickly caught up.
+
+For example, the frequency of drunkenness increased between 12th grade and age 24 for all groups except for men and women with only a high school education ($p<0.001$).
+
+"The general pattern of change was for lower-education groups to have higher levels of drunkenness in the 12th grade, and to remain at nearly the same level while college-completed men and women showed the greatest increases in drunkenness," the authors wrote.
+
+Lesser-educated young adults also started binge-drinking earlier, but college students, again, caught up. High school-educated women were 27% more likely to binge drink than college women, for example. High-school-educated men were 25% more likely to binge drink than men with post-secondary education.
+
+But binge-drinking frequency increased 21% more for college-educated men than post-secondary educated men. And college women were 48%  more likely to have an increase in binge-drinking frequency than high school-educated women.
+
+The study also found post-secondary educated men had the highest frequency of drunken-driving. High school educated men and women reported the highest frequencies of smoking in the 12th grade and at age 24 and also showed the greater increase in smoking prevalence over this period whereas college-educated men and women had the lowest levels of smoking.
+
+Then at age 24, the investigators compared those who were students to those who were working and found those who were working were 1.5 times more likely to binge drink ($p<0.003$), 1.3 times more likely to be in the high drunkenness group ($p<0.018$), and were 1.5 times more likely to have a greater quantity and frequency of alcohol consumption ($p<0.005$).
+
+"The transition from being a student to working, and the transition from residing with one's family of origin to another location could both partially explain differences in patterns," the authors wrote.
+
+Dr. Bingham said the findings reveal that non-college attending young adults "experience levels of risk that equal those of their college-graduating age mates."
+
+`r I(closeProblem())`
+
