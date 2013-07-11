@@ -1,0 +1,37 @@
+Intro to Statistical Modeling Ch. 7 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-07-12-SD")
+```
+
+In the SAT data `SAT`, the variables have these units: 
+
+* *sat* has units of "points." 
+* *expend* has units of "dollars."
+* *ratio* has units of "students."
+* *frac* has units of "percentage points."
+
+
+Consider the model formula 
+
+
+*sat* = 994 + 12.29 *expend* - 2.85 *frac*
+
+```{r include=FALSE}
+SAT=selectSet(name="units994", totalPts=1, "points"=TRUE, "dollars"=FALSE, "students"=FALSE, "percentage points"=FALSE, "points per dollar"=FALSE, "students per point"=FALSE, "points per student"=FALSE, "points per percentage points"=FALSE)
+```
+* What are the units of the coefficient 994? `r I(SAT)`
+
+```{r include=FALSE}
+SAT2=selectSet(name="units12.29", totalPts=1, "points"=FALSE, "dollars"=FALSE, "students"=FALSE, "dollars per student"=FALSE, "points per dollar"=TRUE, "students per point"=FALSE, "points per student"=FALSE)
+```
+* What are the units of the coefficient 12.29? `r I(SAT2)`
+
+```{r include=FALSE}
+SAT3=selectSet(name="units2.85", totalPts=1, "points"=FALSE, "dollars"=FALSE, "percentage points"=FALSE, "points per dollar"=FALSE, "students per point"=FALSE, "points per student"=FALSE, "points per percentage points"=TRUE)
+```
+* What are the units of the coefficient 2.85? `r I(SAT3)`
+
+`r I(closeProblem())`

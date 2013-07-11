@@ -1,0 +1,70 @@
+Intro to Statistical Modeling Ch. 7 Prob. 11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-11-SD")
+```
+
+In the `SwimRecords` data, the variables are 
+* *time*: World record time (in seconds)
+* *year*: The year in which the record was set
+* *sex*: Whether the record is for men or women.
+
+
+Here are the coefficients from several different fitted models.
+```{r}
+lm( time ~ year, data=SwimRecords)
+```
+
+
+```{r}
+lm( time ~ year+sex, data=SwimRecords)
+```
+
+
+```{r}
+lm( time ~ year*sex, data=SwimRecords)
+```
+ 
+
+```{r}
+lm( time ~ sex, data=SwimRecords)
+```
+
+
+For each of the following, pick the appropriate model from the set above and use its coefficients to answer the question.
+
+```{r include=FALSE}
+swim=selectNumber(choices=c(-302.4,-10.54,-9.79,-0.2599,-0.2515,-0.324,-0.174), correct=c(-0.2599), totalPts=1, name="changeforMenAndWomen")
+```
+* How does the world record time typically change from one year to the next for both men and women taken together? `r I(swim)`
+
+<aside>
+ANSWER:     
+Since the question lumps together men and women, and asks for changes from year to year, you want to look at the model *time* ~ *year*.  The coefficient on *year* is $-0.2599$, indicating that times decrease on average by 0.2599 seconds per year.
+</aside>
+
+```{r include=FALSE}
+swim2=selectNumber(choices=c(-302.4,-10.54,-9.79,-0.2599,-0.2515,-0.324,-0.174), correct=c(-0.324), totalPts=1, name="changeforWomen")
+```
+* How does the world record time change from one year to the next for women only? `r I(swim2)`
+
+<aside>
+ANSWER:     
+You want a model that will let you examine the changes from year to year for each sex separately.  Thus, the model has to have an interaction between *year* and *sex*.  The third model has this.  
+
+Since you're interested only in women, you can ignore all the terms with *sexM*.  The only remaining coefficient involving year is $-0.3240$, indicating that women's world records decrease each year on average by 0.324 seconds.
+</aside>
+
+```{r include=FALSE}
+swim3=selectNumber(choices=c(-302.4,-10.54,-9.79,-0.2599,-0.2515,-0.324,-0.174), correct=c(-0.174), totalPts=1, name="changeforMen")
+```
+* How does the world record time change from one year to the next for men only? `r I(swim3)`
+
+<aside>
+ANSWER:      
+The same model as in part (2) applies here, but now you need to consider the terms involving *sexM*.  To get the overall dependence on *year* for men, you need to add together all the coefficients involving *year*, so $-0.324 + 0.150 = -0.174$.  (More precisely, you want to take the partial derivative of time with respect to year in the model formula.)
+</aside>
+
+`r I(closeProblem())`

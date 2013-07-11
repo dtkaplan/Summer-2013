@@ -1,0 +1,32 @@
+Intro to Statistical Modeling Ch. 7 Prob. 15
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-15-SD")
+```
+
+Consider this model of a child's height as a function of the father's height, the mother's height, and the sex of the child.
+
+*height* ~ *father* $\star$ *sex* + *mother* $\star$ *sex* 
+
+Use the Galton data `Galton` to fit the model and examine the coefficients.  Based on the coefficients, answer the following:
+
+```{r include=FALSE}
+height=selectSet(name="Bill", totalPts=1, "They should be the same height."=FALSE, "0.01 inches"=FALSE, "0.03 inches"=FALSE, "0.31 inches"=FALSE, "0.33 inches"=FALSE, "0.40 inches"=FALSE, "0.41 inches"=TRUE)
+```
+* There are two boys, Bill and Charley.  Bill's father is 1 inch taller than Charley's father.  According to the model, and assuming that their mothers are the same height, how much taller should Bill be than Charley? `r I(height)`
+
+```{r include=FALSE}
+height2=selectSet(name="Charley", totalPts=1, "They should be the same height."=FALSE, "0.01 inches"=FALSE, "0.03 inches"=FALSE, "0.31"=FALSE, "0.33 inches"=TRUE, "0.40 inches"=FALSE, "0.41 inches"=FALSE)
+```
+* Now imagine that Bill and Charley's fathers are the same height, but that Charley's mother is 1 inch taller than Bill's mother.  According to the model, how much taller should Charley be than Bill? `r I(height2)`
+
+```{r include=FALSE}
+height3=selectSet(name="Bill2", totalPts=1, "They should be the same height."=FALSE, "0.03 inches"=FALSE, "0.08 inches"=TRUE, "0.13 inches"=FALSE, "0.25 inches"=FALSE)
+```
+* Now put the two parts together.  Bill's father is one inch taller than Charley's, but Charley's mother is one inch taller than Bill's.  How much taller is Bill than Charley? `r I(height3)`
+
+
+`r I(closeProblem())`
+
