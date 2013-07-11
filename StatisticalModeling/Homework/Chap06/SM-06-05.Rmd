@@ -1,0 +1,46 @@
+Intro to Statistical Modeling Ch. 6 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-5-SD")
+```
+
+Using your general knowledge about the world, think about the relationship between these variables:
+
+* *speed* of a bicyclist.
+* *steepness* of the road, a quantitative variable measured by the grade (rise over run). 0 means flat, + means uphill, $-$ means downhill.
+* *fitness* of the rider, a categorical variable with three levels: unfit, average, athletic.
+
+
+On a piece of paper, sketch out a graph of speed versus steepness for reasonable models of each of these forms:
+
+* Model 1: *speed* ~ 1 + *steepness*
+
+<aside>
+ANSWER:      
+Imagine that positive steepness means uphill, and negative steepness is downhill. As the hill gets steeper uphill, bicycle speed gets slower.  So this model would be a line that slopes negatively.
+</aside>
+
+* Model 2: *speed* ~ 1 + *fitness*
+
+<aside>
+ANSWER:      
+Increased fitness leads to higher speed, so the line of speed against fitness will slope upwards.
+</aside>
+
+* Model 3: *speed* ~ 1 + *steepness* + *fitness*
+
+<aside>
+ANSWER:     
+Speed will go down with greater steepness (uphill) and speed will go up with greater fitness.
+</aside>
+
+* Model 4: *speed* ~ 1 + *steepness* + *fitness* + *steepness*:*fitness*
+
+<aside>
+ANSWER:      
+Compared to Model 3, what's new here is the interaction term between steepness and fitness.  Presumably, more fit people don't slow down as much when they encounter a hill, so the interaction should reduce the effect of steepness.
+</aside>
+
+`r I(closeProblem())`

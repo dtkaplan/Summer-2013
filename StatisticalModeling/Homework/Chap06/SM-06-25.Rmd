@@ -1,0 +1,80 @@
+Intro to Statistical Modeling Ch. 6 Prob. 25
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-25-SD")
+```
+
+The drawings show some data involving three variables: 
+* D --- a quantitative variable
+* A --- a quantitative variable
+* G --- a categorical variable with two levels: S & K
+
+![Drawing](s2007-9-fig.png)
+
+
+Sketch the graph on a piece of paper.  Over that sketch, draw a function
+that shows the pattern of
+the fitted model values for each of the following models:
+
+* *D ~ A+G*
+
+<aside>
+ANSWER:     
+![Answer1](s2007-9-fig-ans1.png)
+
+There are two linear components --- one for each level of G.  But, since there is no interaction term, the lines must have the same slope. 
+</aside>
+
+* *D ~ A-1*
+
+<aside>
+ANSWER:     
+![Answer2](s2007-9-fig-ans3.png)
+
+The exclusion of the intercept term forces the line to go through the origin.
+</aside>
+
+* *D ~ A*
+
+<aside>
+ANSWER:     
+![Answer3](s2007-9-fig-ans5.png)
+
+A simple straight-line graph.
+</aside>
+
+* *D ~ A * G*
+
+<aside>
+ANSWER:      
+![Answer4](s2007-9-fig-ans2.png)
+
+By including an interaction term between A and G, the lines for each group can have different slopes.
+</aside>
+
+* *D ~ 1*
+
+<aside>
+ANSWER:     
+![Answer5](s2007-9-fig-ans4.png)
+
+This is the all-cases-the-same model.  Since model doesn't depend on A or G at all, the graph is flat.
+</aside>
+
+* *D ~ poly(A,2)*
+
+<aside>
+ANSWER:     
+![Answer6](s2007-9-fig-ans6.png)
+
+A second-order polynomial has a parabolic shape.  The fitted parameters set the location of the peak and the orientation ("bowl" or "mountain").
+</aside>
+
+
+Example: *D ~ G*.
+
+![Example](s2007-9-fig-2.png)
+
+`r I(closeProblem())`

@@ -141,7 +141,11 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 6.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-02.html) working
 
-* [Problem 6.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-02.html) **NOT COMPLETE**
+* [Problem 6.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-04.html) working, but slight discrepancy between generated figures and the stored figures. Also, statement towards bottom of page having to do with AcroScore (necessary?).
+
+* [Problem 6.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-05.html) working
+
+* [Problem 6.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-10.html) working
 
 * [Problem 6.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-11.html) working
 
@@ -154,5 +158,7 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 6.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-21.html) working
 
 * [Problem 6.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-23.html) working, but there are not questions, just information (new problem also)
+
+* [Problem 6.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) working
 
 
