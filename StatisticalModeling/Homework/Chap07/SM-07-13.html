@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 7 Prob. 13</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 7 Prob. 13</h1>
+
+<p>The graph shows schematically a possible relationship between used car price,
+mileage, and the car model year.  </p>
+
+<h3>How to do this part??</h3>
+
+<p>\centerline{\begin{tikzpicture}[scale=1]
+\draw<a href="0,0">-&gt;</a> &ndash; node[below] {Mileage} (5,0);
+\draw<a href="0,0">-&gt;</a> &ndash; node[above,sloped] {Price} (0,5);
+\draw<a href=".5,5.5">blue,ultra thick</a> &ndash; node[above,sloped] {Year 2007} (3,2);
+\draw<a href=".5,2.5">blue,ultra thick</a> &ndash; node[above,sloped] {Year 2005} (4.5,.5);
+\end{tikzpicture}}</p>
+
+<p>Consider the model <em>price</em> ~ <em>mileage</em> * <em>year</em>.  </p>
+
+<p>In your answers, treat <em>year</em> as a simple categorical variable, and use year
+2005 as the reference group when thinking about coefficients.</p>
+
+<p>What will be the sign of the coefficient on <em>mileage</em>? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      1,
+"name": "sign",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Negative" 
+}'>Negative</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      1,
+"name": "sign",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Zero" 
+}'>Zero</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      1,
+"name": "sign",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Positive" 
+}'>Positive</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      1,
+"name": "sign",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No way to tell from the information given" 
+}'>No way to tell from the information given</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:<br/>
+The model <em>price</em> modeled by <em>mileage</em> \( \star \) <em>year</em> will specify two separate lines, as shown in the graph.  Each line has an intercept and a slope.  In this model, the coefficient on <em>mileage</em> will refer to the slope of the reference group.  That&#39;s negative for year 2005.
+</aside></p>
+
+<p>What will be the sign of the coefficient on model <em>year</em>? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      2,
+"name": "sign2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Negative" 
+}'>Negative</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      2,
+"name": "sign2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Zero" 
+}'>Zero</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      2,
+"name": "sign2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Positive" 
+}'>Positive</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      2,
+"name": "sign2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No way to tell from the information given" 
+}'>No way to tell from the information given</option> </select><span id='out2' class='shiny-html-output'> </span> </p>
+
+<p><aside>
+ANSWER:<br/>
+From the graph, it&#39;s evident that prices are higher for year 2007 than for year 2005.  Since 2005 is the reference group, the coefficient on <em>year</em> will be positive, since prices increase going from 2005 to 2007.
+</aside></p>
+
+<p>What will be the sign of the interaction coefficient? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      3,
+"name": "sign3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Negative" 
+}'>Negative</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      3,
+"name": "sign3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Zero" 
+}'>Zero</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      3,
+"name": "sign3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Positive" 
+}'>Positive</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-7-13-SD",
+"itemN":      3,
+"name": "sign3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No way to tell from the information given" 
+}'>No way to tell from the information given</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:<br/>
+The interaction coefficient will tell how the slope changes when moving from the reference group (year 2005) to the other group.  When you add the interaction coefficient to the reference slope, you get the slope for the other group.  From the graph, the slope for 2007 is more negative than for 2005.  So the interaction coefficient will be negative.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,123 @@
+Intro to Statistical Modeling Ch. 7 Prob. 31
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-31-SD")
+```
+For the simple model *A* ~ *G* where *G* is a categorical variable, the
+coefficients will be group means.  More precisely, there will be an intercept that is the mean of one of the groups and the other coefficients will show how the mean of the other groups each differ from the reference group.
+
+Similarly, when there are two grouping variables, *G* and *H*, the model *A ~ *G + H + G:H* (which can be abbreviated *A* ~ *G* $\star$ *H*) will have coefficients that are the group-wise means of the crossed groups.  Perhaps "subgroup-wise means" is more appropriate, since there will be a separate mean for each subgroup of *G* divided along the lines of *H*.  The interaction term *G:H* allows the model to account for the influence of *H* separately for each level of *G*. 
+
+However, the model *A* ~ *G* + *H* does **not** produce coefficients that are group means.  Because no interaction term has been included, this model cannot reflect how the effect of *H* differs depending on the level of *G*.  Instead, the model coefficients reflect the influence of *H* as if it were the same for all levels of *G*.
+
+To illustrate these different models, consider some simple data.
+
+Suppose that you found in the literature an article about the price of small pine trees (either Red Pine or White Pine) of different heights in standard case/variable format, which would look like this:
+
+Case # | Color | Height | Price 
+|:-----:|:-----:|:-----:|:-----:|
+1 | Red | Short | 11
+2 | Red | Short | 13
+3 | White | Tall | 37
+4 | White | Tall | 35
+
+
+Commonly in published papers, the raw case-by-case data isn't reported.  Rather some summary of the raw data is presented.  For example, there might be a summary table like this:
+
+|  | SUMMARY | TABLE |  |
+|:-----:|:-----:|:-----:|:-----:|
+|  | **Color** | **Color** | |
+| **Height** | **Red** | **White** | **Both Colors** |
+| Short | $12 | $18 | $15 |
+| Tall | $20 | $34 | $27 |
+| Both Heights | $16 | $26 | $21 |
+
+
+
+\centerline{\begin{tabular}{l|rr|r}
+\multicolumn{4}{c}{SUMMARY TABLE}\\\hline
+\multicolumn{4}{c}{Mean Price}\\\hline
+\multicolumn{1}{c}{}   & \multicolumn{2}{c}{Color} & \\
+\multicolumn{1}{l}{Height}        &  \multicolumn{1}{r}{Red} & White & Both Colors\\\hline
+Short & \$12 & \$18 & \$15\\ Tall & \$20 & \$34 & \$27\\\hline Both
+Heights & \$16 & \$26 & \$21\\
+\end{tabular}}
+
+\bigskip
+
+The table gives the mean price of a sample of 10 trees in each of the
+four overall categories (Tall and Red, Tall and White, Short and Red,
+Short and White).  So, the ten Tall and Red pines averaged \$20, the
+ten Short and White pines averaged \$18, and so on.  The margins show
+averages over larger groups.  For instance, the 20 white pines,
+averaged \$26, while the 20 short pines averaged \$15.  
+
+The average price of all 40 trees in the sample was \$21.
+
+\bigskip
+
+Based on the summary table, answer these questions:
+
+\begin{enumerate}
+\item In the model \model{\VN{price}}{\VN{color}}, which involves 
+the coefficients ``intercept'' and ``colorWhite'', what 
+will be the values of the coefficients?
+
+\begin{itemize}
+\item Intercept   \SelectSetHoriz{16}{12,15,16,18,20,21,26,27,34}
+\item colorWhite  \SelectSetHoriz{10}{-10,-8,0,5,8,10}
+\end{itemize}
+
+\item In the model \model{\VN{price}}{\VN{height}}, which involves the 
+coefficients ``intercept'' and ``heightTall'', 
+what will be the values of the coefficients?
+ 
+\begin{itemize}
+\item Intercept   \SelectSetHoriz{15}{0,4,8,12,15,16,18,20,21,26,27,34}
+\item heightTall  \SelectSetHoriz{12}{0,4,8,12,15,16,18,20,21,26,27,34}
+\end{itemize}
+
+\item The model \model{\VN{price}}{\VN{height} * \VN{color}}, 
+with an interaction
+between \variableName{height} and \variableName{color}, has four coefficients
+and therefore can produce an exact match to the prices of the four
+different kinds of trees.  But they are in a different format: not
+just one coefficient for each kind of tree.  What are the values of
+these coefficients from the model?  (Hint: Start with the kind of tree
+that corresponds to the intercept term.)
+\begin{itemize}
+\item Intercept   \SelectSetHoriz{12}{0,4,6,8,10,12,16}
+\item heightTall  \SelectSetHoriz{8}{0,4,6,8,10,12,16}
+\item colorWhite  \SelectSetHoriz{6}{0,4,6,8,10,12,16}
+\item heightTall:colorWhite \SelectSetHoriz{8}{0,4,6,8,10,12,16}
+\end{itemize}
+
+\item The model \model{\VN{price}}{\VN{height} + \VN{color}} 
+gives these three coefficients: 
+\begin{itemize}
+\item Intercept  : 10
+\item heightTall : 12
+\item colorWhite : 10
+\end{itemize}
+
+It would be hard to figure out these coefficients by hand because they
+can't be read off from the summary table of Mean Price.
+
+According to the model, what are the fitted model values for these trees:
+\begin{itemize}
+\item Short Red  \SelectSetHoriz{10}{10,12,15,16,20,22,32,34}
+\item Short White  \SelectSetHoriz{20}{10,12,15,16,20,22,32,34}
+\item Tall Red  \SelectSetHoriz{22}{10,12,15,16,20,22,32,34}
+\item Tall White  \SelectSetHoriz{32}{10,12,15,16,20,22,32,34}
+\end{itemize}
+
+Notice that the fitted model values aren't a perfect match to the
+numbers in the table.  That's because a model with three coefficients
+can't exactly reproduce a set of four numbers.
+
+
+
+\end{enumerate}
+

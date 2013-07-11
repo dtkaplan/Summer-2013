@@ -1,0 +1,58 @@
+Intro to Statistical Modeling Ch. 7 Prob. 13
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-7-13-SD")
+```
+
+The graph shows schematically a possible relationship between used car price,
+mileage, and the car model year.  
+
+### How to do this part??
+\centerline{\begin{tikzpicture}[scale=1]
+\draw[->] (0,0) -- node[below] {Mileage} (5,0);
+\draw[->] (0,0) -- node[above,sloped] {Price} (0,5);
+\draw[blue,ultra thick] (.5,5.5) -- node[above,sloped] {Year 2007} (3,2);
+\draw[blue,ultra thick] (.5,2.5) -- node[above,sloped] {Year 2005} (4.5,.5);
+\end{tikzpicture}}
+
+
+Consider the model *price* ~ *mileage* * *year*.  
+
+In your answers, treat *year* as a simple categorical variable, and use year
+2005 as the reference group when thinking about coefficients.
+
+```{r include=FALSE}
+car=selectSet(name="sign", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=FALSE, "No way to tell from the information given"=FALSE)
+```
+What will be the sign of the coefficient on *mileage*? `r I(car)`
+
+<aside>
+ANSWER:      
+The model *price* modeled by *mileage* $\star$ *year* will specify two separate lines, as shown in the graph.  Each line has an intercept and a slope.  In this model, the coefficient on *mileage* will refer to the slope of the reference group.  That's negative for year 2005.
+</aside>
+
+```{r include=FALSE}
+car2=selectSet(name="sign2", totalPts=1, "Negative"=FALSE, "Zero"=FALSE, "Positive"=TRUE, "No way to tell from the information given"=FALSE)
+```
+What will be the sign of the coefficient on model *year*? `r I(car2)` 
+
+<aside>
+ANSWER:     
+From the graph, it's evident that prices are higher for year 2007 than for year 2005.  Since 2005 is the reference group, the coefficient on *year* will be positive, since prices increase going from 2005 to 2007.
+</aside>
+
+```{r include=FALSE}
+car3=selectSet(name="sign3", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=FALSE, "No way to tell from the information given"=FALSE)
+```
+What will be the sign of the interaction coefficient? `r I(car3)`
+
+<aside>
+ANSWER:     
+The interaction coefficient will tell how the slope changes when moving from the reference group (year 2005) to the other group.  When you add the interaction coefficient to the reference slope, you get the slope for the other group.  From the graph, the slope for 2007 is more negative than for 2005.  So the interaction coefficient will be negative.
+</aside>
+
+
+`r I(closeProblem())`
+

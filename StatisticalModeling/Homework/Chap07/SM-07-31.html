@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 7 Prob. 31</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 7 Prob. 31</h1>
+
+<p>For the simple model <em>A</em> ~ <em>G</em> where <em>G</em> is a categorical variable, the
+coefficients will be group means.  More precisely, there will be an intercept that is the mean of one of the groups and the other coefficients will show how the mean of the other groups each differ from the reference group.</p>
+
+<p>Similarly, when there are two grouping variables, <em>G</em> and <em>H</em>, the model <em>A ~ *G + H + G:H</em> (which can be abbreviated <em>A</em> ~ <em>G</em> \( \star \) <em>H</em>) will have coefficients that are the group-wise means of the crossed groups.  Perhaps &ldquo;subgroup-wise means&rdquo; is more appropriate, since there will be a separate mean for each subgroup of <em>G</em> divided along the lines of <em>H</em>.  The interaction term <em>G:H</em> allows the model to account for the influence of <em>H</em> separately for each level of <em>G</em>. </p>
+
+<p>However, the model <em>A</em> ~ <em>G</em> + <em>H</em> does <strong>not</strong> produce coefficients that are group means.  Because no interaction term has been included, this model cannot reflect how the effect of <em>H</em> differs depending on the level of <em>G</em>.  Instead, the model coefficients reflect the influence of <em>H</em> as if it were the same for all levels of <em>G</em>.</p>
+
+<p>To illustrate these different models, consider some simple data.</p>
+
+<p>Suppose that you found in the literature an article about the price of small pine trees (either Red Pine or White Pine) of different heights in standard case/variable format, which would look like this:</p>
+
+<table><thead>
+<tr>
+<th align="center">Case #</th>
+<th align="center">Color</th>
+<th align="center">Height</th>
+<th align="center">Price</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">Red</td>
+<td align="center">Short</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Red</td>
+<td align="center">Short</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">White</td>
+<td align="center">Tall</td>
+<td align="center">37</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">White</td>
+<td align="center">Tall</td>
+<td align="center">35</td>
+</tr>
+</tbody></table>
+
+<p>Commonly in published papers, the raw case-by-case data isn&#39;t reported.  Rather some summary of the raw data is presented.  For example, there might be a summary table like this:</p>
+
+<table><thead>
+<tr>
+<th align="center"></th>
+<th align="center">SUMMARY</th>
+<th align="center">TABLE</th>
+<th align="center"></th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"></td>
+<td align="center"><strong>Color</strong></td>
+<td align="center"><strong>Color</strong></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>Height</strong></td>
+<td align="center"><strong>Red</strong></td>
+<td align="center"><strong>White</strong></td>
+<td align="center"><strong>Both Colors</strong></td>
+</tr>
+<tr>
+<td align="center">Short</td>
+<td align="center">$12</td>
+<td align="center">$18</td>
+<td align="center">$15</td>
+</tr>
+<tr>
+<td align="center">Tall</td>
+<td align="center">$20</td>
+<td align="center">$34</td>
+<td align="center">$27</td>
+</tr>
+<tr>
+<td align="center">Both Heights</td>
+<td align="center">$16</td>
+<td align="center">$26</td>
+<td align="center">$21</td>
+</tr>
+</tbody></table>
+
+<p>\centerline{\begin{tabular}{l|rr|r}
+\multicolumn{4}{c}{SUMMARY TABLE}\hline
+\multicolumn{4}{c}{Mean Price}\hline
+\multicolumn{1}{c}{}   &amp; \multicolumn{2}{c}{Color} &amp; \
+\multicolumn{1}{l}{Height}        &amp;  \multicolumn{1}{r}{Red} &amp; White &amp; Both Colors\hline
+Short &amp; $12 &amp; $18 &amp; $15\ Tall &amp; $20 &amp; $34 &amp; $27\hline Both
+Heights &amp; $16 &amp; $26 &amp; $21\
+\end{tabular}}</p>
+
+<p>\bigskip</p>
+
+<p>The table gives the mean price of a sample of 10 trees in each of the
+four overall categories (Tall and Red, Tall and White, Short and Red,
+Short and White).  So, the ten Tall and Red pines averaged $20, the
+ten Short and White pines averaged $18, and so on.  The margins show
+averages over larger groups.  For instance, the 20 white pines,
+averaged $26, while the 20 short pines averaged $15.  </p>
+
+<p>The average price of all 40 trees in the sample was $21.</p>
+
+<p>\bigskip</p>
+
+<p>Based on the summary table, answer these questions:</p>
+
+<p>\begin{enumerate}
+\item In the model \model{\VN{price}}{\VN{color}}, which involves 
+the coefficients <code>intercept&#39;&#39; and</code>colorWhite&#39;&#39;, what 
+will be the values of the coefficients?</p>
+
+<p>\begin{itemize}
+\item Intercept   \SelectSetHoriz{16}{12,15,16,18,20,21,26,27,34}
+\item colorWhite  \SelectSetHoriz{10}{-10,-8,0,5,8,10}
+\end{itemize}</p>
+
+<p>\item In the model \model{\VN{price}}{\VN{height}}, which involves the 
+coefficients <code>intercept&#39;&#39; and</code>heightTall&#39;&#39;, 
+what will be the values of the coefficients?</p>
+
+<p>\begin{itemize}
+\item Intercept   \SelectSetHoriz{15}{0,4,8,12,15,16,18,20,21,26,27,34}
+\item heightTall  \SelectSetHoriz{12}{0,4,8,12,15,16,18,20,21,26,27,34}
+\end{itemize}</p>
+
+<p>\item The model \model{\VN{price}}{\VN{height} * \VN{color}}, 
+with an interaction
+between \variableName{height} and \variableName{color}, has four coefficients
+and therefore can produce an exact match to the prices of the four
+different kinds of trees.  But they are in a different format: not
+just one coefficient for each kind of tree.  What are the values of
+these coefficients from the model?  (Hint: Start with the kind of tree
+that corresponds to the intercept term.)
+\begin{itemize}
+\item Intercept   \SelectSetHoriz{12}{0,4,6,8,10,12,16}
+\item heightTall  \SelectSetHoriz{8}{0,4,6,8,10,12,16}
+\item colorWhite  \SelectSetHoriz{6}{0,4,6,8,10,12,16}
+\item heightTall:colorWhite \SelectSetHoriz{8}{0,4,6,8,10,12,16}
+\end{itemize}</p>
+
+<p>\item The model \model{\VN{price}}{\VN{height} + \VN{color}} 
+gives these three coefficients: 
+\begin{itemize}
+\item Intercept  : 10
+\item heightTall : 12
+\item colorWhite : 10
+\end{itemize}</p>
+
+<p>It would be hard to figure out these coefficients by hand because they
+can&#39;t be read off from the summary table of Mean Price.</p>
+
+<p>According to the model, what are the fitted model values for these trees:
+\begin{itemize}
+\item Short Red  \SelectSetHoriz{10}{10,12,15,16,20,22,32,34}
+\item Short White  \SelectSetHoriz{20}{10,12,15,16,20,22,32,34}
+\item Tall Red  \SelectSetHoriz{22}{10,12,15,16,20,22,32,34}
+\item Tall White  \SelectSetHoriz{32}{10,12,15,16,20,22,32,34}
+\end{itemize}</p>
+
+<p>Notice that the fitted model values aren&#39;t a perfect match to the
+numbers in the table.  That&#39;s because a model with three coefficients
+can&#39;t exactly reproduce a set of four numbers.</p>
+
+<p>\end{enumerate}</p>
+
+</body>
+
+</html>
+
