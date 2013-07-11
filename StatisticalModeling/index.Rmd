@@ -161,4 +161,5 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 6.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) working
 
+* [Problem 6.27](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) some issues with r commands (llines, etc.)
 

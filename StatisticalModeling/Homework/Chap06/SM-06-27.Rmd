@@ -1,0 +1,65 @@
+Intro to Statistical Modeling Ch. 6 Prob. 27
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-6-27-SD")
+```
+
+Sometimes when making a graphic, you want to change some aspect of it or add new elements to it.  The lattice graphics system provides ways to do this.  To illustrate, make a simple density plot in the ordinary way.  
+
+```{r}
+galton = fetchData("Galton")
+densityplot( galton$height )
+```
+
+In looking at the plot, you realize that you want a better label for the horizontal axis.  One option is to redo the plot from scratch:
+
+```{r}
+densityplot( galton$height, xlab="Children")
+```
+
+Another option is to instruct the graphics system just to change the specific parameters you want, for example, to change the x-label and to delete the points plotted at the bottom:
+
+```{r}
+trellis.last.object( xlab="Height (inches)", plot.points=FALSE)
+```
+
+Now suppose you decide to superimpose density plots of the mothers' and fathers' heights.  To do this, you need to tell the lattice system that you want to {\em add on} to the plot.  This is done with the <code>trellis.focus</code> command:
+
+```{r}
+trellis.focus()
+```
+
+You'll notice that the original graphic is surrounded by a red line. Once this is done, you can add on to the plot.  
+
+To start, use <code>density</code> to compute the density curve for the mothers and the fathers.  This will not plot out those curves, yet.
+
+```{r}
+mother = density(galton$mother)
+father = density(galton$father)
+```
+
+Now you can add those curves to the plot, using the <code>llines</code> command.  This takes a series of x- and y- points, but those are already contained in the output of the <code>density</code> program:
+
+```{r}
+llines(mother, col='red', lwd=2)
+llines(father, col='black', lwd=2)
+```
+
+Finally, tell the lattice system that you are done adding to the original plot:
+
+```{r}
+trellis.unfocus()
+```
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="describe", totalPts=1, rows=3))
+```
+Use these commands to construct the graph comparing the distribution of the mothers' and fathers' heights to the children's heights.  Describe how they are
+different and explain why this is.       
+`r I(textItem(name="describe", totalPts=1, rows=3))`
+
+Other useful commands for adding elements to lattice plots are <code>llines</code>, <code>lpoints</code> and <code>ltext</code>.
+
+`r I(closeProblem())`
