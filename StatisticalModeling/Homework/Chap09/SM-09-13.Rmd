@@ -1,0 +1,53 @@
+Intro to Statistical Modeling Ch. 9 Prob. 13
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-13-SD")
+```
+Consider two models, Model 1 and Model 2, with the same response variable.   
+
+```{r include=FALSE}
+true1=selectSet(name="match", totalPts=1, "variables"=FALSE, "model terms"=TRUE)
+```
+* Model 1 is nested in Model 2 if the `r I(true1)`
+of Model 1 are a subset of those of Model 2.
+
+```{r include=FALSE}
+true=selectSet(name="TF", totalPts=1, "True"=TRUE, "False"=FALSE)
+```
+  * If Model 1 is nested in Model 2, then model 1 cannot have a higher $R^2$ than model 2. `r I(true)`     
+
+* Which of the following are nested in *A* ~ *B $\star$ C + D*?
+
+```{r include=FALSE}
+true2=selectSet(name="TF2", totalPts=1, "True"=TRUE, "False"=FALSE)
+```
+  * *A* ~ *B* `r I(true2)`
+
+```{r include=FALSE}
+true3=selectSet(name="TF3", totalPts=1, "True"=TRUE, "False"=FALSE)
+```
+  * *A* ~ *B + D* `r I(true3)`
+
+```{r include=FALSE}
+true4=selectSet(name="TF4", totalPts=1, "True"=FALSE, "False"=TRUE)
+```
+ * *B* ~ *C* `r I(true4)`
+ 
+```{r include=FALSE}
+true5=selectSet(name="TF5", totalPts=1, "True"=TRUE, "False"=FALSE)
+```
+  * *A* ~ *B + C + D* `r I(true5)`
+
+```{r include=FALSE}
+true6=selectSet(name="TF6", totalPts=1, "True"=FALSE, "False"=TRUE)
+```
+  * *A* ~ *B $\star$ D + C* `r I(true6)`
+
+```{r include=FALSE}
+true7=selectSet(name="TF7", totalPts=1, "True"=TRUE, "False"=FALSE)
+```
+  * *A* ~ *D* `r I(true7)`
+  
+`r I(closeProblem())`

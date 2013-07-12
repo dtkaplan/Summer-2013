@@ -1,0 +1,48 @@
+Intro to Statistical Modeling Ch. 9 Prob.12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-09-12-SD")
+```
+Consider the following models where a response variable A is modeled by explanatory variables B, C, and D.
+
+1. *A* ~ *B*
+2. *A* ~  *B + C + B:C*
+3. *A* ~ *B + C*
+4. *A* ~ *B $\star$ C*
+5. *A* ~ *B + D*
+6. *A* ~ *B $\star$ C $\star$ D*
+
+
+```{r include=FALSE}
+true=selectSet(name="TF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+Answer the following:     
+* 1 is nested in model 2. `r I(true)`
+```{r include=FALSE}
+true2=selectSet(name="TF2", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* Model 5 is nested in model 3. `r I(true2)`
+```{r include=FALSE}
+true3=selectSet(name="TF3", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* Model 1 is nested in model 3. `r I(true3)`
+```{r include=FALSE}
+true4=selectSet(name="TF4", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* Model 5 is nested in model 1. `r I(true4)` 
+```{r include=FALSE}
+true5=selectSet(name="TF5", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* Model 2 is nested in model 3. `r I(true5)`
+```{r include=FALSE}
+true6=selectSet(name="TF6", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* Model 3 is nested in model 4. `r I(true6)`
+```{r include=FALSE}
+true7=selectSet(name="TF7", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* All the other models are nested in model 6. `r I(true7)`
+
+`r I(closeProblem())`

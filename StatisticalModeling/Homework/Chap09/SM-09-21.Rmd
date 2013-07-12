@@ -1,0 +1,75 @@
+Intro to Statistical Modeling Ch. 9 Prob. 21
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-21-SD")
+```
+
+Here is a set of models:
+
+Model A:  *wage* ~ *1*
+
+Model B:  *wage* ~ *age* + *sex*
+
+Model C:  *wage* ~ *1 + age *\ sex*
+
+Model D:  *wage* ~ *educ*
+
+Model E:  *wage* ~ *educ* + *age* - 1
+
+Model F:  *wage* ~ *educ*:*age*
+
+Model G:  *wage* ~ *educ* *\ *age* *\ *sex*
+
+
+You may want to try fitting each of the models to the Current
+Population Survey data \datasetCPS to make sure you understand how the
+* shorthand for interaction and main effects expands to a
+complete set of terms.  That way you can see exactly which
+coefficients are calculated for any of the models.
+
+Answer the following:
+\begin{enumerate}
+\item B is nested in A. \TrueOrFalse[itemname=BinA]{F} 
+\begin{AnswerText}
+False, A is nested in B.  The intercept term 1 is implicitly included in B.
+\end{AnswerText}
+
+\item D is nested in E. \TrueOrFalse[itemname=DinE]{F} 
+
+\begin{AnswerText}
+False.  D includes the intercept term, but E does not.
+\end{AnswerText}
+
+\item B is nested in C. \TrueOrFalse[itemname=BinC]{T} 
+
+\begin{AnswerText}
+True.  C includes all the terms in B plus the interaction term \VN{age}:\VN{sex}.
+\end{AnswerText}
+
+\item All of the models A-F are nested in G. \TrueOrFalse[itemname=AllinG]{T} 
+
+\begin{AnswerText}
+True. The notation \VN{educ}*\VN{age}*\VN{sex} includes all the main terms, all the two-variable interaction terms, a three-variable interaction term.  The intercept is also included, by default.
+\end{AnswerText}
+
+
+\item D is nested in F. \TrueOrFalse[itemname=DinF]{F} 
+
+\begin{AnswerText}
+False.  F includes an intercept and an interaction term \VN{educ}:\VN{age}, 
+but not the main term \VN{educ}.
+\end{AnswerText}
+
+\item At least one of the models
+A-G is nested in \model{\VN{educ}}{\VN{age}}. \TrueOrFalse[itemname=wrongresponse]{F} 
+
+\begin{AnswerText}
+False.  The model \model{\VN{educ}}{\VN{age}} has a different response variable than any of the models A-G.
+\end{AnswerText}
+
+
+\end{enumerate}
+
+

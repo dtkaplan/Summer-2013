@@ -1,0 +1,42 @@
+Intro to Statistical Modeling Ch. 9 Prob. 11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-11-SD")
+```
+
+Consider models with a form like this
+<code>
+lm( response ~ 1, data=whatever)
+</code>     
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="R2", totalPts=2, rows=3))
+```
+The $R^2$ of such a model will always be 0. Explain why.     
+`r I(textItem(name="R2", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:     
+This model has only an intercept term.  That means that  the model values will be the same for all the cases: the model value will be a constant.  As such, it has no case-to-case variability.  Thus, the model values account for **none** of the variability and $R^2$ will be exactly zero.  To illustrate:
+
+```{r}
+kids = fetchData("KidsFeet")
+m = lm( width ~ 1, data=kids)
+var( fitted(m))
+```
+
+
+
+Note that the calculated variance is zero --- it appears as $7 \times 10^{-31}$ due to computer round-off error.
+
+Since the variance is zero, the $R^2$  is as well:
+```{r}
+r.squared(m)
+```
+
+
+</aside>
+
+`r I(closeProblem())`

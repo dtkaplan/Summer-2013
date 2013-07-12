@@ -1,0 +1,70 @@
+Intro to Statistical Modeling Ch. 9 Prob. 22
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-22-SD")
+```
+
+A data set on US Congressional Districts (provided by Prof. Julie Dolan),
+`CongressionalDistricts` contains information on the population of each
+congressional district in 2004.  There are 436 districts listed (corresponding to the 435 voting members of the House of Representatives from the 50 states and an additional district for Washington, D.C., whose citizens have only a non-voting "representative."
+
+The US Supreme Court  (Reynolds v. Sims, 377 US 533, 1964) ruled that state legislature districts had to be roughly equal in population: the one-person one-vote principle. Before this ruling, some states had grossly unequally sized districts.  For example,  one district in Connecticut for the state General Assembly had 191 people, while another district in the same state had 81,000.
+Los Angeles County had one representative in the California State Senate for a population of six million, while another county with only 14,000 residents also had one representative.
+
+Of course, exact equality of district sizes is impossible in every district, since districts have geographically defined boundaries and the population can fluctuate within each boundary.  The Supreme Court has written, "... mathematical nicety is not a constitutional requisite..." and "so long as the divergences from a strict population standard are based on legitimate considerations incident to the effectuation of a rational state policy, some deviations from the equal-population principle are constitutionally permissible ...." (Reynolds v. Simms)
+
+The situation in the US House of Representatives is more complicated, since congressional districts are required to be entirely within a single state.
+
+Let's explore how close the districts for the US House of Representatives comes to meeting the one-person one-vote principle.
+
+One way to evaluate how far districts are from equality of population size is to examine the standard deviation across districts.
+
+```{r include=FALSE}
+congress=selectNumber(choices=c(4823,9468,28790,342183,540649), correct=c(28790), totalPts=1, name="StdDev")
+```
+* What is the standard deviation of the district populations
+  across the whole US? `r I(congress)`
+
+Another way to look at the spread is to try to account for the differences in populations by modeling them and looking at how much of the difference remains
+unexplained. 
+
+Let's start with a very simple model that treats all the districts as
+the same: *population* ~ 1.  
+
+```{r include=FALSE}
+congress2=selectSet(name="meaning", totalPts=1, "The mean district population across all states."=FALSE, "The mean district population across all districts."=TRUE, "The median population across all districts."=FALSE, "The median population across all states."=FALSE, "None of the above."=FALSE)
+```
+What is the meaning of the single coefficient from this model? `r I(congress2)`
+
+```{r include=FALSE}
+congress3=selectSet(name="StdDevComparison", totalPts=1, "It's much larger"=FALSE, "It's somewhat larger"=FALSE, "It's exactly the same"=TRUE, "It's much smaller"=FALSE)
+```
+Calculate the standard deviation of the residuals.  How does this compare to the standard deviation of the district population itself? `r I(congress3)`
+
+Now model the district size by the state *population* ~ *1 + state*.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="StdDevRange", totalPts=2, rows=2))
+```
+What is the standard deviation of the residuals from this model?     
+`r I(textItem(name="StdDevRange", totalPts=2, rows=2))`
+
+<aside>
+ANSWER:     
+\NumberRange{2000}{2100}{}
+</aside>
+
+```{r include=FALSE}
+congress4=selectSet(name="residPattern", totalPts=1, "The residuals are all the same."=FALSE, "Every residual is an outlier."=FALSE, "The residuals are almost all very close to zero, except for a few outliers."=TRUE)
+```
+A box plot of the residuals shows a peculiar pattern.  What is it? `r I(congress4)`
+
+
+The variable *state* accounts for almost all of the variability from district to district.  That is, districts within a state are almost exactly the same size, but that size differs from state to state.  Why is there a state-to-state difference?  The number of districts within a state must be a whole number: 1, 2, 3, and so on.  Ideally, the district populations are the state population
+divided by the number of districts.  The number of districts is set to make the district population as even as possible between states, but exact equality isn't possible since the state populations differ. Notice that the largest and smallest districts (Montana and Wyoming, respectively) are in states with only a single district.  Adding a second district to Montana would dramatically reduce the district size below the national mean.  And even though Wyoming has a very
+low-population district, it's impossible to take a district away since Wyoming only has one.
+
+`r I(closeProblem())`
+

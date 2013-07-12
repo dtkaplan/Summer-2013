@@ -215,3 +215,25 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 8.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-12.html) working
 
+## Chapter 9
+
+* [Problem 9.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-01.html) working
+
+* [Problem 9.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-02.html) working
+
+* [Problem 9.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-04.html) working
+
+* [Problem 9.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-05.html) working
+
+* [Problem 9.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-10.html) working
+
+* [Problem 9.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-11.html) working
+
+* [Problem 9.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-12.html) working
+
+* [Problem 9.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-13.html) working
+
+* [Problem 9.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-22.html) working, but a strange answer format right after the free text box
+
+* [Problem 9.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-23.html) working
+
