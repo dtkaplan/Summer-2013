@@ -28,6 +28,7 @@ Answer the following:
 true=selectSet(name="BinA", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
 ```
 * B is nested in A. `r I(true)`
+
 <aside>
 ANSWER:     
 False, A is nested in B.  The intercept term 1 is implicitly included in B.
@@ -73,12 +74,15 @@ ANSWER:
 False.  F includes an intercept and an interaction term *educ*:*age*, but not the main term *educ*.
 </aside>
 
-\item At least one of the models
-A-G is nested in \model{\VN{educ}}{\VN{age}}. \TrueOrFalse[itemname=wrongresponse]{F} 
+```{r include=FALSE}
+true6=selectSet(name="response", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* At least one of the models A-G is nested in *educ* ~ *age*. `r I(true6)`
 
-\begin{AnswerText}
-False.  The model \model{\VN{educ}}{\VN{age}} has a different response variable than any of the models A-G.
-\end{AnswerText}
+<aside>
+ANSWER:      
+False.  The model *educ* ~ *age* has a different response variable than any of the models A-G.
+</aside>
 
 
-\end{enumerate}
+`r I(closeProblem())`
