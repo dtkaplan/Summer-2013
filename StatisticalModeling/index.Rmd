@@ -199,5 +199,13 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 7.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-31.html) working
 
+## Chapter 8 
 
+* [Problem 8.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-04.html) working, but tables are ugly
+
+* [Problem 8.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-04.html) working
+
+* [Problem 8.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-05.html) working
+
+* [Problem 8.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-05.html) working, but includes a comment with further in-development questions
 

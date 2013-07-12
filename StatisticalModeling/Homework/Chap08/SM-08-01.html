@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 8 Prob. 1</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 8 Prob. 1</h1>
+
+<p>Here are some (made-up) data from an experiment growing trees.  The height was measured for trees in different locations that had been watered and fertilized in different ways.</p>
+
+<table><thead>
+<tr>
+<th align="center">Height</th>
+<th align="center">Water</th>
+<th align="center">Light</th>
+<th align="center">Compost</th>
+<th align="center">Nitrogen</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">shady</td>
+<td align="center">none</td>
+<td align="center">little</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">bright</td>
+<td align="center">none</td>
+<td align="center">lot</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">1.5</td>
+<td align="center">bright</td>
+<td align="center">some</td>
+<td align="center">little</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">shady</td>
+<td align="center">rich</td>
+<td align="center">lot</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="center">bright</td>
+<td align="center">some</td>
+<td align="center">little</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">shady</td>
+<td align="center">rich</td>
+<td align="center">lot</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>In the model expression <em>height</em> ~ <em>water</em>, which is the explanatory variable? </p></li>
+<li><p>Ranger Alan proposes the specific model formula \[ \mbox{height} = 
+2*\mbox{water} + 1. \] Copy the table to a piece of paper and fill in the table showing the model values and the residuals.</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="center">Height</th>
+<th align="center">Water</th>
+<th align="center">Model Values</th>
+<th align="center">Residuals</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">1.5</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Ranger Bill proposes the specific model formula \[ \mbox{height} =
+\mbox{water} + 3. \]  Again, fill in the model values and residuals.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="center">Height</th>
+<th align="center">Water</th>
+<th align="center">Model Values</th>
+<th align="center">Residuals</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">1.5</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>Based on your answers to the previous to parts, which of the two models is better?  Give a specific definition of &ldquo;better&rdquo; and explain your answer quantitatively.<br/>
+<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-8-1-SD",
+"itemN":      1,
+"name": "betterModel",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>Write down the set of indicator variables that arise from the categorical variable <em>compost</em>.<br/>
+<textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-8-1-SD",
+"itemN":      2,
+"name": "compost",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>The fitted values are exactly the same for the two models <em>water</em> ~ <em>compost</em> and <em>water</em> ~ <em>compost</em>-1. This suggests that the <strong>l</strong> vector \( (1,1,1,1,1,1) \) is redundant with the set of indicator variables due to the variable compost.<br/>
+Explain why this redundancy occurs.  Is it because of something special about the &ldquo;compost&rdquo; variable?<br/>
+<textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-8-1-SD",
+"itemN":      3,
+"name": "redundant",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>Estimate, as best you can using only very simple calculations,  the coefficients on the model <em>water</em> ~ <em>compost</em> - 1. (Note: there is no intercept term in this model.)<br/>
+<textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-8-1-SD",
+"itemN":      4,
+"name": "estimate",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+<li><p>Ranger Charley observes that the the following model is perfect because all of the residuals are zero.</p></li>
+</ul>
+
+<blockquote>
+<p><em>height</em> ~ 1 + <em>water</em> + <em>light</em> + <em>compost</em> + <em>nitrogen</em></p>
+</blockquote>
+
+<p>Charley believes that using this model will enable him to make excellent predictions  about the height of trees in the future. Ranger Donald, on the other hand, calls Charley&#39;s regression &ldquo;ridiculous rot&rdquo; and claims that Charley&#39;s explanatory terms could fit perfectly any set of 6 numbers.  Donald says that the perfect fit of Charley&#39;s model does not give any evidence that the model is of any use whatsoever.  Who do you think is right, Donald or Charley?<br/>
+<textarea cols='30' rows='1' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-8-1-SD",
+"itemN":      5,
+"name": "perfect",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "text1", "text2", "text3", "text4", "text5" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

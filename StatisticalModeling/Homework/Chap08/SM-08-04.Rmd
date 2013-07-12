@@ -1,0 +1,57 @@
+Intro to Statistical Modeling Ch. 8 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-4-SD")
+```
+
+Here is a simple model that relates foot *width* to *length* in
+children, fit to the data in `KidsFeet`:
+```{r}
+kids = fetchData("KidsFeet")
+mod = lm( width ~ length, data=kids)
+coef(mod)
+```
+SHOULD MATCH >
+(Intercept)    length  
+     2.8623    0.2479  
+
+
+```{r include=FALSE}
+feet=selectNumber(choices=c(2.86,3.10,7.93,9.12,9.56,12.24,28.62), correct=c(9.56), totalPts=1, name="27cm")
+```
+Using the coefficients, calculate the predicted foot width from this model for a child with foot length 27cm. `r I(feet)`
+
+```{r include=FALSE}
+feet2=selectNumber(choices=c(4.73,5.81,5.94,6.10,6.21), correct=c(5.81), totalPts=1, name="sumOfSquaresRes")
+```
+The sum of squares of the residuals from the model provides a simple indication of how far typical values are from the model. In this sense, the standard deviation of the residuals tells us how much uncertainty there is in the prediction.  (Later on, we'll see that another term needs to be added to this uncertainty.) What is the sum of squares of the residuals? `r I(feet2)`
+
+```{r include=FALSE}
+feet3=selectNumber(choices=c(42.5,286.3,3157.7,8492.0,15582.1), correct=c(3157.7), totalPts=1, name="sumOfSquaresFit")
+```
+What is the sum of squares of the fitted values for the kids in `KidsFeet`? `r I(feet3)`
+
+```{r include=FALSE}
+feet4=selectNumber(choices=c(3163.5,3167.2,3285.1,3314.8,3341.7), correct=c(3163.5), totalPts=1, name="sumOfSquaresWidths")
+```
+What is the sum of squares of the foot widths for the kids in `KidsFeet`. `r I(feet4)`
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+There is a simple relationship between the sum of squares of the response variable, the residuals, and the fitted values.  You can confirm this directly.  Which of the following R statements is appropriate to do this:
+`r I(f(FALSE))` <code>sum( kids$width ) - (sum(resid(mod))+sum(fitted(mod)))</code>
+`r I(f(TRUE))` <code>sum( kids$width^2 ) - (sum(resid(mod)^2)+sum(fitted(mod)^2))</code>
+`r I(f(FALSE))` <code>sum(resid(mod))-sum(fitted(mod))</code>
+`r I(f(FALSE))` <code>sum(resid(mod)^2)-sum(fitted(mod)^2)</code>
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
+
+
+  Note: It might seem natural to use the <code>==</code> operator to compare the equality of two values, for instance <code>A == B</code>.  However, arithmetic on the computer is subject to small round-off errors, too small to be important when looking at the quantities themselves but sufficient to cause the <code>==</code> operator to say the quantities are different.  So, it's usually better to compare numbers by subtracting one from the other and checking whether the result is very small.
+
+`r I(closeProblem())`
+

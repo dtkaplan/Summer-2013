@@ -1,0 +1,88 @@
+Intro to Statistical Modeling Ch. 8 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-1-SD")
+```
+Here are some (made-up) data from an experiment growing trees.  The height was measured for trees in different locations that had been watered and fertilized in different ways.
+
+Height | Water | Light | Compost | Nitrogen 
+:----:|:----:|:----:|:----:|:----:
+5 | 2 | shady | none | little 
+4 | 1 | bright | none | lot 
+5 | 1.5 | bright | some | little
+6 | 3 | shady | rich | lot
+7 | 3 | bright | some | little 
+6 | 2 | shady | rich | lot 
+
+
+```{r include=FALSE}
+trees=selectSet(name="explan", totalPts=1, "height"=FALSE, "water"=TRUE, "light"=FALSE, "compost"=FALSE, "Can't tell from this information."=FALSE)
+```
+* In the model expression *height* ~ *water*, which is the explanatory variable? 
+
+* Ranger Alan proposes the specific model formula $$\mbox{height} = 
+2*\mbox{water} + 1.$$ Copy the table to a piece of paper and fill in the table showing the model values and the residuals.
+
+Height | Water | Model Values | Residuals
+:----:|:----:|:----:|:----:
+5 | 2 | - | -
+4 | 1 | - | -
+5 | 1.5 | - | -
+6 | 3 | - | -
+7 | 3 | - | -
+6 | 2| - | -
+
+
+* Ranger Bill proposes the specific model formula $$\mbox{height} =
+\mbox{water} + 3.$$  Again, fill in the model values and residuals.
+
+Height | Water | Model Values | Residuals
+:----:|:----:|:----:|:----:
+5 | 2 | - | -
+4 | 1 | - | -
+5 | 1.5 | - | -
+6 | 3 | - | -
+7 | 3 | - | -
+6 | 2 | - | -
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="betterModel", totalPts=2, rows=3))
+```
+* Based on your answers to the previous to parts, which of the two models is better?  Give a specific definition of "better" and explain your answer quantitatively.     
+`r I(textItem(name="betterModel", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="compost", totalPts=2, rows=3))
+```
+* Write down the set of indicator variables that arise from the categorical variable *compost*.      
+`r I(textItem(name="compost", totalPts=2, rows=3))`
+ 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="redundant", totalPts=2, rows=3))
+```
+* The fitted values are exactly the same for the two models *water* ~ *compost* and *water* ~ *compost*-1. This suggests that the **l** vector $(1,1,1,1,1,1)$ is redundant with the set of indicator variables due to the variable compost.  
+Explain why this redundancy occurs.  Is it because of something special about the "compost" variable?     
+`r I(textItem(name="redundant", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="estimate", totalPts=2, rows=3))
+```
+* Estimate, as best you can using only very simple calculations,  the coefficients on the model *water* ~ *compost* - 1. (Note: there is no intercept term in this model.)     
+`r I(textItem(name="estimate", totalPts=2, rows=3))`
+
+* Ranger Charley observes that the the following model is perfect because all of the residuals are zero.
+
+> *height* ~ 1 + *water* + *light* + *compost* + *nitrogen*
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="perfect", totalPts=2, rows=1))
+```
+Charley believes that using this model will enable him to make excellent predictions  about the height of trees in the future. Ranger Donald, on the other hand, calls Charley's regression "ridiculous rot" and claims that Charley's explanatory terms could fit perfectly any set of 6 numbers.  Donald says that the perfect fit of Charley's model does not give any evidence that the model is of any use whatsoever.  Who do you think is right, Donald or Charley?     
+`r I(textItem(name="perfect", totalPts=2, rows=1))`
+
+
+
+`r I(closeProblem())`
+
