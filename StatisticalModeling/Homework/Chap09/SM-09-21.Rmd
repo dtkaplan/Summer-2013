@@ -5,62 +5,73 @@ require(mosaic)
 require(WriteScoreR)
 newScorerSet("SM-9-21-SD")
 ```
-
 Here is a set of models:
 
 Model A:  *wage* ~ *1*
 
-Model B:  *wage* ~ *age* + *sex*
+Model B:  *wage* ~ *age + sex*
 
-Model C:  *wage* ~ *1 + age *\ sex*
+Model C:  *wage* ~ *1 + age $\star$ sex*
 
 Model D:  *wage* ~ *educ*
 
 Model E:  *wage* ~ *educ* + *age* - 1
 
-Model F:  *wage* ~ *educ*:*age*
+Model F:  *wage* ~ *educ:age*
 
-Model G:  *wage* ~ *educ* *\ *age* *\ *sex*
+Model G:  *wage* ~ *educ $\star$ age $\star$ sex*
 
-
-You may want to try fitting each of the models to the Current
-Population Survey data \datasetCPS to make sure you understand how the
-* shorthand for interaction and main effects expands to a
-complete set of terms.  That way you can see exactly which
-coefficients are calculated for any of the models.
+You may want to try fitting each of the models to the Current Population Survey data `CPS85` to make sure you understand how the * shorthand for interaction and main effects expands to a complete set of terms.  That way you can see exactly which coefficients are calculated for any of the models.
 
 Answer the following:
-\begin{enumerate}
-\item B is nested in A. \TrueOrFalse[itemname=BinA]{F} 
-\begin{AnswerText}
+```{r include=FALSE}
+true=selectSet(name="BinA", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* B is nested in A. `r I(true)`
+<aside>
+ANSWER:     
 False, A is nested in B.  The intercept term 1 is implicitly included in B.
-\end{AnswerText}
+</aside>
 
-\item D is nested in E. \TrueOrFalse[itemname=DinE]{F} 
+```{r include=FALSE}
+true2=selectSet(name="DinE", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* D is nested in E. `r I(true2)` 
 
-\begin{AnswerText}
+<aside>
+ANSWER:      
 False.  D includes the intercept term, but E does not.
-\end{AnswerText}
+</aside>
 
-\item B is nested in C. \TrueOrFalse[itemname=BinC]{T} 
+```{r include=FALSE}
+true3=selectSet(name="BinC", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* B is nested in C. `r I(true3)`
 
-\begin{AnswerText}
-True.  C includes all the terms in B plus the interaction term \VN{age}:\VN{sex}.
-\end{AnswerText}
+<aside>
+ANSWER:     
+True.  C includes all the terms in B plus the interaction term *age*:*sex*.
+</aside>
 
-\item All of the models A-F are nested in G. \TrueOrFalse[itemname=AllinG]{T} 
+```{r include=FALSE}
+true4=selectSet(name="AllinG", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* All of the models A-F are nested in G. `r I(true4)`
 
-\begin{AnswerText}
-True. The notation \VN{educ}*\VN{age}*\VN{sex} includes all the main terms, all the two-variable interaction terms, a three-variable interaction term.  The intercept is also included, by default.
-\end{AnswerText}
+<aside>
+ANSWER:     
+True. The notation *educ* $\star$ *age* $\star$ *sex* includes all the main terms, all the two-variable interaction terms, a three-variable interaction term.  The intercept is also included, by default.
+</aside>
 
+```{r include=FALSE}
+true5=selectSet(name="DinF", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* D is nested in F. `r I(true5)` 
 
-\item D is nested in F. \TrueOrFalse[itemname=DinF]{F} 
-
-\begin{AnswerText}
-False.  F includes an intercept and an interaction term \VN{educ}:\VN{age}, 
-but not the main term \VN{educ}.
-\end{AnswerText}
+<aside>
+ANSWER:     
+False.  F includes an intercept and an interaction term *educ*:*age*, but not the main term *educ*.
+</aside>
 
 \item At least one of the models
 A-G is nested in \model{\VN{educ}}{\VN{age}}. \TrueOrFalse[itemname=wrongresponse]{F} 
@@ -71,5 +82,3 @@ False.  The model \model{\VN{educ}}{\VN{age}} has a different response variable 
 
 
 \end{enumerate}
-
-
