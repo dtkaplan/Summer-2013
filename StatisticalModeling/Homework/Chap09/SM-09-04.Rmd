@@ -1,0 +1,50 @@
+Intro to Statistical Modeling Ch. 9 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-4-SD")
+```
+For each of the following pairs of models, mark the statement that is most correct.
+
+#### Part 1
+
+* **Model 1.** *A* ~ *B + C*
+* **Model 2.** *A* ~ *B $\star$ C*
+
+```{r include=FALSE}
+model=selectSet(name="1", totalPts=1, "Model 1 is nested in Model 2."=TRUE, "Model 2 is nested in Model 1."=FALSE, "The two models are the same."=FALSE, "None of the above is true."=FALSE)
+```
+`r I(model)`
+
+#### Part 2 
+
+* **Model 1.** *A* ~ *B*
+* **Model 2.** *B* ~ *A*
+
+```{r include=FALSE}
+model2=selectSet(name="2", totalPts=1, "Model 1 is nested in Model 2."=FALSE, "Model 2 is nested in Model 1."=FALSE, "The two models are the same."=FALSE, "None of the above is true."=TRUE)
+```
+`r I(model2)`
+
+#### Part 3 
+
+* **Model 1.** *A* ~ *B + C*
+* **Model 2.** *B* ~ *A $\star$ C*
+
+```{r include=FALSE}
+model3=selectSet(name="3", totalPts=1, "Model 1 is nested in Model 2."=FALSE, "Model 2 is nested in Model 1."=FALSE, "The two models are the same."=FALSE, "None of the above is true."=TRUE)
+```
+`r I(model3)`
+
+#### Part 4 
+
+* **Model 1.** *A* ~ *B + C + B:C*
+* **Model 2.** *A* ~ *B $\star$ C*
+
+```{r include=FALSE}
+model4=selectSet(name="4", totalPts=1, "Model 1 is nested in Model 2."=FALSE, "Model 2 is nested in Model 1."=FALSE, "The two models are the same."=TRUE, "None of the above is true."=FALSE)
+```
+`r I(model4)`
+
+`r I(closeProblem())`

@@ -1,0 +1,38 @@
+Intro to Statistical Modeling Ch. 9 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-10-SD")
+```
+Which of the following statements is true about $R^2$?
+
+```{r include=FALSE}
+true=selectSet(name="TF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* $R^2$ will never go down when you add an additional explanatory term to a model. `r I(true)`
+
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+* For a perfectly fitting model,          
+`r I(f(FALSE))` $R^2$ is exactly zero     
+`r I(f(TRUE))` $R^2$ is exactly one     
+`r I(f(FALSE))` Neither of the above    
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+```{r include=FALSE}
+true2=selectSet(name="var", totalPts=1, "Variance of the residuals divided by the variance of the
+fitted."=FALSE, "Variance of the response divided by the variance of the
+residuals."=FALSE, "Variance of the fitted divided by the variance of the
+residuals."=FALSE, "Variance of the fitted divided by the variance of the
+response."=TRUE, "Variance of the response divided by the variance of the fitted."=FALSE)
+```
+* In terms of the variances of the fitted model points, the residual, and the response variable, $R^2$ is the: `r I(true2)`
+
+`r I(closeProblem())`
+
+

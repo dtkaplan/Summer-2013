@@ -1,0 +1,62 @@
+Intro to Statistical Modeling Ch. 9 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-1-SD")
+```
+
+The $R^2$ statistic is the ratio of the variance of the fitted values to the variance of the response variable.  
+
+Using the `KidsFeet` data:
+
+```{r include=FALSE}
+feet=selectNumber(choices=c(0.053,0.119,0.183,0.260,0.346), correct=c(0.260), totalPts=1, name="var1")
+```
+* Find the variance of the response variable in the model *width* ~ *sex + length + sex:length* . `r I(feet)`
+
+<aside>
+ANSWER:     
+```{r}
+kids = fetchData("KidsFeet")
+var( kids$width)
+```
+</aside>
+
+```{r include=FALSE}
+feet2=selectNumber(choices=c(0.053,0.119,0.183,0.260,0.346), correct=c(0.119), totalPts=1, name="var2")
+```
+* Find the variance of the fitted values from the model `r I(feet2)`
+
+<aside>
+ANSWER:     
+```{r}
+mod = lm( width ~ sex*length, data=kids)
+var( fitted(mod))
+```
+</aside>
+
+```{r include=FALSE}
+feet3=selectNumber(choices=c(0.20,0.29,0.46,0.53,0.75), correct=c(0.46), totalPts=1, name="R2")
+```
+* Compute the $R^2$ as the ratio of these two variances. `r I(feet3)`
+
+<aside>
+ANSWER:     
+```{r}
+0.1194/0.2597
+```
+or, more precisely
+```{r}
+var( fitted(mod)) / var(kids$width)
+```
+</aside>
+
+```{r include=FALSE}
+feet4=selectSet(name="YN", totalPts=1, "Yes"=TRUE, "No"=FALSE)
+```
+* Is this the same as the "Multiple $R^2$" given in the <code>summary(mod)</code> report? `r I(feet4)`
+
+
+`r I(closeProblem())`
+

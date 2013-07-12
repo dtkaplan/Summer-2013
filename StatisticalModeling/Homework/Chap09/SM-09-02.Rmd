@@ -1,0 +1,32 @@
+Intro to Statistical Modeling Ch. 9 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-2-SD")
+```
+
+The variance of a response variable A is 145 and the variance of the residuals from the model *A* ~ *1 + B* is 45.
+
+```{r include=FALSE}
+model=selectSet(name="varFit", totalPts=1, "45"=FALSE, "100"=TRUE, "145"=FALSE, "190"=FALSE, "Cannot tell"=FALSE)
+```
+* What is the variance of the fitted model values? `r I(model)`
+
+<aside>
+ANSWER:     
+Remember that the variance of the response can be split into two parts: the variance of the fitted model values and the variance of the residuals.  So, $145 = 45 + \mbox{var of fitted model values}$.  So the variance of the fitted model values is 100.
+</aside>
+
+```{r include=FALSE}
+model2=selectSet(name="r2", totalPts=1, "0"=FALSE, "45/145"=FALSE, "100/145"=TRUE, "100/190"=FALSE, "145/190"=FALSE, "Cannot tell"=FALSE)
+```
+* What is the $R^2$ for this model? `r I(model2)`
+
+<aside>
+ANSWER:      
+$R^2$ compares the variance of the fitted model values to the variance of the response, so $100/145$.
+</aside>
+
+`r I(closeProblem())`
+

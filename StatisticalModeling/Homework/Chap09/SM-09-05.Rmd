@@ -1,0 +1,118 @@
+Intro to Statistical Modeling Ch. 9 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-9-5-SD")
+```
+For each of the following pairs of models, mark the statement that is most correct.
+
+#### Part 1 
+
+* **Model 1.** *A* ~ *B + C*
+* **Model 2.** *A* ~ *B $\star$ C*
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
+`r I(f(TRUE))` Model 2 can have a higher $R^2$ than Model 1     
+`r I(f(FALSE))` The $R^2$ values will be the same.     
+`r I(f(FALSE))` None of the above are necessarily true.     
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:    
+Model 1 is nested within Model 2, so Model 2 can have a higher $R^2$ than Model 1.
+</asid>
+
+ 
+#### Part 2
+
+* **Model 1.** *A* ~ *B + C*     
+* **Model 2.** *B* ~ *A $\star$ C*
+
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+`r I(g(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
+`r I(g(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
+`r I(g(FALSE))` The $R^2$ values will be the same.     
+`r I(g(TRUE))` None of the above are necessarily true.    
+```{r include=FALSE, results='hide'}
+I(g(finish=TRUE))
+```
+
+<aside>
+ANSWER:     
+At first glance it might seem that Model 1 is nested in Model 2, but notice that the two models have different explanatory variables.  This means that no definite statement can be made about the relationship between the $R^2$ for the two models.  (However, if there is only a single explanatory variable --- not the situation here --- then there's more to be said.  See the "Going Further" item at the end of this problem.
+</aside>
+
+#### Part 3
+
+* **Model 1.** *A* ~ *B + C + B:C*
+* **Model 2.** *A* ~ *B $\star$ C*
+
+```{r include=FALSE}
+h=newMC(totalPts=1)
+```
+`r I(h(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
+`r I(h(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
+`r I(h(TRUE))` The $R^2$ values will be the same.     
+`r I(h(FALSE))` None of the above are necessarily true.      
+```{r include=FALSE, results='hide'}
+I(h(finish=TRUE))
+```
+
+<aside>
+NOTES:     
+[From a suggestion by a student] % Atang Gilika, Spring 2007
+
+#### Going further 
+
+In answering this question, you might want to try out a few examples using real data: just pick two quantitative variables to stand in for A and B.
+
+What will be the relationship between $R^2$ for the following two models?
+
+* **Model 1.** *A* ~ *B*     
+* **Model 2.** *B* ~ *A*
+
+```{r include=FALSE}
+j=newMC(totalPts=1)
+```
+`r I(j(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
+`r I(j(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
+`r I(j(TRUE))` The $R^2$ values will be the same.     
+`r I(j(FALSE))` None of the above are necessarily true.    
+```{r include=FALSE, results='hide'}
+I(j(finish=TRUE))
+```
+
+<aside>
+ANSWER:     
+Not an entirely fair question.
+
+It's reasonable to look at the two models, note that neither is nested within the other, and conclude that none of statements A, B, or C are necessarily true.  
+
+As it happens, however, each of Model 1 and Model 2 describe the relationship between A and B using the simple model involved in the correlation coefficient.  The correlation coefficient describes the alignment of A and B, which is the same as the alignment of B and A.  
+
+To illustrate, consider the following example:
+```{r}
+kids = fetchData("KidsFeet")
+m1 = lm( width ~ length, data=kids)
+m2 = lm( length ~ width, data=kids)
+r.squared(m1)
+```
+
+```{r}
+r.squared(m2)
+```
+
+
+However, this simple relationship won't hold true in general if there is more than one explanatory variable.
+</aside>
+
+`r I(closeProblem())`
+
