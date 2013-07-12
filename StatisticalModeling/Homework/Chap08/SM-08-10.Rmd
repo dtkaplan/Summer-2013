@@ -1,0 +1,143 @@
+Intro to Statistical Modeling Ch. 8 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-10-SD")
+```
+
+The "modern physics" course has a lab where students measure the speed of sound.  The apparatus consists of an air-filled tube with a sound generator at one end and a microphone that can be set at any specified position within the tube.  Using an oscilloscope, the transit time between the sound generator and microphone can be measured precisely.  Knowing the position $p$ and transit time $t$ allows the speed of sound $v$ to be calculated, based on the simple model:     
+$$ \mbox{distance} = \mbox{velocity} \times \mbox{time} \ \ \ \ \ \ \ 
+\mbox{or} \ \ \ \ \ \ \ p = v t.$$
+
+Here are some data recorded in 2005 by a student group calling themselves ``CDT''.
+
+Position | Transit Time
+:----:|:----:
+**(m)** | **(millisec)**
+0.2 | 0.6839
+0.4 | 1.252
+0.6 | 1.852
+0.8 | 2.458
+1.0 | 3.097
+1.2 | 3.619
+1.4 | 4.181
+
+
+
+#### Part 1.
+
+
+Enter these data into a spreadsheet in the standard case-variable format.  Then fit an appropriate model.  Note that the relationship $p = v t$ between position, velocity, and time translates into a statistical model of the form *p* ~ *t - 1* where the velocity will be the coefficient on the <code>t</code> term.
+
+```{r include=FALSE}
+vel=selectSet(name="units", totalPts=1, "meters per second"=FALSE, "miles per hour"=FALSE, "millimeters per second"=FALSE, "meters per millisecond"=TRUE, "millimeters per millisecond"=FALSE, "No units. It's a pure number."=FALSE, "No way to know from the information provided"=FALSE)
+```
+What are the units of the model coefficient corresponding to velocity, given the form of the data in the table above? `r I(vel)`
+
+Compare the velocity you find from your model fit to the accepted velocity of sound (at room temperature, at sea level, in dry air): $343$ m/s.  There should be a reasonable match.  If not, check whether your data were entered properly and whether you specified your model correctly.  
+
+
+#### Part 2.
+
+The students who recorded the data wrote down the transit time to 4 digits of precision, but recorded the position to only 1 or 2 digits, although they might simply have left off the trailing zeros that would indicate a higher precision.
+
+Use the data to find out how precise the position measurement is.  To do this, make two assumptions that are very reasonable in this case:
+* The velocity model is highly accurate, that is, sound travels at a constant velocity through the tube.
+* The transit time measurements are correct.  This assumption reflects current technology.  Time measurements can be made very precisely, even with inexpensive equipment.       
+
+Given these assumptions, you should be able to calculate the position from the transit time and velocity.  If the measured position differs from this model value --- as reflected by the residuals --- then the measured position is imprecise.  So, a reasonable way to infer the precision of the position is by the typical size of residuals.
+
+How big is a typical residual?  One appropriate way to measure this is with the standard deviation of the residuals.  
+
+```{r include=FALSE}
+vel2=selectNumber(choices=c(0.001,0.006,0.010,0.017,0.084,0.128), correct=c(0.017), totalPts=1, name="resid")
+```
+* Give a numerical value for this.`r I(vel2)` 
+
+
+#### Part 3.
+
+The students' lab report doesn't indicate how they know for certain that the sound generator is at position zero.  One way to figure this out is to measure the generator's position from the data themselves. Denoting the actual position of the sound generator as $p_0$, then the equation relating position and transit time is 
+$$ p - p_0 = v t \ \ \ \ \ \ \mbox{or}\ \ \ \ \ \ \ p = p_0 + v t$$
+This suggests fitting a model of the form *p* ~ *1* + *t*, where the coefficient on *1* will be $p_0$ and the coefficient on *t* will be $v$.  
+
+Fit this model to the data.
+
+```{r include=FALSE}
+vel3=selectNumber(choices=c(-0.032,0.012,0.000,0.012,0.032), correct=c(-0.032), totalPts=1, name="estValP")
+```
+* What is the estimated value of $p_0$? `r I(vel3)`
+ 
+
+Notice that adding new terms to the model reduces the standard deviation of the residuals.  
+
+```{r include=FALSE}
+vel4=selectNumber(choices=c(0.001,0.006,0.010,0.017,0.084,0.128), correct=c(0.010), totalPts=1, name="StdDevRes")
+```
+* What is the new value of the standard deviation of the residuals? `r I(vel4)`
+
+
+Compare the estimated speed of sound found from the model *p* ~ *t*  to the
+established value: 343 m/s .  Notice that the estimate is better than the one from the model *p* ~ *t - 1*  that didn't take into account the position of the sound generator.
+
+<aside>
+COMMENT:
+for resonance system $f(I)= [v/(2*L)]I $
+
+Three problems to write:
+
+1) In simple models. Fit the exactly proportional model versus the
+   model with an intercept.  How big are the typical residuals?  What
+   does this indicate about the accuracy (versus precision) of the
+   data?  Notice that even though we only have one measurement at each
+   position, we can still figure out the precision of the individual
+   measurements. 
+
+   Fit the resonance data to find the speed.
+
+2) In confidence intervals.  What's the confidence interval on the
+   speed.  Compare this to the known speeds. (see below)  Better if we
+   can get data from multiple groups and construct separate confidence
+   intervals for each one (with an interaction between group and
+   time).  Would we be able to distinguish between different
+   humidities?  For instance, could we use this apparatus to measure humidity.
+
+   Compare the time of flight technique with the resonance technique.
+   Are they consistent?
+
+4) In inference/ANOVA.  Are we justified in including the intercept
+   term?  Is it significantly non-zero?  What's the harm of including
+   it? [Not any really.  We lose a degree of freedom, but who cares.]
+   
+
+Speed of sound = 331.4 m/s at 0C and increases 0.6 m/s for each degree
+above zero.  [this gives 343.4 at 20C]
+
+another source: dry air at 20?C, the speed of sound in air is 343 m/s
+
+another source: The speed of sound at room temperature is around 337
+meters per second (758 miles per hour). 
+
+At sea level, the speed of sound is about 761 miles per hour (1,225
+kilometers per hour). At 20,000 feet (6,096 meters), the speed of
+sound is 660 miles per hour (1,062 kilometers per hour).
+
+Wikipedia: in dry air (0\% humidity) its 331.5 + 0.6 T (in Celsius)
+
+From a speed of sound calculator
+http://www.sengpielaudio.com/calculator-airpressure.htm
+at 0\% humidity: 343.36      
+at 10\% humidity: 343.49     
+at 20\% humidity: 343.61     
+at 30\% humidity: 343.74     
+at 40\% humidity: 343.87     
+at 50\% humidity: 343.99     
+at 90\% humidity: 344.49     
+
+Question to ask: how precisely can we know the speed of sound without
+knowing the humidity.  Do potential changes in humidity account
+possibly for the differences from the posted values.
+
+</aside>
+

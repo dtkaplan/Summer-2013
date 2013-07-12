@@ -13,9 +13,6 @@ kids = fetchData("KidsFeet")
 mod = lm( width ~ length, data=kids)
 coef(mod)
 ```
-SHOULD MATCH >
-(Intercept)    length  
-     2.8623    0.2479  
 
 
 ```{r include=FALSE}
@@ -41,11 +38,11 @@ What is the sum of squares of the foot widths for the kids in `KidsFeet`. `r I(f
 ```{r include=FALSE}
 f=newMC(totalPts=1)
 ```
-There is a simple relationship between the sum of squares of the response variable, the residuals, and the fitted values.  You can confirm this directly.  Which of the following R statements is appropriate to do this:
-`r I(f(FALSE))` <code>sum( kids$width ) - (sum(resid(mod))+sum(fitted(mod)))</code>
-`r I(f(TRUE))` <code>sum( kids$width^2 ) - (sum(resid(mod)^2)+sum(fitted(mod)^2))</code>
-`r I(f(FALSE))` <code>sum(resid(mod))-sum(fitted(mod))</code>
-`r I(f(FALSE))` <code>sum(resid(mod)^2)-sum(fitted(mod)^2)</code>
+There is a simple relationship between the sum of squares of the response variable, the residuals, and the fitted values.  You can confirm this directly.  Which of the following R statements is appropriate to do this:     
+`r I(f(FALSE))` <code>sum( kids$width ) - (sum(resid(mod)) + sum(fitted(mod)))</code>      
+`r I(f(TRUE))` <code>sum( kids$width^2 ) - (sum(resid(mod)^2 ) + sum(fitted(mod)^2 ))</code>     
+`r I(f(FALSE))` <code>sum(resid(mod)) - sum(fitted(mod))</code>     
+`r I(f(FALSE))` <code>sum(resid(mod)^2 ) - sum(fitted(mod)^2 )</code>      
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))
 ```

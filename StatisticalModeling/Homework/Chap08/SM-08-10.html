@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 8 Prob. 10</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 8 Prob. 10</h1>
+
+<p>The &ldquo;modern physics&rdquo; course has a lab where students measure the speed of sound.  The apparatus consists of an air-filled tube with a sound generator at one end and a microphone that can be set at any specified position within the tube.  Using an oscilloscope, the transit time between the sound generator and microphone can be measured precisely.  Knowing the position \( p \) and transit time \( t \) allows the speed of sound \( v \) to be calculated, based on the simple model:<br/>
+\[  \mbox{distance} = \mbox{velocity} \times \mbox{time} \ \ \ \ \ \ \ 
+\mbox{or} \ \ \ \ \ \ \ p = v t. \]</p>
+
+<p>Here are some data recorded in 2005 by a student group calling themselves &ldquo;CDT&#39;&#39;.</p>
+
+<table><thead>
+<tr>
+<th align="center">Position</th>
+<th align="center">Transit Time</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"><strong>(m)</strong></td>
+<td align="center"><strong>(millisec)</strong></td>
+</tr>
+<tr>
+<td align="center">0.2</td>
+<td align="center">0.6839</td>
+</tr>
+<tr>
+<td align="center">0.4</td>
+<td align="center">1.252</td>
+</tr>
+<tr>
+<td align="center">0.6</td>
+<td align="center">1.852</td>
+</tr>
+<tr>
+<td align="center">0.8</td>
+<td align="center">2.458</td>
+</tr>
+<tr>
+<td align="center">1.0</td>
+<td align="center">3.097</td>
+</tr>
+<tr>
+<td align="center">1.2</td>
+<td align="center">3.619</td>
+</tr>
+<tr>
+<td align="center">1.4</td>
+<td align="center">4.181</td>
+</tr>
+</tbody></table>
+
+<h4>Part 1.</h4>
+
+<p>Enter these data into a spreadsheet in the standard case-variable format.  Then fit an appropriate model.  Note that the relationship \( p = v t \) between position, velocity, and time translates into a statistical model of the form <em>p</em> ~ <em>t - 1</em> where the velocity will be the coefficient on the <code>t</code> term.</p>
+
+<p>What are the units of the model coefficient corresponding to velocity, given the form of the data in the table above? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "meters per second" 
+}'>meters per second</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "miles per hour" 
+}'>miles per hour</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "millimeters per second" 
+}'>millimeters per second</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "meters per millisecond" 
+}'>meters per millisecond</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "millimeters per millisecond" 
+}'>millimeters per millisecond</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No units. It's a pure number." 
+}'>No units. It&#39;s a pure number.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-8-10-SD",
+"itemN":      1,
+"name": "units",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No way to know from the information provided" 
+}'>No way to know from the information provided</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<p>Compare the velocity you find from your model fit to the accepted velocity of sound (at room temperature, at sea level, in dry air): \( 343 \) m/s.  There should be a reasonable match.  If not, check whether your data were entered properly and whether you specified your model correctly.  </p>
+
+<h4>Part 2.</h4>
+
+<p>The students who recorded the data wrote down the transit time to 4 digits of precision, but recorded the position to only 1 or 2 digits, although they might simply have left off the trailing zeros that would indicate a higher precision.</p>
+
+<p>Use the data to find out how precise the position measurement is.  To do this, make two assumptions that are very reasonable in this case:</p>
+
+<ul>
+<li>The velocity model is highly accurate, that is, sound travels at a constant velocity through the tube.</li>
+<li>The transit time measurements are correct.  This assumption reflects current technology.  Time measurements can be made very precisely, even with inexpensive equipment.<br/></li>
+</ul>
+
+<p>Given these assumptions, you should be able to calculate the position from the transit time and velocity.  If the measured position differs from this model value &mdash; as reflected by the residuals &mdash; then the measured position is imprecise.  So, a reasonable way to infer the precision of the position is by the typical size of residuals.</p>
+
+<p>How big is a typical residual?  One appropriate way to measure this is with the standard deviation of the residuals.  </p>
+
+<ul>
+<li>Give a numerical value for this.<select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.006" 
+}'>0.006</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.017" 
+}'>0.017</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.084" 
+}'>0.084</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      2,
+"name": "resid",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.128" 
+}'>0.128</option> </select><span id='out2' class='shiny-html-output'> </span> </li>
+</ul>
+
+<h4>Part 3.</h4>
+
+<p>The students&#39; lab report doesn&#39;t indicate how they know for certain that the sound generator is at position zero.  One way to figure this out is to measure the generator&#39;s position from the data themselves. Denoting the actual position of the sound generator as \( p_0 \), then the equation relating position and transit time is 
+\[  p - p_0 = v t \ \ \ \ \ \ \mbox{or}\ \ \ \ \ \ \ p = p_0 + v t \]
+This suggests fitting a model of the form <em>p</em> ~ <em>1</em> + <em>t</em>, where the coefficient on <em>1</em> will be \( p_0 \) and the coefficient on <em>t</em> will be \( v \).  </p>
+
+<p>Fit this model to the data.</p>
+
+<ul>
+<li>What is the estimated value of \( p_0 \)? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      3,
+"name": "estValP",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "-0.032" 
+}'>-0.032</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      3,
+"name": "estValP",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.012" 
+}'>0.012</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      3,
+"name": "estValP",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      3,
+"name": "estValP",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.012" 
+}'>0.012</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      3,
+"name": "estValP",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.032" 
+}'>0.032</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>Notice that adding new terms to the model reduces the standard deviation of the residuals.  </p>
+
+<ul>
+<li>What is the new value of the standard deviation of the residuals? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.006" 
+}'>0.006</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.017" 
+}'>0.017</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.084" 
+}'>0.084</option> <option value='{
+"itemInfo": {
+"setID": "SM-8-10-SD",
+"itemN":      4,
+"name": "StdDevRes",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.128" 
+}'>0.128</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>Compare the estimated speed of sound found from the model <em>p</em> ~ <em>t</em>  to the
+established value: 343 m/s .  Notice that the estimate is better than the one from the model <em>p</em> ~ <em>t - 1</em>  that didn&#39;t take into account the position of the sound generator.</p>
+
+<p><aside>
+COMMENT:
+for resonance system $f(I)= [v/(2*L)]I $</p>
+
+<p>Three problems to write:</p>
+
+<p>1) In simple models. Fit the exactly proportional model versus the
+   model with an intercept.  How big are the typical residuals?  What
+   does this indicate about the accuracy (versus precision) of the
+   data?  Notice that even though we only have one measurement at each
+   position, we can still figure out the precision of the individual
+   measurements. </p>
+
+<p>Fit the resonance data to find the speed.</p>
+
+<p>2) In confidence intervals.  What&#39;s the confidence interval on the
+   speed.  Compare this to the known speeds. (see below)  Better if we
+   can get data from multiple groups and construct separate confidence
+   intervals for each one (with an interaction between group and
+   time).  Would we be able to distinguish between different
+   humidities?  For instance, could we use this apparatus to measure humidity.</p>
+
+<p>Compare the time of flight technique with the resonance technique.
+   Are they consistent?</p>
+
+<p>4) In inference/ANOVA.  Are we justified in including the intercept
+   term?  Is it significantly non-zero?  What&#39;s the harm of including
+   it? [Not any really.  We lose a degree of freedom, but who cares.]</p>
+
+<p>Speed of sound = 331.4 m/s at 0C and increases 0.6 m/s for each degree
+above zero.  [this gives 343.4 at 20C]</p>
+
+<p>another source: dry air at 20?C, the speed of sound in air is 343 m/s</p>
+
+<p>another source: The speed of sound at room temperature is around 337
+meters per second (758 miles per hour). </p>
+
+<p>At sea level, the speed of sound is about 761 miles per hour (1,225
+kilometers per hour). At 20,000 feet (6,096 meters), the speed of
+sound is 660 miles per hour (1,062 kilometers per hour).</p>
+
+<p>Wikipedia: in dry air (0\% humidity) its 331.5 + 0.6 T (in Celsius)</p>
+
+<p>From a speed of sound calculator
+<a href="http://www.sengpielaudio.com/calculator-airpressure.htm">http://www.sengpielaudio.com/calculator-airpressure.htm</a>
+at 0\% humidity: 343.36<br/>
+at 10\% humidity: 343.49<br/>
+at 20\% humidity: 343.61<br/>
+at 30\% humidity: 343.74<br/>
+at 40\% humidity: 343.87<br/>
+at 50\% humidity: 343.99<br/>
+at 90\% humidity: 344.49     </p>
+
+<p>Question to ask: how precisely can we know the speed of sound without
+knowing the humidity.  Do potential changes in humidity account
+possibly for the differences from the posted values.</p>
+
+<p></aside></p>
+
+</body>
+
+</html>
+

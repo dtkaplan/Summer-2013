@@ -1,0 +1,138 @@
+Intro to Statistical Modeling Ch. 8 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-5-SD")
+```
+
+Consider the data collected by Francis Galton in the 1880s, stored in a modern format in the `Galton` file.  In this file, <code>heights</code> is the variable containing the child's heights, while the father's and mother's height is contained in the variables <code>father</code> and <code>mother</code>.  The <code>family</code> variable is a numerical code identifying children in the same family; the number of kids in this family is in <code>nkids</code>.
+
+```{r}
+galton = fetchData("Galton")
+lm( height ~ father, data=galton)
+```
+
+```{r include=FALSE}
+height=selectNumber(choices=c(67.1,67.4,67.9,68.2), correct=c(67.9), totalPts=1, name="72in")
+```
+* What is the model's prediction for the height of a child whose father is 72 inches tall? `r I(height)`
+
+<aside>
+ANSWER:     
+Plug in the value 72 inches for *father* in the model formula:     
+$39.11 + 72*.3994 = 67.8668$
+</aside>
+
+```{r include=FALSE}
+height2=selectNumber(choices=c(67.4,68.1,68.9,69.2), correct=c(68.1), totalPts=1, name="72inPlus65in")
+```
+* Construct a model using both the father's and mother's heights, using
+just the main effect but not including their interaction. What is the model's
+prediction for the height of a child whose father is 72 inches tall and mother is 65 inches tall? `r I(height2)`
+
+<aside>
+ANSWER:     
+```{r}
+m = lm( height ~ father + mother, data=galton)
+coef(m)
+```
+
+```{r}
+22.31 + 72*.3799 + 65*.2832
+```
+
+
+```{r include=FALSE}
+height3=selectNumber(choices=c(67.4,68.1,68.9,69.2), correct=c(68.1), totalPts=1, name="72inPlus65in2")
+```
+* Construct a model using mother and father's height, including the main
+effects as well as the interaction.  What is the model's prediction
+for the height of a child whose father is 72 inches tall and mother is
+65 inches tall? `r I(height3)`
+
+
+<aside>
+ANSWER:     
+```{r}
+m2 = lm( height ~ father * mother, data=galton)
+coef(m2)
+```
+
+```{r}
+132.35 - 72*1.206 - 65*1.430 + 0.02468*72*65
+```
+
+Galton did not have our modern techniques for including multiple variables into a model.  So, he tried an expedient, defining a single variable, "mid-parent," that reflected both the father's and mother's height.  We can mimic this approach by defining the variable in the same way Galton did:
+```{r}
+midparent=(galton$father+1.08*galton$mother)/2
+```
+
+Galton used the multiplier of $1.08$ to adjust for the fact that the mothers were, as a group, shorter than the fathers.
+
+Fit a model to the Galton data using the mid-parent variable and child's sex, using both the main effects and the interaction.  This will lead to a separate coefficient on mid-parent for male and female children.
+
+```{r include=FALSE}
+height4=selectNumber(choices=c(63.6,63.9,64.2,65.4,65.7), correct=c(63.6), totalPts=1, name="67inPlus64in")
+```
+* What is the predicted height for a girl whose father is 67 inches and mother 64 inches? `r I(height4)`
+
+<aside>
+ANSWER:     
+```{r}
+galton$midparent=(galton$father+1.08*galton$mother)/2
+m3 = lm( height ~ midparent*sex, data=galton)
+coef(m3)
+```
+
+```{r}
+(67 + 1.08*65)/2
+```
+
+```{r}
+16.057 + 68.6*0.6934 
+```
+
+
+Note that the coefficients involving *sexM* have not been included, since the question asked for the predicted height of a girl.
+</aside>
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="R2", totalPts=2, rows=1))
+```
+* What is the $R^2$ for this model? `r I(textItem(name="R2", totalPts=2, rows=1))`
+<aside>
+ANSWER:     
+0.637 &plusmn; 0.01
+</aside>
+
+
+The following questions are about the size of the residuals from models.
+
+```{r include=FALSE}
+height5=selectNumber(choices=c(2.51,2.73,2.95,3.44,3.58,3.67,3.72), correct=c(3.58), totalPts=1, name="StdDev")
+```
+* Without knowing anything about a randomly selected child except that he or she was in Galton's data set, we can say that the child's height is a random
+variable with a certain mean and standard deviation.  What is this standard deviation? `r I(height5)`
+
+<aside>
+ANSWER:     
+```{r}
+sd( galton$height )
+```
+
+
+```{r include=FALSE}
+height6=selectNumber(choices=c(2.51,2.73,2.95,3.44,3.58,3.67,3.72), correct=c(2.51), totalPts=1, name="StdDevRes")
+```
+* Now consider that we are promised to be told the sex of the child, but no other information.  We are going to make a prediction of the child's height once we get this information, and we are asked to say, ahead of time, how good this prediction will be.  A sensible way to do this is to give the standard deviation of the residuals from the best fitting model based on the child's sex.  What is this standard deviation of residuals? `r I(height6)`
+
+<aside>
+ANSWER:     
+```{r}
+m4 = lm( height ~ sex, data=galton)
+sd( resid(m4))
+```
+
+
+`r I(closeProblem())`
