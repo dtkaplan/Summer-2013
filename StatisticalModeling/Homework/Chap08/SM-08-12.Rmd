@@ -1,0 +1,52 @@
+Intro to Statistical Modeling Ch. 8 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-12-SD")
+```
+It can be helpful to look closely at the residuals from a model.  Here are some things you can easily do:
+* Look for outliers in the residuals.  If they exist, it can be worthwhile to 
+look into the cases involved more deeply.  They might be anomalous or misleading in some way.  
+
+* Plot the residuals versus the fitted model values.  Ideally there should be no evident relationship between the two --- the points should be a random scatter.  When there is a strong relationship, even though it might be complicated, the model may be missing some important term.
+
+* Plot the residuals versus the values of an important explanatory variable.  (If there are multiple explanatory variables, there would be multiple plots to look at.)  Again, ideally there should be no evident relationship.  If there is, there is something to think about. 
+
+
+Using the world-record swim data, `SwimRecords` construct the model *time* ~ *year* + *sex* + *year*:*sex*.  This model captures some of the variability in the record times, but doesn't reflect something that's obvious from a plot of
+the data: that records improved quickly in the early years (especially for women) but the improvment is much slower in recent years. The point of this exercise is to show how the residuals provide information about this.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="outliers", totalPts=2, rows=3))
+```
+* Find the cases in the residuals that are outliers.  Explain what it is about these cases that fits in with the failure of the model to reflect the slowing improvement in world records.     
+`r I(textItem(name="outliers", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="patternUnrelated", totalPts=2, rows=3))
+```
+* Plot the residuals versus the fitted model values.  What pattern do you see that isn't consistent with the idea that the residuals are unrelated to the fitted values?     
+`r I(textItem(name="patternUnrelated", totalPts=2, rows=3))` 
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="paatternResiduals", totalPts=2, rows=3))
+```
+* Plot the residuals versus *year*.  Describe the pattern you see.       
+`r I(textItem(name="paatternResiduals", totalPts=2, rows=3))`
+
+
+Now use the kids-feet data `KidsFeet` and the model     
+*width* ~ *length* + *sex* + *length*:*sex*.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="patternsRelationship", totalPts=2, rows=3))
+```
+Look at the residuals in the three suggested ways.  Are there any outliers? Describe any patterns you see in relationship to the fitted model values and the
+explanatory variable *length*.     
+`r I(textItem(name="patternsRelationship", totalPts=2, rows=3))`
+
+`r I(closeProblem())`
+
+
+
