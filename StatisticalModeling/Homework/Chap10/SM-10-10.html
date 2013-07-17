@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 10 Prob. 10</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 10 Prob. 10</h1>
+
+<p>Standard &amp; Poor&#39;s is a RATING AGENCY that provides information about various financial instruments such as stocks and bonds.  The S&amp;P 500 Stock Index, for instance, provides a summary of the value of stocks. </p>
+
+<p>Bonds issued by governments, corporations, and other entities are rated using letters.  As described on the Standard &amp; Poor&#39;s website, the ratings levels are 
+AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB, BB-, B+, B, B-, CCC+, CCC, CCC-, CC, C, and D. The AAA rating is the best. (&ldquo;The obligor&#39;s capacity to meet its financial commitment on the obligation is extremely strong.&rdquo;)  D is the worst. (&ldquo;The D&#39; rating category is used when payments on an obligation are not made on the date due &hellip;.&rdquo;)  </p>
+
+<ul>
+<li><p>The bond ratings are a categorical variable. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-10-SD",
+"itemN":      1,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-10-SD",
+"itemN":      1,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>The bond ratings are an ordinal variable. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-10-SD",
+"itemN":      2,
+"name": "TorF2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-10-SD",
+"itemN":      2,
+"name": "TorF2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>Bonds are a kind of debt; they pay interest and the principal is paid back at the end of a maturity period. The people and institutions who invest in bonds
+are willing to accept somewhat lower interest payments in exchange for greater security.  Thus, AAA-rated bonds tend to pay the lowest interest rates and worse-rated bonds pay more.  A report on interest rates on bonds (<a href="http://www.fmsbonds.com">www.fmsbonds.com</a>, for 8/21/2008) listed interest rates on municipal bonds:</p>
+
+<table><thead>
+<tr>
+<th align="center">Issue</th>
+<th align="center">Maturity</th>
+<th align="center">Rate</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"></td>
+<td align="center">AAA Rated</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">10 Year</td>
+<td align="center">3.75</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">20 Year</td>
+<td align="center">4.60</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">30 Year</td>
+<td align="center">4.75</td>
+</tr>
+<tr>
+<td align="center">Florida</td>
+<td align="center">30 Year</td>
+<td align="center">4.70</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">AA Rated</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">10 Year</td>
+<td align="center">3.90</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">20 Year</td>
+<td align="center">4.70</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">30 Year</td>
+<td align="center">4.85</td>
+</tr>
+<tr>
+<td align="center">Florida</td>
+<td align="center">30 Year</td>
+<td align="center">4.80</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">A Rated</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">10 Year</td>
+<td align="center">4.20</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">20 Year</td>
+<td align="center">5.05</td>
+</tr>
+<tr>
+<td align="center">National</td>
+<td align="center">30 Year</td>
+<td align="center">5.20</td>
+</tr>
+<tr>
+<td align="center">Florida</td>
+<td align="center">30 Year</td>
+<td align="center">5.15</td>
+</tr>
+</tbody></table>
+
+<p>How many explanatory variables are given in this table to account for the interest rate: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      3,
+"name": "ExplanVariables",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Two: Issue and Maturity" 
+}'>Two: Issue and Maturity</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      3,
+"name": "ExplanVariables",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Three: Issue, Maturity, and S & P rating" 
+}'>Three: Issue, Maturity, and S &amp; P rating</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      3,
+"name": "ExplanVariables",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Four: Issue, Maturity, S & P Rating, and Interest Rate" 
+}'>Four: Issue, Maturity, S &amp; P Rating, and Interest Rate</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+
+<p>Judging from the table, and holding all other explanatory variables constant, what is the change in interest rate associated with a change from AAA to AA rating? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      4,
+"name": "ChangeInRate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.05" 
+}'>0.05</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      4,
+"name": "ChangeInRate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.15" 
+}'>0.15</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      4,
+"name": "ChangeInRate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.25" 
+}'>0.25</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      4,
+"name": "ChangeInRate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      4,
+"name": "ChangeInRate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4" 
+}'>0.4</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+
+<p>Again, holding all other explanatory variables constant, what is the change in interest rate for a 10-year compared to a 20-year maturity bond?  (Pick the closest answer.)<select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      5,
+"name": "ChangeinRate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.15" 
+}'>0.15</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      5,
+"name": "ChangeinRate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      5,
+"name": "ChangeinRate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.85" 
+}'>0.85</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      5,
+"name": "ChangeinRate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.2" 
+}'>1.2</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      5,
+"name": "ChangeinRate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.45" 
+}'>1.45</option> </select><span id='out5' class='shiny-html-output'> </span></p>
+
+<p>Sometimes it is unclear when a variable should be considered quantitative and when it should be taken as categorical.  For example, the <em>maturity</em> variable looks on the surface to be quantitative (10-year, 20-year, 30-year, etc.).  What is it about these data that suggests that it would be unrealistic to treat <em>maturity</em> as a quantitative variable in a model of <em>interest rate</em>?</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-10-10-SD",
+"itemN":      1,
+"name": "maturity",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><aside>
+ANSWER:<br/>
+If <em>maturity</em> were treated as a quantitative variable, the difference in interest rate between 10-year and 20-year maturity would be modeled as the same as the difference between 20-year and 30-year maturity.  Yet this is far from the case in the data.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "text1" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

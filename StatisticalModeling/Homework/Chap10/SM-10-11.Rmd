@@ -1,0 +1,43 @@
+Intro to Statistical Modeling Ch. 10 Prob. 11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-10-11-SD")
+```
+A study on drug D indicates that patients who were given the drug were **less** likely to recover from their condition C.  Here is a table showing the overall results:
+
+Drug | # Recovered | # Died | Recovery Rate
+|:----:|:----:|:----:|:----:|
+Given | 1600 | 2400 | 40%
+Not given | 2000 | 2000 | 50%
+
+
+Strangely, when investigators looked at the situation separately for males and females, they found that the drug *improves* recovery for each group:
+
+**Females** 
+
+Drug | # Recovered | # Died | Recovery Rate
+:---:|:---:|:---:|:---:|
+Given | 900 | 2100 | 30%
+Not given | 200 | 800 | 20%
+
+**Males**  
+
+Drug | # Recovered | # Died | Recovery Rate
+:---:|:---:|:---:|:---:|
+Given | 700 | 300 | 70%
+Not given | 1800 | 1200 | 60%
+
+
+```{r include=FALSE,eval=FALSE}
+I(textItem(name="simpsons-and-drug", totalPts=2, rows=3))
+```
+Which is right?  Does the drug improve recovery or hinder recovery? What advice would you give to a physician about whether or not to prescribe the drug to her patients?  Give enough of an explanation that the physician can judge whether your advice is reasonable.     
+`r I(textItem(name="simpsons-and-drug", totalPts=2, rows=3))`
+
+
+###### Based on an example from Judea Pearl (2000) *Causality: Models, Reasoning, and Inference*, Cambridge Univ. Press, p. 175
+
+`r I(closeProblem())`
+

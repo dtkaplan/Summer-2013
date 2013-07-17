@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 10 Prob. 11</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 10 Prob. 11</h1>
+
+<p>A study on drug D indicates that patients who were given the drug were <strong>less</strong> likely to recover from their condition C.  Here is a table showing the overall results:</p>
+
+<table><thead>
+<tr>
+<th align="center">Drug</th>
+<th align="center"># Recovered</th>
+<th align="center"># Died</th>
+<th align="center">Recovery Rate</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Given</td>
+<td align="center">1600</td>
+<td align="center">2400</td>
+<td align="center">40%</td>
+</tr>
+<tr>
+<td align="center">Not given</td>
+<td align="center">2000</td>
+<td align="center">2000</td>
+<td align="center">50%</td>
+</tr>
+</tbody></table>
+
+<p>Strangely, when investigators looked at the situation separately for males and females, they found that the drug <em>improves</em> recovery for each group:</p>
+
+<p><strong>Females</strong> </p>
+
+<table><thead>
+<tr>
+<th align="center">Drug</th>
+<th align="center"># Recovered</th>
+<th align="center"># Died</th>
+<th align="center">Recovery Rate</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Given</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">30%</td>
+</tr>
+<tr>
+<td align="center">Not given</td>
+<td align="center">200</td>
+<td align="center">800</td>
+<td align="center">20%</td>
+</tr>
+</tbody></table>
+
+<p><strong>Males</strong>  </p>
+
+<table><thead>
+<tr>
+<th align="center">Drug</th>
+<th align="center"># Recovered</th>
+<th align="center"># Died</th>
+<th align="center">Recovery Rate</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Given</td>
+<td align="center">700</td>
+<td align="center">300</td>
+<td align="center">70%</td>
+</tr>
+<tr>
+<td align="center">Not given</td>
+<td align="center">1800</td>
+<td align="center">1200</td>
+<td align="center">60%</td>
+</tr>
+</tbody></table>
+
+<p>Which is right?  Does the drug improve recovery or hinder recovery? What advice would you give to a physician about whether or not to prescribe the drug to her patients?  Give enough of an explanation that the physician can judge whether your advice is reasonable.<br/>
+<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-10-11-SD",
+"itemN":      1,
+"name": "simpsons-and-drug",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<h6>Based on an example from Judea Pearl (2000) <em>Causality: Models, Reasoning, and Inference</em>, Cambridge Univ. Press, p. 175</h6>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

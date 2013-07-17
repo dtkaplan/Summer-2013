@@ -1,0 +1,77 @@
+Intro to Statistical Modeling Ch. 10 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-10-10-SD")
+```
+
+Standard & Poor's is a RATING AGENCY that provides information about various financial instruments such as stocks and bonds.  The S&P 500 Stock Index, for instance, provides a summary of the value of stocks. 
+
+Bonds issued by governments, corporations, and other entities are rated using letters.  As described on the Standard & Poor's website, the ratings levels are 
+AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB, BB-, B+, B, B-, CCC+, CCC, CCC-, CC, C, and D. The AAA rating is the best. ("The obligor's capacity to meet its financial commitment on the obligation is extremely strong.")  D is the worst. ("The `D' rating category is used when payments on an obligation are not made on the date due ....")  
+
+```{r include=FALSE}
+SandP=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The bond ratings are a categorical variable. `r I(SandP)`
+```{r include=FALSE}
+SandP2=selectSet(name="TorF2", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The bond ratings are an ordinal variable. `r I(SandP2)`
+
+
+Bonds are a kind of debt; they pay interest and the principal is paid back at the end of a maturity period. The people and institutions who invest in bonds
+are willing to accept somewhat lower interest payments in exchange for greater security.  Thus, AAA-rated bonds tend to pay the lowest interest rates and worse-rated bonds pay more.  A report on interest rates on bonds (www.fmsbonds.com, for 8/21/2008) listed interest rates on municipal bonds:
+
+Issue | Maturity | Rate
+|:----:|:----:|:----:|
+| | AAA Rated | |
+National | 10 Year | 3.75
+National | 20 Year | 4.60
+National | 30 Year | 4.75
+Florida | 30 Year | 4.70
+| | AA Rated | |
+National | 10 Year | 3.90
+National | 20 Year | 4.70
+National | 30 Year | 4.85
+Florida | 30 Year | 4.80
+| | A Rated | |
+National | 10 Year | 4.20
+National | 20 Year | 5.05
+National | 30 Year | 5.20
+Florida | 30 Year | 5.15
+
+
+
+```{r include=FALSE}
+SandP3=selectSet(name="ExplanVariables", totalPts=1, "Two: Issue and Maturity"=FALSE, "Three: Issue, Maturity, and S & P rating"=TRUE, "Four: Issue, Maturity, S & P Rating, and Interest Rate"=FALSE)
+```
+How many explanatory variables are given in this table to account for the interest rate: `r I(SandP3)`
+
+```{r include=FALSE}
+SandP4=selectNumber(choices=c(0.05,0.15,0.25,0.30,0.40), correct=c(0.15), totalPts=1, name="ChangeInRate")
+```
+Judging from the table, and holding all other explanatory variables constant, what is the change in interest rate associated with a change from AAA to AA rating? `r I(SandP4)`
+
+```{r include=FALSE}
+SandP5=selectNumber(choices=c(0.15, 0.50, 0.85, 1.20, 1.45), correct=c(0.85), totalPts=1, name="ChangeinRate2")
+```
+Again, holding all other explanatory variables constant, what is the change in interest rate for a 10-year compared to a 20-year maturity bond?  (Pick the closest answer.)`r I(SandP5)`
+
+
+Sometimes it is unclear when a variable should be considered quantitative and when it should be taken as categorical.  For example, the *maturity* variable looks on the surface to be quantitative (10-year, 20-year, 30-year, etc.).  What is it about these data that suggests that it would be unrealistic to treat *maturity* as a quantitative variable in a model of *interest rate*?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="maturity", totalPts=2, rows=3))
+```
+`r I(textItem(name="maturity", totalPts=2, rows=3))`
+
+
+<aside>
+ANSWER:    
+If *maturity* were treated as a quantitative variable, the difference in interest rate between 10-year and 20-year maturity would be modeled as the same as the difference between 20-year and 30-year maturity.  Yet this is far from the case in the data.
+</aside>
+
+`r I(closeProblem())`
+
+
