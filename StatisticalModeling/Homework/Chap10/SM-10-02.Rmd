@@ -1,0 +1,260 @@
+Intro to Statistical Modeling Ch. 10 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-10-2-SD")
+```
+
+In each of the following, a situation is described and a question is asked that is to be answered by modeling.  Several variables are listed. Imagine an appropriate model and identify each variable as 
+either the response variable, an explanatory variable, a covariate, or
+a variable to be ignored.
+
+\begin{quotation}
+EXAMPLE:  {\em Some people have claimed that police foot patrols are more 
+effective at reducing the crime rate than patrols done in
+automobiles.  Data from several different cities is available; each
+city has its own fraction of patrols done by foot, its own crime rate,
+etc.  The mayor of your town has asked for your advice on whether it
+would be worthwhile to shift to more foot patrols in order to reduce
+crime.  She asks, ``Is there evidence
+that a larger fraction of foot patrols reduces the crime rate?''}
+
+\medskip
+\noindent Variables:
+\begin{enumerate}
+\item Crime rate (e.g., robberies per 100000 population)
+variable.
+\item Fraction of foot patrols
+\item Number of policemen per 1000 population
+\item Demographics (e.g., poverty rate)
+\end{enumerate}
+
+The question focuses on how the \VN{fraction of foot patrols} might
+influence \VN{crime rate}, so \VN{crime rate} is the response variable and
+\VN{fraction of foot patrols} is an explanatory variable.
+
+But, the crime rate might also depend on the overall level of policing
+(as indicated by the \VN{number of policemen}), or on the social
+conditions that are associated with crime (e.g., \VN{demographics}).
+Since the mayor has no power to change the demographics of your town,
+and probably little power to change the overall level number of
+policemen, in modeling the data from the different cities, you
+would want to hold constant \VN{number of policemen} and the
+\VN{demographics}.  You can do this by treating \VN{number of
+policement} and \VN{demographics} as covariates and including them in
+your model.
+
+\end{quotation}
+
+\bigskip
+\noindent {\bf Alcohol and Road Safety} 
+
+Fifteen years ago, your state legislature raised the legal drinking age
+from 18 to
+21 years.  An important motivation was to reduce the number of car accident
+deaths due to drunk or impaired drivers.  Now, some people are arguing
+that the 21-year age limit encourages binge drinking among 18 to 20
+year olds and that such binge drinking actually increases car accident
+deaths.  But the evidence is that the number of car accident deaths
+has gone down since the 21-year age restriction was introduced.  
+You are asked to examine the issue: Does the reduction in the number
+of car-accident deaths per year point to the effectiveness of the
+21-year drinking age?
+
+\medskip
+\noindent Variables:
+\begin{enumerate}
+\item Drinking age limit. Levels: 18 or 21.
+
+\SelectSetHoriz{explanatory}{response,explanatory,covariate,ignore} 
+
+\item Number of car-accident deaths per year.
+
+\SelectSetHoriz{response}{response,explanatory,covariate,ignore} 
+
+\item Prevalence of seat-belt use.
+
+\SelectSetHoriz{covariate}{response,explanatory,covariate,ignore} 
+
+\item Fraction of cars with air bags.
+
+\SelectSetHoriz{covariate}{response,explanatory,covariate,ignore} 
+
+\item Number of car accidents (with or without death).
+
+\SelectSetHoriz{ignore}{response,explanatory,covariate,ignore} 
+\end{enumerate}
+
+\begin{AnswerText}
+Of direct interest is how the \VN{drinking age limit} accounts for the
+\VN{number of deaths}, so these are, respectively, explanatory and
+response variables.  But a lower death rate might also be explained by
+increased use of \VN{seat belts} and of \VN{air bags}; these can
+prevent deaths in an accident and they have been increasing over the
+same period in which the 21-year age limit was introduced.  
+In examining how the 
+\VN{drinking age limit} might affect the \VN{number of deaths}, it
+might be important to hold these other factors constant.  So, \VN{seat
+belts} and \VN{air bags} should be covariates included in the model.
+
+The \VN{number of accidents} is different.  It seems plausible that
+the mechanism by which drunk driving causes deaths is by causing
+accidents.  If the \VN{number of accidents} were included as a
+covariate, then the model would be examining how the death rate
+changes with drinking age when {\em holding the number of accidents
+constant} even though the point is
+that the higher drinking age might reduce the number of accidents.
+So, \VN{number of accidents} ought to be left out of the model.
+\end{AnswerText}
+
+\bigskip
+\noindent {\bf Rating Surgeons}
+
+Your state government wants to guide citizens in choosing physicians.
+As part of this effort, they are going to rank all the surgeons in
+your state.  You have been asked to build the rating system and you
+have a set of variables available for your use.  These variables have
+been measured for each of the 342,861 people who underwent surgery in
+your state last year: one person
+being treated by one doctor.  How should you
+construct a rating system that will help citizens to choose the most
+effective surgeon for their own treatment?
+
+\medskip
+\noindent Variables:
+\begin{itemize}
+\item Outcome score. A high score means that the operation did what
+it was supposed to.  A low score reflects failure, e.g. death.
+Death is a very bad outcome, post-operative infection a somewhat bad outcome.)
+
+\SelectSetHoriz{response}{response,explanatory,covariate,ignore} 
+
+\item Surgeon.  One level for each of the operating surgeons.
+
+\SelectSetHoriz{explanatory}{response,explanatory,covariate,ignore} 
+
+\item Experience of the surgeon.
+
+\SelectSetHoriz{ignore}{response,explanatory,covariate,ignore} 
+
+\item Difficulty of the case.
+
+\SelectSetHoriz{covariate}{response,explanatory,covariate,ignore} 
+\end{itemize}
+
+\begin{AnswerText}
+The patient has a choice of doctors and wants to have the best
+possible outcome.  So the model needs to include \VN{surgeon} as an
+explanatory variable and \VN{outcome score} as the response.  
+
+A simple model might be misleading for informing a patient's choice.
+The best doctors might take on the most difficult cases and
+therefore have worse outcomes than doctors who are not as good. But
+the patient's condition doesn't change depending on what doctor is
+selected. This
+means that the \VN{difficulty of the case} ought to be included as a
+covariate.  The model would thus tell what is the typical outcome for
+each surgeon {\em adjusting for} the difficulty of the case, that is,
+given the patient's condition.
+
+Another variable that might explain the outcome is the \VN{experience
+of the surgeon}; possibly more experienced surgeons produce better
+outcomes.  However, \VN{experience of the surgeon}  
+should not be included in the model used to inform a patient's choice.  The
+reason is that the patient's choice of a doctor already reflects the
+experience of that doctor. From the patient's point of view, it
+doesn't matter whether the doctor's outcomes reflect a high level of
+talent, a lot of experience, or superior training.
+
+The choice of variables and covariates depends on the purpose of the
+model.  If the purpose of the model were to decide how much experience
+to require of doctors before they are licensed, then an appropriate
+model would have \VN{outcome} as the response, \VN{experience} as the
+explanatory variable, and \VN{difficulty of the case} and \VN{surgeon}
+as covariates.
+\end{AnswerText}
+
+
+\bigskip
+\noindent {\bf School testing}
+
+Last year, your school district hired a new superintendent to ``shake
+things up.''  He did so, introducing several controversial new
+policies.  At the end of the year, test scores were higher than last year.  A
+representative of the teachers' union has asked you to examine the
+score data and answer this question: Is there reason to think that the
+higher scores were the result of the superintendent's new policies?
+
+\medskip
+\noindent Variables:
+\begin{enumerate}
+\item Superintendent (levels: New or Former superintendent)
+
+\SelectSetHoriz{explanatory}{response,explanatory,covariate,ignore} 
+
+\item Exam difficulty
+
+\SelectSetHoriz{covariate}{response,explanatory,covariate,ignore} 
+
+\item Test scores
+
+\SelectSetHoriz{response}{response,explanatory,covariate,ignore} 
+\end{enumerate}
+
+\begin{AnswerText}
+The issue of direct interest is whether the policies of the new
+superintendent might have influenced the test scores, so the model
+should be \VN{test scores} as the response and \VN{superintendent} as an
+explanatory variable.  Of course, one possible mechanism that might
+have improved the scores, outside of the influence of the
+superintendent's policies, is the test itself.  If it were easier this
+year than last year, 
+then it wouldn't be surprising that the test scores improved this year
+even if the superintendent's policies had no effect.  So \VN{exam
+difficulty} should be a covariate to be included in the model.
+\end{AnswerText}
+
+\bigskip
+\noindent {\bf Gravity}
+
+In a bizarre twist of time, you find yourself as Galileo's research
+assistant in Pisa in 1605.  Galileo is studying gravity: Does
+gravity accelerate all materials in the same
+way, whether they be made of metal, wood, stone, etc.?  Galileo hired
+you as his assistant because you have brought with you, from the 21st
+century, a stop-watch with which to measure time intervals, a
+computer, and your skill in statistical modeling.  All of these 
+seem miraculous to him.  
+
+He drops objects off the top of the Leaning
+Tower of Pisa and you measure the following:
+
+\medskip
+\noindent Variables
+\begin{enumerate}
+\item The size of the object (measured by its diameter).
+
+\SelectSetHoriz{covariate}{response,explanatory,covariate,ignore} 
+
+
+\item Time of fall of the object.
+
+\SelectSetHoriz{response}{response,explanatory,covariate,ignore} 
+
+\item The material from which the object is made (brass, lead, wood,
+stone).
+
+\SelectSetHoriz{explanatory}{response,explanatory,covariate,ignore} 
+\end{enumerate}
+
+\noindent[Thanks to James Heyman.]
+
+\begin{AnswerText}
+Galileo wants to know how the \VN{material} affects the \VN{time} of fall of the
+object.  These are the explanatory and response variables
+respectively.  But the size of the object also has an influence, due
+to air resistance. For instance, a tiny ball will fall more slowly
+than a large ball.  So the \VN{size of the object} should be a covariate.
+\end{AnswerText}
+

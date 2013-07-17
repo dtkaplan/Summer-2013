@@ -241,3 +241,8 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 9.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-23.html) originally didn't have any directions for free text, selectSet, MC, so all of the additions are mine.  Make sure and check this
 
+## Chapter 10
+
+* [Problem 10.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-20.html) working
+
+* [Problem 10.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-21.html) working
