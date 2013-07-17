@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 10 Prob. 2</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 10 Prob. 2</h1>
+
+<p>In each of the following, a situation is described and a question is asked that is to be answered by modeling.  Several variables are listed. Imagine an appropriate model and identify each variable as 
+either the response variable, an explanatory variable, a covariate, or a variable to be ignored.</p>
+
+<blockquote>
+<p>EXAMPLE:  <em>Some people have claimed that police foot patrols are more effective at reducing the crime rate than patrols done in automobiles.  Data from several different cities is available; each city has its own fraction of patrols done by foot, its own crime rate, etc.  The mayor of your town has asked for your advice on whether it would be worthwhile to shift to more foot patrols in order to reduce crime.  She asks, &ldquo;Is there evidence that a larger fraction of foot patrols reduces the crime rate?</em></p>
+</blockquote>
+
+<p>Variables:<br/>
+1. Crime rate (e.g., robberies per 100000 population) variable.<br/>
+2. Fraction of foot patrols<br/>
+3. Number of policemen per 1000 population<br/>
+4. Demographics (e.g., poverty rate)     </p>
+
+<p>The question focuses on how the <em>fraction of foot patrols</em> might influence <em>crime rate</em>, so <em>crime rate</em> is the response variable and <em>fraction of foot patrols</em> is an explanatory variable.</p>
+
+<p>But, the crime rate might also depend on the overall level of policing (as indicated by the <em>number of policemen</em>), or on the social conditions that are associated with crime (e.g., <em>demographics</em>). Since the mayor has no power to change the demographics of your town, and probably little power to change the overall level number of policemen, in modeling the data from the different cities, you would want to hold constant <em>number of policemen</em> and the <em>demographics</em>.  You can do this by treating <em>number of policement</em> and <em>demographics</em> as covariates and including them in your model.</p>
+
+<p><strong>Alcohol and Road Safety</strong> </p>
+
+<p>Fifteen years ago, your state legislature raised the legal drinking age from 18 to 21 years.  An important motivation was to reduce the number of car accident
+deaths due to drunk or impaired drivers.  Now, some people are arguing that the 21-year age limit encourages binge drinking among 18 to 20 year olds and that such binge drinking actually increases car accident deaths.  But the evidence is that the number of car accident deaths has gone down since the 21-year age restriction was introduced. You are asked to examine the issue: Does the reduction in the number of car-accident deaths per year point to the effectiveness of the 21-year drinking age?</p>
+
+<p>Variables:</p>
+
+<ol>
+<li><p>Drinking age limit. Levels: 18 or 21. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      1,
+"name": "DrinkingAge",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      1,
+"name": "DrinkingAge",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      1,
+"name": "DrinkingAge",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      1,
+"name": "DrinkingAge",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out1' class='shiny-html-output'> </span>     </p></li>
+<li><p>Number of car-accident deaths per year. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      2,
+"name": "Death",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      2,
+"name": "Death",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      2,
+"name": "Death",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      2,
+"name": "Death",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>Prevalence of seat-belt use. <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      3,
+"name": "SeatBelts",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      3,
+"name": "SeatBelts",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      3,
+"name": "SeatBelts",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      3,
+"name": "SeatBelts",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>Fraction of cars with air bags. <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      4,
+"name": "AirBags",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      4,
+"name": "AirBags",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      4,
+"name": "AirBags",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      4,
+"name": "AirBags",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+<li><p>Number of car accidents (with or without death). <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      5,
+"name": "NumberOfAccidents",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      5,
+"name": "NumberOfAccidents",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      5,
+"name": "NumberOfAccidents",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      5,
+"name": "NumberOfAccidents",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+</ol>
+
+<p><aside>
+ANSWER:<br/>
+Of direct interest is how the <em>drinking age limit</em> accounts for the <em>number of deaths</em>, so these are, respectively, explanatory and response variables.  But a lower death rate might also be explained by increased use of <em>seat belts</em> and of <em>air bags</em>; these can prevent deaths in an accident and they have been increasing over the same period in which the 21-year age limit was introduced.<br/>
+In examining how the <em>drinking age limit</em> might affect the <em>number of deaths</em>, it might be important to hold these other factors constant.  So, <em>seat belts</em> and <em>air bags</em> should be covariates included in the model.</p>
+
+<p>The <em>number of accidents</em> is different.  It seems plausible that the mechanism by which drunk driving causes deaths is by causing accidents.  If the <em>number of accidents</em> were included as a covariate, then the model would be examining how the death rate changes with drinking age when <em>holding the number of accidents constant</em> even though the point is that the higher drinking age might reduce the number of accidents. So, <em>number of accidents</em> ought to be left out of the model.
+</aside></p>
+
+<p><strong>Rating Surgeons</strong></p>
+
+<p>Your state government wants to guide citizens in choosing physicians. As part of this effort, they are going to rank all the surgeons in your state.  You have been asked to build the rating system and you have a set of variables available for your use.  These variables have been measured for each of the 342,861 people who underwent surgery in your state last year: one person being treated by one doctor.  How should you construct a rating system that will help citizens to choose the most effective surgeon for their own treatment?</p>
+
+<p>Variables:</p>
+
+<ol>
+<li><p>Outcome score. A high score means that the operation did what it was supposed to.  A low score reflects failure, e.g. death. Death is a very bad outcome, post-operative infection a somewhat bad outcome.) <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      6,
+"name": "OutcomeScore",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      6,
+"name": "OutcomeScore",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      6,
+"name": "OutcomeScore",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      6,
+"name": "OutcomeScore",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
+<li><p>Surgeon.  One level for each of the operating surgeons. <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      7,
+"name": "Surgeon",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      7,
+"name": "Surgeon",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      7,
+"name": "Surgeon",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      7,
+"name": "Surgeon",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+<li><p>Experience of the surgeon. <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      8,
+"name": "Experience",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      8,
+"name": "Experience",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      8,
+"name": "Experience",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      8,
+"name": "Experience",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out8' class='shiny-html-output'> </span></p></li>
+<li><p>Difficulty of the case. <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      9,
+"name": "Difficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      9,
+"name": "Difficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      9,
+"name": "Difficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":      9,
+"name": "Difficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+</ol>
+
+<p><aside>
+ANSWER:<br/>
+The patient has a choice of doctors and wants to have the best possible outcome.  So the model needs to include <em>surgeon</em> as an explanatory variable and <em>outcome score</em> as the response.  </p>
+
+<p>A simple model might be misleading for informing a patient&#39;s choice. The best doctors might take on the most difficult cases and therefore have worse outcomes than doctors who are not as good. But the patient&#39;s condition doesn&#39;t change depending on what doctor is selected. This means that the <em>difficulty of the case</em> ought to be included as a covariate.  The model would thus tell what is the typical outcome for each surgeon <em>adjusting for</em> the difficulty of the case, that is, given the patient&#39;s condition.</p>
+
+<p>Another variable that might explain the outcome is the <em>experience of the surgeon</em>; possibly more experienced surgeons produce better outcomes.  However, <em>experience of the surgeon</em> should not be included in the model used to inform a patient&#39;s choice.  The reason is that the patient&#39;s choice of a doctor already reflects the experience of that doctor. From the patient&#39;s point of view, it doesn&#39;t matter whether the doctor&#39;s outcomes reflect a high level of
+talent, a lot of experience, or superior training.</p>
+
+<p>The choice of variables and covariates depends on the purpose of the model.  If the purpose of the model were to decide how much experience to require of doctors before they are licensed, then an appropriate model would have <em>outcome</em> as the response, <em>experience</em> as the explanatory variable, and <em>difficulty of the case</em> and <em>surgeon</em> as covariates.
+</aside></p>
+
+<p><strong>School testing</strong></p>
+
+<p>Last year, your school district hired a new superintendent to &quot;shake things up.&rdquo;  He did so, introducing several controversial new policies.  At the end of the year, test scores were higher than last year.  A representative of the teachers&#39; union has asked you to examine the score data and answer this question: Is there reason to think that the higher scores were the result of the superintendent&#39;s new policies?</p>
+
+<p>Variables:</p>
+
+<ol>
+<li><p>Superintendent (levels: New or Former superintendent) <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     10,
+"name": "Superintendent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     10,
+"name": "Superintendent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     10,
+"name": "Superintendent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     10,
+"name": "Superintendent",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "superintendent" 
+}'>superintendent</option> </select><span id='out10' class='shiny-html-output'> </span></p></li>
+<li><p>Exam difficulty <select name='in11'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     11,
+"name": "examDifficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     11,
+"name": "examDifficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     11,
+"name": "examDifficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     11,
+"name": "examDifficulty",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out11' class='shiny-html-output'> </span></p></li>
+<li><p>Test scores <select name='in12'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     12,
+"name": "TestScores",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     12,
+"name": "TestScores",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     12,
+"name": "TestScores",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     12,
+"name": "TestScores",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out12' class='shiny-html-output'> </span></p></li>
+</ol>
+
+<p><aside>
+ANSWER:<br/>
+The issue of direct interest is whether the policies of the new superintendent might have influenced the test scores, so the model should be <em>test scores</em> as the response and <em>superintendent</em> as an explanatory variable.  Of course, one possible mechanism that might have improved the scores, outside of the influence of the superintendent&#39;s policies, is the test itself.  If it were easier this year than last year, then it wouldn&#39;t be surprising that the test scores improved this year even if the superintendent&#39;s policies had no effect.  So <em>exam difficulty</em> should be a covariate to be included in the model.
+</aside></p>
+
+<p><strong>Gravity</strong></p>
+
+<p>In a bizarre twist of time, you find yourself as Galileo&#39;s research assistant in Pisa in 1605.  Galileo is studying gravity: Does gravity accelerate all materials in the same way, whether they be made of metal, wood, stone, etc.?  Galileo hired you as his assistant because you have brought with you, from the 21st century, a stop-watch with which to measure time intervals, a computer, and your skill in statistical modeling.  All of these seem miraculous to him.  </p>
+
+<p>He drops objects off the top of the Leaning Tower of Pisa and you measure the following:</p>
+
+<p>Variables</p>
+
+<ol>
+<li><p>The size of the object (measured by its diameter). <select name='in13'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     13,
+"name": "Size",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     13,
+"name": "Size",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     13,
+"name": "Size",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     13,
+"name": "Size",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out13' class='shiny-html-output'> </span></p></li>
+<li><p>Time of fall of the object. <select name='in14'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     14,
+"name": "TimeOfFall",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     14,
+"name": "TimeOfFall",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     14,
+"name": "TimeOfFall",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     14,
+"name": "TimeOfFall",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out14' class='shiny-html-output'> </span></p></li>
+<li><p>The material from which the object is made (brass, lead, wood, stone). <select name='in15'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     15,
+"name": "Material",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "response" 
+}'>response</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     15,
+"name": "Material",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "explanatory" 
+}'>explanatory</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     15,
+"name": "Material",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "covariate" 
+}'>covariate</option> <option value='{
+"itemInfo": {
+"setID": "SM-10-2-SD",
+"itemN":     15,
+"name": "Material",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "ignore" 
+}'>ignore</option> </select><span id='out15' class='shiny-html-output'> </span></p></li>
+</ol>
+
+<p>[Thanks to James Heyman.]</p>
+
+<p><aside>
+ANSWER:<br/>
+Galileo wants to know how the <em>material</em> affects the <em>time</em> of fall of the
+object.  These are the explanatory and response variables respectively.  But the size of the object also has an influence, due to air resistance. For instance, a tiny ball will fall more slowly than a large ball.  So the <em>size of the object</em> should be a covariate.
+</aside> </p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10", "in11", "in12", "in13", "in14", "in15" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

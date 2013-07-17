@@ -1,0 +1,92 @@
+Intro to Statistical Modeling Ch. 10 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-10-1-SD")
+```
+Consider the data set on kids' feet in `KidsFeet`. 
+
+First, you're going to look at a total change.  Build a model of foot width as a function of foot length: *width ~ length*. Fit this model to the kids' feet data.
+
+```{r include=FALSE}
+feet=selectNumber(name="22to27", totalPts=1, choices=c(0.187,0.362,0.744,0.953,1.060,1.105,1.240,1.487), correct=c(1.240))
+```
+According to this model, how much does the typical width change when the foot
+length is increased from 22 to 27 cm? `r I(feet)`
+
+
+<aside>
+ANSWER:    
+```{r}
+kids = fetchData("KidsFeet")
+m1 = lm(width ~ length, data=kids)
+coef(m1)
+```
+
+To find the difference between the model value for the 22 and 27 inch long foot, you can calculate the values explicitly and then subtract.
+```{r}
+v27 = 2.86228 + 0.24795*27
+v27
+```
+
+```{r}
+v22 = 2.86228 + 0.24795*22
+v22
+```
+
+```{r}
+v27-v22
+```
+
+This is rather verbose.  Noticing that the intercept doesn't change in the two calculations and will therefore cancel out in the subtraction, you can do this equally well with a shortcut:
+
+```{r}
+0.24795*(27-22)
+```
+
+</aside>
+
+This is a total change, because it doesn't hold any other variable constant, e.g. *sex*.  That might sound silly, since obviously a kid's sex doesn't change as his or her foot grows.  But the model doesn't know that.  It happens that most of the kids with foot lengths near 22 cm are girls, and most of the kids with foot lengths near 27 cm are boys.  So when you compare feet with lengths of 22 and 27, you are effectively changing the sex at the same time as you change the foot
+length.
+
+```{r include=FALSE}
+feet2=selectNumber(choices=c(0.187,0.362,0.744,0.953,1.060,1.105,1.142,1.240,1.487), correct=c(1.105), totalPts=1, name="22to27model2")
+```
+To look at a partial change, holding *sex* constant, you need to include *sex* in the model.  A simple way to do this is *width* ~ *length* + *sex*.  Using this model fitted to the kids' feet data, how much does a typical foot width change if the foot length is increased from 22 to 27 cm? `r I(feet2)`
+
+<aside>
+ANSWER:    
+```{r}
+m2 = lm(width ~ length + sex, data=kids)
+coef(m2)
+```
+
+```{r}
+0.221025*(27-22)
+```
+
+</aside>
+
+
+```{r include=FALSE}
+feet3=selectNumber(choices=c(0.187,0.362,0.744,0.953,1.060,1.105,1.142,1.240,1.487), correct=c(1.142), totalPts=1, name="22to27girl")
+```
+You can also build more detailed models, for example a model that includes an interaction term: *width* ~ *length* $\star$ *sex*. Using this model fitted to the kids' feet data, how much will a typical **girl's** foot width change if the foot length is increased from 22 to 27 cm? `r I(feet3)`
+
+<aside>
+ANSWER:    
+Looking at the coefficients, you can see that *length* appears in two: the "main effect" and an interaction with *sexG*.  Since we're interested in studying the girls, both these terms need to be included.  
+```{r}
+m3 = lm(width ~ length * sex, data=kids)
+coef(m3)
+```
+
+```{r}
+(0.21262 + 0.01582)*(27-22)
+```
+
+
+</aside>
+
+`r I(closeProblem())`

@@ -1,0 +1,46 @@
+Intro to Statistical Modeling Ch. 10 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-10-5-SD")
+```
+
+Consider two models that you are to fit to a single data set involving three variables: A, B, and C.
+
+* **[Model 1]** *A* ~ *B*     
+
+* **[Model 2]** *A* ~ *B* + *C*
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+When should you say that Simpson's Paradox is occuring?      
+`r I(f(FALSE))` When Model 2 has a lower $R^2$ than Model 1.     
+`r I(f(FALSE))` When Model 1 has a lower $R^2$ than Model 2.     
+`r I(f(TRUE))` When the coef. on B in Model 2 has the opposite sign to the coef. on B in Model 1.     
+`r I(f(FALSE))` When the coef. on C in Model 2 has the opposite sign to the coef. on B in Model 1.     
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+```{r include=FALSE}
+true=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+True or False: If B is uncorrelated with A, then the coefficient on B in the model *A* ~ *B* must be zero. `r I(true)`
+
+```{r include=FALSE}
+true2=selectSet(name="TorF2", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+True or False: If B is uncorrelated with A, then the coefficient   on B in a model *A* ~ *B* + *C* must be zero. `r I(true2)`
+
+```{r include=FALSE}
+true3=selectSet(name="TorF3", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+True or False: Simpson's Paradox can occur if B is uncorrelated with C. `r I(true3)`
+
+`r I(closeProblem())`
+
+
+###### Based on a suggestion by student Atang Gilika.
+
