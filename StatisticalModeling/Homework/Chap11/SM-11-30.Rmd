@@ -1,0 +1,38 @@
+Intro to Statistical Modeling Ch. 11 Prob. 30
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-30-SD")
+```
+
+Just before a referendum on a school budget, a local newspaper plans to poll 400 random voters out of 50,000 registered voters in an attempt to predict whether the budget will pass.  Suppose that the budget actually has the support of 52% of voters. 
+
+* What is the probability that the newspaper's sample will wrongly lead them to
+predict defeat, that is, less than 50% of the poll respondents will indicate support? 
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+  `r I(f(FALSE))` <code>qbinom(.5, size=400, prob=.52)</code>    
+  `r I(f(FALSE))` <code>pbinom(.52, size=400, prob=.50)</code>    
+  `r I(f(FALSE))` <code>rnorm(400, mean=0.52, sd=.50)</code>    
+  `r I(f(TRUE))` <code>pbinom(199, size=400, prob=0.52)</code>    
+  `r I(f(FALSE))` <code>qnorm(.52, mean=400, sd=.50)</code>
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+* What is the probability that more than 250 of those 400 voters will support the budget?
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+  `r I(g(FALSE))` <code>pbinom(250, size=400, prob=.50)</code>    
+  `r I(g(FALSE))` <code>pbinom(249, size=400, prob=0.52)</code>    
+  `r I(g(TRUE))` <code>1-pbinom(250, size=400, prob=0.52)</code>    
+  `r I(g(FALSE))` <code>qbinom(.5, size=400, prob=.52)</code>    
+  `r I(g(FALSE))` <code>1-qnorm(.52, mean=400, sd=.50)</code>
+```{r include=FALSE, results='hide'}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`

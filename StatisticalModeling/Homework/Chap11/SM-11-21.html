@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 21</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 21</h1>
+
+<p>Ralph&#39;s bowling scores in a single game are normally distributed with a mean of 120 and a standard deviation of 10.</p>
+
+<ul>
+<li><p>He plays 5 games.  What is the mean and standard deviation of his
+total score? </p>
+
+<ul>
+<li>Mean <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "240" 
+}'>240</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "360" 
+}'>360</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "600" 
+}'>600</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      1,
+"name": "TotalScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "710" 
+}'>710</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+<li>Standard Deviation <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      2,
+"name": "TotalScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20.14" 
+}'>20.14</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      2,
+"name": "TotalScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "21.69" 
+}'>21.69</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      2,
+"name": "TotalScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "22.36" 
+}'>22.36</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      2,
+"name": "TotalScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "24.31" 
+}'>24.31</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      2,
+"name": "TotalScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "24.71" 
+}'>24.71</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul></li>
+<li><p>What is the mean and standard deviation of his average score for the 5 games?</p>
+
+<ul>
+<li>Mean: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "60" 
+}'>60</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "90" 
+}'>90</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "150" 
+}'>150</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      3,
+"name": "AverageScoreMean",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "180" 
+}'>180</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+<li>Standard deviation: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      4,
+"name": "AverageScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "4.47" 
+}'>4.47</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      4,
+"name": "AverageScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4.93" 
+}'>4.93</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      4,
+"name": "AverageScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5.1" 
+}'>5.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      4,
+"name": "AverageScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5.62" 
+}'>5.62</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      4,
+"name": "AverageScoreStdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6.18" 
+}'>6.18</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+</ul></li>
+</ul>
+
+<p>Lucky Lolly bowls games that, when the scores randomly distributed, have a mean of 100 and standard deviation of 15.</p>
+
+<ul>
+<li><p>What is the z-score of 150 for Lolly? <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.33" 
+}'>2.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "3.33" 
+}'>3.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7.66" 
+}'>7.66</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      5,
+"name": "z-scoreLolly",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "150" 
+}'>150</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p>What is the z-score of 150 for Ralph? <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.33" 
+}'>2.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3.33" 
+}'>3.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7.66" 
+}'>7.66</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      6,
+"name": "z-scoreRalph",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "150" 
+}'>150</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
+<li><p>Is Lolly or Ralph more likely to score over 150? <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      7,
+"name": "over150",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Lolly" 
+}'>Lolly</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      7,
+"name": "over150",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Ralph" 
+}'>Ralph</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      7,
+"name": "over150",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Equally likely" 
+}'>Equally likely</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      7,
+"name": "over150",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Can't tell from the information given." 
+}'>Can&#39;t tell from the information given.</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+<li><p>What is the z-score of 130 for Lolly? <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.33" 
+}'>2.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3.33" 
+}'>3.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7.66" 
+}'>7.66</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      8,
+"name": "z-scoreLolly2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "150" 
+}'>150</option> </select><span id='out8' class='shiny-html-output'> </span> </p></li>
+<li><p>What is the z-score of 130 for Ralph? <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2.33" 
+}'>2.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3.33" 
+}'>3.33</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7.66" 
+}'>7.66</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":      9,
+"name": "z-scoreRalph2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "150" 
+}'>150</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+<li><p>Is Lolly or Ralph more likely to score over 130? <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":     10,
+"name": "over130",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Lolly" 
+}'>Lolly</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":     10,
+"name": "over130",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Ralph" 
+}'>Ralph</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":     10,
+"name": "over130",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Equally likely" 
+}'>Equally likely</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-21-SD",
+"itemN":     10,
+"name": "over130",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Can't tell from the information given." 
+}'>Can&#39;t tell from the information given.</option> </select><span id='out10' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,48 @@
+Intro to Statistical Modeling Ch. 11 Prob. 23
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-23-SD")
+```
+For each of the following, decide whether the random variable is binomial or not.  Then choose the best answer from the set offered.
+
+```{r include=FALSE}
+rand=selectSet(name="acesWithReplacement", totalPts=1, "It is binomial."=TRUE, "It's not because the sample size is not fixed."=FALSE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* Number of aces in a draw of 10 cards from a shuffled deck with replacement. `r I(rand)`
+
+```{r include=FALSE}
+rand2=selectSet(name="acesWithoutReplacement", totalPts=1, "It is binomial."=FALSE, "It's not because the sample size is not fixed."=FALSE, "It's not because the probability is not fixed for every individual component."=TRUE, "It's not for both of the above reasons."=FALSE)
+```
+* Number of aces in a draw of 10 cards from a shuffled deck without replacement. `r I(rand2)`
+
+```{r include=FALSE}
+rand3=selectSet(name="typingMachine", totalPts=1,"It is binomial."=FALSE, "It's not because the sample size is not fixed."=TRUE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* A broken typing machine has probability of 0.05 to make a mistake on each character.  The number of erroneous characters in each sentence of a report. `r I(rand3)`
+
+```{r include=FALSE}
+rand4=selectSet(name="screws", totalPts=1, "It is binomial."=TRUE, "It's not because the sample size is not fixed."=FALSE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* Suppose screws produced by a certain company will be defective with probability 0.01 independent of each other. The company sells the screws in a package of 10. The number of  defective screws in a randomly selected pack. `r I(rand4)`
+
+```{r include=FALSE}
+rand5=selectSet(name="girls", totalPts=1, "It is binomial."=TRUE, "It's not because the sample size is not fixed."=FALSE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* Observe the sex of the next 50 children born at a local hospital. Let x= \# of girls among them. `r I(rand5)`
+
+
+```{r include=FALSE}
+rand6=selectSet(name="numberOfKids", totalPts=1, "It is binomial."=FALSE, "It's not because the sample size is not fixed."=TRUE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* A couple decides to continue to have children until their first daughter. Let x = # of children the couple has. `r I(rand6)`
+
+
+```{r include=FALSE}
+rand7=selectSet(name="lottery", totalPts=1, "It is binomial."=TRUE, "It's not because the sample size is not fixed."=FALSE, "It's not because the probability is not fixed for every individual component."=FALSE, "It's not for both of the above reasons."=FALSE)
+```
+* Jason buys the state lottery ticket every month using his favorite combination based on his birthday and his wife's. x= # of times he wins a prize in one year. `r I(rand7)`
+
+
+`r I(closeProblem())`
