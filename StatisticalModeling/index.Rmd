@@ -319,3 +319,13 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 11.48](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-48.html) working, but has homework that must be physically handed in
 
+## Chapter 12
+
+* [Problem 12.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap12/SM-12-04.html) working
+
+* [Problem 12.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap12/SM-12-05.html) working
+
+* [Problem 12.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap12/SM-12-10.html) working
+
+* [Problem 12.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap12/SM-12-11.html) working
+

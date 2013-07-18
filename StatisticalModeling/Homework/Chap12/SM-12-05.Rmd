@@ -1,0 +1,19 @@
+Intro to Statistical Modeling Ch. 12 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-12-5-SD")
+```
+A statistics professor sends her students out to collect data by interviewing other students about various quantities, e.g., their SAT scores, GPAs and other
+data for which the college registrar retains official records.  Each student is
+assigned one quantity and one target population, for example, the verbal SAT scores of all female students, or the cumulative grade point average for sophomore males.
+
+Each student interviews some students --- how many depends on the student's initiative and energy.  The student then reports the results in the form of a confidence interval, $P \pm M$ with 95% confidence.
+
+```{r include=FALSE}
+stats=selectSet(name="fraction", totalPts=1, "95%"=TRUE, "50%"=FALSE, "5%"=FALSE, "Can't tell, it depends on how much data each student collected."=FALSE, "Can't tell, the students each looked at different quantities, not all of them at the same quantity."=FALSE)
+```
+After the students hand in their reports, the professor contacts the registrar to find the population parameters for each group that the students surveyed.  **Assuming** that the interviewed students provided accurate information, what fraction of the students' confidence intervals will contain the corresponding population parameter? `r I(stats)`
+
+`r I(closeProblem())`
