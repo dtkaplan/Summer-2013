@@ -1,0 +1,45 @@
+Intro to Statistical Modeling Ch. 11 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-10-SD")
+```
+College admissions offices collect information about each year's applicants, admitted students, and matriculated students.  At one college, the admissions office knows from past years that 30% of admitted students will matriculate.
+
+The admissions office explains to the administration each year that the results of the admissions process vary from year to year due to random sampling fluctuations.  Each year's results can be interpreted as a draw from a random process with a particular distribution.
+
+Which family of probability distribution can best be used to model each of the
+following situations?
+
+```{r include=FALSE}
+school=selectSet(name="1500admit", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=TRUE, "Poisson"=FALSE, "Exponential"=FALSE, "Lognormal"=FALSE)
+```
+* 1500 students are offered admission.  The number of students who will actually matriculate is: `r I(school)`
+
+<aside>
+ANSWER:     
+Each admission is one trial and there is good reason to believe that the matriculation decisions are independent, since each is made by a different student.  From the admissions office point of view, the probability of a matriculation is the same for each admission.  The number of trials is fixed at $N=1500$.  So this is a binomial distribution.
+</aside>
+
+```{r include=FALSE}
+school2=selectSet(name="SAT", totalPts=1, "Normal"=TRUE, "Uniform"=FALSE, "Binomial"=FALSE, "Poisson"=FALSE, "Exponential"=FALSE, "Lognormal"=FALSE)
+```
+* The average SAT score of the admitted applicants: `r I(school2)`
+
+<aside>
+ANSWER:    
+Test scores are often normally distributed because the overall score is the sum of the scores for the many different items on the test.
+</aside>
+
+```{r include=FALSE}
+school3=selectSet(name="women", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=TRUE, "Poisson"=FALSE, "Exponential"=FALSE, "Lognormal"=FALSE)
+```
+* The number of women in the matriculated class: `r I(school3)`
+
+<aside>
+ANSWER:    
+This is like the matriculation example, but here the probability for each trial is not just whether the admitted student matriculated, but whether the admitted student matriculated and is female.
+</aside>
+
+`r I(closeProblem())`

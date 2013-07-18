@@ -1,0 +1,130 @@
+Intro to Statistical Modeling Ch. 11 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-1-SD")
+```
+
+Two basic operations that you need to perform on probability models are these:    
+* ** percentile** Given a value, what is the probability (according to the model) of the outcome from one trial being that value or less?
+
+* **quantile** Given a probability, what is the value whose percentile is that probability?
+
+
+To illustrate by example, suppose that you are dealing with a probability model 
+for an IQ test score that is a normal distribution with these parameters: mean = 100 and standard deviation = 15.
+
+Percentile question: What is the percentile that corresponds to a test score of 120?  Answer: $0.91$ or, in other words, the 91st percentile.
+```{r}
+pnorm(120, mean=100,sd=15)
+```
+**SHOULD MATCH**    
+[1] 0.9087888
+
+
+Quantile question: What score will 95% of scores be less than or equal to?
+ Answer: a score of 125.
+\begin{verbatim}
+> qnorm(0.95, mean=100, sd=15)
+[1] 124.6728
+\end{verbatim}
+
+Here are two very basic questions about percentile and quantile calculations:
+
+\begin{enumerate}[(a)]
+\item \TrueOrFalse{T} The output of a percentile question will always
+be a probability, that is, a number between 0 and 1.
+
+\item \TrueOrFalse{T} The output of a quantile question will always be
+a value, that is, something in the same units as the random variable.
+\end{enumerate}
+
+\noindent Sometimes to answer more complicated questions, you need first to
+answer one or more percentile or quantile questions.
+
+Answer the following questions, using the normal probability model with the
+parameters given above: 
+\begin{enumerate}[(a)]
+\item What's the test score that almost everybody, say, 99\% of
+people, will do better than?  
+\begin{itemize}
+\item Which kind of calculation is this?
+ \SelectSetHoriz{quantile}{percentile,quantile}
+\item What is the answer?
+ \SelectSetHoriz{65}{55,65,75,95,115,125,135}
+\end{itemize}
+
+\begin{AnswerText}
+This involves the 0.01 quantile, since 99\% are doing {\bf better}.
+\begin{verbatim}
+>  qnorm(.01, mean=100, sd=15)
+[1] 65.10478
+\end{verbatim}
+\end{AnswerText}
+
+
+\item To calculate a coverage interval on a probability model, you
+need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these
+probabilities from: \SelectSetHoriz{quantile}{percentile,quantile}
+
+\item Calculate a 50\% coverage interval on the test scores, that is
+the range from the 0.25 quantile to the 0.75 quantile:
+\begin{itemize}
+\item Left end of interval:\SelectSetHoriz{90}{80,85,90,95,100,105,110,115,120}
+\begin{AnswerText}
+\begin{verbatim}
+>  qnorm(.25, mean=100, sd=15)
+[1] 89.88265
+>  qnorm(.75, mean=100, sd=15)
+[1] 110.1173
+\end{verbatim}
+\end{AnswerText}
+
+
+\item Right end of interval:
+\SelectSetHoriz{110}{80,85,90,95,100,105,110,115,120}
+\begin{AnswerText}
+\begin{verbatim}
+>  qnorm(.25, mean=100, sd=15)
+[1] 89.88265
+>  qnorm(.75, mean=100, sd=15)
+[1] 110.1173
+\end{verbatim}
+\end{AnswerText}
+
+\end{itemize}
+
+\item Calculate an 80\% coverage interval, that is the range from the
+0.10 to the 0.90 quantile:
+\begin{itemize}
+\item Left end of interval: \SelectSetHoriz{81}{52,69,73,81,85,89}
+
+\item Right end of interval: \SelectSetHoriz{119}{117,119,123,128,136}
+
+\begin{AnswerText}
+\begin{verbatim}
+>  qnorm(.1, mean=100, sd=15)
+[1] 80.77673
+>  qnorm(.9, mean=100, sd=15)
+[1] 119.2233
+\end{verbatim}
+\end{AnswerText}
+\end{itemize}
+
+\item To calculate the probability of an outcome falling in a given
+range, you need to do two percentile calculations, one for each end of
+the range.  Then you substract the two different probabilities. What is the probability of a test score falling between
+100 and 120?
+\SelectSetHoriz{0.41}{0.25,0.37,0.41,0.48,0.52,0.61,0.73}
+
+\begin{AnswerText}
+\begin{verbatim}
+> pnorm(120,mean=100,sd=15)- pnorm(100,mean=100,sd=15)
+[1] 0.4087888
+\end{verbatim}
+\end{AnswerText}
+
+\end{enumerate}
+
+

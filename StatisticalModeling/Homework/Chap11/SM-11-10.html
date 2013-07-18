@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 10</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 10</h1>
+
+<p>College admissions offices collect information about each year&#39;s applicants, admitted students, and matriculated students.  At one college, the admissions office knows from past years that 30% of admitted students will matriculate.</p>
+
+<p>The admissions office explains to the administration each year that the results of the admissions process vary from year to year due to random sampling fluctuations.  Each year&#39;s results can be interpreted as a draw from a random process with a particular distribution.</p>
+
+<p>Which family of probability distribution can best be used to model each of the
+following situations?</p>
+
+<ul>
+<li>1500 students are offered admission.  The number of students who will actually matriculate is: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Normal" 
+}'>Normal</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Uniform" 
+}'>Uniform</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Binomial" 
+}'>Binomial</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Poisson" 
+}'>Poisson</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Exponential" 
+}'>Exponential</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      1,
+"name": "1500admit",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Lognormal" 
+}'>Lognormal</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Each admission is one trial and there is good reason to believe that the matriculation decisions are independent, since each is made by a different student.  From the admissions office point of view, the probability of a matriculation is the same for each admission.  The number of trials is fixed at \( N=1500 \).  So this is a binomial distribution.
+</aside></p>
+
+<ul>
+<li>The average SAT score of the admitted applicants: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Normal" 
+}'>Normal</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Uniform" 
+}'>Uniform</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Binomial" 
+}'>Binomial</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Poisson" 
+}'>Poisson</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Exponential" 
+}'>Exponential</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      2,
+"name": "SAT",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Lognormal" 
+}'>Lognormal</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Test scores are often normally distributed because the overall score is the sum of the scores for the many different items on the test.
+</aside></p>
+
+<ul>
+<li>The number of women in the matriculated class: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Normal" 
+}'>Normal</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Uniform" 
+}'>Uniform</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Binomial" 
+}'>Binomial</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Poisson" 
+}'>Poisson</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Exponential" 
+}'>Exponential</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-10-SD",
+"itemN":      3,
+"name": "women",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Lognormal" 
+}'>Lognormal</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+This is like the matriculation example, but here the probability for each trial is not just whether the admitted student matriculated, but whether the admitted student matriculated and is female.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

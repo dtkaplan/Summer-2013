@@ -1,0 +1,36 @@
+Intro to Statistical Modeling Ch. 11 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-5-SD")
+```
+For each of these families of probability distributions, what are the parameters used to describe a specific distribution?
+
+```{r include=FALSE}
+distrib=selectSet(name="Uniform", totalPts=1, "Mean and Standard Deviation"=FALSE, "Max and Min"=TRUE, "Probability and Size"=FALSE, "Average Number per Interval"=FALSE)
+```
+* Uniform distribution `r I(distrib)`
+
+```{r include=FALSE}
+distrib2=selectSet(name="Normal", totalPts=1, "Mean and Standard Deviation"=TRUE, "Max and Min"=FALSE, "Probability and Size"=FALSE, "Average Number per Interval"=FALSE)
+```
+* Normal distribution `r I(distrib2)`
+
+```{r include=FALSE}
+distrib3=selectSet(name="Exponential", totalPts=1, "Mean and Standard Deviation"=FALSE, "Max and Min"=FALSE, "Probability and Size"=FALSE, "Average Number per Interval"=TRUE)
+```
+* Exponential distribution `r I(distrib3)`
+
+```{r include=FALSE}
+distrib4=selectSet(name="Poisson", totalPts=1, "Mean and Standard Deviation"=FALSE, "Max and Min"=FALSE, "Probability and Size"=FALSE, "Average Number per Interval"=TRUE)
+```
+* Poisson distribution `r I(distrib4)`
+
+```{r include=FALSE}
+distrib5=selectSet(name="Binomial", totalPts=1, "Mean and Standard Deviation"=FALSE, "Max and Min"=FALSE, "Probability and Size"=TRUE, "Average Number per Interval"=FALSE)
+```
+* Binomial distribution `r I(distrib5)`
+
+
+`r I(closeProblem())`

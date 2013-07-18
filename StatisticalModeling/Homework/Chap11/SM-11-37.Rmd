@@ -1,0 +1,35 @@
+Intro to Statistical Modeling Ch. 11 Prob. 37
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-37-SD")
+```
+
+To help reduce speeding, the local governments sometimes put up speed signs at locations where speeding is a problem.  These signs measure the speed of each passing car and display that speed to the driver. In some countries, such as the UK, the devices are equiped with a camera which records an image of each speeding car and a speeding ticket is sent to the registered owner.
+
+At one location, the data recorded from such a device indicates that between 7 and 10 PM, 32% of cars are speeding and that 4.3 cars per minute pass the intersection, on average.
+
+Which probability distributions can be best used to model each of the following situations for 7 to 10PM?
+
+```{r include=FALSE}
+car=selectSet(name="1HourPeriod", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=FALSE, "Poisson"=TRUE, "Exponential"=FALSE, "Lognormal"=FALSE)
+```
+* The number of speeding cars in any 1 hour period. `r I(car)`
+
+```{r include=FALSE}
+car2=selectSet(name="timeElapse", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=FALSE, "Poisson"=FALSE, "Exponential"=TRUE, "Lognormal"=FALSE)
+```
+*  The time that elapses between cars: `r I(car2)`
+
+```{r include=FALSE}
+car3=selectSet(name="100successiveSpeeding", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=TRUE, "Poisson"=FALSE, "Exponential"=FALSE, "LOgnormal"=FALSE)
+```
+*  Out of 100 successive cars passing the device, the number that are speeding `r I(car3)`
+
+```{r include=FALSE}
+car4=selectSet(name="100SuccessiveMean", totalPts=1, "Normal"=TRUE, "Uniform"=FALSE, "Binomial"=FALSE, "Poisson"=FALSE, "Exponential"=FALSE, "LOgnormal"=FALSE)
+```
+*  The mean speed of 100 successive cars passing the device. `r I(car4)`
+
+`r I(closeProblem())`
