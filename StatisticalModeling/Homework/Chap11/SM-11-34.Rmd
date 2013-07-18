@@ -1,0 +1,23 @@
+Intro to Statistical Modeling Ch. 11 Prob. 34
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-34-SD")
+```
+
+Suppose that the height, in inches, of a randomly selected 25-year-old man is a normal random variable with standard deviation 2.5 inches. In the strange universe in which statistics problems are written, we don't know the mean of this distribution but we do know that approximately 12.5% of 25-year-old man are taller than 6 feet 2 inches.  Using this information, calculate the following.
+
+```{r include=FALSE}
+height=selectNumber(choices=c(68.54,70.13,71.12,73.82,74.11,75.23,75.88,76.14), correct=c(71.12), totalPts=1, name="mean")
+``` 
+* What's the average height of 25-year-old men?  That is, find the mean
+of a normal distribution with standard deviation of 2.5 inches such
+that 12.5% of the distribution lies at or above 74 inches. `r I(height)`
+
+```{r include=FALSE}
+height2=selectNumber(choices=c(68.54,70.13,71.12,73.82,74.11,75.23,75.88,76.14), correct=c(75.23), totalPts=1, name="5percent")
+```
+* Using this distribution, how tall should a man be in order to be in the tallest 5% of 25-year-old men? `r I(height2)`
+
+`r I(closeProblem())`

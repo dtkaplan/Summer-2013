@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 31</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 31</h1>
+
+<p>Here is a graph of a probability density.</p>
+
+<p><img src="data:image/png;base64,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" alt="Prob Density"/></p>
+
+<ul>
+<li><p>Using the graph, estimate by eye the probability of a randomly selected x falling between 2 and 4. (Give the closest answer.) <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      1,
+"name": "estimate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.05" 
+}'>0.05</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      1,
+"name": "estimate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.25" 
+}'>0.25</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      1,
+"name": "estimate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      1,
+"name": "estimate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.75" 
+}'>0.75</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      1,
+"name": "estimate",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.95" 
+}'>0.95</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>Using the graph of probability density above, estimate by eye the probability of a randomly selected x being less than 2. (Give the closest answer.) <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      2,
+"name": "estimate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.05" 
+}'>0.05</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      2,
+"name": "estimate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.25" 
+}'>0.25</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      2,
+"name": "estimate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      2,
+"name": "estimate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.75" 
+}'>0.75</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-31-SD",
+"itemN":      2,
+"name": "estimate2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.95" 
+}'>0.95</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,22 @@
+Intro to Statistical Modeling Ch. 11 Prob. 32
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-32-SD")
+```
+
+A student is asked to calculate the probability that $x=3.5$ when $x$ is chosen from a normal distribution with the following parameters: mean=3, sd=5.  To calculate the answer, he uses this command:    
+
+<code>
+\> dnorm(3.5, mean=3, sd=5)    
+[1] 0.0794
+</code> 
+
+```{r include=FALSE}
+command=selectSet(name="incorrect", totalPts=1, "He should have used pnorm"=FALSE, "The parameters are wrong"=FALSE, "The answer is zero since the variable x is continuous"=TRUE, "He should have used qnorm"=FALSE)
+```
+This is not right.  Why not? `r I(command)`
+
+`r I(closeProblem())`
+
