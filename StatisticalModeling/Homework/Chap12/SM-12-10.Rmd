@@ -1,0 +1,78 @@
+Intro to Statistical Modeling Ch. 12 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-12-10-SD")
+```
+Here are three different model statements for the kids' feet
+data.  
+* *width* ~ 1
+
+* *width* ~ *sex*
+
+* *width* ~ *sex* - 1
+
+
+Each of the above models for kids' feet is relevant to one of the problems below.  Fit the model to the data in `KidsFeet` and interpret your results to give a **95% confidence interval** on these quantities written in the standard form: point estimate $\pm$ margin of error.
+```{r include=FALSE}
+feet=selectNumber(choices=c(8.76,9.19,9.37,9.98,10.13), correct=c(9.19), totalPts=1, name="PtEstimateBoys")
+```
+* The mean width of boys' feet.
+
+Point estimate: `r I(feet)`
+```{r include=FALSE}
+feet2=selectNumber(choices=c(0.041,0.176,0.211,0.352,1.430,6.540), correct=c(0.211), totalPts=1, name="MargErrorBoys")
+```
+Margin of error: `r I(feet2)`
+
+<aside>
+ANSWER:    
+```{r}
+kids = fetchData("KidsFeet")
+summary(lm(width ~ sex, data=kids))
+```
+
+Since the intercept corresponds directly to the mean of the boys' feet, you can pull off the point estimate and standard error directly from that.  Remember to multiply the standard error by 2 to find the margin of error: $0.1057 \times 2 = 0.211$.
+</aside>
+
+
+
+* The mean width of all children's feet.
+```{r include=FALSE}
+feet3=selectNumber(choices=c(8.15,8.99,9.13,9.86,12.62), correct=c(8.99), totalPts=1, name="PtEstimateAll")
+```
+Point estimate: `r I(feet3)`
+```{r include=FALSE}
+feet4=selectNumber(choices=c(0.16,0.18,0.22,0.35,1.74), correct=c(0.16), totalPts=1, name="MargErrorAll")
+```
+Margin of error: `r I(feet4)`
+
+
+
+<aside>
+ANSWER:    
+``` {r}
+summary(lm(width ~ 1, data=kids))
+```
+
+Remember, multiply the standard error by 2 to get the margin of error.
+</aside>
+
+* The difference between the means of boys' and girls' foot  widths.  (The differences can be either positive or negative,  depending on whether it is boys minus girls or girls minus boys. State your difference as a positive number.)  
+```{r include=FALSE}
+feet5=selectNumber(choices=c(0.406,0.458,0.514,0.582,0.672), correct=c(0.406), totalPts=1, name="PtEstimateDif")
+```
+Point estimate: `r I(feet5)`
+```{r include=FALSE}
+feet6=selectNumber(choices=c(0.16,0.18,0.22,0.30,1.74), correct=c(0.30), totalPts=1, name="MargErrorDif")
+```
+Margin of error: `r I(feet6)`
+
+
+<aside>
+Refer back to the report from the model *width* ~ *sex*. The coefficient on *sexG* reflects how girls' foot widths differ from boys' foot lengths.  Again, remember to double the standard error to get the margin of error.
+</aside>
+
+
+`r I(closeProblem())`
