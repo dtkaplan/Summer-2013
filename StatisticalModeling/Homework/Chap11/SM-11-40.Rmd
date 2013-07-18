@@ -1,0 +1,38 @@
+Intro to Statistical Modeling Ch. 11 Prob. 40
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-40-SD")
+```
+
+As part of a test of the security inspection system in an airport, a government supervisor adds 5 suitcases with illegal materials to an otherwise shipping load, bringing the total to 150 suitcases.
+
+In order to determine whether the shipment should be accepted, security officers randomly select 15 of the suitcases and X-rays them.  If one or more of the suitcases is found to contain the materials, the entire shipment will be searched.
+
+```{r include=FALSE}
+xray=selectSet(name="ProbabilityModel", totalPts=1, "Normal"=FALSE, "Uniform"=FALSE, "Binomial"=TRUE, "Poisson"=FALSE, "Exponential"=FALSE)
+```
+
+* What probability model best applies here in describing the probability that one or more of the five added suitcases will be X-rayed? `r I(xray)`
+
+```{r include=FALSE}
+xray2=selectSet(name="Probability", totalPts=1, "1-pnorm(5,mean=150,sd=15)"=FALSE, "1-pnorm(15,mean=150,sd=5)"=FALSE, "1-punif(5,min=0, max=150)"=FALSE, "1-punif(15,min=0, max=150)"=FALSE, "1-pbinom(0,size=15,prob=5/150)"=TRUE, "1-ppois(0,45/150)"=FALSE, "1-ppois(0,5/150)"=FALSE, "Not enough information to tell."=FALSE)
+```
+* What is the probability that one or more of the five added suitcases
+will be X-rayed? `r I(xray2)`
+
+\begin{MultipleChoice}
+\wrongc{1-pnorm(5,mean=150,sd=15)}
+\wrongc{1-pnorm(15,mean=150,sd=5)}
+\wrongc{1-punif(5,min=0, max=150)}
+\wrongc{1-punif(15,min=0, max=150)}
+\correctc{1-pbinom(0,size=15,prob=5/150)}
+\wrongc{1-ppois(0,45/150)}
+\wrongc{1-ppois(0,5/150)}
+\wrong{Not enough information to tell.}
+\end{MultipleChoice}
+
+`r I(closeProblem())`
+
+

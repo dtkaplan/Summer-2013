@@ -1,0 +1,43 @@
+Intro to Statistical Modeling Ch. 11 Prob. 41
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-41-SD")
+```
+Do the best job you can answering this question.  The information provided is not complete, but that's the way things often are.
+
+Linda is 31 years old, single, outspoken, and very bright.  She majored in philosophy.  As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in antinuclear rallies.  
+
+* Rank the following possibilities from most likely to least likely, for instance "A B C D E":
+
+**A.** Linda is a teacher.     
+**B.** Linda works in a bookstore and takes yoga classes.    
+**C.** Linda is a bank teller.    
+**D.** Linda sells insurance.    
+**E.** Linda is a bank teller and is active in the feminist movement.    
+```{r include=FALSE,eval=FALSE}
+I(textItem(name="possibilities", totalPts=2, rows=1))
+```
+`r I(textItem(name="possibilities", totalPts=2, rows=1))`
+
+
+* Is there any relationship between the probabilities of the above items that you can be absolutely sure is true?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="true", totalPts=2, rows=3))
+```
+`r I(textItem(name="true", totalPts=2, rows=3))`
+
+
+<aside>
+ANSWER:     
+E cannot be more likely than C, because E is a sub-case of C.
+</aside>
+
+From 'Judgments of and by representativeness,' 
+in "Judgment under uncertainty : heuristics and biases"  
+edited by Daniel Kahneman, Paul Slovic, Amos Tversky.
+Pub info   Cambridge ; New York : Cambridge University Press, c1982.
+
+`r I(closeProblem())`
+
