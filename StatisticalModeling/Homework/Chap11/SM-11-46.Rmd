@@ -1,0 +1,54 @@
+Intro to Statistical Modeling Ch. 11 Prob. 46
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-46-SD")
+```
+  *For the following questions enter your work along with your answer in the provided boxes.  You can cut and paste from the computer output, but make sure to indicate clearly and concisely what your answers are.*
+
+In many social issues, policy recommendations are based on cases from the extremes of a distribution.  Consider, for example, a news story (Minnesota Public Radio, March 19, 2006) comparing the high-school graduation rates of Native Americans (85%) and whites (97%).  The disparity becomes more glaring when one compares high-school drop-out rates, 3% for whites and 15% for Native Americans.  
+
+One way to compare these two drop-out rates is simply to take the ratio: five times as many children in one group drop out as in the other.  Or, one could claim that the graduation rate for one group is "only" a factor of 1.14 higher than that for the other.  While both of these descriptions are accurate, neither of them has a unique claim to truth.
+
+Another way to interpret the data is to imagine a student's high-school experience as a point on a quantitative continuum.  If the experience is below a threshold, the student does not graduate.  We can imagine the outcome as being the sum of many contributions: quality of the school and teachers, support from family, peer influences, personality of the student, and so on.
+
+Suppose that we model the high-school experience as a normal distribution with the same standard deviation for whites and Native Americans but with different means.  For the sake of specificity, let the mean for whites be 100 with a standard deviation of 20.  
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="3percent", totalPts=2, rows=3))
+```
+* What is the threshold for graduation?  Find a number such that 3% of whites are below this.     
+`r I(textItem(name="3percent", totalPts=1, rows=3))`
+
+<aside>
+```{r}
+qnorm(.03, mean=100, sd=20)
+```
+</aside>
+
+```{r include=FALSE,eval=FALSE}
+I(textItem(name="15percent", totalPts=2, rows=3))
+```
+* Using the threshold you found above, find the mean for Native Americans such that 15% of children are below the threshold.    
+`r I(textItem(name="15percent", totalPts=1, rows=3))`
+
+<aside>
+```{r}
+pnorm(62.3841, mean=83.1, sd=20 )
+```
+</aside>
+
+This model is, of course, arbitrary.  We don't know that there is anything that corresponds to a quantitative high-school "experience," and we certainly don't know that even if there were it would be distributed according to a normal distribution. Nevertheless, this can be a helpful way to interpret data about the "extremes" when making comparisons of the means.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="meanGroupB", totalPts=2, rows=3))
+```
+* Suppose, contrary to fact, that the drop-out rate for group A is 15% and that for group B were five times as high: 75%.  If group A has a high-school  experience with mean 100 and standard deviation 20, and group B has a standard deviation of 20, what should be the mean of group B to produce the higher drop-out rate.    
+`r I(textItem(name="meanGroupB", totalPts=2, rows=3))`
+
+
+
+
+`r I(closeProblem())`
+

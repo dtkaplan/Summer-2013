@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 43</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 43</h1>
+
+<p>You have decided to become a shoe-maker.  Contrary to popular belief, this is a highly competitive field and you had to take the Shoe-Maker Apprenticeship Trial (SAT) as part of your apprenticeship application.  </p>
+
+<ul>
+<li>The Shoe-maker&#39;s union has told you that among all the people taking the SAT, the mean score is 700 and the standard deviation is 35.</li>
+</ul>
+
+<p>According to this information, what is the percentile corresponding to your SAT score of 750? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-11-43-SD",
+"itemN":      1,
+"name": "YourPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1-pnorm(750, mean=700, sd=35)" 
+}'>1-pnorm(750, mean=700, sd=35)</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-11-43-SD",
+"itemN":      1,
+"name": "YourPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "pnorm(750, mean=700, sd=35)" 
+}'>pnorm(750, mean=700, sd=35)</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-11-43-SD",
+"itemN":      1,
+"name": "YourPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "qnorm(750, mean=700, sd=35)" 
+}'>qnorm(750, mean=700, sd=35)</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-11-43-SD",
+"itemN":      1,
+"name": "YourPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1-qnorm(750, mean=700, sd=35)" 
+}'>1-qnorm(750, mean=700, sd=35)</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-11-43-SD",
+"itemN":      1,
+"name": "YourPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not enough information to answer." 
+}'>Not enough information to answer.</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<ul>
+<li>Your friend just told you that she scored at the 95th percentile, but
+she can&#39;t remember her numerical score.  Using the information from
+the Shoe-maker&#39;s union, what was her score? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-43-SD",
+"itemN":      2,
+"name": "95thPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "pnorm(.95, mean=700, sd=35)" 
+}'>pnorm(.95, mean=700, sd=35)</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-43-SD",
+"itemN":      2,
+"name": "95thPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "pnorm(.95, mean=750, sd=35)" 
+}'>pnorm(.95, mean=750, sd=35)</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-43-SD",
+"itemN":      2,
+"name": "95thPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "qnorm(.95, mean=700, sd=35)" 
+}'>qnorm(.95, mean=700, sd=35)</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-43-SD",
+"itemN":      2,
+"name": "95thPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "qnorm(.95, mean=750, sd=35)" 
+}'>qnorm(.95, mean=750, sd=35)</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-43-SD",
+"itemN":      2,
+"name": "95thPercentile",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Not enough information to answer." 
+}'>Not enough information to answer.</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
