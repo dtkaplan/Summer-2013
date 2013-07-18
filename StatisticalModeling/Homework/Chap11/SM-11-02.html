@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 2</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 2</h1>
+
+<p>A coverage interval gives a range of values.  The &ldquo;level&rdquo; of the interval is the probability that a random trial will fall inside that range.  For example, in a 95% coverage interval, 95% of the trials will fall within the range.</p>
+
+<p>To construct a coverage interval, you need to translate the level into two quantiles, one for the left side of the range and one for the right side.  For example, a 50% coverage interval runs from the 0.25 quantile on the left to the 0.75 quantile on the right; a 60% coverage interval runs from 0.20 on the left to 0.80 on the right. The probabilities used in calculating the quantiles are set so that </p>
+
+<ul>
+<li>the difference between them is the <em>level</em> of the interval. For instance, 0.75 and  0.25 give a 50% interval. </li>
+<li>they are symmetric.  That is, the left probability should be exactly as far from 0 as the right probability is from 1</li>
+</ul>
+
+<p>A classroom of students was asked to calculate the left and right probabilities for various coverage intervals.  Some of their answers were wrong.  Explain what is wrong, if anything, for each of these answers.</p>
+
+<ul>
+<li><p>For a 70% interval, the 0.20 and 0.90 quantiles <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      1,
+"name": "70perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The difference between them isn't 0.70" 
+}'>The difference between them isn&#39;t 0.70</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      1,
+"name": "70perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "They are not symmetrical." 
+}'>They are not symmetrical.</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      1,
+"name": "70perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Nothing is wrong." 
+}'>Nothing is wrong.</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>For a 95% interval, the 0.05 and 0.95 quantiles. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      2,
+"name": "95perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "The difference between them isn't 0.95" 
+}'>The difference between them isn&#39;t 0.95</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      2,
+"name": "95perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "They are not symmetrical." 
+}'>They are not symmetrical.</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      2,
+"name": "95perc",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Nothing is wrong." 
+}'>Nothing is wrong.</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>For a 95% interval, the 0.025 and 0.975 quantiles. <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      3,
+"name": "95perc2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The difference between them isn't 0.95" 
+}'>The difference between them isn&#39;t 0.95</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      3,
+"name": "95perc2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "They are not symmetrical." 
+}'>They are not symmetrical.</option> <option value='{
+"itemInfo": {
+"setID": "SM-11-2-SD",
+"itemN":      3,
+"name": "95perc2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Nothing is wrong." 
+}'>Nothing is wrong.</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -7,7 +7,7 @@ newScorerSet("SM-11-1-SD")
 ```
 
 Two basic operations that you need to perform on probability models are these:    
-* ** percentile** Given a value, what is the probability (according to the model) of the outcome from one trial being that value or less?
+* **percentile** Given a value, what is the probability (according to the model) of the outcome from one trial being that value or less?
 
 * **quantile** Given a probability, what is the value whose percentile is that probability?
 
@@ -19,112 +19,120 @@ Percentile question: What is the percentile that corresponds to a test score of 
 ```{r}
 pnorm(120, mean=100,sd=15)
 ```
-**SHOULD MATCH**    
-[1] 0.9087888
-
 
 Quantile question: What score will 95% of scores be less than or equal to?
  Answer: a score of 125.
-\begin{verbatim}
-> qnorm(0.95, mean=100, sd=15)
-[1] 124.6728
-\end{verbatim}
+```{r}
+qnorm(0.95, mean=100, sd=15)
+```
 
 Here are two very basic questions about percentile and quantile calculations:
 
-\begin{enumerate}[(a)]
-\item \TrueOrFalse{T} The output of a percentile question will always
-be a probability, that is, a number between 0 and 1.
+```{r include=FALSE}
+true=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The output of a percentile question will always be a probability, that is, a number between 0 and 1. `r I(true)`
 
-\item \TrueOrFalse{T} The output of a quantile question will always be
-a value, that is, something in the same units as the random variable.
-\end{enumerate}
+```{r include=FALSE}
+true2=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The output of a quantile question will always be a value, that is, something in the same units as the random variable. `r I(true2)`
 
-\noindent Sometimes to answer more complicated questions, you need first to
-answer one or more percentile or quantile questions.
+Sometimes to answer more complicated questions, you need first to answer one or more percentile or quantile questions.
 
 Answer the following questions, using the normal probability model with the
 parameters given above: 
-\begin{enumerate}[(a)]
-\item What's the test score that almost everybody, say, 99\% of
-people, will do better than?  
-\begin{itemize}
-\item Which kind of calculation is this?
- \SelectSetHoriz{quantile}{percentile,quantile}
-\item What is the answer?
- \SelectSetHoriz{65}{55,65,75,95,115,125,135}
-\end{itemize}
 
-\begin{AnswerText}
-This involves the 0.01 quantile, since 99\% are doing {\bf better}.
-\begin{verbatim}
->  qnorm(.01, mean=100, sd=15)
-[1] 65.10478
-\end{verbatim}
-\end{AnswerText}
+* What's the test score that almost everybody, say, 99% of people, will do better than?  
+```{r include=FALSE}
+test=selectSet(name="testScore", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
+```
+  * Which kind of calculation is this? `r I(test)`
 
+```{r include=FALSE}
+test2=selectNumber(choices=c(55,65,75,95,115,125,135), correct=c(65), totalPts=1, name="testAnswer")
+```
+  * What is the answer? `r I(test2)`
 
-\item To calculate a coverage interval on a probability model, you
-need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these
-probabilities from: \SelectSetHoriz{quantile}{percentile,quantile}
+<aside>
+ANSWER:     
+This involves the 0.01 quantile, since 99% are doing **better**.
+```{r}
+qnorm(.01, mean=100, sd=15)
+```
+</aside>
 
-\item Calculate a 50\% coverage interval on the test scores, that is
-the range from the 0.25 quantile to the 0.75 quantile:
-\begin{itemize}
-\item Left end of interval:\SelectSetHoriz{90}{80,85,90,95,100,105,110,115,120}
-\begin{AnswerText}
-\begin{verbatim}
->  qnorm(.25, mean=100, sd=15)
-[1] 89.88265
->  qnorm(.75, mean=100, sd=15)
-[1] 110.1173
-\end{verbatim}
-\end{AnswerText}
+```{r include=FALSE}
+test3=selectSet(name="calcType", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
+```
+* To calculate a coverage interval on a probability model, you need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these probabilities from: `r I(test3)`
 
+* Calculate a 50% coverage interval on the test scores, that is the range from the 0.25 quantile to the 0.75 quantile:
+```{r include=FALSE}
+test4=selectNumber(name="LeftEnd", totalPts=1,choices=c(80,85,90,95,100,105,110,115,120), correct=c(90))
+```
+  * Left end of interval: `r I(test4)`
 
-\item Right end of interval:
-\SelectSetHoriz{110}{80,85,90,95,100,105,110,115,120}
-\begin{AnswerText}
-\begin{verbatim}
->  qnorm(.25, mean=100, sd=15)
-[1] 89.88265
->  qnorm(.75, mean=100, sd=15)
-[1] 110.1173
-\end{verbatim}
-\end{AnswerText}
+<aside>
+ANSWER:    
+```{r}
+qnorm(.25, mean=100, sd=15)
+```
 
-\end{itemize}
+```{r}
+qnorm(.75, mean=100, sd=15)
+```
+</aside>
 
-\item Calculate an 80\% coverage interval, that is the range from the
-0.10 to the 0.90 quantile:
-\begin{itemize}
-\item Left end of interval: \SelectSetHoriz{81}{52,69,73,81,85,89}
+```{r include=FALSE}
+test5=selectNumber(choices=c(80,85,90,95,100,105,110,115,120), correct=c(110), totalPts=1, name="RightEnd")
+```
+  * Right end of interval: `r I(test5)`
 
-\item Right end of interval: \SelectSetHoriz{119}{117,119,123,128,136}
+<aside>
+ANSWER:     
+```{r}
+qnorm(.25, mean=100, sd=15)
+```
 
-\begin{AnswerText}
-\begin{verbatim}
->  qnorm(.1, mean=100, sd=15)
-[1] 80.77673
->  qnorm(.9, mean=100, sd=15)
-[1] 119.2233
-\end{verbatim}
-\end{AnswerText}
-\end{itemize}
+```{r}
+qnorm(.75, mean=100, sd=15)
+```
+</aside>
 
-\item To calculate the probability of an outcome falling in a given
-range, you need to do two percentile calculations, one for each end of
-the range.  Then you substract the two different probabilities. What is the probability of a test score falling between
-100 and 120?
-\SelectSetHoriz{0.41}{0.25,0.37,0.41,0.48,0.52,0.61,0.73}
+```{r include=FALSE}
+test6=selectNumber(choices=c(52,69,73,81,85,89), correct=c(81), totalPts=1, name="80percentLeft")
+```
+* Calculate an 80% coverage interval, that is the range from the 0.10 to the 0.90 quantile:
+  * Left end of interval: `r I(test6)`
 
-\begin{AnswerText}
-\begin{verbatim}
-> pnorm(120,mean=100,sd=15)- pnorm(100,mean=100,sd=15)
-[1] 0.4087888
-\end{verbatim}
-\end{AnswerText}
+```{r include=FALSE}
+test7=selectNumber(choices=c(117,119,123,128,136), correct=c(119), totalPts=1, name="80percentRight")
+```
+  * Right end of interval: `r I(test7)`
 
-\end{enumerate}
+<aside>
+ANSWER:    
+```{r}
+qnorm(.1, mean=100, sd=15)
+```
+
+```{r}
+qnorm(.9, mean=100, sd=15)
+```
+</aside>
+
+```{r include=FALSE}
+test8=selectNumber(choices=c(0.25,0.37,0.41,0.48,0.52,0.61,0.73), correct=c(0.41), totalPts=1, name="between100and120")
+```
+* To calculate the probability of an outcome falling in a given range, you need to do two percentile calculations, one for each end of the range.  Then you substract the two different probabilities. What is the probability of a test score falling between 100 and 120? `r I(test8)`
+
+<aside>
+```{r}
+pnorm(120,mean=100,sd=15)- pnorm(100,mean=100,sd=15)
+```
+</aside>
+
+`r I(closeProblem())`
 
 

@@ -1,0 +1,62 @@
+Intro to Statistical Modeling Ch. 11 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-4-SD")
+```
+For each of the following probability models, calculate a 95% coverage interval.  This means that you should specify a left value and a right value.  The left value corresponds to a probability of 0.025 and the right value to a probability of 0.975.
+
+* The number of cars driving along a highway in one hour, when the mean number of cars is 2000 per hour.  Hint: Poisson model
+```{r include=FALSE}
+car=selectNumber(choices=c(1812,1904,1913,1928,1935), correct=c(1913), totalPts=1, name="leftSide")
+```
+Left side of interval: `r I(car)`
+```{r include=FALSE}
+car2=selectNumber(choices=c(2064,2072,2077,2088,2151), correct=c(2088), totalPts=1, name="rightSide")
+```
+Right side of interval: `r I(car2)`
+
+<aside>
+ANSWER:    
+```{r}
+qpois(c(0.025,0.975), lambda=2000)
+```
+</aside>
+
+* The number of heads out of 100 flips of a fair coin.  Hint: Binomial model.
+```{r include=FALSE}
+car3=selectNumber(choices=c(36,38,40,42,44,46), correct=c(40), totalPts=1, name="leftSideCoin")
+```
+Left side of interval: `r I(car3)`
+```{r include=FALSE}
+car4=selectNumber(choices=c(54,56,58,60,62,64), correct=c(60), totalPts=1, name="rightSideCoin")
+```
+Right side of interval: `r I(car4)`
+
+<aside>
+ANSWER:    
+```{r}
+qbinom(c(0.025,0.975), size=100, prob=.5)
+```
+</aside>
+
+* The angle of a random spinner, ranging from 0 to 360 degrees. Hint: Uniform model.
+```{r include=FALSE}
+car5=selectNumber(choices=c(9,15,25,36,42,60), correct=c(9), totalPts=1, name="leftSideSpinner")
+```
+Left side of interval: `r I(car5)`
+```{r include=FALSE}
+car6=selectNumber(choices=c(300,318,324,335,345,351), correct=c(351), totalPts=1, name="rightSideSpinner")
+```
+Right side of interval: `r I(car6)`
+
+<aside>
+ANSWER:    
+```{r}
+qunif(c(0.025,0.975), min=0,max=360)
+```
+</aside>
+
+`r I(closeProblem())`
+

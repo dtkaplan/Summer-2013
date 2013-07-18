@@ -263,7 +263,11 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 11
 
-* [Problem 11.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-01.html) **NOT COMPLETE**
+* [Problem 11.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-01.html) working but needs some formatting
+
+* [Problem 11.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-02.html) working
+
+* [Problem 11.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-04.html) working
 
 * [Problem 11.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-05.html) working
 

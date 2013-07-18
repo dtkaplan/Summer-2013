@@ -1,0 +1,37 @@
+Intro to Statistical Modeling Ch. 11 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-2-SD")
+```
+
+A coverage interval gives a range of values.  The "level" of the interval is the probability that a random trial will fall inside that range.  For example, in a 95% coverage interval, 95% of the trials will fall within the range.
+
+To construct a coverage interval, you need to translate the level into two quantiles, one for the left side of the range and one for the right side.  For example, a 50% coverage interval runs from the 0.25 quantile on the left to the 0.75 quantile on the right; a 60% coverage interval runs from 0.20 on the left to 0.80 on the right. The probabilities used in calculating the quantiles are set so that 
+* the difference between them is the *level* of the interval. For instance, 0.75 and  0.25 give a 50% interval. 
+* they are symmetric.  That is, the left probability should be exactly as far from 0 as the right probability is from 1
+
+
+
+A classroom of students was asked to calculate the left and right probabilities for various coverage intervals.  Some of their answers were wrong.  Explain what is wrong, if anything, for each of these answers.
+
+```{r include=FALSE}
+calc=selectSet(name="70perc", totalPts=1, "The difference between them isn't 0.70"=FALSE, "They are not symmetrical."=TRUE, "Nothing is wrong."=FALSE)
+```
+* For a 70% interval, the 0.20 and 0.90 quantiles `r I(calc)`
+
+```{r include=FALSE}
+calc2=selectSet(name="95perc", totalPts=1, "The difference between them isn't 0.95"=TRUE, "They are not symmetrical."=FALSE, "Nothing is wrong."=FALSE)
+```
+* For a 95% interval, the 0.05 and 0.95 quantiles. `r I(calc2)`
+
+
+```{r include=FALSE}
+calc3=selectSet(name="95perc2", totalPts=1, "The difference between them isn't 0.95"=FALSE, "They are not symmetrical."=FALSE, "Nothing is wrong."=TRUE)
+```
+* For a 95% interval, the 0.025 and 0.975 quantiles. `r I(calc3)`
+
+`r I(closeProblem())`
+
+
