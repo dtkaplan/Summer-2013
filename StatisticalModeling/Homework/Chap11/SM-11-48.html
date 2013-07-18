@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 11 Prob. 48</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 11 Prob. 48</h1>
+
+<p>Below are two different graphs of cumulative probability distributions. 
+Using the appropriate graph, not the computer, estimate the items listed below.  Your estimates are not expected to be perfect, but do mark on the graph to show the reasoning behind your answer:</p>
+
+<ul>
+<li><p>The 75th percentile of a normal distribution with mean 2 and standard deviation 3.</p></li>
+<li><p>When flipping 20 fair coins, the probability of getting 7 or fewer heads.</p></li>
+<li><p>The probability of x being 1 standard deviation or more below the mean of a normal distribution.</p></li>
+<li><p>The range that covers 90% of the most likely number of heads when flipping 20 fair coins.</p></li>
+</ul>
+
+<p>%\item This is harder, so do it only when you have done all the
+%other problems on this exam: The mean and standard deviation of
+%the number of heads when flipping 20 fair coins.  (Estimate this
+%graphically, using information available from the graphed normal
+%distribution.)</p>
+
+<p>\end{enumerate}</p>
+
+<p><img src="data:image/png;base64,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" alt="Graph1"/>
+\centerline{\includegraphics[width=2.5in]{cummulative1.png}}</p>
+
+<p><img src="data:image/png;base64,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" alt="Graph2"/>
+\centerline{\includegraphics[width=2.5in]{cummulative3.png}}</p>
+
+</body>
+
+</html>
+

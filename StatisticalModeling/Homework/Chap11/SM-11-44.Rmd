@@ -1,0 +1,168 @@
+Intro to Statistical Modeling Ch. 11 Prob. 44
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-44-SD")
+```
+Both the poisson and binomial probability distributions describe a count of events.   
+
+The binomial distribution describes a series of identical discrete events with two possible outcomes to each event: yes or no, true or false, success or failure, and so on.  The number of "success" or "true" or "yes" events in the series is given by the binomial distribution, so long as the individual events 
+are independent of one another. An example is the number of heads that occur when flipping a coin ten times in a row. Each flip has a heads or tails outcome.  The individual flips are independent.
+
+There are two parameters to the binomial distribution: the number of events ("size") and the probability of the outcome that will be counted as a success.  For the distribution to be binomial, the number of events must be fixed ahead of time and the probability of success must be the same for each event.  The outcome whose probability is represented by the binomial distribution is the number of successful events. 
+
+Example: You flip 10 fair coins and count the number of heads.  In this case the size is 10 and the probability of success is $1/2$.
+
+Counter-example: You flip coins and count the number of flips until the 10th head.  This is not a binomial distribution because the size is not fixed.
+
+The poisson probability model is different.  It describes a situation where the rate at which events happen is fixed but there is no fixed number of events.  
+
+Example: Cars come down the street in a random way but at an average rate of 3 per minute.  The poisson distribution describes the probability of seeing any given number of cars in one minute.  Unlike the binomial distribution, there is no fixed number of events; potentially 50 cars could pass by in one minute (although this is very, very unlikely).
+
+Both the poisson and binomial distributions are discrete.  You can't have 5.5 heads in 10 flips of a coin.  You can't have 4.2 cars pass by in one minute.  Because of this, the basic way to use the tabulated probabilities is as a probability assigned to each possible outcome.
+
+Here is the table of outcomes for the number of heads in 6 flips of a fair coin:
+```{r}
+dbinom(0:5, size=6, prob=.5)
+```
+
+So, the probability of exactly zero heads is $0.016$, the prob. of 1 head is
+$0.094$, and so on.
+
+You may also be interested in the cumulative probability:
+```{r}
+pbinom(0:5, size=6, prob=.5)
+```
+
+So, the probability of 1 head or fewer is $0.109$, just the sum of the probability of exactly 0 heads and exactly one head.
+
+Note that in both cases, there was no point in asking for the probability of more than 6 heads; six is the most that could possibly happen.  If you do ask, the answer will be "zero": it can't happen.
+```{r}
+dbinom(7, size=6, prob=.5)
+```
+
+Similarly, there is no point in asking for the probability of 3.5 heads, that can't happen either.
+```{r}
+dbinom(3.5, size=6, prob=.5)
+```
+
+The software sensibly returns a probability of zero, but warns that you are asking something silly.
+
+The poisson distribution is similar, but different in important ways. If cars pass by a point randomly at an average rate of 3 per minute, here is the probability of seeing 0, 1, 2, ... cars in any randomly selected minute.
+```{r}
+dpois(0:6, 3)
+```
+
+So, there is a 5% chance of seeing no cars in one minute.
+
+But unlike the binomial situation, where the maximum number of successful outcomes is fixed by the number of events, it's possible for a very large number of cars to pass by.
+```{r}
+dpois(0:9, 3)
+```
+
+For instance, there is a 0.2% chance that 9 cars will pass by in one minute.  That's small, but it's definitely non-zero.
+
+The poisson model, like the binomial, describes a situation where the outcome is a whole number of events.  It makes little sense to ask for a fractional outcome.  The probability of a fractional outcome is always zero.
+```{r}
+dpois(3.5, 3)
+```
+
+Often one wants to consider a poisson event over a longer or shorter interval than the one implicit in the specified rate.  For example, when you say that the average rate of cars passing a spot is 3 per minute, the interval of one-minute is implicit.  Suppose, however, that you want to know the number of cars that might pass by a spot in one hour. To calculate this, you need to find the rate in terms of the new interval.  Since one hour is 60 minutes, the rate of 3 per minute is equivalent to 180 per hour.  You can use this to find the
+probability.
+
+For example, the probability that 150 or fewer cars will pass by in one hour (when the average rate is 3 per minute) is given by a cumulative probability:
+```{r}
+ppois(150, 180)
+```
+
+It can be hard to remember whether the above means "150 or fewer" or "fewer than 150."  When in doubt, you can always make the situation explicit by using a non-integer argument
+```{r}
+ppois(150.1, 180)  # includes 150
+```
+
+```{r}
+ppois(149.9, 180)  # excludes 150
+```
+
+This works only when asking for cumulative probabilities, since $150.1$ or less includes the integers 150, 149, and so on.  Were you to ask for the probability of getting exactly $150.1$ cars in one hour, using the <code>dpois</code> operator, the answer would be zero:
+```{r}
+dpois(150.1, 180)
+```
+
+For each of the following, figure out the computer statement with which you can compute the probability.
+
+```{r include=FALSE}
+cars=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.337,0.334,0.437,0.559,0.915,0.951), correct=c(0.035), totalPts=1, name="exactly15")
+```
+* If cars pass a point randomly at an average rate of 10 per minute, what is the probability of exactly 15 cars passing in one minute? `r I(cars)`
+
+<aside>
+ANSWER:     
+```{r}
+dpois(15, lambda=10)
+```
+</aside>
+
+```{r include=FALSE}
+cars2=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.334,0.337,0.437,0.559,0.915,0.951), correct=c(0.951), totalPts=1, name="15orFewer")
+```
+* If cars pass a point randomly at an average rate of 10 per minute, what is the probability of 15 or fewer cars passing in one minute? `r I(cars2)`
+
+<aside>
+ANSWER:     
+```{r}
+ppois(15, lambda=10)
+```
+</aside>
+
+```{r include=FALSE}
+cars3=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.334,0.337,0.437,0.559,0.915,0.951), correct=c(0.559), totalPts=1, name="20orFewer")
+```
+* If cars pass a point randomly at an average rate of 10 per minute, what is the probability of 20 or fewer cars passing in two minutes? `r I(cars3)`
+
+<aside>
+ANSWER:    
+```{r}
+ppois(20, lambda=10*2)
+```
+</aside>
+
+```{r include=FALSE}
+cars4=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.334,0.337,0.437,0.559,0.915,0.951), correct=c(0.0026), totalPts=1, name="1200orFewer")
+```
+* If cars pass a point randomly at an average rate of 10 per minute, what is the probability of 1200 or fewer cars passing in two hours and ten minutes (that is, 130 minutes)? `r I(cars4)`
+
+<aside>
+ANSWER:     
+```{r}
+ppois(1200,10*130)
+```
+</aside>
+
+```{r include=FALSE}
+cars5=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.334,0.337,0.437,0.559,0.915,0.951), correct=c(0.337), totalPts=1, name="1orFewFaculty")
+```
+* A department at a small college has 5 faculty members.  If those faculty are effectively random samples from a population of potential faculty that is 40% female, what is the probability that 1 or fewer of the five deparment members will be female? `r I(cars5)`
+
+<aside>
+ANSWER:     
+```{r}
+pbinom(1, size=5, p=0.4)
+```
+</aside>
+
+```{r include=FALSE}
+cars6=selectNumber(choices=c(0.000,0.0026,0.035,0.053,0.087,0.263,0.334,0.337,0.437,0.559,0.915,0.951), correct=c(0.087), totalPts=1, name="4orMoreFemale")
+```
+* What is the probability that 4 or more will be female? `r I(cars6)`
+
+<aside>
+ANSWER:     
+```{r}
+1-pbinom(3, size=5, p=0.4)
+```
+</aside>
+
+`r I(closeProblem())`
+
