@@ -1,0 +1,88 @@
+Intro to Statistical Modeling Ch. 11 Prob. 11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-11-SD")
+```
+
+In 1898, Ladislaus von Bortkiewicz published *The Law of Small Numbers*, in which he demonstrated the applicability of the Poisson probability law.  One example dealt with the number of Prussian cavalry soldiers who were kicked to death by their horses.  The Prussian army monitored 10 cavalry corps for 20 years and recorded the number $x$ of fatalities each year in each corps.  There were a total of $10 \times 20 = 200$ one-year observations, as shown in the table:
+
+Number of | Number of Times $x$
+|:----:|:----:|
+**Deaths $x$** | **Deaths were Observed**
+0 | 109
+1 | 65
+2 | 22
+3 | 3
+4 | 1
+
+
+
+
+
+```{r include=FALSE}
+death=selectSet(name="mean", totalPts=1, "(109+65+22+3+1)/5"=FALSE, "(109+65+22+3+1)/200"=FALSE, "(0*109 + 1*65 + 2*22 + 3*3 + 4*1)/5"=FALSE, "(0*109 + 1*65 + 2*22 + 3*3 + 4*1)/200"=TRUE, "Can't tell from the information given."=FALSE)
+```
+* From the data in the table, what was the mean number of deaths per year per cavalry corps? `r I(death)`
+
+<aside>
+ANSWER:     
+1. The mean number of deaths per year is an average of the number of deaths per year in each cavalry corps.  There were 200 items recorded: 109 corps with 0 deaths, 65 with 1 death, and so on.  The mean can be calculated as:
+```{r}
+ntimes = c(109,65,22,3,1)
+ndeaths = c(0,1,2,3,4)
+sum(ndeaths*ntimes) / sum(ntimes)
+```
+
+Another completely equivalent way to do this calculation is to explicitly form the estimate of probability and use this formula for the mean: $\sum_{i \mbox{in outcomes}} p_i * v_i$, where the sum is over all of the possible outcomes $i=0, 1, 2, 3, 4$, $p_i$ is the probability of that outcome and $v_i$ is the numerical value associated with that outcome.  In R, this would be
+implemented
+```{r}
+ntimes = c(109,65,22,3,1)
+p = ntimes / sum(ntimes)
+v = c(0,1,2,3,4)
+sum(p*v)
+```
+
+</aside>
+
+```{r include=FALSE}
+death2=selectNumber(choices=c(0.3128,0.4286,0.4662,0.5210,0.5434), correct=c(0.5434), totalPts=1, name="0deaths")
+```
+* Use this mean number of deaths per year and the Poisson probability law to determine the theoretical proportion of years that 0 deaths should occur in any given calvary corps. `r I(death2)`
+
+<aside>
+ANSWER:     
+The mean number of outcomes per year is the parameter to the poisson distribution.  We can calculate the theoretical number of times each outcome should occur by multiplying the density of the poisson distribution at each of the outcomes.  Since there were 200 corps altogether, we'll multiply this density by 200 to translate it to the theoretical expectation of the number of observed cases:
+```{r}
+dpois(c(0,1,2,3,4), 0.61)*200
+```
+
+So, if the poisson model applies, we would expect $108.67$ corps with no deaths per year, $66.29$ with one death per year, and so on.   
+</aside>
+
+* Repeat the probability calculation for 1, 2, 3, and 4 deaths per year per calvary corps.  Multiply the probabilities by 200 to find the expected number of calvary corps with each number of deaths. Which of these tables is closest to the theoretical values:
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` 112.67 | 64.29 | 16.22 | 5.11 | 1.63     
+`r I(f(TRUE))` 108.67 | 66.29 | 20.22 | 4.11 | 0.63     
+`r I(f(FALSE))` 102.67 | 70.29 | 22.22 | 6.11 | 0.63     
+`r I(f(FALSE))` 106.67 | 68.29 | 17.22 | 6.11 | 1.63      
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:     
+The predictions of the model are very close --- within one or two cases of every outcome --- to the actual observed number, so the poisson model seems like a good one for these data.  
+
+We have yet to learn how to define "very close" precisely.  But one way to get a handle on it is to generate random data from the poisson model and see how far that is from the expected values.  For instance:
+```{r}
+table( rpois( 200, 0.61 ) )
+```
+
+This random draw from the theoretical distribution was even further from the expected value than the observed data, suggesting that the observed data are consistent with a random draw from the model.  Of course, we should quantify this and repeat the random draw many times to see what would be a typical deviation from the expected value. That's for later in the course.
+</aside>
+
+`r I(closeProblem())`

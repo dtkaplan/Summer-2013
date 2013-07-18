@@ -1,0 +1,22 @@
+Intro to Statistical Modeling Ch. 11 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-12-SD")
+```
+
+Experience shows that the number of cars entering a park on a summer's day is approximately normally distributed with mean 200 and variance 900.  Find the probability that the number of cars entering the park is less than 195. 
+
+```{r include=FALSE}
+cars=selectSet(name="type", totalPts=1, "percentile"=TRUE, "quantile"=FALSE)
+```
+* Which type of calculation is this? `r I(cars)`
+
+```{r include=FALSE}
+cars2=selectNumber(choices=c(0.3125,0.4338,0.4885,0.5237,0.6814,0.7163), correct=c(0.4338), totalPts=1, name="calculation")
+```
+* Do the calculation with the given parameters.  (Watch out! Look carefully
+at the parameters and make sure they are in a standard form.) `r I(cars2)`
+
+`r I(closeProblem())`

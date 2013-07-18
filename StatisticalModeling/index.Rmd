@@ -260,3 +260,44 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 10.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-20.html) working
 
 * [Problem 10.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-21.html) working
+
+## Chapter 11
+
+* [Problem 11.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-11.html) working
+
+* [Problem 11.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-12.html) working
+
+* [Problem 11.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-20.html) working
+
+* [Problem 11.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-21.html) working
+
+* [Problem 11.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-22.html) working
+
+* [Problem 11.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-23.html) working
+
+* [Problem 11.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-30.html) working
+
+* [Problem 11.31](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-31.html) working
+
+* [Problem 11.32](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-32.html) working
+
+* [Problem 11.33](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-33.html) working
+
+* [Problem 11.34](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-34.html) working
+
+* [Problem 11.35](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-35.html) working
+
+* [Problem 11.36](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-36.html) working
+
+* [Problem 11.40](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-40.html) working
+
+* [Problem 11.41](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-41.html) working
+
+* [Problem 11.42](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-42.html) working
+
+* [Problem 11.44](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-44.html) working
+
+* [Problem 11.45](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-45.html) working
+
+* [Problem 11.48](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-48.html) **NOT COMPLETE**
+

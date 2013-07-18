@@ -1,0 +1,42 @@
+Intro to Statistical Modeling Ch. 11 Prob. 42 
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-42-SD")
+```
+
+According to the website http://www.wikihealth.com/Pregnancy, approximately 3.6% of pregnant women give birth on the predicted date (using the method that calculates gestational duration starting at the time of the last menstrual period).  Assume that the probability of giving birth is a normal distribution whose mean is at the predicted date.  The standard deviation quantifies the spread of gestational durations.
+
+Using just the 3.6% "fact," make an estimate of the standard deviation of all pregnancies assuming that pregnancies are distributed as a normal distribution centered on the predicted date.  Hint: Think of the area under the distribution over the range that covers one 24-hour period.
+
+```{r include=FALSE}
+birth=selectNumber(choices=c(8,9,10,11,12), correct=c(11), totalPts=1, name="days")
+```
+Your answer should be in days.  Select the closest value: `r I(birth)`
+
+
+
+<aside>
+ANSWER:     
+Make a guess for the standard deviation and then calculate the probability over a 1-day interval centered on the mean.  
+
+Modify the guess until you get a probability of 3.6%.
+```{r}
+s=9;pnorm(.5,mean=0,sd=s)-pnorm(-.5,mean=0,sd=s)
+```
+
+```{r}
+s=10;pnorm(.5,mean=0,sd=s)-pnorm(-.5,mean=0,sd=s)
+```
+
+```{r}
+s=11;pnorm(.5,mean=0,sd=s)-pnorm(-.5,mean=0,sd=s)
+```
+
+```{r}
+s=12;pnorm(.5,mean=0,sd=s)-pnorm(-.5,mean=0,sd=s)
+```
+</aside>
+
+`r I(closeProblem())`
