@@ -1,0 +1,26 @@
+Intro to Statistical Modeling Ch. 12 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-12-1-SD")
+```
+Here's a confidence interval: $12.3 \pm 9.8$ with 95% confidence.
+
+```{r include=FALSE}
+conf=selectSet(name="12.3", totalPts=1, "margin of error"=FALSE, "point estimate"=TRUE, "standard error"=FALSE, "confidence level"=FALSE, "confidence interval"=FALSE)
+```
+* What is 12.3? `r I(conf)`
+
+```{r include=FALSE}
+conf2=selectSet(name="9.8", totalPts=1, "margin of error"=TRUE, "point estimate"=FALSE, "standard error"=FALSE, "confidence level"=FALSE, "confidence interval"=FALSE)
+```
+* What is 9.8? `r I(conf2)`
+
+```{r include=FALSE}
+conf3=selectSet(name="95percent", totalPts=1, "margin of error"=FALSE, "point estimate"=FALSE, "standard error"=FALSE, "confidence level"=TRUE, "confidence interval"=FALSE)
+```
+* What is 95%? `r I(conf3)`
+
+
+`r I(closeProblem())`

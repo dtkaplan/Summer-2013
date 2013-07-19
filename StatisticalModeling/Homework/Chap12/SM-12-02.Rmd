@@ -1,0 +1,46 @@
+Intro to Statistical Modeling Ch. 12 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-12-2-SD")
+```
+
+```{r include=FALSE}
+kids=fetchData("KidsFeet")
+```
+
+
+Look at this report from a model of the kids' feet data, 
+```{r}
+summary(lm(width~length+sex,data=kids))
+```
+
+* Based on the output of the report, which of these statements is a correct confidence interval on the <code>sexG</code> coefficient?     
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+  `r I(f(FALSE))` $-.23 \pm 0.13$ with 95 percent confidence     
+  `r I(f(FALSE))` $-.23 \pm 0.13$ with 50 percent confidence    
+  `r I(f(TRUE))` $-.23 \pm 0.13$ with 68 percent confidence    
+  `r I(f(FALSE))` $-.23 \pm 0.0805$ with 95 percent confidence    
+  `r I(f(FALSE))` $-.23 \pm 0.23$ with 68 percent confidence    
+  `r I(f(FALSE))` None of the above
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+* Based on the output of the report, which of these statements is a correct confidence interval on the <code>length</code> coefficient?
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+  `r I(g(FALSE))` $0.22 \pm 0.050$ with 95 percent confidence     
+  `r I(g(TRUE))` $0.22 \pm 0.050$ with 68 percent confidence    
+  `r I(g(FALSE))` $0.22 \pm 0.100$ with 50 percent confidence    
+  `r I(g(FALSE))` $0.22 \pm 0.070$ with 50 percent confidence     
+  `r I(g(FALSE))` None of the above
+```{r include=FALSE, results='hide'}
+I(g(finish=TRUE))
+```
+
+`r I(closeProblem())`
