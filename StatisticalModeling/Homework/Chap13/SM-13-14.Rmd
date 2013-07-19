@@ -1,0 +1,33 @@
+Intro to Statistical Modeling Ch. 13 Prob. 14
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-13-14-SD")
+```
+Consider these two sampling distributions:
+
+```{r pair2,fig=TRUE,pdf=TRUE,echo=FALSE,figwidth=5,figheight=4}
+x <- seq(-30,130,length=1000)
+d1 <- dnorm(x,mean=35,sd=10)
+d2 <- dnorm(x,mean=50,sd=30)
+plot(x,d1,xlab='Test Statistic', main='Conditional Sampling Distributions', ylab='Prob. Density', type='l', lwd=8)
+text(30,.02,'Null')
+lines(x,d2, lwd=4, col='blue')
+text(80,.015,'Alternative', col='blue')
+``` 
+
+
+
+```{r include=FALSE}
+test=selectSet(name="powerful1tailedTest", totalPts=1, "About 5%"=FALSE, "About 50%"=TRUE, "About 95%"=FALSE, "Can't tell from the information given."=FALSE)
+```
+Suppose that you insisted that every hypothesis test have a significance of 0.05.  For the conditional sampling distributions shown above, what would be the power of the most powerful possible one-tailed test? `r I(test)`
+
+
+```{r include=FALSE}
+test2=selectSet(name="powerful2tailedTest", totalPts=1, "About 10% bigger than the one-tailed test."=TRUE, "About 10% smaller than the one-tailed test."=FALSE, "About 50% bigger than the one-tailed test."=FALSE, "About 50% smaller than the one-tailed test."=FALSE, "Can't tell from the information given."=FALSE)
+```
+What would be the power of the most powerful possible two-tailed test? `r I(test2)`
+
+`r I(closeProblem())`

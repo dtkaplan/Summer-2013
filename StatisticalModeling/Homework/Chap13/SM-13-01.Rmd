@@ -1,0 +1,46 @@
+Intro to Statistical Modeling Ch. 13 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-13-1-SD")
+```
+Which of the following are legitimate possible outcomes of a hypothesis test?  Mark as "true" any legitimate ones and "false" for any illegitimate ones.
+
+```{r include=FALSE}
+true=selectSet(name="TorF", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* accept the alternative hypothesis `r I(true)`
+```{r include=FALSE}
+true2=selectSet(name="TorF2", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* accept the null hypothesis `r I(true2)`
+```{r include=FALSE}
+true3=selectSet(name="TorF3", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* reject the alternative hypothesis `r I(true3)`
+```{r include=FALSE}
+true4=selectSet(name="TorF4", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* fail to reject the alternative hypothesis `r I(true4)`
+```{r include=FALSE}
+true5=selectSet(name="TorF5", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* reject the null hypothesis `r I(true5)`
+```{r include=FALSE}
+true6=selectSet(name="TorF6", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* fail to reject the null hypothesis`r I(true6)`
+```{r include=FALSE}
+true7=selectSet(name="TorF7", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* indeterminate result `r I(true7)`
+
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="illegitimate", totalPts=2, rows=3))
+```
+Pick one of the illegitimate outcomes and explain why it is illegitimate.    
+`r I(textItem(name="illegitimate", totalPts=2, rows=3))`
+
+`r I(closeProblem())`
