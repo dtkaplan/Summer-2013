@@ -1,0 +1,80 @@
+Intro to Statistical Modeling Ch. 14 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-5-SD")
+```
+One of the difficulties in interpreting p-values comes from what is sometimes called **publication bias**: only those studies with sufficiently low p-values are published; we never see studies on the same subject that didn't have low p-values.
+
+We should interpret a p-value of, say, 0.03 differently in these two situations:
+
+1. The study that generated the p-value was the only one that has been done on that subject.  In this case, the p-value can reasonably be taken at face value.
+
+2. The study that generated the p-value was one of 20 different studies but was the only one of the 20 studies that generated a p-value below 0.05.  In this case, the p-value has little genuine meaning since, even if the null hypothesis were true we wouldn't be surprised to see a p-value like 0.03 from the "best" of 20 studies.
+
+
+It's sometimes the case that "para-normal" phenomena --- mind-reading, for instance --- are subjected to studies and that the studies sometimes give low p-values.  It's hard to interpret the p-value directly because of the publication bias effect. We can, of course, ask that the study be repeated, but if there are many repeats that we never hear about (because they happened to generate large
+p-values), it can still be difficult to interpret the p-value.
+
+There is one way out, however.  In addition to asking that the study be repeated, we can ask that the sample size be increased.  The reason is that the larger sample size should generate much smaller p-values if the studied effect is genuine.  However, if the effect is spurious, we'll still expect to see published p-values around 0.03.
+
+To explore this, consider the following result of a ficticious study of the possible link between "positive thinking" (*posThinking*) and the t-cell count (*tcells*) in the immune system of 50 different people.  The study has produced a "suggestive" p-value of about 0.08:
+
+<code>
+Model:    tcells ~ posThinking      
+Coefficients:    
+                  Estimate Std. Error t value Pr(>|t|)         
+(Intercept)         3.6412     1.2506   2.912  0.00614      
+posThinking         0.2325     0.1293   1.798  0.07847      
+</code>
+Here is a statement that can generate the p-value:
+```{r}
+2*(1-pt(1.798,df=48))
+```
+**SHOULD MATCH**
+[1] 0.07846795
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+Why is the the output of <code>pt</code> subtracted from 1?    
+`r I(f(FALSE))` This is the way <code>pt</code> is used. 
+\wrong{This is always the way \texttt{pt} is used.}
+\correct{Because the t-value is positive.}
+\wrong{Because we want a one-tailed test.}
+\wrong{Because the t-value is less than 2.}
+\end{MultipleChoice}
+
+\bigskip
+
+The \texttt{df} in the statement stands for the degrees of freedom of
+the residual, just as in the F test.  There were 50 cases and two
+model vectors (the intercept and the posthinking indicator vector), so
+48 degrees of freedom in the residual.
+
+Now imagine that the same study had been repeated with four times as much
+data: 200 cases.  Assuming that everything else remained the same, how
+big would the standard error on \VN{posThinking} be given the
+usual relationship between the size of the standard error and the
+number of cases $n$:
+
+\begin{itemize}
+\item Standard error with $n=200$ cases:
+ 
+\SelectSetHoriz{0.065}{0.52,0.26,0.13,0.065,0.032}
+
+\item With $n=200$ cases, how many degrees of freedom will there be in the
+residual?
+
+\SelectSetHoriz{198}{48,50,98,100,198,200}
+
+\item Using the standard error with $n=200$ cases, and assuming that the
+coefficient remains exactly as reported in the table, recalculate the p-value
+on \texttt{posThinking}.  Select the one of these that is closest to
+the p-value: 
+
+\SelectSetHoriz{0.0004}{0.4,0.04,0.004,0.0004,0.00004,0.000004}
+
+\end{itemize}
+

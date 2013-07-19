@@ -345,3 +345,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 13.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap13/SM-13-15.html) working
 
+## Chapter 14
+
+* [Problem 14.27](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-27.html) working, new problem
+

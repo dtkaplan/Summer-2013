@@ -1,0 +1,32 @@
+Intro to Statistical Modeling Ch. 14 Prob. 27
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-27-SD")
+```
+Here is the report of a simple model of the foot-length data:
+```{r}
+kids = fetchData("KidsFeet");
+summary( lm( length ~ 1, data=kids ) )
+```
+**SHOULD MATCH**    
+Coefficients:
+          Estimate   Std. Err.  t value Pr(>|t|)    
+(Intercept) 24.723       0.211    117.2   <2e-16 
+
+
+The summary report includes a p-value (written as $\verb+Pr(>|t|)+$).
+```{r include=FALSE}
+feet=selectSet(name="null", totalPts=1, "The mean cannot be calculated."=FALSE, "The sample mean is zero."=FALSE, "The population mean is zero."=TRUE, "The sample mean is greater than zero."=FALSE, "The sample mean is less than zero."=FALSE, "The population mean is greater than zero."=FALSE, "The population mean is less than zero."=FALSE)
+```
+What is the Null Hypothesis corresponding to this p-value: `r I(feet)`
+
+<aside>
+ANSWER:    
+Null hypotheses **always** refer to the population, not the sample. (It's the p-value that is about your sample, referring what you found in the sample to what you would find from a random sample drawn from a population satisfying the null hypothesis.)
+
+If the null were true, the coefficients in models would be zero (on average).  For this simple model, *A* ~ 1, the coefficient refers to the mean, so the null hypothesis underlying the p-value in this regressin report is that the population mean is zero.
+</aside>
+
+`r I(closeProblem())`
