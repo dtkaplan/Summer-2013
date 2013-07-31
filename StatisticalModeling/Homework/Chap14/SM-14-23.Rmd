@@ -1,0 +1,71 @@
+Intro to Statistical Modeling Ch. 14 Prob. 23
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-23-SD")
+```
+
+Suppose that you have worked hard to carry out an experiment about baldness that involves several different treatments: rubbing various herbs and spices on the scalp, playing hairy music, drinking kiwi juice, laying fresh moss on the head, eating peaches.  Then, you measure the density of hair follicles after 2 months. 
+
+You plot out your data:
+
+```{r moss,fig=TRUE,pdf=TRUE,echo=FALSE,figwidth=4,figheight=4}
+d = run.sim( bogus.groups, ngroups=5, 10, seed=123)
+d$group = factor(d$group, labels=c("Sage", "Kiwi", "Music","Moss","Peaches"))
+boxplot( val/8 ~ group, data=d, ylab="Follicle Count (per cm^2)",las=2)
+```
+# also nice pictures from seed 116 and 122
+@ 
+
+\centerline{\includegraphics[width=3.5in]{Figures/multiple-moss}}
+
+It looks like the music treatment produced the lowest number of follicles, while moss produced the highest.  (Kiwi is a close second, but the range is so large that you aren't sure about it.)
+
+You decide to extract the Music and Moss groups and build a model of follicle density versus treatment.  (This sort of test, comparing the means of two groups, is called a t-test.)
+
+```{r results='hide'}
+dd = subset(d, group=='Music' | group=="Moss")
+summary(lm(val ~ group, data=dd))
+```
+
+```{r echo=FALSE}
+print(xtable(summary(lm(val ~ group, data=dd))),floating=FALSE)
+```
+
+Aha!  $p = 0.04$.  You have evidence that such treatments can have an effect.
+
+Or do you?  Admittedly, a p-value of 0.04 will not be terribly compelling to someone who doubts that music and moss affect follicle density in different ways.  But it is below the conventional threshold of 0.05.  Consider some of the things that could be wrong:
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+* What's the null hypothesis in the hypothesis test presented above?
+`r I(f(FALSE))` That Moss and Music are no different than a Control group.    
+`r I(f(TRUE))` That Moss and Music are the same as each other.    
+`r I(f(FALSE))` That Moss and Music have no effect.     
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:     
+It's good experimental practice to compare treatment to a control, but strangely, no control group was included in the experiment.  Since the model is comparing Moss and Music, the null hypothesis is that both have the same effect, not that this effect is zero.  (Without a control group, there's no way to say what "zero effect" would be.)
+</aside>
+
+```{r include=FALSE}
+prob1=selectNumber(choices=c(0,0.01,0.04,0.05,0.10,0.50,0.94,0.99), correct=c(0.04), totalPts=1, name="pvalue")
+```
+* Assuming that the null hypothesis is correct, what's the probability of seeing a p-value as small or smaller than the one actually observed? `r I(prob1)`
+
+You chose the two groups to compare based on the graph.  There were many other possible pairs of groups: Sage vs Peaches, Kiwi vs Moss, etc.  Altogether, there are $5*4/2 = 10$ possible pairs of groups.  (In general, when there are $k$ different groups, there $k(k-1)/2$ possible pairs of groups.  So if $k=10$ there are 45 different possible pairs.)  
+
+The Bonferroni correction calls for the p-value to be adjusted based on the number of comparisons done.  There are two, equivalent ways to do it.  One way is to divide the conventional threshold by the number of comparisons and use the new threshold.  So for this test, with 10 pairs of groups, the threshold for rejecting the null would be $0.05/10 = 0.005$.  The other way is just to multiply the p-value by the number of comparisons and then compare this to the standard threshold. 
+
+```{r include=FALSE}
+prob2=selectNumber(choices=c(0.005,0.01,0.04,0.05,0.20,0.40,0.80), correct=c(0.40), totalPts=1, name="multiplyBy")
+```
+Using the "multiply by" approach to the Bonferroni correction, what is the p-value value on the Music-vs-Moss comparison? `r I(prob2)`
+
+
+`r I(closeProblem())`

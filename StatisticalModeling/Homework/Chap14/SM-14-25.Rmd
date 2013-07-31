@@ -1,0 +1,46 @@
+Intro to Statistical Modeling Ch. 14 Prob. 25
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-25-SD")
+```
+You and your statistics-class friends are having a disagreement.  Does the result of a hypothesis test depend on the units in which quantities are measured?  For example, in the kids' feet data, `KidsFeet` the length and width are measured in cm.  Would it matter if they had been measured in inches or meters?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="strategy", totalPts=2, rows=3))
+```
+Do a numerical experiment to figure out whether the units make a difference.  Explain your strategy concisely and give the corresponding commands and the results here.      
+`r I(textItem(name="strategy", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+The strategy to compare hypothesis tests, one in the original units and one in some other units.  Since the outcome of the hypothesis test is set by the p-value, if the p-values from the tests are the same, then the tests are equivalent.  Of course, the same overall model structure has to be used in the various tests; just change the units of the variables.
+
+As an example, here is the kids feet data.  Originally, the lengths and widths are in centimeters.  These statements will create two new variables with the lengths and widths converted to inches.  (The conversion factor, from centimeters to inches, is 0.3937.)
+```{r}
+kids = fetchData("KidsFeet")
+```
+
+```{r}
+kids$length.inches = kids$length*.3937
+kids$width.inches = kids$width*.3937
+```
+
+
+Here is a series of models using the two versions of the variables.  Notice that the p-values are the same in every case, regardless of the units used.
+
+```{r}
+summary(lm( width ~ sex + length, data=kids))
+```
+
+```{r}
+summary(lm( width.inches ~ sex + length, data=kids))
+```
+
+```{r}
+summary(lm( width.inches ~ sex + length.inches, data=kids))
+```
+
+</aside>
+
+`r I(closeProblem())`

@@ -1,0 +1,206 @@
+Intro to Statistical Modeling Ch. 14 Prob. 24
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-24-SD")
+```
+This exercise concerns assessing the appropriateness of the Bonferroni correction in a setting where you are choosing one pair out of several possible groups to compare to each other.
+
+Recall that the Bonferroni correction relates to a situation where you are conducting $k$ hypothesis tests and choosing the p-value that is most favorable.  For example, you might have tested several different treatments: B, C, D, ... against a control, A.    
+An example is shown in the figure.
+
+![Fig1](multiple2-many.png)
+
+Group E seems to stand out as different from the control, so you decide to focus your attention on comparing the control A to group E.
+
+To generate the data in the graph, use this command:
+```{r eval=FALSE}
+d = run.sim(bogus.groups, ngroups=8, seed=230)
+```
+
+When you do this, your results should match these exactly (subject only to round-off):
+```{r}
+head(d)
+```
+**SHOULD MATCH**
+  group     val
+1     A  96.477
+2     A 101.519
+3     A 104.930
+4     A 105.426
+5     A 106.640
+6     B 100.612
+
+```{r}
+tail(d)
+```
+**SHOULD MATCH**
+   group     val
+35     G  96.053
+36     H  86.914
+37     H  92.466
+38     H 109.589
+39     H 126.523
+40     H 136.980
+
+As you might guess from the name of the simulation, <code>bogus.groups</code>, the data are being sampled from a population in which the assigned *group* is unrelated to the quantitative variable *val*.  That is, the null hypothesis is true.
+
+The point of the <code>seed=230</code> statement is to make sure that exactly the same "random" numbers are generated as in the example.
+
+Using the data, extract the subset of data for groups A and E, and carry out a hypothesis test on *group* using the model *val* ~ *group*.  (Hint: in the <code>subset</code> command, use the selector variable <code>group == 
+ "A'' | group == "E''</code> to select cases that are from either group A *or* group E.  Then apply <code>lm</code> to this subset of data.)
+
+```{r include=FALSE}
+prob1=selectNumber(choices=c(0.011,0.032,0.057,0.128,0.193,0.253), correct=c(0.011), totalPts=1, name="AtoE")
+```
+*  What is the p-value that compares groups A to E. `r I(prob1)`
+
+
+As a convenience, you are provided with a special-purpose function, <code>compare.many.groups</code> that does each of the hypothesis tests comparing the control group to another group.  You can run it this way:
+```{r}
+compare.many.groups( d, control="A")
+```
+**SHOULD MATCH**
+  group1 group2     diff   pvalue
+1      A      B  -3.4563 0.377303
+2      A      C  -2.2038 0.789874
+3      A      D  -1.0472 0.795413
+4      A      E -21.5810 0.011020
+5      A      F  -7.8415 0.036872
+6      A      G   1.3614 0.749352
+7      A      H   7.4958 0.464852
+
+For the simulated data, your results should match exactly (subject to round-off).  Confirm that the p-value from this report matches the one you got by hand above.
+
+```{r include=FALSE}
+prob2=selectNumber(choices=c(0.021,0.031,0.037,0.042,0.049), correct=c(0.037), totalPts=1, name="groupF")
+```
+* As it happens, the p-value for group F is also below the 0.05 threshold.  What is that p-value? `r I(prob2)`
+
+The Bonferroni correction takes the "raw" p-value and corrects it by multiplying by the number of comparisons.  Since there are 7 comparisons altogether (groups B, C, ..., H against group A), multiply the p-value by 7.
+
+```{r include=FALSE}
+prob3=selectNumber(choices=c(0.011,0.037,0.077,0.11,0.37,0.77), correct=c(0.077), totalPts=1, name="Bonferroni")
+```
+* What is the Bonferroni-corrected p-value for the A vs E comparison? `r I(prob3)`
+
+Now you are going to do a simulation to test whether the Bonferroni correction is appropriate.  The idea is to generate data from a simulation that implements the null hypothesis, calculate the p-value for the "best looking" comparison between the control group A and one of the other groups, and see how often the p-value is less than 0.05.  It will turn out that the p-value on the best looking comparison will be below 0.05 much too often. (If the p-value is to be taken at face value, when the null hypothesis is true then $p <0.05$ should happen only 5\% of the time.) Then you'll apply the Bonferroni correction and see if this fixes things.
+
+Because this is a somewhat elaborate computation, the following leads you through the development of the R statement that will generate the results needed.  Each step is a slight elaboration on the previous one.
+
+1. Generate one realization from the <code>bogus.groups</code> simulation and find the A vs other group p-values.  In this example, you will use <code>seed=111</code> in the first few steps so that you can compare your output directly to what's printed here.   This can be done in two statements, like this:
+```{r}
+d = run.sim( bogus.groups, ngroups=8,seed=111 )
+compare.many.groups( d, control="A")
+```
+**SHOULD MATCH**
+  group1 group2      diff  pvalue
+1      A      B  -2.78824 0.73112
+2      A      C  16.01192 0.11136
+3      A      D   0.11785 0.98931
+4      A      E  11.83709 0.12047
+5      A      F   9.73525 0.49863
+6      A      G -10.98126 0.43226
+7      A      H   6.99226 0.46696
+
+
+* It's helpful to combine the two statements above into a single statement.  That will make it easier to automate later on.  To do this, just put the statement that created <code>d</code> in place of <code>d</code>, as in the following.
+ (The statement is so long that it's spread over 3 lines.  You can cut it out of this page and into an R session, if you wish.)
+```{r}
+compare.many.groups( 
+             run.sim( bogus.groups, ngroups=8,seed=111 ),
+                      control="A")
+```
+**SHOULD MATCH**
+  group1 group2      diff  pvalue
+1      A      B  -2.78824 0.73112
+2      A      C  16.01192 0.11136
+3      A      D   0.11785 0.98931
+4      A      E  11.83709 0.12047
+5      A      F   9.73525 0.49863
+6      A      G -10.98126 0.43226
+7      A      H   6.99226 0.46696
+
+It happens that none of the p-values from this simulation were $< 0.05$.
+
+* Extend the statement above to extract the smallest p-value.  This involves prefacing the statement with <code>min(</code> and following it with <code>pvalue</code>.
+
+```{r}
+min(compare.many.groups( 
+         run.sim( bogus.groups, ngroups=8,seed=111 ),
+                  control="A")$pvalue)
+```
+**SHOULD MATCH**
+[1] 0.11136
+
+* Now, run this statement a dozen times, using <code>do(12)*</code>.  Assign the results to an object <code>s</code>.
+```{r}
+s = do(12)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8,seed=111 ),control="A")$pvalue)
+
+s
+```
+**SHOULD MATCH**
+ [1] 0.11136 0.11136 0.11136 0.11136 0.11136
+ [6] 0.11136 0.11136 0.11136 0.11136 0.11136
+[11] 0.11136 0.11136
+
+Don't be too surprised by the result.  You got exactly the same answer on each trial
+because the same random "seed" was used every time.  
+
+* Delete the random seed, so that new random numbers will be generated on each trial.
+```{r}
+s = do(12)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8 ),        control="A")$pvalue)
+
+s
+```
+**SHOULD MATCH**
+ [1] 0.204602 0.052472 0.013789 0.037551
+ [5] 0.035872 0.261042 0.133712 0.080999
+ [9] 0.033976 0.167735 0.431789 0.166764
+
+
+* The point of running a dozen trials was just to produce a manageable amount of output for you to read.  Now generate a thousand trials and, storing the results in <code>s</code>.  It will take about a minute for the computer to complete the calculation, more on older computers.
+```{r}
+s = do(1000)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8 ),                      control="A")$pvalue)
+```
+
+```{r include=FALSE}
+prob4=selectNumber(choices=c(0.01,0.02,0.05,0.10,0.20,0.30,0.40,0.50), correct=c(0.20), totalPts=1, name="raw")
+```
+Then answer the following questions:
+* About what fraction of the "raw" (that is, uncorrected) p-values are below 0.05? (Pick the closest answer.) `r I(prob4)`
+
+<aside>
+ANSWER:     
+Your results may differ from the following, because a random simulation has been used.  But they should be close.
+```{r}
+table(s < .05)
+```
+**SHOULD MATCH**
+FALSE  TRUE 
+  783   217 
+
+According to these results, in 20% of the trials, the null hypothesis has been rejected.  This is much too high a Type I error rate.
+</aside>
+
+```{r include=FALSE}
+prob6=selectNumber(choices=c(0.01,0.02,0.05,0.10,0.20,0.30,0.40,0.50), correct=c(0.05), totalPts=1, name="pLessThan.05")
+```
+* Now calculate the Bonferroni correction.  Remember that there were 7 comparisons done in each trial, of which the one resulting in the smallest p-value was selected.  What fraction of trials led to $p < .05$? (Pick the closest answer.) `r I(prob6)`
+
+<aside>
+ANSWER:     
+Again, your results may differ somewhat from the following, because a random simulation has been used.
+```{r}
+table(s*7 < .05)
+```
+**SHOULD MATCH**
+FALSE  TRUE 
+  959    41 
+
+The Type I error rate is here about 4%, much closer to what it should be if the p-values are to be taken seriously.
+<aside>
+
+`r I(closeProblem())`
+

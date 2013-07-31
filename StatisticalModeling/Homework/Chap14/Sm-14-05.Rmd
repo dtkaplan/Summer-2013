@@ -15,66 +15,56 @@ We should interpret a p-value of, say, 0.03 differently in these two situations:
 
 
 It's sometimes the case that "para-normal" phenomena --- mind-reading, for instance --- are subjected to studies and that the studies sometimes give low p-values.  It's hard to interpret the p-value directly because of the publication bias effect. We can, of course, ask that the study be repeated, but if there are many repeats that we never hear about (because they happened to generate large
-p-values), it can still be difficult to interpret the p-value.
+p-values), it can still be difficult to interpret the p-value. 
 
 There is one way out, however.  In addition to asking that the study be repeated, we can ask that the sample size be increased.  The reason is that the larger sample size should generate much smaller p-values if the studied effect is genuine.  However, if the effect is spurious, we'll still expect to see published p-values around 0.03.
 
 To explore this, consider the following result of a ficticious study of the possible link between "positive thinking" (*posThinking*) and the t-cell count (*tcells*) in the immune system of 50 different people.  The study has produced a "suggestive" p-value of about 0.08:
 
-<code>
-Model:    tcells ~ posThinking      
+
+Model:    tcells ~ posThinking          
 Coefficients:    
                   Estimate Std. Error t value Pr(>|t|)         
 (Intercept)         3.6412     1.2506   2.912  0.00614      
 posThinking         0.2325     0.1293   1.798  0.07847      
-</code>
+
 Here is a statement that can generate the p-value:
 ```{r}
 2*(1-pt(1.798,df=48))
 ```
-**SHOULD MATCH**
-[1] 0.07846795
+
 
 ```{r include=FALSE}
 f=newMC(totalPts=1)
 ```
 Why is the the output of <code>pt</code> subtracted from 1?    
-`r I(f(FALSE))` This is the way <code>pt</code> is used. 
-\wrong{This is always the way \texttt{pt} is used.}
-\correct{Because the t-value is positive.}
-\wrong{Because we want a one-tailed test.}
-\wrong{Because the t-value is less than 2.}
-\end{MultipleChoice}
+`r I(f(FALSE))` This is the way <code>pt</code> is used.     
+`r I(f(FALSE))` This is always the way <code>pt</code> is used.     
+`r I(f(TRUE))` Because the t-value is positive.     
+`r I(f(FALSE))` Because we want a one-tailed test.     
+`r I(f(FALSE))` Because the t-value is less than 2.     
+```{r include=FALSE, results="hide"}
+I(f(finish=TRUE))
+```
 
-\bigskip
 
-The \texttt{df} in the statement stands for the degrees of freedom of
-the residual, just as in the F test.  There were 50 cases and two
-model vectors (the intercept and the posthinking indicator vector), so
-48 degrees of freedom in the residual.
+The <code>df</code> in the statement stands for the degrees of freedom of the residual, just as in the F test.  There were 50 cases and two model vectors (the intercept and the posthinking indicator vector), so 48 degrees of freedom in the residual.
 
-Now imagine that the same study had been repeated with four times as much
-data: 200 cases.  Assuming that everything else remained the same, how
-big would the standard error on \VN{posThinking} be given the
-usual relationship between the size of the standard error and the
-number of cases $n$:
+Now imagine that the same study had been repeated with four times as much data: 200 cases.  Assuming that everything else remained the same, how big would the standard error on *posThinking* be given the usual relationship between the size of the standard error and the number of cases $n$:
 
-\begin{itemize}
-\item Standard error with $n=200$ cases:
+```{r include=FALSE}
+prob1=selectNumber(choices=c(0.52,0.26,0.13,0.065,0.032), correct=c(0.065), totalPts=1, name="error200cases")
+```
+* Standard error with $n=200$ cases: `r I(prob1)`
  
-\SelectSetHoriz{0.065}{0.52,0.26,0.13,0.065,0.032}
+```{r include=FALSE}
+prob2=selectNumber(choices=c(48,50,98,100,198,200), correct=c(198), totalPts=1, name="df200cases")
+```
+* With $n=200$ cases, how many degrees of freedom will there be in the residual? `r I(prob2)`
 
-\item With $n=200$ cases, how many degrees of freedom will there be in the
-residual?
+```{r include=FALSE}
+prob3=selectNumber(choices=c(0.4,0.04,0.004,0.0004,0.00004,0.000004), correct=c(0.0004), totalPts=1, name="pvalue")
+```
+* Using the standard error with $n=200$ cases, and assuming that the coefficient remains exactly as reported in the table, recalculate the p-value on <code>posThinking</code>.  Select the one of these that is closest to the p-value: `r I(prob3)`
 
-\SelectSetHoriz{198}{48,50,98,100,198,200}
-
-\item Using the standard error with $n=200$ cases, and assuming that the
-coefficient remains exactly as reported in the table, recalculate the p-value
-on \texttt{posThinking}.  Select the one of these that is closest to
-the p-value: 
-
-\SelectSetHoriz{0.0004}{0.4,0.04,0.004,0.0004,0.00004,0.000004}
-
-\end{itemize}
-
+`r I(closeProblem())`

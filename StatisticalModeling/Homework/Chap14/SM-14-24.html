@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 14 Prob. 24</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 14 Prob. 24</h1>
+
+<p>This exercise concerns assessing the appropriateness of the Bonferroni correction in a setting where you are choosing one pair out of several possible groups to compare to each other.</p>
+
+<p>Recall that the Bonferroni correction relates to a situation where you are conducting \( k \) hypothesis tests and choosing the p-value that is most favorable.  For example, you might have tested several different treatments: B, C, D, &hellip; against a control, A.<br/>
+An example is shown in the figure.</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0IAAAJ7CAYAAADOXCGlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAD9aSURBVHhe7d3fi9z3mS94/QF940tdGAJC4IuBIRhdOORCvoiZYEjCCcYkWRo7JDhhGIbZxfZOSDyBcc5hp4cZYpbjzGGaM4jsiXaTxgZnduSstedENrGddMYeIuHtnB1tYmU6E3sk23TsTiKrn60qVUnd1d3qb1dLVd+q9+sFH7Cru1r1PN/P8/l8nq4ffagAAADCaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA4miEAACAOBohAAAgjkYIAACIoxECAADiaIQAAIA4GiEAACCORggAAIijEQIAAOJohAAAgDgaIQAAII5GCAAAiKMRAgAA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av3179eTD32498zO3EPP1Bv9r+zu9VqaP3J1Yh35d/XYU6/VWpv/gFCfRggAIItGiAYu19rrP6kfnPtVpzXay3qdf/ZEffMfXqp/fmunP7PaThohAIAsGiHo0AgBAGTRCEGHRggASJZ4DtIIQYdGCABIlngWSj//OfnSk14IAEC2xLNQ+vnPyZee9EIAALIlnoXSz39OvvSkFwIAkC3xLJR+/nPy3dF6nT/1ZC0sLNy08denztdef4t1ktILAQDIlngWSj//OfnuaK2WF45fmxw3YxxZWK7L/Z/eRoPHCQCQKPEslH7+c/LdxcbaT+u7j3+yjvQnyKEjx+u++fmaH3F8/sQ5zwgBALRU4lko/fzn5HsjG2/X2cXP19HuJJn7aP3Z939ZG/0vzZr0QgAA2mFwJkkbkzDJf7sNnHz3snGxfrTw8ZrrTpQ7Hq1Tv2rzC9xGl14IAEA7DM4kaWMSJvlvt4GTbxPrZ2vx/qOdiXJbHXvsv9WlGXxaKL0QAIB2SDuTTDLetFwPc/JtZKPTC/1NfWyuM1nmPl2LK+/2b58d6YUAALRD2plkkvGm5XqYk29TG7+qMwtfrPn5B+oPT5yt3/ZvnhXphQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8ablepiTLz3phQAAtEPamWSS8abl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" alt="Fig1"/></p>
+
+<p>Group E seems to stand out as different from the control, so you decide to focus your attention on comparing the control A to group E.</p>
+
+<p>To generate the data in the graph, use this command:</p>
+
+<pre><code class="r">d = run.sim(bogus.groups, ngroups = 8, seed = 230)
+</code></pre>
+
+<p>When you do this, your results should match these exactly (subject only to round-off):</p>
+
+<pre><code class="r">head(d)
+</code></pre>
+
+<pre><code>## Error: object &#39;d&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+  group     val
+1     A  96.477
+2     A 101.519
+3     A 104.930
+4     A 105.426
+5     A 106.640
+6     B 100.612</p>
+
+<pre><code class="r">tail(d)
+</code></pre>
+
+<pre><code>## Error: object &#39;d&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+   group     val
+35     G  96.053
+36     H  86.914
+37     H  92.466
+38     H 109.589
+39     H 126.523
+40     H 136.980</p>
+
+<p>As you might guess from the name of the simulation, <code>bogus.groups</code>, the data are being sampled from a population in which the assigned <em>group</em> is unrelated to the quantitative variable <em>val</em>.  That is, the null hypothesis is true.</p>
+
+<p>The point of the <code>seed=230</code> statement is to make sure that exactly the same &ldquo;random&rdquo; numbers are generated as in the example.</p>
+
+<p>Using the data, extract the subset of data for groups A and E, and carry out a hypothesis test on <em>group</em> using the model <em>val</em> ~ <em>group</em>.  (Hint: in the <code>subset</code> command, use the selector variable <code>group == 
+ &quot;A&#39;&#39; | group == &quot;E&#39;&#39;</code> to select cases that are from either group A <em>or</em> group E.  Then apply <code>lm</code> to this subset of data.)</p>
+
+<ul>
+<li> What is the p-value that compares groups A to E. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.011" 
+}'>0.011</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.032" 
+}'>0.032</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.057" 
+}'>0.057</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.128" 
+}'>0.128</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.193" 
+}'>0.193</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.253" 
+}'>0.253</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>As a convenience, you are provided with a special-purpose function, <code>compare.many.groups</code> that does each of the hypothesis tests comparing the control group to another group.  You can run it this way:</p>
+
+<pre><code class="r">compare.many.groups(d, control = &quot;A&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+  group1 group2     diff   pvalue
+1      A      B  -3.4563 0.377303
+2      A      C  -2.2038 0.789874
+3      A      D  -1.0472 0.795413
+4      A      E -21.5810 0.011020
+5      A      F  -7.8415 0.036872
+6      A      G   1.3614 0.749352
+7      A      H   7.4958 0.464852</p>
+
+<p>For the simulated data, your results should match exactly (subject to round-off).  Confirm that the p-value from this report matches the one you got by hand above.</p>
+
+<ul>
+<li>As it happens, the p-value for group F is also below the 0.05 threshold.  What is that p-value? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.021" 
+}'>0.021</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.031" 
+}'>0.031</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.037" 
+}'>0.037</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.042" 
+}'>0.042</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.049" 
+}'>0.049</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>The Bonferroni correction takes the &ldquo;raw&rdquo; p-value and corrects it by multiplying by the number of comparisons.  Since there are 7 comparisons altogether (groups B, C, &hellip;, H against group A), multiply the p-value by 7.</p>
+
+<ul>
+<li>What is the Bonferroni-corrected p-value for the A vs E comparison? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.011" 
+}'>0.011</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.037" 
+}'>0.037</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.077" 
+}'>0.077</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.11" 
+}'>0.11</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.37" 
+}'>0.37</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.77" 
+}'>0.77</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>Now you are going to do a simulation to test whether the Bonferroni correction is appropriate.  The idea is to generate data from a simulation that implements the null hypothesis, calculate the p-value for the &ldquo;best looking&rdquo; comparison between the control group A and one of the other groups, and see how often the p-value is less than 0.05.  It will turn out that the p-value on the best looking comparison will be below 0.05 much too often. (If the p-value is to be taken at face value, when the null hypothesis is true then \( p <0.05 \) should happen only 5\% of the time.) Then you&#39;ll apply the Bonferroni correction and see if this fixes things.</p>
+
+<p>Because this is a somewhat elaborate computation, the following leads you through the development of the R statement that will generate the results needed.  Each step is a slight elaboration on the previous one.</p>
+
+<ol>
+<li>Generate one realization from the <code>bogus.groups</code> simulation and find the A vs other group p-values.  In this example, you will use <code>seed=111</code> in the first few steps so that you can compare your output directly to what&#39;s printed here.   This can be done in two statements, like this:</li>
+</ol>
+
+<pre><code class="r">d = run.sim(bogus.groups, ngroups = 8, seed = 111)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;run.sim&quot;
+</code></pre>
+
+<pre><code class="r">compare.many.groups(d, control = &quot;A&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+  group1 group2      diff  pvalue
+1      A      B  -2.78824 0.73112
+2      A      C  16.01192 0.11136
+3      A      D   0.11785 0.98931
+4      A      E  11.83709 0.12047
+5      A      F   9.73525 0.49863
+6      A      G -10.98126 0.43226
+7      A      H   6.99226 0.46696</p>
+
+<ul>
+<li>It&#39;s helpful to combine the two statements above into a single statement.  That will make it easier to automate later on.  To do this, just put the statement that created <code>d</code> in place of <code>d</code>, as in the following.
+(The statement is so long that it&#39;s spread over 3 lines.  You can cut it out of this page and into an R session, if you wish.)</li>
+</ul>
+
+<pre><code class="r">compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+  group1 group2      diff  pvalue
+1      A      B  -2.78824 0.73112
+2      A      C  16.01192 0.11136
+3      A      D   0.11785 0.98931
+4      A      E  11.83709 0.12047
+5      A      F   9.73525 0.49863
+6      A      G -10.98126 0.43226
+7      A      H   6.99226 0.46696</p>
+
+<p>It happens that none of the p-values from this simulation were \( < 0.05 \).</p>
+
+<ul>
+<li>Extend the statement above to extract the smallest p-value.  This involves prefacing the statement with <code>min(</code> and following it with <code>pvalue</code>.</li>
+</ul>
+
+<pre><code class="r">min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)$pvalue)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+[1] 0.11136</p>
+
+<ul>
+<li>Now, run this statement a dozen times, using <code>do(12)*</code>.  Assign the results to an object <code>s</code>.</li>
+</ul>
+
+<pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), 
+    control = &quot;A&quot;)$pvalue)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<pre><code class="r">
+s
+</code></pre>
+
+<pre><code>## Error: object &#39;s&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+ [1] 0.11136 0.11136 0.11136 0.11136 0.11136
+ [6] 0.11136 0.11136 0.11136 0.11136 0.11136
+[11] 0.11136 0.11136</p>
+
+<p>Don&#39;t be too surprised by the result.  You got exactly the same answer on each trial
+because the same random &ldquo;seed&rdquo; was used every time.  </p>
+
+<ul>
+<li>Delete the random seed, so that new random numbers will be generated on each trial.</li>
+</ul>
+
+<pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<pre><code class="r">
+s
+</code></pre>
+
+<pre><code>## Error: object &#39;s&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+ [1] 0.204602 0.052472 0.013789 0.037551
+ [5] 0.035872 0.261042 0.133712 0.080999
+ [9] 0.033976 0.167735 0.431789 0.166764</p>
+
+<ul>
+<li>The point of running a dozen trials was just to produce a manageable amount of output for you to read.  Now generate a thousand trials and, storing the results in <code>s</code>.  It will take about a minute for the computer to complete the calculation, more on older computers.</li>
+</ul>
+
+<pre><code class="r">s = do(1000) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
+</code></pre>
+
+<p>Then answer the following questions:</p>
+
+<ul>
+<li>About what fraction of the &ldquo;raw&rdquo; (that is, uncorrected) p-values are below 0.05? (Pick the closest answer.) <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.02" 
+}'>0.02</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.05" 
+}'>0.05</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.2" 
+}'>0.2</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4" 
+}'>0.4</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Your results may differ from the following, because a random simulation has been used.  But they should be close.</p>
+
+<pre><code class="r">table(s &lt; 0.05)
+</code></pre>
+
+<pre><code>## Error: object &#39;s&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+FALSE  TRUE 
+  783   217 </p>
+
+<p>According to these results, in 20% of the trials, the null hypothesis has been rejected.  This is much too high a Type I error rate.
+</aside></p>
+
+<ul>
+<li>Now calculate the Bonferroni correction.  Remember that there were 7 comparisons done in each trial, of which the one resulting in the smallest p-value was selected.  What fraction of trials led to \( p < .05 \)? (Pick the closest answer.) <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.02" 
+}'>0.02</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.05" 
+}'>0.05</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.2" 
+}'>0.2</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4" 
+}'>0.4</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "pLessThan.05",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> </select><span id='out5' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Again, your results may differ somewhat from the following, because a random simulation has been used.</p>
+
+<pre><code class="r">table(s * 7 &lt; 0.05)
+</code></pre>
+
+<pre><code>## Error: object &#39;s&#39; not found
+</code></pre>
+
+<p><strong>SHOULD MATCH</strong>
+FALSE  TRUE 
+  959    41 </p>
+
+<p>The Type I error rate is here about 4%, much closer to what it should be if the p-values are to be taken seriously.
+<aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
