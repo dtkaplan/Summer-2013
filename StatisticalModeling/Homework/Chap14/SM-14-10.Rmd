@@ -1,0 +1,35 @@
+Intro to Statistical Modeling Ch. 14 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-10-SD")
+```
+
+The t- and F-distributions are closely related.  That is, you can calculate the p-value on a t-statistic by using the F distribution, if you do it right. 
+
+Generate a large random sample from a t-distribution with 10 degrees of freedom.  Then generate another random sample from the F-distribution with 1 and 10 degrees of freedom.  
+
+Graphically compare the distributions of the F and t values.  What do you see?
+
+```{r include=FALSE}
+prob1=selectSet(name="TorF", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* They are the same. `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="TorF2", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The F distribution is much more skew to the right. `r I(prob2)`
+```{r include=FALSE}
+prob3=selectSet(name="TorF3", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* The t distribution is symmetrical around zero. `r I(prob3)`
+
+Now compare the distributions of the F values and the **square** of the t values.  What do you see?
+
+```{r include=FALSE}
+prob4=selectSet(name="TorF4", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* They are the same. `r I(prob4)`
+
+`r I(closeProblem())`

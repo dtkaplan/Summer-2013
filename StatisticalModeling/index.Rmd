@@ -347,7 +347,17 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 14
 
-* [Problem 14.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-05.html) **not complete**
+* [Problem 14.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-05.html) issue with chart
+
+* [Problem 14.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-10.html) working
+
+* [Problem 14.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-12.html) working
+
+* [Problem 14.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-23.html) issues with code
+
+* [Problem 14.24](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-24.html) issues with code
+
+* [Problem 14.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-25.html) working
 
 * [Problem 14.27](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-27.html) working, new problem
 

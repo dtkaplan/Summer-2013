@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 14 Prob. 12</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 14 Prob. 12</h1>
+
+<p>Zebra mussels are a small, fast reproducing species of freshwater mussel native to the lakes of southeast Russia.  They have accidentally been introduced in other areas, competing with native species and creating problems for people as they cover the undersides of docks and boats, clog water intakes and other underwater structures.  Zebra mussels even attach themselves to other mussels, sometimes starving those mussels.</p>
+
+<p><img src="data:image/jpeg;base64,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" alt="Zebra Mussel"/><br/>
+<strong><em>Zebra mussels growing on a larger, native mussel.</em></strong>    </p>
+
+<p>Ecologists Shirley Baker and Daniel Hornbach examined whether zebra mussels gain an advantage by attaching to other mussels rather than to rocks.(<em>baker-hornbach-2008</em>) The ecologists collected samples of small rocks and <em>Amblema plicata</em> mussels, each of which had a collection of zebra mussels attached.  The samples were transported to a laboratory where the group of mussels from each individual rock or <em>Amblema</em> were removed and placed in an aquarium equipped to measure oxygen uptake and ammonia excretion.  After these physiological measurements were made,  the biochemical composition of the mussel tissue was determined: the percentage of protein, lipid, carbohydrate, and ash.  </p>
+
+<p>Baker and Hornbach found that zebra mussels attached to <em>Amblema</em> had greater physiological activity than those attached to rocks as measured by oxygen uptake and ammonia excretion.  But this appears to be a sign of extra effort for the <em>Amblema</em>-attached zebra mussels, since they had lower carbohydrate and lipid levels.  In other words, attaching to <em>Amblema</em> appears to be disadvantageous to the zebra mussels compared to attaching to a rock.</p>
+
+<p>In this problem, you will use the data collected by Baker and Hornbach to reprise their statistical analysis.  The data are in the file <code>zebra-mussels.csv</code>. </p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">GroupID</th>
+<th align="right">dry.mass</th>
+<th align="right">count</th>
+<th align="right">attachment</th>
+<th align="right">ammonia</th>
+<th align="right">O2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="right">1</td>
+<td align="right">0.55</td>
+<td align="right">20</td>
+<td align="right">Rock</td>
+<td align="right">0.075</td>
+<td align="right">0.082</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="right">2</td>
+<td align="right">0.45</td>
+<td align="right">19</td>
+<td align="right">Rock</td>
+<td align="right">0.066</td>
+<td align="right">0.70</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="right">3</td>
+<td align="right">0.37</td>
+<td align="right">20</td>
+<td align="right">Rock</td>
+<td align="right">0.074</td>
+<td align="right">0.062</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="right">&hellip;</td>
+<td align="right">and</td>
+<td align="right">so</td>
+<td align="right">on</td>
+<td align="right">&hellip;</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="right">28</td>
+<td align="right">0.89</td>
+<td align="right">28</td>
+<td align="right">Amblema</td>
+<td align="right">0.248</td>
+<td align="right">2.68</td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="right">29</td>
+<td align="right">0.70</td>
+<td align="right">31</td>
+<td align="right">Amblema</td>
+<td align="right">0.258</td>
+<td align="right">2.26</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="right">30</td>
+<td align="right">0.68</td>
+<td align="right">64</td>
+<td align="right">Amblema</td>
+<td align="right">0.235</td>
+<td align="right">2.05</td>
+</tr>
+</tbody></table>
+
+<p></aside>
+NOTE:     </p>
+
+<table><thead>
+<tr>
+<th align="left">GroupID</th>
+<th align="right">dry.mass</th>
+<th align="right">count</th>
+<th align="right">attachment</th>
+<th align="right">lipid</th>
+<th align="right">protein</th>
+<th align="right">carbo</th>
+<th align="right">ash</th>
+<th align="right">Kcal</th>
+<th align="right">ammonia</th>
+<th align="right">O2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="right">1</td>
+<td align="right">0.55</td>
+<td align="right">20</td>
+<td align="right">Rock</td>
+<td align="right">8.1</td>
+<td align="right">47</td>
+<td align="right">22</td>
+<td align="right">5.5</td>
+<td align="right">3.6</td>
+<td align="right">0.075</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="right">2</td>
+<td align="right">0.45</td>
+<td align="right">19</td>
+<td align="right">Rock</td>
+<td align="right">9.3</td>
+<td align="right">54</td>
+<td align="right">23</td>
+<td align="right">6.3</td>
+<td align="right">4.1</td>
+<td align="right">0.066</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="right">3</td>
+<td align="right">0.37</td>
+<td align="right">20</td>
+<td align="right">Rock</td>
+<td align="right">9.1</td>
+<td align="right">49</td>
+<td align="right">21</td>
+<td align="right">5.6</td>
+<td align="right">3.7</td>
+<td align="right">0.074</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="right">&hellip;</td>
+<td align="right">and</td>
+<td align="right">so</td>
+<td align="right">on</td>
+<td align="right">&hellip;</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="right">28</td>
+<td align="right">0.89</td>
+<td align="right">28</td>
+<td align="right">Amblema</td>
+<td align="right">8.2</td>
+<td align="right">60</td>
+<td align="right">NA</td>
+<td align="right">5.5</td>
+<td align="right">NA</td>
+<td align="right">0.248</td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="right">29</td>
+<td align="right">0.70</td>
+<td align="right">31</td>
+<td align="right">Amblema</td>
+<td align="right">9.4</td>
+<td align="right">49</td>
+<td align="right">21</td>
+<td align="right">5.8</td>
+<td align="right">3.8</td>
+<td align="right">0.258</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="right">30</td>
+<td align="right">0.68</td>
+<td align="right">64</td>
+<td align="right">Amblema</td>
+<td align="right">8.0</td>
+<td align="right">NA</td>
+<td align="right">18</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">0.235</td>
+</tr>
+</tbody></table>
+
+<p></aside></p>
+
+<p>There are 30 cases altogether. The unit of analysis was not an individual zebra mussel but the group of zebra mussels that were attached to individual rocks or <em>Amblema</em>.  </p>
+
+<p>The variables are:</p>
+
+<ul>
+<li><p><em>dry.mass</em> The mass of the dried tissue of the group, in grams.</p></li>
+<li><p><em>count</em>  How many mussels in the group.</p></li>
+<li><p><em>attachment</em> The substrate to which the mussels in the group were attached: a rock or an <em>Amblema</em> mussel.</p></li>
+<li><p><em>O2</em>  Oxygen uptake in mg per hour for the group.</p></li>
+<li><p><em>ammonia</em> &ndash; Nitrogen excretion measured as ammonia in mg per hour for the group.</p></li>
+<li><p><em>lipid</em>, <em>protein</em>, <em>carbo</em>, <em>ash</em> Biochemical makeup as percent of the dry weight for each of these.</p></li>
+<li><p><em>Kcal</em> Total calorific value of the tissue in kilo-calories per gram.</p></li>
+</ul>
+
+<p>A first question is whether the amount of mussel tissue is greater for the rock-attached or the <em>Amblema</em>-attached zebra mussels.  Here is the report of a model:</p>
+
+<pre><code class="r">z = fetchData(&quot;zebra-mussels.csv&quot;)
+</code></pre>
+
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/zebra-mussels.csv
+</code></pre>
+
+<pre><code class="r">summary(lm(dry.mass ~ attachment, data = z))
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = dry.mass ~ attachment, data = z)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.3218 -0.1835  0.0171  0.0866  0.4727 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      0.6846     0.0554   12.36  1.2e-12 ***
+## attachmentRock  -0.1983     0.0770   -2.58    0.016 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.207 on 27 degrees of freedom
+##   (1 observation deleted due to missingness)
+## Multiple R-squared:  0.197,  Adjusted R-squared:  0.168 
+## F-statistic: 6.64 on 1 and 27 DF,  p-value: 0.0158
+</code></pre>
+
+<p>Based on this report, which of these claims do data support? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "dataSupport",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Smaller mass for rock-attached mussels, as a group." 
+}'>Smaller mass for rock-attached mussels, as a group.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "dataSupport",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Larger mass for rock attached mussels, as a group." 
+}'>Larger mass for rock attached mussels, as a group.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "dataSupport",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "No statistically significant difference in mass between the rock-and Amblema-attached mussels." 
+}'>No statistically significant difference in mass between the rock-and Amblema-attached mussels.</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:<br/>
+Note that the coefficient on <em>attachmentRock</em> is negative, suggesting that the <em>dry.mass</em> of mussels attached to a rock is smaller than the reference group (those attached to other mussels. The corresponding p-value is small (\( 0.016 \)), suggesting that it&#39;s unlikely that a negative coefficient of this size would be the result of sampling variation.
+</aside></p>
+
+<p>The <em>dry.mass</em> variable gives the mass of the entire group of mussels.  It might be that the mussels were systematically different in size on the two different substrates.  One way to look at this is to compute the dry mass per individual mussel. This can be calculated by dividing <em>dry.mass</em> by <em>count</em>:</p>
+
+<pre><code class="r">z$ind.mass = z$dry.mass/z$count
+</code></pre>
+
+<p>Fit a model of <em>ind.mass</em> versus <em>attachment</em>.  Which of the claims does this model support? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      2,
+"name": "claimSupport2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Smaller mass for rock-attached mussels, as a group." 
+}'>Smaller mass for rock-attached mussels, as a group.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      2,
+"name": "claimSupport2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Larger mass for rock-attached mussels, as a group." 
+}'>Larger mass for rock-attached mussels, as a group.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      2,
+"name": "claimSupport2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "No statistically significant difference in mass between the rock- and Amblema-attached mussels." 
+}'>No statistically significant difference in mass between the rock- and Amblema-attached mussels.</option> </select><span id='out2' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:    </p>
+
+<pre><code class="r">z$ind.mass = z$dry.mass/z$count
+summary(lm(ind.mass ~ attachment, data = z))
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = ind.mass ~ attachment, data = z)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.01560 -0.00632  0.00125  0.00353  0.02591 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     0.02196    0.00259    8.47  5.9e-09 ***
+## attachmentRock  0.00226    0.00354    0.64     0.53    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.00935 on 26 degrees of freedom
+##   (2 observations deleted due to missingness)
+## Multiple R-squared:  0.0154, Adjusted R-squared:  -0.0225 
+## F-statistic: 0.407 on 1 and 26 DF,  p-value: 0.529
+</code></pre>
+
+<p>At first glance, the coefficient on <em>attachmentRock</em> seems positive, suggesting that the mass of individual mussels is greater for those attached to a rock than for the reference group.  However, the large p-value (0.53) suggests that a coefficient of this size could easily be the result of sampling variation in a population in which there is no relationship between the form of attachment and the individual mass.
+</aside></p>
+
+<p>In summarizing their results about oxygen uptake and nitrogen excretion, Baker and Hornbach wrote:</p>
+
+<blockquote>
+<p>*Attachment substrate had significant effects on ammonia excretion and oxygen uptake rates. Dreissenids [that is, Zebra mussels] attached to Amblema had higher ammonia excretion rates (\( p < 0.0001 \)) and higher oxygen uptake rates (\( p < 0.0001 \)) compared to dreissenids attached to rocks.</p>
+</blockquote>
+
+<p>To check their statistics, fit these models for oxygen uptake per individual and ammonia excretion per individual:</p>
+
+<pre><code class="r">mod1 = lm(O2/count ~ attachment, data = z)
+mod2 = lm(ammonia/count ~ attachment, data = z)
+</code></pre>
+
+<p>The coefficients on the <em>attachment</em> variable indicate that:</p>
+
+<ul>
+<li>ammonia excretion is <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      3,
+"name": "ammoniaExcretion",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "lower" 
+}'>lower</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      3,
+"name": "ammoniaExcretion",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "higher" 
+}'>higher</option> </select><span id='out3' class='shiny-html-output'> </span> for rock-attached zebra mussels than for <em>Amblema</em>-attached mussels.</li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Model 2 is the one that examines ammonia excretion:</p>
+
+<pre><code class="r">summary(mod2)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = ammonia/count ~ attachment, data = z)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.003921 -0.001141 -0.000171  0.000903  0.006367 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     0.006419   0.000674    9.52  5.8e-10 ***
+## attachmentRock -0.002019   0.000921   -2.19    0.038 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.00243 on 26 degrees of freedom
+##   (2 observations deleted due to missingness)
+## Multiple R-squared:  0.156,  Adjusted R-squared:  0.123 
+## F-statistic:  4.8 on 1 and 26 DF,  p-value: 0.0376
+</code></pre>
+
+<p>The coefficient on <em>attachmentRock</em> is negative, suggesting that ammonia excretion is lower for rock-attached mussels.  The p-value is \( 0.037 \), just barely below the standard for declaring the result &ldquo;statistically significant.&rdquo;
+</aside></p>
+
+<ul>
+<li>oxygen uptake is <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      4,
+"name": "oxygenUptake",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "lower" 
+}'>lower</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      4,
+"name": "oxygenUptake",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "higher" 
+}'>higher</option> </select><span id='out4' class='shiny-html-output'> </span> for rock-attached than for <em>Amblema-attached</em>.</li>
+</ul>
+
+<p><aside>
+Model 1 is the one that examines oxygen uptake:</p>
+
+<pre><code class="r">summary(mod1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = O2/count ~ attachment, data = z)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.03806 -0.00947  0.00195  0.00639  0.04314 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     0.05258    0.00562    9.36  8.2e-10 ***
+## attachmentRock -0.01289    0.00767   -1.68      0.1    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0202 on 26 degrees of freedom
+##   (2 observations deleted due to missingness)
+## Multiple R-squared:  0.098,  Adjusted R-squared:  0.0633 
+## F-statistic: 2.82 on 1 and 26 DF,  p-value: 0.105
+</code></pre>
+
+<p>The <em>attachmentRock</em> coefficient is negative, suggesting that oxygen uptake is lower for rock-attached mussels.  But note that the p-value is \( 0.10 \) &mdash; so the value is consistent with sampling variation from a population where there is no difference in oxygen uptake between rock-attached mussels and the reference group.
+</aside></p>
+
+<ul>
+<li>These results are consistent with Baker and Hornbach&#39;s claims. <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      5,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      5,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out5' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>Look at the p-values on the <em>attachment</em> variable.  What are they?</p>
+
+<ul>
+<li><p>Ammonia: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      6,
+"name": "ammonia",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      6,
+"name": "ammonia",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.04" 
+}'>0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      6,
+"name": "ammonia",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      6,
+"name": "ammonia",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.25" 
+}'>0.25</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      6,
+"name": "ammonia",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4" 
+}'>0.4</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
+<li><p>Oxygen: <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      7,
+"name": "oxygen",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      7,
+"name": "oxygen",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.04" 
+}'>0.04</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      7,
+"name": "oxygen",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      7,
+"name": "oxygen",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.25" 
+}'>0.25</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      7,
+"name": "oxygen",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4" 
+}'>0.4</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>Perhaps you are surprised to see that the p-values from your models are quite different from those reported by Baker and Hornbach.  That&#39;s because Baker and Hornbach included <em>ind.mass</em> as a covariate in their models, in order to take into account how the metabolic rate might depend on the mass of the mussel.</p>
+
+<p>Following Baker and Hornbach&#39;s procedure, fit these models:</p>
+
+<pre><code class="r">mod3 = lm(O2/count ~ ind.mass + attachment, data = z)
+mod4 = lm(ammonia/count ~ ind.mass + attachment, data = z)
+</code></pre>
+
+<p>You&#39;ll get different p-values for the <em>attachment</em> variable in these models depending on whether the analysis is done using ANOVA (which is often called &ldquo;Analysis of Covariance&rdquo; (ANCOVA) when there is a covariate in the model, or is done using a regression report.  In ANCOVA, the p-value depends on whether <em>ind.mass</em> is put before or after <em>attachment</em>.</p>
+
+<p>What is the regression report p-value on <em>attachment</em>?</p>
+
+<ul>
+<li><p>Oxygen <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      8,
+"name": "oxygen2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.6e-06" 
+}'>1.6e-06</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      8,
+"name": "oxygen2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1.6e-05" 
+}'>1.6e-05</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      8,
+"name": "oxygen2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.0016" 
+}'>0.0016</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      8,
+"name": "oxygen2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.016" 
+}'>0.016</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      8,
+"name": "oxygen2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.16" 
+}'>0.16</option> </select><span id='out8' class='shiny-html-output'> </span></p></li>
+<li><p>Ammonia <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "5e-07" 
+}'>5e-07</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5e-04" 
+}'>5e-04</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1e-04" 
+}'>1e-04</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.001" 
+}'>0.001</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.01" 
+}'>0.01</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-12-SD",
+"itemN":      9,
+"name": "ammonia2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> </select><span id='out9' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>The reason that including <em>ind.mass</em> as a covariate has improved the p-value is that <em>ind.mass</em> has soaked up the variance in the response variable.  Show an ANOVA report for one of the two models <em>mod3</em> or <em>mod4</em> and explain what in the report demonstrates that <em>ind.mass</em> is soaking up variance. <textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      2,
+"name": "soak",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><aside>
+ANSWER:   </p>
+
+<pre><code class="r">anova(mod3)
+</code></pre>
+
+<pre><code>## Analysis of Variance Table
+## 
+## Response: O2/count
+##            Df  Sum Sq Mean Sq F value  Pr(&gt;F)    
+## ind.mass    1 0.00794 0.00794   109.3 1.3e-10 ***
+## attachment  1 0.00206 0.00206    28.4 1.6e-05 ***
+## Residuals  25 0.00182 0.00007                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
+
+<p>The <em>ind.mass</em> term has a large F value (109.26).    This means that it is accounting for much more variation in the response variable than would be expected for a random variable.  It also means that <em>ind.mass</em> is taking a large bite out of the residuals.
+</aside></p>
+
+<p>In contrast to the dramatic effect of <em>ind.mass</em> on the p-values, including it as a covariate does not seem to affect much the coefficient on <em>attachment</em>.  What is it about <em>ind.mass</em> that explains this?</p>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <em>ind.mass</em> is almost entirely uncorrelated with the response
+variable.<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <em>ind.mass</em> is almost entirely uncorrelated with <em>attachment</em>.<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <em>ind.mass</em> is strongly correlated with the response variable.<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-14-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> <em>ind.mass</em> is strongly correlated with <em>attachment</em>.     </p>
+
+<p><aside>
+ANSWER:<br/>
+When a covariate is uncorrelated with the other explanatory variables, the inclusion of the covariate in the model will not change the coefficients on the explanatory variables.  However, the covariate still can reduce the size of the residuals and therefore make the F statistic larger.
+</aside></p>
+
+<p><aside>
+NOTE:<br/>
+Additional notes: It doesn&#39;t work to use &ldquo;count&rdquo; as a covariate (rather than dividing it into dry.mass) since count is strongly collinear with &ldquo;attachment&rdquo;.  The reason is that Baker and Hornbach pulled 20 mussels off of each of the rocks, while typically pulling more off of the Amblema.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "MC1", "text1", "text2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
