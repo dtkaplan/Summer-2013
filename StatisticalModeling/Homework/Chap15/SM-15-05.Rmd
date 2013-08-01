@@ -1,0 +1,103 @@
+Intro to Statistical Modeling Ch. 15 Prob. 5
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-5-SD")
+```
+A statistics student wrote:
+
+> I'm interested in the publishing business, particularly magazines, and thought I would try a statistical analysis of some of the features of magazines.  I looked at several different magazines, and recorded several variables, some of which I could measure from a single copy and some of which I deduced from my knowledge of the publishing business.
+
+* **magazine**  a number to identify the magazine 
+
+* **pages** the number of pages in a typical issue
+
+* **color**  the number of pages with a color picture 
+
+* **age** the age group of the target audience 
+
+* **sex** the sex of the intended audience 
+
+* **sentenceLength** the average number of words in a sentence in the articles in the magazine. 
+
+
+Most people find it hard to believe, but most mass-market magazines are very deliberately written and composed graphically to be attractive to the target audience.  The distinctive "styles" of magazines is no accident.
+
+I was interested to see if there is a relation between the average sentence length and any of the other variables. I made one linear model and had a look at the ANOVA table, as shown below.
+
+
+Analysis of Variance Table
+
+Response: sentenceLength    
+
+| | Df | Sum Sq | Mean Sq | F value | Pr(>F) |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| sex | 1 | 0.222 | 0.222 | 0.0717 | 0.80626 |  
+| age | 3 | 71.067 | 23.689 | 7.6407 | ???? |  
+| color | 1 | 0.299 | 0.299 | 0.0964 | 0.77647 |  
+| Residuals | 3 | 9.301 | 3.100 | | |                 
+
+Answer each question based on the information given above.
+
+* What model structure did I use to generate this table?
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` <code>sentenceLength ~ age + sex + color</code>    
+`r I(f(FALSE))` <code>sentenceLength ~ sex * age + color</code>    
+`r I(f(TRUE))` <code>sentenceLength ~ sex + age + color</code>    
+`r I(f(FALSE))` <code>color ~ sentenceLength + sex + age</code>
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+```{r include=FALSE}
+prob1=selectSet(name="cases", totalPts=1, "8"=FALSE, "9"=TRUE, "10"=FALSE, "No way to tell from the information given."=FALSE)
+```
+* How many cases are there altogether? `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectSet(name="variable", totalPts=1, "categorical"=TRUE, "quantitative"=FALSE, "Could be either."=FALSE, "Can't know for sure from the data given."=FALSE)
+```
+* Is the variable <code>age</code> categorical or quantitative? `r I(prob2)`
+
+* The p-value for <code>age</code> is missing. What should this value be?
+```{r include=FALSE}
+g=newMC(totalPts=1)
+```
+`r I(g(FALSE))` 0.93553 from <code>pf(7.6407, 3, 3)</code>    
+`r I(g(TRUE))` 0.06446 from <code>1-pf(7.6407, 3, 3)</code>    
+`r I(g(FALSE))` 0.98633 from <code>pf(23.689, 3, 3)</code>    
+`r I(g(FALSE))` 0.01367 from <code>1-pf(23.689, 3, 3)</code>    
+`r I(g(FALSE))` 0.99902 from <code>pnorm(23.689, 0, 7.6507)</code>    
+`r I(g(FALSE))` 0.00098 from <code>1-pnorm(23.689, 0, 7.6507)</code>    
+```{r include=FALSE, results='hide'}
+I(g(finish=TRUE))
+```
+
+```{r include=FALSE}
+prob3=selectSet(name="null.hypothesis", totalPts=1, "An average sentence has zero words."=FALSE, "There is no relationship between the number of color pages and the sex of the intended audience."=FALSE, "The number of color pages is not related to the sentence length."=FALSE, "There is no relation between the average number of words per sentence in an article and the age group that the magazine is intended for, after taking sex into account."=TRUE, "None of the above, because there is a different null hypothesis corresponding to each model term in the ANOVA report."=FALSE)
+```
+* Based on the ANOVA table, what null hypothesis can be rejected in this study at the significance level $p<0.10$? `r I(prob3)`
+
+```{r include=FALSE}
+prob4=selectSet(name="sex.age", totalPts=1, "To see if the different sexes have a different distribution of age groups."=FALSE, "To see if there is a difference in average sentence length between magazines for females and males."=FALSE, "To see if magazines for different age groups are targeted to different sexes."=FALSE, "To see if the difference in average sentence length between magazines for females and males changes from one age group to another."=TRUE)
+```
+* I really wanted to look to see if there is an interaction between <code>sex</code> and <code>age</code>.  What would be the point of including this term in the model? `r I(prob4)`
+
+* I tried to include an interaction between *sex* and *age* into the model.  This didn't work out.  Just using the information in the printed ANOVA report, judge what might have gone wrong.  
+```{r include=FALSE}
+h=newMC(totalPts=1)
+```
+`r I(h(FALSE))` The term was included as the last term in the ANOVA report and
+didn't have a significant sum of squares.    
+`r I(h(FALSE))` I discovered that <code>sex</code> and <code>age</code> were
+redundant.    
+`r I(h(TRUE))` The p-values disappeared from the report.    
+`r I(h(FALSE))` None of the above.
+```{r include=FALSE, results='hide'}
+I(h(finish=TRUE))
+```
+
+`r I(closeProblem())`

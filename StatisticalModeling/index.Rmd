@@ -377,5 +377,21 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 15.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-01.html) working 
 
+* [Problem 15.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-02.html) working
+
+* [Problem 15.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-05.html) working
+
+* [Problem 15.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-10.html) working
+
+* [Problem 15.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-10.html) not working, can't find the dataset about balding and hair follicle density
+
+* [Problem 15.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-12a.html) working
+
+* [Problem 15.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-14.html) working
+
 * [Problem 15.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-21.html) working
+
+* [Problem 15.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-22.html) working, but the values used in the answers are out of date
+
+* [Problem 15.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-25.html) issues with r command <code>run.sim</code>, also, new problem, so homework input options should be reviewed
 

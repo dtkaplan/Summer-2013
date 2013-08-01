@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 15 Prob. 2</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 15 Prob. 2</h1>
+
+<p>Here is an ANOVA table (with the &ldquo;intercept&rdquo; term included) from a fictional study of scores assigned to various flavors, textures, densities, and chunkiness of ice cream.  Some of the values in the table have been left out.  Figure out from the rest of the table what they should be.</p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="center">Df</th>
+<th align="center">Sum-Sq</th>
+<th align="center">Mean-Sq</th>
+<th align="center">F-value</th>
+<th align="center">p-value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">(intercept)</td>
+<td align="center">1</td>
+<td align="center"><em>A</em></td>
+<td align="center">200</td>
+<td align="center"><em>B</em></td>
+<td align="center"><em>C</em></td>
+</tr>
+<tr>
+<td align="left">flavor</td>
+<td align="center">8</td>
+<td align="center">640</td>
+<td align="center">80</td>
+<td align="center"><em>D</em></td>
+<td align="center">0.134</td>
+</tr>
+<tr>
+<td align="left">density</td>
+<td align="center"><em>E</em></td>
+<td align="center">100</td>
+<td align="center">100</td>
+<td align="center">2</td>
+<td align="center">0.160</td>
+</tr>
+<tr>
+<td align="left">fat-content</td>
+<td align="center">1</td>
+<td align="center">300</td>
+<td align="center"><em>F</em></td>
+<td align="center">6</td>
+<td align="center">0.015</td>
+</tr>
+<tr>
+<td align="left">chunky</td>
+<td align="center">1</td>
+<td align="center">200</td>
+<td align="center">200</td>
+<td align="center">4</td>
+<td align="center">0.048</td>
+</tr>
+<tr>
+<td align="left">Residuals</td>
+<td align="center">100</td>
+<td align="center">5000</td>
+<td align="center">50</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>The value of A: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "200" 
+}'>200</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "400" 
+}'>400</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "600" 
+}'>600</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>The value of B: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "7" 
+}'>7</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "20" 
+}'>20</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "200" 
+}'>200</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>The value of C: (Hint: There&#39;s enough information in the table
+to find this.) <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.015" 
+}'>0.015</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.03" 
+}'>0.03</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.048" 
+}'>0.048</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.096" 
+}'>0.096</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.134" 
+}'>0.134</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.16" 
+}'>0.16</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.32" 
+}'>0.32</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.48" 
+}'>0.48</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+The p-value is set by the F-value and the degrees of freedom in the term and in the residuals.  Since the F-value for the intercept is 4, and there is one degree of freedom, it happens that the p-value for the intercept will match that for &ldquo;chunky&rdquo;, which has the same F value and also a single degree of freedom.
+</aside></p>
+
+<ul>
+<li><p>The value of D: <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      4,
+"name": "D",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      4,
+"name": "D",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.8" 
+}'>0.8</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      4,
+"name": "D",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1.6" 
+}'>1.6</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      4,
+"name": "D",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3.2" 
+}'>3.2</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      4,
+"name": "D",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4.8" 
+}'>4.8</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+<li><p>The value of E: <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "2" 
+}'>2</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "4" 
+}'>4</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      5,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "6" 
+}'>6</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p>The value of F: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      6,
+"name": "F",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      6,
+"name": "F",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "200" 
+}'>200</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      6,
+"name": "F",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "300" 
+}'>300</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      6,
+"name": "F",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "400" 
+}'>400</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      6,
+"name": "F",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "500" 
+}'>500</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
+<li><p>How many cases are involved altogether? <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "50" 
+}'>50</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "111" 
+}'>111</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "112" 
+}'>112</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "200" 
+}'>200</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      7,
+"name": "number.of.cases",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5000" 
+}'>5000</option> </select><span id='out7' class='shiny-html-output'> </span></p></li>
+<li><p>How many different flavors were tested? <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "3" 
+}'>3</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "5" 
+}'>5</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "8" 
+}'>8</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "9" 
+}'>9</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "10" 
+}'>10</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "12" 
+}'>12</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-2-SD",
+"itemN":      8,
+"name": "different.flavors",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> </select><span id='out8' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

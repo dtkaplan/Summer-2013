@@ -1,0 +1,40 @@
+Intro to Statistical Modeling Ch. 15 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-10-SD")
+```
+P-values concern the "statistical significance" of evidence for a relationship.  This can be a different thing from the real-world importance of the observed relationship.  It's possible for a weak connection to be strongly statistically significant (if there is a lot of data for it) and for a strong relationship to lack statistical significance (if there is not much data).
+
+Consider the data on the times it took runners to complete the Cherry Blossom ten-mile race in March 2005:
+```{r}
+run = fetchData("ten-mile-race.csv")
+names(run)
+```
+**SHOULD MATCH**
+[1] "state" "time"  "net"   "age"   "sex"  
+
+Consider the <code>net</code> variable, which gives the time it took the runners to get from the start line to the finish line.
+
+Answer each of the following questions, giving both a quantitative argument and also an everyday English explanation.  Assessing statistical significance is a technical matter, but to interpret the substance of a relationship, you will have to put it in a real-world context.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="time.age", totalPts=2, rows=3))
+```
+* What is the relationship between net running time and the runner's age?  Is the relationship significant?  Is it substantial?    
+`r I(textItem(name="time.age", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="time.sex", totalPts=2, rows=3))
+```
+* What is the relationship between net running time and the runner's sex?  Is the relationship significant?  Is it substantial?    
+`r I(textItem(name="time.sex", totalPts=2, rows=3))`
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="age.sex", totalPts=2, rows=3))
+```
+* Is there an interaction between sex and age?  Is the relationship significant?  Is it substantial?    
+`r I(textItem(name="age.sex", totalPts=2, rows=3))`
+
+`r I(closeProblem())`
