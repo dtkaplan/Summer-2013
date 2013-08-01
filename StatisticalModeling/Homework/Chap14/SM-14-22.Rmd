@@ -1,0 +1,130 @@
+Intro to Statistical Modeling Ch. 14 Prob. 22
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-22-SD")
+```
+
+```{r include=FALSE}
+kids=fetchData("KidsFeet")
+```
+The special program <code>rand()</code> generates random vectors for use in modeling.   It's special because it works only within the <code>lm</code> command.  For example, suppose we want to create three random model vectors along with an intercept term to model the kids' foot width data:
+```{r}
+lm( width ~ rand(3), data=kids)
+```
+ 
+```{r}
+lm( width ~ rand(3), data=kids)
+```
+ 
+
+The coefficients are different in the two models because the
+"explanatory" vectors are random.
+
+We're going to study the $R^2$ due to such collections of random vectors.  This can be calculated with the <code>r.squared</code> program: 
+```{r}
+r.squared(lm( width ~ rand(3), data=kids))
+```
+
+```{r}
+r.squared(lm( width ~ rand(3), data=kids))
+```
+
+
+
+Note that the $R^2$ values vary from trial to trial, because the vectors are random.
+
+According to the principle of equipartition, **on average**, each random vector should contribute $1/(n-1)$ to the $R^2$ and the effect of multiple vectors is additive. So, for example, with $n=39$ cases, the three random vectors in the above example should result in an $R^2$ that is near $3/(39-1) = 0.08$.
+
+
+Repeat the above calculation of $R^2$ many times for $p=3$ random vectors and find the mean of the resulting $R^2$.  You can do the repetitions 100 times with a statement like this:
+```{r eval=FALSE}
+samps=do(100)*r.squared(lm(width~rand(3),data=kids))
+```
+
+Now do the same thing for $p=1,3,10,20,37$ and $38$.  Are the results consistent with the theory that, on average, $R^2$ should be $p/(n-1)$?
+
+
+Copy the table onto a piece of paper and enter your results in the empty second and third columns to hand into your professor.  
+
+
+| $p$ | $p/(n-1)$ | Mean $R^2$ |
+|:---|:---:|:---:|
+| 1 | | |
+| 3 | | | 
+| 10 | | | 
+| 20 | | |
+| 37 | | |
+| 38 | | | 
+
+
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="p=38", totalPts=2, rows=3))
+```
+Note that for $p=38$ all of the trials produced the same $R^2$ value. Explain why.    
+`r I(textItem(name="p=38", totalPts=2, rows=3))`
+
+
+<aside>
+ANSWER:    
+Here are the mean $R^2$  for different values of $p$, and the value of $p/(n-1)$. (For the kids data, $n=39$.)
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(1), data=kids)))
+```
+**SHOULD MATCH**
+[1] 0.02744934
+```{r}
+1/(39-1)
+```
+
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(3), data=kids)))
+```
+**SHOULD MATCH**
+[1] 0.07814845
+```{r}
+3/(39-1)
+```
+
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(10), data=kids)))
+```
+**SHOULD MATCH**
+[1] 0.2652253
+```{r}
+10/(39-1)
+```
+
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(20), data=kids)))
+```
+**SHOULD MATCH**
+[1] 0.5277672
+```{r}
+20/(39-1)
+```
+
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(37), data=kids)))
+```
+**SHOULD MATCH**
+[1] 0.973848
+```{r}
+37/(39-1)
+```
+
+```{r}
+mean(do(1000)*r.squared(lm( width ~ rand(38), data=kids)))
+```
+**SHOULD MATCH**
+[1] 1
+```{r}
+38/(39-1)  # obviously !!
+```
+
+
+</aside>
+
+`r I(closeProblem())`

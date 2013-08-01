@@ -1,0 +1,55 @@
+Intro to Statistical Modeling Ch. 14 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-2-SD")
+```
+
+```{r include=FALSE}
+kids=fetchData("KidsFeet")
+```
+You can test the null hypothesis that the population mean of a variable $x$ is zero by constructing a model *x~1* and interpreting the coefficient on
+the intercept term <code>1</code>. 
+
+Often, the null hypothesis that the population mean is zero is irrelevant.  For example, in the kid's feet data, the mean foot width is $8.99$ cm.  There is no physical way for the population mean to be zero.
+
+But, suppose you want to test the null hypothesis that the population mean (for the population of school-aged children from whom the sample was drawn) is $8.8$ cm.  To do this, create a new variable that would be zero if the population mean were 8.8 cm.  This is simple: make the new variable by subtracting $8.8$ cm from the original variable.  The new variable can then be tested to see if its mean is different from zero.
+
+Using the kids-feet data: 
+
+```{r include=FALSE}
+prob1=selectNumber(choices=c(0.000,0.024,0.026,0.058,0.094,0.162,0.257), correct=c(0.024), totalPts=1, name="8.8Pvalue")
+```
+* Find the p-value on the null-hypothesis that the population mean of the foot *width* is $8.8$ cm. `r I(prob1)`
+
+
+<aside>
+ANSWER:    
+The p-value in the regression report on the model *width* ~ *1* refers to the null hypothesis that the population mean is zero.  In general, the p-value on the model *A*  ~ *1* is that the population mean of quantity *A* is zero.  
+
+
+The question here refers to a null hypothesis that the population mean of the *width* variable is 8.8 cm.  To fit this into the framework of the model *A* ~  *1*, you need to create a variable that reflects *width* but which would have a value of 0 if the null were true.  Easy enough: just subtract 8.8 from the variable *width*. This can be done directly in the model statement.
+```{r}
+summary(lm( width - 8.8 ~ 1, data=kids))
+```
+
+The p-value is 0.0237.
+</aside>
+
+```{r include=FALSE}
+prob2=selectNumber(choices=c(0.00,0.23,0.27,0.31,0.48,0.95), correct=c(0.27), totalPts=1, name="8.9Pvalue")
+```
+* Find the p-value on the null-hypothesis that the population mean of the foot *width* is $8.9$ cm.
+
+<aside>
+ANSWER:    
+Same sort of thing:, but subtract 8.9 from *width*:
+```{r}
+summary(lm( width - 8.9 ~ 1, data=kids))
+```
+
+WARNING: It's not a usual practice to look at a succession of null hypotheses.  The point of doing so in this problem is just to show that to use the model *A* ~ *1* format to conduct the hypothesis test, you can subtract the hypothesized mean from the variable in question.
+</aside>
+
+`r I(closeProblem())`
