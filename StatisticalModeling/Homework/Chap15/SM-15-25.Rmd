@@ -1,0 +1,105 @@
+Intro to Statistical Modeling Ch. 15 Prob. 25
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-25-SD")
+```
+This problem is motivated by a report about the link between vitamin D deficiency and high blood pressure. (Roni Caryn Rabin, "Vitamin D Shows Heart Benefits in Study", Nov. 16, 2009)  The point of the problem is to exercise statistical concepts, so do not take the results of your work as indicating the real-world effects of vitamin D.  
+
+You have been assigned to study the possibility that vitamin D deficiency is linked to high blood pressure.  You work as a physician at the Department of Veterans Affairs, and can measure vitamin D concentrations and blood pressures when veterans come in for their biennial (every two year) checkups.  Since there are relatively few female veterans in this age group, you are studying only males.
+
+In order to conduct your study, you need to decide how many veterans to test.  It takes money and time to carry out the test, since vitamin D is not normally measured.  You boss wants your study to have as few participants as possible, but insists (1) that you use the conventional  5% significance level and (2) that your power be at least 80%.
+
+In the end, you will do a hypothesis test on a model of systolic blood pressure as a function of vitamin D concentration.  Following the convention of hypothesis testing, you set as your **null hypothesis** that there is no relationship between vitamin D and systolic blood pressure.  Easy enough.
+
+In order to design the study, you need to have a specific **alternative hypothesis**. It's the alternative hypothesis that you refer to when determining the power of your planned study.  After consulting with many experts, looking at preliminary results of other studies and examining publications about the link between blood pressure and other factors, you have decided on this specific alternative:  for every 1 unit of decrease in blood concentration of vitamin D (measured as nanograms per milliliter of blood), you expect systolic blood pressure to go up by 0.1 mmHg.  
+
+Your research assistant, a mathematical modeler, has written a computer simulation, called <code>vitaminD</code>, that implements this alternative hypothesis. The simulation can be used to generate data that is consistent with the alternative hypothesis.
+
+Run the simulation with a command like this:
+```{r}
+run.sim(vitaminD, 5)
+```
+**SHOULD MATCH**
+  race  D systolic
+1    W 44      123
+2    W 39      151
+3    B 45      138
+4    B 26      144
+5    W 98      123
+
+Using the simulation, you can decide what sample size to use.  The particular issue is the **power** of the study.  Here's how:
+
+1. Pick a sample size, say $n=100$.
+2. Generate a random dataset of that size from the simulation.
+3. Fit a model to that dataset and examine the p-value of the result.  In particular, see if it is less than 0.05.
+4. Repeat the above many times, and count in what fraction of the times the p-value is less than 0.05.  That's the power for the chosen sample size.
+
+
+Here are the commands you would use for one trial with $n=100$:
+```{r}
+mod=lm( systolic~D,data=run.sim(vitaminD,100))
+summary(mod)
+```
+**SHOULD MATCH**
+Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 137.9246 & 3.0052 & 45.90 & 0.0000 \\ 
+  D & -0.0708 & 0.0462 & -1.53 & 0.1288 \\ 
+   \hline
+
+
+As you can see, the p-value for this particular trial is 0.13, so in this trial the null hypothesis cannot be rejected.
+
+In order to streamline the process of giving the commands and extracting the p-value, try this command.  (You can type the command all on one line and you might want to cut-and-paste the command into R to make sure you have it working just right. )
+```{r}
+summary(
+      lm(systolic~D,
+      data=run.sim(vitaminD,100)))$coef[2,4]
+```
+**SHOULD MATCH**
+[1] 0.0010865
+
+Notice that in this new simulation, the p-value is different: $0.001$.
+
+To find the power, you're going to repeat the simulation for 1000 trials and see how often the p-value is less than 0.05.  Doing this involves adding a very little bit in front of the previous command --- just the first line is different than the previous command: Then to find the power, see how often the p-values, which are stored in s, are less than 0.05
+```{r}
+s = do(1000)*summary(
+      lm(systolic~D,
+      data=run.sim(vitaminD,100)))$coef[2,4]
+```
+
+```{r}
+  table( s < 0.05)
+```
+
+If the power is greater than your boss's mandated 80%, you can make the sample size smaller.  If the power is less than 80%, your sample needs to be bigger.  Try different sample sizes until you reach something pretty near 80%.
+
+As you explore various sample sizes $n$, write down the power you got for each.
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="sample.size", totalPts=2, rows=1))
+```
+**Sample Size:** `r I(textItem(name="sample.size", totalPts=2, rows=1))`
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="power", totalPts=2, rows=1))
+```
+**Power:** `r I(textItem(name="power", totalPts=2, rows=1))`
+
+#### Now you run your study
+After you have used the alternative hypothesis (as implemented in the simulation) to determine the appropriate sample size, you can go ahead and conduct your study.
+
+As it happens, we do not have veterans available in the classroom to allow you to do this.  So we will have to simulate the study itself.  We'll do that by using the same simulation program.  However, to emphasize that the alternative is *just a hypothesis* and not necessarily the real world, you will run the simulation somewhat differently.
+
+To do this, note the day of the month on which you were born.  For example, if your birthday is Nov 7, then 7 is your magic number. Also, note the sample size you selected to achieve 80% power.   For the example, let's assume this is 20.  (It isn't!)
+
+To collect the data in your "real" study, add another argument, <code>magic</code> to the <code>run.sim</code> command, like this:
+```{r}
+run.sim(vitaminD, magic=7, 20)
+```
+(Remember, use your own magic number and your own value of the sample size $n$.)
+
+Now analyze your data, and determine the outcome of your hypothesis test.  Write down your p-value.  We'll tally up the various p-values in class.
+
+`r I(closeProblem())`

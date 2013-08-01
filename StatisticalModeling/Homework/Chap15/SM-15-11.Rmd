@@ -1,0 +1,78 @@
+Intro to Statistical Modeling Ch. 15 Prob. 11
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-11-SD")
+```
+You are conducting an experiment of a treatment for balding.  You measure the hair follicle density before treatment and again after treatment.  The data table has the following variables (with a few examples shown):
+
+Subject.ID | follicle.density | when | sex 
+|:---|:---:|:----:|:---:|
+A59 | 7.3 | before | M 
+A59 | 7.9 | after | M 
+A60 | 61.2 | before | F 
+A60 | 61.4 | after | F 
+and so on, 100 entries altogether 
+
+* Here is an ANOVA table for a model of these data:
+
+```{r}
+ID = 1:100 %/% 2
+when = factor(rep(c('before','after'),50))
+follicle.density = ID + codes(when) + rnorm(100,0,1.5)
+anova(lm(follicle.density~when,data=hair))
+```
+**SHOULD MATCH**
+Df  Sum Sq Mean Sq F value  p
+when         1    33.7   33.7  0.157 0.693
+Residuals   98 21077.5  215.1
+
+Does this table suggest that the treatment makes a difference?  Why or why not?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="difference", totalPts=2, rows=3))
+```
+`r I(textItem(name="difference", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:   
+The *when* variable indicates whether there is a before-vs-after difference in the density of follicles.  The p-value is 0.693, which is much too large to suggest that the data provide evidence for *when* having an association with *follicle.density*.
+</aside>
+
+
+* Here's another ANOVA table
+```{r}
+anova(lm(follicle.density~when+Subject.ID, +  data=hair))
+```
+**SHOULD MATCH**
+Df  Sum Sq Mean Sq  F value p
+when        1    33.7   33.7  14.9  0.0002
+Subject.ID 49 20858.6  425.7 185.0  zero
+Residuals  97   218.9    2.3
+
+Why is the F-value on *when* different in this model than in the previous one?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="Fvalue", totalPts=2, rows=3))
+```
+`r I(textItem(name="Fvalue", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:   
+It seems that the subject-to-subject variation in follicle density is very large.  So, by including *follicle.density* as a covariate, the residuals are reduced greatly.  (The mean-square residual goes from 215 when follicle density is not included in the model, to 2.3 when it is.)  Since the F statistic compares the mean square of the variable to that of the residuals, introducing the covariate makes *when* look much more significant.
+</aside>
+
+* What overall conclusion do you draw about the effectiveness of the treatment?  Is the effect of the treatment statistically significant?  Is it significant in practice?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="conclusion", totalPts=2, rows=3))
+```
+`r I(textItem(name="conclusion", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+Any particular person who is considering treatment will want to know what the effect of the treatment is *while holding the person constant*.  That sounds somewhat silly, but of course the person should be held constant: I'm interested in what the treatment will do for me in comparing before and after, not how density differs between some group of people before treatment and another group of people after treatment.  Since the p-value is so small, we have evidence that
+the treatment is associated with a change in follicle density.
+
+The ANOVA report doesn't say which way the change goes.  This could be easily seen in the regression report, by looking at the coefficient. Then you could judge how big the difference is, and, based on what you know about hair density, figure out whether the change is significant.
+</aside>
+
+`r I(closeProblem())`

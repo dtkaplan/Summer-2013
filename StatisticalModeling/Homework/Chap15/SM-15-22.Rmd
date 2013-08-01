@@ -1,0 +1,53 @@
+Intro to Statistical Modeling Ch. 15 Prob. 22
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-22-SD")
+```
+
+```{r include=FALSE}
+b = fetchData("Gestation")
+```
+
+I'm interested in studying the length of gestation as a function of the ages of the mother and the father.  In the gestation data set, `Gestation` the variable <code>age</code> records the mother's age in years, and <code>dage</code> gives the father's age in years.  The variable <code>gestation</code> is the length of the gestation in days. I hypothesize that the older the mother and father, the shorter the gestational period.  So, I fit a model to those 599 cases where all the relevant data were recorded:
+```{r}
+summary(lm( gestation ~ age+dage, data=b))
+```
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="age.gestation", totalPts=2, rows=3))
+```
+* Describe in everyday language the relationship between age and gestation indicated by this model.    
+`r I(textItem(name="age.gestation", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+As *age* increases, the *gestation* time gets shorter.  The amount is about one-fifth of a day per year of age.  So, when comparing two mothers who differ in age by 10 years, the typical difference in gestation period will be 2 days less for the older mother.
+</aside>
+
+* I note that the two p-values are nothing great.  But I wonder whether if I treated mother's and father's age together --- lumping them together into a single term with two degrees of freedom --- I might not get something significant.  Using the ANOVA reports given below, explain how you might come up with a single p-value summarizing the joint contribution of mother's and father's age.  Insofar as you can, try to calculate the p-value itself.
+```{r}
+anova( lm(gestation ~ age+dage, data=b))
+```
+
+```{r}
+anova( lm( gestation ~ dage+age, data=b))
+```
+        
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="single.p.value", totalPts=2, rows=3))
+```
+`r I(textItem(name="single.p.value", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+If you want to combine *age* and *dage* when carrying out the F test, just add together their sum of squares --- $227 + 291 = 518$. Taken together they have 2 degrees of freedom, so the mean square will be $518/2 = 259$.  You can compare this to the mean square of the residual to get the F statistic: $259/255$ which is so close to 1 that you will fail to reject the null hypothesis.
+
+ASIDE: It's interesting to note that putting *dage* first dramatically increases the mean square.  This is presumably because the mother's and father's ages are strongly correlated, so even if biologically it is the mother's age that's related to gestation, if the father's age is used as a variable, the father's age will get some credit since father's age is associated with mother's age.
+
+If *dage* had been left out of the model, the F statistic on the mother's age would have been more significant.  When both parents' ages are included in the model, they "split the credit."
+</aside>
+
+`r I(closeProblem())`

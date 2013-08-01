@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 15 Prob. 12</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 15 Prob. 12</h1>
+
+<p>During a conversation about college admissions, a group of high-school students starts to wonder how reliable the SAT score is, that is, how much an <strong>individual student&#39;s</strong> score could be expected vary just do to random factors such as the day on which the test was taken, the student&#39;s mood, the specific questions on the test, etc. This variation within an individual is quite different from the variation from person to person.</p>
+
+<p>The high-school students decide to study the issue. A simple way to do this is to have one student take the SAT test several times and examine the variability in the student&#39;s scores. But, it would be better to do this for many different students. To this end, the students propose to pool together their scores from the times they took the SAT, producing a data frame that looks like this:</p>
+
+<table><thead>
+<tr>
+<th align="left">Student</th>
+<th align="right">Score</th>
+<th align="right">Sex</th>
+<th align="right">Order</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">PersonA</td>
+<td align="right">2110</td>
+<td align="right">F</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">PersonB</td>
+<td align="right">1950</td>
+<td align="right">M</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">PersonC</td>
+<td align="right">2080</td>
+<td align="right">F</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">PersonA</td>
+<td align="right">2090</td>
+<td align="right">F</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">PersonA</td>
+<td align="right">2150</td>
+<td align="right">F</td>
+<td align="right">3</td>
+</tr>
+</tbody></table>
+
+<p>&hellip; and so on</p>
+
+<p>The <em>order</em> variable indicates how many times the student has taken the test.  1 means that it is the student&#39;s first time, 2 the second time, and so on.</p>
+
+<p>One student suggests that they simply take the standard deviation of the <em>score</em> variable to measure the variability in the SAT score. What&#39;s wrong with this for the purpose the students have in mind? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "StdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "There's nothing wrong with it." 
+}'>There&#39;s nothing wrong with it.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "StdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Standard deviations don't measure random variability." 
+}'>Standard deviations don&#39;t measure random variability.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "StdDev",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "It would confound variability between students with variability." 
+}'>It would confound variability between students with variability.</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:<br/>
+The standard deviation of <em>score</em> reflects, at least in part, how scores differ from person to person.  It&#39;s wrong to attribute this variation to the issue the students are concerned about, which is how SAT scores differ from session to session for a single individual.
+</aside></p>
+
+<p>Another student suggests looking at the sum of square residuals from the model <em>score</em> ~ <em>student</em>.  What&#39;s wrong with this: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      2,
+"name": "SumOfResids",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "There's nothing wrong with it." 
+}'>There&#39;s nothing wrong with it.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      2,
+"name": "SumOfResids",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "It's the coefficients on student that are important." 
+}'>It&#39;s the coefficients on student that are important.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      2,
+"name": "SumOfResids",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Better to look at the mean square residual." 
+}'>Better to look at the mean square residual.</option> </select><span id='out2' class='shiny-html-output'> </span></p>
+
+<p><aside>
+ANSWER:<br/>
+The sum of square residuals is a good start, but it depends on how many cases there are in the data set.  Better to look at the mean square residual, which gives the typical size of a residual for a single student taking the exam one time.  This could be a good reflection of the session-to-session variability for one student.
+</aside></p>
+
+<p>The students&#39; statistics teacher points out that the model <em>score</em> ~ <em>student</em>
+ will exactly capture the score of any student who takes the SAT only once; the residuals for those students will be exactly zero.  Explain why this isn&#39;t a problem, given the purpose for which the model is being constructed.<br/>
+<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "Explain",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><aside>
+ANSWER:<br/>
+Since the point is to determine the variability in score from one session to the next for a given student, the students who take the test only once don&#39;t contribute any information because there is no evidence for the variability for that student.</p>
+
+<p>For such students, the residual will indeed be zero because the model vector for that student&#39;s <em>student</em> level will exactly capture the student&#39;s score.  But even though the residual is zero, there will be no degrees of freedom in the residual corresponding to that student. So the mean square residual will not be affected.
+</aside></p>
+
+<p>Still another student suggests the model <em>score</em> ~ <em>student</em> + <em>order</em> in order to adjust for the possibility that scores change with experience, and not just at random. The group likes this idea and starts to elaborate on it. They make two main suggestions:</p>
+
+<ul>
+<li>Elaboration 1: <em>score</em> ~ <em>student</em> + <em>order</em> + <em>sex</em> </li>
+<li>Elaboration 2: <em>score</em> ~ <em>student</em> + <em>order</em> + <em>student</em>:<em>order</em> </li>
+</ul>
+
+<p>Why not include <em>sex</em> as an additional covariate, as in Elaboration 1, to take into account the possibility that males and females might have systematically different scores.<br/>
+<label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> It&#39;s a good idea.<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> Bad idea since a person&#39;s sex probably has nothing to do with his or her score.<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-15-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Useless, since <em>sex</em> is redundant with <em>student</em>.    </p>
+
+<p><aside>
+ANSWER:<br/>
+If you know the <em>student</em>, the <em>sex</em> is determined.  So <em>sex</em> is redundant with <em>student</em>.
+</aside></p>
+
+<p>Regarding Elaboration 2, which of the following statements is correct?</p>
+
+<ul>
+<li><p>It allows the model to capture how the change of score with experience itself might be different from one person to another. <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      3,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      3,
+"name": "TorF",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>It assumes that all the students in the data frame are taking the test multiple times. <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      4,
+"name": "TorF2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      4,
+"name": "TorF2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+No.  The model would still work even if some or all of the students have taken the test only once.  But if all the students had taken the test only once, the interaction term would be redundant with the term <em>student</em>.  There&#39;s no harm in this; the redundant term would just be ignored.
+</aside></p>
+
+<ul>
+<li>With the interaction term in place, the model would capture the exact scores of all students who took the SAT just once or twice, so the mean square residual would reflect only those students who took the SAT three times or more. <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      5,
+"name": "TorF3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "TRUE" 
+}'>TRUE</option> <option value='{
+"itemInfo": {
+"setID": "SM-15-12-SD",
+"itemN":      5,
+"name": "TorF3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE" 
+}'>FALSE</option> </select><span id='out5' class='shiny-html-output'> </span></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+With the interaction term, the model will fit exactly the scores from any student who takes the test one or two times, because a separate linear model is effectively being fit for each student.  Since a straight-line model can fit perfectly any two data points (or any one data point), the residual will be zero for the students who take the test just once or twice, even if there is genuine variability.</p>
+
+<p>In short, the interaction term adds a lot of new degrees of freedom &mdash; as many as in the \VN{student} variable itself &mdash; and reduces the degrees of freedom in the residual accordingly.<br/>
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "MC1", "text1" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

@@ -1,0 +1,47 @@
+Intro to Statistical Modeling Ch. 15 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-4-SD")
+```
+
+Consider the following analysis of the kids' feet data looking for a relationship between foot width and whether the child is left or right handed.  The variable <code>domhand</code> gives the handedness, either <code>L</code> or <code>R</code>.    
+We'll construct the model in two different ways.  There are 39 cases altogether.
+
+```{r include=FALSE}
+kids=fetchData("KidsFeet")
+```
+
+```{r}
+anova( lm(width ~ domhand, data=kids))
+```
+
+```{r}
+anova( lm(width ~ domhand - 1, data=kids))
+```
+
+* Explain why, in the first case, the p-value is not significant, but in
+the second case it is. 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="pvalue", totalPts=2, rows=3))
+```
+
+<aside>
+ANSWER:    
+The first model includes an intercept term (which is almost always what you want).  With the intercept term in the model, the *domhand* variable accounts for the differences in foot width between left- and right-handed kids.  The null hypothesis is that in the population the widths are the same in the two groups.  This can't be rejected.
+
+Without the intercept, as in the second model, *domhand* accounts not just for the difference in foot width between left- and right-handed kids, but for the mean foot width.  The null hypothesis becomes that in the population the mean foot width is zero.  Crazy! The mean foot width must be larger than zero --- width must always be positive --- so it's no surprise that the null hypothesis is rejected in this case.
+</aside>
+
+* Why does *domhand* have 1 degree of freedom in the first ANOVA report, but 2 degrees of freedom in the second?
+```{r include=FALSE, eval=FALSE}
+I(textItem(nname="domhand", totalPts=2, rows=3))
+```
+
+<aside>
+ANSWER:    
+In the model for the second report, the *domhand* variable has two model vectors, since there is no intercept.  In the first model, one of these two degrees of freedom is taken up by the intercept, so *domhand* contributes just one degree of freedom to the model.
+</aside>
+
+`r I(closeProblem())`

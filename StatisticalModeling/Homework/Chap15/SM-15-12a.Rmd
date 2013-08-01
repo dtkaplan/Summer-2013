@@ -1,0 +1,104 @@
+Intro to Statistical Modeling Ch. 15 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-12-SD")
+```
+During a conversation about college admissions, a group of high-school students starts to wonder how reliable the SAT score is, that is, how much an **individual student's** score could be expected vary just do to random factors such as the day on which the test was taken, the student's mood, the specific questions on the test, etc. This variation within an individual is quite different from the variation from person to person.
+
+The high-school students decide to study the issue. A simple way to do this is to have one student take the SAT test several times and examine the variability in the student's scores. But, it would be better to do this for many different students. To this end, the students propose to pool together their scores from the times they took the SAT, producing a data frame that looks like this:
+
+Student | Score | Sex | Order
+:---|---:|----:|---:|
+PersonA | 2110 | F | 1
+PersonB | 1950 | M | 1
+PersonC | 2080 | F | 1
+PersonA | 2090 | F | 2
+PersonA | 2150 | F | 3
+... and so on
+
+The *order* variable indicates how many times the student has taken the test.  1 means that it is the student's first time, 2 the second time, and so on.
+
+```{r include=FALSE}
+prob1=selectSet(name="StdDev", totalPts=1, "There's nothing wrong with it."=FALSE, "Standard deviations don't measure random variability."=FALSE, "It would confound variability between students with variability."=TRUE)
+```
+One student suggests that they simply take the standard deviation of the *score* variable to measure the variability in the SAT score. What's wrong with this for the purpose the students have in mind? `r I(prob1)`
+
+<aside>
+ANSWER:    
+The standard deviation of *score* reflects, at least in part, how scores differ from person to person.  It's wrong to attribute this variation to the issue the students are concerned about, which is how SAT scores differ from session to session for a single individual.
+</aside>
+
+```{r include=FALSE}
+prob2=selectSet(name="SumOfResids", totalPts=1, "There's nothing wrong with it."=FALSE, "It's the coefficients on student that are important."=FALSE, "Better to look at the mean square residual."=TRUE)
+```
+Another student suggests looking at the sum of square residuals from the model *score* ~ *student*.  What's wrong with this: `r I(prob2)`
+
+<aside>
+ANSWER:    
+The sum of square residuals is a good start, but it depends on how many cases there are in the data set.  Better to look at the mean square residual, which gives the typical size of a residual for a single student taking the exam one time.  This could be a good reflection of the session-to-session variability for one student.
+</aside>
+
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="Explain", totalPts=2, rows=3))
+```
+The students' statistics teacher points out that the model *score* ~ *student*
+ will exactly capture the score of any student who takes the SAT only once; the residuals for those students will be exactly zero.  Explain why this isn't a problem, given the purpose for which the model is being constructed.     
+`r I(textItem(name="Explain", totalPts=2, rows=3))`
+ 
+<aside>
+ANSWER:    
+Since the point is to determine the variability in score from one session to the next for a given student, the students who take the test only once don't contribute any information because there is no evidence for the variability for that student.
+
+For such students, the residual will indeed be zero because the model vector for that student's *student* level will exactly capture the student's score.  But even though the residual is zero, there will be no degrees of freedom in the residual corresponding to that student. So the mean square residual will not be affected.
+</aside>
+
+Still another student suggests the model *score* ~ *student* + *order* in order to adjust for the possibility that scores change with experience, and not just at random. The group likes this idea and starts to elaborate on it. They make two main suggestions:
+
+* Elaboration 1: *score* ~ *student* + *order* + *sex* 
+* Elaboration 2: *score* ~ *student* + *order* + *student*:*order* 
+
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+Why not include *sex* as an additional covariate, as in Elaboration 1, to take into account the possibility that males and females might have systematically different scores.    
+`r I(f(FALSE))` It's a good idea.    
+`r I(f(FALSE))` Bad idea since a person's sex probably has nothing to do with his or her score.        
+`r I(f(TRUE))` Useless, since *sex* is redundant with *student*.    
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+<aside>
+ANSWER:    
+If you know the *student*, the *sex* is determined.  So *sex* is redundant with *student*.
+</aside>
+
+Regarding Elaboration 2, which of the following statements is correct?
+```{r include=FALSE}
+prob3=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* It allows the model to capture how the change of score with experience itself might be different from one person to another. `r I(prob3)`
+```{r include=FALSE}
+prob4=selectSet(name="TorF2", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
+```
+* It assumes that all the students in the data frame are taking the test multiple times. `r I(prob4)`
+
+<aside>
+ANSWER:    
+No.  The model would still work even if some or all of the students have taken the test only once.  But if all the students had taken the test only once, the interaction term would be redundant with the term *student*.  There's no harm in this; the redundant term would just be ignored.
+</aside>
+```{r include=FALSE}
+prob5=selectSet(name="TorF3", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+```
+* With the interaction term in place, the model would capture the exact scores of all students who took the SAT just once or twice, so the mean square residual would reflect only those students who took the SAT three times or more. `r I(prob5)`
+
+<aside>
+ANSWER:    
+With the interaction term, the model will fit exactly the scores from any student who takes the test one or two times, because a separate linear model is effectively being fit for each student.  Since a straight-line model can fit perfectly any two data points (or any one data point), the residual will be zero for the students who take the test just once or twice, even if there is genuine variability.
+
+In short, the interaction term adds a lot of new degrees of freedom --- as many as in the \VN{student} variable itself --- and reduces the degrees of freedom in the residual accordingly.  
+</aside>
+
+`r I(closeProblem())`
