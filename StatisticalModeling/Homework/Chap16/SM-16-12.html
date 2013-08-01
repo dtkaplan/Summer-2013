@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 16 Prob. 12</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 16 Prob. 12</h1>
+
+<p>The concept of residuals does not cleanly apply to yes/no models because the model value is a probability (of a yes outcome), whereas the actual observation is the outcome itself.  It would be silly to try to compute a difference between &ldquo;yes&rdquo; and a probability like 0.8. After all, what could it mean to calculate \( (\mbox{yes} - 0.8)^2 \)?</p>
+
+<p>In fitting ordinary linear models, the criterion used to select the best coefficients for any given model design is &ldquo;least squares,&rdquo; minimizing the sum of square residuals.  The corresponding criterion in fitting yes/no models (and many other types of models) is &ldquo;maximum likelihood.&rdquo;  </p>
+
+<p>The word &ldquo;likelihood&rdquo; has a very specific and technical meaning in statistics, it&#39;s not just a synonym for &ldquo;chance&rdquo; or &ldquo;probability.&rdquo; A likelihood is the probability of the outcome <em>according to a specific model</em>.</p>
+
+<p>To illustrate, here is an example of some yes-no observations and the model values of two different models.</p>
+
+<p><img src="data:image/png;base64,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" alt="Table"/></p>
+
+<p>Likelihood always refers to a given model, so there are two likelihoods here: one for Model A and another for Model B. The likelihood for each case under Model A is the probability of the observed outcome according to the model.  For example, the likelihood under Model A for case 1 is 0.7, because that is the model value of the observed outcome &ldquo;Yes&rdquo; for that case.  The likelihood of case 2 under Model A is 0.4 &mdash; that is the probability of &ldquo;No&rdquo; for case 2 under model A.</p>
+
+<ul>
+<li><p>What is the likelihood under Model A for case 3? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "modelA.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "modelA.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "modelA.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "modelA.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.7" 
+}'>0.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "modelA.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.9" 
+}'>0.9</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>What is the likelihood under Model B for case 3? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "modelB.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "modelB.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "modelB.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "modelB.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.7" 
+}'>0.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "modelB.3",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.9" 
+}'>0.9</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>What is the likelihood under Model A for case 4? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      3,
+"name": "modelA.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      3,
+"name": "modelA.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      3,
+"name": "modelA.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      3,
+"name": "modelA.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.7" 
+}'>0.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      3,
+"name": "modelA.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.9" 
+}'>0.9</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>What is the likelihood under Model B for case 4? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      4,
+"name": "modelB.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.1" 
+}'>0.1</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      4,
+"name": "modelB.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.3" 
+}'>0.3</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      4,
+"name": "modelB.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      4,
+"name": "modelB.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.7" 
+}'>0.7</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-12-SD",
+"itemN":      4,
+"name": "modelB.4",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.9" 
+}'>0.9</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>The likelihood for the whole set of observations combines the likelihoods of the individual cases: multiply them all together.  This is justified if the cases are independent of one another, as is usually assumed and sensible if the cases are the result of random sampling or random assignment to an experimental treatment.</p>
+
+<ul>
+<li>What is the likelihood under Model A for the whole set of cases?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 0.3 \times 0.4 \times 0.9 \times 0.5 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 0.7 \times 0.6 \times 0.9 \times 0.5 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 0.3 \times 0.4 \times 0.1 \times 0.5 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 0.7 \times 0.4 \times 0.9 \times 0.5 \)<br/>
+<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> \( 0.7 \times 0.4 \times 0.1 \times 0.5 \)    </p>
+
+<ul>
+<li>What is the likelihood under Model B for the whole set of cases?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 0.4 \times 0.8 \times 0.3 \times 0.9 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 0.4 \times 0.2 \times 0.3 \times 0.9 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 0.6 \times 0.2 \times 0.3 \times 0.9 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 0.4 \times 0.2 \times 0.7 \times 0.9 \)<br/>
+<label for='MCitem5'><input type='radio' name='MC2' id='MCitem5' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-12-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "E" 
+}'> <b>E</b></label> \( 0.4 \times 0.2 \times 0.3 \times 0.1 \)    </p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "MC1", "MC2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
