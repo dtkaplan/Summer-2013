@@ -1,0 +1,40 @@
+Intro to Statistical Modeling Ch. 14 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-4-SD")
+```
+You are performing an agricultural experiment in which you will study whether placing small bits of iron in the soil will increase the yield of barley.  Randomly scattered across an enclosure owned by the state's agricultural field office, you have marked off ten plots, each of size 10 meters by 10 meters.  You randomly assign five of the plots to be controls, and in the other five you place the iron.
+
+A colleague hears of your experiment and asks to join it.  She would like to test zinc.  Still another colleague wants to test copper and another has two different liquid fertilizers to test. The head of the field office asks you to share the data from your control plots, so that the other researchers won't have to grow additional control plots. This will reduce the overall cost of the set of experiments. He points out that the additional experiments impose absolutely no burden on you since they are being grown in plots that you are not using.  All you need to do is provide the yield measurements for the control plots to your colleagues so that they can use them in the evaluation of their own data.
+
+```{r include=FALSE}
+prob1=selectSet(name="cost", totalPts=1, "It reduces the significance level of your experiment."=FALSE, "It reduces the power of your experiment."=TRUE, "It invalidates the comparison to the control."=FALSE, "None of the above."=FALSE)
+```
+You wonder whether there is a hidden cost.  Will you need to adjust the p-value thresholdhold?  For instance, a Bonferroni correction would reduce the threshold for significance from 0.05 to 0.01, since there are five experiments altogether (iron, zinc, copper, and two fertilizers, each compared to a control).  What's the cost of making such an adjustment? `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectSet(name="argument", totalPts=1, "Doing multiple experiments increases the probability of a Type I error."=TRUE, "Doing multiple experiments increase the probability of a Type II error."=FALSE, "Doing multiple experiments introduces interaction terms."=FALSE, "The other experiments increase the power of your experiment."=FALSE)
+```
+* What's the argument for making an adjustment to the p-value threshold? `r I(prob2)`
+
+```{r include=FALSE}
+prob3=selectSet(name="argument2", totalPts=1, "The additional experiments (zinc, copper, fertilizers) have nothing to do with my iron experiment, so I can reasonably ignore them."=TRUE, "You don't think the other experiments will be successful."=FALSE, "A p-value of 0.05 is always appropriate."=FALSE)
+```
+* What's the argument for not making an adjustment to the p-value threshold? `r I(prob3)`
+
+
+```{r include=FALSE}
+prob4=selectSet(name="changeArgument", totalPts=1, "No. There are still multiple tests being done, even if the data sets don't overlap."=TRUE, "Yes. Now the tests aren't sharing any data."=FALSE)
+```
+Suppose that the other experimenters decided that they had sufficient budget to make their own control plots, so that their experiments could proceed independently of yours (although all the plots would be in the same field).  Would this change the arguments for and against adjusting the p-value? `r I(prob4)`
+
+
+The idea that a researcher's evaluation of a p-value should depend on whether or not other experiments are being conducted has been termed "inconsistent" by Saville. (**saville-1990**) He writes, "An experiment is no more a natural unit than a project consisting of several experiments or a research program consisting of several projects."  Why should you do an adjustment merely because a set of experiments happened to be performed by the same researcher or in the same laboratory?  If you're going to adjust, why shouldn't you adjust for all the tests conducted in the same institution or in the same country?
+
+This quandry illustrates that data do not speak for themselves.  The evaluation of evidence needs to be made in the context in which the data were collected.  In my view, the iron researcher would be justified in not adjusting the p-value threshold because the other experiments are irrelevant to his.  However, the field office head, who is supervising multiple experiments, should be making adjustments. This is paradoxical.  If the p-value from the iron experimental were 0.04, the individual researcher would be justified in declaring the effect of iron significant, but the office head would not be.  Same data, different results.
+
+This paradox has an impact on how you should interpret the reports that you read.  If you are reading hundreds of reports, you need to keep a skeptical attitude about individual reports with a p-value of 0.01.  A small p-value is only one piece of evidence, not a proof.  
+
+`r I(closeProblem())`

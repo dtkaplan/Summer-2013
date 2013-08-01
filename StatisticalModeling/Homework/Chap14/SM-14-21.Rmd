@@ -1,0 +1,90 @@
+Intro to Statistical Modeling Ch. 14 Prob. 21
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-14-21-SD")
+```
+The table shows a brief data set that we will use to trace through a simple one-way ANOVA calculation by hand.
+
+Age | Group
+|:---|:---|
+18 | Student
+22 | Student
+45 | Parent
+51 | Parent
+35 | Professor
+57 | Professor
+
+Our model will be *Age* ~ *1* + *Group*
+
+The ANOVA report breaks down the model into a series of nested models.
+In this case, the series is simple:
+* *Age* ~ *1*
+* *Age* ~ *1* + *Group*
+
+
+For each of these nested models, you need to calculate the "degrees of
+freedom" and the sum of squares of the fitted model values. The degrees of freedom is the number of model vectors involved.  The sum of squares is found by fitting the model and adding up the squares of the fitted values.
+
+We will do this by hand.  First, fit *Age* ~ *1* and enter the fitted values into the table.  "Fitting" is easy here, since the coefficient on *Age* ~ *1* is just the grand mean of the *Age* variable.
+
+**For *Age* ~ *1***
+
+Age | Group | Fitted
+|:---|:---|:---:|
+18 | Student | __ | 
+22 | Student | __ | 
+45 | Parent | __ |
+51 | Parent | __ |
+35 | Professor | __ | 
+57 | Professor | __ |
+
+
+Once you have written down the fitted values for each case, compute the sum of squares.  Since there is one model vector, there is just one degree of freedom for this model.
+
+Next, fit the model *Age* ~ *1* + *Group* and enter the fitted values into the table.  This model is also easy to fit, since the fitted values are just the groupwise means.
+
+For *Age* ~ *1* + *Group*
+
+Age | Group | Fitted
+|:---|:---|:---:|
+18 | Student | __ |
+22 | Student | __ |
+45 | Parent | __ |
+51 | Parent | __ |
+35 | Professor | __ |
+57 | Professor | __ |
+
+Compute the sum of squares for this model.  Since there are three groups, there are three model vectors and hence three degrees of freedom.
+
+Finally, compute the sum of squares of the *Age* variable itself.  You might like to think of this as the sum of squares of the fitted values to a "perfect" model, a model that captures all of the variability in *Age*.  We know that such a model can always be constructed so long as we allow $N$ model vectors, even if they are junk, so the degrees of freedom ascribed to this "perfect" model is $N$.  (We put "perfect" in quotation marks to emphasize that this model is perfect only in the sense that the residuals are zero.  That can happen anytime we have as many model vectors as cases, that is, when $m=N$.)
+
+Enter the degrees of freedom and the sums of squares of the fitted values into the table below:
+
+Model | D.F. | Sum of Squares of Fitted Values
+|:---|---:|:---:|
+*Age* ~ *1* | __ | __ |
+*Age* ~ *1* + *Group* | __ | __ |
+"Perfect" model | __ | __ |
+
+
+We are almost at the point where we can construct the ANOVA table.  At the heart of the ANOVA table is the degree-of-freedom and sum-of-squares information from the above table. **But** rather than entering the sum of squares directly, we subtract from each of the sum of squares the total of all the sums of squares of the models that appear above it.  That is, we give each successive nested model credit only for the amount that it *increased* the sum of squares from what it had been in the previous model.  A similar accounting is done for the degrees of freedom.  In the following table, we'll mark the header as $\Delta$ to emphasize that you should the *change* in sum of squares and the *change* in degrees in freedom from the previous model.
+
+Fill in the first two columns of the table.  Then go back and fill in the "mean square" column, which is just the sum of squares divided by the degrees of freedom.  Similarly, fill in the F column, which is the mean square for each model divided by the mean square for the perfect model.
+
+
+Model | $\Delta$ D.F. | $\Delta$ S.S. | M.S. | F ratio | p-value
+|:---|:---:|:---:|:---:|:---:|:---:|
+*Age* ~ *1* | __ | __ | __ | __ | __ |
+*Age* ~ *1* + *Group* | __ | __ | __ | __ | __ |
+"Perfect" model | __ | __ | __ | __ | __ |
+
+
+You can use software to compute the p-value.  The relevant parameters of the F distribution are the degrees of freedom of the model and the degrees of freedom of the "perfect" model.
+
+Of course, in a real ANOVA table, rows are labeled differently.  Each row gives a name to the terms that were added in making the model. So, in the above table, the labels will be "Intercept," "Group," and "Residuals."
+
+Compare your table to one constructed with software.  Enter the data into a spreadsheet, save it to disk in an appropriate format (e.g., CSV), then read it into the statistical software and create the ANOVA table.
+
+`r I(closeProblem())`

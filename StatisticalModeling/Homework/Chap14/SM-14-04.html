@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 14 Prob. 4</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 14 Prob. 4</h1>
+
+<p>You are performing an agricultural experiment in which you will study whether placing small bits of iron in the soil will increase the yield of barley.  Randomly scattered across an enclosure owned by the state&#39;s agricultural field office, you have marked off ten plots, each of size 10 meters by 10 meters.  You randomly assign five of the plots to be controls, and in the other five you place the iron.</p>
+
+<p>A colleague hears of your experiment and asks to join it.  She would like to test zinc.  Still another colleague wants to test copper and another has two different liquid fertilizers to test. The head of the field office asks you to share the data from your control plots, so that the other researchers won&#39;t have to grow additional control plots. This will reduce the overall cost of the set of experiments. He points out that the additional experiments impose absolutely no burden on you since they are being grown in plots that you are not using.  All you need to do is provide the yield measurements for the control plots to your colleagues so that they can use them in the evaluation of their own data.</p>
+
+<p>You wonder whether there is a hidden cost.  Will you need to adjust the p-value thresholdhold?  For instance, a Bonferroni correction would reduce the threshold for significance from 0.05 to 0.01, since there are five experiments altogether (iron, zinc, copper, and two fertilizers, each compared to a control).  What&#39;s the cost of making such an adjustment? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      1,
+"name": "cost",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "It reduces the significance level of your experiment." 
+}'>It reduces the significance level of your experiment.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      1,
+"name": "cost",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "It reduces the power of your experiment." 
+}'>It reduces the power of your experiment.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      1,
+"name": "cost",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "It invalidates the comparison to the control." 
+}'>It invalidates the comparison to the control.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      1,
+"name": "cost",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "None of the above." 
+}'>None of the above.</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+
+<ul>
+<li><p>What&#39;s the argument for making an adjustment to the p-value threshold? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      2,
+"name": "argument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Doing multiple experiments increases the probability of a Type I error." 
+}'>Doing multiple experiments increases the probability of a Type I error.</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      2,
+"name": "argument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Doing multiple experiments increase the probability of a Type II error." 
+}'>Doing multiple experiments increase the probability of a Type II error.</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      2,
+"name": "argument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Doing multiple experiments introduces interaction terms." 
+}'>Doing multiple experiments introduces interaction terms.</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      2,
+"name": "argument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The other experiments increase the power of your experiment." 
+}'>The other experiments increase the power of your experiment.</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>What&#39;s the argument for not making an adjustment to the p-value threshold? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      3,
+"name": "argument2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "The additional experiments (zinc, copper, fertilizers) have nothing to do with my iron experiment, so I can reasonably ignore them." 
+}'>The additional experiments (zinc, copper, fertilizers) have nothing to do with my iron experiment, so I can reasonably ignore them.</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      3,
+"name": "argument2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "You don't think the other experiments will be successful." 
+}'>You don&#39;t think the other experiments will be successful.</option> <option value='{
+"itemInfo": {
+"setID": "SM-14-4-SD",
+"itemN":      3,
+"name": "argument2",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "A p-value of 0.05 is always appropriate." 
+}'>A p-value of 0.05 is always appropriate.</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>Suppose that the other experimenters decided that they had sufficient budget to make their own control plots, so that their experiments could proceed independently of yours (although all the plots would be in the same field).  Would this change the arguments for and against adjusting the p-value? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      4,
+"name": "changeArgument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "No. There are still multiple tests being done, even if the data sets don't overlap." 
+}'>No. There are still multiple tests being done, even if the data sets don&#39;t overlap.</option> <option value='{
+ "itemInfo": {
+ "setID": "SM-14-4-SD",
+"itemN":      4,
+"name": "changeArgument",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Yes. Now the tests aren't sharing any data." 
+}'>Yes. Now the tests aren&#39;t sharing any data.</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+
+<p>The idea that a researcher&#39;s evaluation of a p-value should depend on whether or not other experiments are being conducted has been termed &ldquo;inconsistent&rdquo; by Saville. (<strong>saville-1990</strong>) He writes, &ldquo;An experiment is no more a natural unit than a project consisting of several experiments or a research program consisting of several projects.&rdquo;  Why should you do an adjustment merely because a set of experiments happened to be performed by the same researcher or in the same laboratory?  If you&#39;re going to adjust, why shouldn&#39;t you adjust for all the tests conducted in the same institution or in the same country?</p>
+
+<p>This quandry illustrates that data do not speak for themselves.  The evaluation of evidence needs to be made in the context in which the data were collected.  In my view, the iron researcher would be justified in not adjusting the p-value threshold because the other experiments are irrelevant to his.  However, the field office head, who is supervising multiple experiments, should be making adjustments. This is paradoxical.  If the p-value from the iron experimental were 0.04, the individual researcher would be justified in declaring the effect of iron significant, but the office head would not be.  Same data, different results.</p>
+
+<p>This paradox has an impact on how you should interpret the reports that you read.  If you are reading hundreds of reports, you need to keep a skeptical attitude about individual reports with a p-value of 0.01.  A small p-value is only one piece of evidence, not a proof.  </p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

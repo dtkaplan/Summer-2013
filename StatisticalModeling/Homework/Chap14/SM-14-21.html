@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 14 Prob. 21</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 14 Prob. 21</h1>
+
+<p>The table shows a brief data set that we will use to trace through a simple one-way ANOVA calculation by hand.</p>
+
+<table><thead>
+<tr>
+<th align="left">Age</th>
+<th align="left">Group</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">18</td>
+<td align="left">Student</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">Student</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">Parent</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">Parent</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">Professor</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">Professor</td>
+</tr>
+</tbody></table>
+
+<p>Our model will be <em>Age</em> ~ <em>1</em> + <em>Group</em></p>
+
+<p>The ANOVA report breaks down the model into a series of nested models.
+In this case, the series is simple:</p>
+
+<ul>
+<li><em>Age</em> ~ <em>1</em></li>
+<li><em>Age</em> ~ <em>1</em> + <em>Group</em></li>
+</ul>
+
+<p>For each of these nested models, you need to calculate the &ldquo;degrees of
+freedom&rdquo; and the sum of squares of the fitted model values. The degrees of freedom is the number of model vectors involved.  The sum of squares is found by fitting the model and adding up the squares of the fitted values.</p>
+
+<p>We will do this by hand.  First, fit <em>Age</em> ~ <em>1</em> and enter the fitted values into the table.  &ldquo;Fitting&rdquo; is easy here, since the coefficient on <em>Age</em> ~ <em>1</em> is just the grand mean of the <em>Age</em> variable.</p>
+
+<p><strong>For <em>Age</em> ~ *1</strong>*</p>
+
+<table><thead>
+<tr>
+<th align="left">Age</th>
+<th align="left">Group</th>
+<th align="center">Fitted</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">18</td>
+<td align="left">Student</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">Student</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">Parent</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">Parent</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">Professor</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">Professor</td>
+<td align="center">__</td>
+</tr>
+</tbody></table>
+
+<p>Once you have written down the fitted values for each case, compute the sum of squares.  Since there is one model vector, there is just one degree of freedom for this model.</p>
+
+<p>Next, fit the model <em>Age</em> ~ <em>1</em> + <em>Group</em> and enter the fitted values into the table.  This model is also easy to fit, since the fitted values are just the groupwise means.</p>
+
+<p>For <em>Age</em> ~ <em>1</em> + <em>Group</em></p>
+
+<table><thead>
+<tr>
+<th align="left">Age</th>
+<th align="left">Group</th>
+<th align="center">Fitted</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">18</td>
+<td align="left">Student</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">Student</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">Parent</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">Parent</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">Professor</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">Professor</td>
+<td align="center">__</td>
+</tr>
+</tbody></table>
+
+<p>Compute the sum of squares for this model.  Since there are three groups, there are three model vectors and hence three degrees of freedom.</p>
+
+<p>Finally, compute the sum of squares of the <em>Age</em> variable itself.  You might like to think of this as the sum of squares of the fitted values to a &ldquo;perfect&rdquo; model, a model that captures all of the variability in <em>Age</em>.  We know that such a model can always be constructed so long as we allow \( N \) model vectors, even if they are junk, so the degrees of freedom ascribed to this &ldquo;perfect&rdquo; model is \( N \).  (We put &ldquo;perfect&rdquo; in quotation marks to emphasize that this model is perfect only in the sense that the residuals are zero.  That can happen anytime we have as many model vectors as cases, that is, when \( m=N \).)</p>
+
+<p>Enter the degrees of freedom and the sums of squares of the fitted values into the table below:</p>
+
+<table><thead>
+<tr>
+<th align="left">Model</th>
+<th align="right">D.F.</th>
+<th align="center">Sum of Squares of Fitted Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"><em>Age</em> ~ <em>1</em></td>
+<td align="right">__</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left"><em>Age</em> ~ <em>1</em> + <em>Group</em></td>
+<td align="right">__</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">&ldquo;Perfect&rdquo; model</td>
+<td align="right">__</td>
+<td align="center">__</td>
+</tr>
+</tbody></table>
+
+<p>We are almost at the point where we can construct the ANOVA table.  At the heart of the ANOVA table is the degree-of-freedom and sum-of-squares information from the above table. <strong>But</strong> rather than entering the sum of squares directly, we subtract from each of the sum of squares the total of all the sums of squares of the models that appear above it.  That is, we give each successive nested model credit only for the amount that it <em>increased</em> the sum of squares from what it had been in the previous model.  A similar accounting is done for the degrees of freedom.  In the following table, we&#39;ll mark the header as \( \Delta \) to emphasize that you should the <em>change</em> in sum of squares and the <em>change</em> in degrees in freedom from the previous model.</p>
+
+<p>Fill in the first two columns of the table.  Then go back and fill in the &ldquo;mean square&rdquo; column, which is just the sum of squares divided by the degrees of freedom.  Similarly, fill in the F column, which is the mean square for each model divided by the mean square for the perfect model.</p>
+
+<table><thead>
+<tr>
+<th align="left">Model</th>
+<th align="center">\( \Delta \) D.F.</th>
+<th align="center">\( \Delta \) S.S.</th>
+<th align="center">M.S.</th>
+<th align="center">F ratio</th>
+<th align="center">p-value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"><em>Age</em> ~ <em>1</em></td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left"><em>Age</em> ~ <em>1</em> + <em>Group</em></td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+</tr>
+<tr>
+<td align="left">&ldquo;Perfect&rdquo; model</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+<td align="center">__</td>
+</tr>
+</tbody></table>
+
+<p>You can use software to compute the p-value.  The relevant parameters of the F distribution are the degrees of freedom of the model and the degrees of freedom of the &ldquo;perfect&rdquo; model.</p>
+
+<p>Of course, in a real ANOVA table, rows are labeled differently.  Each row gives a name to the terms that were added in making the model. So, in the above table, the labels will be &ldquo;Intercept,&rdquo; &ldquo;Group,&rdquo; and &ldquo;Residuals.&rdquo;</p>
+
+<p>Compare your table to one constructed with software.  Enter the data into a spreadsheet, save it to disk in an appropriate format (e.g., CSV), then read it into the statistical software and create the ANOVA table.</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
