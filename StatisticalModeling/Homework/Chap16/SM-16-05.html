@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 16 Prob. 5</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 16 Prob. 5</h1>
+
+<p>This model traces through some of the steps in fitting a model of a yes/no process.  For specificity, pretend that the data are from observations of a random sample of teenaged drivers. The response variable is whether or not the driver was in an <em>accident</em> during one year (birthday to birthday).  The explanatory variables are <em>sex</em> and <em>age</em> of the driver.</p>
+
+<p>The model being fit is <em>accident</em> ~ <em>1</em> + <em>age</em> + <em>sex</em>.</p>
+
+<p>Here is a very small, fictitious set of data. </p>
+
+<table><thead>
+<tr>
+<th align="left">Case</th>
+<th align="center">Age</th>
+<th align="center">Sex</th>
+<th align="center">Accident?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="center">17</td>
+<td align="center">F</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="center">17</td>
+<td align="center">M</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="center">18</td>
+<td align="center">M</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="center">19</td>
+<td align="center">F</td>
+<td align="center">No</td>
+</tr>
+</tbody></table>
+
+<p>Even if it weren&#39;t fictitious, it would be too small for any practical purpose.  But it will serve to illustrate the principles of fitting.</p>
+
+<p>In fitting the model, the computer compares the likelihoods of various   candidate values for the coefficients, choosing those coefficients that maximize the likelihood of the model.</p>
+
+<p>Consider these two different candidate coefficients:</p>
+
+<table><thead>
+<tr>
+<th align="center">Candidate A Coefficients</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Intercept</td>
+<td align="center"><em>age</em></td>
+<td align="center"><em>sexF</em></td>
+</tr>
+<tr>
+<td align="center">35</td>
+<td align="center">-2</td>
+<td align="center">-1</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="center">Candidate B Coefficients</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Intercept</td>
+<td align="center"><em>age</em></td>
+<td align="center"><em>sexF</em></td>
+</tr>
+<tr>
+<td align="center">35</td>
+<td align="center">-2</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+
+<p>The link value is found by multiplying the coefficients by the values of the explanatory variables in the usual way.</p>
+
+<ul>
+<li>Using the candidate A coefficients, what is the link value for case 1?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 35 - 2\times 17 - 0 = 1 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 35 - 2\times 17 - 1 = 0 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 35 - 2\times 18 - 1 = -2 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 35 - 2\times 19 - 1 = -4 \)    </p>
+
+<ul>
+<li>Using the candidate B coefficients, what is the link value for case 3?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 35 - 2\times 18 - 0 = -1 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 35 - 2\times 18 - 1 = -2 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 35 - 2\times 18 + 1 = 0 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 35 - 2\times 18 - 2 = -3 \)    </p>
+
+<p>The link value is converted to a probability value by using the logistic transform.</p>
+
+<ul>
+<li><p>The link value under the candidate A coefficients for case 4 is \( 35 -2\times 19 - 1 = -4 \).  What is the corresponding probability value? (Hint: Plug in the link value to the logistic transform!) <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.004" 
+}'>0.004</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.018" 
+}'>0.018</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.027" 
+}'>0.027</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.047" 
+}'>0.047</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.172" 
+}'>0.172</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "candidate.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.261" 
+}'>0.261</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>The link value under the candidate B coefficients for case 4 is \( 35 -2\times 19 - 0 = -3 \).  What is the corresponding probability value? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.004" 
+}'>0.004</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.018" 
+}'>0.018</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.027" 
+}'>0.027</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.047" 
+}'>0.047</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.172" 
+}'>0.172</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "candidate.B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.261" 
+}'>0.261</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>The probability value is converted to a likelihood by calculating the probability of the observed outcome according to the probability value.  When the outcome is &ldquo;Yes,&rdquo; the likelihood is just the same as the probability value.  But when the outcome is &ldquo;No,&rdquo; the likelihood is 1 minus the probability value.</p>
+
+<ul>
+<li><p>The link value for case 3 using the candidate A coefficients is \( -1 \) and the corresponding probability value is \( 0.269 \).  What is the likelihood of the observed value of case 3 under the candidate A coefficients? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      3,
+"name": "case.3.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      3,
+"name": "case.3.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.269" 
+}'>0.269</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      3,
+"name": "case.3.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      3,
+"name": "case.3.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.731" 
+}'>0.731</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      3,
+"name": "case.3.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>The link value for case 2 using the candidate A coefficients is \( 1 \) and the corresponding probability value is \( 0.731 \).  What is the likelihood of the observed value of case 2 under the candidate A coefficients? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "case.2.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0" 
+}'>0</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "case.2.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "0.269" 
+}'>0.269</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "case.2.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.5" 
+}'>0.5</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "case.2.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.731" 
+}'>0.731</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "case.2.A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1" 
+}'>1</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>To compute the likelihood of the entire set of observations under the candidate coefficients, multiply together the likelihoods for all the cases.  Do this calculation separately for the candidate A coefficients and the candidate B coefficients.  Show your work.  Say which of the two candidates gives the <em>bigger</em> likelihood? </p>
+
+<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "bigger.likelihood",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p>In an actual fitting calculation, the computer goes through large numbers of candidate coefficients in a systematic way to find the candidate with the largest possible likelihood: the maximum likelihood candidate.<br/>
+Explain why it makes sense to choose the candidate with the <em>maximum</em>  rather than the minimum likelihood.</p>
+
+<p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "maximum.likelihood",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "MC1", "MC2", "text1", "text2" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

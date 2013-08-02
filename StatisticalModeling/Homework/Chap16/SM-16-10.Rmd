@@ -1,0 +1,199 @@
+Intro to Statistical Modeling Ch. 16 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-16-10-SD")
+```
+The National Osteoporosis Risk Assessment (NORA)[*siris-2001*] studied about 200,000 postmenopausal women aged 50 years or old in the United States. When
+entering the study, 14,412 of these women had osteoporosis as defined by a bone-mineral density "T score."  In studying the risk factors for the development of osteoporosis, the researchers fit a logistic regression model.
+
+The coefficients in a logistic regression model can be directly interpreted as the logarithm of an odds ratio --- the "log odds ratio."  In presenting results from logistic regression, it's common to exponentiate the coefficients, that is, to compute $e^{coef}$ to produce a simple odds ratio. 
+
+The table below shows the coefficients in odds ratio form from the NORA model.  There were many explanatory variables in the model: Age group, years since menopause, health status, etc.  All of these were arranged to be categorical variables, so there is one coefficient for each level of each variable.  As always, one level of each variable serves as a reference level.  For instance, in the table below, the age group 50-54 is the reference level.  In the table below, the odds ratio for the reference level is always given as 1.00.  The other odds ratios are always with respect to this reference.  So, women in the
+55-59 age group have odds of having osteoporosis that are 1.79 times bigger than women in the 50-54 age group.  In contrast, women who are 6-10 years since menopause have odds of having osteoporosis that are 0.79 as big as women who are $\leq 5$ years since menopause.  
+
+An odds ratio of 1 means that the group has the same probability value as the reference group. Odds ratios bigger than 1 mean the group is more likely to have osteoporosis than the reference group; odds ratios smaller than 1 mean
+the group is less likely to have the condition.
+
+The 95% confidence interval on the odds ratio indicates the precision of the estimate from the available data.  When the confidence interval for a coefficient includes 1.00, the null hypothesis that the population odds ratio is 1 cannot be rejected at a 0.05 significance level. For example, the odds ratio for a self-rated health status level of "very good" is 1.04 compared to those in "excellent" health.  But the confidence interval, 0.97 to 1.13, includes 1.00, indicating that the evidence is weak that women in very good health have a different risk of developing osteoporosis compared to women in excellent health.
+
+For some variables, e.g., "college education or higher," no reference level is given.  This is simply because the variable has just two levels.  The other level serves as the reference.
+
+Age group (years) | Odds Ratio (95% CI)
+|:---|:---|
+50-54 | 1.00  (Referent)
+55-59 | 1.79  (1.56-2.06) 
+60-64 | 3.84  (3.37-4.37) 
+65-69 | 5.94  (5.24-6.74) 
+70-74 | 9.54  (8.42-10.81) 
+75-79 | 14.34 (12.64-16.26) 
+$\geq$ 80 | 22.56  (19.82-25.67) 
+
+
+Years since menopause | Odds Ratio (95% CI)
+|:---|:---|
+$\leq$ 5 | 1.00  (Referent) 
+6-10 | 0.79  (0.70-0.89) 
+11-15 | 0.83  (0.76-0.91)  
+16-20 | 0.96  (0.89-1.03) 
+21-25 | 1.01  (0.95-1.08) 
+26-30 | 1.02  (0.95-1.09) 
+31-35 | 1.10  (1.03-1.19)
+36-40 | 1.14  (1.05-1.24)
+$\geq$ 41 | 1.24  (1.14-1.35) 
+
+
+College educ or higher | Odds Ratio (95% CI)} 
+|:---|:---|
+| | 0.91  (0.87-0.94) 
+
+
+Self-rated health status | Odds Ratio (95% CI)
+|:---|:---|
+Excellent | 1.00  (Referent) 
+Very good | 1.04  (0.97-1.13) 
+Good      | 1.23  (1.14-1.33) 
+Fair/poor | 1.62  (1.50-1.76) 
+
+
+Fracture history | Odds Ratio (95% CI)
+|:---|:---|
+Hip   | 1.96  (1.75-2.20) 
+Wrist | 1.90  (1.77-2.03)
+Spine | 1.34  (1.17-1.54) 
+Rib   | 1.43  (1.32-1.56) 
+
+
+Maternal history of osteoporosis | Odds Ratio (95% CI)
+|:---:|:---|
+| |1.08  (1.01-1.17) 
+
+
+Maternal history of fracture | Odds Ratio (95% CI)
+|:---:|:---|
+| | 1.16  (1.11-1.22)  
+
+
+Race/ethnicity | Odds Ratio (95% CI)
+|:---|:---|
+White | 1.00  (Referent)
+African American | 0.55  (0.48-0.62)
+Native American | 0.97  (0.82-1.14) 
+Hispanic | 1.31  (1.19-1.44)
+Asian | 1.56  (1.32-1.85) 
+
+
+Body mass index, kg/m2 | Odds Ratio (95% CI)
+|:---|:---|
+$\leq$ 23 | 1.00  (Referent)
+23.01-25.99 | 0.46  (0.44-0.48)
+26.00-29.99 | 0.27  (0.26-0.28)
+$\geq$ 30 | 0.16  (0.15-0.17)  
+
+
+Current medication use | Odds Ratio (95% CI)
+|:---|:---|
+Cortisone | 1.63  (1.47-1.81)  
+Diuretics | 0.81  (0.76-0.85)
+
+
+Estrogen use | Odds Ratio (95% CI)
+|:---|:---|
+Former | 0.77  (0.73-0.80)
+Current | 0.27  (0.25-0.28)
+
+
+Cigarette smoking | Odds Ratio (95% CI)
+|:---|:---|
+Former | 1.14  (1.10-1.19)
+Current | 1.58  (1.48-1.68)
+
+
+Regular Exercise | Odds Ratio (95% CI)
+|:---|:---|
+Regular | 0.86  (0.82-0.89)
+
+
+Alcohol use, drinks/wk | Odds Ratio (95% CI)
+|:---|:---|
+None | 1.00  (Referent) 
+1-6 | 0.85  (0.80-0.90)  
+7-13 | 0.76  (0.69-0.83)
+$\geq$ 14 | 0.62  (0.54-0.71) 
+
+
+Technology | Odds Ratio (95% CI)
+|:---|:---|
+Heel x-ray | 1.00  (Referent)
+Forearm x-ray | 2.86  (2.75-2.99)
+Finger x-ray | 4.86  (4.56-5.18)
+Heel ultrasound | 0.79  (0.70-0.90)
+
+
+Since all the variables were included simultaneously in the model, the various coefficients can be interpreted as indicating partial change: the odds ratio comparing the given level to the reference level for each variable, adjusting for all the other variables as if they had been held constant.
+
+```{r include=FALSE}
+prob1=selectSet(name="ethnicity", totalPts=1, "White"=FALSE, "African American"=TRUE, "Native American"=FALSE, "Hispanic"=FALSE, "Asian"=FALSE)
+```
+* For which ethnicity are women least likely to have osteoporosis? `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectSet(name="regular.exercise", totalPts=1, "greater"=FALSE, "lesser"=TRUE, "same"=FALSE)
+```
+* Is regular exercise (compared to no regular exercise) associated with a greater or lesser risk of having osteoporosis? `r I(prob2)`
+
+```{r include=FALSE}
+prob3=selectSet(name="smoking", totalPts=1, "greater"=FALSE, "lesser"=TRUE, "same"=FALSE)
+```
+* Is current cigarette smoking (compared to never having smoked) associated with a greater or lesser risk of having osteoporosis? `r I(prob3)`
+
+```{r include=FALSE}
+prob4=selectSet(name="BMI", totalPts=1, "greater"=FALSE, "lesser"=TRUE, "same"=FALSE)
+```
+* The body mass index (BMI) is a measure of overweight.  For adults, a BMI greater than 25 is considered overweight (although this is controversial) and a BMI greater than 30 is considered "obese." Are women with BMI $\geq 30$ (compared to those with BMI $< 23$) at greater, lesser, or the same risk of having osteoporosis? `r I(prob4)`
+
+There are different technologies for detecting osteoporosis. Since the model adjusts for all the other risk factors, it seems fair to interpret the risk ratios for the different technologies as indicating how sensitive each technology is in detecting osteoporosis.  
+
+```{r include=FALSE}
+prob5=selectSet(name="most.sensitive.technology", totalPts=1, "heel x-ray"=FALSE, "forearm x-ray"=FALSE, "finger x-ray"=TRUE, "heel ultrasound"=FALSE)
+```
+* Which technology is the most sensitive? `r I(prob5)`
+
+```{r include=FALSE}
+prob6=selectSet(name="least.sensitive.technology", totalPts=1, "heel x-ray"=FALSE, "forearm x-ray"=FALSE, "finger x-ray"=FALSE, "heel ultrasound"=TRUE)
+```
+* Which technology is the least sensitive?`r I(prob6)` 
+
+In combining the odds ratios of multiple variables, you can *multiply* the individual odds ratios.  For instance, the odds of a woman in very good health with a body mass index of 24 is $1.04 \times 0.46$ as large as a woman in excellent health with a BMI of $< 23$ (the reference levels for the variables involved).  (If log odds ratios were used, rather than the odds ratios themselves, the values would be added, not multiplied.)
+
+* What is the odds ratio of a women having osteoporosis who is in fair/poor health, drinks 7-13 drinks per week, and is Asian?
+```{r include=FALSE}
+f=newMC(totalPts=1)
+```
+`r I(f(FALSE))` $0.76 \times 0.27 \times 1.00$    
+`r I(f(FALSE))` $1.62 \times 0.27 \times 1.56$    
+`r I(f(TRUE))` $1.62 \times 0.76 \times 1.56$    
+`r I(f(FALSE))` $0.76 \times 1.62 \times 1.00$
+```{r include=FALSE, results='hide'}
+I(f(finish=TRUE))
+```
+
+* The two variables "age" and "years since menopause" are likely to be somewhat collinear.  Explain why.  What effect might this collinearity have on the width of the confidence intervals for the various variables associated with those variables?  If you were recommending to remove one of the variables in the list of potential risk factors, which one would it be? 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="collinear.variables", totalPts=2, rows=3))
+```
+`r I(textItem(name="collinear.variables", totalPts=2, rows=3))`
+ 
+Notice that the table gives no intercept coefficient.  The intercept corresponds to the probability of having osteoporosis when belonging to the reference level of each of the explanatory variables. Without knowing this, you cannot use the coefficients calculate the absolute risk of osteoporosis in the different conditions.  Instead, the odds ratios in the table tell about relative risk. Gigerenzer [gigerenzer-2002,gigerenzer-2008] points out that physicians and patients often have difficulty interpreting relative risks and
+encourages information to be presented in absolute terms.
+
+To illustrate, in the group from whom the NORA subjects was drawn, the absolute risk of osteoporosis was 72 in 1000 patients.  This corresponds to an odds of osteoporosis of $72/(1000-72) = 0.776$.  Now consider a woman taking cortisone.  According to the table, this increases her odds of osteoporosis by a factor of 1.63, to $0.776\times 1.63 = 0.126$.  Translating this back into an absolute
+risk means converting from odds into probability.  The probability will be $0.126/(1+0.126) = 0.112$, or, in other words, an absolute risk of 112 in 1000 patients. 
+
+Now suppose the woman was taking cortisone to treat arthritis. Knowing the absolute risk (an increase of 40 women per 1000) puts the woman and her physician in a better position to compare the positive effects of cortisone for arthritis to the negative effects in terms of osteoporosis.  
+
+[This problem is based on an item used in a test of the statistical
+expertise of medical residents reported in [windish-2007].]
+
+`r I(closeProblem())`

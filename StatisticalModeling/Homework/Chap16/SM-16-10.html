@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 16 Prob. 10</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 16 Prob. 10</h1>
+
+<p>The National Osteoporosis Risk Assessment (NORA)[<em>siris-2001</em>] studied about 200,000 postmenopausal women aged 50 years or old in the United States. When
+entering the study, 14,412 of these women had osteoporosis as defined by a bone-mineral density &ldquo;T score.&rdquo;  In studying the risk factors for the development of osteoporosis, the researchers fit a logistic regression model.</p>
+
+<p>The coefficients in a logistic regression model can be directly interpreted as the logarithm of an odds ratio &mdash; the &ldquo;log odds ratio.&rdquo;  In presenting results from logistic regression, it&#39;s common to exponentiate the coefficients, that is, to compute \( e^{coef} \) to produce a simple odds ratio. </p>
+
+<p>The table below shows the coefficients in odds ratio form from the NORA model.  There were many explanatory variables in the model: Age group, years since menopause, health status, etc.  All of these were arranged to be categorical variables, so there is one coefficient for each level of each variable.  As always, one level of each variable serves as a reference level.  For instance, in the table below, the age group 50-54 is the reference level.  In the table below, the odds ratio for the reference level is always given as 1.00.  The other odds ratios are always with respect to this reference.  So, women in the
+55-59 age group have odds of having osteoporosis that are 1.79 times bigger than women in the 50-54 age group.  In contrast, women who are 6-10 years since menopause have odds of having osteoporosis that are 0.79 as big as women who are \( \leq 5 \) years since menopause.  </p>
+
+<p>An odds ratio of 1 means that the group has the same probability value as the reference group. Odds ratios bigger than 1 mean the group is more likely to have osteoporosis than the reference group; odds ratios smaller than 1 mean
+the group is less likely to have the condition.</p>
+
+<p>The 95% confidence interval on the odds ratio indicates the precision of the estimate from the available data.  When the confidence interval for a coefficient includes 1.00, the null hypothesis that the population odds ratio is 1 cannot be rejected at a 0.05 significance level. For example, the odds ratio for a self-rated health status level of &ldquo;very good&rdquo; is 1.04 compared to those in &ldquo;excellent&rdquo; health.  But the confidence interval, 0.97 to 1.13, includes 1.00, indicating that the evidence is weak that women in very good health have a different risk of developing osteoporosis compared to women in excellent health.</p>
+
+<p>For some variables, e.g., &ldquo;college education or higher,&rdquo; no reference level is given.  This is simply because the variable has just two levels.  The other level serves as the reference.</p>
+
+<table><thead>
+<tr>
+<th align="left">Age group (years)</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">50-54</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">55-59</td>
+<td align="left">1.79  (1.56-2.06)</td>
+</tr>
+<tr>
+<td align="left">60-64</td>
+<td align="left">3.84  (3.37-4.37)</td>
+</tr>
+<tr>
+<td align="left">65-69</td>
+<td align="left">5.94  (5.24-6.74)</td>
+</tr>
+<tr>
+<td align="left">70-74</td>
+<td align="left">9.54  (8.42-10.81)</td>
+</tr>
+<tr>
+<td align="left">75-79</td>
+<td align="left">14.34 (12.64-16.26)</td>
+</tr>
+<tr>
+<td align="left">\( \geq \) 80</td>
+<td align="left">22.56  (19.82-25.67)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Years since menopause</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">\( \leq \) 5</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">6-10</td>
+<td align="left">0.79  (0.70-0.89)</td>
+</tr>
+<tr>
+<td align="left">11-15</td>
+<td align="left">0.83  (0.76-0.91)</td>
+</tr>
+<tr>
+<td align="left">16-20</td>
+<td align="left">0.96  (0.89-1.03)</td>
+</tr>
+<tr>
+<td align="left">21-25</td>
+<td align="left">1.01  (0.95-1.08)</td>
+</tr>
+<tr>
+<td align="left">26-30</td>
+<td align="left">1.02  (0.95-1.09)</td>
+</tr>
+<tr>
+<td align="left">31-35</td>
+<td align="left">1.10  (1.03-1.19)</td>
+</tr>
+<tr>
+<td align="left">36-40</td>
+<td align="left">1.14  (1.05-1.24)</td>
+</tr>
+<tr>
+<td align="left">\( \geq \) 41</td>
+<td align="left">1.24  (1.14-1.35)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">College educ or higher</th>
+<th align="left">Odds Ratio (95% CI)}</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"></td>
+<td align="left">0.91  (0.87-0.94)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Self-rated health status</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Excellent</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">Very good</td>
+<td align="left">1.04  (0.97-1.13)</td>
+</tr>
+<tr>
+<td align="left">Good</td>
+<td align="left">1.23  (1.14-1.33)</td>
+</tr>
+<tr>
+<td align="left">Fair/poor</td>
+<td align="left">1.62  (1.50-1.76)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Fracture history</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Hip</td>
+<td align="left">1.96  (1.75-2.20)</td>
+</tr>
+<tr>
+<td align="left">Wrist</td>
+<td align="left">1.90  (1.77-2.03)</td>
+</tr>
+<tr>
+<td align="left">Spine</td>
+<td align="left">1.34  (1.17-1.54)</td>
+</tr>
+<tr>
+<td align="left">Rib</td>
+<td align="left">1.43  (1.32-1.56)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="center">Maternal history of osteoporosis</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"></td>
+<td align="left">1.08  (1.01-1.17)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="center">Maternal history of fracture</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"></td>
+<td align="left">1.16  (1.11-1.22)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Race/ethnicity</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">White</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">African American</td>
+<td align="left">0.55  (0.48-0.62)</td>
+</tr>
+<tr>
+<td align="left">Native American</td>
+<td align="left">0.97  (0.82-1.14)</td>
+</tr>
+<tr>
+<td align="left">Hispanic</td>
+<td align="left">1.31  (1.19-1.44)</td>
+</tr>
+<tr>
+<td align="left">Asian</td>
+<td align="left">1.56  (1.32-1.85)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Body mass index, kg/m2</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">\( \leq \) 23</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">23.01-25.99</td>
+<td align="left">0.46  (0.44-0.48)</td>
+</tr>
+<tr>
+<td align="left">26.00-29.99</td>
+<td align="left">0.27  (0.26-0.28)</td>
+</tr>
+<tr>
+<td align="left">\( \geq \) 30</td>
+<td align="left">0.16  (0.15-0.17)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Current medication use</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Cortisone</td>
+<td align="left">1.63  (1.47-1.81)</td>
+</tr>
+<tr>
+<td align="left">Diuretics</td>
+<td align="left">0.81  (0.76-0.85)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Estrogen use</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Former</td>
+<td align="left">0.77  (0.73-0.80)</td>
+</tr>
+<tr>
+<td align="left">Current</td>
+<td align="left">0.27  (0.25-0.28)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Cigarette smoking</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Former</td>
+<td align="left">1.14  (1.10-1.19)</td>
+</tr>
+<tr>
+<td align="left">Current</td>
+<td align="left">1.58  (1.48-1.68)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Regular Exercise</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Regular</td>
+<td align="left">0.86  (0.82-0.89)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Alcohol use, drinks/wk</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">None</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">1-6</td>
+<td align="left">0.85  (0.80-0.90)</td>
+</tr>
+<tr>
+<td align="left">7-13</td>
+<td align="left">0.76  (0.69-0.83)</td>
+</tr>
+<tr>
+<td align="left">\( \geq \) 14</td>
+<td align="left">0.62  (0.54-0.71)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th align="left">Technology</th>
+<th align="left">Odds Ratio (95% CI)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Heel x-ray</td>
+<td align="left">1.00  (Referent)</td>
+</tr>
+<tr>
+<td align="left">Forearm x-ray</td>
+<td align="left">2.86  (2.75-2.99)</td>
+</tr>
+<tr>
+<td align="left">Finger x-ray</td>
+<td align="left">4.86  (4.56-5.18)</td>
+</tr>
+<tr>
+<td align="left">Heel ultrasound</td>
+<td align="left">0.79  (0.70-0.90)</td>
+</tr>
+</tbody></table>
+
+<p>Since all the variables were included simultaneously in the model, the various coefficients can be interpreted as indicating partial change: the odds ratio comparing the given level to the reference level for each variable, adjusting for all the other variables as if they had been held constant.</p>
+
+<ul>
+<li><p>For which ethnicity are women least likely to have osteoporosis? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "ethnicity",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "White" 
+}'>White</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "ethnicity",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "African American" 
+}'>African American</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "ethnicity",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Native American" 
+}'>Native American</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "ethnicity",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Hispanic" 
+}'>Hispanic</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "ethnicity",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Asian" 
+}'>Asian</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>Is regular exercise (compared to no regular exercise) associated with a greater or lesser risk of having osteoporosis? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      2,
+"name": "regular.exercise",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "greater" 
+}'>greater</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      2,
+"name": "regular.exercise",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "lesser" 
+}'>lesser</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      2,
+"name": "regular.exercise",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "same" 
+}'>same</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>Is current cigarette smoking (compared to never having smoked) associated with a greater or lesser risk of having osteoporosis? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      3,
+"name": "smoking",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "greater" 
+}'>greater</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      3,
+"name": "smoking",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "lesser" 
+}'>lesser</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      3,
+"name": "smoking",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "same" 
+}'>same</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+<li><p>The body mass index (BMI) is a measure of overweight.  For adults, a BMI greater than 25 is considered overweight (although this is controversial) and a BMI greater than 30 is considered &ldquo;obese.&rdquo; Are women with BMI \( \geq 30 \) (compared to those with BMI \( < 23 \)) at greater, lesser, or the same risk of having osteoporosis? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      4,
+"name": "BMI",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "greater" 
+}'>greater</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      4,
+"name": "BMI",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "lesser" 
+}'>lesser</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      4,
+"name": "BMI",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "same" 
+}'>same</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>There are different technologies for detecting osteoporosis. Since the model adjusts for all the other risk factors, it seems fair to interpret the risk ratios for the different technologies as indicating how sensitive each technology is in detecting osteoporosis.  </p>
+
+<ul>
+<li><p>Which technology is the most sensitive? <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      5,
+"name": "most.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "heel x-ray" 
+}'>heel x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      5,
+"name": "most.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "forearm x-ray" 
+}'>forearm x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      5,
+"name": "most.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "finger x-ray" 
+}'>finger x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      5,
+"name": "most.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "heel ultrasound" 
+}'>heel ultrasound</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+<li><p>Which technology is the least sensitive?<select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      6,
+"name": "least.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "heel x-ray" 
+}'>heel x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      6,
+"name": "least.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "forearm x-ray" 
+}'>forearm x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      6,
+"name": "least.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "finger x-ray" 
+}'>finger x-ray</option> <option value='{
+"itemInfo": {
+"setID": "SM-16-10-SD",
+"itemN":      6,
+"name": "least.sensitive.technology",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "heel ultrasound" 
+}'>heel ultrasound</option> </select><span id='out6' class='shiny-html-output'> </span> </p></li>
+</ul>
+
+<p>In combining the odds ratios of multiple variables, you can <em>multiply</em> the individual odds ratios.  For instance, the odds of a woman in very good health with a body mass index of 24 is \( 1.04 \times 0.46 \) as large as a woman in excellent health with a BMI of \( < 23 \) (the reference levels for the variables involved).  (If log odds ratios were used, rather than the odds ratios themselves, the values would be added, not multiplied.)</p>
+
+<ul>
+<li>What is the odds ratio of a women having osteoporosis who is in fair/poor health, drinks 7-13 drinks per week, and is Asian?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> \( 0.76 \times 0.27 \times 1.00 \)<br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> \( 1.62 \times 0.27 \times 1.56 \)<br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> \( 1.62 \times 0.76 \times 1.56 \)<br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> \( 0.76 \times 1.62 \times 1.00 \)</p>
+
+<ul>
+<li>The two variables &ldquo;age&rdquo; and &ldquo;years since menopause&rdquo; are likely to be somewhat collinear.  Explain why.  What effect might this collinearity have on the width of the confidence intervals for the various variables associated with those variables?  If you were recommending to remove one of the variables in the list of potential risk factors, which one would it be? </li>
+</ul>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-16-10-SD",
+"itemN":      1,
+"name": "collinear.variables",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p>Notice that the table gives no intercept coefficient.  The intercept corresponds to the probability of having osteoporosis when belonging to the reference level of each of the explanatory variables. Without knowing this, you cannot use the coefficients calculate the absolute risk of osteoporosis in the different conditions.  Instead, the odds ratios in the table tell about relative risk. Gigerenzer [gigerenzer-2002,gigerenzer-2008] points out that physicians and patients often have difficulty interpreting relative risks and
+encourages information to be presented in absolute terms.</p>
+
+<p>To illustrate, in the group from whom the NORA subjects was drawn, the absolute risk of osteoporosis was 72 in 1000 patients.  This corresponds to an odds of osteoporosis of \( 72/(1000-72) = 0.776 \).  Now consider a woman taking cortisone.  According to the table, this increases her odds of osteoporosis by a factor of 1.63, to \( 0.776\times 1.63 = 0.126 \).  Translating this back into an absolute
+risk means converting from odds into probability.  The probability will be \( 0.126/(1+0.126) = 0.112 \), or, in other words, an absolute risk of 112 in 1000 patients. </p>
+
+<p>Now suppose the woman was taking cortisone to treat arthritis. Knowing the absolute risk (an increase of 40 women per 1000) puts the woman and her physician in a better position to compare the positive effects of cortisone for arthritis to the negative effects in terms of osteoporosis.  </p>
+
+<p>[This problem is based on an item used in a test of the statistical
+expertise of medical residents reported in [windish-2007].]</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "MC1", "text1" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
