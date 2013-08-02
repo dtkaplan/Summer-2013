@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 14 Reading Questions</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 14 Reading Questions</h1>
+
+<ul>
+<li><p>A permutation test involves randomizing in order to simulate eliminating the relationship, if any, between the explanatory variables and the response variable. What&#39;s the point of this?</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-14-RQ-SD",
+"itemN":      1,
+"name": "permutation",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+By eliminating the relationship between the explanatory and response variables, you create a simulated world in which the Null Hypothesis is true.  This allows you to carry out a hypothesis test against that Null.  The result indicates how likely you would be to get the result you saw in your actual data in a world in which the Null Hypothesis is true.
+</aside></p>
+
+<ul>
+<li><p>The F statistic compares two quantities. What are they? </p>
+
+<p><textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-14-RQ-SD",
+"itemN":      2,
+"name": "F",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+The F statistic compares the &ldquo;size&rdquo; of the contribution of an explanatory term to the &ldquo;size&rdquo; of the residuals.  F measures &ldquo;size&rdquo; in a particular way: the sum of squares divided by the number of degrees of freedom.
+</aside></p>
+
+<ul>
+<li><p>What is a &ldquo;degree of freedom?&rdquo; </p>
+
+<p><textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-14-RQ-SD",
+"itemN":      3,
+"name": "degree.of.freedom",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+One way to think about degrees of freedom is an accounting device for the number of cases.  The degrees of freedom of a model term is &mdash; thinking pretty abstractly &mdash; the number of cases worth of information that is potentially available to that term.  The degrees of freedom of the residuals is the sample size \( n \) minus the degrees of freedom of all the model terms.</p>
+
+<p>Seen geometrically, a degree of freedom is a unique direction in variable space.  Each model term is translated to one or more model vectors: these vectors are directions in variable space.  They will be unique directions so long as there is no redundancy with the model vectors from other terms.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

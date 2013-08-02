@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 15 Reading Questions</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 15 Reading Questions</h1>
+
+<ul>
+<li><p>What is a &ldquo;covariate&rdquo; and how does it differ from any other kind of variable?</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-15-RQ-SD",
+"itemN":      1,
+"name": "cov",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+A covariate is an explanatory variable in which you, the modeler, have little or no primary interest, but which you think may contribute to the system under study. Mathematically, it&#39;s an ordinary variable. Sometimes covariates are quantities that you want to hold constant when thinking about the explanatory variables of interest, sometimes they reduce the size of residuals and so make it easier to see the role of the explanatory variables of interest.
+</aside></p>
+
+<ul>
+<li><p>Why is there a separate F statistic for each explanatory term in a model?</p>
+
+<p><textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-15-RQ-SD",
+"itemN":      2,
+"name": "F",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Each explanatory term contributes to the fitted model values.  In ANOVA, the terms are broken out in a successive way, so that each term makes a unique contribution to the fitted model values and therefore the size of the contribution of that term can be specified.  The F statistic compares the size of the contribution to the size of the residuals.
+</aside></p>
+
+<ul>
+<li><p>How can covariates make an explanatory term look better (e.g., more significant) in an F test? </p>
+
+<p><textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-15-RQ-SD",
+"itemN":      3,
+"name": "better",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+An important way in which covariates can make an explanatory term look better is by reducing the size of residuals, which shrinks the denominator in the F statistic &mdash; the denominator is the bottom part of the fraction &mdash; and therefore increases F.
+</aside></p>
+
+<ul>
+<li><p>How can covariates make an explanatory term look worse (e.g., less significant) in an F test? </p>
+
+<p><textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-15-RQ-SD",
+"itemN":      4,
+"name": "worse",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+The covariates may account for some of the same variability in the response that the explanatory variables of interest account for.  This competition means that the &ldquo;size&#39;&#39; of the contribution from the explanatory variables is reduced, as that contribution is being shared with the covariates.
+</aside></p>
+
+<ul>
+<li><p>Why does the the sum of squares of the various model terms change when there is collinearity among the model terms? </p>
+
+<p><textarea cols='30' rows='3' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-15-RQ-SD",
+"itemN":      5,
+"name": "change",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+This is more or less the same issue as in the previous question.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4", "text5" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

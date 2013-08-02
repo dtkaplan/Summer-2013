@@ -1,0 +1,63 @@
+Intro to Statistical Modeling Ch. 15 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-15-RQ-SD")
+```
+
+* What is a "covariate" and how does it differ from any other kind of variable?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="cov", totalPts=2, rows=3))
+```
+ `r I(textItem(name="cov", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+A covariate is an explanatory variable in which you, the modeler, have little or no primary interest, but which you think may contribute to the system under study. Mathematically, it's an ordinary variable. Sometimes covariates are quantities that you want to hold constant when thinking about the explanatory variables of interest, sometimes they reduce the size of residuals and so make it easier to see the role of the explanatory variables of interest.
+</aside>
+
+* Why is there a separate F statistic for each explanatory term in a model?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="F", totalPts=2, rows=3))
+```
+ `r I(textItem(name="F", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:   
+Each explanatory term contributes to the fitted model values.  In ANOVA, the terms are broken out in a successive way, so that each term makes a unique contribution to the fitted model values and therefore the size of the contribution of that term can be specified.  The F statistic compares the size of the contribution to the size of the residuals.
+</aside>
+
+* How can covariates make an explanatory term look better (e.g., more significant) in an F test? 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="better", totalPts=2, rows=3))
+```
+ `r I(textItem(name="better", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+An important way in which covariates can make an explanatory term look better is by reducing the size of residuals, which shrinks the denominator in the F statistic --- the denominator is the bottom part of the fraction --- and therefore increases F.
+</aside>
+
+* How can covariates make an explanatory term look worse (e.g., less significant) in an F test? 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="worse", totalPts=2, rows=3))
+```
+ `r I(textItem(name="worse", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+The covariates may account for some of the same variability in the response that the explanatory variables of interest account for.  This competition means that the ``size'' of the contribution from the explanatory variables is reduced, as that contribution is being shared with the covariates.
+</aside>
+
+* Why does the the sum of squares of the various model terms change when there is collinearity among the model terms? 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="change", totalPts=2, rows=3))
+```
+ `r I(textItem(name="change", totalPts=2, rows=3))`
+
+<aside>
+This is more or less the same issue as in the previous question.
+</aside>
+
+`r I(closeProblem())`
