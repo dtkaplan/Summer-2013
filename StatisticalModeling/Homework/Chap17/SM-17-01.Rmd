@@ -1,0 +1,79 @@
+Intro to Statistical Modeling Ch. 17 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-17-1-SD")
+```
+For each of the following pathways connecting A and B, choose the appropriate causal structure.
+
+\begin{enumerate}[(a)]
+\item \pathway{A\causes C\causes B}
+\begin{MultipleChoice}
+\correct{A causes B.}
+\wrong{B causes A.}
+\wrong{A and B share a common cause.}
+\wrong{No causal connection between A and B}
+\end{MultipleChoice}
+
+\item \pathway{A\causedBy C\causedBy B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\correct{B causes A.}
+\wrong{A and B share a common cause.}
+\wrong{No causal connection between A and B}
+\end{MultipleChoice}
+
+\item \pathway{A\causedBy C\causes B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\correct{A and B share a common cause.}
+\wrong{No causal connection between A and B}
+\end{MultipleChoice}
+
+
+\item \pathway{A\causes C\causedBy B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\wrong{A and B share a common cause.}
+\correct{No causal connection between A and B}
+\end{MultipleChoice}
+
+\item \pathway{A\causes C\causedBy D \causes B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\wrong{A and B share a common cause.}
+\correct{No causal connection between A and B}
+\end{MultipleChoice}
+
+\item \pathway{A\causes C\causedBy D \causedBy B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\wrong{A and B share a common cause.}
+\correct{No causal connection between A and B}
+\end{MultipleChoice}
+
+
+\item \pathway{A\causedBy C\causedBy D \causedBy B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\correct{A and B share a common cause.}
+\wrong{No causal connection between A and B}
+\end{MultipleChoice}
+
+\item \pathway{A\causedBy C\causes D \causedBy E\causedBy B}
+\begin{MultipleChoice}
+\wrong{A causes B.}
+\wrong{B causes A.}
+\wrong{A and B share a common cause.}
+\correct{No causal connection between A and B}
+\end{MultipleChoice}
+
+
+\end{enumerate}
+

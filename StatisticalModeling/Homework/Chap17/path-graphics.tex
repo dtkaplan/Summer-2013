@@ -1,0 +1,113 @@
+\documentclass[convert,crop,tikz]{standalone}
+\def\pgfsysdriver{pgfsys-tex4ht.def}
+\usepackage{tikz}
+
+\begin{document}
+
+Compile this document with htlatex to generate the SVG files
+
+\providecommand{\causes}{\ensuremath{\Rightarrow}}
+\providecommand{\causedBy}{\ensuremath{\Leftarrow}}
+\providecommand{\correlatedWith}{\ensuremath{\Leftrightarrow}}
+
+\usetikzlibrary{shapes}
+
+% a measurable node: args: name, location (e.g., 0,4), text label
+\providecommand{\measurableNode}[3]{%
+\node[draw,font=\scshape,shape=rectangle,minimum size=1cm,fill=pink] (#1) at #2 {#3};}
+\providecommand{\latentNode}[3]{%
+\node[draw,shade,font=\itshape,shape=ellipse,minimum size=1cm,fill=white] (#1) at #2 {#3};}
+% \exogenousNoise[thickness]{name}{partnerName}{where}
+\providecommand{\exogenousNoise}[3][?]{%
+\node[shade,shading=radial,draw,font=\bf,shape=circle,minimum size=.75cm,fill=white] (#2) at #3 {#1};}
+% \curvedLink[thickness]{from}{to}{label}{control point or points}
+\providecommand{\curvedLink}[5][]{\draw[->,shorten >=2pt,line width=1.3pt,#1] (#2) .. controls #5 .. node[below, sloped] {#4} (#3);}
+
+\providecommand{\straightLink}[4][]{\draw[line width=1pt,->,shorten >=2pt,#1] (#2) -- (#3) node[pos=0.85,above,sloped,#1]{#4};}
+
+\providecommand{\inhibStraightLink}[4][line width=1pt]{\draw[ ->,style=densely dashed,shorten >=2pt,#1] (#2) -- (#3) node[pos=0.7,above,sloped]{#4};}
+\providecommand{\inhibCurvedLink}[5][line width=1.3pt]{\draw[->,style=densely dashed,shorten >=2pt,#1] (#2) .. controls #5 .. node[below, sloped] {#4} (#3);}
+
+
+Paths 104
+
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(0,0)}{A}
+\measurableNode{B}{(4,0)}{B}
+\measurableNode{C}{(0,4)}{C}
+\straightLink{C}{A}{}
+\straightLink{C}{B}{}
+\straightLink{B}{A}{}
+\end{tikzpicture}
+
+paths-105
+
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(0,0)}{A}
+\measurableNode{B}{(4,0)}{B}
+\measurableNode{C}{(2,4)}{C}
+\straightLink{C}{A}{}
+\straightLink{B}{A}{}
+\end{tikzpicture}
+
+
+paths-106
+
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(2,0)}{A}
+\measurableNode{B}{(0,2)}{B}
+\measurableNode{C}{(4,2)}{C}
+\measurableNode{D}{(2,4)}{D}
+\straightLink{C}{A}{}
+\straightLink{B}{A}{}
+\straightLink{D}{C}{}
+\straightLink{D}{B}{}
+\end{tikzpicture}
+
+paths-107
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(0,0)}{A}
+\measurableNode{B}{(4,0)}{B}
+\measurableNode{C}{(2,0)}{C}
+\straightLink{C}{A}{}
+\straightLink{B}{C}{}
+\end{tikzpicture}
+
+
+paths-108
+
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(2,8)}{A}
+\measurableNode{B}{(4,6)}{B}
+\measurableNode{C}{(2,4)}{C}
+\measurableNode{D}{(2,2)}{D}
+\measurableNode{E}{(6,4)}{E}
+\measurableNode{F}{(0,6)}{F}
+\straightLink{A}{F}{}
+\straightLink{A}{B}{}
+\straightLink{B}{C}{}
+\straightLink{B}{E}{}
+\straightLink{F}{C}{}
+\straightLink{C}{D}{}
+\end{tikzpicture}
+
+
+Path 108b
+
+\begin{tikzpicture}{scale=1}
+\measurableNode{A}{(2,8)}{A}
+\measurableNode{B}{(4,6)}{B}
+\measurableNode{C}{(2,4)}{C}
+\measurableNode{D}{(2,2)}{D}
+\measurableNode{E}{(6,4)}{E}
+\measurableNode{F}{(0,6)}{F}
+\straightLink{A}{F}{}
+\straightLink{A}{B}{}
+\straightLink{B}{C}{}
+\straightLink{B}{E}{}
+\straightLink{F}{C}{}
+\straightLink{C}{D}{}
+\end{tikzpicture}
+
+
+\end{document}

@@ -1,0 +1,58 @@
+Graphics for Chapter 17
+========================================================
+
+Some of the graphics are produced in latex.
+
+You have to put the following commands (in the double dollar signs) at the start of the
+document.
+$$
+\newcommand{\causes}{{\Rightarrow}}
+\newcommand{\causedBy}{{\Leftarrow}}
+\newcommand{\correlatedWith}{{\Leftrightarrow}}$$
+
+$A\causes C\causes B$
+
+$A\causedBy C\causedBy B$
+
+$A\causedBy C\causes B$
+
+$A\causedBy C\causes D \causedBy E\causedBy B$
+
+## Problem 17.05  
+
+paths-104
+
+<img src='path-graphics-1.svg' width='200'>
+
+## Problem 17.06
+
+paths-105
+
+<img src='path-graphics-2.svg' width='200'>
+
+## Problem 17.07
+
+paths-106
+
+<img src='path-graphics-3.svg' width='200'>
+
+## Problem 17.08
+
+paths-107
+
+<img src='path-graphics-4.svg' width='200'>
+
+## Problem 17.10
+
+paths-103
+
+
+## Problem 17.11
+
+paths-108
+
+<img src='path-graphics-5.svg' width='300'>
+
+## Problem 17.12
+
+paths-109
