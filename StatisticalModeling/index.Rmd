@@ -109,6 +109,8 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 4
 
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap04/SM-04-ReadingQuestions.html) working
+
 * [Problem 4.06](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap04/SM-04-06.html) working
 
 * [Problem 4.07](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap04/SM-04-07.html) issues with R commands
@@ -116,6 +118,8 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 4.08](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap04/SM-04-P4-08.html) working
 
 ## Chapter 5
+
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-ReadingQuestions.html) working
 
 * [Problem 5.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-09.html) working
 
@@ -136,6 +140,8 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 5.40](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-40.html) working
 
 ## Chapter 6
+
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-ReadingQuestions.html) working
 
 * [Problem 6.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-01.html) working
 
@@ -164,6 +170,8 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 6.27](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) some issues with r commands (llines, etc.)
 
 ## Chapter 7
+
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-ReadingQuestions.html) working
 
 * [Problem 7.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-01.html) working
 
@@ -201,6 +209,8 @@ Problems will be arranged according to their level of difficulty within their co
 
 ## Chapter 8 
 
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-ReadingQuestions.html) working
+
 * [Problem 8.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-01.html) working, but tables are ugly
 
 * [Problem 8.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-02.html) working
@@ -216,6 +226,8 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 8.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-12.html) working
 
 ## Chapter 9
+
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-ReadingQuestions.html) working
 
 * [Problem 9.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-01.html) working
 
@@ -242,6 +254,8 @@ Problems will be arranged according to their level of difficulty within their co
 * [Problem 9.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap09/SM-09-23.html) originally didn't have any directions for free text, selectSet, MC, so all of the additions are mine.  Make sure and check this
 
 ## Chapter 10
+
+* [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-ReadingQuestions.html) working
 
 * [Problem 10.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap10/SM-10-01.html) working
 

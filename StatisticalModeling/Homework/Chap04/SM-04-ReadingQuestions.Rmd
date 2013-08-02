@@ -1,0 +1,27 @@
+Intro to Statistical Modeling Ch. 4 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-4-RQ-SD")
+```
+
+* Which is larger: variance of residuals, variance of the model values, or the variance of the actual values?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="larger", totalPts=2, rows=3))
+```
+ `r I(textItem(name="larger", totalPts=2, rows=3))`
+
+* How can a difference in group means clearly shown by your data nonetheless be misleading?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="misleading", totalPts=2, rows=3))
+```
+ `r I(textItem(name="misleading", totalPts=2, rows=3))`
+
+* What does it mean to partition variation?  What's special about the variance --- the square of the standard deviation --- as a way to measure variation?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="partition", totalPts=2, rows=3))
+```
+ `r I(textItem(name="partition", totalPts=2, rows=3))`
+
+`r I(closeProblem())`

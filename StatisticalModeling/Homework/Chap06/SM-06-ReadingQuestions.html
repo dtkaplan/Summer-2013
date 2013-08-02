@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 6 Reading Questions</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 6 Reading Questions</h1>
+
+<ul>
+<li><p>What is an &ldquo;explanatory variable&rdquo; and how does it differ from a &ldquo;response variable?</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      1,
+"name": "explanatory.v.response",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+Both are variables.  The reason to designate one variable as &quot;response&rdquo; and other variables as &ldquo;explanatory&rdquo; depends on your own interests and goals as a modeler.  In building a model, you are accounting for the variation in the response variable.  So the response variable is something that you are interested in explaining.<br/>
+</aside></p>
+
+<ul>
+<li><p>What is the difference between a &ldquo;model term&rdquo; and a &ldquo;variable?&rdquo;</p>
+
+<p><textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      2,
+"name": "model.term.V.variable",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+A variable is a quantity or categorical attribute that you measure or observe.  A model term is a way of including the variable in a model. Model terms can be the variable itself, it some transformation of a variable (e.g., square it), or might combine two or more variables (as in an interaction term).  The intercept is also a model term, and doesn&#39;t stem from a variable.
+</aside></p>
+
+<ul>
+<li><p>Why are there sometimes multiple model terms in a model?</p>
+
+<p><textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      3,
+"name": "multiple.model.terms",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+You would include multiple model terms if you want to include multiple explanatory variables.  Also, you&#39;ll have multiple terms if you want to include a variable in a way that involves transformations, for instance a model that has a parabolic (up-then-down) relationship between the explanatory variable and the response.  Since you will almost always want to have an intercept term in your models, you&#39;ll have multiple model terms just by virtue of the intercept being there along with one or more variables.
+</aside></p>
+
+<ul>
+<li><p>What is an interaction term and how does it differ from a variable?</p>
+
+<p><textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      4,
+"name": "interaction.term",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+An interaction term is constructed by combining two or more variables.  So it differs from a variable because it&#39;s not just a single variable, it&#39;s two or more.
+</aside></p>
+
+<ul>
+<li><p>In graphs of the model response value versus an explanatory variable, quantitative explanatory variables are associated with slopes and categorical explanatory variables are associated with step-like differences. Explain why.</p>
+
+<p><textarea cols='30' rows='3' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      5,
+"name": "slopes.v.steps",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+A categorical variable has discrete levels: a case can be at one level or the other, but not in between.  So the model values corresponding to different levels have step-like differences between them.  In contrast, a quantitative variable can be assigned any numerical value.  The model value can therefore change continuously as the quantitative variable changes.  Such a relationship is usually described by a slope: how much the model value changes as the
+explanatory variable changes.
+</aside></p>
+
+<ul>
+<li><p>How can models be useful that fail to represent the actual causal connections (if any) between variables?  Give an example.</p>
+
+<p><textarea cols='30' rows='3' id='text6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info6'><option value='{
+"pts":      0,
+"hint": "",
+"itemInfo": {
+"setID": "SM-6-RQ-SD",
+"itemN":      6,
+"name": "casual.connections",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout6' value='spanvalue' class='shiny-html-output'></span></p></li>
+</ul>
+
+<p><aside>
+ANSWER:<br/>
+For some modeling purposes, it&#39;s important for the model to respect the actual causal connections.  For example, if you&#39;re trying to estimate the impact of an increase in class size on educational outcomes, it&#39;s causation that you&#39;re interested in, not just an association.</p>
+
+<p>But sometimes, the causal connection doesn&#39;t matter at all.  For example, we routinely use body temperature as an indication of whether a person is sick.  We don&#39;t think that the fever is what causes the illness, but still it&#39;s useful to use fever as an indication of illness.</p>
+
+<p>Here&#39;s another example.  In examining the effect of educational practices (e.g., class size, teacher training, curriculum) on outcomes, it can be important to take into account the child&#39;s home environment.  (The reason is that the home environment is sometimes associated with the educational practice.  For instance, wealthy families tend to send their children to schools with smaller classes.)
+But how to measure the &ldquo;home environment?&rdquo;  One approach that has shown promise is to count the number of books in the house.  So, the educational outcome of each pupil would be modeled by the educational practice (say, class size) and the number of books at home.  No one thinks that the number of books is influencing the outcome.  Rather, it&#39;s a proxy for other things that we don&#39;t know how to measure. 
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4", "text5", "text6" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+

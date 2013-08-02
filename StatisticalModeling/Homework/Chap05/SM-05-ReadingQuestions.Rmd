@@ -1,0 +1,27 @@
+Intro to Statistical Modeling Ch. 5 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-05-RQ-SD")
+```
+
+* What is a sampling distribution?  What sort of variation does it reflect?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="sampling.distribution", totalPts=2, rows=3))
+```
+ `r I(textItem(name="sampling.distribution", totalPts=2, rows=3))`
+
+* What is resampling and bootstrapping?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="resampling.bootstrapping", totalPts=2, rows=3))
+```
+ `r I(textItem(name="resampling.bootstrapping", totalPts=2, rows=3))`
+
+* What is the difference between a "confidence interval" and a "coverage interval?"
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="confidence.v.coverage", totalPts=2, rows=3))
+```
+ `r I(textItem(name="confidence.v.coverage", totalPts=2, rows=3))`
+
+`r I(closeProblem())`
