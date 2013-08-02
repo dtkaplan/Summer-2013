@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 17 Prob. 5</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 17 Prob. 5</h1>
+
+<p>Consider this hypothetical causal network: </p>
+
+<p><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQyLjY2MzdwdCIgaGVpZ2h0PSIxNDIuNjYzN3B0IiB2aWV3Qm94PSItMTQuNDI2MzYgLTE0LjQyNjM2IDE0Mi42NjM3IDE0Mi42NjM3ICI+IAo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAxMjguMjM3MzQgKSBzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMCwxNC40MjYzNiApIj4gCiAgICAgICAgIAogPGc+IAogPGcgc3Ryb2tlPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8ZyBzdHJva2Utd2lkdGg9IjAuNHB0Ij4gCiA8Zz4gCiA8Zz4gCiA8ZyBmaWxsPSJyZ2IoMTAwLjAlLDc1LjAlLDc1LjAlKSI+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxwYXRoIGQ9IiBNICAtMTQuMjI2MzYgLTE0LjIyNjM2IGggIDI4LjQ1MjczIHYgIDI4LjQ1MjczIGggIC0yOC40NTI3MyBaICAiIC8+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjAsMC4wLDAuMCwxLjAsLTQuMDY5NCwtMy40MTY2NikiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoNC4wNjk0LDApIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAgZm9udC1zaXplPSIxMCI+IAo8dHNwYW4gZm9udC1mYW1pbHk9ImNtY3NjIiBmb250LXNpemU9IjEwIj5BPC90c3Bhbj48L3RleHQ+IAo8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8Zz4gCiA8ZyBmaWxsPSJyZ2IoMTAwLjAlLDc1LjAlLDc1LjAlKSI+IAogPHBhdGggZD0iIE0gIDk5LjU4NDYxIC0xNC4yMjYzNiBoICAyOC40NTI3MyB2ICAyOC40NTI3MyBoICAtMjguNDUyNzMgWiAgIiAvPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4wLDAuMCwwLjAsMS4wLDEwOS45NTY4NSwtMy40MTY2NikiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMy44NTQxMywwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPHRzcGFuIGZvbnQtZmFtaWx5PSJjbWNzYyIgZm9udC1zaXplPSIxMCI+QjwvdHNwYW4+PC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBmaWxsPSJyZ2IoMTAwLjAlLDc1LjAlLDc1LjAlKSI+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxwYXRoIGQ9IiBNICAtMTQuMjI2MzYgOTkuNTg0NjEgaCAgMjguNDUyNzMgdiAgMjguNDUyNzMgaCAgLTI4LjQ1MjczIFogICIgLz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMCwwLjAsMC4wLDEuMCwtMy45MzA1MSwxMTAuMzk0MzIpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDMuOTMwNTEsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjx0c3BhbiBmb250LWZhbWlseT0iY21jc2MiIGZvbnQtc2l6ZT0iMTAiPkM8L3RzcGFuPjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIxLjBwdCI+IAogPHBhdGggZD0iIE0gIDAuMCA5OS4zODQ2MSBMICAwLjAgMTcuMjYxMzcgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMCwtMS4wLDEuMCwwLjAsMC4wLDE3LjI2MTM3KSI+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIwLjhwdCI+IAogPGcgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAuMHB0Ij4gCiA8ZyBzdHJva2UtbGluZWNhcD0icm91bmQiPiAKIDxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiAKIDxwYXRoIGQ9IiBNICAtMS43NCAyLjMyIEMgIC0xLjU5NSAxLjQ1IDAuMCAwLjE0NDk5IDAuNDM1IDAuMCBDICAwLjAgLTAuMTQ0OTkgLTEuNTk1IC0xLjQ1IC0xLjc0IC0yLjMyICAiIHN0eWxlPSJmaWxsOm5vbmUiLz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4wLC0xLjAsMS4wLDAuMCwzLjgzMjk4LDI3LjE2OTU5KSI+IAogPGcgZmlsbD0icmdiKDAuMCUsMC4wJSwwLjAlKSI+IAogPHRleHQgc3R5bGU9InN0cm9rZTpub25lIiB0cmFuc2Zvcm09InNjYWxlKDEsLTEpIHRyYW5zbGF0ZSgwLjAsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHN0cm9rZS13aWR0aD0iMS4wcHQiPiAKIDxwYXRoIGQ9IiBNICAxNC40MjYzNiA5OS4zOTM4NiBMICA5Ny4zOTA4NSAxNi40NDA4MyAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC43MTA2NSwtMC43MTA1NywwLjcxMDU3LDAuNzEwNjUsOTcuMzkwODUsMTYuNDQwODMpIj4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjAuOHB0Ij4gCiA8ZyBzdHJva2UtZGFzaGFycmF5PSJub25lIiBzdHJva2UtZGFzaG9mZnNldD0iMC4wcHQiPiAKIDxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+IAogPGcgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+IAogPHBhdGggZD0iIE0gIC0xLjc0IDIuMzIgQyAgLTEuNTk1IDEuNDUgMC4wIDAuMTQ0OTkgMC40MzUgMC4wIEMgIDAuMCAtMC4xNDQ5OSAtMS41OTUgLTEuNDUgLTEuNzQgLTIuMzIgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjcxMDY1LC0wLjcxMDU3LDAuNzEwNTcsMC43MTA2NSw4OS4zODI3NywyOS44OTQ4NykiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMC4wLDApIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAgZm9udC1zaXplPSIxMCI+IAo8L3RleHQ+IAo8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjEuMHB0Ij4gCiA8cGF0aCBkPSIgTSAgOTkuMzg0NjEgMC4wIEwgIDE3LjI2MTM3IDAuMCAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEuMCwwLjAsMC4wLC0xLjAsMTcuMjYxMzcsMC4wKSI+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIwLjhwdCI+IAogPGcgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAuMHB0Ij4gCiA8ZyBzdHJva2UtbGluZWNhcD0icm91bmQiPiAKIDxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiAKIDxwYXRoIGQ9IiBNICAtMS43NCAyLjMyIEMgIC0xLjU5NSAxLjQ1IDAuMCAwLjE0NDk5IDAuNDM1IDAuMCBDICAwLjAgLTAuMTQ0OTkgLTEuNTk1IC0xLjQ1IC0xLjc0IC0yLjMyICAiIHN0eWxlPSJmaWxsOm5vbmUiLz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4wLDAuMCwwLjAsMS4wLDI3LjE2OTU5LDMuODMyOTgpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDAuMCwwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4gCjwvc3ZnPiAK' width='200'></p>
+
+<ul>
+<li>Suppose you want to study the effect of B on A.  Which of the models is most appropriate?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <em>A</em> ~ <em>B</em><br/>
+<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <em>A</em> ~ <em>C</em><br/>
+<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <em>A</em> ~ <em>B</em> + <em>C</em><br/>
+<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      1,
+"name": "1",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> Any of the above.</p>
+
+<ul>
+<li>Suppose you want to study the overall effect of C on A.  Which of the models is most appropriate?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <em>A</em> ~ <em>B</em><br/>
+<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <em>A</em> ~ <em>C</em><br/>
+<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <em>A</em> ~ <em>B</em> + <em>C</em><br/>
+<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      2,
+"name": "2",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> Any of the above.</p>
+
+<ul>
+<li>Suppose you want to study the direct effect of C on A, neglecting the indirect effect through B.  Which of the models is most appropriate?</li>
+</ul>
+
+<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "A" 
+}'> <b>A</b></label> <em>A</em> ~ <em>B</em><br/>
+<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "B" 
+}'> <b>B</b></label> <em>A</em> ~ <em>C</em><br/>
+<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+ "pts":      1,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> <em>A</em> ~ <em>B</em> + <em>C</em><br/>
+<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-5-SD",
+"itemN":      3,
+"name": "3",
+"totalpts":      1 
+},
+"type": "MC",
+"reward": "Right!",
+"content": "D" 
+}'> <b>D</b></label> Any of the above.</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
