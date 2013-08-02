@@ -1,0 +1,54 @@
+Intro to Statistical Modeling Ch. 8 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-8-RQ-SD")
+```
+
+* What is a residual?  Why does it make sense to make them small when fitting a model? 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="residual", totalPts=2, rows=3))
+```
+ `r I(textItem(name="residual", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+The residual for a case is the difference between the value of the response variable for that case and the value of the fitted model value for that case.  By making the residuals small, the fitted model values are brought close to the actual values of the response variables while still showing the patterns dictated by the model design.
+</aside>
+
+
+* What is "least squares?
+```{r include=FALSE,eval=FALSE}
+I(textItem(name="least.squares", totalPts=2, rows=3))
+```
+ `r I(textItem(name="least.squares", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+Least squares is the particular criterion used in defining what is a "small" residual: the sum of squares of the residuals.  In fitting, the residuals are made as small as possible in the sense of minimizing their sum of squares.
+</aside>
+
+* What does it mean to "partition variability" using a model?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="partition", totalPts=2, rows=3))
+```
+ `r I(textItem(name="partition", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+The variance of the response variable can be split arithmetically into two parts: the variance of the fitted model values and the variance of the residuals.  This is what is meant by "partitioning."  The ability to partition in this way is one of the pleasant consequences of using the least squares criterion for fitting.  
+</aside>
+
+* How can a model term be redundant? Why are redundant terms a problem?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="redundant", totalPts=2, rows=3))
+```
+ `r I(textItem(name="redundant", totalPts=2, rows=3))`
+
+<aside>
+ANSWER:    
+A model term is redundant when all the information contained in that model term is already contained within other model terms in the model.  When this happens, there will be more than one model formula that will give exactly the same model values using the same set of explanatory terms.  This is a problem, because coefficients that look different might actually be describing exactly the same thing.
+</aside>
+
+`r I(closeProblem())`
