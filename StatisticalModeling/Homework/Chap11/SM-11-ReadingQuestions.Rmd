@@ -1,0 +1,26 @@
+Intro to Statistical Modeling Ch. 11 Reading Questions
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-11-RQ-SD")
+```
+* What is a probability model? 
+```{r include=FALSE,eval=FALSE}
+I(textItem(name="probability", totalPts=2, rows=3))
+```
+ `r I(textItem(name="probability", totalPts=2, rows=3))`
+
+* What are some of the different probability models and what different situations do they describe?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="probability.situations", totalPts=2, rows=3))
+```
+ `r I(textItem(name="probability.situations", totalPts=2, rows=3))`
+
+* What is a "parameter" in a probability model?  Give some examples. 
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="parameter", totalPts=2, rows=3))
+```
+ `r I(textItem(name="parameter", totalPts=2, rows=3))`
+
+`r I(closeProblem())`
