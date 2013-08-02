@@ -1,0 +1,68 @@
+Intro to Statistical Modeling Ch. 17 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-17-12-SD")
+``` 
+
+Here is a somewhat complicated hypothetical causal network:
+
+
+### Needs image from paths-108b
+
+\begin{tikzpicture}{scale=.6}
+\measurableNode{A}{(2,8)}{A}
+\measurableNode{B}{(4,6)}{B}
+\measurableNode{C}{(2,4)}{C}
+\measurableNode{D}{(2,2)}{D}
+\measurableNode{E}{(6,4)}{E}
+\measurableNode{F}{(0,6)}{F}
+\straightLink{A}{F}{}
+\straightLink{A}{B}{}
+\straightLink{B}{C}{}
+\straightLink{B}{E}{}
+\straightLink{F}{C}{}
+\straightLink{C}{D}{}
+\end{tikzpicture}
+
+
+You are interested in studying the causal effect of F on D.  
+
+You want to block the backdoor pathway from F to D through A.  
+
+* For each of the following covariates, say what will be the effect of including the covariate in your model on the F-through-A-to-D pathway.
+```{r include=FALSE}
+prob1 = selectSet(name="A", totalPts=1, "Blocks"=TRUE, "Unblocks"=FALSE, "Neither"=FALSE)
+```
+*  A:  `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="B", totalPts=1, "Blocks"=TRUE, "Unblocks"=FALSE, "Neither"=FALSE)
+```
+*  B:  `r I(prob2)`
+```{r include=FALSE}
+prob3=selectSet(name="C", totalPts=1, "Blocks"=FALSE, "Unblocks"=FALSE, "Neither"=TRUE)
+```
+*  C:  `r I(prob3)`
+
+An additional rule about pathway blocking is that including any covariate that is a causal child of another covariate equivalent in terms of blocking to including the parent node. (A child is a node that has a causal arrow leading from the parent to the child.)  Applying this rule, say whether including covariate E would block the F-through-A-to-D pathway:
+```{r include=FALSE}
+prob4=selectSet(name="E", totalPts=1, "Blocks"=FALSE, "Unblocks"=FALSE, "Neither"=TRUE)
+```
+*  E:  `r I(prob4)`
+
+You could use C to block the backdoor pathway from F to D through A.
+Explain why this would not be a good thing to do if you want to study
+the causal connection between F and D.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="explain", totalPts=2, rows=3))
+```
+`r I(textItem(name="explain", totalPts=2, rows=3))`
+
+
+<aside>
+ANSWER:    
+While C blocks the backdoor pathway, as a causal mediator between F and D it also blocks the pathway that you want to study.
+</aside>
+
+`r I(closeProblem())`

@@ -1,0 +1,26 @@
+Intro to Statistical Modeling Ch. 17 Prob. 13
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-17-13-SD")
+```
+
+Aspirin acts as a blood thinner, that is, it suppresses coagulation of blood.  Suppressed coagulation of blood increases the chances of bleeding.
+
+Suppose that smoking gives people a headache, leading them to take aspirin.   Also suppose that smoking increases the chances of bleeding.
+
+Draw a diagram of a hypothetical causal network that corresponds to this situation.  Use as nodes "Aspirin", "Coagulation", "Bleeding", and "Smoking.
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="diagram", totalPts=2, rows=4))
+```
+`r I(textItem(name="diagram", totalPts=2, rows=4))`
+
+Suppose you want to study the way that aspirin causally affects bleeding.  Do you want to include or exclude smoking as a covariate?
+```{r include=FALSE, eval=FALSE}
+I(textItem(name="smoking", totalPts=2, rows=4))
+```
+`r I(textItem(name="smoking", totalPts=2, rows=2))`
+
+`r I(closeProblem())`
+

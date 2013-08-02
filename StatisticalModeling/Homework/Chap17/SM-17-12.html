@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 17 Prob. 12</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 17 Prob. 12</h1>
+
+<p>Here is a somewhat complicated hypothetical causal network:</p>
+
+<h3>Needs image from paths-108b</h3>
+
+<p>\begin{tikzpicture}{scale=.6}
+\measurableNode{A}{(2,8)}{A}
+\measurableNode{B}{(4,6)}{B}
+\measurableNode{C}{(2,4)}{C}
+\measurableNode{D}{(2,2)}{D}
+\measurableNode{E}{(6,4)}{E}
+\measurableNode{F}{(0,6)}{F}
+\straightLink{A}{F}{}
+\straightLink{A}{B}{}
+\straightLink{B}{C}{}
+\straightLink{B}{E}{}
+\straightLink{F}{C}{}
+\straightLink{C}{D}{}
+\end{tikzpicture}</p>
+
+<p>You are interested in studying the causal effect of F on D.  </p>
+
+<p>You want to block the backdoor pathway from F to D through A.  </p>
+
+<ul>
+<li><p>For each of the following covariates, say what will be the effect of including the covariate in your model on the F-through-A-to-D pathway.</p></li>
+<li><p>A:  <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Blocks" 
+}'>Blocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Unblocks" 
+}'>Unblocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      1,
+"name": "A",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Neither" 
+}'>Neither</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+<li><p>B:  <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Blocks" 
+}'>Blocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Unblocks" 
+}'>Unblocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      2,
+"name": "B",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Neither" 
+}'>Neither</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+<li><p>C:  <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Blocks" 
+}'>Blocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Unblocks" 
+}'>Unblocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      3,
+"name": "C",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Neither" 
+}'>Neither</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+</ul>
+
+<p>An additional rule about pathway blocking is that including any covariate that is a causal child of another covariate equivalent in terms of blocking to including the parent node. (A child is a node that has a causal arrow leading from the parent to the child.)  Applying this rule, say whether including covariate E would block the F-through-A-to-D pathway:</p>
+
+<ul>
+<li> E:  <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      4,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Blocks" 
+}'>Blocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      4,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Unblocks" 
+}'>Unblocks</option> <option value='{
+"itemInfo": {
+"setID": "SM-17-12-SD",
+"itemN":      4,
+"name": "E",
+"totalpts":      1 
+},
+"type": "Fixed Choice",
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Neither" 
+}'>Neither</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+</ul>
+
+<p>You could use C to block the backdoor pathway from F to D through A.
+Explain why this would not be a good thing to do if you want to study
+the causal connection between F and D.</p>
+
+<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
+ "pts":      0,
+"hint": "",
+"itemInfo": {
+ "setID": "SM-17-12-SD",
+"itemN":      1,
+"name": "explain",
+"totalpts":      2 
+},
+"type": "Free text",
+"reward": "",
+"content": "Free text" 
+}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+
+<p><aside>
+ANSWER:<br/>
+While C blocks the backdoor pathway, as a causal mediator between F and D it also blocks the pathway that you want to study.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "text1" ]'>Ignore me</option></select></p>
+
+</body>
+
+</html>
+
