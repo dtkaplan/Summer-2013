@@ -439,6 +439,12 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-ReadingQuestions.html) working
 
+* [Problem 17.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-01.html) working
+
+* [Problem 17.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-02.html) working
+
+* [Problem 17.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-10.html) working
+
 ## Chapter 18
 
 * [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap18/SM-18-ReadingQuestions.html) working

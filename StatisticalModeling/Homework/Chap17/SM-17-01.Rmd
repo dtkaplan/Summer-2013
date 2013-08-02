@@ -5,75 +5,53 @@ require(mosaic)
 require(WriteScoreR)
 newScorerSet("SM-17-1-SD")
 ```
+
+$$
+\newcommand{\causes}{{\Rightarrow}}
+\newcommand{\causedBy}{{\Leftarrow}}
+\newcommand{\correlatedWith}{{\Leftrightarrow}}$$
+
 For each of the following pathways connecting A and B, choose the appropriate causal structure.
 
-\begin{enumerate}[(a)]
-\item \pathway{A\causes C\causes B}
-\begin{MultipleChoice}
-\correct{A causes B.}
-\wrong{B causes A.}
-\wrong{A and B share a common cause.}
-\wrong{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob1=selectSet(name="1", totalPts=1, "A causes B."=TRUE, "B causes A."=FALSE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=FALSE)
+```
+* $A\causes C\causes B$ `r I(prob1)`
 
-\item \pathway{A\causedBy C\causedBy B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\correct{B causes A.}
-\wrong{A and B share a common cause.}
-\wrong{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob2=selectSet(name="2", totalPts=1, "A causes B."=FALSE, "B causes A."=TRUE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=FALSE)
+```
+* $A\causedBy C\causedBy B$ `r I(prob2)`
 
-\item \pathway{A\causedBy C\causes B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\correct{A and B share a common cause.}
-\wrong{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob3=selectSet(name="3", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=TRUE, "No causal connection between A and B."=FALSE)
+```
+* $A\causedBy C\causes B$ `r I(prob3)`
 
+```{r include=FALSE}
+prob4=selectSet(name="4", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=TRUE)
+```
+* $A\causes C\causedBy B$ `r I(prob4)`
 
-\item \pathway{A\causes C\causedBy B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\wrong{A and B share a common cause.}
-\correct{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob5=selectSet(name="5", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=TRUE)
+```
+* $A\causes C\causedBy D \causes B$ `r I(prob5)`
 
-\item \pathway{A\causes C\causedBy D \causes B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\wrong{A and B share a common cause.}
-\correct{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob6=selectSet(name="6", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=TRUE)
+```
+* $A\causes C\causedBy D \causedBy B$ `r I(prob6)`
 
-\item \pathway{A\causes C\causedBy D \causedBy B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\wrong{A and B share a common cause.}
-\correct{No causal connection between A and B}
-\end{MultipleChoice}
+```{r include=FALSE}
+prob7=selectSet(name="7", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=TRUE, "No causal connection between A and B."=FALSE)
+```
+* $A\causedBy C\causedBy D \causedBy B$ `r I(prob7)`
+
+```{r include=FALSE}
+prob8=selectSet(name="8", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, "A and B share a common cause."=FALSE, "No causal connection between A and B."=TRUE)
+```
+* $A\causedBy C\causes D \causedBy E\causedBy B$ `r I(prob8)`
 
 
-\item \pathway{A\causedBy C\causedBy D \causedBy B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\correct{A and B share a common cause.}
-\wrong{No causal connection between A and B}
-\end{MultipleChoice}
-
-\item \pathway{A\causedBy C\causes D \causedBy E\causedBy B}
-\begin{MultipleChoice}
-\wrong{A causes B.}
-\wrong{B causes A.}
-\wrong{A and B share a common cause.}
-\correct{No causal connection between A and B}
-\end{MultipleChoice}
-
-
-\end{enumerate}
-
+`r I(closeProblem())`

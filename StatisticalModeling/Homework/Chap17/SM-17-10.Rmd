@@ -1,0 +1,47 @@
+Intro to Statistical Modeling Ch. 17 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(WriteScoreR)
+newScorerSet("SM-17-10-SD")
+```
+To answer the following questions, refer to the hypothetical causal network shown in Figure 17.9.
+
+Consider studying the direct link between teacher compensation and student test scores with a model of the form *Student Test Scores* ~ *Teacher Compensation + C*, where C is one or more covariates.  Which of the following choices of C can block the back-door pathways?
+
+```{r include=FALSE}
+prob1=selectSet(name="c.class.size", totalPts=1, "blocks"=FALSE, "does not block"=TRUE)
+```
+* C is class size. `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectSet(name="c.teacher.comp", totalPts=1, "blocks"=TRUE, "does not block"=FALSE)
+```
+* C is class size and teacher compensation. `r I(prob2)`
+
+```{r include=FALSE}
+prob3=selectSet(name="c.family.income", totalPts=1, "blocks"=FALSE, "does not block"=TRUE)
+```
+* C is family income. `r I(prob3)`
+
+```{r include=FALSE}
+prob4=selectSet(name="c.per.capita", totalPts=1, "blocks"=FALSE, "does not block"=TRUE)
+```
+* C is per capita expenditures. `r I(prob4)`
+
+```{r include=FALSE}
+prob5=selectSet(name="c.family.income.2", totalPts=1, "blocks"=FALSE, "does not block"=TRUE)
+```
+* C is per capita expenditures and family income. `r I(prob5)`
+
+```{r include=FALSE}
+prob6=selectSet(name="c.class.size.2", totalPts=1, "blocks"=TRUE, "does not block"=FALSE)
+```
+* C is per capita expenditures and class size. `r I(prob6)`
+
+```{r include=FALSE}
+prob7=selectSet(name="c.education", totalPts=1, "blocks"=FALSE, "does not block"=TRUE)
+```
+* C is class size and parents' education. `r I(prob7)`
+
+`r I(closeProblem())`
