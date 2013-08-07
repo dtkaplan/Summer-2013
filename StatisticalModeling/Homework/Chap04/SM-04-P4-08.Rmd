@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch.4 Prob. 8
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-4-P8-SD")
+require(ScoreR)
+startProblem("SM-4-P8-SD")
 ```
 
 Create a spreadsheet with the three variables *distance*, *team*, and *position*, in the following way:
@@ -85,4 +85,4 @@ I(textItem(name="means2", totalPts=2, rows=4))
 ```
 `r I(textItem(name="means2", totalPts=2, rows=4))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 4 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-4-RQ-SD")
+require(ScoreR)
+startProblem("SM-4-RQ-SD")
 ```
 
 * Which is larger: variance of residuals, variance of the model values, or the variance of the actual values?
@@ -24,4 +24,4 @@ I(textItem(name="partition", totalPts=2, rows=3))
 ```
  `r I(textItem(name="partition", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
