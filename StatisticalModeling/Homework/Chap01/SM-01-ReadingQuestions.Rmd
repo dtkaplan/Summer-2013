@@ -2,39 +2,23 @@ Intro to Statistical Modeling  Ch.1 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-1-ReadingQuestions-SD")
+require(ScoreR)
+startProblem("SM-1-ReadingQuestions-SD")
 ```
 
 How can a model be useful even if it is not exactly correct?
-
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="incorrect", rows=3, totalPts=2))
-```
 
 `r I(textItem(name="incorrect", rows=3, totalPts=2))`
 
 Give an example of a model used for classification.
 
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="example", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="example",rows=3, totalPts=2))`
 
 Often we describe personalities as "patient", "kind", "vengeful," etc.  How can these descriptions be used as models for prediciton?
 
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="personalities", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="personalities", rows=3, totalPts=2))`
 
 Give three examples of models that you use in everyday life.  For each, say what is the purpose of the model and in what ways the representation differs from the real thing.
-
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="everydaymodels", rows=3, totalPts=2))
-```
 
 `r I(textItem(name="everydaymodels", rows=3, totalPts=2))`
 
@@ -44,29 +28,14 @@ Make a sensible statement about how precisely these quantities are typically mea
  * The national unemployment rate.
  * A person's intelligence.
 
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="precision", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="precision", rows=3, totalPts=2))`
 
 Give an example of a controlled experiment.  What quantity or quantities have been varied and what has been held constant?
-
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="experiment", rows=3, totalPts=2))
-```
 
 `r I(textItem(name="experiment", rows=3, totalPts=2))`
 
 Using one of your textbooks from another field, pick an illustration or diagram.  Briefly describe the illustration and explain how this is a model, in what ways is it faithful to the system being described and in what ways it fails to reflect that system.
 
-```{r eval=FALSE, include=FALSE}
-I(textItem(name="anotherfield", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="anotherfield", rows=3, totalPts=2))`
 
-`r I(closeProblem())`
-
-
-
+`r I(endProblem())`
