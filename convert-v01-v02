@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# convert version 01 to 02
+
+for RMDFILE in *.Rmd
+do
+  sed  s/newScorerSet/startProblem/g  ${RMDFILE} | sed s/closeProblem/endProblem/g | sed s/WriteScoreR/ScoreR/g > ${RMDFILE}
+done
