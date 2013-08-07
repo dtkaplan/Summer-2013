@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 4 Prob. 7
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-4-07-SD")
+require(ScoreR)
+startProblem("SM-4-07-SD")
 ```
 
 Read in the Galton height data
@@ -74,4 +74,4 @@ I(textItem(name="explain", totalPts=2, rows=4))
   of the "grand mean" model.      
   `r I(textItem(name="explain", totalPts=2, rows=4))`
   
-`r I(closeProblem())`
+`r I(endProblem())`

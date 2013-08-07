@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 4 Prob. 6
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-4-P6-SD")
+require(ScoreR)
+startProblem("SM-4-P6-SD")
 ```
 
 Read in the Current Population Survey wage data:
@@ -64,5 +64,5 @@ mean(wage~married+sex, data=w)
 ```
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
