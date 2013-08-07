@@ -192,58 +192,38 @@ galton = fetchData(&quot;Galton&quot;)
 <p>Which one of these commands will give the 95th percentile of the
 children&#39;s heights in Galton&#39;s data? <code>Galton</code></p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>quantile(galton$height, 95)</code><br/>
-  <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+  <label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> <code>quantile(galton$height, 0.95)</code><br/>
-  <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+  <label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> <code>quantile(galton$father, 95)</code><br/>
-  <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+  <label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> <code>quantile(galton$father, 0.95)</code>    </p>
+}'> <b>D</b></label> <code>quantile(galton$father, 0.95)</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-3-P3-SD",
+"itemN":      1,
+"name": "which.command",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p><aside>
 ANSWER:
@@ -258,58 +238,38 @@ as a fraction: the 95th percentile is 0.95.</p>
 
 <p>Which of these command will give the 90-percent coverage interval of the children&#39;s heights in Galton&#39;s data?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>quantile(galton$height, c(0.05, 0.95))</code><br/>
-  <label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+  <label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> <code>quantile(galton$height, c(0.025, 0.975))</code><br/>
-  <label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+  <label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> <code>quantile(galton$height, 0.90)</code><br/>
-  <label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+  <label for='MCitem4'><input type='radio' name='ScoreR2' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P3-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> <code>quantile(galton$height, 90)</code>     </p>
+}'> <b>D</b></label> <code>quantile(galton$height, 90)</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-3-P3-SD",
+"itemN":      2,
+"name": "which.command.2",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p><aside>
 ANSWER:
@@ -323,58 +283,38 @@ that the interval will run from the 5th percentile to the 95th percentile.
 
 <ul>
 <li>Father&#39;s heights<br/>
-<label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+<label for='MCitem1'><input type='radio' name='ScoreR3' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> 59 to 73 inches<br/>
-<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> 68 to 71 inches<br/>
-<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> 63 to 65.5 inches<br/>
-<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR3' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> 68 to 74 inches<br/></li>
+}'> <b>D</b></label> 68 to 74 inches<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-3-P3-SD",
+"itemN":      3,
+"name": "50perc",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></li>
 </ul>
 
 <p><aside>
@@ -410,58 +350,38 @@ BOTH percentiles.  If you wanted, you could do one at a time:     </p>
 <ul>
 <li><p>Mother&#39;s heights</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR4' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> 59 to 73 inches<br/>
-<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR4' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> 68 to 71 inches<br/>
-<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR4' id='MCitem3' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> 63 to 65.5 inches<br/>
-<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR4' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> 68 to 74 inches     </p></li>
+}'> <b>D</b></label> 68 to 74 inches<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-3-P3-SD",
+"itemN":      4,
+"name": "mother",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -483,58 +403,38 @@ the mothers&#39; height:     </p>
 <ul>
 <li><p>Father&#39;s heights</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC5' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR5' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      5,
-"name": "5",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> 65 to 73 inches<br/>
-<label for='MCitem2'><input type='radio' name='MC5' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR5' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      5,
-"name": "5",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> 65 to 74 inches<br/>
-<label for='MCitem3'><input type='radio' name='MC5' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR5' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      5,
-"name": "5",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> 68 to 73 inches<br/>
-<label for='MCitem4'><input type='radio' name='MC5' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR5' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      5,
-"name": "5",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> 59 to 69 inches     </p></li>
+}'> <b>D</b></label> 59 to 69 inches<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+"setID": "SM-3-P3-SD",
+"itemN":      5,
+"name": "father",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -553,58 +453,38 @@ percentile. </p>
 <ul>
 <li><p>Mother&#39;s heights</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC6' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR6' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      6,
-"name": "6",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> 62.5 to 68.5 inches<br/>
-<label for='MCitem2'><input type='radio' name='MC6' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR6' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      6,
-"name": "6",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> 65 to 69 inches<br/>
-<label for='MCitem3'><input type='radio' name='MC6' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR6' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      6,
-"name": "6",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> 63 to 68.5 inches<br/>
-<label for='MCitem4'><input type='radio' name='MC6' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR6' id='MCitem4' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-3-P3-SD",
-"itemN":      6,
-"name": "6",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> 59 to 69 inches     </p></li>
+}'> <b>D</b></label> 59 to 69 inches<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
+"setID": "SM-3-P3-SD",
+"itemN":      6,
+"name": "mother.2",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -619,7 +499,7 @@ ANSWER:</p>
 
 <p></aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3", "MC4", "MC5", "MC6" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "which.command", "which.command.2", "50perc", "mother", "father", "mother.2" ]'>problem roster</option></select></p>
 
 </body>
 

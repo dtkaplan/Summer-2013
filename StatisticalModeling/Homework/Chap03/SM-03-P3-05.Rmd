@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P5-SD")
+require(ScoreR)
+startProblem("SM-3-P5-SD")
 ```
 
 Use R to generate the sequence of 101 numbers: $0, 1, 2, 3, \cdots, 100$.
@@ -96,4 +96,4 @@ perfectsquares4=selectNumber(choices=c(5050,20251,338350,585200,2050333330), cor
 ```
 4. What's the sum of squares? `r I(perfectsquares4)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

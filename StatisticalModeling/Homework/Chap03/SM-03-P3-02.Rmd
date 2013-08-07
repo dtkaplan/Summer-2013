@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.02
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P2-SD")
+require(ScoreR)
+startProblem("SM-3-P2-SD")
 ```
 
 Here are some useful operators for taking a quick look at data frames:
@@ -71,13 +71,13 @@ You can read it in with
 cars = fetchData("mtcars")
 ```
 
-creating an object named <code>cars</code>.
+ creating an object named <code>cars</code>.
 
 Use the above operators to answer the following questions.
 
 * Which of the following is the name of a column in <code>cars</code>?
 ```{r include=FALSE}
-carsq=selectSet(name="name", totalPts=1, "carb"=TRUE, "color"=FALSE, "size"=FALSE, "weight"=FALSE, "wheels"=FALSE)
+carsq=selectSet(name="name.of.column", totalPts=1, "carb"=TRUE, "color"=FALSE, "size"=FALSE, "weight"=FALSE, "wheels"=FALSE)
 ```
 
   `r I(carsq)`
@@ -103,4 +103,4 @@ carsq4=selectNumber(choices=c(2.125,2.225,2.620,2.875,3.215), correct=c(2.875), 
 
   `r I(carsq4)`
   
-`r I(closeProblem())`
+`r I(endProblem())`

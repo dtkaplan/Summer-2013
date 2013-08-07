@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.01
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P1-SD")
+require(ScoreR)
+startProblem("SM-3-P1-SD")
 ```
 
 Here is a small table of percentiles of typical daily calorie consumption 
@@ -41,9 +41,7 @@ college3=selectNumber(name="between", totalPts=1, choices=c(10,20,25,30,40,50,60
 ```
 `r I(college3)`
 
-What is the percentile
-that marks the upper end of the
-95%-coverage interval?
+What is the percentile that marks the upper end of the 95%-coverage interval?
 ```{r include=FALSE}
 college4=selectNumber(name="UpperEnd", totalPts=1, choices=c(75,90,92.5,95,97.5,100), correct=c(97.5))
 ```
@@ -55,9 +53,7 @@ estimate=selectNumber(name="calvalue", totalPts=1, choices=c(2900,3000,3100,3300
 ```
 `r I(estimate)`
 
-Using the 1.5 IQR rule-of-thumb for identifying an outlier,
-what would be the threshold for identifying a low calorie consumption as 
-an outlier?
+Using the 1.5 IQR rule-of-thumb for identifying an outlier, what would be the threshold for identifying a low calorie consumption as an outlier?
 ```{r include=FALSE}
 estimate2=selectNumber(name="IQR", totalPts=1, choices=c(1450,1500,1650,1750,1800,2000), correct=c(1650))
 ```
@@ -65,5 +61,4 @@ estimate2=selectNumber(name="IQR", totalPts=1, choices=c(1450,1500,1650,1750,180
 `r I(estimate2)`
 
 
-`r I(closeProblem())`
-
+`r I(endProblem())`
