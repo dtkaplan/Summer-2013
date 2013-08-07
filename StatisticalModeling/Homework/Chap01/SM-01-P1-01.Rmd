@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 1 Prob. 1.01
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-01-1.01-SD")
+require(ScoreR)
+startProblem("SM-01-1.01-SD")
 ```
 
 Many fields of natural and social science have principles that are identified by name.  Sometimes these are called "laws", sometimes "principles", "theories", etc.  Some examples include:
@@ -44,4 +44,4 @@ An example is given below:
 
 >EXAMPLE: As described in the text, Hooke's Law, $f = -k x$, relates the force ($f$), the stiffness ($k$) and the extension past resting length ($x$) for a spring.  It is a useful and accurate approximation for small extensions.  For large extensions, however, springs are permanently distorted or break.  Springs involve friction, which is not included in the law.  Some springs, such as passive muscle, are really composites and show a different pattern, e.g., $f = -  k \ {x^3} / {|x|}$ for moderate sized extensions.
 
-`r I(closeProblem())`
+`r I(endProblem())`

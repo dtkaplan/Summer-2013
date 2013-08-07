@@ -1,19 +1,15 @@
-Intro to Statistical Modeling Ch.1 Prob 1.06
+Intro to Statistical Modeling Ch.1 Prob 1.04
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-01-AC1-06-SD")
+require(ScoreR)
+startProblem("SM-01-AC1-06-SD")
 ```
 
 The operator <code>seq</code> generates sequences.       
 Use <code>seq</code> to make the following sequences:     
 
 * the integers from 1 to 10 
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="integers1to10", rows=3, totalPts=2))
-```
 
 `r I(textItem(name="integers1to10", rows=3, totalPts=2))`
 
@@ -27,10 +23,6 @@ seq(1,10)
 
 * the integers from 5 to 15
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="integers5to15", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="integers5to15", rows=3, totalPts=2))`
 
 <aside>
@@ -39,10 +31,6 @@ seq(5,15)
 ```
 </aside>
 * the integers from 1 to 10, skipping the even ones 
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="oddintegers", rows=3, totalPts=2))
-```
 
 `r I(textItem(name="oddintegers", rows=3, totalPts=2))`
 
@@ -56,10 +44,6 @@ Notice that 10 isn't part of the returned value, even though 10 was specified as
 
 * 10 evenly spaced numbers between 0 and 1 
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="evenlyspaced", rows=3, totalPts=2))
-```
-
 `r I(textItem(name="evenlyspaced", rows=3, totalPts=2))`
 
 <aside>
@@ -70,4 +54,4 @@ seq(0,1, length=10)
 </aside>
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
