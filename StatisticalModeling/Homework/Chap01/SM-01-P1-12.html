@@ -143,69 +143,45 @@ hr {
 <body>
 <h1>Intro to Statistical Modeling Ch.1 Prob. 1.12</h1>
 
-<p>The following statement gives a result that some people are surprised by:<br/>
-<code> &gt;10e3 == 1000<br/>
+<p>The following statement gives a result that some people are surprised by: </p>
+
+<p><code> &gt;10e3 == 1000<br/>
 [1] FALSE</code>     </p>
 
 <p>Explain why the result was FALSE rather than TRUE.</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-AC1-02-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label>10e3 is 100, not 1000<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"content": "10e3 is 100, not 1000" 
+}'>10e3 is 100, not 1000</option> <option value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-AC1-02-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label>10e3 is 10000, not 1000<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"content": "10e3 is 10000, not 1000" 
+}'>10e3 is 10000, not 1000</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-AC1-02-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label>10e3 is not a valid number<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"content": "10e3 is not a valid number" 
+}'>10e3 is not a valid number</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "Right!",
+"content": "It should be true; there's a bug in the software." 
+}'>It should be true; there&#39;s a bug in the software.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-AC1-02-SD",
 "itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label>It should be true; there&#39;s a bug in the software.     </p>
+"name": "why",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside> ANSWER: The computer returns <code>FALSE</code> because the quantities being compared with <code>==</code> are not equal.  <code>10e3</code> is ten-thousand in scientific notation.  It&#39;s <code>1e3</code> that is one-thousand.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "why" ]'>problem roster</option></select></p>
 
 </body>
 

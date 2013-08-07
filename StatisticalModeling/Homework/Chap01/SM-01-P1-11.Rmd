@@ -2,14 +2,10 @@ Intro to Statistical Modeling Ch.1 Problem 1.11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-01-AC1-03-SD")
+require(ScoreR)
+startProblem("SM-01-AC1-03-SD")
 ```
 <code>1e6</code> and <code>10e5</code> are two different ways of writing one-million.  Write 5 more different forms of one-million using scientific notation.
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="scinotation", rows=6, totalPts=2))
-```
 
 `r I(textItem(name="scinotation", rows=6, totalPts=2))`
 
@@ -35,4 +31,4 @@ and so on...
 
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

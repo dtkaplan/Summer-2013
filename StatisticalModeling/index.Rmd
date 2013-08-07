@@ -9,7 +9,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 1.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html) working
 
-* [Problem 1.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-01.html) working
+* [Problem 1.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-02.html) working
 
 * [Problem 1.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap01/SM-01-P1-04.html) working
 
