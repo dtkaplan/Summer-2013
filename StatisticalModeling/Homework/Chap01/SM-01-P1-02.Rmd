@@ -39,10 +39,7 @@ f = newMC(totalPts=1,name="seqsemi")
 `r I(f(FALSE))` Nothing is wrong.     
 `r I(f(TRUE))` Use a comma instead of a semi-colon to separate arguments:  <code>seq(5,8)</code>.     
 `r I(f(FALSE))` It should be <code>seq(5 to 8)</code>.  
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 ```{r include=FALSE, eval=FALSE}
 I(textItem(name="semicolon", rows=4, totalPts=2))
