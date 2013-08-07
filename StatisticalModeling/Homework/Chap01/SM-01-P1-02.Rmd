@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 1 Prob. 1.02
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-01-1-01-SD")
+require(ScoreR)
+startProblem("SM-01-1-01-SD")
 ```
 
 NOTE: Remember to load the <code>mosaic</code> package before starting:
@@ -23,7 +23,7 @@ Here's an example:
      
 
 
->ANSWER: It should be <code>a =fetchData("myfile.csv")</code>  The file name is a character string and therefore should be in quotes.  Otherwise it's treated as an object name and there is no object called myfile.csv.     
+>ANSWER: It should be <code>a = fetchData("myfile.csv")</code>  The file name is a character string and therefore should be in quotes.  Otherwise it's treated as an object name and there is no object called myfile.csv.     
      
 
 
@@ -32,7 +32,7 @@ Now for the real thing.  Say what's wrong with each of these
 statements for the purpose given:
 
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+f = newMC(totalPts=1,name="seqsemi")
 ```
 * <code>seq(5;8)</code> to give <code>[1] 5 6 7 8</code>
   
@@ -152,4 +152,4 @@ I(textItem(name="valueassign2", rows=4, totalPts=2))
 ANSWER: Only an object name can be on the left side of the assignment operator.  It should be <code>x = 4*(3+2)</code>
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

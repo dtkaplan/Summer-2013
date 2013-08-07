@@ -156,7 +156,7 @@ statements properly and give a sentence saying what was wrong. (Cut and paste th
 <p>QUESTION: What&#39;s wrong with this statement?<br/>
 <code>a = fetchData(myfile.csv)</code>     </p>
 
-<p>ANSWER: It should be <code>a =fetchData(&quot;myfile.csv&quot;)</code>  The file name is a character string and therefore should be in quotes.  Otherwise it&#39;s treated as an object name and there is no object called myfile.csv.     </p>
+<p>ANSWER: It should be <code>a = fetchData(&quot;myfile.csv&quot;)</code>  The file name is a character string and therefore should be in quotes.  Otherwise it&#39;s treated as an object name and there is no object called myfile.csv.     </p>
 </blockquote>
 
 <p>Now for the real thing.  Say what&#39;s wrong with each of these
@@ -166,59 +166,34 @@ statements for the purpose given:</p>
 <li><code>seq(5;8)</code> to give <code>[1] 5 6 7 8</code></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-01-1-01-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Nothing is wrong.<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-01-1-01-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Use a comma instead of a semi-colon to separate arguments:  <code>seq(5,8)</code>.<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-01-1-01-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> It should be <code>seq(5 to 8)</code>.  </p>
 
-<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      1,
+"itemN":      2,
 "name": "semicolon",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: The semicolon is not a valid separator between arguments.  The statement should be <code>seq(5,8)</code>.
@@ -228,19 +203,15 @@ ANSWER: The semicolon is not a valid separator between arguments.  The statement
 <li><code>cos 1.5</code> to calculate the cosine of 1.5 radians</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      2,
+"itemN":      3,
 "name": "cosine",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:The parentheses have been left out.  It should be <code>cos(1.5)</code>.
@@ -250,19 +221,15 @@ ANSWER:The parentheses have been left out.  It should be <code>cos(1.5)</code>.
 <li><code>3 + 5 = x</code> to make x take the value 3 + 5</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      3,
+"itemN":      4,
 "name": "xvalue",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: Assignment statements should have the object name on the left: <code>x = 3 + 5</code>
@@ -272,19 +239,15 @@ ANSWER: Assignment statements should have the object name on the left: <code>x =
 <li><code>sqrt[4*98]</code> to find the square root of 392</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR5info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      4,
+"itemN":      5,
 "name": "squareroot",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: Use parentheses, not square brackets, to invoke an operator: <code>sqrt(4*98)</code>.
@@ -294,19 +257,15 @@ ANSWER: Use parentheses, not square brackets, to invoke an operator: <code>sqrt(
 <li><code>10,000 + 4,000</code> adding two numbers to get 14,000</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR6info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      5,
+"itemN":      6,
 "name": "addition",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: Don&#39;t punctuate numbers with commas, just the digits: <code>10000 + 4000</code>.
@@ -317,19 +276,15 @@ ANSWER: Don&#39;t punctuate numbers with commas, just the digits: <code>10000 + 
 <code>[1] FALSE TRUE FALSE FALSE</code></li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info6'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR7info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      6,
+"itemN":      7,
 "name": "squareroot2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout6' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: Only a single <code>=</code> was used, the assignment operator rather than equality.  It should be <code>sqrt(c(4,16,25,36)) == 4</code>
@@ -340,19 +295,15 @@ ANSWER: Only a single <code>=</code> was used, the assignment operator rather th
 <code>[1] &quot;apple&quot; &quot;berry&quot; &quot;cherry&quot;</code></li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info7'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR8info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      7,
+"itemN":      8,
 "name": "collectionofnames",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout7' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: The character strings have to be quoted to distinguish them from object names.  It should be <code>fruit = c( &quot;apple&quot;, &quot;berry&quot;, &quot;cherry&quot;)</code>.
@@ -362,19 +313,15 @@ ANSWER: The character strings have to be quoted to distinguish them from object 
 <li><code>x = 4(3+2)</code> where x is intended to be assigned the value 20</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info8'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR9' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR9info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      8,
+"itemN":      9,
 "name": "valueassign",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout8' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: The multiplication operator needs to be specified explicitly and not implicitly as in algebraic notation.  The statement should be <code>x = 4*(3+2)</code>.
@@ -384,25 +331,21 @@ ANSWER: The multiplication operator needs to be specified explicitly and not imp
 <li><code>x/4 = 3+2</code> where x is intended to be assigned the value 20</li>
 </ul>
 
-<p><textarea cols='30' rows='4' id='text9' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info9'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR10' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR10info'><option value='{
  "setID": "SM-01-1-01-SD",
-"itemN":      9,
+"itemN":     10,
 "name": "valueassign2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout9' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER: Only an object name can be on the left side of the assignment operator.  It should be <code>x = 4*(3+2)</code>
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "text1", "text2", "text3", "text4", "text5", "text6", "text7", "text8", "text9" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "seqsemi", "semicolon", "cosine", "xvalue", "squareroot", "addition", "squareroot2", "collectionofnames", "valueassign", "valueassign2" ]'>problem roster</option></select></p>
 
 </body>
 
