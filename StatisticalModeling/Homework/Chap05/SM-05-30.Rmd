@@ -2,8 +2,8 @@ Intro to statistical Modeling Ch. 5 Prob. 30
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-05-30-SD")
+require(ScoreR)
+startProblem("SM-05-30-SD")
 ```
 
 
@@ -17,5 +17,5 @@ to collect more samples until the margin of error is $4$ ng/ml.
 Assuming the typical $1/\sqrt{n}$ relationship between the number of cases in the sample and the size of the margin of error, how many plants, including
 the 40 you have already processed, will you need to measure? `r I(measure)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

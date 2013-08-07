@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch.5 Prob. 17
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-05-30-SD")
+require(ScoreR)
+startProblem("SM-05-30-SD")
 ```
 
 Standard errors and confidence interval apply not just to model
@@ -64,4 +64,4 @@ Bootstrapping works well in a broad set of circumstances, but if you
 have a very small sample, say less than a dozen cases, you should be
 skeptical of the result.
 
-`r I(closeProblem())`
+`r I(endProblem())`

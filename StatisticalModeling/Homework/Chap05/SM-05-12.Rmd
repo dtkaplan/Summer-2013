@@ -2,11 +2,11 @@ Intro to Statistical Modeling Ch. 5 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-5-12-SD")
+require(ScoreR)
+startProblem("SM-5-12-SD")
 ```
 
-```{r eval=FALSE}
+```{r}
 set.seed(53)
 A = runif(10,min=5,max=15)+ rnorm(10,0,2)
 B = rnorm(40,mean=15,sd=sd(A))
@@ -41,14 +41,16 @@ Graph A | Graph B | Graph C | Graph D|
 ```{r eval=FALSE}
 \centerline{\begin{tabular}{|cc|cc|}\hline
 {\bf Graph A} & $\ $ & $\ $ &  {\bf Graph B} \\
-<<sderror,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
+```
+
+```{r sderror, fig=TRUE,pdf=TRUE,echo=FALSE,figwidth=3,figheight=3}
 # sd error
-draw.them( mean(A)-sd(A)/sqrt(10),mean(A)+sd(A)/sqrt(10),
-   mean(B)-sd(B)/sqrt(30),mean(B)+sd(B)/sqrt(30))
-@ 
+draw.them( mean(A)-sd(A)/sqrt(10),mean(A)+sd(A)/sqrt(10), mean(B)-sd(B)/sqrt(30),mean(B)+sd(B)/sqrt(30))
+```
 \includegraphics[width=1.5in,trim=10mm 10mm 15mm 10mm]{Figures/conf4-sderror}
 %\pnggraphicsfile[width=1in]{error-bars-sderr}{pdf}{80} 
-& & & 
+
+
 <<sd,fig=true,pdf=true,include=false,echo=false,width=3,height=3>>=
 # sd
 draw.them( mean(A)-sd(A),mean(A)+sd(A),mean(B)-sd(B),mean(B)+sd(B))
@@ -119,4 +121,4 @@ By elimination, the graphs A and D must be the standard error and the
 the standard error, so Graph D must be the confidence interval.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

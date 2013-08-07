@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch.5 Prob.23
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-5-23-SD")
+require(ScoreR)
+startProblem("SM-5-23-SD")
 ```
 
 Robert Hooke (1635-1703) was a contemporary of Isaac Newton.  He is famous for his law of elasticity (Hooke's Law) and is considered the father of microscopy.  He was the first to use the word "cell" to name the components of plant tissue;  the structures he observed during his observations through a microscope reminded him of monks' cells in a monastery.   He drew this picture of cork cells under the microscope:
@@ -92,8 +92,4 @@ I(h(finish=TRUE))
 ```
 
 It's usually better to write such numbers in scientific notation, so
-that the reader doesn't have to count digits to make sense of them.
-For example, $1,260,000,000 \pm 16,000,000$ might be more clearly
-written  as $1260 \pm 16 \times 10^6$.
-
-`r I(closeProblem())`
+that the reader does

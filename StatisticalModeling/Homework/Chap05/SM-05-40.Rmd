@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 5 Prob. 40
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-05-40-SD")
+require(ScoreR)
+startProblem("SM-05-40-SD")
 ```
 
 In this activity, you are going to look at the sampling distribution
@@ -158,4 +158,4 @@ $n=1000$ gives results that are closer to the population value?
 
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

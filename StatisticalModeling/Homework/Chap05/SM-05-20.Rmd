@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 5 Prob. 20
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-05-20-SD")
+require(ScoreR)
+startProblem("SM-05-20-SD")
 ```
 
 A perennial problem when writing scientific reports is figuring out
@@ -61,4 +61,4 @@ g=newMC(totalPts=1)
   `r I(g(FALSE))` $99.64 &plusmn 1.49$     
   `r I(g(FALSE))` $99.647 &plusmn 1.489$
 
-`r I(closeProblem())`
+`r I(endProblem())`

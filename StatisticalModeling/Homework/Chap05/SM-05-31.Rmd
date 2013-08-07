@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch.5 Prob.31
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-5-31-SD")
+require(ScoreR)
+startProblem("SM-5-31-SD")
 ```
 
 You are calculating the mean of a variable *B* and you want to know the
@@ -23,6 +23,6 @@ f=newMC(totalPts=1)
 I(f(finish=TRUE))
 ```
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 

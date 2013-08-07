@@ -2,15 +2,13 @@ Intro to statistical Modeling Ch.5 Prob. 13
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-05-13-SD")
+require(ScoreR)
+startProblem("SM-05-13-SD")
 ```
 
-An advertisement for "America's premier weight loss destination" states that "a typical two week stay results in a loss of 7-14 lbs."
-(The *New Yorker*, 7 April 2008, p 38.)       
+An advertisement for "America's premier weight loss destination" states that "a typical two week stay results in a loss of 7-14 lbs." (The *New Yorker*, 7 April 2008, p 38.)       
 
-The advertisement gives no details about the meaning of "typical,"
-but here are some possibilities:
+The advertisement gives no details about the meaning of "typical," but here are some possibilities:
 
 * The 95% coverage interval of the weight loss of the individual clients.
 * The 50% coverage interval of the weight loss of the individual clients.
@@ -20,22 +18,11 @@ but here are some possibilities:
 
 Explain what would be valid and what misleading about advertising a confidence interval on the mean weight loss.  
 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="CImisleading", totalPts=2, rows=4))
-```
 `r I(textItem(name="CImisleading", totalPts=2, rows=4))`
 
 Why might it be reasonable to give a 50% coverage interval of the weight loss of individual clients, but not appropriate to give a 50% confidence interval on the mean weight loss.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="reasonable", totalPts=2, rows=4))
-```
 `r I(textItem(name="reasonable", totalPts=2, rows=4))`
-
-<aside>
-NOTES:
->See s2008-variab1 for another take on this problem before the standard error would be introduced.
-</aside>
 
 <aside>
 ANSWER:
@@ -44,34 +31,10 @@ The tension here is between providing information that is relevant tO the experi
 It's certainly informative to describe the mean weight loss --- it reflects the center of the distribution and as such is a "typical" value.  Therefore, indicating the precision of the mean with a confidence interval is also appropriate.  However, it can be misleading to a reader of the ad who might interpret it as indicating the likely weight loss of an individual client.  If the mean is based on a large number of clients (that is, large $n$), the standard error will be very small and therefore under-represent the variation in
 weight loss from client to client.  (The standard deviation of weight losses is a reasonable way to represent the "typical" spread.  The standard error of the mean is the standard error divided by $\sqrt{n}$ --- it doesn't represent any individual's experience.)
 
-A 50% coverage interval might be reasonable for describing the
-typical spread of client's individual experiences, since it reflects
-what happened to the central half of the clients.  But a 50%
-confidence interval on the mean won't cover the experience of anywhere
-near half of the clients.
+A 50% coverage interval might be reasonable for describing the typical spread of client's individual experiences, since it reflects what happened to the central half of the clients.  But a 50% confidence interval on the mean won't cover the experience of anywhere near half of the clients.
 
-The company was very helpful.  The company's "media relations
-specialist" responded to my inquiry about the meaning of "7-14" in
-this way: "[W]e use 'typical' as a way to convey that the majority of
-guests that stay and are dedicated to completing 2 weeks of the
-program, lose on an average 7-14 lbs. We say `typical' because there
-are cases where someone may have more to lose and therefore lose more
-than the 14 lbs. On the other hand, there are some guests that come
-that don't need to lose much weight and therefore don't. We record all
-guest weight loss statistics from 2 weeks or more and I will be more
-than happy to send them to you if you would like. After 30 years in
-business, we feel confident that saying 'A typical two week stay
-results in a loss of 7-14 lbs.' is the best way to convey average/most
-probable results."
+The company was very helpful.  The company's "media relations specialist" responded to my inquiry about the meaning of "7-14" in this way: "[W]e use 'typical' as a way to convey that the majority of guests that stay and are dedicated to completing 2 weeks of the program, lose on an average 7-14 lbs. We say `typical' because there are cases where someone may have more to lose and therefore lose more than the 14 lbs. On the other hand, there are some guests that come that don't need to lose much weight and therefore don't. We record all
+guest weight loss statistics from 2 weeks or more and I will be more than happy to send them to you if you would like. After 30 years in business, we feel confident that saying 'A typical two week stay results in a loss of 7-14 lbs.' is the best way to convey average/most probable results."
 
-Notes:
-> e-mail May 31, 2008 from      
-> Erin Knutson,      
-> Media Relations Specialist,      
-> Hilton Head Health,      
-> w: 843.785.3919     
 
-> They also sent a spreadsheet containing weight loss data. 
-`WeightLoss.csv`  in Problems/S2008 email June 3, 2008 from Courtney Bell, getserious@hhhealth.com
-
-`r I(closeProblem())`
+`r I(endProblem())`
