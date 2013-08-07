@@ -2,14 +2,11 @@ Intro to Statistical Modeling Ch.2 Prob. 2.04
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-02-P2-24-SD")
+require(ScoreR)
+startProblem("SM-02-P2-24-SD")
 ```
 
 Here is a small data frame about automobiles.
-
-
-
 
 Make and model  |  Vehicle type | Trans. type | \# of cyl. |  City MPG |  Hwy MPG
 :-----: | :-----: | :-----: | :-----: | :-----: | :-----: 
@@ -26,25 +23,13 @@ Ford F150 2WD | pickup  | Auto. | 8 | 13  | 17
 What are the cases in the data frame?
 
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+prob1=selectSet(name="cases", totalPts=1, "Individual car companies"=FALSE, "Individual makes and models of cars"=FALSE, "Individual configurations of cars"=TRUE, "Different sizes of cars"=FALSE)
 ```
-
- `r I(f(FALSE))` Individual car companies     
- `r I(f(FALSE))` Individual makes and models of cars     
- `r I(f(TRUE))` Individual configurations of cars     
- `r I(f(FALSE))` Different sizes of cars     
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+ `r I(prob1)`
 
 <aside>
 Answer: 
-Each case is a different make and model in a particular
-configuration.  For instance, there are two cases that are Kia
-Optimas.  One of these cases has a manual transmission, the other an
-automatic transmission.  For the Saab, the two cases have different
-numbers of cylinders, even though both are automatic transmissions.
+Each case is a different make and model in a particular configuration.  For instance, there are two cases that are Kia Optimas.  One of these cases has a manual transmission, the other an automatic transmission.  For the Saab, the two cases have different numbers of cylinders, even though both are automatic transmissions.
 </aside>
 
 For each case, what variables are given?  Are they categorical 
@@ -108,21 +93,15 @@ cyl=selectSet(name="catorquant6", totalPts=1, "Not a variable"=FALSE, "Categoric
 Why are some cars listed twice?  Is this a mistake in the table?
 
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+prob2=selectSet(name="mistake?", totalPts=1, "Yes, it's a mistake."=FALSE, "A car brand might be listed more than once, but the cases have different attributes on other variables."=TRUE, "Some cars are more in demand than others."=FALSE)
 ```
- `r I(f(FALSE))` Yes, it's a mistake.   
- `r I(f(TRUE))` A car brand might be listed more than once, but the cases have different attributes on other variables.     
- `r I(f(FALSE))` Some cars are more in demand than others.     
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+ `r I(prob2)`
 
 <aside> Answer:
 As explained above, the cases with the same make and model are
 different in other variables.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 

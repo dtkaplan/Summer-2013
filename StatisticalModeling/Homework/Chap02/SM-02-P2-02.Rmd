@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 2 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-02-P2-SD")
+require(ScoreR)
+startProblem("SM-02-P2-SD")
 ```
 
 Using the <code>table</code> operator and the comparison operators (such as
@@ -134,4 +134,4 @@ table(CO2$uptake < 0.1*CO2$conc)
 ```
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

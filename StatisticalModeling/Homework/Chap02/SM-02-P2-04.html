@@ -215,66 +215,37 @@ hr {
 
 <p>What are the cases in the data frame?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> Individual car companies<br/>
- <label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+"content": "Individual car companies" 
+}'>Individual car companies</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> Individual makes and models of cars<br/>
- <label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+"content": "Individual makes and models of cars" 
+}'>Individual makes and models of cars</option> <option value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> Individual configurations of cars<br/>
- <label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+"content": "Individual configurations of cars" 
+}'>Individual configurations of cars</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "Right!",
+"content": "Different sizes of cars" 
+}'>Different sizes of cars</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-02-P2-24-SD",
 "itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
-"reward": "Right!",
-"content": "D" 
-}'> <b>D</b></label> Different sizes of cars     </p>
+"name": "cases",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 Answer: 
-Each case is a different make and model in a particular
-configuration.  For instance, there are two cases that are Kia
-Optimas.  One of these cases has a manual transmission, the other an
-automatic transmission.  For the Saab, the two cases have different
-numbers of cylinders, even though both are automatic transmissions.
+Each case is a different make and model in a particular configuration.  For instance, there are two cases that are Kia Optimas.  One of these cases has a manual transmission, the other an automatic transmission.  For the Saab, the two cases have different numbers of cylinders, even though both are automatic transmissions.
 </aside></p>
 
 <p>For each case, what variables are given?  Are they categorical 
@@ -283,43 +254,28 @@ or quantitative?</p>
 <ul>
 <li><p>Kia Optima:</p>
 
-<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "catorquant",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "catorquant",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      1,
-"name": "catorquant",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      2,
+"name": "catorquant",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -331,121 +287,76 @@ The Kia Optima is not a variable, it&#39;s a level of the <em>Make and
 <ul>
 <li><p>City MPG:</p>
 
-<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "catorquant2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "catorquant2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "catorquant2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      3,
+"name": "catorquant2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 <li><p>Vehicle type:</p>
 
-<p><select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      3,
-"name": "catorquant3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      3,
-"name": "catorquant3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      3,
-"name": "catorquant3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      4,
+"name": "catorquant3",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 <li><p>SUV:</p>
 
-<p><select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      4,
-"name": "catorquant4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      4,
-"name": "catorquant4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      4,
-"name": "catorquant4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      5,
+"name": "catorquant4",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -456,132 +367,85 @@ SUV is a level of the <em>Vehicle type</em> variable.
 <ul>
 <li><p>Trans. type:</p>
 
-<p><select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      5,
-"name": "catorquant5",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      5,
-"name": "catorquant5",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      5,
-"name": "catorquant5",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      6,
+"name": "catorquant5",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 <li><p># of cyl.:</p>
 
-<p><select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      6,
-"name": "catorquant6",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p><select name='ScoreR7'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Not a variable" 
 }'>Not a variable</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      6,
-"name": "catorquant6",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Categorical" 
 }'>Categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-02-P2-24-SD",
-"itemN":      6,
-"name": "catorquant6",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Quantitative" 
-}'>Quantitative</option> </select><span id='out6' class='shiny-html-output'> </span></p></li>
+}'>Quantitative</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
+"setID": "SM-02-P2-24-SD",
+"itemN":      7,
+"name": "catorquant6",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>Why are some cars listed twice?  Is this a mistake in the table?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><select name='ScoreR8'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> Yes, it&#39;s a mistake.<br/>
- <label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+"content": "Yes, it's a mistake." 
+}'>Yes, it&#39;s a mistake.</option> <option value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> A car brand might be listed more than once, but the cases have different attributes on other variables.<br/>
- <label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+"content": "A car brand might be listed more than once, but the cases have different attributes on other variables." 
+}'>A car brand might be listed more than once, but the cases have different attributes on other variables.</option> <option value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-02-P2-24-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> Some cars are more in demand than others.     </p>
+"content": "Some cars are more in demand than others." 
+}'>Some cars are more in demand than others.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR8out'></input></small><select style='visibility: hidden' width='5' name='ScoreR8info'><option value='{
+ "setID": "SM-02-P2-24-SD",
+"itemN":      8,
+"name": "mistake?",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside> Answer:
 As explained above, the cases with the same make and model are
 different in other variables.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "MC1", "MC2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "cases", "catorquant", "catorquant2", "catorquant3", "catorquant4", "catorquant5", "catorquant6", "mistake?" ]'>problem roster</option></select></p>
 
 </body>
 

@@ -31,7 +31,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 2.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-04.html) working
 
-* [Problem 2.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-09.html) working
+* [Problem 2.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-09.html) working
 
 * [Problem 2.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-14.html) working
 

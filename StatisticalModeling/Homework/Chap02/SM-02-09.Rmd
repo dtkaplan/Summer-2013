@@ -1,0 +1,77 @@
+Intro to Statistical Modeling Ch. 2 Prob. 9
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("SM-2-9-SD")
+```
+Here is a data set from an experiment about how reaction times change after drinking alcohol. <code>bulmer-portable</code>  The measurements give how long it took 
+for a person to catch a dropped ruler.  One measurement was made before drinking any alcohol.  Successive measurements were made after one standard drink, two standard drinks, and so on.  Measurements are in seconds.
+
+
+Before | After 1 | After 2 | After 3
+:-----:|:-----:|:-----:|:-----:
+0.68 | 0.73 | 0.80 | 1.38
+0.54 | 0.64 | 0.92 | 1.44
+0.71 | 0.66 | 0.83 | 1.46
+0.82 | 0.92 | 0.97 | 1.51
+0.58 | 0.68 | 0.70 | 1.49
+0.80 | 0.87 | 0.92 | 1.54
+-----|-----|and so on ...|-----
+
+
+
+
+What are the rows in the above data set?     
+```{r include=FALSE}
+prob1 = selectSet(name="rows", totalPts=1, "Individual measurements of reaction time."=FALSE, "An individual person."=TRUE, "The number of drinks."=FALSE)
+```
+ `r I(prob1)`
+ 
+How many variables are there?      
+```{r include=FALSE}
+prob2 = selectSet(name="variables", totalPts=1, "One --- the reaction times."=FALSE, "Two --- the reaction times with and without alcohol."=FALSE, "Four --- the reaction times at four different levels of alcohol."=TRUE)
+```
+ `r I(prob2)`
+ 
+<aside> ANSWER:    
+Each row of the table reports four measurements on one person. So the cases are people and the variables are the reaction times at the four different levels of alcohol consumption.
+</aside>
+
+The format used for these data has several limitations:
+* It leaves no room for multiple measurements of an individual at one level of alcohol, for example, two or three baseline measurements, or two or three measurements after one standard drink.     
+* It provides no flexibility for different levels of alcohol, for example 1.5 standard drinks, or for taking into account how long the measurement was made after the drink.     
+
+Another format, which would be better, is this:
+
+SubjectID | ReactionTime | Drinks
+:-----:|:-----:|:-----:
+S1 | 0.68 | 0 
+S1 | 0.73 | 1 
+S1 | 0.80 | 2 
+S1 | 1.38 | 3 
+S2 | 0.54 | 0 
+S2 | 0.64 | 1 
+S2 | 0.92 | 2 
+---|and so on ...|---
+
+What are the cases in the reformatted data frame?
+```{r include=FALSE}
+prob3=selectSet(name="cases2", totalPts=1, "Individual measurements of reaction time."=TRUE, "An individual person."=FALSE, "The number of drinks."=FALSE)
+```
+ `r I(prob3)`
+ 
+How many variables are there?
+```{r include=FALSE}
+prob4=selectSet(name="variables2", totalPts=1, "The same as in the original version.  It's the same data!"=FALSE, "Three --- the subject, the reaction time, the alcohol level."=TRUE, "Four --- the reaction times at four different levels of alcohol."=FALSE)
+```
+ `r I(prob4)`
+
+<aside> ANSWER:    
+The variables are the columns of the data frame: subject, reaction time, alcohol level.  The cases are the individual measurements of reaction time.  So, a given research subject shows up in more than one case. </aside>
+
+The lack of flexibility in the original data format indicates a more profound problem.  The response to alcohol is not just a matter of quantity, but of timing.  Drinks spread out over time have less effect than drinks consumed rapidly, and the physiological response to a drink changes over time as the alcohol is first absorbed into the blood and then gradually removed by the liver.  Nothing in this data set indicates how long after the drinks the measurements were taken. The small change in reaction time after a single drink might reflect that there was little time for the alcohol to be absorbed before the measurement was taken; the large change after three drinks might actually be the response to the first drink finally kicking in. Perhaps it would have been better to make a measurement of the blood alcohol level at each reaction-time trial.
+
+It's important to think carefully about how to measure your variables effectively, and what you should measure in order to capture the effects you are interested in.
+
+`r I(endProblem())`

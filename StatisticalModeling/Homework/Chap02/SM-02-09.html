@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Intro to Statistical Modeling Ch. 2 Prob. 9</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 2 Prob. 9</h1>
+
+<p>Here is a data set from an experiment about how reaction times change after drinking alcohol. <code>bulmer-portable</code>  The measurements give how long it took 
+for a person to catch a dropped ruler.  One measurement was made before drinking any alcohol.  Successive measurements were made after one standard drink, two standard drinks, and so on.  Measurements are in seconds.</p>
+
+<table><thead>
+<tr>
+<th align="center">Before</th>
+<th align="center">After 1</th>
+<th align="center">After 2</th>
+<th align="center">After 3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">0.68</td>
+<td align="center">0.73</td>
+<td align="center">0.80</td>
+<td align="center">1.38</td>
+</tr>
+<tr>
+<td align="center">0.54</td>
+<td align="center">0.64</td>
+<td align="center">0.92</td>
+<td align="center">1.44</td>
+</tr>
+<tr>
+<td align="center">0.71</td>
+<td align="center">0.66</td>
+<td align="center">0.83</td>
+<td align="center">1.46</td>
+</tr>
+<tr>
+<td align="center">0.82</td>
+<td align="center">0.92</td>
+<td align="center">0.97</td>
+<td align="center">1.51</td>
+</tr>
+<tr>
+<td align="center">0.58</td>
+<td align="center">0.68</td>
+<td align="center">0.70</td>
+<td align="center">1.49</td>
+</tr>
+<tr>
+<td align="center">0.80</td>
+<td align="center">0.87</td>
+<td align="center">0.92</td>
+<td align="center">1.54</td>
+</tr>
+<tr>
+<td align="center">&mdash;&ndash;</td>
+<td align="center">&mdash;&ndash;</td>
+<td align="center">and so on &hellip;</td>
+<td align="center">&mdash;&ndash;</td>
+</tr>
+</tbody></table>
+
+<p>What are the rows in the above data set?     </p>
+
+<p><select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Individual measurements of reaction time." 
+}'>Individual measurements of reaction time.</option> <option value='{
+ "pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "An individual person." 
+}'>An individual person.</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The number of drinks." 
+}'>The number of drinks.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-2-9-SD",
+"itemN":      1,
+"name": "rows",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p>How many variables are there?      </p>
+
+<p><select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "One --- the reaction times." 
+}'>One &mdash; the reaction times.</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Two --- the reaction times with and without alcohol." 
+}'>Two &mdash; the reaction times with and without alcohol.</option> <option value='{
+ "pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Four --- the reaction times at four different levels of alcohol." 
+}'>Four &mdash; the reaction times at four different levels of alcohol.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-2-9-SD",
+"itemN":      2,
+"name": "variables",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p><aside> ANSWER:<br/>
+Each row of the table reports four measurements on one person. So the cases are people and the variables are the reaction times at the four different levels of alcohol consumption.
+</aside></p>
+
+<p>The format used for these data has several limitations:</p>
+
+<ul>
+<li>It leaves no room for multiple measurements of an individual at one level of alcohol, for example, two or three baseline measurements, or two or three measurements after one standard drink.<br/></li>
+<li>It provides no flexibility for different levels of alcohol, for example 1.5 standard drinks, or for taking into account how long the measurement was made after the drink.<br/></li>
+</ul>
+
+<p>Another format, which would be better, is this:</p>
+
+<table><thead>
+<tr>
+<th align="center">SubjectID</th>
+<th align="center">ReactionTime</th>
+<th align="center">Drinks</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">S1</td>
+<td align="center">0.68</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">S1</td>
+<td align="center">0.73</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">S1</td>
+<td align="center">0.80</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">S1</td>
+<td align="center">1.38</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">S2</td>
+<td align="center">0.54</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">S2</td>
+<td align="center">0.64</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">S2</td>
+<td align="center">0.92</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">&mdash;</td>
+<td align="center">and so on &hellip;</td>
+<td align="center">&mdash;</td>
+</tr>
+</tbody></table>
+
+<p>What are the cases in the reformatted data frame?</p>
+
+<p><select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Individual measurements of reaction time." 
+}'>Individual measurements of reaction time.</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "An individual person." 
+}'>An individual person.</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The number of drinks." 
+}'>The number of drinks.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-2-9-SD",
+"itemN":      3,
+"name": "cases2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p>How many variables are there?</p>
+
+<p><select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "The same as in the original version.  It's the same data!" 
+}'>The same as in the original version.  It&#39;s the same data!</option> <option value='{
+ "pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "Three --- the subject, the reaction time, the alcohol level." 
+}'>Three &mdash; the subject, the reaction time, the alcohol level.</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Four --- the reaction times at four different levels of alcohol." 
+}'>Four &mdash; the reaction times at four different levels of alcohol.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+ "setID": "SM-2-9-SD",
+"itemN":      4,
+"name": "variables2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p><aside> ANSWER:<br/>
+The variables are the columns of the data frame: subject, reaction time, alcohol level.  The cases are the individual measurements of reaction time.  So, a given research subject shows up in more than one case. </aside></p>
+
+<p>The lack of flexibility in the original data format indicates a more profound problem.  The response to alcohol is not just a matter of quantity, but of timing.  Drinks spread out over time have less effect than drinks consumed rapidly, and the physiological response to a drink changes over time as the alcohol is first absorbed into the blood and then gradually removed by the liver.  Nothing in this data set indicates how long after the drinks the measurements were taken. The small change in reaction time after a single drink might reflect that there was little time for the alcohol to be absorbed before the measurement was taken; the large change after three drinks might actually be the response to the first drink finally kicking in. Perhaps it would have been better to make a measurement of the blood alcohol level at each reaction-time trial.</p>
+
+<p>It&#39;s important to think carefully about how to measure your variables effectively, and what you should measure in order to capture the effects you are interested in.</p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "rows", "variables", "cases2", "variables2" ]'>problem roster</option></select></p>
+
+</body>
+
+</html>
+
