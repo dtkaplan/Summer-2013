@@ -33,9 +33,9 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 2.09](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-09.html) working
 
-* [Problem 2.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-14.html) working
+* [Problem 2.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-14.html) working
 
-* [Problem 2.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-14.html) working, but this is a problem that wasn't on the online homework but was in the folder in R. Therefore, I wrote it up and gave it a (temporary?) number of its own.
+* [Problem 2.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-16.html) working
 
 * [Problem 2.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap02/SM-02-P2-22.html) working
 

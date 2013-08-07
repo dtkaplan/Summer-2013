@@ -2,72 +2,46 @@ Intro to Statistical Modeling Ch. 2 Prob. 2.16
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-2-P16-SD")
+require(ScoreR)
+startProblem("SM-2-P16-SD")
 ```
 
-Read in the file `KidsFeet`.  For each of the following, hand
-in the R statements to find what is asked for.  Provide both the
-command you give and the output of the command.
+Read in the file `KidsFeet`.  For each of the following, hand in the R statements to find what is asked for.  Provide both the command you give and the output of the command.
 
 * The names of the variables.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="names", totalPts=2, rows=3))`
-```
 
  `r I(textItem(name="names", totalPts=2, rows=3))`
 
 * The mean of the foot *width* variable.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="width", totalPts=2, rows=3))
-```
 
  `r I(textItem(name="width", totalPts=2, rows=3))`
 
 * Which of the cases are girls.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="girls", totalPts=2, rows=3))
-```
 
  `r I(textItem(name="girls", totalPts=2, rows=3))`
 
 * The mean foot *width* for the subset of data for the
   girls.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="girlfeet", totalPts=2, rows=3))
-```
 
  `r I(textItem(name="girlfeet", totalPts=2, rows=3))`
 
 
-Of no particular statistical value, but to review the use of logical
-operators: 
+Of no particular statistical value, but to review the use of logical operators: 
 
-* The mean foot *width* for the subset of data for people
-whose bigger foot is left and dominant hand is also left.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="review", totalPts=2, rows=3))
-```
+* The mean foot *width* for the subset of data for people whose bigger foot is left and dominant hand is also left.
 
  `r I(textItem(name="review", totalPts=2, rows=3))`
 
 
 And, for some extra practice in using logical operators:
 
-* The mean foot *width* for the subset of data for people
-who are either male or whose bigger foot matches the dominant hand. 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="extrapractice", totalPts=2, rows=3))
-```
+* The mean foot *width* for the subset of data for people who are either male or whose bigger foot matches the dominant hand. 
 
  `r I(textItem(name="extrapractice", totalPts=2, rows=3))`
 
 * The mean foot *width* for the subset of data for people
 whose bigger foot does NOT match the dominant hand.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="extrapractice2", totalPts=2, rows=3))
-```
 
  `r I(textItem(name="extrapractice2", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
