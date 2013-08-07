@@ -60,7 +60,7 @@ irisquest3=selectNumber(choices=c(2,3,4,5,6,7,8,10), correct=c(5), name="columns
 
 * What is the <code>Sepal.Length</code> in the third row?
 ```{r include=FALSE}
-irisquest4=selectNumber(choices=c(1.2,3.6,4.2,4.7,5.9), correct=c(4.7), name="SepalLenght", totalPts=1)
+irisquest4=selectNumber(choices=c(1.2,3.6,4.2,4.7,5.9), correct=c(4.7), name="SepalLength", totalPts=1)
 ```
 
   `r I(irisquest4)`
