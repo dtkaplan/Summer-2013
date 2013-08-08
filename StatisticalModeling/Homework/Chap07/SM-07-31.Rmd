@@ -83,7 +83,7 @@ trees7=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(6), totalPts=1, name=
   * colorWhite `r I(trees7)`  
 
 ```{r include=FALSE}
-trees8=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(8), totalPts=1, name="hT2")
+trees8=selectNumber(choices=c(0,4,6,8,10,12,16), correct=c(8), totalPts=1, name="hT3")
 ```
   * heightTall:colorWhite `r I(trees8)`
 
@@ -119,7 +119,5 @@ trees12=selectNumber(choices=c(10,12,15,16,20,22,32,34), correct=c(32), totalPts
 * Tall White `r I(trees12)` 
 
 Notice that the fitted model values aren't a perfect match to the numbers in the table.  That's because a model with three coefficients can't exactly reproduce a set of four numbers.
-
-
 
 `r I(endProblem())`

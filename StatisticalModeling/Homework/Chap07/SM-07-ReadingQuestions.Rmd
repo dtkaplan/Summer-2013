@@ -7,9 +7,7 @@ startProblem("SM-7-RQ-SD")
 ```
 
 * What is the role of the response variable in a model formula?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="response", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="response", totalPts=2, rows=3))`
 
 
@@ -19,9 +17,7 @@ The response variable is the quantity whose variability you seek to account for 
 </aside>
 
 * What is the purpose of constructing indicator variables from categorical variables?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="indicator", totalPts=2, rows=3))
-```
+
   `r I(textItem(name="indicator", totalPts=2, rows=3))`
 
 <aside>
@@ -31,9 +27,7 @@ variables in a model formula, which is by necessity numerical in nature.
 </aside>
 
 * How can model coefficients be used describe relationships? What are the relationships between? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="relationships", totalPts=2, rows=3))
-```
+
  `r I(textItem(name= "relationships", totalPts=2, rows=3))`
 
 <aside>
@@ -42,9 +36,7 @@ The model coefficients tell how the response variable will change when the expla
 </aside>
 
 * What is Simpson's paradox? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="simpson", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="simpson", totalPts=2, rows=3))`
 
 <aside>
@@ -54,9 +46,7 @@ In general, when you extend a previous model by constructing a new model with an
 
 
 * Given an example of how the meaning of a coefficient of a particular term can depend on what other model terms are included in the model? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="context", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="context", totalPts=2, rows=3))`
 
 
@@ -68,4 +58,3 @@ When you add *sector* as an explanatory variable, the meaning of *sex* becomes s
 </aside>
 
 `r I(endProblem())`
-
