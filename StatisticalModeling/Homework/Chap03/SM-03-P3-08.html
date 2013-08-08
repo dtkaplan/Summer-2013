@@ -156,55 +156,33 @@ circles in each target.  The objective is to hit the bright target dot in the ce
 results? (Directions are indicated as compass directions, E=east,
 NE=north east, etc.)</p>
 
-<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      1,
-"name": "compass",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p><select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "NE" 
 }'>NE</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      1,
-"name": "compass",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "NW" 
 }'>NW</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      1,
-"name": "compass",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "SW" 
 }'>SW</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      1,
-"name": "compass",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "SE" 
-}'>SE</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+}'>SE</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-3-P8-SD",
+"itemN":      1,
+"name": "compass",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p>To measure the size of the bias, find the center of the shots and
 measure how far that is from the target dot.  Take the distance
@@ -212,81 +190,45 @@ between the concentric circles as one unit. </p>
 
 <p>What is the size of the bias in Katerina Emmon&#39;s results?</p>
 
-<p><select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p><select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1" 
 }'>1</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "3" 
 }'>3</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "4" 
 }'>4</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "6" 
 }'>6</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P8-SD",
-"itemN":      2,
-"name": "bias",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "10" 
-}'>10</option> </select><span id='out2' class='shiny-html-output'> </span></p>
+}'>10</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-3-P8-SD",
+"itemN":      2,
+"name": "bias",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "compass", "bias" ]'>problem roster</option></select></p>
 
 </body>
 
