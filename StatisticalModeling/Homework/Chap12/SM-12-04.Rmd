@@ -2,12 +2,13 @@ Intro to Statistical Modeling Ch. 12 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-12-4-SD")
+require(ScoreR)
+startProblem("SM-12-4-SD")
 ```
+
 ```{r include=FALSE}
 interval=selectSet(name="M", totalPts=1, "It doesn't."=FALSE, "It increases as C increases."=TRUE, "It decreases as C increases."=FALSE)
 ```
 A confidence interval is often written as a point estimate plus or minus a margin of error: $P \pm M$ with $C$ percent confidence. How does the size of the margin of error $M$ depend on the confidence level $C$? `r I(interval)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

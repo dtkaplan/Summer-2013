@@ -2,17 +2,13 @@ Intro to Statistical Modeling Ch. 12 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-12-11-SD")
+require(ScoreR)
+startProblem("SM-12-11-SD")
 ```
 What's wrong with the following statement written by a student on an exam? 
 
-> The larger the number of cases examined and taken into account, the more likely your estimation will be accurate.  Having more cases decreases your risk
-of having a bias and increases the probability that your sample accurately represents the real world.
+> The larger the number of cases examined and taken into account, the more likely your estimation will be accurate.  Having more cases decreases your risk of having a bias and increases the probability that your sample accurately represents the real world.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="incorrect", totalPts=2, rows=3))
-```
 `r I(textItem(name="incorrect", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

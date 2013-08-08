@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 12 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-12-5-SD")
+require(ScoreR)
+startProblem("SM-12-5-SD")
 ```
 A statistics professor sends her students out to collect data by interviewing other students about various quantities, e.g., their SAT scores, GPAs and other
 data for which the college registrar retains official records.  Each student is
@@ -16,4 +16,4 @@ stats=selectSet(name="fraction", totalPts=1, "95%"=TRUE, "50%"=FALSE, "5%"=FALSE
 ```
 After the students hand in their reports, the professor contacts the registrar to find the population parameters for each group that the students surveyed.  **Assuming** that the interviewed students provided accurate information, what fraction of the students' confidence intervals will contain the corresponding population parameter? `r I(stats)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 12 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-12-10-SD")
+require(ScoreR)
+startProblem("SM-12-10-SD")
 ```
 Here are three different model statements for the kids' feet
 data.  
@@ -75,4 +75,4 @@ Refer back to the report from the model *width* ~ *sex*. The coefficient on *sex
 </aside>
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
