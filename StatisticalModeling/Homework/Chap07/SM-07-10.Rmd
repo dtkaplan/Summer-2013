@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosiac)
-require(WriteScoreR)
-newScorerSet("SM-7-10-SD")
+require(ScoreR)
+startProblem("SM-7-10-SD")
 ```
 
 Here is a graph of the kids feet data showing a model of footwidth as
@@ -30,6 +30,4 @@ feet3=selectSet(name="typSize", totalPts=1, "0.10 cm"=FALSE, "0.50 cm"=TRUE, "1.
 Judging from the graph, what is a typical size of a residual from the
 model? `r I(feet3)`
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

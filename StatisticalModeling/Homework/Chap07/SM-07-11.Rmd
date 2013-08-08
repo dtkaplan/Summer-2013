@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-11-SD")
+require(ScoreR)
+startProblem("SM-7-11-SD")
 ```
 
 In the `SwimRecords` data, the variables are 
@@ -67,4 +67,4 @@ ANSWER:
 The same model as in part (2) applies here, but now you need to consider the terms involving *sexM*.  To get the overall dependence on *year* for men, you need to add together all the coefficients involving *year*, so $-0.324 + 0.150 = -0.174$.  (More precisely, you want to take the partial derivative of time with respect to year in the model formula.)
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,12 +2,11 @@ Intro to Statistical Modeling Ch. 7 Prob. 13
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-13-SD")
+require(ScoreR)
+startProblem("SM-7-13-SD")
 ```
 
-The graph shows schematically a possible relationship between used car price,
-mileage, and the car model year.  
+The graph shows schematically a possible relationship between used car price, mileage, and the car model year.  
 
 ### How to do this part??
 \centerline{\begin{tikzpicture}[scale=1]
@@ -20,8 +19,7 @@ mileage, and the car model year.
 
 Consider the model *price* ~ *mileage* * *year*.  
 
-In your answers, treat *year* as a simple categorical variable, and use year
-2005 as the reference group when thinking about coefficients.
+In your answers, treat *year* as a simple categorical variable, and use year 2005 as the reference group when thinking about coefficients.
 
 ```{r include=FALSE}
 car=selectSet(name="sign", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=FALSE, "No way to tell from the information given"=FALSE)
@@ -54,5 +52,4 @@ The interaction coefficient will tell how the slope changes when moving from the
 </aside>
 
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-07-12-SD")
+require(ScoreR)
+startProblem("SM-07-12-SD")
 ```
 
 In the SAT data `SAT`, the variables have these units: 
@@ -34,4 +34,4 @@ SAT3=selectSet(name="units2.85", totalPts=1, "points"=FALSE, "dollars"=FALSE, "p
 ```
 * What are the units of the coefficient 2.85? `r I(SAT3)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
