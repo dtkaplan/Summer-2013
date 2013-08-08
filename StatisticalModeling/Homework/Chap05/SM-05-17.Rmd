@@ -6,6 +6,9 @@ require(ScoreR)
 startProblem("SM-05-30-SD")
 ```
 
+```{r include=FALSE}
+kids=fetchData("KidsFeet")
+```
 Standard errors and confidence interval apply not just to model
 coefficients, but to any numerical description of a variable.
 Consider, for instance, the median or IQR or standard deviation, and
@@ -23,13 +26,13 @@ of the kids' foot length measurements.
 
 First, compute the desired sample statistic on the actual data
 
-```{r}
+```{r eval=FALSE}
 IQR(kids$length)
 ```
 
 Next, modify the statement to incorporate resampling of the data:
 
-```{r}
+```{r eval=FALSE}
 IQR(resample(kids$length))
 ```
 
@@ -37,13 +40,12 @@ IQR(resample(kids$length))
 Finally, run this statement many times to generate the sampling
 distribution and find the standard error of this distribution:
 
-```{r}
+```{r eval=FALSE}
 samps = do(1000) * IQR(resample(kids$length))
 sd(samps)
 ```
 
-Use the bootstrapping method  to find an estimate of the standard error of each of these
-sample statistics on the kids' foot length data:
+Use the bootstrapping method to find an estimate of the standard error of each of these sample statistics on the kids' foot length data:
 
 ```{r include=FALSE}
 boot=selectNumber(choices=c(0.01,0.07,0.14,0.24,0.34,0.71,1.29,1.32,24.6), correct=c(0.24), totalPts=1, name="median")

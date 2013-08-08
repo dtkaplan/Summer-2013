@@ -30,11 +30,9 @@ $1300$, with a corresponding margin of error of $6500 \pm 1300$.
 
 * Suppose the computer output is $0.03234232 \pm 0.01837232$.
 
-```{r include=FALSE} 
-f=newMC(totalPts=1)
+```{r include=FALSE}
+f=newMC(totalPts=1, name="confidence.interval")
 ```
-
-
   * Using this rule of thumb, what should you report in as the
 confidence interval?      
   `r I(f(FALSE))` $0.3234 &plusmn 0.01837$     
@@ -49,11 +47,8 @@ confidence interval?
 * Now suppose the computer output were $99.63742573 \pm 1.48924367$.
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="confidence.interval.2")
 ```
-
-
-
   * What should you report as the confidence interval?     
   `r I(g(FALSE))` $100 &plusmn 1$     
   `r I(g(FALSE))` $99 &plusmn 1.5$     

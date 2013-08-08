@@ -1,0 +1,16 @@
+Intro to Statistical Modeling Ch. 5 Prob. 9
+==============================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("SM-5-9-SD")
+```
+
+A student writes the following on a homework paper: 
+> "The 95% confidence interval is (9.6, 11.4). I'm very confident that this is accurate, because my sample mean of 10.5 lies within this interval."     
+
+Comment on the student's reasoning.
+
+`r I(textItem(name="ConfidenceInterval", totalPts=2, rows=5))`
+
+`r I(endProblem())`

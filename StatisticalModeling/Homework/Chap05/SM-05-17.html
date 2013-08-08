@@ -200,371 +200,184 @@ of the kids&#39; foot length measurements.</p>
 <pre><code class="r">IQR(kids$length)
 </code></pre>
 
-<pre><code>## Error: object &#39;kids&#39; not found
-</code></pre>
-
 <p>Next, modify the statement to incorporate resampling of the data:</p>
 
 <pre><code class="r">IQR(resample(kids$length))
-</code></pre>
-
-<pre><code>## Error: object &#39;kids&#39; not found
 </code></pre>
 
 <p>Finally, run this statement many times to generate the sampling
 distribution and find the standard error of this distribution:</p>
 
 <pre><code class="r">samps = do(1000) * IQR(resample(kids$length))
+sd(samps)
 </code></pre>
 
-<pre><code>## Error: object &#39;kids&#39; not found
-</code></pre>
-
-<pre><code class="r">sd(samps)
-</code></pre>
-
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;sd&#39;: Error: object &#39;samps&#39; not found
-</code></pre>
-
-<p>Use the bootstrapping method  to find an estimate of the standard error of each of these
-sample statistics on the kids&#39; foot length data:</p>
+<p>Use the bootstrapping method to find an estimate of the standard error of each of these sample statistics on the kids&#39; foot length data:</p>
 
 <ul>
-<li><p>The sample median.  (Pick the closest answer.) <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>The sample median.  (Pick the closest answer.) <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.01" 
 }'>0.01</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.07" 
 }'>0.07</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.14" 
 }'>0.14</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.24" 
 }'>0.24</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.34" 
 }'>0.34</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.71" 
 }'>0.71</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.29" 
 }'>1.29</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.32" 
 }'>1.32</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      1,
-"name": "median",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "24.6" 
-}'>24.6</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>The sample standard deviation. (Pick the closest answer.) <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>24.6</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      1,
+"name": "median",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The sample standard deviation. (Pick the closest answer.) <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.01" 
 }'>0.01</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.07" 
 }'>0.07</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.14" 
 }'>0.14</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.24" 
 }'>0.24</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.34" 
 }'>0.34</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.71" 
 }'>0.71</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.29" 
 }'>1.29</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.32" 
 }'>1.32</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      2,
-"name": "stdev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "24.6" 
-}'>24.6</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
-<li><p>The sample 75th percentile. <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>24.6</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      2,
+"name": "stdev",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The sample 75th percentile. <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.01" 
 }'>0.01</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.07" 
 }'>0.07</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.14" 
 }'>0.14</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.24" 
 }'>0.24</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.34" 
 }'>0.34</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.71" 
 }'>0.71</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.29" 
 }'>1.29</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.32" 
 }'>1.32</option> <option value='{
-"itemInfo": {
-"setID": "SM-05-30-SD",
-"itemN":      3,
-"name": "75perc",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "24.6" 
-}'>24.6</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+}'>24.6</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-05-30-SD",
+"itemN":      3,
+"name": "75perc",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>Bootstrapping works well in a broad set of circumstances, but if you
 have a very small sample, say less than a dozen cases, you should be
 skeptical of the result.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "median", "stdev", "75perc" ]'>problem roster</option></select></p>
 
 </body>
 

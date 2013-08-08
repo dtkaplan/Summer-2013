@@ -43,43 +43,35 @@ When you change the units of a measurement (say, miles into
   kilometers), both the point estimate and the margin of error are
   multiplied by the conversion factor.
 
-Translate Hooke's count of the number of cells in 1/18 inch,  $60 \pm 5$ into
-  a confidence interval on the number of cells per linear inch.  
+Translate Hooke's count of the number of cells in 1/18 inch,  $60 \pm 5$ into a confidence interval on the number of cells per linear inch.  
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="cells.per.inch")
 ```
 
 `r I(f(FALSE))` $1080 \pm 5$     
 `r I(f(TRUE))` $1080 \pm 90$     
-`r I(f(FALSE))` $1080 \pm 180$
-
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` $1080 \pm 180$    
+`r I(f(finish=TRUE))`
 
 In calculating the number of cells to cover a square inch, Hooke simply squared the number of cells per inch.  That's a reasonable approximation.  
 
 To carry this calculation through a confidence interval, you can't just square the point estimate and the margin of error separately. Instead, a reasonable way to proceed is to take the endpoints of the interval (e.g., 55 to 65 for the count of cells in 1/18 inch), and square those endpoints. Then convert back to $\pm$ format.
 
-What is a reasonable confidence interval for the number of cells
-covering a square inch?
+What is a reasonable confidence interval for the number of cells covering a square inch?
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="cell.coverage")
 ```
 `r I(g(FALSE))` $1,200,000 \pm 500,000$     
 `r I(g(TRUE))` $1,170,000 \pm 190,000$    
 `r I(g(FALSE))` $1,166,000 \pm 19,000$     
 `r I(g(FALSE))` $1,166,400 \pm 1,900$     
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
+`r I(g(finish=TRUE))`
 
-What is a reasonable confidence interval for the number of cork
-  cells that fit into a cubic inch?
+What is a reasonable confidence interval for the number of cork cells that fit into a cubic inch?
 
 ```{r include=FALSE}
-h=newMC(totalPts=1)
+h=newMC(totalPts=1, name="cell.fit")
 ```
 `r I(h(TRUE))` $1,300,000,000 \pm 160,000,000$     
 `r I(h(FALSE))` $1,260,000,000 \pm 16,000,000$    
@@ -87,9 +79,9 @@ h=newMC(totalPts=1)
 `r I(h(FALSE))` $1,259,700,000 \pm 160,000$     
 `r I(h(FALSE))` $1,259,710,000 \pm 16,000$     
 `r I(h(FALSE))` $1,259,712,000 \pm 1,600$     
-```{r include=FALSE, results='hide'}
-I(h(finish=TRUE))
-```
+`r I(h(finish=TRUE))`
 
 It's usually better to write such numbers in scientific notation, so
 that the reader does
+
+`r I(endProblem())`
