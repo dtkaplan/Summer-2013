@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 21
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-21-SD")
+require(ScoreR)
+startProblem("SM-7-21-SD")
 ```
 
 The graphs below show models values for different models of the Old Faithful geyser, located in Yellowstone National Park in the US.  The geyser blows water and steam high in the air in periodic eruptions.  These eruptions are fairly regularly spaced, but there is still variation in the time that elapses from one eruption to the next.
@@ -74,4 +74,4 @@ legend( locator(1), legend=c('dur<3', 'dur>3'), pch=c(5,15))
 # foo = plot.model(waiting ~ duration+biggerThan3, data=geyser,group.var=biggerThan3, xvar=duration, main='')
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

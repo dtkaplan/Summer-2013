@@ -180,55 +180,31 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Intro to Statistical Modeling Ch. 7 Prob. 16 </h1>
 
-<h1>Where is this file??</h1>
-
 <p>The file <code>diamonds.csv</code> contains several variables relating to diamonds: their price, their weight (in carats), their color (which falls into several classes &mdash; D, E, F, G, H, I), and so on.  The following several graphs show different models fitted to the data: price is the response variable and weight and color are the explanatory variables.</p>
 
-<p><aside>
-{comment}</p>
+<p><aside></p>
 
-<pre><code class="r">diamonds = ISMdata(&quot;diamonds.csv&quot;)
+<pre><code class="r">diamonds = fetchData(&quot;diamonds.csv&quot;)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;ISMdata&quot;
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/diamonds.csv
 </code></pre>
 
 <pre><code class="r">mod1 = lm(price ~ carat + color, data = diamonds)
-</code></pre>
-
-<pre><code>## Error: object &#39;diamonds&#39; not found
-</code></pre>
-
-<pre><code class="r">mod2 = lm(price ~ carat * color, data = diamonds)
-</code></pre>
-
-<pre><code>## Error: object &#39;diamonds&#39; not found
-</code></pre>
-
-<pre><code class="r">mod3 = lm(price ~ poly(carat, 2) + color, data = diamonds)
-</code></pre>
-
-<pre><code>## Error: object &#39;diamonds&#39; not found
-</code></pre>
-
-<pre><code class="r">mod4 = lm(price ~ poly(carat, 2) * color, data = diamonds)
-</code></pre>
-
-<pre><code>## Error: object &#39;diamonds&#39; not found
-</code></pre>
-
-<pre><code class="r">plot(mod1$fitted ~ diamonds$carat, pch = c(5, 15, 1, 16, 2, 17)[as.numeric(diamonds$color)], 
+mod2 = lm(price ~ carat * color, data = diamonds)
+mod3 = lm(price ~ poly(carat, 2) + color, data = diamonds)
+mod4 = lm(price ~ poly(carat, 2) * color, data = diamonds)
+plot(mod1$fitted ~ diamonds$carat, pch = c(5, 15, 1, 16, 2, 17)[as.numeric(diamonds$color)], 
     xlab = &quot;Weight (carats)&quot;, ylab = &quot;Price&quot;, main = &quot;&quot;)
 </code></pre>
 
-<pre><code>## Error: object &#39;diamonds&#39; not found
-</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAjVBMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OWU5OY85ZrU5j9plAABlADllAGVlOQBlOTllOY9lZgBlZmVltf2POQCPOTmPOWWPZgCPtY+P29qP2/21ZgC1Zjm124+1/rW1/v3ajzna24/a/rXa/tra/v39tWX924/9/rX9/tr9/v3S+yQvAAAAL3RSTlP/////////////////////////////////////////////////////////////AFqlOPcAAAAJcEhZcwAACxIAAAsSAdLdfvwAABNJSURBVHic7Z0Nf9u2EYcLt82Suqmdvmx2ts5uF62LZev7f7wJFCm+4ACCxBE48P7PLz9LkUSI4iMAdwBIfXMCKvmm9A6AMkC8UiBeKRCvFIhXCsQrBeKVAvFKgXilQLxSIF4pEK8UiFcKxCsF4pUC8UqBeKVAvFIgXikQrxSIVwrEKwXilQLxSoF4pUC8UiBeKRCvFIhXCsQrBeKVAvFKgXilQLxSIF4pEK8UiFcKxCsF4pUC8UqBeKVAvFLmxR8/GMu3XzLsDcjGrPi3x4fm9uXd1813BuRjVvzrz19Gt2AfoMYrZb6Pf71HH79DENUrBeKVgnROKQjulIJ0Timo8UpBOqcURPVKgXilIJ1TCoI7paxJ5wyogUTxgRo/UzQoSqr4QDoH8ZJJFr+6aFAUiFdKsvhzOnfzRI7VQ7xkOIK7t8c7iK+NVPEX4c/vIb4ymNK5w3e3EF8VDOncnb05uPkcxGdi1YFGVF89ZtWRhvjaMadVhxria8dc/yzfzA/EC6ebbFl8sJPTuft2sgfBXQlMa75AjbejN6uKBumYU8E+/vXT06qiQTKm/YuoXhdmcrtqYw8QL5lL977uOEN8zZh1zXyzafhpiBfO6oMM8UqBeKVAvFIgXikQrxSIVwrEKwXilQLxSoF4pUC8UiBeKRCvFIhXCsQrBeKVAvFKgXilcFwRAxc/qhBc7kwpPFfEwDVwqgM1Xim4wOFeiLhO6ejl4acR1VcDxCslt3ikc0LILB7BnRQyi0c6JwXUeBAD0rnaoWu6+5gJ/ncKonrxjMW3991vw/RMeoivnZHj69WQthePdK4c7i8LecU718ZCcFcxfvFOH88uPvTzY3PbgkSIw+w57Gbw9+TcJ0CNl0x8/eIXj3SuIAPx4S8A0Qgjqq+YXqbThc9vG34a4uuggHikcxLILx7BXXGa1n5xEoXZudpZXtmvmwVAjRfPRbxT4+eOPtK5qmmjenIkZ2bL8NOI6kXTSafG5iF+xwyH5p1JmfDxh/iaudb4aR8/H/FBfNX45sOuw3mD/xKv8IOfHxMPJX4yJ0MFesk1Hj8/VhJPjR8/TC/KCxeMnx8TTdzKh43E+98vYVsQRdR8fCAK8APxoklY6ATxVTOz/mLlcyeIr5vQtwLi90uwOYD4nUCl6iHzEL8P6NPnIH73ELNx4RQf4uvHREzGURuFgHj5mFO/xLp7JGarIBAvH0d81KAOxNdN07dHzMkQGwaBeOEYt5mPG8eF+KrpgvlhMx93KiXEV41Z1cxftgwC8aJxltZBvA4m/fuCE+YhvmYm/fuKbb1AvGRiAzly2/DTEL9XIH47RB8AiN+M2dPXigLxWzF/FhPnO3FvBPErMSkR99K3WvMuEL8J/VBaxvdatlX4aYhfhWmr/MpF7wtUxs7JEBsGwVWv1nAZUFsd3C2JDlan8qnicQ0cFzO5XbN97Ij76isGp4rHVa8IEgO7ZeILnUKFGk+RmMrFT7EVPHcOV72iyDR4s36oHlH9Roj/8BCvFKRzSkFwpxSkc0pBjWehvs+KdI6DxdlbQgLOBKJ6BpaP1+xSfPTJHHthxQht+eODdC6ZNXMy9YtHcJdY40t9AZDOMZAwJ5NvZR7xxgFQ46NYPydTrXikcw1LplHHZznGb8wL0rmcENlOrX38+qI1IijN5Ujn3h/UN/WRxNT4TIctObj7/HQ6vD/7/6g5uIuF6OOJb0KeXQk/HZXOHe6Up3MJENFeHeJR49Ogwvw8y/XCT0f18Xfo4xcxUl0qvUNUn52gW3MKPcu8FwEgnp+Q+MRTMRbuRQCIZ6bt0r3is81oQ3xWGukixnAgPivFhuYdID4rnhpf4FBBfD6scLITL/FFgPhsdM08IX56rDIEARCfjav02cG6HNEfxGdjKN59YvRABvMQnw9Pku4M1mXJ5CE+K17xw6OVZQwH4vPRRvWDB9pHS6zLgfhsFJt6J4H4bEC8Uqbiyw7fQvymzK25KHeQIH5LZEy9B97eC8QvgT5PxhOxF4rmr28ffhrilzAW2a25kDH/PgXiGRk59g7NywDimXAc+yfjRADxTHjFT4J5KUcF4pmgllcQR0BM5Yd4JiJbdDG/SQbx6Rinmfe9MNsJUvNAfDqx4tsXyDguEJ9ObMZmCo/SjoD4NKKb+ca7oKw+WbzyCxyOxYekCqrtllTx2i93NqrCwYnWnYnXfoFDQjxd7SU18xbU+DRGzbw5kZGeyAOR3MfjAocXrjOwjnh3zEbCkUFUz8RwaH5GvIgGH+I5GDTz5AorQ7y4MEjnGAhOvTvRvIwYD8EdA6Gpd2dpnZDoHukcA0HxQkRPQY1PxQxOjJoRLOmIIJ1LJDhaN3mppCOCqD6RPpqffaWoBn8D8fHzVXsgfj2lrEOiOZ3j2cHYr7mwyqA4uONb/iZLaRx607kFUVm4nOnlDqR/8Atqa7wzsLK2HHcyTvYHb9GazpnJ7fqCiFlY0Z+8JU7826N599enJ9aii2I2qvGm+yeeKPFvj3fHj1+J1jyl6JKYE28f35craQV1kCjx58jtLJ6I3042nXs4tweG+FLI/fRdbWffw72Jv9T4A1XjbXD3/FDXjxEt7N9jk7XLeTK1DF5F9/FkpW4aA/tDVHWlc+1KmdhXx4qvprZbkqP6c3V/uTunc++XFl0Ss6SZjxTPFy9mIX2s/rk5MK532UdgSTMfLb6WZt4SJ/7FPJwONztK52KJFW/YkoRcxEX1TQp/vKWi+tVFV8GC2n657R8RTmRUb8dld5THR7O2f5ff3sc19c24LDEqm1J0FUQ38+MuoYKeHitwgkSIp6J5iFcAIb6G4D5C/OvP//HOwCUUvRPMkpRPEKjxaUyDumI7spTYSRr+ovdBddF8R1w693nh2E1M0ZVBN+XGieaz7lQCcTUefXyNK6iDoI+PI34FdY69YQDih/ij83jxlXzsGPH2nIkH9qIl4jFnnBXU9RMh3o7UL52giShaIrT4iupxPFEDOF9WxfUVHiuI77iKf1ze1ld4rGLEV/ixKCB+SC9+5H/sffq5Kvycpzjx9+0ghaI83r+eRubFy5aDdM7itPBe8c4Ttfb/EG9ZJt6Zeq/ok16BeItrzzeOM/jbb1mjeYhfNJ1e5dQ7CcSPxU9vB6/LvF8bA/GjGtz17UTbX8vniQTiIZ5i3+KN08ybk6fT9yf2lQLx/WDd6BHXew2fKB6Ij2jmIZ6zaAEQ4ul8bVHKVwfJ4iu+suVQvDFm2M4X3rEMpIqv9jp3Y0LN/D5JFV/llS09Qbue6n5SWuMnfXt7YRTXu9xPkE5yH1/jlS1Hgi+tPJ3D7XjYVl1U7wRw16GZefF76gaUi+8G69wV1MRVbXbV/6tL50biu66drO27WXNBoi64Iwfr/M38HtZckKhK55yEzVvjzZ7WXJCoqvFj8WYwWDeN25xmfneoSufIZp6q1vubk3FQFdXHiO+7/P0285YNxDs9qRhGzfwwsBu+xNkoz77lRl0613AN6ohnnEGbLHuUHVXB3RXvQirjPC6x5eJAVTp3oWvmqZhu36N1Q/TVeP8MrHEH6/Y1WjdEVTrX4E/jKr046TpUpXP91PuJHqWVmo5sgCrx/URc8z9tg3UjeMST10aSdxC9wXz3pMB93orkqN5/uYziB5FozIc1fvSwqmbewhDcnZXLrPF03E49mnOvhMDQ1L/ev/tvJeLJR/d2OmQcLH388QN1XaTihzOyxrujdRrYc1Q/nnq/PkB2/OrYs/groal3bdF8h3rxCtZckOxfvHfqvX9aUxrXsXvx/ql33UgXn1yI0thtFuHi03Ns79S7cmSL56iunql36q00IVm84Yq4/VPv0/fSg2DxV1kM36C5wTp94Z9c8aathhxG3ApPrLBKf5uaECu+zbs36XudwTqFqbxU8WZyy4rW0bohUsVvKUfrYN0IseIx8rItcsUrXSCRC8Hi4X1LJIsHGwLxSoF4pWgVL3rncqBUvPIk/qRYvOS9y8FuxC9SqX7cbj/il43zYcRWp3gM1e9E/HAFNYhjD+KxgnoFuxGf6832QrJ4ARc4hPgVpIoXcbkzNPPLSRVf4QUOgaWuGu/Jw1Djl5Pcx2e9wCEtHln5CuqK6iGejXrEmyvkM7xvtn/qSefG4keqx//hfdu9Uk9wN6rX/tQda3PjKJPOrXED8awUqfGL5Tjdu1c8RvEiKZHOLZczFm/ci9WN3xTm58kf1ZsVciKbeZwOGc8G4r1pV/uGJuqd3SL7EgLicT5kJLnTuc7aMjejZj62p4D9EHmDu+tVbdZKWbDmAtU+SNZ07mos0onbbC+IC9HgB8lZ401XDWONTMT7m3mycYH4EBnTuXaodUHnS+TupE76MZgPkS+d61r5BToiB22omAHB/QwZ8/guLI/cmh6to2wuaURAC0c6d/MUF9wtGrEjZmE9SToG69bAEdy9Pd5FRvVLz3KKmnqH+DXwpHPP7+Nm5xboIcTTNR6DdatgSucO37k/QJamorc5HLSDYS4Y0rk7e3PY7Jcmr5EBrHOSf3ZuTTEQz45w8aPBupF3fAXSkC0+MFjnGSYAkVQg3vOMG9ynv58iBIvvmnkqc3e+Eej/FyJXfCedyOeJST5EfgsRLv5EKe2a+WGohxR/IcLFuzXeXKb1IToRueIH0zTjqs1SuHoEiz9FNvNgDYLF0808He+BpcgV723moZwD4eInBUI8GxWJNwjmGZEl/irVOOdFEqN1IAFR4gMzsOjfmalGPNI4XkqKH+sdTr1PnkH/zo8Y8eOJuLF3NPP8yBLvKQfi+Skl3hmA84jHnMxGyBDvZm+D182WBVZQVPzwleEVVhDPTQnxsc38CdH8dkgWj8G6DSkmfvoItT369+2QId6zPfr37Sgrfno72Rz9+3YUFd914ZTdaW2HfV6KTtIsEI9qz0xG8W6zHRA/ifzR4HNTVHywj3e2TdgV4FBWfHRRiPG4kVHjY3cHsFFE/KCFd74Jy/YPrKVIOtc9SUR77rclYQ+AH2niTzN9AWCiqPipV3dOBjHdVhQZwPHZnMzJGFzuYDuKjtyRGwwG6zBUvx1ZxfvHa/ouH4N1eUgWv+DHiPwjtNTFy1DZNyVV/MKfJokVj2Z+a1LFEz9G5JVm6Cdx8bISZKvxxgyuZuF6d6P5uXcGSST38ZE/RjTfzDvR/OxbgwRyRfWeZv4axQ0ehvMclBDvvAr9e36y5fGeBnzav9PrsAA7OQdwosSjf89DzhpPjdghkitEtj5+3i7k50SOeFT7rEC8UrL28aHXoqfPi4z5eMR42REhHsrzI0Y8zOdFgng08wWQIB4UIK94fBfEkHexJcyLAeKVkk88Ll4minwjd8TUOygHxCsl39IrDMuKIpN41HZpQLxS8ohHMy8ODNkqBeKVAvFKgXilQLxSIF4pEK8UiFcKxCsF4pUC8UrZUjyQzHbifd8H/iK3KFPxblogXniZEF9BkbXspgXihZcJ8RUUWctuWiBeeJkQX0GRteymZQPxoAYgXikQrxSIVwrEKwXilQLxSoF4pUC8UiBeKYziX+9N+xNl9scpH5jL7H8Ija3It0dz88RR5PijE7/XtYrj7ZdJ4ZzwibdeDu/tvddPT6fjDxyHtC/zzIHlyzQo8vmB+jW9pDLtRz/waHppv0GjY8AHn3j7U5SXL+mL3c1nDkt9mecK8OMvvEUOfjuTrczjx69M5T7f/H754MNjwAif+OYzf+rqeX+Pqcy3z/9maer7Io8f/8XU1PdlMtb4zvb4uLLBJ962mtcdfHu8Yy7zcMfTx/dFHj88NEeVs0zODrkVPzqufGxT41/vWbyPqudXHvGjItkbJhvavDBFd7XU+EFfZOsSc5mHZqk4w9dp0Mf/xnVEB+ENY/U8VtLH29b9En2yeR+UeeJK5wZFPnM19YOPzl/jR8eAD/Y8/ry7l9rJmHRfDgFrHm+LPN9jctSX+WK4xgaa4trdFJ3Hg6qAeKVAvFIgXikQrxSIVwrEKwXilQLxSoF4pUC8UiBeKRCvFIhXCsQrBeKVAvFKgXilQLxSIF4puxdvT+V6sSs/X7qVqv1a5W41ePvAwbt6e7AJy7JcAexevLV5+McdqXUsPuB0sK7d/+2oi92Lt6fgfP7d/nlq11O3S5a///XpePt3Yx66Vda2bTjfv3lqT/M+/vjLt1+au80rXkzzMr5TLcuye/FnUa+//e+fX6yw5+bUBCv+fO/l5un44c6e+9KfPGuX7r+8+8ue5n37xZ4X8trevW22P7CdBlye3Ys/1/TjT2db5z/W4tlfa9E+cTlloT/DuW/SL68b3L2eGLWTtn734k+Hh8O5Gt+dfZ1bbHuei1V9ljwVb09767r5Z9usXx6+3j03+s05MhBfCS/v/zg31z/98dR1z7M1/vX+oXt4cPd0+W5AfC28/tpU7x/P6p6vXXrbxw/Fd3388fZP+/AP3bPtXSu9EY8+vhLeHpuQzP5pY/ZLVP+3a41/e5xE9Qdjvv/lofk+XO7aVzwjqt8HzjnncWMzO2nplYp/e6TOZo5xipE7UDcQrxSIVwrEKwXilQLxSoF4pUC8UiBeKRCvFIhXCsQrBeKVAvFKgXilQLxS/g9jHR95wJqNqgAAAABJRU5ErkJggg==" alt="plot of chunk unnamed-chunk-2"/> </p>
 
 <pre><code class="r">legend(locator(1), legend = levels(diamonds$color), pch = c(5, 15, 1, 16, 2, 
     17))
 </code></pre>
 
-<pre><code>## Error: object &#39;diamonds&#39; not found
+<pre><code>## Error: invalid coordinate lengths
 </code></pre>
 
 <p></aside></p>
@@ -253,225 +229,128 @@ hljs.initHighlightingOnLoad();
 </tr>
 </tbody></table>
 
-<p>\begin{tabular}{cc}
-\includegraphics[width=2in]{../Figures/diamond-linear.png} &amp;
-\includegraphics[width=2in]{../Figures/diamond-quad.png} \
-Graph 1 &amp; Graph 2\hline\hline
-\includegraphics[width=2in]{../Figures/diamond-quad-interaction.png} &amp;
-\includegraphics[width=2in]{../Figures/diamond-linear-interaction.png} \
-Graph 3 &amp; Graph 4\
-\end{tabular}</p>
-
 <p>Which model corresponds to which graph?</p>
 
 <ul>
 <li><p><em>lm( price~carat + color, data=diamonds)</em>. </p>
 
-<p>Which graph? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      1,
-"name": "corr",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p>Which graph? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 1" 
 }'>Graph 1</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      1,
-"name": "corr",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 2" 
 }'>Graph 2</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      1,
-"name": "corr",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 3" 
 }'>Graph 3</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      1,
-"name": "corr",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 4" 
-}'>Graph 4</option> </select><span id='out1' class='shiny-html-output'> </span> </p></li>
+}'>Graph 4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-7-16-SD",
+"itemN":      1,
+"name": "corr",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select> </p></li>
 <li><p><em>lm( price~carat * color, data=diamonds)</em>. </p>
 
-<p>Which graph? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      2,
-"name": "corr2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p>Which graph? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 1" 
 }'>Graph 1</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      2,
-"name": "corr2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 2" 
 }'>Graph 2</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      2,
-"name": "corr2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 3" 
 }'>Graph 3</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      2,
-"name": "corr2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 4" 
-}'>Graph 4</option> </select><span id='out2' class='shiny-html-output'> </span> </p></li>
+}'>Graph 4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-7-16-SD",
+"itemN":      2,
+"name": "corr2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select> </p></li>
 <li><p><em>lm( price~poly(carat,2) + color, data=diamonds)</em>. </p>
 
-<p>Which graph? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      3,
-"name": "corr3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p>Which graph? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 1" 
 }'>Graph 1</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      3,
-"name": "corr3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 2" 
 }'>Graph 2</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      3,
-"name": "corr3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 3" 
 }'>Graph 3</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      3,
-"name": "corr3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 4" 
-}'>Graph 4</option> </select><span id='out3' class='shiny-html-output'> </span> </p></li>
+}'>Graph 4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-7-16-SD",
+"itemN":      3,
+"name": "corr3",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select> </p></li>
 <li><p><em>lm( price~poly(carat,2) * color, data=diamonds)</em>. </p>
 
-<p>Which graph? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      4,
-"name": "corr4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<p>Which graph? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 1" 
 }'>Graph 1</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      4,
-"name": "corr4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 2" 
 }'>Graph 2</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      4,
-"name": "corr4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 3" 
 }'>Graph 3</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-16-SD",
-"itemN":      4,
-"name": "corr4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Graph 4" 
-}'>Graph 4</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+}'>Graph 4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-7-16-SD",
+"itemN":      4,
+"name": "corr4",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "corr", "corr2", "corr3", "corr4" ]'>problem roster</option></select></p>
 
 </body>
 

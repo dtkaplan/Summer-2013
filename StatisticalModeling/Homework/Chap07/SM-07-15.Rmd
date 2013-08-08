@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 15
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-15-SD")
+require(ScoreR)
+startProblem("SM-7-15-SD")
 ```
 
 Consider this model of a child's height as a function of the father's height, the mother's height, and the sex of the child.
@@ -27,6 +27,4 @@ height3=selectSet(name="Bill2", totalPts=1, "They should be the same height."=FA
 ```
 * Now put the two parts together.  Bill's father is one inch taller than Charley's, but Charley's mother is one inch taller than Bill's.  How much taller is Bill than Charley? `r I(height3)`
 
-
-`r I(closeProblem())`
-
+`r I(endProblem())`

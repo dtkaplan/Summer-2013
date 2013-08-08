@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 20
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-20-SD")
+require(ScoreR)
+startProblem("SM-7-20-SD")
 ```
 
 The graph shows data on three variables, SCORE, AGE, and SPECIES. The

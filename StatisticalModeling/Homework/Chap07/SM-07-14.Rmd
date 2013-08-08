@@ -2,13 +2,12 @@ Intro to Statistical Modeling Ch. 7 Prob. 14
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-14-SD")
+require(ScoreR)
+startProblem("SM-7-14-SD")
 ```
 
 The graph shows schematically a hypothesized relationship between how fast a person runs and the person's age and sex.
 
-### Again, drawing a picture
 \centerline{\begin{tikzpicture}[scale=1]
 \draw[->] (0,0) -- node[below] {Age} (5,0);
 \draw[->] (0,0) -- node[above,sloped] {Speed} (0,5);
@@ -25,15 +24,14 @@ run=selectSet(name="age", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=
 * What will be the sign of the coefficient on *age*? `r I(run)`
 
 ```{r include=FALSE}
-run2=selectSet(name="age", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=FALSE)
+run2=selectSet(name="age2", totalPts=1, "Negative"=TRUE, "Zero"=FALSE, "Positive"=FALSE)
 ```
 * What will be the sign of the coefficient on *sex*?  (Assume that the *sex* variable is an indicator for women.) `r I(run2)`
 
 ```{r include=FALSE}
-run3=selectSet(name="age", totalPts=1, "Negative"=FALSE, "Zero"=FALSE, "Positive"=TRUE, "There is no interaction coefficient"=FALSE, "No way to tell, even roughly, from the information given"=FALSE)
+run3=selectSet(name="age3", totalPts=1, "Negative"=FALSE, "Zero"=FALSE, "Positive"=TRUE, "There is no interaction coefficient"=FALSE, "No way to tell, even roughly, from the information given"=FALSE)
 ```
 * What will be the sign of the interaction coefficient? (Again, assume that the *sex* variable is an indicator for women.) `r I(run3)`
 
 
-`r I(closeProblem())`
-
+`r I(endProblem())`
