@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 43
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-43-SD")
+require(ScoreR)
+startProblem("SM-11-43-SD")
 ```
 You have decided to become a shoe-maker.  Contrary to popular belief, this is a highly competitive field and you had to take the Shoe-Maker Apprenticeship Trial (SAT) as part of your apprenticeship application.  
 
@@ -17,11 +17,8 @@ According to this information, what is the percentile corresponding to your SAT 
 ```{r include=FALSE}
 shoe2=selectSet(name="95thPercentile", totalPts=1, "pnorm(.95, mean=700, sd=35)"=FALSE, "pnorm(.95, mean=750, sd=35)"=FALSE, "qnorm(.95, mean=700, sd=35)"=TRUE, "qnorm(.95, mean=750, sd=35)"=FALSE, "Not enough information to answer."=FALSE)
 ```
-* Your friend just told you that she scored at the 95th percentile, but
-she can't remember her numerical score.  Using the information from
-the Shoe-maker's union, what was her score? `r I(shoe2)`
+
+Your friend just told you that she scored at the 95th percentile, but she can't remember her numerical score.  Using the information from the Shoe-maker's union, what was her score? `r I(shoe2)`
 
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

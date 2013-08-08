@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 44
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-44-SD")
+require(ScoreR)
+startProblem("SM-11-44-SD")
 ```
 Both the poisson and binomial probability distributions describe a count of events.   
 
@@ -164,5 +164,5 @@ ANSWER:
 ```
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

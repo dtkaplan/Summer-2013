@@ -148,179 +148,89 @@ hr {
 <p>In order to determine whether the shipment should be accepted, security officers randomly select 15 of the suitcases and X-rays them.  If one or more of the suitcases is found to contain the materials, the entire shipment will be searched.</p>
 
 <ul>
-<li><p>What probability model best applies here in describing the probability that one or more of the five added suitcases will be X-rayed? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      1,
-"name": "ProbabilityModel",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>What probability model best applies here in describing the probability that one or more of the five added suitcases will be X-rayed? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Normal" 
 }'>Normal</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      1,
-"name": "ProbabilityModel",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Uniform" 
 }'>Uniform</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      1,
-"name": "ProbabilityModel",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Binomial" 
 }'>Binomial</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      1,
-"name": "ProbabilityModel",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Poisson" 
 }'>Poisson</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      1,
-"name": "ProbabilityModel",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Exponential" 
-}'>Exponential</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>What is the probability that one or more of the five added suitcases
-will be X-rayed? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>Exponential</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      1,
+"name": "ProbabilityModel",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>What is the probability that one or more of the five added suitcases
+will be X-rayed? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-pnorm(5,mean=150,sd=15)" 
 }'>1-pnorm(5,mean=150,sd=15)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-pnorm(15,mean=150,sd=5)" 
 }'>1-pnorm(15,mean=150,sd=5)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-punif(5,min=0, max=150)" 
 }'>1-punif(5,min=0, max=150)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-punif(15,min=0, max=150)" 
 }'>1-punif(15,min=0, max=150)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1-pbinom(0,size=15,prob=5/150)" 
 }'>1-pbinom(0,size=15,prob=5/150)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-ppois(0,45/150)" 
 }'>1-ppois(0,45/150)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1-ppois(0,5/150)" 
 }'>1-ppois(0,5/150)</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-40-SD",
-"itemN":      2,
-"name": "Probability",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Not enough information to tell." 
-}'>Not enough information to tell.</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+}'>Not enough information to tell.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-11-40-SD",
+"itemN":      2,
+"name": "Probability",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
-<p>\begin{MultipleChoice}
-\wrongc{1-pnorm(5,mean=150,sd=15)}
-\wrongc{1-pnorm(15,mean=150,sd=5)}
-\wrongc{1-punif(5,min=0, max=150)}
-\wrongc{1-punif(15,min=0, max=150)}
-\correctc{1-pbinom(0,size=15,prob=5/150)}
-\wrongc{1-ppois(0,45/150)}
-\wrongc{1-ppois(0,5/150)}
-\wrong{Not enough information to tell.}
-\end{MultipleChoice}</p>
-
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "ProbabilityModel", "Probability" ]'>problem roster</option></select></p>
 
 </body>
 

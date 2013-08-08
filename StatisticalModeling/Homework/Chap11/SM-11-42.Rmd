@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 42
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-42-SD")
+require(ScoreR)
+startProblem("SM-11-42-SD")
 ```
 
 According to the website http://www.wikihealth.com/Pregnancy, approximately 3.6% of pregnant women give birth on the predicted date (using the method that calculates gestational duration starting at the time of the last menstrual period).  Assume that the probability of giving birth is a normal distribution whose mean is at the predicted date.  The standard deviation quantifies the spread of gestational durations.
@@ -39,4 +39,4 @@ s=12;pnorm(.5,mean=0,sd=s)-pnorm(-.5,mean=0,sd=s)
 ```
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
