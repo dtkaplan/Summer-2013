@@ -2,14 +2,12 @@ Intro to Statistical Modeling Ch. 6 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-RQ-SD")
+require(ScoreR)
+startProblem("SM-6-RQ-SD")
 ```
 
 * What is an "explanatory variable" and how does it differ from a "response variable?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="explanatory.v.response", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="explanatory.v.response", totalPts=2, rows=3))`
 
 <aside>
@@ -18,9 +16,7 @@ Both are variables.  The reason to designate one variable as "response" and othe
 </aside>
 
 * What is the difference between a "model term" and a "variable?"
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="model.term.V.variable", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="model.term.V.variable", totalPts=2, rows=3))`
 
 <aside>
@@ -29,9 +25,7 @@ A variable is a quantity or categorical attribute that you measure or observe.  
 </aside>
 
 * Why are there sometimes multiple model terms in a model?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="multiple.model.terms", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="multiple.model.terms", totalPts=2, rows=3))`
 
 <aside>
@@ -40,9 +34,7 @@ You would include multiple model terms if you want to include multiple explanato
 </aside>
 
 * What is an interaction term and how does it differ from a variable?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="interaction.term", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="interaction.term", totalPts=2, rows=3))`
 
 <aside>
@@ -51,9 +43,7 @@ An interaction term is constructed by combining two or more variables.  So it di
 </aside>
 
 * In graphs of the model response value versus an explanatory variable, quantitative explanatory variables are associated with slopes and categorical explanatory variables are associated with step-like differences. Explain why.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="slopes.v.steps", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="slopes.v.steps", totalPts=2, rows=3))`
 
 <aside>
@@ -63,10 +53,8 @@ explanatory variable changes.
 </aside>
 
 * How can models be useful that fail to represent the actual causal connections (if any) between variables?  Give an example.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="casual.connections", totalPts=2, rows=3))
-```
- `r I(textItem(name="casual.connections", totalPts=2, rows=3))`
+
+ `r I(textItem(name="causal.connections", totalPts=2, rows=3))`
 
 <aside>
 ANSWER:    
@@ -78,4 +66,4 @@ Here's another example.  In examining the effect of educational practices (e.g.,
 But how to measure the "home environment?"  One approach that has shown promise is to count the number of books in the house.  So, the educational outcome of each pupil would be modeled by the educational practice (say, class size) and the number of books at home.  No one thinks that the number of books is influencing the outcome.  Rather, it's a proxy for other things that we don't know how to measure. 
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
