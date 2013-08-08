@@ -5,10 +5,11 @@ require(mosaic)
 require(ScoreR)
 startProblem("SM-3-P56-SD")
 ```
-To exercise your ability to extract subsets of data, 
-take each of the following subsets of the swimming records in 
-`SwimRecords`
- and calculate
+
+```{r include=FALSE}
+swim = fetchData("SwimRecords")
+```
+To exercise your ability to extract subsets of data, take each of the following subsets of the swimming records in `SwimRecords` and calculate
 the mean and minimum swimming time for the subset.  (Answers have been
 rounded to one decimal place.)
 
@@ -57,24 +58,32 @@ slowrecords2=selectNumber(choices=c(56.2,60.2,61.5,64.7,69.6,71.3), correct=c(60
   
 
 <aside>
-<code>
-\> s = subset( swim, year >=1920 & year <=1940)     
-\> mean(s$time)     
-[1] 64.675     
-\> min(s$time)     
-[1] 56.4     
-\> s = subset( swim, sex == 'F' & year >=1970 & year < 1990)     
-\> mean(s$time)     
-[1] 56.22571     
-\> min(s$time)     
-[1] 54.73     
-\> s = subset( swim, time > 60)     
-\> mean(s$time)     
-[1] 69.61667     
-\> min(s$time)     
-[1] 60.2     
+```{r}
+s = subset( swim, year >=1920 & year <=1940)     
+mean(s$time)     
+```
+  
+```{r}
+min(s$time)     
+```
+    
+```{r}
+s = subset( swim, sex == 'F' & year >=1970 & year < 1990)     
+mean(s$time)     
+```
 
-</code>
+```{r}
+min(s$time)     
+```
+    
+```{r}
+s = subset( swim, time > 60)     
+mean(s$time)     
+```
+  
+```{r}
+min(s$time)     
+```
 </aside>
 
 `r I(endProblem())`
