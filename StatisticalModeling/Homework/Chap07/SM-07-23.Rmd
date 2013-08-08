@@ -14,8 +14,7 @@ In this project, you are going to investigate the influence of at least three va
 * Geographical location
 
 
-These variables are relatively easy to measure and code.  There are web sites that allow us quickly to collect a lot of cases.  One site that seems easy
-to use is [cars](www.cars.com).  Pick a particular model of car that is of interest to you.  Also, pick a few scattered geographical locations.  (At [cars](www.cars.com) you can specify a zip code, and restrict your search to cars within a certain distance of that zip code.)
+These variables are relatively easy to measure and code.  There are web sites that allow us quickly to collect a lot of cases.  One site that seems easy to use is [cars](www.cars.com).  Pick a particular model of car that is of interest to you.  Also, pick a few scattered geographical locations.  (At [cars](www.cars.com) you can specify a zip code, and restrict your search to cars within a certain distance of that zip code.)
 
 For each location, use the web site to find prices and the other variables for 50-100 cars.  Record these in a spreadsheet with five variables: price, model year, mileage, location, model name. (The model name will be the same for all your data.  Recording it in the spreadsheet will help in combining data for different types of cars.) You may also choose to record some other variables of interest to you.
 
@@ -40,4 +39,3 @@ Price and other information about used Mazda Miatas in the Saint Paul, Minnesota
 
 
 `r I(endProblem())`
-

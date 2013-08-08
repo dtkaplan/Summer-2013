@@ -147,26 +147,12 @@ hr {
 SCORE and AGE are quantitative.  SPECIES is categorical with levels
 <code>x</code> and <code>y</code>.</p>
 
-<p><code></p>
-
-<pre><code>     |                        x     
-     |                        y     
-     |                    y  x     
-     |                y     x     
-</code></pre>
-
-<p>SCORE    |             y      x<br/>
-         | y    y<br/>
-         |                x<br/>
-         |          x<br/>
-         |x   x<br/>
-         |_______________________________________<br/>
-                         AGE     </p>
+<p><code>
+<img src="data:image/png;base64,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" alt="Graph1"/></p>
 
 <p></code></p>
 
-<p>Explain which of the following models is plausibly a candidate to describe the
-data.  (Don&#39;t do any detailed calculuations; you can&#39;t because the axes aren&#39;t marked with a scale.)  Note SPECIESx means that the case has a level of x for variable SPECIES.  For each model explain in what ways it agrees or disagrees with the graphed data.</p>
+<p>Explain which of the following models is plausibly a candidate to describe the data.  (Don&#39;t do any detailed calculuations; you can&#39;t because the axes aren&#39;t marked with a scale.)  Note SPECIESx means that the case has a level of x for variable SPECIES.  For each model explain in what ways it agrees or disagrees with the graphed data.</p>
 
 <ul>
 <li><code>SCORE = 10 - 2.7 AGE + 1.3 SPECIESx</code></li>
@@ -204,26 +190,18 @@ ANSWER:
 This has it all!
 </aside></p>
 
-<p>Enter your answers for all four models here: <textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p>Enter your answers for all four models here:<br/>
+<textarea cols='30' rows='4' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
  "setID": "SM-7-20-SD",
 "itemN":      1,
 "name": "models",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
-<p><aside></p>
-
-<h3>What is this?</h3>
-
-<p>% __ SCORE = 10 + 2.7 AGE + 2 AGE<sup>2</sup> - 1.3 SPECIESx - 0.7 AGE * SPECIESx
-</aside></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "models" ]'>problem roster</option></select></p>
 
 </body>
 

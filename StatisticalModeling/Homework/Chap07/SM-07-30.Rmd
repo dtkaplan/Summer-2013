@@ -22,11 +22,7 @@ For a model with this numerical index of drinking behavior as the output, what s
 
 5. For the model you wrote down, indicate which coefficients are positive and which negative.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="model", totalPts=2, rows=4))
-```
-
-`r I(textItem(name="model", totalPts=2, rows=4))`
+`r I(textItem(name="model", totalPts=2, rows=6))`
 
 #### Binge Drinking Is Age-Related Phenomenon     
 By Katrina Woznicki, MedPage Today Staff Writer     
@@ -81,4 +77,3 @@ Then at age 24, the investigators compared those who were students to those who 
 Dr. Bingham said the findings reveal that non-college attending young adults "experience levels of risk that equal those of their college-graduating age mates."
 
 `r I(endProblem())`
-

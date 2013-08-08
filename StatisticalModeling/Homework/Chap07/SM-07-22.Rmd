@@ -46,5 +46,4 @@ ANSWER:
 According to the article, duration of sleep was modeled by time to fall asleep.  The Group A children fall asleep on average 15 minutes faster than Group B children.  The coefficient on time to fall asleep is 0.1 hour per minute.  So the extra duration of sleep for Group A children is 15 minutes times 0.1 hour per minute or, altogether, 1.5 hours.
 </aside>
 
-`r I(sleep4)`
-
+`r I(endProblem())`

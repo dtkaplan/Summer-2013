@@ -29,8 +29,8 @@ F. *waiting* ~ poly(*duration*,2) * *biggerThan3*
 ![Fig1](graph-AC134-1.png) | ![Fig2](graph-AC134-4.png)
 **3.** | **4.**
 ![Fig3](graph-AC134-3.png) | ![Fig4](graph-AC134-5.png)
-**5.** | - 
-![Fig5](graph-AC134-2.png) | -
+**5.** | |
+![Fig5](graph-AC134-2.png) | |
 
 
 
