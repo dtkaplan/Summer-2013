@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 13 Prob. 14
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-13-14-SD")
+require(ScoreR)
+startProblem("SM-13-14-SD")
 ```
 Consider these two sampling distributions:
 
@@ -30,4 +30,4 @@ test2=selectSet(name="powerful2tailedTest", totalPts=1, "About 10% bigger than t
 ```
 What would be the power of the most powerful possible two-tailed test? `r I(test2)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

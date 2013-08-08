@@ -2,37 +2,27 @@ Intro to Statistical Modeling Ch. 13 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-13-RQ-SD")
+require(ScoreR)
+startProblem("SM-13-RQ-SD")
 ```
 * What is a "null hypothesis?"  Why does it play a special role in hypothesis testing? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="null", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="null", totalPts=2, rows=3))`
 
 * Why is it good to have a hypothesis test with a low "significance level?" 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="significance", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="significance", totalPts=2, rows=3))`
 
 * Why is it good to have a hypothesis test with a high "power?"
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="power", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="power", totalPts=2, rows=3))`
 
 * What is a p-value? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="p-value", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="p-value", totalPts=2, rows=3))`
 
 * Why are there two kinds of potential errors in hypothesis testing, Type I and Type II? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="errors", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="errors", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 13 Prob. 15
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-13-15-SD")
+require(ScoreR)
+startProblem("SM-13-15-SD")
 ```
 
 The Ivory-billed woodpecker has been thought to be extinct; the last known observation of one was in 1944.  A new sighting in the Pearl River forest in Arkansas in 2004 became national news and excited efforts to confirm the sighting. These have not been successful and there is skepticism whether the
@@ -112,4 +112,4 @@ Comparing the Bayesian and hypothesis-testing approaches, explain why you might 
 
 `r I(textItem(name="why", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

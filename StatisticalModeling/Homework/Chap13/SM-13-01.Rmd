@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 13 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-13-1-SD")
+require(ScoreR)
+startProblem("SM-13-1-SD")
 ```
 Which of the following are legitimate possible outcomes of a hypothesis test?  Mark as "true" any legitimate ones and "false" for any illegitimate ones.
 
@@ -36,11 +36,7 @@ true7=selectSet(name="TorF7", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
 ```
 * indeterminate result `r I(true7)`
 
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="illegitimate", totalPts=2, rows=3))
-```
 Pick one of the illegitimate outcomes and explain why it is illegitimate.    
 `r I(textItem(name="illegitimate", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

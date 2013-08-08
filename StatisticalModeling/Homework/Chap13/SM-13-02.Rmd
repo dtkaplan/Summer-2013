@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 13 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-13-2-SD")
+require(ScoreR)
+startProblem("SM-13-2-SD")
 ```
 
 Consider the two conditional sampling distributions shown in the figure.
@@ -48,4 +48,4 @@ test3=selectSet(name="Type2", totalPts=1, "A joint probability: p(Reject and A)"
 What is the probability of a Type II error? `r I(test3)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
