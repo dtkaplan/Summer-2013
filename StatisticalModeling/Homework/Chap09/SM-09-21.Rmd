@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 21
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-21-SD")
+require(ScoreR)
+startProblem("SM-9-21-SD")
 ```
 Here is a set of models:
 
@@ -85,4 +85,4 @@ False.  The model *educ* ~ *age* has a different response variable than any of t
 </aside>
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

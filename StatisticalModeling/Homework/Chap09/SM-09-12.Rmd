@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob.12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-09-12-SD")
+require(ScoreR)
+startProblem("SM-09-12-SD")
 ```
 Consider the following models where a response variable A is modeled by explanatory variables B, C, and D.
 
@@ -45,4 +45,4 @@ true7=selectSet(name="TF7", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ```
 * All the other models are nested in model 6. `r I(true7)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

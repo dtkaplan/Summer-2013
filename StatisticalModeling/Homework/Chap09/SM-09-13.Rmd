@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 13
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-13-SD")
+require(ScoreR)
+startProblem("SM-9-13-SD")
 ```
 Consider two models, Model 1 and Model 2, with the same response variable.   
 
@@ -50,4 +50,4 @@ true7=selectSet(name="TF7", totalPts=1, "True"=TRUE, "False"=FALSE)
 ```
   * *A* ~ *D* `r I(true7)`
   
-`r I(closeProblem())`
+`r I(endProblem())`

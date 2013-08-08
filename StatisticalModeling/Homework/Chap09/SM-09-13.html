@@ -150,217 +150,153 @@ hr {
 <p>Consider two models, Model 1 and Model 2, with the same response variable.   </p>
 
 <ul>
-<li><p>Model 1 is nested in Model 2 if the <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      1,
-"name": "match",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Model 1 is nested in Model 2 if the <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "variables" 
 }'>variables</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      1,
-"name": "match",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "model terms" 
-}'>model terms</option> </select><span id='out1' class='shiny-html-output'> </span>
+}'>model terms</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-9-13-SD",
+"itemN":      1,
+"name": "match",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select>
 of Model 1 are a subset of those of Model 2.</p>
 
 <ul>
-<li>If Model 1 is nested in Model 2, then model 1 cannot have a higher \( R^2 \) than model 2. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      2,
-"name": "TF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>If Model 1 is nested in Model 2, then model 1 cannot have a higher \( R^2 \) than model 2. <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      2,
-"name": "TF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out2' class='shiny-html-output'> </span><br/></li>
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-9-13-SD",
+"itemN":      2,
+"name": "TF",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select><br/></li>
 </ul></li>
 <li><p>Which of the following are nested in <em>A</em> ~ <em>B \( \star \) C + D</em>?</p>
 
 <ul>
-<li><em>A</em> ~ <em>B</em> <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+<li><em>A</em> ~ <em>B</em> <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "True" 
+}'>True</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "False" 
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-9-13-SD",
 "itemN":      3,
 "name": "TF2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
+<li><em>A</em> ~ <em>B + D</em> <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      3,
-"name": "TF2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out3' class='shiny-html-output'> </span></li>
-<li><em>A</em> ~ <em>B + D</em> <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
 "setID": "SM-9-13-SD",
 "itemN":      4,
 "name": "TF3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
+<li><em>B</em> ~ <em>C</em> <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      4,
-"name": "TF3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out4' class='shiny-html-output'> </span></li>
-<li><em>B</em> ~ <em>C</em> <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-9-13-SD",
 "itemN":      5,
 "name": "TF4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
+<li><em>A</em> ~ <em>B + C + D</em> <select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      5,
-"name": "TF4",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out5' class='shiny-html-output'> </span></li>
-<li><em>A</em> ~ <em>B + C + D</em> <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
 "setID": "SM-9-13-SD",
 "itemN":      6,
 "name": "TF5",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
+<li><em>A</em> ~ <em>B \( \star \) D + C</em> <select name='ScoreR7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      6,
-"name": "TF5",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out6' class='shiny-html-output'> </span></li>
-<li><em>A</em> ~ <em>B \( \star \) D + C</em> <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
 "setID": "SM-9-13-SD",
 "itemN":      7,
 "name": "TF6",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "True" 
-}'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      7,
-"name": "TF6",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
-"hint": "",
-"reward": "Right!",
-"content": "False" 
-}'>False</option> </select><span id='out7' class='shiny-html-output'> </span></li>
-<li><em>A</em> ~ <em>D</em> <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      8,
-"name": "TF7",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
+<li><em>A</em> ~ <em>D</em> <select name='ScoreR8'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "True" 
 }'>True</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-13-SD",
-"itemN":      8,
-"name": "TF7",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "False" 
-}'>False</option> </select><span id='out8' class='shiny-html-output'> </span></li>
+}'>False</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR8out'></input></small><select style='visibility: hidden' width='5' name='ScoreR8info'><option value='{
+"setID": "SM-9-13-SD",
+"itemN":      8,
+"name": "TF7",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "match", "TF", "TF2", "TF3", "TF4", "TF5", "TF6", "TF7" ]'>problem roster</option></select></p>
 
 </body>
 

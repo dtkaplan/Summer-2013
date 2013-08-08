@@ -160,67 +160,38 @@ Los Angeles County had one representative in the California State Senate for a p
 
 <ul>
 <li>What is the standard deviation of the district populations
-across the whole US? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+across the whole US? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "4823" 
 }'>4823</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "9468" 
 }'>9468</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "28790" 
 }'>28790</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "342183" 
 }'>342183</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDev",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "540649" 
-}'>540649</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+}'>540649</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-9-22-SD",
+"itemN":      1,
+"name": "StdDev",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>Another way to look at the spread is to try to account for the differences in populations by modeling them and looking at how much of the difference remains
@@ -229,183 +200,108 @@ unexplained. </p>
 <p>Let&#39;s start with a very simple model that treats all the districts as
 the same: <em>population</em> ~ 1.  </p>
 
-<p>What is the meaning of the single coefficient from this model? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      2,
-"name": "meaning",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>What is the meaning of the single coefficient from this model? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The mean district population across all states." 
 }'>The mean district population across all states.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      2,
-"name": "meaning",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "The mean district population across all districts." 
 }'>The mean district population across all districts.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      2,
-"name": "meaning",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The median population across all districts." 
 }'>The median population across all districts.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      2,
-"name": "meaning",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The median population across all states." 
 }'>The median population across all states.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      2,
-"name": "meaning",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "None of the above." 
-}'>None of the above.</option> </select><span id='out2' class='shiny-html-output'> </span></p>
-
-<p>Calculate the standard deviation of the residuals.  How does this compare to the standard deviation of the district population itself? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
+}'>None of the above.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
  "setID": "SM-9-22-SD",
-"itemN":      3,
-"name": "StdDevComparison",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+"itemN":      2,
+"name": "meaning",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p>Calculate the standard deviation of the residuals.  How does this compare to the standard deviation of the district population itself? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "It's much larger" 
 }'>It&#39;s much larger</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      3,
-"name": "StdDevComparison",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "It's somewhat larger" 
 }'>It&#39;s somewhat larger</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      3,
-"name": "StdDevComparison",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "It's exactly the same" 
 }'>It&#39;s exactly the same</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      3,
-"name": "StdDevComparison",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "It's much smaller" 
-}'>It&#39;s much smaller</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+}'>It&#39;s much smaller</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-9-22-SD",
+"itemN":      3,
+"name": "StdDevComparison",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p>Now model the district size by the state <em>population</em> ~ <em>1 + state</em>.</p>
 
 <p>What is the standard deviation of the residuals from this model?<br/>
-<textarea cols='30' rows='2' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      1,
-"name": "StdDevRange",
-"totalpts":      2 
-},
-"type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
-
-<p><aside>
-ANSWER:<br/>
-\NumberRange{2000}{2100}{}
-</aside></p>
-
-<p>A box plot of the residuals shows a peculiar pattern.  What is it? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
+<textarea cols='30' rows='2' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
  "setID": "SM-9-22-SD",
 "itemN":      4,
-"name": "residPattern",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+"name": "StdDevRange",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
+
+<p>A box plot of the residuals shows a peculiar pattern.  What is it? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The residuals are all the same." 
 }'>The residuals are all the same.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      4,
-"name": "residPattern",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Every residual is an outlier." 
 }'>Every residual is an outlier.</option> <option value='{
- "itemInfo": {
- "setID": "SM-9-22-SD",
-"itemN":      4,
-"name": "residPattern",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "The residuals are almost all very close to zero, except for a few outliers." 
-}'>The residuals are almost all very close to zero, except for a few outliers.</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+}'>The residuals are almost all very close to zero, except for a few outliers.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+ "setID": "SM-9-22-SD",
+"itemN":      5,
+"name": "residPattern",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p>The variable <em>state</em> accounts for almost all of the variability from district to district.  That is, districts within a state are almost exactly the same size, but that size differs from state to state.  Why is there a state-to-state difference?  The number of districts within a state must be a whole number: 1, 2, 3, and so on.  Ideally, the district populations are the state population
 divided by the number of districts.  The number of districts is set to make the district population as even as possible between states, but exact equality isn&#39;t possible since the state populations differ. Notice that the largest and smallest districts (Montana and Wyoming, respectively) are in states with only a single district.  Adding a second district to Montana would dramatically reduce the district size below the national mean.  And even though Wyoming has a very
 low-population district, it&#39;s impossible to take a district away since Wyoming only has one.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "text1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "StdDev", "meaning", "StdDevComparison", "StdDevRange", "residPattern" ]'>problem roster</option></select></p>
 
 </body>
 
