@@ -2,19 +2,13 @@ Intro to statistical Modeling Ch. 3 Prob. 3.20
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P20-SD")
+require(ScoreR)
+startProblem("SM-3-P20-SD")
 ```
-Construct a data set of 10 hypothetical exam scores (use integers
-between 0 and 100) so that the inter-quartile range equals zero and
-the mean is greater than the median.
+Construct a data set of 10 hypothetical exam scores (use integers between 0 and 100) so that the inter-quartile range equals zero and the mean is greater than the median.
 
 Give your set of scores here:
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="hypothetical", rows=4, totalPts=2))
-```
-
 `r I(textItem(name="hypothetical", rows=4, totalPts=2))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

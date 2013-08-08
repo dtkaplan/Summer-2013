@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.23
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P23-SD")
+require(ScoreR)
+startProblem("SM-3-P23-SD")
 ```
 
 Here are some familiar quantities.  For each of them, indicate what is
@@ -15,9 +15,6 @@ is about 7cm (3 inches) from the typical value.  An extreme height is
 2.2 meters (87 inches).
 
 * An adult's weight.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="weight", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="weight", totalPts=2, rows=4))`
   
@@ -29,9 +26,6 @@ lbs on the high side and 80 lbs on the low side.
 </aside>
 
 * Income of a full-time employed person.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="income", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="income", totalPts=2, rows=4))`
 
@@ -45,9 +39,6 @@ with some people having an income of billions of dollars per year.
 </aside>
 
 * Speed of cars on a highway in good conditions.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="speed", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="speed", totalPts=2, rows=4))`
   
@@ -64,9 +55,6 @@ typical speed might be 10 mph, with 0 not being particularly extreme.
 
 * Systolic blood pressure in adults.  [You might need to look this
   up on the Internet.]
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="bp", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="bp", totalPts=2, rows=4))`
   
@@ -81,9 +69,6 @@ abnormally low and can lead to dizziness or fainting.
 
 * Blood cholesterol LDL levels. [Again, you might need the
   Internet.]
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="cholesterol", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="cholesterol", totalPts=2, rows=4))`
 
@@ -98,9 +83,6 @@ are at high risk.
 
 * Fuel economy among different models of
   cars.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="car", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="car", totalPts=2, rows=4))`
   
@@ -112,9 +94,6 @@ mpg.  A very high value is 50 mpg.
 </aside>
 
 * Wind speed on a summer day.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="wind", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="wind", totalPts=2, rows=4))`
 
@@ -128,9 +107,6 @@ quite extreme.  Above that is hurricane levels, even more extreme.
 </aside>
 
 * Hours of sleep per night for college students.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="sleep", totalPts=2, rows=4))
-```
 
   `r I(textItem(name="sleep", totalPts=2, rows=4))`
 
@@ -144,7 +120,4 @@ that.  An extreme value is 15 hours --- though this can happen.
 Obviously 24 is the limit.
 </aside>
 
-`r I(closeProblem())`
-
-
-
+`r I(endProblem())`
