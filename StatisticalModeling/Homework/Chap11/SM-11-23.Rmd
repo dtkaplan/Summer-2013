@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 23
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-23-SD")
+require(ScoreR)
+startProblem("SM-11-23-SD")
 ```
 For each of the following, decide whether the random variable is binomial or not.  Then choose the best answer from the set offered.
 
@@ -45,4 +45,4 @@ rand7=selectSet(name="lottery", totalPts=1, "It is binomial."=TRUE, "It's not be
 * Jason buys the state lottery ticket every month using his favorite combination based on his birthday and his wife's. x= # of times he wins a prize in one year. `r I(rand7)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

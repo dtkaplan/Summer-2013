@@ -149,141 +149,87 @@ hr {
 <li><p>What is the probability that the newspaper&#39;s sample will wrongly lead them to
 predict defeat, that is, less than 50% of the poll respondents will indicate support? </p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>qbinom(.5, size=400, prob=.52)</code><br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> <code>pbinom(.52, size=400, prob=.50)</code><br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> <code>rnorm(400, mean=0.52, sd=.50)</code><br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
 }'> <b>D</b></label> <code>pbinom(199, size=400, prob=0.52)</code><br/>
-<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+<label for='MCitem5'><input type='radio' name='ScoreR1' id='MCitem5' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "E" 
-}'> <b>E</b></label> <code>qnorm(.52, mean=400, sd=.50)</code></p></li>
+}'> <b>E</b></label> <code>qnorm(.52, mean=400, sd=.50)</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-11-30-SD",
+"itemN":      1,
+"name": "probability.50per",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p></li>
 <li><p>What is the probability that more than 250 of those 400 voters will support the budget?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>pbinom(250, size=400, prob=.50)</code><br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> <code>pbinom(249, size=400, prob=0.52)</code><br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
 "pts":      1,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> <code>1-pbinom(250, size=400, prob=0.52)</code><br/>
-<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR2' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
 }'> <b>D</b></label> <code>qbinom(.5, size=400, prob=.52)</code><br/>
-<label for='MCitem5'><input type='radio' name='MC2' id='MCitem5' value='{
+<label for='MCitem5'><input type='radio' name='ScoreR2' id='MCitem5' value='{
 "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "SM-11-30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "E" 
-}'> <b>E</b></label> <code>1-qnorm(.52, mean=400, sd=.50)</code></p></li>
+}'> <b>E</b></label> <code>1-qnorm(.52, mean=400, sd=.50)</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-11-30-SD",
+"itemN":      2,
+"name": "probability.250",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "probability.50per", "probability.250" ]'>problem roster</option></select></p>
 
 </body>
 

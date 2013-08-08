@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 32
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-32-SD")
+require(ScoreR)
+startProblem("SM-11-32-SD")
 ```
 
 A student is asked to calculate the probability that $x=3.5$ when $x$ is chosen from a normal distribution with the following parameters: mean=3, sd=5.  To calculate the answer, he uses this command:    
@@ -18,5 +18,4 @@ command=selectSet(name="incorrect", totalPts=1, "He should have used pnorm"=FALS
 ```
 This is not right.  Why not? `r I(command)`
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

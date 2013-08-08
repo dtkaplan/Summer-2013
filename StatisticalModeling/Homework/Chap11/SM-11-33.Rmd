@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 33
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-33-SD")
+require(ScoreR)
+startProblem("SM-11-33-SD")
 ```
 
 ```{r include=FALSE}
@@ -11,4 +11,4 @@ paint=selectSet(name="production", totalPts=1, "qnorm(0.90, mean=100000, sd=1000
 ```
 A paint manufacturer has a daily production, x, that is normally distributed with a mean 100,000 gallons and a standard deviation of 10,000 gallons. Management wants to create an incentive for the production crew when the daily production exceeds the 90th percentile of the distribution. You are asked to calculate at what level of production should management pay the incentive bonus? `r I(paint)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
