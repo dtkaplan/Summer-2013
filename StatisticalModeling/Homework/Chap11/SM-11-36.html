@@ -183,87 +183,51 @@ hljs.initHighlightingOnLoad();
 <p>A manufacturer of electrical fiber optic cables produces spools that are 50,000 feet long.  In the production process, flaws are introduced randomly.  A study of the flaws indicates that, on average, there is 1 flaw per 10000 feet.</p>
 
 <ul>
-<li><p>Which probability distribution describes the situation of how many flaws there will be in a spool of cable. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-36-SD",
-"itemN":      1,
-"name": "distribution",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Which probability distribution describes the situation of how many flaws there will be in a spool of cable. <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "normal" 
 }'>normal</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-36-SD",
-"itemN":      1,
-"name": "distribution",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "uniform" 
 }'>uniform</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-36-SD",
-"itemN":      1,
-"name": "distribution",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "binomial" 
 }'>binomial</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-36-SD",
-"itemN":      1,
-"name": "distribution",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "exponential" 
 }'>exponential</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-36-SD",
-"itemN":      1,
-"name": "distribution",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "poisson" 
-}'>poisson</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>What&#39;s the probability that a 50,000 foot-long cable has 3 or fewer flaws?  (Enter your answer to 3 decimal places, e.g., 0.456.)<br/>
-<textarea cols='30' rows='1' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+}'>poisson</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-11-36-SD",
 "itemN":      1,
-"name": "enterNumber",
-"totalpts":      2 
-},
+"name": "distrib",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>What&#39;s the probability that a 50,000 foot-long cable has 3 or fewer flaws?  (Enter your answer to 3 decimal places, e.g., 0.456.) <textarea cols='30' rows='1' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
+"setID": "SM-11-36-SD",
+"itemN":      2,
+"name": "probability",
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ul>
 
 <p><aside>
-ANSWER:<br/>
-0.265 &plusmn; 0.001<br/>
-NOTE: The margin of error should be much smaller.</p>
+ANSWER:   </p>
 
 <pre><code class="r">ppois(3.3, 5)
 </code></pre>
@@ -273,7 +237,7 @@ NOTE: The margin of error should be much smaller.</p>
 
 <p></aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "text1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "distrib", "probability" ]'>problem roster</option></select></p>
 
 </body>
 

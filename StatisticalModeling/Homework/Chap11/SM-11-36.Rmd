@@ -1,32 +1,25 @@
 Intro to Statistical Modeling Ch. 11 Prob. 36
-========================================================
+===============================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-36-SD")
+require(ScoreR)
+startProblem("SM-11-36-SD")
 ```
+
 A manufacturer of electrical fiber optic cables produces spools that are 50,000 feet long.  In the production process, flaws are introduced randomly.  A study of the flaws indicates that, on average, there is 1 flaw per 10000 feet.
 
 ```{r include=FALSE}
-cable=selectSet(name="distribution", totalPts=1, "normal"=FALSE, "uniform"=FALSE, "binomial"=FALSE, "exponential"=FALSE, "poisson"=TRUE)
+prob1=selectSet(name="distrib", totalPts=1, "normal"=FALSE, "uniform"=FALSE, "binomial"=FALSE, "exponential"=FALSE, "poisson"=TRUE)
 ```
-* Which probability distribution describes the situation of how many flaws there will be in a spool of cable. `r I(cable)`
+* Which probability distribution describes the situation of how many flaws there will be in a spool of cable. `r I(prob1)`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="enterNumber", totalPts=2, rows=1))
-```
-* What's the probability that a 50,000 foot-long cable has 3 or fewer flaws?  (Enter your answer to 3 decimal places, e.g., 0.456.)     
-`r I(textItem(name="enterNumber", totalPts=2, rows=1))`
+* What's the probability that a 50,000 foot-long cable has 3 or fewer flaws?  (Enter your answer to 3 decimal places, e.g., 0.456.) `r I(textItem(name="probability", totalPts=2, rows=1))`
 
 <aside>
-ANSWER:    
-0.265 &plusmn; 0.001     
-NOTE: The margin of error should be much smaller.
-
+ANSWER:   
 ```{r}
 ppois(3.3, 5)
 ```
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

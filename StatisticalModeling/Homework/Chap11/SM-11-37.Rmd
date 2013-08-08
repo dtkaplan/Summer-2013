@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 37
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-37-SD")
+require(ScoreR)
+startProblem("SM-11-37-SD")
 ```
 
 To help reduce speeding, the local governments sometimes put up speed signs at locations where speeding is a problem.  These signs measure the speed of each passing car and display that speed to the driver. In some countries, such as the UK, the devices are equiped with a camera which records an image of each speeding car and a speeding ticket is sent to the registered owner.
@@ -32,4 +32,4 @@ car4=selectSet(name="100SuccessiveMean", totalPts=1, "Normal"=TRUE, "Uniform"=FA
 ```
 *  The mean speed of 100 successive cars passing the device. `r I(car4)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
