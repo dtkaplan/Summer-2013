@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.15
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P15-SD")
+require(ScoreR)
+startProblem("SM-3-P15-SD")
 ```
 
 The plot purports to show the density of a distribution of data.  If this is
@@ -52,4 +52,4 @@ graph4=selectSet(name="95per", totalPts=1, "2"=FALSE, "4"=FALSE, "8"=TRUE, "12"=
   coverage interval itself has top and bottom ends.  This problem asks
   for the spacing between the two ends.) `r I(graph4)`
   
-`r I(closeProblem())`
+`r I(endProblem())`

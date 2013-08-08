@@ -2,27 +2,19 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.16
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P16-SD")
+require(ScoreR)
+startProblem("SM-3-P16-SD")
 ```
 
-If two distributions have the same five-number summary, must their
-density plots have the same shape? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="sameshape", totalPts=2, rows=4))
-```
+If two distributions have the same five-number summary, must their density plots have the same shape? 
+
 Explain.      
  `r I(textItem(name="sameshape", totalPts=2, rows=4))`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 <aside>
 ANSWER:
-The answer is no.  The five-number summary describes a lot about
-the distribution, but not everything.  To see why this is, think about
-the cumulative distribution.  When two distributions have the same
-five-number summary, their respective cumulative distributions must
-take on the same values at the 0.00, 0.25, 0.50, 0.75, and 1.00
-quantiles, but in between these points, the cumulative can be different.
+The answer is no.  The five-number summary describes a lot about the distribution, but not everything.  To see why this is, think about the cumulative distribution.  When two distributions have the same five-number summary, their respective cumulative distributions must take on the same values at the 0.00, 0.25, 0.50, 0.75, and 1.00 quantiles, but in between these points, the cumulative can be different.
 </aside>

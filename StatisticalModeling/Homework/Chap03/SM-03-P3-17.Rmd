@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.17
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P17-SD")
+require(ScoreR)
+startProblem("SM-3-P17-SD")
 ```
 
 As the name suggests, the Old Faithful geyser in Yellowstone National
@@ -64,5 +64,5 @@ geyser5=selectSet(name="likely", totalPts=1, "About 5%"=FALSE, "About 10%"=FALSE
 likely 10-minute interval? `r I(geyser5)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
