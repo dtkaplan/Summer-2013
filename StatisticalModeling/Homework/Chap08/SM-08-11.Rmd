@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 8 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-8-11-SD")
+require(ScoreR)
+startProblem("SM-8-11-SD")
 ```
 The graph shows some data on natural gas usage (in ccf) versus temperature (in deg. F) along with a model of the relationship.  
 
@@ -43,4 +43,4 @@ ANSWER:
 Neither of the cases is an extreme value in terms of the natural gas variable or the temperature variable.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

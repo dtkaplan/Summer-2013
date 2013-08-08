@@ -146,8 +146,7 @@ hr {
 <p>It can be helpful to look closely at the residuals from a model.  Here are some things you can easily do:</p>
 
 <ul>
-<li><p>Look for outliers in the residuals.  If they exist, it can be worthwhile to 
-look into the cases involved more deeply.  They might be anomalous or misleading in some way.  </p></li>
+<li><p>Look for outliers in the residuals.  If they exist, it can be worthwhile to look into the cases involved more deeply.  They might be anomalous or misleading in some way.  </p></li>
 <li><p>Plot the residuals versus the fitted model values.  Ideally there should be no evident relationship between the two &mdash; the points should be a random scatter.  When there is a strong relationship, even though it might be complicated, the model may be missing some important term.</p></li>
 <li><p>Plot the residuals versus the values of an important explanatory variable.  (If there are multiple explanatory variables, there would be multiple plots to look at.)  Again, ideally there should be no evident relationship.  If there is, there is something to think about. </p></li>
 </ul>
@@ -157,47 +156,35 @@ the data: that records improved quickly in the early years (especially for women
 
 <ul>
 <li><p>Find the cases in the residuals that are outliers.  Explain what it is about these cases that fits in with the failure of the model to reflect the slowing improvement in world records.<br/>
-<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
 "setID": "SM-8-12-SD",
 "itemN":      1,
 "name": "outliers",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>Plot the residuals versus the fitted model values.  What pattern do you see that isn&#39;t consistent with the idea that the residuals are unrelated to the fitted values?<br/>
-<textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>Plot the residuals versus the fitted model values.  What pattern do you see that isn&#39;t consistent with the idea that the residuals are unrelated to the fitted values?<br/>
+<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
 "setID": "SM-8-12-SD",
 "itemN":      2,
 "name": "patternUnrelated",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span> </p></li>
-<li><p>Plot the residuals versus <em>year</em>.  Describe the pattern you see.<br/>
-<textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select> </p></li>
+<li><p>Plot the residuals versus <em>year</em>.  Describe the pattern you see.<br/>
+<textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
 "setID": "SM-8-12-SD",
 "itemN":      3,
 "name": "paatternResiduals",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ul>
 
 <p>Now use the kids-feet data <code>KidsFeet</code> and the model<br/>
@@ -205,21 +192,17 @@ the data: that records improved quickly in the early years (especially for women
 
 <p>Look at the residuals in the three suggested ways.  Are there any outliers? Describe any patterns you see in relationship to the fitted model values and the
 explanatory variable <em>length</em>.<br/>
-<textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
  "setID": "SM-8-12-SD",
 "itemN":      4,
 "name": "patternsRelationship",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "outliers", "patternUnrelated", "paatternResiduals", "patternsRelationship" ]'>problem roster</option></select></p>
 
 </body>
 

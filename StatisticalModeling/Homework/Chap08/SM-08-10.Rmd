@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 8 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-8-10-SD")
+require(ScoreR)
+startProblem("SM-8-10-SD")
 ```
 
 The "modern physics" course has a lab where students measure the speed of sound.  The apparatus consists of an air-filled tube with a sound generator at one end and a microphone that can be set at any specified position within the tube.  Using an oscilloscope, the transit time between the sound generator and microphone can be measured precisely.  Knowing the position $p$ and transit time $t$ allows the speed of sound $v$ to be calculated, based on the simple model:     
@@ -12,7 +12,7 @@ $$ \mbox{distance} = \mbox{velocity} \times \mbox{time} \ \ \ \ \ \ \
 
 Here are some data recorded in 2005 by a student group calling themselves ``CDT''.
 
-Position | Transit Time
+Position &nbsp; | &nbsp; Transit Time
 :----:|:----:
 **(m)** | **(millisec)**
 0.2 | 0.6839
@@ -83,7 +83,7 @@ established value: 343 m/s .  Notice that the estimate is better than the one fr
 
 <aside>
 COMMENT:
-for resonance system $f(I)= [v/(2*L)]I $
+for resonance system $f(I)= [v/(2*L)]I$
 
 Three problems to write:
 
@@ -125,9 +125,8 @@ sound is 660 miles per hour (1,062 kilometers per hour).
 
 Wikipedia: in dry air (0\% humidity) its 331.5 + 0.6 T (in Celsius)
 
-From a speed of sound calculator
-http://www.sengpielaudio.com/calculator-airpressure.htm
-at 0\% humidity: 343.36      
+From a [speed of sound calculator](http://www.sengpielaudio.com/calculator-airpressure.htm)    
+at 0\% humidity: 343.36          
 at 10\% humidity: 343.49     
 at 20\% humidity: 343.61     
 at 30\% humidity: 343.74     
@@ -138,6 +137,6 @@ at 90\% humidity: 344.49
 Question to ask: how precisely can we know the speed of sound without
 knowing the humidity.  Do potential changes in humidity account
 possibly for the differences from the posted values.
-
 </aside>
 
+`r I(endProblem())`
