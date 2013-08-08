@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 12 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-12-12-SD")
+require(ScoreR)
+startProblem("SM-12-12-SD")
 ```
 
 In 1882, Charles Darwin wrote about earthworms and their importance in producing soil.
@@ -41,15 +41,13 @@ Similar to the above, just multiply 500 by $0.4046863$ to get $202$.  More preci
 
 * Which one of these reports gives a proper account for the number of worms per acre?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="worms.per.acre.report")
 ```
 `r I(f(FALSE))` $53767 \pm 202$    
 `r I(f(FALSE))` $53823 \pm 200$    
 `r I(f(TRUE))` $53820 \pm 200$    
-`r I(f(FALSE))` $53830 \pm 200$    
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` $53830 \pm 200$     
+`r I(f(finish=TRUE))`
 
 <aside>
 ANSWER:    
@@ -91,16 +89,14 @@ As it happens, for a poisson distribution, the standard deviation will be the sq
 
 * Using your standard deviation, and recalling that the number of worms in one hectare will be 1000 times that found in 10 square meters, give an appropriate 95% confidence interval to use today in reporting Hensen's result.
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="95per")
 ```
 `r I(g(TRUE))` $133,000 \pm 23000$    
 `r I(g(FALSE))` $133,000 \pm 2100$    
 `r I(g(FALSE))` $133,000 \pm 16000$    
 `r I(g(FALSE))` $133,000 \pm 20000$    
-`r I(g(FALSE))` $130,000 \pm 120000$
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
+`r I(g(FALSE))` $130,000 \pm 120000$    
+`r I(g(finish=TRUE))`
 
 <aside>
 ANSWER:    
@@ -117,5 +113,4 @@ ANSWER:
 This is similar to the previous problem, but now the rate to use in the poisson distribution is 133000 rather than 133.  The 133000 parameter produces a larger standard deviation, $\sqrt{133000} = 365$, but the larger count is much more precise on a relative basis.  Multiply the standard deviation by 2 to give the 95% margin of error.
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

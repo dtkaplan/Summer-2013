@@ -279,7 +279,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-ReadingQuestions.html) working
 
-* [Problem 11.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-01.html) working but needs some formatting
+* [Problem 11.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-01.html) working 
 
 * [Problem 11.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-02.html) working
 
@@ -323,7 +323,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 11.42](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-42.html) working
 
-* [Problem 11.43](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-42.html) working
+* [Problem 11.43](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-43.html) working
 
 * [Problem 11.44](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-44.html) working
 
@@ -333,7 +333,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 11.47](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-47.html) working (slight formatting change)
 
-* [Problem 11.48](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-48.html) working, but has homework that must be physically handed in
+* [Problem 11.48](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap11/SM-11-48.html) working, but is an exam question
 
 ## Chapter 12
 
