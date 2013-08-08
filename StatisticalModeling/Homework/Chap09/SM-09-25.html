@@ -247,19 +247,15 @@ mod3 = lm(net ~ 1 + yob, data = run)
 
 <ul>
 <li>Calculate the residuals from mod4 by substracting the model values from the response variable (net running time).  Compare the size of the residuals using a sum of squares or a standard deviation or a variance to the size of the residuals from models 1 through 3.  Judging from this, which is the better model?<br/>
-<textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='4' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
 "setID": "SM-9-25-SD",
 "itemN":      1,
 "name": "betterModel",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></li>
 </ul>
 
 <p>I needed special software to find the coefficients in mod4 because R won&#39;t do it.  See what happens when you try the models with three terms, like this:</p>
@@ -269,31 +265,23 @@ lm(net ~ 1 + yob + age, data = run)
 </code></pre>
 
 <ul>
-<li>Can you get three coefficients from the R software? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-25-SD",
-"itemN":      1,
-"name": "3coef",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>Can you get three coefficients from the R software? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Yes" 
 }'>Yes</option> <option value='{
-"itemInfo": {
-"setID": "SM-9-25-SD",
-"itemN":      1,
-"name": "3coef",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "No" 
-}'>No</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+}'>No</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-9-25-SD",
+"itemN":      2,
+"name": "3coef",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>I&#39;m very pleased with mod4 and the special methods I used to find the coefficients.</p>
@@ -323,36 +311,28 @@ lm(net ~ 1 + yob + age, data = run)
 
 <ul>
 <li><p>Looking at Ynnad&#39;s model in terms of the \( R^2 \) or size of residuals, how does it compare to my model?  Which one should you believe?<br/>
-<textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
-"setID": "SM-9-25-SD",
-"itemN":      2,
-"name": "comparison",
-"totalpts":      2 
-},
-"type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>Give an explanation of why both my model and Ynnad&#39;s model are bogus.  See if you can also explain why we shouldn&#39;t take the coefficients in mod1 seriously at face value.<br/>
-<textarea cols='30' rows='4' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='4' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
 "setID": "SM-9-25-SD",
 "itemN":      3,
-"name": "explanation",
-"totalpts":      2 
-},
+"name": "comparison",
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>Give an explanation of why both my model and Ynnad&#39;s model are bogus.  See if you can also explain why we shouldn&#39;t take the coefficients in mod1 seriously at face value.<br/>
+<textarea cols='30' rows='4' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
+"setID": "SM-9-25-SD",
+"itemN":      4,
+"name": "explanation",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "text1", "text2", "text3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "betterModel", "3coef", "comparison", "explanation" ]'>problem roster</option></select></p>
 
 </body>
 

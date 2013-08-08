@@ -2,14 +2,12 @@ Intro to Statistical Modeling Ch. 9 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-RQ-SD")
+require(ScoreR)
+startProblem("SM-9-RQ-SD")
 ```
 
 * How does $R^2$ summarize the extent to which a model has captured variability?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="variability", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="variability", totalPts=2, rows=3))`
 
 <aside>
@@ -18,9 +16,7 @@ $R^2$ tells what fraction of the variance in the response variable is contained 
 </aside>
 
 * What does it mean for one model to be nested in another?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="nesting", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="nesting", totalPts=2, rows=3))`
   
 <aside>
@@ -29,15 +25,12 @@ Consider two models of the same response variable fitted to the same data, Model
 </aside>
 
 * How does the correlation coefficient differ from $R^2$? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="correlation", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="correlation", totalPts=2, rows=3))`
 
 <aside>
 ANSWER:    
-The correlation coefficient $r$ is $\sqrt{R^2}$ from the very simple model *A* ~ *B* where both A and B are quantitative variables.  Or, put another way, $R^2$ is a generalization of the correlation coefficient to allow there to be
-more than one explanatory term and to allow categorical variables to be used as explanatory variables. The sign information that would appear in $r$ is given in the sign of the coefficients, rather than in $R^2$, which is always positive.
+The correlation coefficient $r$ is $\sqrt{R^2}$ from the very simple model *A* ~ *B* where both A and B are quantitative variables.  Or, put another way, $R^2$ is a generalization of the correlation coefficient to allow there to be more than one explanatory term and to allow categorical variables to be used as explanatory variables. The sign information that would appear in $r$ is given in the sign of the coefficients, rather than in $R^2$, which is always positive.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -1,9 +1,9 @@
 Intro to Statistical Modeling Ch. 9 Prob. 25
 ========================================================
 ```{r include=FALSE}
-require(WriteScoreR)
+require(ScoreR)
 require(mosaic)
-newScorerSet("SM-9-25-SD")
+startProblem("SM-9-25-SD")
 ```
 We're going to use the ten-mile-race data to explore the idea of redundancy: Why redundancy is a problem and what we can do about it.
 
@@ -48,9 +48,6 @@ My conclusion, based on the mod4 coefficients, is that people slow down by 20.8 
 mod4vals = -20050 + 20.831891052*run$age + 12.642004612*run$yob
 ```
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="betterModel", totalPts=2, rows=4))
-```
 * Calculate the residuals from mod4 by substracting the model values from the response variable (net running time).  Compare the size of the residuals using a sum of squares or a standard deviation or a variance to the size of the residuals from models 1 through 3.  Judging from this, which is the better model?     
 `r I(textItem(name="betterModel", totalPts=2, rows=4))`
  
@@ -66,7 +63,6 @@ mod=selectSet(name="3coef", totalPts=1, "Yes"=FALSE, "No"=TRUE)
 ```
 * Can you get three coefficients from the R software? `r I(mod)`
 
-
 I'm very pleased with mod4 and the special methods I used to find the coefficients.
 
 Unfortunately, my statistical arch-enemy, Prof. Nalpak Ynnad, has proposed another model.  He claims that computer and cell-phone use is helpful.  According to his twisted theory, people actually run faster as they get older. Impossible!  But look at his model coefficients.
@@ -76,20 +72,12 @@ Unfortunately, my statistical arch-enemy, Prof. Nalpak Ynnad, has proposed anoth
 **Intercept** | **Age** | **yob** 
 60150 | -19.16810895 | -27.35799539
 
-
 Ynnad's ridiculous explanation is that the natural process of aging (that you run faster as you age), is masked by the beneficial effects of exposure to computers and cell phones as a child.  That is, today's kids would be even slower (because they are young) except for the fact that they use computers and cell phones so much.  Presumably, when they grow up, they will be super fast, benefiting both from their advanced age and from the head start they got as children from their exposure to computers and cell phones.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="comparison", totalPts=2, rows=4))
-```
 * Looking at Ynnad's model in terms of the $R^2$ or size of residuals, how does it compare to my model?  Which one should you believe?     
 `r I(textItem(name="comparison", totalPts=2, rows=4))`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="explanation", totalPts=2, rows=4))
-```
 * Give an explanation of why both my model and Ynnad's model are bogus.  See if you can also explain why we shouldn't take the coefficients in mod1 seriously at face value.     
 `r I(textItem(name="explanation", totalPts=2, rows=4))`
 
-`r I(closeProblem())`
-
+`r I(endProblem())`
