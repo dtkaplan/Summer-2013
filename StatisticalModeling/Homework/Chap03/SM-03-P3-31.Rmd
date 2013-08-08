@@ -2,21 +2,13 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.31
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P31-SD")
+require(ScoreR)
+startProblem("SM-3-P31-SD")
 ```
 
-This exercise 
-deals with data on weight loss achieved by clients who stayed two weeks
-at a weight-loss resort.  The same data  using 
-three different
-sorts of graphical displays:
-a pie chart, a histogram, and a box-and-whiskers plot.  The point of
-the exercise is to help you decide which display is the most
-effective at presenting information to you. 
+This exercise deals with data on weight loss achieved by clients who stayed two weeks at a weight-loss resort.  The same data  using three different sorts of graphical displays: a pie chart, a histogram, and a box-and-whiskers plot.  The point of the exercise is to help you decide which display is the most effective at presenting information to you. 
 
-In many fields, pie charts are used as "statistical graphics"
-Here's a pie chart of the weight loss:
+In many fields, pie charts are used as "statistical graphics". Here's a pie chart of the weight loss:
 
 ```{r pie,fig.width=5,fig.height=4,echo=FALSE, dev="svg", out.width="70%"}
 w = fetchData("WeightLoss.csv")
@@ -121,30 +113,4 @@ graphicstyle=selectSet(name="no.correct.answer", totalPts=0, "pie chart"=TRUE, "
 ```
 `r I(graphicstyle)`
 
-<!--
-% e-mail May 31, 2008 from 
-% Erin Knutson, 
-% Media Relations Specialist, 
-% Hilton Head Health, 
-% w: 843.785.3919 
-
-% The spreadsheet containing weight loss data. 
-% [dataset WeightLoss.csv] % in Problems/S2008
-% email June 3, 2008 from Courtney Bell, getserious@hhhealth.com
-```{r eval=FALSE}
-w = read.csv('WeightLoss.csv')
-ww = subset(w, w$Days==14)
-foo = cut( ww$WeightLoss, breaks=c(0,2,4,6,8,10,12,16))
-pie(table(foo),main='Weight Loss in lbs',topo.colors(7))
-hist( ww$WeightLoss/2.2, main='Weight Loss in kg',
-   freq=FALSE,xlab='kg',cex.lab=1.3)
-boxplot( ww$WeightLoss/14,ylab='Stones',cex.lab=1.3,cex.axis=1.3,
-  main='Weight Loss in Stones')
-```
--->
-
-
-
-
-`r I(closeProblem())`
-
+`r I(endProblem())`

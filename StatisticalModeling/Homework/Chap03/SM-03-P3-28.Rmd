@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.28
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P28-SD")
+require(ScoreR)
+startProblem("SM-3-P28-SD")
 ```
 
 An advertisement for "America's premier weight loss destination"
@@ -16,15 +16,7 @@ figure in terms of "typical."  What interpretation would be most
 useful to a person trying to predict how much weight he or she might
 lose?
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="typweight", totalPts=2, rows=4))
-```
-
 `r I(textItem(name="typicalweight", totalPts=2, rows=4))`
-
-<aside>
-See s2008-conf6 for another take on this problem
-</aside>
 
 <aside>
 ANSWER:
@@ -43,4 +35,4 @@ The interval would be most useful to a prospective client if it covers
 a substantial majority of the people involved, say 75% or 95%.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

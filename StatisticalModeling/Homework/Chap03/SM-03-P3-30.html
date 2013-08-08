@@ -157,55 +157,37 @@ that typical rate to 10 times the rate.  This leads to a situation
 where some normal cases are 100 times as large as others.</p>
 
 <p>To illustrate, look at the <code>alder.csv</code> data set, which contains
-field data from a study of nitrogen fixation in alder plants.  The
-<em>SNF</em> variable records the amount of nitrogen fixed in soil by
-bacteria that reside in root nodules of the plants.  Make a box plot
-and a histogram and describe the distribution.<br/>
-Which of the following
-descriptions is most appropriate:</p>
+field data from a study of nitrogen fixation in alder plants.  The <em>SNF</em> variable records the amount of nitrogen fixed in soil by bacteria that reside in root nodules of the plants.  Make a box plot and a histogram and describe the distribution. Which of the following descriptions is most appropriate:</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> The distribution is skewed to the left, with outliers at very
 low values of <em>SNF</em>.<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> The distribution is skewed to the right, with outliers at very
 high values of <em>SNF</em>.<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The distribution is roughly symmetrical, although there are a
-few outliers.</p>
+few outliers.
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-3-P30-SD",
+"itemN":      1,
+"name": "descriptions",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p>In working with a variable like this, it can help to convert the
 variable in a way that respects the idea of a proportional change. 
@@ -224,106 +206,65 @@ the distribution of <em>logSNF</em>.<br/>
 Which of the following descriptions
 is most apt?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> The distribution is skewed to the left.<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> The distribution is skewed to the right.<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
-}'> <b>C</b></label> The distribution is roughly symmetrical.    </p>
+}'> <b>C</b></label> The distribution is roughly symmetrical.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-3-P30-SD",
+"itemN":      2,
+"name": "descriptions.2",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
-<p>You can compute logarithms directly in R, using the functions
-<code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions
-was used to compute the quantity <em>logSNF</em> from <em>SNF</em>. (Hint: Try
+<p>You can compute logarithms directly in R, using the functions <code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions was used to compute the quantity <em>logSNF</em> from <em>SNF</em>. (Hint: Try
 them out!)</p>
 
-<p><select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "whichfunction",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+<p><select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "log" 
 }'>log</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "whichfunction",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "log2" 
 }'>log2</option> <option value='{
- "itemInfo": {
- "setID": "SM-3-P30-SD",
-"itemN":      1,
-"name": "whichfunction",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "log10" 
-}'>log10</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+}'>log10</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-3-P30-SD",
+"itemN":      3,
+"name": "whichfunction",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
-<p>The <em>base</em> of the logarithm gives the size of the proportional
-change that corresponds to a 1-unit increase on the logarithmic
-scale.  For example, <code>log2</code> calculates the base-2 logarithm.  On
-the base-2 logarithmic scale, a doubling in size corresponds to a
-1-unit increase.  In contrast, on the base-10 scale, a ten-fold
-increase in size gives a 1-unit increase. </p>
+<p>The <em>base</em> of the logarithm gives the size of the proportional change that corresponds to a 1-unit increase on the logarithmic scale.  For example, <code>log2</code> calculates the base-2 logarithm.  On the base-2 logarithmic scale, a doubling in size corresponds to a 1-unit increase.  In contrast, on the base-10 scale, a ten-fold increase in size gives a 1-unit increase. </p>
 
 <p>Logarithmic transformations are often used to deal with variables that
-are positive and strongly skewed.  In economics, price, income and production
-variables are often this way.  In general, any variable where it is
-sensible to describe changes in terms of proportion might be better
-displayed on a logarithmic scale.  For example, price inflation rates
-are usually given as percent (e.g., &ldquo;The inflation rate was 4% last
-year.&rdquo;) and so in dealing with prices over time, the logarithmic
-transformation can be appropriate.</p>
+are positive and strongly skewed.  In economics, price, income and production variables are often this way.  In general, any variable where it is sensible to describe changes in terms of proportion might be better displayed on a logarithmic scale.  For example, price inflation rates are usually given as percent (e.g., &ldquo;The inflation rate was 4% last year.&rdquo;) and so in dealing with prices over time, the logarithmic transformation can be appropriate.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "MC1", "MC2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "descriptions", "descriptions.2", "whichfunction" ]'>problem roster</option></select></p>
 
 </body>
 
