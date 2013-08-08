@@ -157,144 +157,82 @@ hr {
 
 <p>The total relationship between <em>Price</em> and <em>mileage</em> involves how the price changes for typical cars of different mileage.  Pick a dot that is a typical car with about 10,000 miles.  Using the contours, find the model price of this car.</p>
 
-<p>Which of the following is closest to the model price (in dollars)? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "modelPrice",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>Which of the following is closest to the model price (in dollars)? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "18000" 
 }'>18000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "modelPrice",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "21000" 
 }'>21000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "modelPrice",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "25000" 
 }'>25000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "modelPrice",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
-"hint": "",
-"reward": "Right!",
-"content": "30000" 
-}'>30000</option> </select><span id='out1' class='shiny-html-output'> </span></p>
-
-<p>Now pick another dot that is a typical car with about 70,000 miles. Using the contours, find the model price of this car. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "70000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "18000" 
-}'>18000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "70000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
-"hint": "",
-"reward": "Right!",
-"content": "21000" 
-}'>21000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "70000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "25000" 
-}'>25000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "70000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "30000" 
-}'>30000</option> </select><span id='out2' class='shiny-html-output'> </span></p>
-
-<p>The total relationship between <em>Price</em> and <em>mileage</em> is reflected by this
-ratio: change in model price divided by change in mileage. What is that ratio (roughly)?<br/>
-<label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
+"reward": "Right!",
+"content": "30000" 
+}'>30000</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-10-20-SD",
 "itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
+"name": "modelPrice",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p>Now pick another dot that is a typical car with about 70,000 miles. Using the contours, find the model price of this car. <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "18000" 
+}'>18000</option> <option value='{
+ "pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "21000" 
+}'>21000</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "25000" 
+}'>25000</option> <option value='{
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "30000" 
+}'>30000</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-10-20-SD",
+"itemN":      2,
+"name": "70000miles",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
+
+<p>The total relationship between <em>Price</em> and <em>mileage</em> is reflected by this
+ratio: change in model price divided by change in mileage. What is that ratio (roughly)?</p>
+
+<p><label for='MCitem1'><input type='radio' name='ScoreR3' id='MCitem1' value='{
+ "pts":      1,
+"hint": "",
 "reward": "Right!",
 "content": "A" 
-}'> <b>A</b></label> \( \frac{30000 - 21000}{70000-10000}=0.15 \) dollars/mile<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+}'> <b>A</b></label> \( \frac{30000 - 21000}{70000-10000}=0.15 \) dollars/mile </p>
+
+<p><label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
-}'> <b>B</b></label> \( \frac{70000-10000}{25000-21000}=15.0 \) dollars/mile<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+}'> <b>B</b></label> \( \frac{70000-10000}{25000-21000}=15.0 \) dollars/mile  </p>
+
+<p><label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> \( \frac{25000 - 18000}{70000-10000}=0.12 \) dollars/mile     </p>
@@ -302,107 +240,60 @@ ratio: change in model price divided by change in mileage. What is that ratio (r
 <p>In contrast, the partial relationship between <em>Price</em> and <em>mileage</em> holding
 <em>age</em> constant is found in a different way, by comparing two points with different mileage but exactly the same age.</p>
 
-<p>Mark a point on the graph where age is 3 years and mileage is 10000. Keep in mind that this point doesn&#39;t need to be an actual car, that is, a data point in the graph typical car.  There might be no actual car with an age of 3 years and mileage 10000. But using the contour model, find the model price at this point: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      3,
-"name": "10000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>Mark a point on the graph where age is 3 years and mileage is 10000. Keep in mind that this point doesn&#39;t need to be an actual car, that is, a data point in the graph typical car.  There might be no actual car with an age of 3 years and mileage 10000. But using the contour model, find the model price at this point: <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "22000" 
 }'>22000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      3,
-"name": "10000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "24000" 
 }'>24000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      3,
-"name": "10000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "26000" 
 }'>26000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      3,
-"name": "10000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "28000" 
 }'>28000</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      3,
-"name": "10000miles",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "30000" 
-}'>30000</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+}'>30000</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+ "setID": "SM-10-20-SD",
+"itemN":      4,
+"name": "10000miles",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p>Now find another point, one where the age is exactly the same (3 years) but the mileage is different.  Again there might not be an actual car there.  Let&#39;s pick mileage as 80000. Using the contours, find the model price at this point: 2.2 &times; 10<sup>4</sup></p>
 
-<p>The partial relationship between price and mileage (holding age constant) is reflected again reflected by the ratio of the change in model price divided by the change in mileage. What is that ratio (roughly)?<br/>
-<label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p>The partial relationship between price and mileage (holding age constant) is reflected again reflected by the ratio of the change in model price divided by the change in mileage. What is that ratio (roughly)?     </p>
+
+<p><label for='MCitem1'><input type='radio' name='ScoreR6' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
-}'> <b>A</b></label> \( \frac{80000-10000}{25000-21000} = 17.50 \) dollars/mile<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+}'> <b>A</b></label> \( \frac{80000-10000}{25000-21000} = 17.50 \) dollars/mile    </p>
+
+<p><label for='MCitem2'><input type='radio' name='ScoreR6' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
-}'> <b>B</b></label> \( \frac{28000 - 22000}{80000-10000}=0.09 \) dollars/mile<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+}'> <b>B</b></label> \( \frac{28000 - 22000}{80000-10000}=0.09 \) dollars/mile   </p>
+
+<p><label for='MCitem3'><input type='radio' name='ScoreR6' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> \( \frac{26000 - 24000}{80000-10000}=0.03 \) dollars/mile</p>
@@ -411,55 +302,33 @@ ratio: change in model price divided by change in mileage. What is that ratio (r
 
 <p>There&#39;s also a partial relationship between price and age holding mileage constant.  That partial relationship involves the slope along the direction where age changes but mileage is held constant.  Estimate that slope by finding the model price at a point where age is 2 years and another point where age is 5 years.  You can pick whatever mileage you like, but it&#39;s key that your two points be at exactly the same mileage.</p>
 
-<p>Estimate the slope of the price function along a direction where age changes but mileage is held constant (horizontally on the graph). <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      5,
-"name": "slope",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>Estimate the slope of the price function along a direction where age changes but mileage is held constant (horizontally on the graph). <select name='ScoreR7'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "100 dollars per year" 
 }'>100 dollars per year</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      5,
-"name": "slope",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "500 dollars per year" 
 }'>500 dollars per year</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      5,
-"name": "slope",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1000 dollars per year" 
 }'>1000 dollars per year</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-20-SD",
-"itemN":      5,
-"name": "slope",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "2000 dollars per year" 
-}'>2000 dollars per year</option> </select><span id='out5' class='shiny-html-output'> </span></p>
+}'>2000 dollars per year</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
+ "setID": "SM-10-20-SD",
+"itemN":      7,
+"name": "slope",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p>The contour plot above shows a model in which both mileage and age are explanatory variables.  By choosing the direction in which to measure the slope, one determines whether the slope reflects a total relationship (a direction between typical cars), or a partial relationship holding age constant (a direction where age does not change, which might not be typical for cars), or a partial relationship holding mileage constant (a direction where mileage does
 not change, which also might not be typical for cars). </p>
@@ -473,7 +342,7 @@ not change, which also might not be typical for cars). </p>
 <p>Such a model is incapable of distinguishing between a partial relationship and a total relationship.  Both the partial and the total relationship involve a ratio of the change in price and change in age between two points.  For the total relationship, those two points would be typical cars of different ages.  For the partial relationship, those two points would be different ages at exactly the
 same mileage.  But, because the model depend on mileage, the two ratios will be exactly the same.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "MC1", "MC2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "modelPrice", "70000miles", "price.mileage", "10000miles", "80000miles", "ratio", "slope" ]'>problem roster</option></select></p>
 
 </body>
 

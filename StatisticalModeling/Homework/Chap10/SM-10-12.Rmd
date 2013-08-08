@@ -2,14 +2,14 @@ Intro to Statistical Modeling Ch. 10 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-12-SD")
+require(ScoreR)
+startProblem("SM-10-12-SD")
 ```
 
 *Time Magazine* reported the results of a poll of people's opinions about the U.S. economy in July 2008.  The results are summarized in the graph.
 
-![Time](time-poll-july-2008-2.png)
-[Source: *Time*, July 28, 2008, p. 41]
+![Time](time-poll-july-2008-2.png)    
+###### [Source: *Time*, July 28, 2008, p. 41]
 
 In a typical news media report of a poll, the results are summarized using one explanatory variable at a time.  The point of this exercise is to show that such *univariate* explanations can be misleading.
 
@@ -50,9 +50,6 @@ time2=selectSet(name="model2", totalPts=1, "Higher income people are more pessim
 ```
 * Now construct the model *pessimism* ~ *income* - 1.  Look at the coefficients and choose the statement that best reflects the results: `r I(time2)`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="ModelFormula", totalPts=1, rows=3))
-```
 * Construct a model in which you can look at the relationship between *pessimism* and *age* while *adjusting for* *income*.  That is, include *income* as a covariate in your model. Enter your model formula here: `r I(textItem(name="ModelFormula", totalPts=1, rows=3))`
 
 ```{r include=FALSE}
@@ -66,4 +63,4 @@ time4=selectSet(name="model4", totalPts=1, "Holding age constant, higher income 
 * You can also interpret that same model to see the relationship between *pessimism* and *income* while *adjusting for* *age*. Which of the following statements best reflects the results?  (Hint: make sure to pay attention to the sign of the coefficients.) `r I(time4)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

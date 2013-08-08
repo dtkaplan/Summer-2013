@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 10 Prob. 20
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-20-SD")
+require(ScoreR)
+startProblem("SM-10-20-SD")
 ```
 
 Whenever you seek to study a partial relationship, there must be at least three variables involves: a response variable, an explanatory variable that is of direct interest, and one or more other explanatory variables that will be held constant: the co-variates.  Unfortunately, it's hard to graph out models involving three variables on paper: the usual graph of a model just shows one variable as a function of a second.
@@ -28,12 +28,15 @@ car2=selectNumber(choices=c(18000,21000,25000,30000), correct=c(21000), totalPts
 Now pick another dot that is a typical car with about 70,000 miles. Using the contours, find the model price of this car. `r I(car2)`
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="price.mileage")
 ```
 The total relationship between *Price* and *mileage* is reflected by this
-ratio: change in model price divided by change in mileage. What is that ratio (roughly)?     
-`r I(f(TRUE))` $\frac{30000 - 21000}{70000-10000}=0.15$ dollars/mile     
-`r I(f(FALSE))` $\frac{70000-10000}{25000-21000}=15.0$ dollars/mile     
+ratio: change in model price divided by change in mileage. What is that ratio (roughly)?
+
+`r I(f(TRUE))` $\frac{30000 - 21000}{70000-10000}=0.15$ dollars/mile 
+
+`r I(f(FALSE))` $\frac{70000-10000}{25000-21000}=15.0$ dollars/mile  
+
 `r I(f(FALSE))` $\frac{25000 - 18000}{70000-10000}=0.12$ dollars/mile     
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))
@@ -53,11 +56,14 @@ car4=selectNumber(choices=c(22000,24000,26000,28000,30000), correct=c(22000), to
 Now find another point, one where the age is exactly the same (3 years) but the mileage is different.  Again there might not be an actual car there.  Let's pick mileage as 80000. Using the contours, find the model price at this point: `r I(22000)`
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="ratio")
 ```
 The partial relationship between price and mileage (holding age constant) is reflected again reflected by the ratio of the change in model price divided by the change in mileage. What is that ratio (roughly)?     
-`r I(g(FALSE))` $\frac{80000-10000}{25000-21000} = 17.50$ dollars/mile     
-`r I(g(TRUE))` $\frac{28000 - 22000}{80000-10000}=0.09$ dollars/mile     
+
+`r I(g(FALSE))` $\frac{80000-10000}{25000-21000} = 17.50$ dollars/mile    
+
+`r I(g(TRUE))` $\frac{28000 - 22000}{80000-10000}=0.09$ dollars/mile   
+
 `r I(g(FALSE))` $\frac{26000 - 24000}{80000-10000}=0.03$ dollars/mile
 ```{r include=FALSE, results="hide"}
 I(g(finish=FALSE))
@@ -81,8 +87,7 @@ Of course, in order for the directional derivatives to make sense, the price fun
 
 ![Car Model 2](car-modelA.png)
 
-
 Such a model is incapable of distinguishing between a partial relationship and a total relationship.  Both the partial and the total relationship involve a ratio of the change in price and change in age between two points.  For the total relationship, those two points would be typical cars of different ages.  For the partial relationship, those two points would be different ages at exactly the
 same mileage.  But, because the model depend on mileage, the two ratios will be exactly the same.
 
-`r I(closeProblem())`
+`r I(endProblem())`

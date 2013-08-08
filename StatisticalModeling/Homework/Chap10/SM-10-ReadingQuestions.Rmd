@@ -2,14 +2,12 @@ Intro to Statistical Modeling Ch. 10 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-RQ-SD")
+require(ScoreR)
+startProblem("SM-10-RQ-SD")
 ```
 
 * What is a covariate?  Why use a special word for it when it is just a variable?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="covariate", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="covariate", totalPts=2, rows=3))`
 
 <aside>
@@ -18,9 +16,7 @@ A covariate is an explanatory variable that you aren't directly interested in.  
 </aside>
 
 * What is the difference between a *partial* change and a *total* change?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="partial", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="partial", totalPts=2, rows=3))`
 
 <aside>
@@ -29,9 +25,7 @@ A partial change describes how the response changes when an explanatory variable
 </aside>
 
 * In the experimental method, how are covariates dealt with?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="experiment", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="experiment", totalPts=2, rows=3))`
 
 <aside>
@@ -40,9 +34,7 @@ Experiments are typically designed to hold covariates constant.
 </aside>
 
 * What is the modeling approach to dealing with covariates? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="modeling", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="modeling", totalPts=2, rows=3))`
 
 <aside>
@@ -50,4 +42,4 @@ ANSWER:
 In the modeling approach, rather than physically holding the covariate constant, the model is constructed in a way to account for the role of the covariate.  Then, in analyzing the model, the covariates are held constant mathematically.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
