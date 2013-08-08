@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 30
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-30-SD")
+require(ScoreR)
+startProblem("SM-7-30-SD")
 ```
 
 Here is a news article summarizing a research study by Bingham *et al.*, "Drinking Behavior from High School to Young Adulthood: Differences by College Education," Alcoholism: Clinical & Experimental Research; Dec. 2005; vol. 29; No. 12
@@ -80,5 +80,5 @@ Then at age 24, the investigators compared those who were students to those who 
 
 Dr. Bingham said the findings reveal that non-college attending young adults "experience levels of risk that equal those of their college-graduating age mates."
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

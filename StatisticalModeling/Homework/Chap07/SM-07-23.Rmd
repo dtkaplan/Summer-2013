@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 23
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-23-SD")
+require(ScoreR)
+startProblem("SM-7-23-SD")
 ```
 
 Car prices vary.  They vary according to the model of car, the optional features in the car, the geographical location, and the respective bargaining abilities of the buyer and the seller.  
@@ -39,5 +39,5 @@ Note whether there are outliers in your data and indicate whether these are havi
 Price and other information about used Mazda Miatas in the Saint Paul, Minnesota area from <code>www.cars.com</code>.
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

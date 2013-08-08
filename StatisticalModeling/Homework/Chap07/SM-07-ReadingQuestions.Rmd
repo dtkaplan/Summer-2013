@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-RQ-SD")
+require(ScoreR)
+startProblem("SM-7-RQ-SD")
 ```
 
 * What is the role of the response variable in a model formula?
@@ -67,5 +67,5 @@ Suppose you model the wage data in the current population survey *time* ~ *sex*.
 When you add *sector* as an explanatory variable, the meaning of *sex* becomes subtly different: it's the difference between the two sectors *taking into consideration* any differences that might be accounted for by the sector.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

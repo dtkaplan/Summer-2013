@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 31
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-31-SD")
+require(ScoreR)
+startProblem("SM-7-31-SD")
 ```
 For the simple model *A* ~ *G* where *G* is a categorical variable, the
 coefficients will be group means.  More precisely, there will be an intercept that is the mean of one of the groups and the other coefficients will show how the mean of the other groups each differ from the reference group.
@@ -122,4 +122,4 @@ Notice that the fitted model values aren't a perfect match to the numbers in the
 
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
