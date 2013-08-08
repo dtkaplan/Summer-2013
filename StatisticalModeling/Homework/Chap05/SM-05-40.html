@@ -197,7 +197,7 @@ population:</p>
 <pre><code class="r">rnorm(10, mean = 68, sd = 3)
 </code></pre>
 
-<pre><code>##  [1] 69.87 69.05 69.45 68.57 65.99 66.66 64.32 65.68 69.19 68.35
+<pre><code>##  [1] 70.22 67.53 65.36 70.62 70.49 64.24 67.05 67.34 67.99 70.94
 </code></pre>
 
 <p>These are the heights of a random sample of \( n=10 \).  The sampling
@@ -208,7 +208,7 @@ output of a single trial.</p>
 <pre><code class="r">mean(rnorm(10, mean = 68, sd = 3))
 </code></pre>
 
-<pre><code>## [1] 67.35
+<pre><code>## [1] 69.02
 </code></pre>
 
 <p>If you gave exactly this statement, it&#39;s very likely that your result
@@ -219,7 +219,7 @@ statement, you&#39;ll likely get a different value again, for instance:</p>
 <pre><code class="r">mean(rnorm(10, mean = 68, sd = 3))
 </code></pre>
 
-<pre><code>## [1] 66.7
+<pre><code>## [1] 68.33
 </code></pre>
 
 <p>Note that both of the sample means above differ somewhat from the population
@@ -241,89 +241,65 @@ can see what the sampling distribution looks like.</p>
 <p>Generate your own sample</p>
 
 <ol>
-<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      1,
 "name": "mean",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      2,
 "name": "stddev",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      3,
 "name": "shape",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ol>
 
 <p>Now modify your simulation to look at the sampling distribution for \( n=1000 \).</p>
 
 <ol>
-<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      4,
 "name": "mean2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='ScoreR5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR5info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      5,
 "name": "stddev2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='text6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info6'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR6info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      6,
 "name": "shape2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout6' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ol>
 
 <p>Which of these two sample sizes, \( n=10 \) or \( n=1000 \), gave a sampling
@@ -341,111 +317,80 @@ sentence again.  The statistic you are asked to calculate is the
 <strong>sample standard deviation</strong>, not the sample mean.)</p>
 
 <ol>
-<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='text7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info7'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='ScoreR7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR7info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      7,
 "name": "mean3",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout7' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='text8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info8'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='ScoreR8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR8info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      8,
 "name": "stddev3",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout8' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='text9' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info9'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='ScoreR9' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR9info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":      9,
 "name": "shape3",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout9' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ol>
 
 <p>Repeat the above calculation of the distribution of the sample standard deviation with \( n=1000 \).</p>
 
 <ol>
-<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='text10' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info10'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<li><p>What is the mean of this distribution? <textarea cols='30' rows='1' id='ScoreR10' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR10info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":     10,
 "name": "mean4",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout10' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='text11' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info11'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the standard deviation of this distribution? <textarea cols='30' rows='1' id='ScoreR11' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR11info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":     11,
 "name": "stddev4",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout11' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='text12' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info12'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the shape of this distribution? <textarea cols='30' rows='1' id='ScoreR12' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR12info'><option value='{
 "setID": "SM-05-40-SD",
 "itemN":     12,
 "name": "shape4",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout12' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ol>
 
-<p>For this simulation of heights, the population
-standard deviation was set to 3.<br/>
-You expect the result from a random sample to be close to the
-population parameter.   Which of the two sample sizes, \( n=10 \) or
-\( n=1000 \) gives results that are closer to the population value? 
-<textarea cols='30' rows='1' id='text13' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info13'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p>For this simulation of heights, the population standard deviation was set to 3.  You expect the result from a random sample to be close to the
+population parameter.   Which of the two sample sizes, \( n=10 \) or \( n=1000 \) gives results that are closer to the population value?<br/>
+<textarea cols='30' rows='1' id='ScoreR13' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR13info'><option value='{
  "setID": "SM-05-40-SD",
 "itemN":     13,
 "name": "closerToValue",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout13' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3", "text4", "text5", "text6", "text7", "text8", "text9", "text10", "text11", "text12", "text13" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "mean", "stddev", "shape", "mean2", "stddev2", "shape2", "mean3", "stddev3", "shape3", "mean4", "stddev4", "shape4", "closerToValue" ]'>problem roster</option></select></p>
 
 </body>
 

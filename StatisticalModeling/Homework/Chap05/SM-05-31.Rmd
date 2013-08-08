@@ -11,7 +11,7 @@ standard error, that is, the standard deviation of the sampling
 distribution of the mean.  Which of the following statements will estimate the standard error by bootstrapping?
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="standard.error")
 ```
 `r I(f(FALSE))` <code>sd(do(500)*resample(mean(B)))</code>     
 `r I(f(FALSE))` <code>resample(do(500)*mean(sd(B)))</code>     
@@ -19,10 +19,6 @@ f=newMC(totalPts=1)
 `r I(f(TRUE))` <code>sd(do(500)*mean(resample(B)))</code>     
 `r I(f(FALSE))` <code>resample(sd(do(500)*mean(B)))</code>    
 
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 `r I(endProblem())`
-
-
