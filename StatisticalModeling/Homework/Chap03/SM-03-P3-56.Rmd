@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.56
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P56-SD")
+require(ScoreR)
+startProblem("SM-3-P56-SD")
 ```
 To exercise your ability to extract subsets of data, 
 take each of the following subsets of the swimming records in 
@@ -77,4 +77,4 @@ slowrecords2=selectNumber(choices=c(56.2,60.2,61.5,64.7,69.6,71.3), correct=c(60
 </code>
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

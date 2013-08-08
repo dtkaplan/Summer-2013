@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob 3.36
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P36-SD")
+require(ScoreR)
+startProblem("SM-3-P36-SD")
 ```
 
 Elevators typically have a close-door button.  Some people claim that
@@ -30,12 +30,6 @@ textbox so that your data can be accessed.
 
 Please don't inconvenience other elevator users with the experiment.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="elevator", totalPts=5, rows=3))
-```
-
 `r I(textItem(name="elevator", totalPts=5, rows=3))`
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-03-ReadingQuestions-SD")
+require(ScoreR)
+startProblem("SM-03-ReadingQuestions-SD")
 ```
 
 1. What is the disadvantage of using a 100% coverage interval to
@@ -111,42 +111,4 @@ Which components of the boxplot for
 "All" match up exactly with the boxplot for "M" or "F"?  Explain
 why.
 ```{r include=FALSE, eval=FALSE}
-I(textItem(name="boxplot", totalPts=2, rows=4))
-```
-
-  `r I(textItem(name="boxplot", totalPts=2, rows=4))`
-
-<aside>
-ANSWER:
-Notice that the minimum value of the "All" distribution matches
-exactly with the minimum value of "F", and the maximum in "All"
-matches with the maximum in "M".  That makes sense, because the
-shortest person in the whole group has to be the shortest in either
-the M or the F groups --- that shortest person is either an M or an
-F.  Similarly for the tallest person.
-</aside>
-
-* Variables typically have units.  For example, in Galton's height
-data, the height variable has units of inches.  Suppose you are working
-with a variable in units of degrees celsius.
-What would be the units of the standard deviation of a variable?  Of
-the variance? Why are they different?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="units", totalPts=2, rows=4))
-```
-  `r I(textItem(name="units", totalPts=2, rows=4))`
-
-<aside>
-ANSWER:
-The units of the standard deviation are always the same as the units
-of the variable.  So if the variable has units of degrees celsius,
-then the standard deviation will be in degrees celsius.
-
-The variance is the square of the standard deviation.  So the units of
-variance would be "degrees celsius squared."  That is, admittedly, a
-strange sort of unit, which is why most people prefer to talk about
-standard deviations rather than variances.  But the variance has other
-advantages.
-</aside>
-
-`r I(closeProblem())`
+I(

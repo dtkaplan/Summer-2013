@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.50
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P50-SD")
+require(ScoreR)
+startProblem("SM-3-P50-SD")
 ```
 
 What's a "normal" body temperature?  Depending on whether you
@@ -17,91 +17,60 @@ improved, but so has the understanding that "normal" is not a single
 temperature but a range of temperatures.
 
 A 1992 article in the Journal of the American Medical Association (PA
-Mackowiak et al., ``A Critical Appraisal of $98.6^\circ$ F ...''  JAMA
-v. 268(12) pp. 1578-1580) examined temperature measurements made
-orally with an electronic thermometer.  The subjects were 148 healthy
-volunteers between age 18 and 40.
+Mackowiak et al.,"A Critical Appraisal of $98.6^\circ$ F ..."  JAMA v. 268(12) pp. 1578-1580) examined temperature measurements made orally with an electronic thermometer.  The subjects were 148 healthy volunteers between age 18 and 40.
 
-The figure shows the distribution of temperatures, separately for
-males and females.  Note that the horizontal scale is given in both C
-and F --- this problem will use F.
+The figure shows the distribution of temperatures, separately for males and females.  Note that the horizontal scale is given in both C and F --- this problem will use F.
 
-![dist](f2009-p107-Fig1.png)
+![Fig1](f2009-p107-Fig1.png)
 
 What's the absolute range for females?
 ```{r include=FALSE}
-temperature=selectNumber(name="min", totalPts=1, choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(96.3))
+prob1=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(96.3), totalPts=1, name="min")
 ```
-
-* Minimum: `r I(temperature)`
-
+* Minimum: `r I(prob1)`
 ```{r include=FALSE}
-temperature2=selectNumber(name="max", totalPts=1, choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(100.8))
+prob2=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(100.8), totalPts=1, name="max")
 ```
-* Maximum: `r I(temperature2)` 
-
+* Maximum: `r I(prob2)`
 
 And for males?
-
 ```{r include=FALSE}
-temp=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(96.1), totalPts=1, name="min1")
+prob3=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(96.1), totalPts=1, name="min.male")
 ```
-* Minimum:  `r I(temp)`
-
+* Minimum: `r I(prob3)`
 ```{r include=FALSE}
-temp2=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(99.9), totalPts=1, name="max1")
+prob4=selectNumber(choices=c(96.1,96.3,97.1,98.6,99.9,100.8), correct=c(99.9), totalPts=1, name="max.male")
 ```
-* Maximum: `r I(temp2)`
+* Maximum: `r I(prob4)`
 
-
-Notice that there is an outlier for the females' temperature, as
-evidenced by a big gap in temperature between that bar and the next closest bar.  How
+Notice that there is an outlier for the females' temperature, as evidenced by a big gap in temperature between that bar and the next closest bar.  How
 big is the gap?
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+f=newMC(totalPts=1, name="gap")
 ```
-
-`r I(f(FALSE))` About $0.01^\circ$ F.     
-`r I(f(FALSE))` About $0.1^\circ$ F.     
-`r I(f(TRUE))` Almost $1^\circ$ F.
-
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` About  $0.01^\circ$ F.    
+`r I(f(FALSE))` About  $0.1^\circ$ F.    
+`r I(f(TRUE))` Almost $1^\circ$ F.    
+`r I(f(finish=TRUE))`
 
 
-Give a 95% coverage interval for females.  Hint: The interval will
-exclude the most extreme 2.5% of cases on each of the left and right
-sides of the distribution.  You can find the left endpoint of the 95%
-interval by scanning in from the left, adding up the heights of the
-bars until they total 0.025.  Similarly, the right endpoint can be
-marked by scanning in from the right until the bars total 0.025.
+Give a 95% coverage interval for females.  Hint: The interval will exclude the most extreme 2.5% of cases on each of the left and right sides of the distribution.  You can find the left endpoint of the 95% interval by scanning in from the left, adding up the heights of the bars until they total 0.025.  Similarly, the right endpoint can be marked by scanning in from the right until the bars total 0.025. 
 ```{r include=FALSE}
-g = newMC(totalPts=1)
+g=newMC(totalPts=1, name="95per")
 ```
+`r I(g(FALSE))` About $96.2^\circ$ F to about $99.0^\circ$ F    
+`r I(g(TRUE))` About $96.8^\circ$ F to about $100.0^\circ$ F    
+`r I(g(FALSE))` About $97.6^\circ$ F to about $99.2^\circ$ F    
+`r I(g(finish=FALSE))`
 
-`r I(g(FALSE))` About $96.2^\circ$ F to about $99.0^\circ$ F     
-`r I(g(TRUE))` About $96.8^\circ$ F to about $100.0^\circ$ F     
-`r I(g(FALSE))` About $96.8^\circ$ F to about $100.0^\circ$ F     
-
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
 
 And for males?
 ```{r include=FALSE}
-h = newMC(totalPts=1)
+h=newMC(totalPts=1, name="95perMale")
 ```
-`r I(h(FALSE))` About $96.2^\circ$ F to about $99.2^\circ$ F     
-`r I(h(TRUE))` About $96.7^\circ$ F to about  $99.4^\circ$ F.     
-`r I(h(FALSE))` About $97.5^\circ$ F to about $99.6^\circ$ F
+`r I(h(FALSE))` About $96.2^\circ$ F to about $99.2^\circ$ F    
+`r I(h(TRUE))` About $96.7$ to about  $99.4^\circ$F.    
+`r I(h(FALSE))` About $97.5^\circ$ F to about $99.6^\circ$ F     
+`r I(h(finish=TRUE))`
 
-```{r include=FALSE, results="hide"}
-I(h(finish=TRUE))
-```
-
-`r I(closeProblem())`
-
-
-
-
+`r I(endProblem())`

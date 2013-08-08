@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.53
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P53-SD")
+require(ScoreR)
+startProblem("SM-3-P53-SD")
 ```
 
 There are many different numerical descriptions of distributions:
@@ -162,4 +162,4 @@ they have different roles in theory.  For example, the variance turns
 out to have simple theoretical properties that make it useful when
 describing sums of variables.  It's much simpler than, say, the IQR.
 
-`r I(closeProblem())`
+`r I(endProblem())`

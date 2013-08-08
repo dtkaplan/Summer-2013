@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.54
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-03-P54-SD")
+require(ScoreR)
+startProblem("SM-03-P54-SD")
 ```
 
 There are two kinds of questions that are often asked relating to
@@ -221,7 +221,7 @@ ans6=selectNumber(choices=c(3.72,4.00,4.03,4.07,5.21), correct=c(4.00), totalPts
   seconds.) In percent: `r I(ans6)` 
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 
 
