@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch.6 Prob.12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-12-SD")
+require(ScoreR)
+startProblem("SM-6-12-SD")
 ```
 
 *Time Magazine* reported the results of a poll of people's opinions about the U.S. economy in July 2008.  The results are summarized in the graph.
@@ -51,10 +51,9 @@ that there is a strong correlation between *age* and *income*, with
 people in the 18-29 age group typically having smaller incomes than
 people in older age groups.
 
-Which of the following is true about the *age* coefficients from
-such a model?
+Which of the following is true about the *age* coefficients from such a model?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="age.model")
 ```
 `r I(f(FALSE))` They would be exactly the same as in the *pessimism* ~ *age*?     
 `r I(f(TRUE))` They would display the relationship between *pessimism* and *age* adjusting for *income*.     
@@ -63,9 +62,6 @@ f=newMC(totalPts=1)
 I(f(finish=TRUE))
 ```
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="conclusions", totalPts=2, rows=4))
-```
 How do you think the conclusions suggested by the poll might be different if the results were presented in terms of the model *pessimism* ~ *age* + *income* rather than the two separate models *pessimism* ~ *age* and *pessimism* ~ *income*?      
 `r I(textItem(name="conclusions", totalPts=2, rows=4))`
 
@@ -80,5 +76,5 @@ It would be helpful if results were presented after adjusting for the
 other variables involved.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

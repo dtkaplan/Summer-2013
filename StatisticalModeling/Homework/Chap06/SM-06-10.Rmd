@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-10-SD")
+require(ScoreR)
+startProblem("SM-6-10-SD")
 ```
 
 The graphic (from the New York *Times*, April 17, 2008) shows the fitted values from a model of the survival of babies born extremely prematurely.
@@ -68,4 +68,4 @@ babies7=selectSet(name="substantialInteraction2", totalPts=1, "Yes"=FALSE, "No"=
 Do you see signs of a substantial interaction between steroid use and sex in accounting for survival?  (Take substantial to
   mean "greater than 10 percentage points.") `r I(babies7)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

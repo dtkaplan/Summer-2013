@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-11-SD")
+require(ScoreR)
+startProblem("SM-6-11-SD")
 ```
 
 The graphic in the Figure is part of a report describing a standardized test for college graduates, the Collegiate Learning Assessment (CLA).  The test consists of several essay questions which probe students' critical thinking skills.  
@@ -26,9 +26,7 @@ your answer in the standard modeling notation (e.g, *A* ~ *B* + *C*)
 using the variable names above.  Make sure to indicate what
 interaction term, if any, has been included in the model and explain
 how you can tell whether the interaction is or is not there.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="model", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="model", totalPts=2, rows=3))`
 
 <aside>
@@ -51,5 +49,4 @@ role at all.  But without an interaction term, the lines **must** be parallel.)
 
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

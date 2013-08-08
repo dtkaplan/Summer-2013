@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 13
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-13-SD")
+require(ScoreR)
+startProblem("SM-6-13-SD")
 ```
 
 Here is a display constructed using the Current Population Survey wage data:
@@ -19,7 +19,7 @@ cps = fetchData("CPS85")
 ```
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="command")
 ```
 `r I(f(FALSE))` <code>bwplot( wage ~ sex, groups= sector, data=cps)</code>     
 `r I(f(TRUE))` <code> bwplot( wage ~ sex | sector, data=cps)</code>     
@@ -28,6 +28,4 @@ f=newMC(totalPts=1)
 I(f(finish=TRUE))
 ```
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`
