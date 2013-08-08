@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-5-SD")
+require(ScoreR)
+startProblem("SM-6-5-SD")
 ```
 
 Using your general knowledge about the world, think about the relationship between these variables:
@@ -43,4 +43,4 @@ ANSWER:
 Compared to Model 3, what's new here is the interaction term between steepness and fitness.  Presumably, more fit people don't slow down as much when they encounter a hill, so the interaction should reduce the effect of steepness.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

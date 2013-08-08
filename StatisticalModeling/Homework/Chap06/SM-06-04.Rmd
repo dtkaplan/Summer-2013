@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-4-SD")
+require(ScoreR)
+startProblem("SM-6-4-SD")
 ```
 
 ## Correlates with ISM-C06-Prob-4-3.Rnw
@@ -138,5 +138,4 @@ h = coef(m2)[1]
 lines( c(9,20),c(h,h), lwd=5)
 ```
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

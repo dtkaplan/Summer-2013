@@ -127,11 +127,11 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 5.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-13.html) mostly working, what is the new name for weightLoss.csv
 
-* [Problem 5.17](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-17.html) issues with r commands
+* [Problem 5.17](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-17.html) working
 
 * [Problem 5.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-20.html) working
 
-* [Problem 5.23](htpp//dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-23.html) working
+* [Problem 5.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-23.html) working
 
 * [Problem 5.30](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap05/SM-05-30.html) working
 
@@ -149,7 +149,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 6.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-04.html) working, but slight discrepancy between generated figures and the stored figures. Also, statement towards bottom of page having to do with AcroScore (necessary?).
 
-* [Problem 6.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-05.html) working
+* [Problem 6.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-05.html) working, but has no online homework, only hand-in homework
 
 * [Problem 6.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-10.html) working
 
@@ -165,7 +165,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 6.23](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-23.html) working, but there are not questions, just information (new problem also)
 
-* [Problem 6.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) working
+* [Problem 6.25](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) working, just hand-in homework, no online homework
 
 * [Problem 6.27](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap06/SM-06-25.html) some issues with r commands (llines, etc.)
 

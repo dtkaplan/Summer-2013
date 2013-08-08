@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-1-SD")
+require(ScoreR)
+startProblem("SM-6-1-SD")
 ```
 
 ```{r include=FALSE}
@@ -22,9 +22,4 @@ variation in the response variable is associated with the explanatory
 variable.  That's a subject for later chapters.
 </aside>
 
-<aside>
-[Note: Based on an example from George Cobb.]
-</aside>
-
-`r I(closeProblem())`
-
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-2-SD")
+require(ScoreR)
+startProblem("SM-6-2-SD")
 ```
 
 In studies of employment discrimination, several attributes of
@@ -94,9 +94,4 @@ ANSWER:
 In these exercises, there is just one explanatory variable in each setting.  However, in real situations you will often be interested in examining **multiple** explanatory variables at the same time.  
 </aside>
 
-<aside>
-[Note: Thanks to George Cobb.]
-</aside>
-
-`r I(closeProblem())`
-
+`r I(endProblem())`
