@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-2-SD")
+require(ScoreR)
+startProblem("SM-9-2-SD")
 ```
 
 The variance of a response variable A is 145 and the variance of the residuals from the model *A* ~ *1 + B* is 45.
@@ -28,5 +28,4 @@ ANSWER:
 $R^2$ compares the variance of the fitted model values to the variance of the response, so $100/145$.
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

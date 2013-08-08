@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-1-SD")
+require(ScoreR)
+startProblem("SM-9-1-SD")
 ```
 
 The $R^2$ statistic is the ratio of the variance of the fitted values to the variance of the response variable.  
@@ -58,5 +58,5 @@ feet4=selectSet(name="YN", totalPts=1, "Yes"=TRUE, "No"=FALSE)
 * Is this the same as the "Multiple $R^2$" given in the <code>summary(mod)</code> report? `r I(feet4)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
 

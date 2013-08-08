@@ -193,58 +193,38 @@ hljs.initHighlightingOnLoad();
 <li><strong>Model 2.</strong> <em>A</em> ~ <em>B \( \star \) C</em></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Model 1 can have a higher \( R^2 \) than Model 2<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Model 2 can have a higher \( R^2 \) than Model 1<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The \( R^2 \) values will be the same.<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> None of the above are necessarily true.     </p>
+}'> <b>D</b></label> None of the above are necessarily true.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-9-5-SD",
+"itemN":      1,
+"name": "statement1",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -258,58 +238,38 @@ Model 1 is nested within Model 2, so Model 2 can have a higher \( R^2 \) than Mo
 <li><strong>Model 2.</strong> <em>B</em> ~ <em>A \( \star \) C</em></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Model 1 can have a higher \( R^2 \) than Model 2<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Model 2 can have a higher \( R^2 \) than Model 1<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The \( R^2 \) values will be the same.<br/>
-<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR2' id='MCitem4' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> None of the above are necessarily true.    </p>
+}'> <b>D</b></label> None of the above are necessarily true.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-9-5-SD",
+"itemN":      2,
+"name": "statement2",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -323,62 +283,38 @@ At first glance it might seem that Model 1 is nested in Model 2, but notice that
 <li><strong>Model 2.</strong> <em>A</em> ~ <em>B \( \star \) C</em></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR3' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Model 1 can have a higher \( R^2 \) than Model 2<br/>
-<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Model 2 can have a higher \( R^2 \) than Model 1<br/>
-<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The \( R^2 \) values will be the same.<br/>
-<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR3' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> None of the above are necessarily true.      </p>
-
-<p><aside>
-NOTES:<br/>
-[From a suggestion by a student] % Atang Gilika, Spring 2007</p>
+}'> <b>D</b></label> None of the above are necessarily true.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-9-5-SD",
+"itemN":      3,
+"name": "statement3",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <h4>Going further</h4>
 
@@ -391,58 +327,38 @@ NOTES:<br/>
 <li><strong>Model 2.</strong> <em>B</em> ~ <em>A</em></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC4' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR4' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Model 1 can have a higher \( R^2 \) than Model 2<br/>
-<label for='MCitem2'><input type='radio' name='MC4' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR4' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Model 2 can have a higher \( R^2 \) than Model 1<br/>
-<label for='MCitem3'><input type='radio' name='MC4' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR4' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The \( R^2 \) values will be the same.<br/>
-<label for='MCitem4'><input type='radio' name='MC4' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR4' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-9-5-SD",
-"itemN":      4,
-"name": "4",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> None of the above are necessarily true.    </p>
+}'> <b>D</b></label> None of the above are necessarily true.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+ "setID": "SM-9-5-SD",
+"itemN":      4,
+"name": "statement4",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -477,7 +393,7 @@ r.squared(m1)
 <p>However, this simple relationship won&#39;t hold true in general if there is more than one explanatory variable.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3", "MC4" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "statement1", "statement2", "statement3", "statement4" ]'>problem roster</option></select></p>
 
 </body>
 

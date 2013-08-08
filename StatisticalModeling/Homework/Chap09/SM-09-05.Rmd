@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-5-SD")
+require(ScoreR)
+startProblem("SM-9-5-SD")
 ```
 For each of the following pairs of models, mark the statement that is most correct.
 
@@ -13,15 +13,13 @@ For each of the following pairs of models, mark the statement that is most corre
 * **Model 2.** *A* ~ *B $\star$ C*
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="statement1")
 ```
 `r I(f(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
 `r I(f(TRUE))` Model 2 can have a higher $R^2$ than Model 1     
 `r I(f(FALSE))` The $R^2$ values will be the same.     
 `r I(f(FALSE))` None of the above are necessarily true.     
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 <aside>
 ANSWER:    
@@ -35,15 +33,13 @@ Model 1 is nested within Model 2, so Model 2 can have a higher $R^2$ than Model 
 * **Model 2.** *B* ~ *A $\star$ C*
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="statement2")
 ```
 `r I(g(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
 `r I(g(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
 `r I(g(FALSE))` The $R^2$ values will be the same.     
 `r I(g(TRUE))` None of the above are necessarily true.    
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
+`r I(g(finish=TRUE))`
 
 <aside>
 ANSWER:     
@@ -56,19 +52,13 @@ At first glance it might seem that Model 1 is nested in Model 2, but notice that
 * **Model 2.** *A* ~ *B $\star$ C*
 
 ```{r include=FALSE}
-h=newMC(totalPts=1)
+h=newMC(totalPts=1, name="statement3")
 ```
 `r I(h(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
 `r I(h(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
 `r I(h(TRUE))` The $R^2$ values will be the same.     
 `r I(h(FALSE))` None of the above are necessarily true.      
-```{r include=FALSE, results='hide'}
-I(h(finish=TRUE))
-```
-
-<aside>
-NOTES:     
-[From a suggestion by a student] % Atang Gilika, Spring 2007
+`r I(h(finish=TRUE))`
 
 #### Going further 
 
@@ -80,15 +70,13 @@ What will be the relationship between $R^2$ for the following two models?
 * **Model 2.** *B* ~ *A*
 
 ```{r include=FALSE}
-j=newMC(totalPts=1)
+j=newMC(totalPts=1, name="statement4")
 ```
 `r I(j(FALSE))` Model 1 can have a higher $R^2$ than Model 2     
 `r I(j(FALSE))` Model 2 can have a higher $R^2$ than Model 1     
 `r I(j(TRUE))` The $R^2$ values will be the same.     
 `r I(j(FALSE))` None of the above are necessarily true.    
-```{r include=FALSE, results='hide'}
-I(j(finish=TRUE))
-```
+`r I(j(finish=TRUE))`
 
 <aside>
 ANSWER:     
@@ -110,9 +98,7 @@ r.squared(m1)
 r.squared(m2)
 ```
 
-
 However, this simple relationship won't hold true in general if there is more than one explanatory variable.
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

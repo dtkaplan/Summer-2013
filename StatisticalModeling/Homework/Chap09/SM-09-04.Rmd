@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-4-SD")
+require(ScoreR)
+startProblem("SM-9-4-SD")
 ```
 For each of the following pairs of models, mark the statement that is most correct.
 
@@ -47,4 +47,4 @@ model4=selectSet(name="4", totalPts=1, "Model 1 is nested in Model 2."=FALSE, "M
 ```
 `r I(model4)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 9 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-9-11-SD")
+require(ScoreR)
+startProblem("SM-9-11-SD")
 ```
 
 Consider models with a form like this
@@ -11,9 +11,6 @@ Consider models with a form like this
 lm( response ~ 1, data=whatever)
 </code>     
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="R2", totalPts=2, rows=3))
-```
 The $R^2$ of such a model will always be 0. Explain why.     
 `r I(textItem(name="R2", totalPts=2, rows=3))`
 
@@ -27,16 +24,12 @@ m = lm( width ~ 1, data=kids)
 var( fitted(m))
 ```
 
-
-
 Note that the calculated variance is zero --- it appears as $7 \times 10^{-31}$ due to computer round-off error.
 
 Since the variance is zero, the $R^2$  is as well:
 ```{r}
 r.squared(m)
 ```
-
-
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
