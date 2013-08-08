@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 25
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-25-SD")
+require(ScoreR)
+startProblem("SM-14-25-SD")
 ```
 You and your statistics-class friends are having a disagreement.  Does the result of a hypothesis test depend on the units in which quantities are measured?  For example, in the kids' feet data, `KidsFeet` the length and width are measured in cm.  Would it matter if they had been measured in inches or meters?
 ```{r include=FALSE, eval=FALSE}
@@ -43,4 +43,4 @@ summary(lm( width.inches ~ sex + length.inches, data=kids))
 
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

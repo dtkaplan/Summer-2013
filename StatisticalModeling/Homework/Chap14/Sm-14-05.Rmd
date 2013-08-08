@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-5-SD")
+require(ScoreR)
+startProblem("SM-14-5-SD")
 ```
 One of the difficulties in interpreting p-values comes from what is sometimes called **publication bias**: only those studies with sufficiently low p-values are published; we never see studies on the same subject that didn't have low p-values.
 
@@ -67,4 +67,4 @@ prob3=selectNumber(choices=c(0.4,0.04,0.004,0.0004,0.00004,0.000004), correct=c(
 ```
 * Using the standard error with $n=200$ cases, and assuming that the coefficient remains exactly as reported in the table, recalculate the p-value on <code>posThinking</code>.  Select the one of these that is closest to the p-value: `r I(prob3)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

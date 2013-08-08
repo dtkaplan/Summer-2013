@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 27
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-27-SD")
+require(ScoreR)
+startProblem("SM-14-27-SD")
 ```
 Here is the report of a simple model of the foot-length data:
 ```{r}
@@ -29,4 +29,4 @@ Null hypotheses **always** refer to the population, not the sample. (It's the p-
 If the null were true, the coefficients in models would be zero (on average).  For this simple model, *A* ~ 1, the coefficient refers to the mean, so the null hypothesis underlying the p-value in this regressin report is that the population mean is zero.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

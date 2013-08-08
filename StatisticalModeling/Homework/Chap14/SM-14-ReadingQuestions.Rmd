@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-RQ-SD")
+require(ScoreR)
+startProblem("SM-14-RQ-SD")
 ```
 
 * A permutation test involves randomizing in order to simulate eliminating the relationship, if any, between the explanatory variables and the response variable. What's the point of this?
@@ -44,4 +44,4 @@ One way to think about degrees of freedom is an accounting device for the number
 Seen geometrically, a degree of freedom is a unique direction in variable space.  Each model term is translated to one or more model vectors: these vectors are directions in variable space.  They will be unique directions so long as there is no redundancy with the model vectors from other terms.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
