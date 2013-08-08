@@ -1,9 +1,9 @@
 Intro to Statistical Modeling Ch. 11 Prob. 21
 ========================================================
 ```{r include=FALSE}
-require(WriteScoreR)
+require(ScoreR)
 require(mosaic)
-newScorerSet("SM-11-21-SD")
+startProblem("SM-11-21-SD")
 ```
 Ralph's bowling scores in a single game are normally distributed with a mean of 120 and a standard deviation of 10.
 
@@ -64,6 +64,4 @@ bowl10=selectSet(name="over130", totalPts=1, "Lolly"=FALSE, "Ralph"=TRUE, "Equal
 ```
 * Is Lolly or Ralph more likely to score over 130? `r I(bowl10)`
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

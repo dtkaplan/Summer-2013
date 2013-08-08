@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 22
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-22-SD")
+require(ScoreR)
+startProblem("SM-11-22-SD")
 ```
 
 ```{r include=FALSE}
@@ -11,5 +11,4 @@ SAT=selectSet(name="higherScore", totalPts=1, "Jim"=TRUE, "Julie"=FALSE, "They a
 ```
 Jim scores 700 on the mathematics part of the SAT.  Scores on the SAT follow the normal distribution with mean 500 and standard deviation 100.  Julie takes the ACT test of mathematical ability, which has mean 18 and standard deviation 6.  She scores 24.  If both tests measure the same kind of ability, who has the higher score? `r I(SAT)`
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

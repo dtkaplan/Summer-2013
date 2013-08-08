@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 20
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-20-SD")
+require(ScoreR)
+startProblem("SM-11-20-SD")
 ```
 
 The graph shows a cumulative probability.
@@ -20,5 +20,4 @@ graph2=selectNumber(choices=c(0.05,0.25,0.50,0.75,0.95), correct=c(0.50), totalP
 ```
 * Using the graph, estimate by eye the probability of a randomly selected x falling between 5 and 8?  (Select the closest answer.) `r I(graph2)`
 
-
-`r I(closeProblem())`
+`r I(endProblem())`
