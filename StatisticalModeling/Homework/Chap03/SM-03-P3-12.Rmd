@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P12-SD")
+require(ScoreR)
+startProblem("SM-3-P12-SD")
 ```
 
 A standard deviation contest.  For (a) and (b) below, you can choose
@@ -23,4 +23,4 @@ contest2=selectSet(name="smallestdev", totalPts=1, "$0,3,6,9$"=FALSE, "$0,1,2,3$
   deviation such a list can possibly have? `r I(contest2)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

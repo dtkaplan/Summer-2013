@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob 3.14
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P14-SD")
+require(ScoreR)
+startProblem("SM-3-P14-SD")
 ```
 
 The boxplots below are all made from exactly the same data.  One of

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P11-SD")
+require(ScoreR)
+startProblem("SM-3-P11-SD")
 ```
 
 By hand, calculate the mean, the range, the variance, and the standard
@@ -25,7 +25,4 @@ range2=selectSet(name="StdDev", totalPts=1, "A"=FALSE, "B"=TRUE, "C"=FALSE, "No 
 ```
 * Which of the 3 sets of numbers  --- A, B, or C --- is the most spread out according to the standard deviation? `r I(range2)`
 
-`r I(closeProblem())`
-
-
-
+`r I(endProblem())`

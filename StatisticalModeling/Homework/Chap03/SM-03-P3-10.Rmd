@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 3 Prob. 3.10b
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-3-P10b-SD")
+require(ScoreR)
+startProblem("SM-3-P10b-SD")
 ```
 
 The plot shows two different displays of density.  The displays might
@@ -31,10 +31,7 @@ density2=selectSet(name="distrib", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ( b ) The two displays show the same distribution. `r I(density2)` 
 
 ( c ) Describe briefly any sign of mismatch or what features convince you
-that the two displays are equivalent. 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="sign", totalPts=1, rows=4))
-```
+that the two displays are equivalent.     
 `r I(textItem(name="sign", totalPts=1, rows=4))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
