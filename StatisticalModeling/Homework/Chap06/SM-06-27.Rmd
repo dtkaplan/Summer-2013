@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 6 Prob. 27
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-6-27-SD")
+require(ScoreR)
+startProblem("SM-6-27-SD")
 ```
 
 Sometimes when making a graphic, you want to change some aspect of it or add new elements to it.  The lattice graphics system provides ways to do this.  To illustrate, make a simple density plot in the ordinary way.  
@@ -53,13 +53,11 @@ Finally, tell the lattice system that you are done adding to the original plot:
 trellis.unfocus()
 ```
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="describe", totalPts=1, rows=3))
-```
+
 Use these commands to construct the graph comparing the distribution of the mothers' and fathers' heights to the children's heights.  Describe how they are
 different and explain why this is.       
 `r I(textItem(name="describe", totalPts=1, rows=3))`
 
 Other useful commands for adding elements to lattice plots are <code>llines</code>, <code>lpoints</code> and <code>ltext</code>.
 
-`r I(closeProblem())`
+`r I(endProblem())`
