@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-4-SD")
+require(ScoreR)
+startProblem("SM-7-4-SD")
 ```
 For some simple models, the coefficients can be interpreted as grand means, group-wise means, or differences between group-wise means. In each of the following, *A*, *B*, and *C* are quantitative variables and *color* is a categorical variable with levels "red," "blue," and "green."
 
@@ -82,7 +82,4 @@ coef10=selectSet(name="GrandMean3", totalPts=1, "0.0"=FALSE, "4.7"=TRUE, "unknow
 ```
 * What is the grand mean of *C* for all cases: `r I(coef10)`
 
-
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

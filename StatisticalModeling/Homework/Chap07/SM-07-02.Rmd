@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-2-SD")
+require(ScoreR)
+startProblem("SM-7-2-SD")
 ```
 
 For each of the following coefficient reports, tell what the corresponding model formula is:
@@ -15,16 +15,14 @@ $x$ | 3
 $y$ | 5
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="model.formula.1")
 ```
 `r I(f(FALSE))` $x + y$     
 `r I(f(FALSE))` $1 + x + y$     
 `r I(f(FALSE))` $10 + 3 + 5$     
 `r I(f(TRUE))` $10 + 3 x + 5 y$     
-`r I(f(FALSE))` $10 x + 5 y + 3$     
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` $10 x + 5 y + 3$         
+`r I(f(finish=TRUE))`
 
 Term | Coef 
 |:----:|:----:|
@@ -33,16 +31,13 @@ Intercept | 4.15
 *educ* | 0.55
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="model.formula.2")
 ```
 `r I(g(FALSE))` $*age*$     
 `r I(g(FALSE))` $*age* + *educ*$     
 `r I(g(FALSE))` $4.15 - 0.13 + 0.55$     
 `r I(g(FALSE))` $4.15 *age* - 0.13 *educ* + 0.55$     
-`r I(g(TRUE))` $4.15 - 0.13 *age* + 0.55 *educ*$
-```{r include=FALSE, eval=FALSE}
-I(g(finish=TRUE))
-```
+`r I(g(TRUE))` $4.15 - 0.13 *age* + 0.55 *educ*$    
+`r I(g(finish=TRUE))`
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

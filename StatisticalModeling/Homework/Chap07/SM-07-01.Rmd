@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 7 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-7-1-SD")
+require(ScoreR)
+startProblem("SM-7-1-SD")
 ```
 
 There is a correspondence between the model formula and the coefficients found when fitting a model.  
@@ -63,4 +63,4 @@ model10=selectNumber(choices=c(-4,3,8), correct=c(-4), totalPts=1, name="colorBl
 ```
 * *color*Blue coef: `r I(model10)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

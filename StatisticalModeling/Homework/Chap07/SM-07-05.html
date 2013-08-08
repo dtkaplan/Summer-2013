@@ -186,82 +186,49 @@ hljs.initHighlightingOnLoad();
 
 <p>Using the appropriate data set and correct modeling statements, compute each of these quantities and give the model statement you used (eg., <em>age</em> ~ <em>sex</em>)</p>
 
-<p>From the <code>CPS85</code> data, what is the mean age of single people? (Pick the closest answer.) <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-7-5-SD",
-"itemN":      1,
-"name": "single",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>From the <code>CPS85</code> data, what is the mean age of single people? (Pick the closest answer.) <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "28" 
 }'>28</option> <option value='{
- "itemInfo": {
- "setID": "SM-7-5-SD",
-"itemN":      1,
-"name": "single",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "31" 
 }'>31</option> <option value='{
- "itemInfo": {
- "setID": "SM-7-5-SD",
-"itemN":      1,
-"name": "single",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "32" 
 }'>32</option> <option value='{
- "itemInfo": {
- "setID": "SM-7-5-SD",
-"itemN":      1,
-"name": "single",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "35" 
 }'>35</option> <option value='{
- "itemInfo": {
- "setID": "SM-7-5-SD",
-"itemN":      1,
-"name": "single",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "39" 
-}'>39</option> </select><span id='out1' class='shiny-html-output'> </span> years.</p>
-
-<p>What was your model expression?<br/>
-<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+}'>39</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-7-5-SD",
 "itemN":      1,
+"name": "single",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select> years.</p>
+
+<p>What was your model expression?<br/>
+<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-7-5-SD",
+"itemN":      2,
 "name": "model",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:
@@ -289,71 +256,45 @@ The model <em>age</em> ~ <em>married</em> gives an intercept which is the mean a
 </aside></p>
 
 <ul>
-<li>From the <code>CPS85</code> data, what is the difference between the mean ages of married and single people? (Pick the closest answer.) <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      2,
-"name": "difference",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>From the <code>CPS85</code> data, what is the difference between the mean ages of married and single people? (Pick the closest answer.) <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Single people are, on average, 5 years younger." 
 }'>Single people are, on average, 5 years younger.</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      2,
-"name": "difference",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Single people are, on average, 5 years older." 
 }'>Single people are, on average, 5 years older.</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      2,
-"name": "difference",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Single people are, on average, 7 years younger." 
 }'>Single people are, on average, 7 years younger.</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      2,
-"name": "difference",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Single people are, on average, 7 years older." 
-}'>Single people are, on average, 7 years older.</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+}'>Single people are, on average, 7 years older.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-7-5-SD",
+"itemN":      3,
+"name": "difference",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>What was your model expression?<br/>
-<textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
  "setID": "SM-7-5-SD",
-"itemN":      2,
+"itemN":      4,
 "name": "model2",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -363,95 +304,55 @@ are, on average, about 7 years younger than married people in these data.
 </aside></p>
 
 <ul>
-<li>From the <code>SwimRecords</code> data, what is the mean swimming time for women? (Pick the closest.) <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>From the <code>SwimRecords</code> data, what is the mean swimming time for women? (Pick the closest.) <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "55" 
 }'>55</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "60" 
 }'>60</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "65" 
 }'>65</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "70" 
 }'>70</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "75" 
 }'>75</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      3,
-"name": "meanswim",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "80" 
-}'>80</option> </select><span id='out3' class='shiny-html-output'> </span> seconds.</li>
+}'>80</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+"setID": "SM-7-5-SD",
+"itemN":      5,
+"name": "meanswim",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select> seconds.</li>
 </ul>
 
 <p>What is your model expression?<br/>
-<textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR6info'><option value='{
  "setID": "SM-7-5-SD",
-"itemN":      3,
+"itemN":      6,
 "name": "model3",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:      </p>
@@ -479,85 +380,50 @@ is given by the intercept.
 </aside></p>
 
 <ul>
-<li>From the <code>Utilities</code> data, what is the mean CCF for November? (Pick the closest.)  (Hint: use <code>as.factor(month)</code> to convert the month number to a categorical variable.) <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      4,
-"name": "meanCCF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>From the <code>Utilities</code> data, what is the mean CCF for November? (Pick the closest.)  (Hint: use <code>as.factor(month)</code> to convert the month number to a categorical variable.) <select name='ScoreR7'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "-150" 
 }'>-150</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      4,
-"name": "meanCCF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "-93" 
 }'>-93</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      4,
-"name": "meanCCF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "42" 
 }'>42</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      4,
-"name": "meanCCF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "150" 
 }'>150</option> <option value='{
-"itemInfo": {
-"setID": "SM-7-5-SD",
-"itemN":      4,
-"name": "meanCCF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "192" 
-}'>192</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+}'>192</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
+"setID": "SM-7-5-SD",
+"itemN":      7,
+"name": "meanCCF",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>What is your model expression? 
-<textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR8info'><option value='{
  "setID": "SM-7-5-SD",
-"itemN":      4,
+"itemN":      8,
 "name": "utils",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p>
-
-<h1>Generated answer does not match previously recorded answer:</h1>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:     </p>
@@ -586,22 +452,11 @@ ANSWER:     </p>
 ##            -151.79              -96.52               -4.53
 </code></pre>
 
-<p>SHOULD MATCH &gt;
-Coefficients:
-       (Intercept)   as.factor(month)2   as.factor(month)3<br/>
-           192.000               2.375             -62.250<br/>
- as.factor(month)4   as.factor(month)5   as.factor(month)6<br/>
-          -113.625            -141.625            -178.111<br/>
- as.factor(month)7   as.factor(month)8   as.factor(month)9<br/>
-          -182.667            -180.333            -176.556<br/>
-as.factor(month)10  as.factor(month)11  as.factor(month)12<br/>
-          -149.875             -88.778              -0.875  </p>
-
 <p>November is month 10, so the mean value of <em>ccf</em> for November is
 the sum of the intercept and the month 10 coefficient: \( 192 - 149.9\approx 42 \).
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "text1", "text2", "text3", "text4" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "single", "model", "difference", "model2", "meanswim", "model3", "meanCCF", "utils" ]'>problem roster</option></select></p>
 
 </body>
 

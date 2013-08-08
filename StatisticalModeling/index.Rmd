@@ -179,7 +179,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 7.04](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-04.html) working
 
-* [Problem 7.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-05.html) some issues with r code, also, the final answer set does not match the previously recorded answer
+* [Problem 7.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-05.html) working
 
 * [Problem 7.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-10.html) working
 
@@ -187,13 +187,13 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 7.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-12.html) working
 
-* [Problem 7.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-13.html) issues with "drawing" plot
+* [Problem 7.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-13.html) issues with "drawing" plot (tikzpicture)
 
-* [Problem 7.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-14.html) issues with "drawing" the plot
+* [Problem 7.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-14.html) issues with "drawing" the plot (tikzpicture)
 
 * [Problem 7.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-15.html) working
 
-* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-16.html) where is `diamonds.csv`?
+* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-16.html) **<code>legend**
 
 * [Problem 7.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-20.html) issues with rendering graph, also some odd information at the end of the document
 
