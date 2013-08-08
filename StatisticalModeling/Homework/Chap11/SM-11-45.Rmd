@@ -2,19 +2,17 @@ Intro to Statistical Modeling Ch. 11 Prob. 45
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-45-SD")
+require(ScoreR)
+startProblem("SM-11-45-SD")
 ```
 Government data indicates that the average hourly wage for manufacturing workers in the United States is $14. (Statistics Abstract of the United States, 2002) Suppose the distribution of the manufacturing wage rate nationwide can be approximated by a normal distribution. If a worker did a nationwide job search and found that 15% of the jobs paid more than $15.30 per hour.  In order to find the standard deviation of the hourly wage for manufacturing workers, what process should we try?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="process")
 ```
 `r I(f(FALSE))` <code>qnorm(0.15, mean=14, sd=15.3)</code>     
 `r I(f(TRUE))` Look for $x$ such that <code>pnorm(15.3, mean=14,sd=x)</code> gives 0.85    
 `r I(f(FALSE))` Calculate a z-score using 1.3 as the standard deviation    
-`r I(f(FALSE))` Not enough information is being given.
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` Not enough information is being given.    
+`r I(f(finish=TRUE))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

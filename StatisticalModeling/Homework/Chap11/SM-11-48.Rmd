@@ -2,12 +2,11 @@ Intro to Statistical Modeling Ch. 11 Prob. 48
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-48-SD")
+require(ScoreR)
+startProblem("SM-11-48-SD")
 ```
 
-Below are two different graphs of cumulative probability distributions. 
-Using the appropriate graph, not the computer, estimate the items listed below.  Your estimates are not expected to be perfect, but do mark on the graph to show the reasoning behind your answer:
+Below are two different graphs of cumulative probability distributions. Using the appropriate graph, not the computer, estimate the items listed below.  Your estimates are not expected to be perfect, but do mark on the graph to show the reasoning behind your answer:
 
 * The 75th percentile of a normal distribution with mean 2 and standard deviation 3.
 
@@ -27,6 +26,4 @@ This is harder, so do it only when you have done all the other problems on this 
 
 ![Graph2](cummulative3.png)
 
-
-
-
+`r I(endProblem())`

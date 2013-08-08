@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 47
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-47-SD")
+require(ScoreR)
+startProblem("SM-11-47-SD")
 ```
 Geology Professor Karl Wirth studies the age of rocks as determined by ratios of isotropes.  The figure shows the results of an age assay of rocks collected at seven sites.  Because of the intrinsically random nature of radioactive decay, the measured age is a random variable and has been reported as a mean (in millions of years before the present) and a standard deviation (in the same units).
 
@@ -29,30 +29,16 @@ To remind you, here are the arithmetic rules for the means and variances of rand
 
 Do calculations based on the above formulas to answer these questions:
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="mean", totalPts=2, rows=2))
-```
 * What is the mean of $\Delta_{\mbox{age}}$?  What are the units?    
   `r I(textItem(name="meanAndUnits", totalPts=2, rows=2))`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="variance", totalPts=2, rows=2))
-```
 * What is the variance of $\Delta_{\mbox{age}}$?  What are the units?    
   `r I(textItem(name="variance", totalPts=2, rows=2))`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="variance2", totalPts=2, rows=2))
-```
 * What is the variance of $\Delta_{\mbox{age}}$? What are the units?    
   `r I(textItem(name="variance2", totalPts=2, rows=2))`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="z-score", totalPts=2, rows=2))
-```
 * A skeptic claims that the two stages do not differ in age.  He points out, correctly, that since $\Delta_{\mbox{age}}$ is a random variable, there is some possibility that its value is zero?  What is the z-score of the value 0 in the distribution of $\Delta_{\mbox{age}}$?    
   `r I(textItem(name="z-score", totalPts=2, rows=2))`
 
-
-`r I(closeProblem())`
- 
+`r I(endProblem())` 

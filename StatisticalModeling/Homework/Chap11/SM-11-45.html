@@ -149,60 +149,40 @@ hr {
 
 <p>Government data indicates that the average hourly wage for manufacturing workers in the United States is $14. (Statistics Abstract of the United States, 2002) Suppose the distribution of the manufacturing wage rate nationwide can be approximated by a normal distribution. If a worker did a nationwide job search and found that 15% of the jobs paid more than $15.30 per hour.  In order to find the standard deviation of the hourly wage for manufacturing workers, what process should we try?</p>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-11-45-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>qnorm(0.15, mean=14, sd=15.3)</code><br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-11-45-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> Look for \( x \) such that <code>pnorm(15.3, mean=14,sd=x)</code> gives 0.85<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-11-45-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> Calculate a z-score using 1.3 as the standard deviation<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-11-45-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> Not enough information is being given.</p>
+}'> <b>D</b></label> Not enough information is being given.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-11-45-SD",
+"itemN":      1,
+"name": "process",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "process" ]'>problem roster</option></select></p>
 
 </body>
 
