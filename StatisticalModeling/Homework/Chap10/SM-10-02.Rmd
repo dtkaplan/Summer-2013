@@ -2,12 +2,11 @@ Intro to Statistical Modeling Ch. 10 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-2-SD")
+require(ScoreR)
+startProblem("SM-10-2-SD")
 ```
 
-In each of the following, a situation is described and a question is asked that is to be answered by modeling.  Several variables are listed. Imagine an appropriate model and identify each variable as 
-either the response variable, an explanatory variable, a covariate, or a variable to be ignored.
+In each of the following, a situation is described and a question is asked that is to be answered by modeling.  Several variables are listed. Imagine an appropriate model and identify each variable as either the response variable, an explanatory variable, a covariate, or a variable to be ignored.
 
 > EXAMPLE:  *Some people have claimed that police foot patrols are more effective at reducing the crime rate than patrols done in automobiles.  Data from several different cities is available; each city has its own fraction of patrols done by foot, its own crime rate, etc.  The mayor of your town has asked for your advice on whether it would be worthwhile to shift to more foot patrols in order to reduce crime.  She asks, "Is there evidence that a larger fraction of foot patrols reduces the crime rate?*
 
@@ -152,7 +151,7 @@ gravity3=selectSet(name="Material", totalPts=1, "response"=FALSE, "explanatory"=
 ```
 3. The material from which the object is made (brass, lead, wood, stone). `r I(gravity3)`
 
-[Thanks to James Heyman.]
+###### [Thanks to James Heyman.]
 
 <aside>
 ANSWER:     
@@ -160,5 +159,4 @@ Galileo wants to know how the *material* affects the *time* of fall of the
 object.  These are the explanatory and response variables respectively.  But the size of the object also has an influence, due to air resistance. For instance, a tiny ball will fall more slowly than a large ball.  So the *size of the object* should be a covariate.
 </aside> 
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

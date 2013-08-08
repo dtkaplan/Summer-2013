@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 10 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-1-SD")
+require(ScoreR)
+startProblem("SM-10-1-SD")
 ```
 Consider the data set on kids' feet in `KidsFeet`. 
 
@@ -44,7 +44,6 @@ This is rather verbose.  Noticing that the intercept doesn't change in the two c
 ```{r}
 0.24795*(27-22)
 ```
-
 </aside>
 
 This is a total change, because it doesn't hold any other variable constant, e.g. *sex*.  That might sound silly, since obviously a kid's sex doesn't change as his or her foot grows.  But the model doesn't know that.  It happens that most of the kids with foot lengths near 22 cm are girls, and most of the kids with foot lengths near 27 cm are boys.  So when you compare feet with lengths of 22 and 27, you are effectively changing the sex at the same time as you change the foot
@@ -65,7 +64,6 @@ coef(m2)
 ```{r}
 0.221025*(27-22)
 ```
-
 </aside>
 
 
@@ -85,8 +83,6 @@ coef(m3)
 ```{r}
 (0.21262 + 0.01582)*(27-22)
 ```
-
-
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 10 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-5-SD")
+require(ScoreR)
+startProblem("SM-10-5-SD")
 ```
 
 Consider two models that you are to fit to a single data set involving three variables: A, B, and C.
@@ -39,7 +39,7 @@ true3=selectSet(name="TorF3", totalPts=1, "TRUE"=FALSE, "FALSE"=TRUE)
 ```
 True or False: Simpson's Paradox can occur if B is uncorrelated with C. `r I(true3)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 
 ###### Based on a suggestion by student Atang Gilika.

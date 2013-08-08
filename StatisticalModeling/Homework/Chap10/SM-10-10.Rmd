@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 10 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-10-SD")
+require(ScoreR)
+startProblem("SM-10-10-SD")
 ```
 
 Standard & Poor's is a RATING AGENCY that provides information about various financial instruments such as stocks and bonds.  The S&P 500 Stock Index, for instance, provides a summary of the value of stocks. 
@@ -72,6 +72,6 @@ ANSWER:
 If *maturity* were treated as a quantitative variable, the difference in interest rate between 10-year and 20-year maturity would be modeled as the same as the difference between 20-year and 30-year maturity.  Yet this is far from the case in the data.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 

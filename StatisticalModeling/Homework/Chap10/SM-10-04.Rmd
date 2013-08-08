@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 10 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-10-4-SD")
+require(ScoreR)
+startProblem("SM-10-4-SD")
 ```
 
 Economists measure the inflation rate as a percent change in price per year.
@@ -29,15 +29,7 @@ The point of this exercise is to figure out how to arrange a model so that you c
 
 For your reference, here is a graph showing a scatter plot of inflation and unemployment rates over about 30 years in the US.  Each point shows the inflation and unemployment rates during one quarter of a year.  The plotting symbol indicates which of three decade-long periods the point falls into.
 
-```{r fig1, fig=TRUE,include=FALSE,pdf=TRUE,figwidth=6,figheight=6,echo=FALSE}
-d = fetchData("inflation.csv")
-decade = cut( d$Year, c(1968,1984,1995,2001)) 
-plot( Inflation ~ Unemployment, data=d, pch=as.numeric(decade), xlab='Unemployment (%)', ylab='Inflation (%)')
-legend( list(x=9,y=12), c('Decade A', 'Decade B', 'Decade C'),pch=1:3)
-```
-
 ![Inflation](inflation-fig1.png)
-\centerline{\includegraphics[width=3.5in]{Figures/inflation-fig1}}
 
 The relationship between inflation and unemployment seems to be different from one decade to another --- that's the short term. 
 
@@ -51,77 +43,63 @@ relationship? `r I(econ3)`
 Using the modeling language, express these different possible relationships between the variables *Inflation*, *Unemployment*, and *Decade*, where the variable *Decade* is a categorical variable with the three different levels shown in the legend for the graph. 
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="inflation.unemployment")
 ```
 * Inflation depends on Unemployment in a way that doesn't change over
 time.     
 `r I(f(FALSE))` *Inflation* ~ *Decade*     
 `r I(f(TRUE))` *Inflation* ~ *Unemployment*     
 `r I(f(FALSE))` *Inflation* ~ *Unemployment* + *Decade*     
-`r I(f(FALSE))` *Inflation* ~ *Unemployment* $\star$ *Decade*     
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` *Inflation* ~ *Unemployment* $\star$ *Decade*      
+`r I(f(finish=TRUE))`
 
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="inflation.decade")
 ```
 * Inflation changes with the decade, but doesn't depend on Unemployment.     
 `r I(g(TRUE))` *Inflation* ~ *Decade*     
 `r I(g(FALSE))` *Inflation* ~ *Unemployment*     
 `r I(g(FALSE))` *Inflation* ~ *Unemployment* + *Decade*     
 `r I(g(FALSE))` * Inflation* ~ *Unemployment* $\star$ *Decade*     
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
+`r I(g(finish=TRUE))`
 
 ```{r include=FALSE}
-h=newMC(totalPts=1)
+h=newMC(totalPts=1, name="inflation.unemployment2")
 ```
 * Inflation depends on Unemployment in the same way every decade, but each decade introduces a new background inflation rate independent of Unemployment.     
 `r I(h(FALSE))` *Inflation* ~ *Decade*     
 `r I(h(FALSE))` *Inflation* ~ *Unemployment*     
 `r I(h(TRUE))` *Inflation* ~ *Unemployment* + *Decade*     
-`r I(h(FALSE))` *Inflation* ~ *Unemployment* $\star$ *Decade*
-```{r include=FALSE, results='hide'}
-I(h(finish=TRUE))
-```
+`r I(h(FALSE))` *Inflation* ~ *Unemployment* $\star$ *Decade*    
+`r I(h(finish=TRUE))`
 
 ```{r include=FALSE}
-j=newMC(totalPts=1)
+j=newMC(totalPts=1, name="inflation.unemployment.decade")
 ```
 * Inflation depends on Unemployment in a way that differs from decade to decade.     
 `r I(j(FALSE))` *Inflation* ~ *Decade*     
 `r I(j(FALSE))` *Inflation* ~ *Unemployment*     
 `r I(j(FALSE))` *Inflation* ~ *Unemployment* + *Decade*     
-`r I(j(TRUE))` *Inflation* ~ *Unemployment* $\star$ *Decade*     
-```{r include=FALSE, results='hide'}
-I(j(finish=TRUE))
-```
+`r I(j(TRUE))` *Inflation* ~ *Unemployment* $\star$ *Decade*         
+`r I(j(finish=TRUE))`
 
 Whether a model examines the short-term or the long-term behavior is analogous to whether a partial change or a total change is being considered.
 
-
 ```{r include=FALSE}
-k=newMC(totalPts=1)
+k=newMC(totalPts=1, name="longterm")
 ```
-Suppose you wanted to study the long-term relationship  between inflation and unemployment.  Which of these is appropriate?     
+* Suppose you wanted to study the long-term relationship  between inflation and unemployment.  Which of these is appropriate?     
 `r I(k(FALSE))` Hold *Decade* constant. (Partial change)      
 `r I(k(TRUE))` Let *Decade* vary as it will. (Total change)     
-```{r include=FALSE,results='hide'}
-I(k(finish=TRUE))
-```
+`r I(k(finish=TRUE))`
 
 ```{r include=FALSE}
-m=newMC(totalPts=1)
+m=newMC(totalPts=1, name="shortTerm")
 ```
-Now suppose you want to study the short-term relationship.  Which of
+* Now suppose you want to study the short-term relationship.  Which of
 these is appropriate?     
 `r I(m(TRUE))` Hold *Decade* constant. (Partial change)     
 `r I(m(FALSE))` Let *Decade* vary as it will. (Total change)     
-```{r include=FALSE, results='hide'}
-I(m(finish=TRUE))
-```
+`r I(m(finish=TRUE))`
 
-
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -189,103 +189,53 @@ hljs.initHighlightingOnLoad();
 <p>First, you&#39;re going to look at a total change.  Build a model of foot width as a function of foot length: <em>width ~ length</em>. Fit this model to the kids&#39; feet data.</p>
 
 <p>According to this model, how much does the typical width change when the foot
-length is increased from 22 to 27 cm? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+length is increased from 22 to 27 cm? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.187" 
 }'>0.187</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.362" 
 }'>0.362</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.744" 
 }'>0.744</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.953" 
 }'>0.953</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.06" 
 }'>1.06</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.105" 
 }'>1.105</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1.24" 
 }'>1.24</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      1,
-"name": "22to27",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.487" 
-}'>1.487</option> </select><span id='out1' class='shiny-html-output'> </span></p>
+}'>1.487</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-10-1-SD",
+"itemN":      1,
+"name": "22to27",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:    </p>
@@ -339,115 +289,58 @@ v22
 <p>This is a total change, because it doesn&#39;t hold any other variable constant, e.g. <em>sex</em>.  That might sound silly, since obviously a kid&#39;s sex doesn&#39;t change as his or her foot grows.  But the model doesn&#39;t know that.  It happens that most of the kids with foot lengths near 22 cm are girls, and most of the kids with foot lengths near 27 cm are boys.  So when you compare feet with lengths of 22 and 27, you are effectively changing the sex at the same time as you change the foot
 length.</p>
 
-<p>To look at a partial change, holding <em>sex</em> constant, you need to include <em>sex</em> in the model.  A simple way to do this is <em>width</em> ~ <em>length</em> + <em>sex</em>.  Using this model fitted to the kids&#39; feet data, how much does a typical foot width change if the foot length is increased from 22 to 27 cm? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>To look at a partial change, holding <em>sex</em> constant, you need to include <em>sex</em> in the model.  A simple way to do this is <em>width</em> ~ <em>length</em> + <em>sex</em>.  Using this model fitted to the kids&#39; feet data, how much does a typical foot width change if the foot length is increased from 22 to 27 cm? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.187" 
 }'>0.187</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.362" 
 }'>0.362</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.744" 
 }'>0.744</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.953" 
 }'>0.953</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.06" 
 }'>1.06</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1.105" 
 }'>1.105</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.142" 
 }'>1.142</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.24" 
 }'>1.24</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      2,
-"name": "22to27model2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.487" 
-}'>1.487</option> </select><span id='out2' class='shiny-html-output'> </span></p>
+}'>1.487</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-10-1-SD",
+"itemN":      2,
+"name": "22to27model2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:    </p>
@@ -468,115 +361,58 @@ coef(m2)
 
 <p></aside></p>
 
-<p>You can also build more detailed models, for example a model that includes an interaction term: <em>width</em> ~ <em>length</em> \( \star \) <em>sex</em>. Using this model fitted to the kids&#39; feet data, how much will a typical <strong>girl&#39;s</strong> foot width change if the foot length is increased from 22 to 27 cm? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>You can also build more detailed models, for example a model that includes an interaction term: <em>width</em> ~ <em>length</em> \( \star \) <em>sex</em>. Using this model fitted to the kids&#39; feet data, how much will a typical <strong>girl&#39;s</strong> foot width change if the foot length is increased from 22 to 27 cm? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.187" 
 }'>0.187</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.362" 
 }'>0.362</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.744" 
 }'>0.744</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.953" 
 }'>0.953</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.06" 
 }'>1.06</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.105" 
 }'>1.105</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "1.142" 
 }'>1.142</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.24" 
 }'>1.24</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-1-SD",
-"itemN":      3,
-"name": "22to27girl",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1.487" 
-}'>1.487</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+}'>1.487</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-10-1-SD",
+"itemN":      3,
+"name": "22to27girl",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -598,7 +434,7 @@ coef(m3)
 
 <p></aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "22to27", "22to27model2", "22to27girl" ]'>problem roster</option></select></p>
 
 </body>
 
