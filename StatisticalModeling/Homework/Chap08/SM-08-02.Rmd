@@ -1,15 +1,14 @@
-Intro to Statistical Modeling Ch. 8 Prob.2
+Intro to Statistical Modeling Ch. 8 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-8-2-SD")
+require(ScoreR)
+startProblem("SM-8-2-SD")
 ```
 
-Which of these statements will compute the sum of square residuals of the model 
-stored in the object <code>mod</code>?
+Which of these statements will compute the sum of square residuals of the model stored in the object <code>mod</code>?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="statement")
 ```
 `r I(f(FALSE))` <code>resid(mod)</code>     
 `r I(f(FALSE))` <code>sum(resid(mod))</code>     
@@ -17,9 +16,6 @@ f=newMC(totalPts=1)
 `r I(f(TRUE))` <code>sum(resid(mod)^2 ) </code>     
 `r I(f(FALSE))` <code>sum(resid(mod^2 ))</code>     
 `r I(f(FALSE))` None of the above.     
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

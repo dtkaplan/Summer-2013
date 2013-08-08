@@ -219,38 +219,38 @@ hr {
 <tr>
 <td align="center">5</td>
 <td align="center">2</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">4</td>
 <td align="center">1</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">5</td>
 <td align="center">1.5</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">3</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">7</td>
 <td align="center">3</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">2</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 </tbody></table>
 
@@ -270,99 +270,83 @@ hr {
 <tr>
 <td align="center">5</td>
 <td align="center">2</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">4</td>
 <td align="center">1</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">5</td>
 <td align="center">1.5</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">3</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">7</td>
 <td align="center">3</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">2</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">_</td>
+<td align="center">_</td>
 </tr>
 </tbody></table>
 
 <ul>
 <li><p>Based on your answers to the previous to parts, which of the two models is better?  Give a specific definition of &ldquo;better&rdquo; and explain your answer quantitatively.<br/>
-<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
-"setID": "SM-8-1-SD",
-"itemN":      1,
-"name": "betterModel",
-"totalpts":      2 
-},
-"type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>Write down the set of indicator variables that arise from the categorical variable <em>compost</em>.<br/>
-<textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
 "setID": "SM-8-1-SD",
 "itemN":      2,
-"name": "compost",
-"totalpts":      2 
-},
+"name": "betterModel",
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>The fitted values are exactly the same for the two models <em>water</em> ~ <em>compost</em> and <em>water</em> ~ <em>compost</em>-1. This suggests that the <strong>l</strong> vector \( (1,1,1,1,1,1) \) is redundant with the set of indicator variables due to the variable compost.<br/>
-Explain why this redundancy occurs.  Is it because of something special about the &ldquo;compost&rdquo; variable?<br/>
-<textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>Write down the set of indicator variables that arise from the categorical variable <em>compost</em>.<br/>
+<textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
 "setID": "SM-8-1-SD",
 "itemN":      3,
-"name": "redundant",
-"totalpts":      2 
-},
+"name": "compost",
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>Estimate, as best you can using only very simple calculations,  the coefficients on the model <em>water</em> ~ <em>compost</em> - 1. (Note: there is no intercept term in this model.)<br/>
-<textarea cols='30' rows='3' id='text4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info4'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>The fitted values are exactly the same for the two models <em>water</em> ~ <em>compost</em> and <em>water</em> ~ <em>compost</em>-1. This suggests that the <strong>l</strong> vector \( (1,1,1,1,1,1) \) is redundant with the set of indicator variables due to the variable compost.<br/>
+Explain why this redundancy occurs.  Is it because of something special about the &ldquo;compost&rdquo; variable?<br/>
+<textarea cols='30' rows='3' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
 "setID": "SM-8-1-SD",
 "itemN":      4,
-"name": "estimate",
-"totalpts":      2 
-},
+"name": "redundant",
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout4' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>Estimate, as best you can using only very simple calculations,  the coefficients on the model <em>water</em> ~ <em>compost</em> - 1. (Note: there is no intercept term in this model.)<br/>
+<textarea cols='30' rows='3' id='ScoreR5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR5info'><option value='{
+"setID": "SM-8-1-SD",
+"itemN":      5,
+"name": "estimate",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 <li><p>Ranger Charley observes that the the following model is perfect because all of the residuals are zero.</p></li>
 </ul>
 
@@ -371,21 +355,17 @@ Explain why this redundancy occurs.  Is it because of something special about th
 </blockquote>
 
 <p>Charley believes that using this model will enable him to make excellent predictions  about the height of trees in the future. Ranger Donald, on the other hand, calls Charley&#39;s regression &ldquo;ridiculous rot&rdquo; and claims that Charley&#39;s explanatory terms could fit perfectly any set of 6 numbers.  Donald says that the perfect fit of Charley&#39;s model does not give any evidence that the model is of any use whatsoever.  Who do you think is right, Donald or Charley?<br/>
-<textarea cols='30' rows='1' id='text5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info5'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='1' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR6info'><option value='{
  "setID": "SM-8-1-SD",
-"itemN":      5,
+"itemN":      6,
 "name": "perfect",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout5' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "text1", "text2", "text3", "text4", "text5" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "explan", "betterModel", "compost", "redundant", "estimate", "perfect" ]'>problem roster</option></select></p>
 
 </body>
 

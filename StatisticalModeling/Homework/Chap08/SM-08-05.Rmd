@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 8 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-8-5-SD")
+require(ScoreR)
+startProblem("SM-8-5-SD")
 ```
 
 Consider the data collected by Francis Galton in the 1880s, stored in a modern format in the `Galton` file.  In this file, <code>heights</code> is the variable containing the child's heights, while the father's and mother's height is contained in the variables <code>father</code> and <code>mother</code>.  The <code>family</code> variable is a numerical code identifying children in the same family; the number of kids in this family is in <code>nkids</code>.
@@ -97,9 +97,6 @@ coef(m3)
 Note that the coefficients involving *sexM* have not been included, since the question asked for the predicted height of a girl.
 </aside>
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="R2", totalPts=2, rows=1))
-```
 * What is the $R^2$ for this model? `r I(textItem(name="R2", totalPts=2, rows=1))`
 <aside>
 ANSWER:     
@@ -135,4 +132,4 @@ sd( resid(m4))
 ```
 
 
-`r I(closeProblem())`
+`r I(endProblem())`

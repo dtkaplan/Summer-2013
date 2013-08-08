@@ -193,7 +193,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 7.15](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-15.html) working
 
-* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-16.html) **<code>legend**
+* [Problem 7.16](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-16.html) <code>legend(</code> won't work
 
 * [Problem 7.20](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap07/SM-07-20.html) issues with rendering graph, also some odd information at the end of the document
 
@@ -211,7 +211,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Reading Questions](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-ReadingQuestions.html) working
 
-* [Problem 8.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-01.html) working, but tables are ugly
+* [Problem 8.01](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-01.html) working
 
 * [Problem 8.02](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap08/SM-08-02.html) working
 
