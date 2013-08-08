@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-4-SD")
+require(ScoreR)
+startProblem("SM-14-4-SD")
 ```
 You are performing an agricultural experiment in which you will study whether placing small bits of iron in the soil will increase the yield of barley.  Randomly scattered across an enclosure owned by the state's agricultural field office, you have marked off ten plots, each of size 10 meters by 10 meters.  You randomly assign five of the plots to be controls, and in the other five you place the iron.
 
@@ -37,4 +37,4 @@ This quandry illustrates that data do not speak for themselves.  The evaluation 
 
 This paradox has an impact on how you should interpret the reports that you read.  If you are reading hundreds of reports, you need to keep a skeptical attitude about individual reports with a p-value of 0.01.  A small p-value is only one piece of evidence, not a proof.  
 
-`r I(closeProblem())`
+`r I(endProblem())`

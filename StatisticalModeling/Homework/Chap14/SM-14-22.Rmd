@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 22
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-22-SD")
+require(ScoreR)
+startProblem("SM-14-22-SD")
 ```
 
 ```{r include=FALSE}
@@ -127,4 +127,4 @@ mean(do(1000)*r.squared(lm( width ~ rand(38), data=kids)))
 
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

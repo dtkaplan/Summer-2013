@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-2-SD")
+require(ScoreR)
+startProblem("SM-14-2-SD")
 ```
 
 ```{r include=FALSE}
@@ -52,4 +52,4 @@ summary(lm( width - 8.9 ~ 1, data=kids))
 WARNING: It's not a usual practice to look at a succession of null hypotheses.  The point of doing so in this problem is just to show that to use the model *A* ~ *1* format to conduct the hypothesis test, you can subtract the hypothesized mean from the variable in question.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

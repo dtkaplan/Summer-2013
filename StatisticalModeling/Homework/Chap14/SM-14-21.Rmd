@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 21
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-21-SD")
+require(ScoreR)
+startProblem("SM-14-21-SD")
 ```
 The table shows a brief data set that we will use to trace through a simple one-way ANOVA calculation by hand.
 
@@ -87,4 +87,4 @@ Of course, in a real ANOVA table, rows are labeled differently.  Each row gives 
 
 Compare your table to one constructed with software.  Enter the data into a spreadsheet, save it to disk in an appropriate format (e.g., CSV), then read it into the statistical software and create the ANOVA table.
 
-`r I(closeProblem())`
+`r I(endProblem())`

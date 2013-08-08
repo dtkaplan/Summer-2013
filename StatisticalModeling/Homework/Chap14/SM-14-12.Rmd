@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-12-SD")
+require(ScoreR)
+startProblem("SM-14-12-SD")
 ```
 
 Zebra mussels are a small, fast reproducing species of freshwater mussel native to the lakes of southeast Russia.  They have accidentally been introduced in other areas, competing with native species and creating problems for people as they cover the undersides of docks and boats, clog water intakes and other underwater structures.  Zebra mussels even attach themselves to other mussels, sometimes starving those mussels.
@@ -220,4 +220,4 @@ NOTE:
 Additional notes: It doesn't work to use "count" as a covariate (rather than dividing it into dry.mass) since count is strongly collinear with "attachment".  The reason is that Baker and Hornbach pulled 20 mussels off of each of the rocks, while typically pulling more off of the Amblema.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

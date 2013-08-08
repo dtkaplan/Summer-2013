@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 14 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-14-10-SD")
+require(ScoreR)
+startProblem("SM-14-10-SD")
 ```
 
 The t- and F-distributions are closely related.  That is, you can calculate the p-value on a t-statistic by using the F distribution, if you do it right. 
@@ -32,4 +32,4 @@ prob4=selectSet(name="TorF4", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ```
 * They are the same. `r I(prob4)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
