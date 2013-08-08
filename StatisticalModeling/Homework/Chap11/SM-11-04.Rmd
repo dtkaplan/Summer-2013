@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-4-SD")
+require(ScoreR)
+startProblem("SM-11-4-SD")
 ```
 For each of the following probability models, calculate a 95% coverage interval.  This means that you should specify a left value and a right value.  The left value corresponds to a probability of 0.025 and the right value to a probability of 0.975.
 
@@ -58,5 +58,4 @@ qunif(c(0.025,0.975), min=0,max=360)
 ```
 </aside>
 
-`r I(closeProblem())`
-
+`r I(endProblem())`

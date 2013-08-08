@@ -1,27 +1,29 @@
 Intro to Statistical Modeling Ch. 11 Prob. 1
-========================================================
+===============================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-1-SD")
+require(ScoreR)
+startProblem("SM-11-1-SD")
 ```
 
-Two basic operations that you need to perform on probability models are these:    
+Two basic operations that you need to perform on probability models are these:
+
 * **percentile** Given a value, what is the probability (according to the model) of the outcome from one trial being that value or less?
 
 * **quantile** Given a probability, what is the value whose percentile is that probability?
 
+To illustrate by example, suppose that you are dealing with a probability model for an IQ test score that is a normal distribution with these parameters: mean = 100 and standard deviation = 15.
 
-To illustrate by example, suppose that you are dealing with a probability model 
-for an IQ test score that is a normal distribution with these parameters: mean = 100 and standard deviation = 15.
+Percentile question: What is the percentile that corresponds to a test score of 120?      
+Answer: $0.91$ or, in other words, the 91st percentile. 
 
-Percentile question: What is the percentile that corresponds to a test score of 120?  Answer: $0.91$ or, in other words, the 91st percentile.
 ```{r}
 pnorm(120, mean=100,sd=15)
 ```
 
-Quantile question: What score will 95% of scores be less than or equal to?
- Answer: a score of 125.
+Quantile question: What score will 95% of scores be less than or equal to?    
+Answer: a score of 125.
+
 ```{r}
 qnorm(0.95, mean=100, sd=15)
 ```
@@ -29,33 +31,31 @@ qnorm(0.95, mean=100, sd=15)
 Here are two very basic questions about percentile and quantile calculations:
 
 ```{r include=FALSE}
-true=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+prob1=selectSet(name="TorF1", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ```
-* The output of a percentile question will always be a probability, that is, a number between 0 and 1. `r I(true)`
+* The output of a percentile question will always be a probability, that is, a number between 0 and 1. `r I(prob1)`
 
 ```{r include=FALSE}
-true2=selectSet(name="TorF", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
+prob2=selectSet(name="TorF2", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ```
-* The output of a quantile question will always be a value, that is, something in the same units as the random variable. `r I(true2)`
+* The output of a quantile question will always be a value, that is, something in the same units as the random variable. `r I(prob2)`
 
 Sometimes to answer more complicated questions, you need first to answer one or more percentile or quantile questions.
 
-Answer the following questions, using the normal probability model with the
-parameters given above: 
+Answer the following questions, using the normal probability model with the parameters given above: 
 
-* What's the test score that almost everybody, say, 99% of people, will do better than?  
+What's the test score that almost everybody, say, 99% of people, will do better than?  
 ```{r include=FALSE}
-test=selectSet(name="testScore", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
+prob3=selectSet(name="kind", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
 ```
-  * Which kind of calculation is this? `r I(test)`
-
+* Which kind of calculation is this? `r I(prob3)`
 ```{r include=FALSE}
-test2=selectNumber(choices=c(55,65,75,95,115,125,135), correct=c(65), totalPts=1, name="testAnswer")
+prob4=selectNumber(choices=c(55,65,75,95,115,125,135), correct=c(65), totalPts=1, name="answer")
 ```
-  * What is the answer? `r I(test2)`
+* What is the answer? `r I(prob4)`
 
 <aside>
-ANSWER:     
+ANSWER:    
 This involves the 0.01 quantile, since 99% are doing **better**.
 ```{r}
 qnorm(.01, mean=100, sd=15)
@@ -63,16 +63,15 @@ qnorm(.01, mean=100, sd=15)
 </aside>
 
 ```{r include=FALSE}
-test3=selectSet(name="calcType", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
+prob5=selectSet(name="type2", totalPts=1, "percentile"=FALSE, "quantile"=TRUE)
 ```
-* To calculate a coverage interval on a probability model, you need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these probabilities from: `r I(test3)`
+* To calculate a coverage interval on a probability model, you need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these probabilities from: `r I(prob5)`
 
 * Calculate a 50% coverage interval on the test scores, that is the range from the 0.25 quantile to the 0.75 quantile:
 ```{r include=FALSE}
-test4=selectNumber(name="LeftEnd", totalPts=1,choices=c(80,85,90,95,100,105,110,115,120), correct=c(90))
+prob6=selectNumber(choices=c(80,85,90,95,100,105,110,115,120), correct=c(90), totalPts=1, name="50per.left")
 ```
-  * Left end of interval: `r I(test4)`
-
+* Left end of interval: `r I(prob6)`
 <aside>
 ANSWER:    
 ```{r}
@@ -85,12 +84,12 @@ qnorm(.75, mean=100, sd=15)
 </aside>
 
 ```{r include=FALSE}
-test5=selectNumber(choices=c(80,85,90,95,100,105,110,115,120), correct=c(110), totalPts=1, name="RightEnd")
+prob7=selectNumber(choices=c(80,85,90,95,100,105,110,115,120), correct=c(110), totalPts=1, name="50per.right")
 ```
-  * Right end of interval: `r I(test5)`
+* Right end of interval: `r I(prob7)`
 
 <aside>
-ANSWER:     
+ANSWER:    
 ```{r}
 qnorm(.25, mean=100, sd=15)
 ```
@@ -100,16 +99,15 @@ qnorm(.75, mean=100, sd=15)
 ```
 </aside>
 
+Calculate an 80% coverage interval, that is the range from the 0.10 to the 0.90 quantile:
 ```{r include=FALSE}
-test6=selectNumber(choices=c(52,69,73,81,85,89), correct=c(81), totalPts=1, name="80percentLeft")
+prob8=selectNumber(choices=c(52,69,73,81,85,89), correct=c(81), totalPts=1, name="80per.left")
 ```
-* Calculate an 80% coverage interval, that is the range from the 0.10 to the 0.90 quantile:
-  * Left end of interval: `r I(test6)`
-
+* Left end of interval: `r I(prob8)`
 ```{r include=FALSE}
-test7=selectNumber(choices=c(117,119,123,128,136), correct=c(119), totalPts=1, name="80percentRight")
+prob9=selectNumber(choices=c(117,119,123,128,136), correct=c(119), totalPts=1, name="80per.right")
 ```
-  * Right end of interval: `r I(test7)`
+* Right end of interval: `r I(prob9)`
 
 <aside>
 ANSWER:    
@@ -123,9 +121,9 @@ qnorm(.9, mean=100, sd=15)
 </aside>
 
 ```{r include=FALSE}
-test8=selectNumber(choices=c(0.25,0.37,0.41,0.48,0.52,0.61,0.73), correct=c(0.41), totalPts=1, name="between100and120")
+prob10=selectNumber(choices=c(0.25,0.37,0.41,0.48,0.52,0.61,0.73), correct=c(0.41), totalPts=1, name="100to120")
 ```
-* To calculate the probability of an outcome falling in a given range, you need to do two percentile calculations, one for each end of the range.  Then you substract the two different probabilities. What is the probability of a test score falling between 100 and 120? `r I(test8)`
+To calculate the probability of an outcome falling in a given range, you need to do two percentile calculations, one for each end of the range.  Then you substract the two different probabilities. What is the probability of a test score falling between 100 and 120? `r I(prob10)`
 
 <aside>
 ```{r}
@@ -133,6 +131,4 @@ pnorm(120,mean=100,sd=15)- pnorm(100,mean=100,sd=15)
 ```
 </aside>
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

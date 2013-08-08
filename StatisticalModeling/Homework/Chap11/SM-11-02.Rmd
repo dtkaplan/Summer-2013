@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 11 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-2-SD")
+require(ScoreR)
+startProblem("SM-11-2-SD")
 ```
 
 A coverage interval gives a range of values.  The "level" of the interval is the probability that a random trial will fall inside that range.  For example, in a 95% coverage interval, 95% of the trials will fall within the range.
@@ -32,6 +32,4 @@ calc3=selectSet(name="95perc2", totalPts=1, "The difference between them isn't 0
 ```
 * For a 95% interval, the 0.025 and 0.975 quantiles. `r I(calc3)`
 
-`r I(closeProblem())`
-
-
+`r I(endProblem())`

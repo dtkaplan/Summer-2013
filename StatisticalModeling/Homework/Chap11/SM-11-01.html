@@ -184,17 +184,17 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Intro to Statistical Modeling Ch. 11 Prob. 1</h1>
 
-<p>Two basic operations that you need to perform on probability models are these:    </p>
+<p>Two basic operations that you need to perform on probability models are these:</p>
 
 <ul>
 <li><p><strong>percentile</strong> Given a value, what is the probability (according to the model) of the outcome from one trial being that value or less?</p></li>
 <li><p><strong>quantile</strong> Given a probability, what is the value whose percentile is that probability?</p></li>
 </ul>
 
-<p>To illustrate by example, suppose that you are dealing with a probability model 
-for an IQ test score that is a normal distribution with these parameters: mean = 100 and standard deviation = 15.</p>
+<p>To illustrate by example, suppose that you are dealing with a probability model for an IQ test score that is a normal distribution with these parameters: mean = 100 and standard deviation = 15.</p>
 
-<p>Percentile question: What is the percentile that corresponds to a test score of 120?  Answer: \( 0.91 \) or, in other words, the 91st percentile.</p>
+<p>Percentile question: What is the percentile that corresponds to a test score of 120?<br/>
+Answer: \( 0.91 \) or, in other words, the 91st percentile. </p>
 
 <pre><code class="r">pnorm(120, mean = 100, sd = 15)
 </code></pre>
@@ -202,8 +202,8 @@ for an IQ test score that is a normal distribution with these parameters: mean =
 <pre><code>## [1] 0.9088
 </code></pre>
 
-<p>Quantile question: What score will 95% of scores be less than or equal to?
- Answer: a score of 125.</p>
+<p>Quantile question: What score will 95% of scores be less than or equal to?<br/>
+Answer: a score of 125.</p>
 
 <pre><code class="r">qnorm(0.95, mean = 100, sd = 15)
 </code></pre>
@@ -214,178 +214,108 @@ for an IQ test score that is a normal distribution with these parameters: mean =
 <p>Here are two very basic questions about percentile and quantile calculations:</p>
 
 <ul>
-<li><p>The output of a percentile question will always be a probability, that is, a number between 0 and 1. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      1,
-"name": "TorF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>The output of a percentile question will always be a probability, that is, a number between 0 and 1. <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "TRUE" 
 }'>TRUE</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      1,
-"name": "TorF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "FALSE" 
-}'>FALSE</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>The output of a quantile question will always be a value, that is, something in the same units as the random variable. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>FALSE</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-11-1-SD",
-"itemN":      2,
-"name": "TorF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      1,
+"name": "TorF1",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The output of a quantile question will always be a value, that is, something in the same units as the random variable. <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "TRUE" 
 }'>TRUE</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      2,
-"name": "TorF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "FALSE" 
-}'>FALSE</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+}'>FALSE</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-11-1-SD",
+"itemN":      2,
+"name": "TorF2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>Sometimes to answer more complicated questions, you need first to answer one or more percentile or quantile questions.</p>
 
-<p>Answer the following questions, using the normal probability model with the
-parameters given above: </p>
+<p>Answer the following questions, using the normal probability model with the parameters given above: </p>
+
+<p>What&#39;s the test score that almost everybody, say, 99% of people, will do better than?  </p>
 
 <ul>
-<li><p>What&#39;s the test score that almost everybody, say, 99% of people, will do better than?  </p>
-
-<ul>
-<li>Which kind of calculation is this? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      3,
-"name": "testScore",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Which kind of calculation is this? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "percentile" 
 }'>percentile</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      3,
-"name": "testScore",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "quantile" 
-}'>quantile</option> </select><span id='out3' class='shiny-html-output'> </span></li>
-<li>What is the answer? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>quantile</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      3,
+"name": "kind",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>What is the answer? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "55" 
 }'>55</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "65" 
 }'>65</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "75" 
 }'>75</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "95" 
 }'>95</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "115" 
 }'>115</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "125" 
 }'>125</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      4,
-"name": "testAnswer",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "135" 
-}'>135</option> </select><span id='out4' class='shiny-html-output'> </span></li>
-</ul></li>
+}'>135</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-11-1-SD",
+"itemN":      4,
+"name": "answer",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -401,144 +331,147 @@ This involves the 0.01 quantile, since 99% are doing <strong>better</strong>.</p
 <p></aside></p>
 
 <ul>
-<li><p>To calculate a coverage interval on a probability model, you need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these probabilities from: <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      5,
-"name": "calcType",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>To calculate a coverage interval on a probability model, you need to calculate two quantities: one for the left end of the interval and one for the right.  Which type of calculation are these probabilities from: <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "percentile" 
 }'>percentile</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      5,
-"name": "calcType",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "quantile" 
-}'>quantile</option> </select><span id='out5' class='shiny-html-output'> </span></p></li>
-<li><p>Calculate a 50% coverage interval on the test scores, that is the range from the 0.25 quantile to the 0.75 quantile:</p>
-
-<ul>
-<li>Left end of interval: <select name='in6'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>quantile</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      5,
+"name": "type2",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>Calculate a 50% coverage interval on the test scores, that is the range from the 0.25 quantile to the 0.75 quantile:</p></li>
+<li><p>Left end of interval: <select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "80" 
 }'>80</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "85" 
 }'>85</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "90" 
 }'>90</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "95" 
 }'>95</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "100" 
 }'>100</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "105" 
 }'>105</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "110" 
 }'>110</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "115" 
 }'>115</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      6,
-"name": "LeftEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "120" 
-}'>120</option> </select><span id='out6' class='shiny-html-output'> </span></li>
-</ul></li>
+}'>120</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
+"setID": "SM-11-1-SD",
+"itemN":      6,
+"name": "50per.left",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select>
+<aside>
+ANSWER:    </p></li>
+</ul>
+
+<pre><code class="r">qnorm(0.25, mean = 100, sd = 15)
+</code></pre>
+
+<pre><code>## [1] 89.88
+</code></pre>
+
+<pre><code class="r">qnorm(0.75, mean = 100, sd = 15)
+</code></pre>
+
+<pre><code>## [1] 110.1
+</code></pre>
+
+<p></aside></p>
+
+<ul>
+<li>Right end of interval: <select name='ScoreR7'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "80" 
+}'>80</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "85" 
+}'>85</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "90" 
+}'>90</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "95" 
+}'>95</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "100" 
+}'>100</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "105" 
+}'>105</option> <option value='{
+"pts":      1,
+"hint": "",
+"reward": "Right!",
+"content": "110" 
+}'>110</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "115" 
+}'>115</option> <option value='{
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "120" 
+}'>120</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
+"setID": "SM-11-1-SD",
+"itemN":      7,
+"name": "50per.right",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
@@ -558,274 +491,78 @@ ANSWER:    </p>
 
 <p></aside></p>
 
-<ul>
-<li>Right end of interval: <select name='in7'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "80" 
-}'>80</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "85" 
-}'>85</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "90" 
-}'>90</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "95" 
-}'>95</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "100" 
-}'>100</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "105" 
-}'>105</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
-"hint": "",
-"reward": "Right!",
-"content": "110" 
-}'>110</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "115" 
-}'>115</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      7,
-"name": "RightEnd",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "120" 
-}'>120</option> </select><span id='out7' class='shiny-html-output'> </span></li>
-</ul>
-
-<p><aside>
-ANSWER:     </p>
-
-<pre><code class="r">qnorm(0.25, mean = 100, sd = 15)
-</code></pre>
-
-<pre><code>## [1] 89.88
-</code></pre>
-
-<pre><code class="r">qnorm(0.75, mean = 100, sd = 15)
-</code></pre>
-
-<pre><code>## [1] 110.1
-</code></pre>
-
-<p></aside></p>
+<p>Calculate an 80% coverage interval, that is the range from the 0.10 to the 0.90 quantile:</p>
 
 <ul>
-<li><p>Calculate an 80% coverage interval, that is the range from the 0.10 to the 0.90 quantile:</p>
-
-<ul>
-<li>Left end of interval: <select name='in8'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Left end of interval: <select name='ScoreR8'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "52" 
 }'>52</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "69" 
 }'>69</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "73" 
 }'>73</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "81" 
 }'>81</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "85" 
 }'>85</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      8,
-"name": "80percentLeft",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "89" 
-}'>89</option> </select><span id='out8' class='shiny-html-output'> </span></li>
-<li>Right end of interval: <select name='in9'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>89</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR8out'></input></small><select style='visibility: hidden' width='5' name='ScoreR8info'><option value='{
 "setID": "SM-11-1-SD",
-"itemN":      9,
-"name": "80percentRight",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      8,
+"name": "80per.left",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>Right end of interval: <select name='ScoreR9'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "117" 
 }'>117</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      9,
-"name": "80percentRight",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "119" 
 }'>119</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      9,
-"name": "80percentRight",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "123" 
 }'>123</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      9,
-"name": "80percentRight",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "128" 
 }'>128</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":      9,
-"name": "80percentRight",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "136" 
-}'>136</option> </select><span id='out9' class='shiny-html-output'> </span></li>
-</ul></li>
+}'>136</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR9out'></input></small><select style='visibility: hidden' width='5' name='ScoreR9info'><option value='{
+"setID": "SM-11-1-SD",
+"itemN":      9,
+"name": "80per.right",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p><aside>
@@ -845,93 +582,48 @@ ANSWER:    </p>
 
 <p></aside></p>
 
-<ul>
-<li>To calculate the probability of an outcome falling in a given range, you need to do two percentile calculations, one for each end of the range.  Then you substract the two different probabilities. What is the probability of a test score falling between 100 and 120? <select name='in10'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>To calculate the probability of an outcome falling in a given range, you need to do two percentile calculations, one for each end of the range.  Then you substract the two different probabilities. What is the probability of a test score falling between 100 and 120? <select name='ScoreR10'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.25" 
 }'>0.25</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.37" 
 }'>0.37</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.41" 
 }'>0.41</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.48" 
 }'>0.48</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.52" 
 }'>0.52</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.61" 
 }'>0.61</option> <option value='{
-"itemInfo": {
-"setID": "SM-11-1-SD",
-"itemN":     10,
-"name": "between100and120",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.73" 
-}'>0.73</option> </select><span id='out10' class='shiny-html-output'> </span></li>
-</ul>
+}'>0.73</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR10out'></input></small><select style='visibility: hidden' width='5' name='ScoreR10info'><option value='{
+ "setID": "SM-11-1-SD",
+"itemN":     10,
+"name": "100to120",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside></p>
 
@@ -943,7 +635,7 @@ ANSWER:    </p>
 
 <p></aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "in6", "in7", "in8", "in9", "in10" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "TorF1", "TorF2", "kind", "answer", "type2", "50per.left", "50per.right", "80per.left", "80per.right", "100to120" ]'>problem roster</option></select></p>
 
 </body>
 

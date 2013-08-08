@@ -2,13 +2,13 @@ Intro to Statistical Modeling Ch. 11 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-11-11-SD")
+require(ScoreR)
+startProblem("SM-11-11-SD")
 ```
 
 In 1898, Ladislaus von Bortkiewicz published *The Law of Small Numbers*, in which he demonstrated the applicability of the Poisson probability law.  One example dealt with the number of Prussian cavalry soldiers who were kicked to death by their horses.  The Prussian army monitored 10 cavalry corps for 20 years and recorded the number $x$ of fatalities each year in each corps.  There were a total of $10 \times 20 = 200$ one-year observations, as shown in the table:
 
-Number of | Number of Times $x$
+Number of &nbsp; | &nbsp; Number of Times $x$
 |:----:|:----:|
 **Deaths $x$** | **Deaths were Observed**
 0 | 109
@@ -16,10 +16,6 @@ Number of | Number of Times $x$
 2 | 22
 3 | 3
 4 | 1
-
-
-
-
 
 ```{r include=FALSE}
 death=selectSet(name="mean", totalPts=1, "(109+65+22+3+1)/5"=FALSE, "(109+65+22+3+1)/200"=FALSE, "(0*109 + 1*65 + 2*22 + 3*3 + 4*1)/5"=FALSE, "(0*109 + 1*65 + 2*22 + 3*3 + 4*1)/200"=TRUE, "Can't tell from the information given."=FALSE)
@@ -63,15 +59,13 @@ So, if the poisson model applies, we would expect $108.67$ corps with no deaths 
 
 * Repeat the probability calculation for 1, 2, 3, and 4 deaths per year per calvary corps.  Multiply the probabilities by 200 to find the expected number of calvary corps with each number of deaths. Which of these tables is closest to the theoretical values:
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="tables")
 ```
 `r I(f(FALSE))` 112.67 | 64.29 | 16.22 | 5.11 | 1.63     
 `r I(f(TRUE))` 108.67 | 66.29 | 20.22 | 4.11 | 0.63     
 `r I(f(FALSE))` 102.67 | 70.29 | 22.22 | 6.11 | 0.63     
 `r I(f(FALSE))` 106.67 | 68.29 | 17.22 | 6.11 | 1.63      
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 <aside>
 ANSWER:     
@@ -85,4 +79,4 @@ table( rpois( 200, 0.61 ) )
 This random draw from the theoretical distribution was even further from the expected value than the observed data, suggesting that the observed data are consistent with a random draw from the model.  Of course, we should quantify this and repeat the random draw many times to see what would be a typical deviation from the expected value. That's for later in the course.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`
