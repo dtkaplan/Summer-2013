@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch.3 Prob. 3
+Intro to Statistical Modeling Ch. 3 Prob. 3
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -58,14 +58,9 @@ that the interval will run from the 5th percentile to the 95th percentile.
  
 Find the 50-percent coverage interval of the following variables in Galton's height data:
 ```{r include=FALSE}
-h=newMC(totalPts=1, name="50perc")
+prob1=selectSet(name="50per", totalPts=1, "59 to 73 inches"=FALSE, "68 to 71 inches"=TRUE, "63 to 65.5 inches"=FALSE, "68 to 74 inches"=FALSE)
 ```
-* Father's heights     
-    `r I(h(FALSE))` 59 to 73 inches     
-    `r I(h(TRUE))` 68 to 71 inches     
-    `r I(h(FALSE))` 63 to 65.5 inches     
-    `r I(h(FALSE))` 68 to 74 inches    
-`r I(h(finish=TRUE))`
+* Father's heights `r I(prob1)`
 
 <aside>
 ANSWER: A 50-percent coverage interval will leave 25 percent of the data to the left and another 25 percent to the right, so the interval runs from the 25th to the 75th percentile.      
@@ -86,15 +81,10 @@ qdata(c(0.75), father, data=galton)
 But it's nicer to have both ends of the interval reported in one statement.
 </aside>
 
-* Mother's heights
 ```{r include=FALSE}
-j=newMC(totalPts=1, name="mother")
+prob2=selectSet(name="mother", totalPts=1, "59 to 73 inches"=FALSE, "68 to 71 inches"=FALSE, "63 to 65.5 inches"=TRUE, "68 to 74 inches"=FALSE)
 ```
-    `r I(j(FALSE))` 59 to 73 inches     
-    `r I(j(FALSE))` 68 to 71 inches     
-    `r I(j(TRUE))` 63 to 65.5 inches     
-    `r I(j(FALSE))` 68 to 74 inches     
-`r I(j(finish=TRUE))`
+* Mother's heights `r I(prob2)`   
 
 <aside>
 ANSWER:
@@ -109,16 +99,11 @@ qdata(c(0.25, 0.75), mother, data=galton)
 
 
 Find the 95-percent coverage interval of
-* Father's heights
 ```{r include=FALSE}
-k=newMC(totalPts=1, name="father")
+prob3=selectSet(name="father", totalPts=1, "65 to 73 inches"=FALSE, "65 to 74 inches"=TRUE, "68 to 73 inches"=FALSE, "59 to 69 inches"=FALSE)
 ```
-    `r I(k(FALSE))` 65 to 73 inches     
-    `r I(k(TRUE))` 65 to 74 inches     
-    `r I(k(FALSE))` 68 to 73 inches    
-    `r I(k(FALSE))` 59 to 69 inches     
-`r I(k(finish=TRUE))`
-
+* Father's heights `r I(prob3)`
+    
 <aside>
 ANSWER:For a 95-percent coverage interval, look at the 2.5 and 97.5
 percentile. 
@@ -127,16 +112,12 @@ qdata(c(0.025,0.975), father, data=galton)
 ```
 </aside>
 
-* Mother's heights
 ```{r include=FALSE}
-l=newMC(totalPts=1, name="mother.2")
+prob4=selectSet(name="mother2", totalPts=1, "62.5 to 68.5 inches"=FALSE, "65 to 69 inches"=FALSE, "63 to 68.5 inches"=FALSE, "59 to 69 inches"=TRUE)
 ```
-    `r I(l(FALSE))` 62.5 to 68.5 inches         
-    `r I(l(FALSE))` 65 to 69 inches      
-    `r I(l(FALSE))` 63 to 68.5 inches     
-    `r I(l(TRUE))` 59 to 69 inches     
-`r I(l(finish=TRUE))`
+* Mother's heights `r I(prob4)`
 
+    
 <aside>
 ANSWER:
 ```{r}
@@ -145,4 +126,3 @@ qdata(c(0.025, 0.975), mother, data=galton)
 </aside>
 
 `r I(endProblem())`
-

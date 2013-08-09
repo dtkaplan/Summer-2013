@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.01
+Intro to Statistical Modeling Ch. 3 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -10,7 +10,7 @@ Here is a small table of percentiles of typical daily calorie consumption
 of college students.
 
 
-Percentile  | Calories
+Percentile &nbsp; | &nbsp; Calories
 :-----:|:-----:
 0 | 1400
 5 | 1800

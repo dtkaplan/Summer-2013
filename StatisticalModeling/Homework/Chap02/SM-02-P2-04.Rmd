@@ -8,7 +8,7 @@ startProblem("SM-02-P2-24-SD")
 
 Here is a small data frame about automobiles.
 
-Make and model  |  Vehicle type | Trans. type | \# of cyl. |  City MPG |  Hwy MPG
+Make and model &nbsp; | &nbsp; Vehicle type &nbsp; | &nbsp; Trans. type &nbsp; | &nbsp; \# of cyl. &nbsp; | &nbsp; City MPG &nbsp; | &nbsp; Hwy MPG
 :-----: | :-----: | :-----: | :-----: | :-----: | :-----: 
 Kia Optima  |  compact  | Man.  | 4 | 21  | 31
 Kia Optima  | compact | Auto. | 6 | 20  | 28
