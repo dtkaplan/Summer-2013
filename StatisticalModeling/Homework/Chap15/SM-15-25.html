@@ -232,7 +232,8 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">summary(mod)
 </code></pre>
 
-<pre><code>## Error: object &#39;mod&#39; not found
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error: object &#39;mod&#39; not found
 </code></pre>
 
 <p><strong>SHOULD MATCH</strong>
@@ -249,7 +250,10 @@ Estimate &amp; Std. Error &amp; t value &amp; Pr(\( > \)$|\( t \)|$) \
 <pre><code class="r">summary(lm(systolic ~ D, data = run.sim(vitaminD, 100)))$coef[2, 4]
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error in is.data.frame(data) : could not find function
+## &quot;run.sim&quot; Calls: lm ... model.frame -&gt; model.frame.default -&gt;
+## is.data.frame
 </code></pre>
 
 <p><strong>SHOULD MATCH</strong>
@@ -263,7 +267,10 @@ Estimate &amp; Std. Error &amp; t value &amp; Pr(\( > \)$|\( t \)|$) \
     4]
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error in is.data.frame(data) : could not find function
+## &quot;run.sim&quot; Calls: lm ... model.frame -&gt; model.frame.default -&gt;
+## is.data.frame
 </code></pre>
 
 <pre><code class="r">table(s &lt; 0.05)
@@ -276,33 +283,25 @@ Estimate &amp; Std. Error &amp; t value &amp; Pr(\( > \)$|\( t \)|$) \
 
 <p>As you explore various sample sizes \( n \), write down the power you got for each.</p>
 
-<p><strong>Sample Size:</strong> <textarea cols='30' rows='1' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><strong>Sample Size:</strong> <textarea cols='30' rows='1' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
  "setID": "SM-15-25-SD",
 "itemN":      1,
 "name": "sample.size",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
-
-<p><strong>Power:</strong> <textarea cols='30' rows='1' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
- "pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p>
+
+<p><strong>Power:</strong> <textarea cols='30' rows='1' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
  "setID": "SM-15-25-SD",
 "itemN":      2,
 "name": "power",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <h4>Now you run your study</h4>
 
@@ -324,7 +323,11 @@ Estimate &amp; Std. Error &amp; t value &amp; Pr(\( > \)$|\( t \)|$) \
 
 <p>Now analyze your data, and determine the outcome of your hypothesis test.  Write down your p-value.  We&#39;ll tally up the various p-values in class.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2" ]'>Ignore me</option></select></p>
+<pre><code>
+Error in unique(c(&quot;AsIs&quot;, oldClass(x))) : 
+  could not find function &quot;closeProblem&quot;
+
+</code></pre>
 
 </body>
 
