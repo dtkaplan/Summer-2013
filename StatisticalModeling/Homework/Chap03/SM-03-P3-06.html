@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Intro to Statistical Modeling Ch.3 Prob. 6</title>
+<title>Intro to Statistical Modeling Ch. 3 Prob. 6</title>
 
 <style type="text/css">
 body, td {
@@ -178,7 +178,7 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Intro to Statistical Modeling Ch.3 Prob. 6</h1>
+<h1>Intro to Statistical Modeling Ch. 3 Prob. 6</h1>
 
 <p>Using Galton&#39;s height <code>Galton</code>, compute the answers to these
 questions about outliers using the 1.5 IQR rule of
@@ -195,10 +195,15 @@ thumb.  To help, you execute the following command to create a function <code>ou
 
 <p>Example:</p>
 
-<pre><code>tally(~outlier(father), data=Galton)
+<pre><code class="r">tally(~outlier(father), data = Galton)
 </code></pre>
 
-<ol>
+<pre><code>## 
+##  TRUE FALSE Total 
+##     9   889   898
+</code></pre>
+
+<ul>
 <li><p>Which of these statements will compute the number of cases that are outliers with respect to <em>height</em>?  (Remember that the data frame is named <code>Galton</code>.)</p>
 
 <p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
@@ -286,7 +291,7 @@ thumb.  To help, you execute the following command to create a function <code>ou
 "totalpts":      1,
 "type": "Fixed Choice" 
 }'>Info for Select Set</option></select></p></li>
-</ol>
+</ul>
 
 <p><aside>
 ANSWER:         </p>
@@ -301,7 +306,7 @@ ANSWER:         </p>
 
 <p></aside></p>
 
-<ol>
+<ul>
 <li>How many of the cases are outliers in <em>mother</em>? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
@@ -344,7 +349,7 @@ ANSWER:         </p>
 "totalpts":      1,
 "type": "Fixed Choice" 
 }'>Info for Select Set</option></select></li>
-</ol>
+</ul>
 
 <p><aside>
 ANSWER:</p>
@@ -359,7 +364,7 @@ ANSWER:</p>
 
 <p></aside></p>
 
-<ol>
+<ul>
 <li>How many of the cases are outliers in <em>father</em>? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
@@ -402,7 +407,7 @@ ANSWER:</p>
 "totalpts":      1,
 "type": "Fixed Choice" 
 }'>Info for Select Set</option></select></li>
-</ol>
+</ul>
 
 <p><aside>
 ANSWER:</p>
@@ -417,54 +422,56 @@ ANSWER:</p>
 
 <p></aside></p>
 
-<p>(5) Looking just at the cases where <em>mother</em> is an outlier, how
-  many of the children involved (variable <em>sex</em>) are female? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
- "pts":      0,
+<ul>
+<li>Looking just at the cases where <em>mother</em> is an outlier, how
+many of the children involved (variable <em>sex</em>) are female? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "5" 
 }'>5</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "10" 
 }'>10</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "15" 
 }'>15</option> <option value='{
- "pts":      1,
+"pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "20" 
 }'>20</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "25" 
 }'>25</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "30" 
 }'>30</option> <option value='{
- "pts":      0,
+"pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "35" 
 }'>35</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
- "setID": "SM-3-P6-SD",
+"setID": "SM-3-P6-SD",
 "itemN":      5,
 "name": "female",
 "totalpts":      1,
 "type": "Fixed Choice" 
-}'>Info for Select Set</option></select></p>
+}'>Info for Select Set</option></select></li>
+</ul>
 
 <p><aside></p>
 

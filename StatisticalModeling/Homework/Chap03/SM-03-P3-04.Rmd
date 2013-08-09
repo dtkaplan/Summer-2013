@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch.3 Prob. 4
+Intro to Statistical Modeling Ch. 3 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)

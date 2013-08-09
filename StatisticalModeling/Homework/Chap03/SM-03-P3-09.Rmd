@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.09
+Intro to Statistical Modeling Ch. 3 Prob. 9
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -48,20 +48,10 @@ ANSWER:
 The IQR is the distance between the 25th and 75th percentiles.
 </aside>
 
-* What is the 40th percentile?
 ```{r include=FALSE}
-f = newMC(totalPts=1, name="40per")
+prob1=selectSet(name="40per", totalPts=1, "Between 0 and 1"=FALSE, "Between 1 and 2"=TRUE, "Between 2 and 3"=FALSE, "Between 3 and 4"=FALSE, "Between 4 and 6"=FALSE, "Can't estimate from this graph"=FALSE)
 ```
-
- `r I(f(FALSE))` Between 0 and 1     
- `r I(f(TRUE))` Between 1 and 2      
- `r I(f(FALSE))` Between 2 and 3      
- `r I(f(FALSE))` Between 3 and 4     
- `r I(f(FALSE))` Between 4 and 6      
- `r I(f(FALSE))` Can't estimate from this graph     
- 
-`r I(f(finish=TRUE))`
-
+* What is the 40th percentile? `r I(prob1)`
 
 <aside>
 ANSWER:
