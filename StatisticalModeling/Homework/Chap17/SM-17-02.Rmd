@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 17 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-17-2-SD")
+require(ScoreR)
+startProblem("SM-17-2-SD")
 ```
 
 $$
@@ -53,4 +53,4 @@ prob8=selectSet(name="8", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE
 ```
 * $A\causedBy C\causes D \causedBy E\causedBy B$ `r I(prob8)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

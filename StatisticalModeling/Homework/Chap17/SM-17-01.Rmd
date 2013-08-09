@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 17 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-17-1-SD")
+require(ScoreR)
+startProblem("SM-17-1-SD")
 ```
 
 $$
@@ -54,4 +54,4 @@ prob8=selectSet(name="8", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, 
 * $A\causedBy C\causes D \causedBy E\causedBy B$ `r I(prob8)`
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
