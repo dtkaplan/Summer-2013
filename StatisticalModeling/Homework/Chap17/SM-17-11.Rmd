@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 17 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-17-11-SD")
+require(ScoreR)
+startProblem("SM-17-11-SD")
 ```
 Here is a somewhat complicated hypothetical causal network:
 
@@ -27,9 +27,7 @@ prob3=selectSet(name="E", totalPts=1, "Blocks"=FALSE, "Unblocks"=FALSE, "Neither
 
 
 You could use C to block the backdoor pathway from F to D through A. Explain why this would not be a good thing to do if you want to study the causal connection between F and D.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="explain", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="explain", totalPts=2, rows=3))`
 
 <aside>
@@ -37,4 +35,4 @@ ANSWER:
 While C blocks the backdoor pathway, as a causal mediator between F and D it also blocks the pathway that you want to study.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 17 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-17-10-SD")
+require(ScoreR)
+startProblem("SM-17-10-SD")
 ```
 To answer the following questions, refer to the hypothetical causal network shown in Figure 17.9.
 
@@ -44,4 +44,4 @@ prob7=selectSet(name="c.education", totalPts=1, "blocks"=FALSE, "does not block"
 ```
 * C is class size and parents' education. `r I(prob7)`
 
-`r I(closeProblem())`
+`r I(endProblem())`
