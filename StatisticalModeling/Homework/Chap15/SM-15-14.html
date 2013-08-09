@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Intro to Statistical Modeling Ch. 15 Prob. 4</title>
+<title>Intro to Statistical Modeling Ch. 15 Prob. 14</title>
 
 <style type="text/css">
 body, td {
@@ -178,7 +178,7 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<h1>Intro to Statistical Modeling Ch. 15 Prob. 4</h1>
+<h1>Intro to Statistical Modeling Ch. 15 Prob. 14</h1>
 
 <p>Consider the following analysis of the kids&#39; feet data looking for a relationship between foot width and whether the child is left or right handed.  The variable <code>domhand</code> gives the handedness, either <code>L</code> or <code>R</code>.<br/>
 We&#39;ll construct the model in two different ways.  There are 39 cases altogether.</p>
@@ -212,6 +212,16 @@ We&#39;ll construct the model in two different ways.  There are 39 cases altoget
 the second case it is. </li>
 </ul>
 
+<p><textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-15-4-SD",
+"itemN":      1,
+"name": "pvalue",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
+
 <p><aside>
 ANSWER:<br/>
 The first model includes an intercept term (which is almost always what you want).  With the intercept term in the model, the <em>domhand</em> variable accounts for the differences in foot width between left- and right-handed kids.  The null hypothesis is that in the population the widths are the same in the two groups.  This can&#39;t be rejected.</p>
@@ -223,12 +233,18 @@ The first model includes an intercept term (which is almost always what you want
 <li>Why does <em>domhand</em> have 1 degree of freedom in the first ANOVA report, but 2 degrees of freedom in the second?</li>
 </ul>
 
+<pre><code>
+Error in textItem(nname = &quot;domhand&quot;, totalPts = 2, rows = 3) : 
+  unused argument (nname = &quot;domhand&quot;)
+
+</code></pre>
+
 <p><aside>
 ANSWER:<br/>
 In the model for the second report, the <em>domhand</em> variable has two model vectors, since there is no intercept.  In the first model, one of these two degrees of freedom is taken up by the intercept, so <em>domhand</em> contributes just one degree of freedom to the model.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "pvalue" ]'>problem roster</option></select></p>
 
 </body>
 

@@ -2,14 +2,14 @@ Intro to Statistical Modeling Ch. 15 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-12-SD")
+require(ScoreR)
+startProblem("SM-15-12-SD")
 ```
 During a conversation about college admissions, a group of high-school students starts to wonder how reliable the SAT score is, that is, how much an **individual student's** score could be expected vary just do to random factors such as the day on which the test was taken, the student's mood, the specific questions on the test, etc. This variation within an individual is quite different from the variation from person to person.
 
 The high-school students decide to study the issue. A simple way to do this is to have one student take the SAT test several times and examine the variability in the student's scores. But, it would be better to do this for many different students. To this end, the students propose to pool together their scores from the times they took the SAT, producing a data frame that looks like this:
 
-Student | Score | Sex | Order
+Student &nbsp; | &nbsp; Score &nbsp; | &nbsp; Sex &nbsp; | &nbsp; Order
 :---|---:|----:|---:|
 PersonA | 2110 | F | 1
 PersonB | 1950 | M | 1
@@ -40,9 +40,6 @@ ANSWER:
 The sum of square residuals is a good start, but it depends on how many cases there are in the data set.  Better to look at the mean square residual, which gives the typical size of a residual for a single student taking the exam one time.  This could be a good reflection of the session-to-session variability for one student.
 </aside>
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="Explain", totalPts=2, rows=3))
-```
 The students' statistics teacher points out that the model *score* ~ *student*
  will exactly capture the score of any student who takes the SAT only once; the residuals for those students will be exactly zero.  Explain why this isn't a problem, given the purpose for which the model is being constructed.     
 `r I(textItem(name="Explain", totalPts=2, rows=3))`
@@ -60,15 +57,13 @@ Still another student suggests the model *score* ~ *student* + *order* in order 
 * Elaboration 2: *score* ~ *student* + *order* + *student*:*order* 
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="additional.covariate")
 ```
 Why not include *sex* as an additional covariate, as in Elaboration 1, to take into account the possibility that males and females might have systematically different scores.    
 `r I(f(FALSE))` It's a good idea.    
 `r I(f(FALSE))` Bad idea since a person's sex probably has nothing to do with his or her score.        
-`r I(f(TRUE))` Useless, since *sex* is redundant with *student*.    
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(TRUE))` Useless, since *sex* is redundant with *student*.       
+`r I(f(finish=TRUE))`
 
 <aside>
 ANSWER:    
@@ -98,7 +93,7 @@ prob5=selectSet(name="TorF3", totalPts=1, "TRUE"=TRUE, "FALSE"=FALSE)
 ANSWER:    
 With the interaction term, the model will fit exactly the scores from any student who takes the test one or two times, because a separate linear model is effectively being fit for each student.  Since a straight-line model can fit perfectly any two data points (or any one data point), the residual will be zero for the students who take the test just once or twice, even if there is genuine variability.
 
-In short, the interaction term adds a lot of new degrees of freedom --- as many as in the \VN{student} variable itself --- and reduces the degrees of freedom in the residual accordingly.  
+In short, the interaction term adds a lot of new degrees of freedom --- as many as in the *student* variable itself --- and reduces the degrees of freedom in the residual accordingly.  
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

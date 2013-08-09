@@ -1,9 +1,9 @@
-Intro to Statistical Modeling Ch. 15 Prob. 4
+Intro to Statistical Modeling Ch. 15 Prob. 14
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-4-SD")
+require(ScoreR)
+startProblem("SM-15-4-SD")
 ```
 
 Consider the following analysis of the kids' feet data looking for a relationship between foot width and whether the child is left or right handed.  The variable <code>domhand</code> gives the handedness, either <code>L</code> or <code>R</code>.    
@@ -23,9 +23,8 @@ anova( lm(width ~ domhand - 1, data=kids))
 
 * Explain why, in the first case, the p-value is not significant, but in
 the second case it is. 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="pvalue", totalPts=2, rows=3))
-```
+
+`r I(textItem(name="pvalue", totalPts=2, rows=3))`
 
 <aside>
 ANSWER:    
@@ -35,13 +34,12 @@ Without the intercept, as in the second model, *domhand* accounts not just for t
 </aside>
 
 * Why does *domhand* have 1 degree of freedom in the first ANOVA report, but 2 degrees of freedom in the second?
-```{r include=FALSE, eval=FALSE}
-I(textItem(nname="domhand", totalPts=2, rows=3))
-```
+
+`r I(textItem(nname="domhand", totalPts=2, rows=3))`
 
 <aside>
 ANSWER:    
 In the model for the second report, the *domhand* variable has two model vectors, since there is no intercept.  In the first model, one of these two degrees of freedom is taken up by the intercept, so *domhand* contributes just one degree of freedom to the model.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

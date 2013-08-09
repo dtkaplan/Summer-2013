@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 15 Prob. 25
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-25-SD")
+require(ScoreR)
+startProblem("SM-15-25-SD")
 ```
 This problem is motivated by a report about the link between vitamin D deficiency and high blood pressure. (Roni Caryn Rabin, "Vitamin D Shows Heart Benefits in Study", Nov. 16, 2009)  The point of the problem is to exercise statistical concepts, so do not take the results of your work as indicating the real-world effects of vitamin D.  
 
@@ -78,13 +78,9 @@ If the power is greater than your boss's mandated 80%, you can make the sample s
 
 As you explore various sample sizes $n$, write down the power you got for each.
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="sample.size", totalPts=2, rows=1))
-```
+
 **Sample Size:** `r I(textItem(name="sample.size", totalPts=2, rows=1))`
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="power", totalPts=2, rows=1))
-```
+
 **Power:** `r I(textItem(name="power", totalPts=2, rows=1))`
 
 #### Now you run your study

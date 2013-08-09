@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 15 Prob. 22
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-22-SD")
+require(ScoreR)
+startProblem("SM-15-22-SD")
 ```
 
 ```{r include=FALSE}
@@ -15,9 +15,6 @@ I'm interested in studying the length of gestation as a function of the ages of 
 summary(lm( gestation ~ age+dage, data=b))
 ```
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="age.gestation", totalPts=2, rows=3))
-```
 * Describe in everyday language the relationship between age and gestation indicated by this model.    
 `r I(textItem(name="age.gestation", totalPts=2, rows=3))`
 
@@ -35,10 +32,6 @@ anova( lm(gestation ~ age+dage, data=b))
 anova( lm( gestation ~ dage+age, data=b))
 ```
         
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="single.p.value", totalPts=2, rows=3))
-```
 `r I(textItem(name="single.p.value", totalPts=2, rows=3))`
 
 <aside>
@@ -50,4 +43,4 @@ ASIDE: It's interesting to note that putting *dage* first dramatically increases
 If *dage* had been left out of the model, the F statistic on the mother's age would have been more significant.  When both parents' ages are included in the model, they "split the credit."
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

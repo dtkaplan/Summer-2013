@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 15 Prob. 21
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-21-SD")
+require(ScoreR)
+startProblem("SM-15-21-SD")
 ```
 
 In conducting a hypothesis test, we need to specify two things:
@@ -122,4 +122,4 @@ In (5), the data are being shuffled, just like a deck of cards is shuffled.  But
 </aside>
 
 
-`r I(closeProblem())`
+`r I(endProblem())`
