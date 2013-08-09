@@ -455,9 +455,9 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 17.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-11.html) working
 
-* [Problem 17.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-11.html) missing image
+* [Problem 17.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-12.html) missing image
 
-* [Problem 17.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-11.html) working, but one of the short answers wants a diagram?  Also, supposed to be 17.12.  I made a labeling mistake
+* [Problem 17.13](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap17/SM-17-13.html) working, but one of the short answers wants a diagram?  Also, supposed to be 17.12.  I made a labeling mistake
 
 ## Chapter 18
 
