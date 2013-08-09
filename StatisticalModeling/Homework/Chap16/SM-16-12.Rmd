@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 16 Prob. 12
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-12-SD")
+require(ScoreR)
+startProblem("SM-16-12-SD")
 ```
 The concept of residuals does not cleanly apply to yes/no models because the model value is a probability (of a yes outcome), whereas the actual observation is the outcome itself.  It would be silly to try to compute a difference between "yes" and a probability like 0.8. After all, what could it mean to calculate $(\mbox{yes} - 0.8)^2$?
 
@@ -38,28 +38,24 @@ The likelihood for the whole set of observations combines the likelihoods of the
 
 * What is the likelihood under Model A for the whole set of cases?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="likelihood.A")
 ```
 `r I(f(FALSE))` $0.3 \times 0.4 \times 0.9 \times 0.5$    
 `r I(f(FALSE))` $0.7 \times 0.6 \times 0.9 \times 0.5$    
 `r I(f(FALSE))` $0.3 \times 0.4 \times 0.1 \times 0.5$    
 `r I(f(TRUE))` $0.7 \times 0.4 \times 0.9 \times 0.5$    
 `r I(f(FALSE))` $0.7 \times 0.4 \times 0.1 \times 0.5$    
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 * What is the likelihood under Model B for the whole set of cases?
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="likelihood.B")
 ```
 `r I(g(FALSE))` $0.4 \times 0.8 \times 0.3 \times 0.9$    
 `r I(g(TRUE))` $0.4 \times 0.2 \times 0.3 \times 0.9$    
 `r I(g(FALSE))` $0.6 \times 0.2 \times 0.3 \times 0.9$   
 `r I(g(FALSE))` $0.4 \times 0.2 \times 0.7 \times 0.9$    
 `r I(g(FALSE))` $0.4 \times 0.2 \times 0.3 \times 0.1$    
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
+`r I(g(finish=TRUE))`
 
-`r I(closeProblem())`
+`r I(endProblem())`

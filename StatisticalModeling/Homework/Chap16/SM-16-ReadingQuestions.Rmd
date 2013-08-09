@@ -2,26 +2,20 @@ Intro to Statistical Modeling Ch. 16 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-RQ-SD")
+require(ScoreR)
+startProblem("SM-16-RQ-SD")
 ```
 
 * What's the difference between a "link value" and a "probability value" in a logistic regression model? How are they related to one another? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="link", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="link", totalPts=2, rows=3))`
 
 * How does the logistic function serve to keep the fitted probability values always within the range 0 to 1?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="logistic", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="logistic", totalPts=2, rows=3))`
 
 * What is maximum likelihood and how is it used as a criterion to fit a model? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="likelihood", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="likelihood", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
