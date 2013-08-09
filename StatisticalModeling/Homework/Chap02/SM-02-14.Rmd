@@ -12,7 +12,7 @@ provides the interpretation of each number (hence the word "codebook").
 Here is a very small part of a dataset from the 1960s used to study the influence of smoking and other factors on the weights of babies at birth. `Gestation`
 
 
-gest. | wt | race | ed | wt.1 | inc | smoke & number
+gest. &nbsp; |  &nbsp; wt  &nbsp; |  &nbsp; race  &nbsp; |  &nbsp; ed  &nbsp; |  &nbsp; wt.1  &nbsp; |  &nbsp; inc  &nbsp; |  &nbsp; smoke & number
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 284 | 120 | 8 | 5 | 100 | 1 | 0 | 0
 282 | 113 | 0 | 5 | 135 | 4 | 0 | 0
