@@ -159,82 +159,59 @@ where some normal cases are 100 times as large as others.</p>
 <p>To illustrate, look at the <code>alder.csv</code> data set, which contains
 field data from a study of nitrogen fixation in alder plants.  The <em>SNF</em> variable records the amount of nitrogen fixed in soil by bacteria that reside in root nodules of the plants.  Make a box plot and a histogram and describe the distribution. Which of the following descriptions is most appropriate:</p>
 
-<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
+<p><select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> The distribution is skewed to the left, with outliers at very
-low values of <em>SNF</em>.<br/>
-<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
+"content": "The distribution is skewed to the left, with outliers at very low values of SNF." 
+}'>The distribution is skewed to the left, with outliers at very low values of SNF.</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> The distribution is skewed to the right, with outliers at very
-high values of <em>SNF</em>.<br/>
-<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
+"content": "The distribution is skewed to the right, with outliers at very high values of SNF." 
+}'>The distribution is skewed to the right, with outliers at very high values of SNF.</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> The distribution is roughly symmetrical, although there are a
-few outliers.
-<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"content": "The distribution is roughly symmetrical, although there are a few outliers." 
+}'>The distribution is roughly symmetrical, although there are a few outliers.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-3-P30-SD",
 "itemN":      1,
 "name": "descriptions",
 "totalpts":      1,
-"type": "MC",
-"reward": "" 
-}'>Question info</option></select></p>
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
-<p>In working with a variable like this, it can help to convert the
-variable in a way that respects the idea of a proportional change. 
-For instance, consider the three numbers 0.1, 1.0, and 10.0, which are
-evenly spaced in proportionate terms &mdash; each number is 10 times
-bigger than the preceding number.  But as absolute differences, 0.1
-and 1.0 are much closer to each other than 1.0 and 10.0.</p>
+<p>In working with a variable like this, it can help to convert the variable in a way that respects the idea of a proportional change. For instance, consider the three numbers 0.1, 1.0, and 10.0, which are evenly spaced in proportionate terms &mdash; each number is 10 times bigger than the preceding number.  But as absolute differences, 0.1 and 1.0 are much closer to each other than 1.0 and 10.0.</p>
 
-<p>The <em>logarithm</em> function transforms numbers to a scale where even
-proportions are equally spaced.  For instance, taking the logarithm of the
-numbers 0.1, 1.0, and 10.0 gives the sequence \( -1 \), 0, 1 &mdash; exactly
-evenly spaced.  </p>
+<p>The <em>logarithm</em> function transforms numbers to a scale where even proportions are equally spaced.  For instance, taking the logarithm of the numbers 0.1, 1.0, and 10.0 gives the sequence \( -1 \), 0, 1 &mdash; exactly evenly spaced.  </p>
 
-<p>The <em>logSNF</em> variable gives the logarithm of <em>SNF</em>.  Plot out
-the distribution of <em>logSNF</em>.<br/>
-Which of the following descriptions
-is most apt?</p>
+<p>The <em>logSNF</em> variable gives the logarithm of <em>SNF</em>.  Plot out the distribution of <em>logSNF</em>. Which of the following descriptions is most apt?</p>
 
-<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
+<p><select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> The distribution is skewed to the left.<br/>
-<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
+"content": "The distribution is skewed to the left." 
+}'>The distribution is skewed to the left.</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> The distribution is skewed to the right.<br/>
-<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
+"content": "The distribution is skewed to the right." 
+}'>The distribution is skewed to the right.</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> The distribution is roughly symmetrical.<br/>
-<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"content": "The distribution is roughly symmetrical." 
+}'>The distribution is roughly symmetrical.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
  "setID": "SM-3-P30-SD",
 "itemN":      2,
 "name": "descriptions.2",
 "totalpts":      1,
-"type": "MC",
-"reward": "" 
-}'>Question info</option></select></p>
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
-<p>You can compute logarithms directly in R, using the functions <code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions was used to compute the quantity <em>logSNF</em> from <em>SNF</em>. (Hint: Try
-them out!)</p>
+<p>You can compute logarithms directly in R, using the functions <code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions was used to compute the quantity <em>logSNF</em> from <em>SNF</em>. (Hint: Try them out!)</p>
 
 <p><select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
  "pts":      1,

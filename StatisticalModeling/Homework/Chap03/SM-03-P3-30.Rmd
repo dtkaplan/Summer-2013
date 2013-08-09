@@ -18,46 +18,25 @@ To illustrate, look at the <code>alder.csv</code> data set, which contains
 field data from a study of nitrogen fixation in alder plants.  The *SNF* variable records the amount of nitrogen fixed in soil by bacteria that reside in root nodules of the plants.  Make a box plot and a histogram and describe the distribution. Which of the following descriptions is most appropriate:
 
 ```{r include=FALSE}
-f=newMC(totalPts=1, name="descriptions")
+prob1=selectSet(totalPts=1, name="descriptions", "The distribution is skewed to the left, with outliers at very low values of SNF."=FALSE, "The distribution is skewed to the right, with outliers at very high values of SNF."=TRUE, "The distribution is roughly symmetrical, although there are a few outliers."=FALSE)
 ```
-`r I(f(FALSE))` The distribution is skewed to the left, with outliers at very
-low values of *SNF*.     
-`r I(f(TRUE))` The distribution is skewed to the right, with outliers at very
-high values of *SNF*.     
-`r I(f(FALSE))` The distribution is roughly symmetrical, although there are a
-few outliers.
-`r I(f(finish=TRUE))`
+ `r I(prob1)`
 
-In working with a variable like this, it can help to convert the
-variable in a way that respects the idea of a proportional change. 
-For instance, consider the three numbers 0.1, 1.0, and 10.0, which are
-evenly spaced in proportionate terms --- each number is 10 times
-bigger than the preceding number.  But as absolute differences, 0.1
-and 1.0 are much closer to each other than 1.0 and 10.0.
+In working with a variable like this, it can help to convert the variable in a way that respects the idea of a proportional change. For instance, consider the three numbers 0.1, 1.0, and 10.0, which are evenly spaced in proportionate terms --- each number is 10 times bigger than the preceding number.  But as absolute differences, 0.1 and 1.0 are much closer to each other than 1.0 and 10.0.
 
-The *logarithm* function transforms numbers to a scale where even
-proportions are equally spaced.  For instance, taking the logarithm of the
-numbers 0.1, 1.0, and 10.0 gives the sequence $-1$, 0, 1 --- exactly
-evenly spaced.  
+The *logarithm* function transforms numbers to a scale where even proportions are equally spaced.  For instance, taking the logarithm of the numbers 0.1, 1.0, and 10.0 gives the sequence $-1$, 0, 1 --- exactly evenly spaced.  
 
-The *logSNF* variable gives the logarithm of *SNF*.  Plot out
-the distribution of *logSNF*.       
-Which of the following descriptions
-is most apt?
+The *logSNF* variable gives the logarithm of *SNF*.  Plot out the distribution of *logSNF*. Which of the following descriptions is most apt?
 ```{r include=FALSE}
-g=newMC(totalPts=1, name="descriptions.2")
+prob2=selectSet(totalPts=1, name="descriptions.2", "The distribution is skewed to the left."=FALSE, "The distribution is skewed to the right."=FALSE, "The distribution is roughly symmetrical."=TRUE)
 ```
-`r I(g(FALSE))` The distribution is skewed to the left.     
-`r I(g(FALSE))` The distribution is skewed to the right.     
-`r I(g(TRUE))` The distribution is roughly symmetrical.    
-`r I(g(finish=TRUE))`
+ `r I(prob2)`
 
-You can compute logarithms directly in R, using the functions <code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions was used to compute the quantity *logSNF* from *SNF*. (Hint: Try
-them out!)
+You can compute logarithms directly in R, using the functions <code>log</code>, <code>log2</code>, or <code>log10</code>.  Which of these functions was used to compute the quantity *logSNF* from *SNF*. (Hint: Try them out!)
 ```{r include=FALSE}
 log=selectSet(name="whichfunction", totalPts=1, "log"=TRUE, "log2"=FALSE, "log10"=FALSE)
 ```
-`r I(log)`
+ `r I(log)`
 
 The *base* of the logarithm gives the size of the proportional change that corresponds to a 1-unit increase on the logarithmic scale.  For example, <code>log2</code> calculates the base-2 logarithm.  On the base-2 logarithmic scale, a doubling in size corresponds to a 1-unit increase.  In contrast, on the base-10 scale, a ten-fold increase in size gives a 1-unit increase. 
 

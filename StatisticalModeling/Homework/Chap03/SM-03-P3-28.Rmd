@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.28
+Intro to Statistical Modeling Ch. 3 Prob. 28
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -6,33 +6,19 @@ require(ScoreR)
 startProblem("SM-3-P28-SD")
 ```
 
-An advertisement for "America's premier weight loss destination"
-states that "a typical two week stay results in a loss of 7-14 lbs."
-(The *New Yorker*, 7 April 2008, p 38.)  
+An advertisement for "America's premier weight loss destination" states that "a typical two week stay results in a loss of 7-14 lbs." (The *New Yorker*, 7 April 2008, p 38.)  
 
-The advertisement gives no details about the meaning of "typical."
-Give two or three plausible interpretations of the quoted 7-14 pound
-figure in terms of "typical."  What interpretation would be most
-useful to a person trying to predict how much weight he or she might
-lose?
+The advertisement gives no details about the meaning of "typical." Give two or three plausible interpretations of the quoted 7-14 pound figure in terms of "typical."  What interpretation would be most useful to a person trying to predict how much weight he or she might lose?
 
 `r I(textItem(name="typicalweight", totalPts=2, rows=4))`
 
 <aside>
 ANSWER:
-A standard meaning for "typical" is the center of the distribution,
-as might be measured by the mean or median.  Judging from the ad, the
-mean or median might be 10.5 pounds, but stating this would
-misleadingly imply too high a level of precision.  The statement
-"7-14 lbs" indicates that the weight loss varies significantly from person to person.  If "typical" is taken to refer to the varation in weight loss, the interval might be pointing to how much a typical person varies from the mean, as could be measured by the standard deviation.  
+A standard meaning for "typical" is the center of the distribution, as might be measured by the mean or median.  Judging from the ad, the mean or median might be 10.5 pounds, but stating this would misleadingly imply too high a level of precision.  The statement "7-14 lbs" indicates that the weight loss varies significantly from person to person.  If "typical" is taken to refer to the varation in weight loss, the interval might be pointing to how much a typical person varies from the mean, as could be measured by the standard deviation.  
 
-An obvious interpretation is that a "typical" person's weight
-loss will fall into the range 7-14 pounds.  It seems reasonable that
-this interval should cover the majority of people involved.  At a
-minimum, it should therefore be a 50% coverage interval.
+An obvious interpretation is that a "typical" person's weight loss will fall into the range 7-14 pounds.  It seems reasonable that this interval should cover the majority of people involved.  At a minimum, it should therefore be a 50% coverage interval.
 
-The interval would be most useful to a prospective client if it covers
-a substantial majority of the people involved, say 75% or 95%.
+The interval would be most useful to a prospective client if it covers a substantial majority of the people involved, say 75% or 95%.
 </aside>
 
 `r I(endProblem())`
