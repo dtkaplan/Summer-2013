@@ -1,36 +1,20 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.13 
+Intro to Statistical Modeling Ch. 3 Prob. 13 
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
 require(ScoreR)
 startProblem("SM-3-P13-SD")
 ```
+
+```{r include=FALSE}
+prob1=selectSet(name="side.by.side", totalPts=1, "Categorical only"=FALSE, "Quantitative only"=FALSE, "One categorical and one quantitative"=TRUE, "Varies according to situation"=FALSE)
+```
 * From what kinds of variables would side-by-side boxplots be
-  generated?
+  generated? `r I(prob1)`
+
 ```{r include=FALSE}
-f = newMC(totalPts=1)
+prob2=selectSet(name="histogram", totalPts=1, "Categorical only"=FALSE, "Quantitative only"=TRUE, "One categorical and one quantitative"=FALSE, "Varies according to situation"=FALSE)
 ```
-  `r I(f(FALSE))` Categorical only     
-  `r I(f(FALSE))` Quantitative only     
-  `r I(f(TRUE))` One categorical and one quantitative     
-  `r I(f(FALSE))` Varies according to situation     
-  
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
-
-* From what kinds of variables would a histogram be generated?
-```{r include=FALSE}
-g = newMC(totalPts=1)
-```
-
-  `r I(g(FALSE))` Categorical only     
-  `r I(g(TRUE))` Quantitative only     
-  `r I(g(FALSE))` One categorical and one quantitative     
-  `r I(g(FALSE))` Varies according to situation     
-
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
+* From what kinds of variables would a histogram be generated? `r I(prob2)`
 
 `r I(endProblem())`

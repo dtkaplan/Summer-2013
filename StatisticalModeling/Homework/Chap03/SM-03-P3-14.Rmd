@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob 3.14
+Intro to Statistical Modeling Ch. 3 Prob 14
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -14,25 +14,27 @@ drawing the whiskers.  The others are drawn differently.
 dd = c( jitter(seq(-10,10,by=1)), runif(1000,-3,3) )
 ```
 
-### Plot 1     
+#### Plot 1 
 ```{r b1,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
 boxplot(dd,range=2.5,pch=20)
 ```     
-     
-### Plot 2     
+
+#### Plot 2
 ```{r b2,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
 boxplot(dd,pch=20)
 ```
 
-### Plot 3     
+#### Plot 3
 ```{r b3,fig.width=3,fig.height=5,echo=FALSE,dev="svg", out.width="20%"}
 boxplot(dd,range=1,pch=20)
 ```
 
-### Plot 4     
+#### Plot 4
 ```{r b4,fig.width=3,fig.height=5,echo=FALSE, dev="svg", out.width="20%"}
 boxplot(dd,range=0,pch=20)
 ```
+
+
 
 
 
@@ -49,3 +51,5 @@ The height of the box gives the IQR.  If there are outliers, the whisker length 
 times the IQR.  So look for the plot that has a whisker length
 somewhat taller than the box itself.
 </aside>
+
+`r I(endProblem())`
