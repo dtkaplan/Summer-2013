@@ -23,19 +23,21 @@ To explore this, consider the following result of a ficticious study of the poss
 
 
 Model:    tcells ~ posThinking          
-Coefficients:    
-                  Estimate Std. Error t value Pr(>|t|)         
-(Intercept)         3.6412     1.2506   2.912  0.00614      
-posThinking         0.2325     0.1293   1.798  0.07847      
+Coefficients:  
+
+| | &nbsp; Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(>t)
+|:---|:---:|:---:|:---:|:---:|
+(Intercept) &nbsp; | 3.6412 | 1.2506 | 2.912 | 0.00614      
+posThinking &nbsp; | 0.2325 | 0.1293 | 1.798 | 0.07847      
 
 Here is a statement that can generate the p-value:
-```{r}
+```{r eval=FALSE}
 2*(1-pt(1.798,df=48))
 ```
 
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="pt")
 ```
 Why is the the output of <code>pt</code> subtracted from 1?    
 `r I(f(FALSE))` This is the way <code>pt</code> is used.     

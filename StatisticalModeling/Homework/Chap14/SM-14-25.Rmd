@@ -6,9 +6,7 @@ require(ScoreR)
 startProblem("SM-14-25-SD")
 ```
 You and your statistics-class friends are having a disagreement.  Does the result of a hypothesis test depend on the units in which quantities are measured?  For example, in the kids' feet data, `KidsFeet` the length and width are measured in cm.  Would it matter if they had been measured in inches or meters?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="strategy", totalPts=2, rows=3))
-```
+
 Do a numerical experiment to figure out whether the units make a difference.  Explain your strategy concisely and give the corresponding commands and the results here.      
 `r I(textItem(name="strategy", totalPts=2, rows=3))`
 
@@ -40,7 +38,6 @@ summary(lm( width.inches ~ sex + length, data=kids))
 ```{r}
 summary(lm( width.inches ~ sex + length.inches, data=kids))
 ```
-
 </aside>
 
 `r I(endProblem())`

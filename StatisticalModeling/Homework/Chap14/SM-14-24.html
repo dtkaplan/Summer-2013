@@ -238,79 +238,43 @@ An example is shown in the figure.</p>
  &quot;A&#39;&#39; | group == &quot;E&#39;&#39;</code> to select cases that are from either group A <em>or</em> group E.  Then apply <code>lm</code> to this subset of data.)</p>
 
 <ul>
-<li> What is the p-value that compares groups A to E. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li> What is the p-value that compares groups A to E. <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.011" 
 }'>0.011</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.032" 
 }'>0.032</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.057" 
 }'>0.057</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.128" 
 }'>0.128</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.193" 
 }'>0.193</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      1,
-"name": "AtoE",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.253" 
-}'>0.253</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+}'>0.253</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-14-24-SD",
+"itemN":      1,
+"name": "AtoE",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>As a convenience, you are provided with a special-purpose function, <code>compare.many.groups</code> that does each of the hypothesis tests comparing the control group to another group.  You can run it this way:</p>
@@ -334,145 +298,80 @@ An example is shown in the figure.</p>
 <p>For the simulated data, your results should match exactly (subject to round-off).  Confirm that the p-value from this report matches the one you got by hand above.</p>
 
 <ul>
-<li>As it happens, the p-value for group F is also below the 0.05 threshold.  What is that p-value? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      2,
-"name": "groupF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>As it happens, the p-value for group F is also below the 0.05 threshold.  What is that p-value? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.021" 
 }'>0.021</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      2,
-"name": "groupF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.031" 
 }'>0.031</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      2,
-"name": "groupF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.037" 
 }'>0.037</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      2,
-"name": "groupF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.042" 
 }'>0.042</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      2,
-"name": "groupF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.049" 
-}'>0.049</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+}'>0.049</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-14-24-SD",
+"itemN":      2,
+"name": "groupF",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>The Bonferroni correction takes the &ldquo;raw&rdquo; p-value and corrects it by multiplying by the number of comparisons.  Since there are 7 comparisons altogether (groups B, C, &hellip;, H against group A), multiply the p-value by 7.</p>
 
 <ul>
-<li>What is the Bonferroni-corrected p-value for the A vs E comparison? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>What is the Bonferroni-corrected p-value for the A vs E comparison? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.011" 
 }'>0.011</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.037" 
 }'>0.037</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.077" 
 }'>0.077</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.11" 
 }'>0.11</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.37" 
 }'>0.37</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      3,
-"name": "Bonferroni",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.77" 
-}'>0.77</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+}'>0.77</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-14-24-SD",
+"itemN":      3,
+"name": "Bonferroni",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p>Now you are going to do a simulation to test whether the Bonferroni correction is appropriate.  The idea is to generate data from a simulation that implements the null hypothesis, calculate the p-value for the &ldquo;best looking&rdquo; comparison between the control group A and one of the other groups, and see how often the p-value is less than 0.05.  It will turn out that the p-value on the best looking comparison will be below 0.05 much too often. (If the p-value is to be taken at face value, when the null hypothesis is true then \( p <0.05 \) should happen only 5\% of the time.) Then you&#39;ll apply the Bonferroni correction and see if this fixes things.</p>
@@ -496,19 +395,11 @@ An example is shown in the figure.</p>
 </code></pre>
 
 <p><strong>SHOULD MATCH</strong>
-  group1 group2      diff  pvalue
-1      A      B  -2.78824 0.73112
-2      A      C  16.01192 0.11136
-3      A      D   0.11785 0.98931
-4      A      E  11.83709 0.12047
-5      A      F   9.73525 0.49863
-6      A      G -10.98126 0.43226
-7      A      H   6.99226 0.46696</p>
+  group1 group2      diff  pvalue</p>
 
-<ul>
-<li>It&#39;s helpful to combine the two statements above into a single statement.  That will make it easier to automate later on.  To do this, just put the statement that created <code>d</code> in place of <code>d</code>, as in the following.
-(The statement is so long that it&#39;s spread over 3 lines.  You can cut it out of this page and into an R session, if you wish.)</li>
-</ul>
+<ol>
+<li>It&#39;s helpful to combine the two statements above into a single statement.  That will make it easier to automate later on.  To do this, just put the statement that created <code>d</code> in place of <code>d</code>, as in the following.  (The statement is so long that it&#39;s spread over 3 lines.  You can cut it out of this page and into an R session, if you wish.)</li>
+</ol>
 
 <pre><code class="r">compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)
 </code></pre>
@@ -516,21 +407,11 @@ An example is shown in the figure.</p>
 <pre><code>## Error: could not find function &quot;compare.many.groups&quot;
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-  group1 group2      diff  pvalue
-1      A      B  -2.78824 0.73112
-2      A      C  16.01192 0.11136
-3      A      D   0.11785 0.98931
-4      A      E  11.83709 0.12047
-5      A      F   9.73525 0.49863
-6      A      G -10.98126 0.43226
-7      A      H   6.99226 0.46696</p>
-
 <p>It happens that none of the p-values from this simulation were \( < 0.05 \).</p>
 
-<ul>
-<li>Extend the statement above to extract the smallest p-value.  This involves prefacing the statement with <code>min(</code> and following it with <code>pvalue</code>.</li>
-</ul>
+<ol>
+<li>Extend the statement above to extract the smallest p-value.  This involves prefacing the statement with <code>min(</code> and following it with <code>$pvalue)</code></li>
+</ol>
 
 <pre><code class="r">min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)$pvalue)
 </code></pre>
@@ -539,12 +420,9 @@ An example is shown in the figure.</p>
 ## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-[1] 0.11136</p>
-
-<ul>
+<ol>
 <li>Now, run this statement a dozen times, using <code>do(12)*</code>.  Assign the results to an object <code>s</code>.</li>
-</ul>
+</ol>
 
 <pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), 
     control = &quot;A&quot;)$pvalue)
@@ -554,24 +432,18 @@ An example is shown in the figure.</p>
 ## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
 </code></pre>
 
-<pre><code class="r">
-s
+<pre><code class="r">s
 </code></pre>
 
 <pre><code>## Error: object &#39;s&#39; not found
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
- [1] 0.11136 0.11136 0.11136 0.11136 0.11136
- [6] 0.11136 0.11136 0.11136 0.11136 0.11136
-[11] 0.11136 0.11136</p>
-
 <p>Don&#39;t be too surprised by the result.  You got exactly the same answer on each trial
 because the same random &ldquo;seed&rdquo; was used every time.  </p>
 
-<ul>
+<ol>
 <li>Delete the random seed, so that new random numbers will be generated on each trial.</li>
-</ul>
+</ol>
 
 <pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
 </code></pre>
@@ -580,21 +452,15 @@ because the same random &ldquo;seed&rdquo; was used every time.  </p>
 ## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
 </code></pre>
 
-<pre><code class="r">
-s
+<pre><code class="r">s
 </code></pre>
 
 <pre><code>## Error: object &#39;s&#39; not found
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
- [1] 0.204602 0.052472 0.013789 0.037551
- [5] 0.035872 0.261042 0.133712 0.080999
- [9] 0.033976 0.167735 0.431789 0.166764</p>
-
-<ul>
+<ol>
 <li>The point of running a dozen trials was just to produce a manageable amount of output for you to read.  Now generate a thousand trials and, storing the results in <code>s</code>.  It will take about a minute for the computer to complete the calculation, more on older computers.</li>
-</ul>
+</ol>
 
 <pre><code class="r">s = do(1000) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
 </code></pre>
@@ -606,103 +472,53 @@ s
 <p>Then answer the following questions:</p>
 
 <ul>
-<li>About what fraction of the &ldquo;raw&rdquo; (that is, uncorrected) p-values are below 0.05? (Pick the closest answer.) <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>About what fraction of the &ldquo;raw&rdquo; (that is, uncorrected) p-values are below 0.05? (Pick the closest answer.) <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.01" 
 }'>0.01</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.02" 
 }'>0.02</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.05" 
 }'>0.05</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.1" 
 }'>0.1</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.2" 
 }'>0.2</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.3" 
 }'>0.3</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.4" 
 }'>0.4</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      4,
-"name": "raw",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.5" 
-}'>0.5</option> </select><span id='out4' class='shiny-html-output'> </span></li>
+}'>0.5</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-14-24-SD",
+"itemN":      4,
+"name": "raw",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
@@ -715,111 +531,57 @@ Your results may differ from the following, because a random simulation has been
 <pre><code>## Error: object &#39;s&#39; not found
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-FALSE  TRUE 
-  783   217 </p>
-
 <p>According to these results, in 20% of the trials, the null hypothesis has been rejected.  This is much too high a Type I error rate.
 </aside></p>
 
 <ul>
-<li>Now calculate the Bonferroni correction.  Remember that there were 7 comparisons done in each trial, of which the one resulting in the smallest p-value was selected.  What fraction of trials led to \( p < .05 \)? (Pick the closest answer.) <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>Now calculate the Bonferroni correction.  Remember that there were 7 comparisons done in each trial, of which the one resulting in the smallest p-value was selected.  What fraction of trials led to \( p < .05 \)? (Pick the closest answer.) <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.01" 
 }'>0.01</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.02" 
 }'>0.02</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.05" 
 }'>0.05</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.1" 
 }'>0.1</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.2" 
 }'>0.2</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.3" 
 }'>0.3</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.4" 
 }'>0.4</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-24-SD",
-"itemN":      5,
-"name": "pLessThan.05",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.5" 
-}'>0.5</option> </select><span id='out5' class='shiny-html-output'> </span></li>
+}'>0.5</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+"setID": "SM-14-24-SD",
+"itemN":      5,
+"name": "p<0.05",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
@@ -832,14 +594,10 @@ Again, your results may differ somewhat from the following, because a random sim
 <pre><code>## Error: object &#39;s&#39; not found
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-FALSE  TRUE 
-  959    41 </p>
-
 <p>The Type I error rate is here about 4%, much closer to what it should be if the p-values are to be taken seriously.
-<aside></p>
+</aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "AtoE", "groupF", "Bonferroni", "raw", "p<0.05" ]'>problem roster</option></select></p>
 
 </body>
 

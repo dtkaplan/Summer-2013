@@ -7,9 +7,7 @@ startProblem("SM-14-RQ-SD")
 ```
 
 * A permutation test involves randomizing in order to simulate eliminating the relationship, if any, between the explanatory variables and the response variable. What's the point of this?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="permutation", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="permutation", totalPts=2, rows=3))`
 
 
@@ -19,9 +17,7 @@ By eliminating the relationship between the explanatory and response variables, 
 </aside>
 
 * The F statistic compares two quantities. What are they? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="F", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="F", totalPts=2, rows=3))`
 
 <aside>
@@ -31,9 +27,7 @@ The F statistic compares the "size" of the contribution of an explanatory term t
 
 
 * What is a "degree of freedom?" 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="degree.of.freedom", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="degree.of.freedom", totalPts=2, rows=3))`
 
 
