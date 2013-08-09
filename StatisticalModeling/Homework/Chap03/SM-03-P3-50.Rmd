@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.50
+Intro to Statistical Modeling Ch. 3 Prob. 50
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -6,18 +6,11 @@ require(ScoreR)
 startProblem("SM-3-P50-SD")
 ```
 
-What's a "normal" body temperature?  Depending on whether you
-use the Celsius or Fahrenheit scale, you are probably used to the
-numbers $37^\circ$ C or $98.6^\circ$ F.  These numbers come from
-the work of Carl Wunderlich, published in *Das Verhalten der Eigenwarme in Krankenheiten* in 1868 based on more than a million measurements
-made under the armpit.  According to Wunderlich, "When the organism (man) is in a normal condition, the general temperature of the body maintains itself at the physiologic point: $37^\circ$ C $=98.6^\circ$ F."
+What's a "normal" body temperature?  Depending on whether you use the Celsius or Fahrenheit scale, you are probably used to the numbers $37^\circ$ C or $98.6^\circ$ F.  These numbers come from the work of Carl Wunderlich, published in *Das Verhalten der Eigenwarme in Krankenheiten* in 1868 based on more than a million measurements made under the armpit.  According to Wunderlich, "When the organism (man) is in a normal condition, the general temperature of the body maintains itself at the physiologic point: $37^\circ$ C $=98.6^\circ$ F."
 
-Since 1868, not only have the techniques for measuring temperatures
-improved, but so has the understanding that "normal" is not a single
-temperature but a range of temperatures.
+Since 1868, not only have the techniques for measuring temperatures improved, but so has the understanding that "normal" is not a single temperature but a range of temperatures.
 
-A 1992 article in the Journal of the American Medical Association (PA
-Mackowiak et al.,"A Critical Appraisal of $98.6^\circ$ F ..."  JAMA v. 268(12) pp. 1578-1580) examined temperature measurements made orally with an electronic thermometer.  The subjects were 148 healthy volunteers between age 18 and 40.
+A 1992 article in the Journal of the American Medical Association (PA Mackowiak et al.,"A Critical Appraisal of $98.6^\circ$ F ..."  JAMA v. 268(12) pp. 1578-1580) examined temperature measurements made orally with an electronic thermometer.  The subjects were 148 healthy volunteers between age 18 and 40.
 
 The figure shows the distribution of temperatures, separately for males and females.  Note that the horizontal scale is given in both C and F --- this problem will use F.
 
@@ -52,7 +45,6 @@ f=newMC(totalPts=1, name="gap")
 `r I(f(FALSE))` About  $0.1^\circ$ F.    
 `r I(f(TRUE))` Almost $1^\circ$ F.    
 `r I(f(finish=TRUE))`
-
 
 Give a 95% coverage interval for females.  Hint: The interval will exclude the most extreme 2.5% of cases on each of the left and right sides of the distribution.  You can find the left endpoint of the 95% interval by scanning in from the left, adding up the heights of the bars until they total 0.025.  Similarly, the right endpoint can be marked by scanning in from the right until the bars total 0.025. 
 ```{r include=FALSE}
