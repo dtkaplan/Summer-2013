@@ -1,0 +1,80 @@
+Intro to Statistical Modeling Ch. 14 Prob. 1
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("SM-14-1-SD")
+```
+Your friend is interested in using natural teas to replace commercial drugs. He has been testing out his own tea blend, which he calls "Special Cooling Tea" to reduce temperatures of people with the flu.  Fortunately for him, he had a bad flu with fever that lasted for 3 days.  During this time, he alternated taking Special Cooling Tea and taking a conventional fever reducing drug, Paracetamol.  On each occasion, he measured the change in his body temperature over one hour.  His data were
+
+| | Change in | 
+|:---|:---:|
+**Treatment** &nbsp; | &nbsp; **Temp. (F)**
+Tea | -1.2
+Drug | -2.0
+Tea | -0.7
+Drug | -1.5
+Tea | +0.0
+Drug | -0.7
+
+Your friend is excited by these results.  When he fit the model *temperature change* ~ *Treatment* he got the following reports:
+
+| | Df &nbsp; | &nbsp; Sum Sq &nbsp; | &nbsp; Mean Sq &nbsp; | &nbsp; F value &nbsp; | &nbsp; Pr(>F) |
+|:---|:---:|:---:|:---:|:---:|:---:|
+treat | 1 | 0.13 | 0.13 |0.11 | 0.7555
+Residuals | 4 | 4.85 | 1.21 | | |
+
+Based on these report, your friend claims, "This shows that my Special Cooling Tea is just as effective as Paracetamol."
+
+```{r include=FALSE}
+prob1=selectSet(name="effective", totalPts=1, "There are 4 degrees of freedom in the residual."=FALSE, "The p-value is very small."=FALSE, "The p-value is not small."=TRUE, "There is no p-value on the residuals."=FALSE)
+```
+* Which of the following features of the `ANOVA` report supports your friend's conclusion that the two treatments are effective: `r I(prob1)`
+
+<aside>
+ANSWER:    
+The large p-value on *treat* means that the data don't support rejection of the null hypothesis.  That null is that the treatment variable doesn't make a difference, that is, that the two treatments are the same.
+</aside>
+
+```{r include=FALSE}
+prob2=selectSet(name="null.hypothesis", totalPts=1, "The Tea and Paracetamol have the same effect."=TRUE, "The Tea is more effective than Paracetamol."=FALSE, "The Tea is less effective than Paracetamol."=FALSE)
+```
+* What's an appropriate Null Hypothesis is this setting: `r I(prob2)`
+
+<aside>
+ANSWER:    
+The Null Hypothesis is generally a statement of "no difference."
+</aside>
+
+Of course, your friend's conclusion that his experiment shows that Tea and Paracetamol are the same is actually unjustified. Failing to reject the null hypothesis is not the same as accepting the null hypothesis.  You explain this to your friend.
+
+He's disappointed, of course.  But then he gets a bit annoyed.  "How can you ever show that two things are the same if your never get to accept the null hypothesis?"
+
+"Well," you respond, "the first thing is to decide what 'the same' means.  In this case, you're interested in the fever reduction.  How big a difference in the temperature reduction would be medically insignificant?"  
+
+Your friend thinks for a while.  "I suppose no one would care about 0.2 degrees."
+
+"Then you have to make your measurement precise to about 0.2 degrees.  If such a precise measurement shows no difference, then it's reasonable to claim that your Tea and the drug are equivalent."  Using your friend's data, you fit the model and look at the regression report.
+
+| | Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(>t) 
+|:---|:---:|:---:|:---:|:---:|
+(Intercept) | -0.9333 | 0.6360 | -1.47 | 0.2161 
+treatTea | 0.3000 | 0.8994 | 0.33 | 0.7555
+
+
+The margin of error on the difference in temperature reduction is $\pm 1.8$ degrees, based on the 6 cases your friend recorded. 
+
+```{r include=FALSE}
+prob3=selectNumber(choices=c(12,75,150,500,2000), correct=c(500), totalPts=1, name="cases")
+```
+*  To reduce the margin of error to $\pm 0.2$ degrees, about how many cases altogether should your friend plan to collect? (Choose the closest one. For instance, 12 would be a doubling from the 6 actually collected.) `r I(prob3)`
+
+<aside>
+ANSWER:    
+Judging from the regression report, the margin of error (at the 95% level) on the estimate of the effect *treatTea* is $\pm 1.8$ degrees.  You want to bring it down to 0.2 degrees, or 9 times smaller.
+
+The standard error (and thus the margin of error) scales as $1/\sqrt{n}$ for large $n$, so to make the margin of error 9 times smaller, you would need $9^2 = 81$ more data. The original data set had $n=6$, so you will need roughly $6 \times 81 = 486$ cases. This
+is just an estimate, since the standard error computed from the $n=6$ cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
+</aside>
+
+`r I(endProblem())`

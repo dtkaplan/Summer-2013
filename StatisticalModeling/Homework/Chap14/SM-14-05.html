@@ -201,82 +201,66 @@ p-values), it can still be difficult to interpret the p-value. </p>
 <p>To explore this, consider the following result of a ficticious study of the possible link between &ldquo;positive thinking&rdquo; (<em>posThinking</em>) and the t-cell count (<em>tcells</em>) in the immune system of 50 different people.  The study has produced a &ldquo;suggestive&rdquo; p-value of about 0.08:</p>
 
 <p>Model:    tcells ~ posThinking<br/>
-Coefficients:<br/>
-                  Estimate Std. Error t value Pr(&gt;|t|)<br/>
-(Intercept)         3.6412     1.2506   2.912  0.00614<br/>
-posThinking         0.2325     0.1293   1.798  0.07847      </p>
+Coefficients:  </p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="center">&nbsp; Estimate &nbsp;</th>
+<th align="center">&nbsp; Std. Error &nbsp;</th>
+<th align="center">&nbsp; t value &nbsp;</th>
+<th align="center">&nbsp; Pr(&gt;t)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">(Intercept) &nbsp;</td>
+<td align="center">3.6412</td>
+<td align="center">1.2506</td>
+<td align="center">2.912</td>
+<td align="center">0.00614</td>
+</tr>
+<tr>
+<td align="left">posThinking &nbsp;</td>
+<td align="center">0.2325</td>
+<td align="center">0.1293</td>
+<td align="center">1.798</td>
+<td align="center">0.07847</td>
+</tr>
+</tbody></table>
 
 <p>Here is a statement that can generate the p-value:</p>
 
 <pre><code class="r">2 * (1 - pt(1.798, df = 48))
 </code></pre>
 
-<pre><code>## [1] 0.07847
-</code></pre>
-
 <p>Why is the the output of <code>pt</code> subtracted from 1?<br/>
-<label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> This is the way <code>pt</code> is used.<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> This is always the way <code>pt</code> is used.<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> Because the t-value is positive.<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
 }'> <b>D</b></label> Because we want a one-tailed test.<br/>
-<label for='MCitem5'><input type='radio' name='MC1' id='MCitem5' value='{
+<label for='MCitem5'><input type='radio' name='ScoreR1' id='MCitem5' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "E" 
 }'> <b>E</b></label> Because the t-value is less than 2.     </p>
@@ -286,216 +270,115 @@ posThinking         0.2325     0.1293   1.798  0.07847      </p>
 <p>Now imagine that the same study had been repeated with four times as much data: 200 cases.  Assuming that everything else remained the same, how big would the standard error on <em>posThinking</em> be given the usual relationship between the size of the standard error and the number of cases \( n \):</p>
 
 <ul>
-<li><p>Standard error with \( n=200 \) cases: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "error200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Standard error with \( n=200 \) cases: <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.52" 
 }'>0.52</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "error200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.26" 
 }'>0.26</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "error200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.13" 
 }'>0.13</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "error200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.065" 
 }'>0.065</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      1,
-"name": "error200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.032" 
-}'>0.032</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>With \( n=200 \) cases, how many degrees of freedom will there be in the residual? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>0.032</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-14-5-SD",
 "itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"name": "error200cases",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>With \( n=200 \) cases, how many degrees of freedom will there be in the residual? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "48" 
 }'>48</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "50" 
 }'>50</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "98" 
 }'>98</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "100" 
 }'>100</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "198" 
 }'>198</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      2,
-"name": "df200cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "200" 
-}'>200</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
-<li><p>Using the standard error with \( n=200 \) cases, and assuming that the coefficient remains exactly as reported in the table, recalculate the p-value on <code>posThinking</code>.  Select the one of these that is closest to the p-value: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>200</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-14-5-SD",
 "itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"name": "df200cases",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>Using the standard error with \( n=200 \) cases, and assuming that the coefficient remains exactly as reported in the table, recalculate the p-value on <code>posThinking</code>.  Select the one of these that is closest to the p-value: <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.4" 
 }'>0.4</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.04" 
 }'>0.04</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.004" 
 }'>0.004</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "4e-04" 
 }'>4e-04</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "4e-05" 
 }'>4e-05</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-5-SD",
-"itemN":      3,
-"name": "pvalue",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "4e-06" 
-}'>4e-06</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
+}'>4e-06</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-14-5-SD",
+"itemN":      4,
+"name": "pvalue",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "MC1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "pt", "error200cases", "df200cases", "pvalue" ]'>problem roster</option></select></p>
 
 </body>
 

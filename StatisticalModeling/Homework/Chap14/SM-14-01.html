@@ -156,8 +156,8 @@ hr {
 </tr>
 </thead><tbody>
 <tr>
-<td align="left"><strong>Treatment</strong></td>
-<td align="center"><strong>Temp. (F)</strong></td>
+<td align="left"><strong>Treatment</strong> &nbsp;</td>
+<td align="center">&nbsp; <strong>Temp. (F)</strong></td>
 </tr>
 <tr>
 <td align="left">Tea</td>
@@ -190,11 +190,11 @@ hr {
 <table><thead>
 <tr>
 <th align="left"></th>
-<th align="center">Df</th>
-<th align="center">Sum Sq</th>
-<th align="center">Mean Sq</th>
-<th align="center">F value</th>
-<th align="center">Pr(&gt;F)</th>
+<th align="center">Df &nbsp;</th>
+<th align="center">&nbsp; Sum Sq &nbsp;</th>
+<th align="center">&nbsp; Mean Sq &nbsp;</th>
+<th align="center">&nbsp; F value &nbsp;</th>
+<th align="center">&nbsp; Pr(&gt;F)</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -218,55 +218,33 @@ hr {
 <p>Based on these report, your friend claims, &ldquo;This shows that my Special Cooling Tea is just as effective as Paracetamol.&rdquo;</p>
 
 <ul>
-<li>Which of the following features of the ANOVA report supports your friend&#39;s conclusion that the two treatments are effective: <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      1,
-"name": "supportConclusion",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>Which of the following features of the <code>ANOVA</code> report supports your friend&#39;s conclusion that the two treatments are effective: <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "There are 4 degrees of freedom in the residual." 
 }'>There are 4 degrees of freedom in the residual.</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      1,
-"name": "supportConclusion",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The p-value is very small." 
 }'>The p-value is very small.</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      1,
-"name": "supportConclusion",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "The p-value is not small." 
 }'>The p-value is not small.</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      1,
-"name": "supportConclusion",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "There is no p-value on the residuals." 
-}'>There is no p-value on the residuals.</option> </select><span id='out1' class='shiny-html-output'> </span></li>
+}'>There is no p-value on the residuals.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-14-1-SD",
+"itemN":      1,
+"name": "effective",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
@@ -275,43 +253,28 @@ The large p-value on <em>treat</em> means that the data don&#39;t support reject
 </aside></p>
 
 <ul>
-<li>What&#39;s an appropriate Null Hypothesis is this setting: <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      2,
-"name": "nullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li>What&#39;s an appropriate Null Hypothesis is this setting: <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "The Tea and Paracetamol have the same effect." 
 }'>The Tea and Paracetamol have the same effect.</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      2,
-"name": "nullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The Tea is more effective than Paracetamol." 
 }'>The Tea is more effective than Paracetamol.</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      2,
-"name": "nullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The Tea is less effective than Paracetamol." 
-}'>The Tea is less effective than Paracetamol.</option> </select><span id='out2' class='shiny-html-output'> </span></li>
+}'>The Tea is less effective than Paracetamol.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-14-1-SD",
+"itemN":      2,
+"name": "null.hypothesis",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
@@ -329,85 +292,77 @@ The Null Hypothesis is generally a statement of &ldquo;no difference.&rdquo;
 
 <p>&ldquo;Then you have to make your measurement precise to about 0.2 degrees.  If such a precise measurement shows no difference, then it&#39;s reasonable to claim that your Tea and the drug are equivalent.&rdquo;  Using your friend&#39;s data, you fit the model and look at the regression report.</p>
 
-<p>| | Estimate | Std. Error | t value | Pr(&gt;|t|) |
-|:&mdash;|&mdash;:|&mdash;:|&mdash;:|&mdash;:|
-(Intercept) | -0.9333 | 0.6360 | -1.47 | 0.2161
-treatTea | 0.3000 | 0.8994 | 0.33 | 0.7555</p>
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="center">Estimate &nbsp;</th>
+<th align="center">&nbsp; Std. Error &nbsp;</th>
+<th align="center">&nbsp; t value &nbsp;</th>
+<th align="center">&nbsp; Pr(&gt;t)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">(Intercept)</td>
+<td align="center">-0.9333</td>
+<td align="center">0.6360</td>
+<td align="center">-1.47</td>
+<td align="center">0.2161</td>
+</tr>
+<tr>
+<td align="left">treatTea</td>
+<td align="center">0.3000</td>
+<td align="center">0.8994</td>
+<td align="center">0.33</td>
+<td align="center">0.7555</td>
+</tr>
+</tbody></table>
 
 <p>The margin of error on the difference in temperature reduction is \( \pm 1.8 \) degrees, based on the 6 cases your friend recorded. </p>
 
 <ul>
-<li>To reduce the margin of error to \( \pm 0.2 \) degrees, about how   many cases altogether should your friend plan to collect? (Choose the closest one. For instance, 12 would be a doubling from the 6 actually collected.) <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      3,
-"name": "NumberOfCases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li> To reduce the margin of error to \( \pm 0.2 \) degrees, about how many cases altogether should your friend plan to collect? (Choose the closest one. For instance, 12 would be a doubling from the 6 actually collected.) <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "12" 
 }'>12</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      3,
-"name": "NumberOfCases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "75" 
 }'>75</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      3,
-"name": "NumberOfCases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "150" 
 }'>150</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      3,
-"name": "NumberOfCases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "500" 
 }'>500</option> <option value='{
-"itemInfo": {
-"setID": "SM-14-1-SD",
-"itemN":      3,
-"name": "NumberOfCases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "2000" 
-}'>2000</option> </select><span id='out3' class='shiny-html-output'> </span></li>
+}'>2000</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-14-1-SD",
+"itemN":      3,
+"name": "cases",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>
 ANSWER:<br/>
 Judging from the regression report, the margin of error (at the 95% level) on the estimate of the effect <em>treatTea</em> is \( \pm 1.8 \) degrees.  You want to bring it down to 0.2 degrees, or 9 times smaller.</p>
 
-<p>The standard error (and thus the margin of error) scales as \( 1/\sqrt{n} \) for large \( n \), so to make the margin of error 9 times smaller, you would need \( 9^2 = 81 \) more data.    The original data set had \( n=6 \), so you will need roughly \( 6 \times 81 = 486 \) cases.  This is just an estimate, since the standard error computed from the \( n=6 \) cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
+<p>The standard error (and thus the margin of error) scales as \( 1/\sqrt{n} \) for large \( n \), so to make the margin of error 9 times smaller, you would need \( 9^2 = 81 \) more data. The original data set had \( n=6 \), so you will need roughly \( 6 \times 81 = 486 \) cases. This
+is just an estimate, since the standard error computed from the \( n=6 \) cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "effective", "null.hypothesis", "cases" ]'>problem roster</option></select></p>
 
 </body>
 

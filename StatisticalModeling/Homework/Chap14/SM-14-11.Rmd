@@ -21,22 +21,16 @@ var( feet$length )
 This is a fine way to calculate these quantities.  But, just to show the link of these quantities to modeling, I ask you to do the following with the kidsfeet data: `KidsFeet` :
 
 * Fit a model where one of the coefficients will be the mean of the *length*.  Enter the model report below.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="mean", totalPts=2, rows=2))
-```
+
 `r I(textItem(name="mean", totalPts=2, rows=2))`
 
 * Perform ANOVA on the same model. One of the numbers in the ANOVA report will be the variance.  Which one is it?  
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="variance", totalPts=2, rows=2))
-```
+
 `r I(textItem(name="variance", totalPts=2, rows=2))`
 
 
 * Based on the above, explain why the calculation of the sample variance involves dividing by $N-1$ rather than $N$.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="Nminus1", totalPts=2, rows=2))
-```
+
 `r I(textItem(name="Nminus1", totalPts=2, rows=2))`
 
 `r I(endProblem())`
