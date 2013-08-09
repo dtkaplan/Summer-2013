@@ -2,39 +2,29 @@ Intro to Statistical Modeling Ch. 17 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-17-RQ-SD")
+require(ScoreR)
+startProblem("SM-17-RQ-SD")
 ```
 
 * Why does an observed correlation between two variables not provide compelling evidence that one causes the other? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="observed", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="observed", totalPts=2, rows=3))`
 
 * What is a hypothetical causal network?  What does the word "hypothetical" signify about these networks? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="hypothetical", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="hypothetical", totalPts=2, rows=3))`
 
 * What is the difference between a correlating pathway and a non-correlating pathway? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="correlating", totalPts=2, rows=3))
-```
+
 
  `r I(textItem(name="correlating", totalPts=2, rows=3))`
 
 * How is the appropriate choice of covariates in models to study causation influenced by the structure of the modeler's hypothetical causal network?
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="causation", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="causation", totalPts=2, rows=3))`
 
 * When might two modelers legitimately disagree about which covariates to include in a model? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="disagree", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="disagree", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
