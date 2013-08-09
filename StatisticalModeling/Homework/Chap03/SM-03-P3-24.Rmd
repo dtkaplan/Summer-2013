@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.24
+Intro to Statistical Modeling Ch. 3 Prob. 24
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -9,7 +9,7 @@ Data on the distribution of economic variables, such as income, is often present
 
 Here is a table from the US Census Bureau (Historical Income Tables from March 21, 2002) giving the distribution of income across US households in year 2000.
 
-Quintile   |   Upper Boundary   |   Mean Value
+Quintile &nbsp; | &nbsp; Upper Boundary &nbsp; | &nbsp; Mean Value
 :-------:|:-------:|:-------:
 Lowest | $17,955 | $10,190
 Second | $33,006 | $25,334

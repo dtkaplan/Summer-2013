@@ -1,4 +1,4 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.19
+Intro to Statistical Modeling Ch. 3 Prob. 19
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
@@ -8,32 +8,16 @@ startProblem("SM-3-P19-SD")
 
 Consider a large company where the average wage of workers is $15 per hour, but there is a spread of wages from minimum wage to $35 per hour.  
 
-
+```{r include=FALSE}
+prob1=selectSet(name="std.dev", totalPts=1, "No change."=TRUE, "It goes up by $2 per hour."=FALSE, "It goes up by $4 per hour."=FALSE, "It goes up by 4 dollars-square per hour."=FALSE, "It goes up by $4 per hour-square."=FALSE, "Can't tell from the information given."=FALSE)
+```
 After a contract negotiation, all workers receive a $2 per hour raise.
-What happens to the standard deviation of hourly wages?
+What happens to the standard deviation of hourly wages? `r I(prob1)`
 
 ```{r include=FALSE}
-f = newMC(totalPts=1, name="std.dev")
+prob2=selectSet(name="std.dev.2", totalPts=1, "No change."=FALSE, "It goes up by 3%."=TRUE, "It goes up by 9%."=FALSE, "Can't tell from the information given."=FALSE)
 ```
- `r I(f(TRUE))` No change.     
- `r I(f(FALSE))` It goes up by $2 per hour.     
- `r I(f(FALSE))` It goes up by $4 per hour.     
- `r I(f(FALSE))` It goes up by 4 dollars-square per hour.     
- `r I(f(FALSE))` It goes up by $4 per hour-square.     
- `r I(f(FALSE))` Can't tell from the information given.     
+The annual cost-of-living adjustment is 3%.  After the cost-of-living adjustment, what happens to the standard deviation of hourly wages? `r I(prob2)`
+
  
-`r I(f(finish=TRUE))`
-
-The annual cost-of-living adjustment is 3%.  After the cost-of-living adjustment, what happens to the standard deviation of hourly wages?
-
-```{r include=FALSE}
-g = newMC(totalPts=1, name="std.dev.2")
-```
- `r I(g(FALSE))` No change.     
- `r I(g(TRUE))` It goes up by 3%.     
- `r I(g(FALSE))` It goes up by 9%.     
- `r I(g(FALSE))` Can't tell from the information given.     
- 
-`r I(g(finish=TRUE))`
-
 `r I(endProblem())`
