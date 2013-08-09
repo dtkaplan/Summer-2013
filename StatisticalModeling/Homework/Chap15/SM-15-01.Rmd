@@ -1,37 +1,33 @@
 Intro to Statistical Modeling Ch. 15 Prob. 1
-========================================================
+=============================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-1-SD")
+require(ScoreR)
+startProblem("SM-15-1-SD")
 ```
+
 Often we are interested in whether two groups are different.  For example,  we might ask if girls have a different mean footlength than do boys.  We can answer this question by constructing a suitable model.
 ```{r}
 kids = fetchData("KidsFeet")
 summary( lm( length ~ sex, data=kids ) )
 ```
-**SHOULD MATCH**
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  25.1050     0.2847  88.180   <2e-16 
-sexG         -0.7839     0.4079  -1.922   0.0623 
 
 Interpret this report, keeping in mind that the foot length is reported in centimeters.  (The reported value *<2e-16* means $p < 2 \times 10^{-16}$.)
 
 ```{r include=FALSE}
-prob1=selectSet(name="pointEstimate", totalPts=1, "Girls' feet are, on average, 25 centimeters long."=FALSE, "Girls'feet are 0.4079 cm shorter than boys'."=FALSE, "Girls' feet are 0.7839 cm shorter than boys'."=TRUE, "Girls' feet are 1.922 cm shorter than boys'."=FALSE)
+prob1=selectSet(name="point.estimate", totalPts=1, "Girls' feet are, on average, 25 centimeters long."=FALSE, "Girls' feet are 0.4079 cm shorter than boys'."=FALSE, "Girls' feet are 0.7839 cm shorter than boys'."=TRUE, "Girls' feet are $1.922$ cm shorter than boys'."=FALSE)
 ```
-* What is the point estimate of the difference between the lengths of boys and girls feet. `r I(prob1)`
+What is the point estimate of the difference between the lengths of boys and girls feet. `r I(prob1)`
 
 <aside>
-ANSWER:   
+ANSWER:    
 The difference between the typical foot *length* of the two sexes is indicated by the *sexG* coefficient.  It's negative, meaning that level G (that is, girls) has a smaller typical foot length.
 </aside>
 
 ```{r include=FALSE}
-prob2=selectNumber(choices=c(-0.78,0.28,0.41,0.60,0.80), correct=c(0.80), totalPts=1, name="95percentM")
+prob2=selectNumber(choices=c(-0.78,0.28,0.41,0.60,0.80), correct=(0.80), totalPts=1, name="95.marg.error")
 ```
-* The confidence interval can be written as a point estimate plus-or-minus a margin of error: $P \pm M$. What is the 95\% margin of error, $M$, on the difference between boy's and girl's foot lengths. `r I(prob2)`
+The confidence interval can be written as a point estimate plus-or-minus a margin of error: $P \pm M$.  What is the 95% margin of error, $M$, on the difference between boy's and girl's foot lengths. `r I(prob2)`
 
 <aside>
 ANSWER:    
@@ -39,10 +35,9 @@ The standard error on the *sexG* coefficient is 0.41.  Doubling that gives a 95%
 </aside>
 
 ```{r include=FALSE}
-prob3=selectSet(name="NullHypothesis", totalPts=1, "Boys' feet are, on average, longer than girls' feet."=FALSE, "Girls' feet are, on average,  shorter than boys' feet."=FALSE, "All boys' feet are longer than all girls' feet."=FALSE, "No girl's foot is shorter than all boys' feet."=FALSE, "There is no difference, on average, between boys' footlengths
-  and girls' footlengths."=TRUE)
+prob3=selectSet(name="null.hypothesis", totalPts=1, "Boys' feet are, on average, longer than girls' feet."=FALSE, "Girls' feet are, on average,  shorter than boys' feet."=FALSE, "All boys' feet are longer than all girls' feet."=FALSE, "No girl's foot is shorter than all boys' feet."=FALSE, "There is no difference, on average, between boys' footlengths and girls' footlengths."=TRUE)
 ```
-* What is the Null Hypothesis being tested by the reported p-value $0.0623$? `r I(prob3)`
+What is the Null Hypothesis being tested by the reported p-value $0.0623$? `r I(prob3)`
 
 <aside>
 ANSWER:    
@@ -50,35 +45,30 @@ The p-value in a regression report relates to the null hypothesis that the corre
 </aside>
 
 ```{r include=FALSE}
-prob4=selectSet(name="NullHypothesis2", totalPts=1, "Boys' and girls' feet are, on average, the same length."=FALSE, "The length of kids' feet is, on average, zero."=FALSE, "The length of boys' feet is, on average, zero."=TRUE, "The length of girls' feet is, on average, zero."=FALSE, "Girls' and boys' feet don't intercept."=FALSE)
+prob4=selectSet(name="null.hypothesis.intercept", totalPts=1, "Boys' and girls' feet are, on average, the same length."=FALSE, "The length of kids' feet is, on average, zero."=FALSE, "The length of boys' feet is, on average, zero."=TRUE, "The length of girls' feet is, on average, zero."=FALSE, "Girls' and boys' feet don't intercept."=FALSE)
 ```
-* What is the Null Hypothesis being tested by the p-value on the intercept? `r I(prob4)`
+What is the Null Hypothesis being tested by the p-value on the intercept? `r I(prob4)`
 
 <aside>
-ANSWER:    
+ANSWER:     
 The intercept in this model corresponds to the mean foot *length* of the reference group: boys.  So the p-value is that the length of boys' feet is, on average, zero.  That's obviously wrong, which is why the p-value is so very, very small.
 </aside>
-
 
 Here is the report from a related, but slightly different model:
 ```{r}
 summary( lm( length~sex-1, data=kids ))
 ```
-**SHOULD MATCH**
-Coefficients:
-     Estimate Std. Error t value Pr(>|t|)    
-sexB  25.1050     0.2847   88.18   <2e-16
-sexG  24.3211     0.2921   83.26   <2e-16
 
 Note that the p-values for both coefficients are practically zero, $p < 2 \times 10^{-16}$.
 
 ```{r include=FALSE}
-prob5=selectSet(name="NullHypothesis3", totalPts=1, "Girls' feet have a different length, on average, than boys'."=FALSE, "Girls' feet are no different in length, on average, than boys'."=FALSE, "Girls' footlengths are, on average, zero."=TRUE, "Girls' footlengths are, on average, greater than zero."=FALSE)
+prob5=selectSet(name="null.hypothesis.sexG", totalPts=1, "Girls' feet have a different length, on average, than boys'."=FALSE, "Girls' feet are no different in length, on average, than boys'."=FALSE, "Girls' footlengths are, on average, zero."=TRUE, "Girls' footlengths are, on average, greater than zero."=FALSE)
 ```
-What is the Null Hypothesis tested by the p-value on <code>sexG</code>? `r I(prob5)`
+What is the Null Hypothesis tested by the p-value on *sexG*? `r I(prob5)`
 
 <aside>
-ANSWER:   
+ANSWER:    
 Since there's no intercept in this model, the *sexG* coefficient refers to the mean of the girls' foot *length*.  So the p-value relates to the null hypothesis that the mean girls foot *length* is zero.  Again, that's obviously wrong, which is why the p-value is so small.
+</aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

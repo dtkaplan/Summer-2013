@@ -383,7 +383,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 14.14](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-14.html) working
 
-* [Problem 14.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-12.html) working
+* [Problem 14.21](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-21.html) working
 
 * [Problem 14.22](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap14/SM-14-22.html) issues with r code
 

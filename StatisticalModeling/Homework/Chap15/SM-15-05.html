@@ -173,15 +173,15 @@ hr {
 <table><thead>
 <tr>
 <th align="left"></th>
-<th align="center">Df</th>
-<th align="center">Sum Sq</th>
-<th align="center">Mean Sq</th>
-<th align="center">F value</th>
-<th align="center">Pr(&gt;F)</th>
+<th align="center">&nbsp; Df &nbsp;</th>
+<th align="center">&nbsp; Sum Sq &nbsp;</th>
+<th align="center">&nbsp; Mean Sq &nbsp;</th>
+<th align="center">&nbsp; F value &nbsp;</th>
+<th align="center">&nbsp; Pr(&gt;F)</th>
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">sex</td>
+<td align="left">sex &nbsp;</td>
 <td align="center">1</td>
 <td align="center">0.222</td>
 <td align="center">0.222</td>
@@ -205,7 +205,7 @@ hr {
 <td align="center">0.77647</td>
 </tr>
 <tr>
-<td align="left">Residuals</td>
+<td align="left">Residuals &nbsp;</td>
 <td align="center">3</td>
 <td align="center">9.301</td>
 <td align="center">3.100</td>
@@ -220,410 +220,241 @@ hr {
 <li>What model structure did I use to generate this table?</li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> <code>sentenceLength ~ age + sex + color</code><br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> <code>sentenceLength ~ sex * age + color</code><br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> <code>sentenceLength ~ sex + age + color</code><br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> <code>color ~ sentenceLength + sex + age</code></p>
+}'> <b>D</b></label> <code>color ~ sentenceLength + sex + age</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-15-5-SD",
+"itemN":      1,
+"name": "model",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <ul>
-<li><p>How many cases are there altogether? <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>How many cases are there altogether? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "8" 
 }'>8</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "9" 
 }'>9</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "10" 
 }'>10</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      1,
-"name": "cases",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "No way to tell from the information given." 
-}'>No way to tell from the information given.</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>Is the variable <code>age</code> categorical or quantitative? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>No way to tell from the information given.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-15-5-SD",
 "itemN":      2,
-"name": "variable",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"name": "cases",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>Is the variable <code>age</code> categorical or quantitative? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "categorical" 
 }'>categorical</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "variable",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "quantitative" 
 }'>quantitative</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "variable",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Could be either." 
 }'>Could be either.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "variable",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Can't know for sure from the data given." 
-}'>Can&#39;t know for sure from the data given.</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+}'>Can&#39;t know for sure from the data given.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+"setID": "SM-15-5-SD",
+"itemN":      3,
+"name": "variable",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 <li><p>The p-value for <code>age</code> is missing. What should this value be?</p></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR4' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> 0.93553 from <code>pf(7.6407, 3, 3)</code><br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR4' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> 0.06446 from <code>1-pf(7.6407, 3, 3)</code><br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR4' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> 0.98633 from <code>pf(23.689, 3, 3)</code><br/>
-<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR4' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
 }'> <b>D</b></label> 0.01367 from <code>1-pf(23.689, 3, 3)</code><br/>
-<label for='MCitem5'><input type='radio' name='MC2' id='MCitem5' value='{
+<label for='MCitem5'><input type='radio' name='ScoreR4' id='MCitem5' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "E" 
 }'> <b>E</b></label> 0.99902 from <code>pnorm(23.689, 0, 7.6507)</code><br/>
-<label for='MCitem6'><input type='radio' name='MC2' id='MCitem6' value='{
+<label for='MCitem6'><input type='radio' name='ScoreR4' id='MCitem6' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "F" 
-}'> <b>F</b></label> 0.00098 from <code>1-pnorm(23.689, 0, 7.6507)</code>    </p>
+}'> <b>F</b></label> 0.00098 from <code>1-pnorm(23.689, 0, 7.6507)</code><br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+ "setID": "SM-15-5-SD",
+"itemN":      4,
+"name": "p-value",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <ul>
-<li><p>Based on the ANOVA table, what null hypothesis can be rejected in this study at the significance level \( p<0.10 \)? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "null.hypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>Based on the ANOVA table, what null hypothesis can be rejected in this study at the significance level \( p<0.10 \)? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "An average sentence has zero words." 
 }'>An average sentence has zero words.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "null.hypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "There is no relationship between the number of color pages and the sex of the intended audience." 
 }'>There is no relationship between the number of color pages and the sex of the intended audience.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "null.hypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The number of color pages is not related to the sentence length." 
 }'>The number of color pages is not related to the sentence length.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "null.hypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "There is no relation between the average number of words per sentence in an article and the age group that the magazine is intended for, after taking sex into account." 
 }'>There is no relation between the average number of words per sentence in an article and the age group that the magazine is intended for, after taking sex into account.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "null.hypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "None of the above, because there is a different null hypothesis corresponding to each model term in the ANOVA report." 
-}'>None of the above, because there is a different null hypothesis corresponding to each model term in the ANOVA report.</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
-<li><p>I really wanted to look to see if there is an interaction between <code>sex</code> and <code>age</code>.  What would be the point of including this term in the model? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>None of the above, because there is a different null hypothesis corresponding to each model term in the ANOVA report.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-15-5-SD",
-"itemN":      4,
-"name": "sex.age",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      5,
+"name": "null.hypothesis",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>I really wanted to look to see if there is an interaction between <code>sex</code> and <code>age</code>.  What would be the point of including this term in the model? <select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "To see if the different sexes have a different distribution of age groups." 
 }'>To see if the different sexes have a different distribution of age groups.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      4,
-"name": "sex.age",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "To see if there is a difference in average sentence length between magazines for females and males." 
 }'>To see if there is a difference in average sentence length between magazines for females and males.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      4,
-"name": "sex.age",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "To see if magazines for different age groups are targeted to different sexes." 
 }'>To see if magazines for different age groups are targeted to different sexes.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-5-SD",
-"itemN":      4,
-"name": "sex.age",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "To see if the difference in average sentence length between magazines for females and males changes from one age group to another." 
-}'>To see if the difference in average sentence length between magazines for females and males changes from one age group to another.</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+}'>To see if the difference in average sentence length between magazines for females and males changes from one age group to another.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
+"setID": "SM-15-5-SD",
+"itemN":      6,
+"name": "sex.age",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 <li><p>I tried to include an interaction between <em>sex</em> and <em>age</em> into the model.  This didn&#39;t work out.  Just using the information in the printed ANOVA report, judge what might have gone wrong.  </p></li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR7' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> The term was included as the last term in the ANOVA report and
 didn&#39;t have a significant sum of squares.<br/>
-<label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR7' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
-}'> <b>B</b></label> I discovered that <code>sex</code> and <code>age</code> were
+}'> <b>B</b></label> I discovered that <cod>sex</code> and <code>age</code> were
 redundant.<br/>
-<label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR7' id='MCitem3' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> The p-values disappeared from the report.<br/>
-<label for='MCitem4'><input type='radio' name='MC3' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR7' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-15-5-SD",
-"itemN":      3,
-"name": "3",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> None of the above.</p>
+}'> <b>D</b></label> None of the above.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
+ "setID": "SM-15-5-SD",
+"itemN":      7,
+"name": "what.went.wrong",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "MC1", "MC2", "MC3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "model", "cases", "variable", "p-value", "null.hypothesis", "sex.age", "what.went.wrong" ]'>problem roster</option></select></p>
 
 </body>
 

@@ -2,12 +2,12 @@ Intro to Statistical Modeling Ch. 15 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-2-SD")
+require(ScoreR)
+startProblem("SM-15-2-SD")
 ```
 Here is an ANOVA table (with the "intercept" term included) from a fictional study of scores assigned to various flavors, textures, densities, and chunkiness of ice cream.  Some of the values in the table have been left out.  Figure out from the rest of the table what they should be.
 
-| | Df | Sum-Sq | Mean-Sq | F-value | p-value |
+| | &nbsp; Df &nbsp; | &nbsp; Sum-Sq &nbsp; | &nbsp; Mean-Sq &nbsp; | &nbsp; F-value &nbsp; | &nbsp; p-value &nbsp; |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | (intercept) | 1 | _A_ | 200 | _B_ | _C_ |
 | flavor | 8 | 640 | 80 | _D_ | 0.134 |
@@ -56,4 +56,4 @@ prob8=selectNumber(choices=c(1,3,5,8,9,10,12,100),correct=c(9), totalPts=1, name
 ```
 * How many different flavors were tested? `r I(prob8)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

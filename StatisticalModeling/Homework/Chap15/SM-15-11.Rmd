@@ -2,12 +2,14 @@ Intro to Statistical Modeling Ch. 15 Prob. 11
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-15-11-SD")
+require(ScoreR)
+startProblem("SM-15-11-SD")
 ```
+
+
 You are conducting an experiment of a treatment for balding.  You measure the hair follicle density before treatment and again after treatment.  The data table has the following variables (with a few examples shown):
 
-Subject.ID | follicle.density | when | sex 
+Subject.ID &nbsp; | &nbsp; follicle.density &nbsp; | &nbsp; when &nbsp; | &nbsp; sex 
 |:---|:---:|:----:|:---:|
 A59 | 7.3 | before | M 
 A59 | 7.9 | after | M 
@@ -29,9 +31,7 @@ when         1    33.7   33.7  0.157 0.693
 Residuals   98 21077.5  215.1
 
 Does this table suggest that the treatment makes a difference?  Why or why not?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="difference", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="difference", totalPts=2, rows=3))`
 
 <aside>
@@ -51,9 +51,7 @@ Subject.ID 49 20858.6  425.7 185.0  zero
 Residuals  97   218.9    2.3
 
 Why is the F-value on *when* different in this model than in the previous one?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="Fvalue", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="Fvalue", totalPts=2, rows=3))`
 
 <aside>
@@ -62,9 +60,7 @@ It seems that the subject-to-subject variation in follicle density is very large
 </aside>
 
 * What overall conclusion do you draw about the effectiveness of the treatment?  Is the effect of the treatment statistically significant?  Is it significant in practice?
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="conclusion", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="conclusion", totalPts=2, rows=3))`
 
 <aside>
@@ -75,4 +71,4 @@ the treatment is associated with a change in follicle density.
 The ANOVA report doesn't say which way the change goes.  This could be easily seen in the regression report, by looking at the coefficient. Then you could judge how big the difference is, and, based on what you know about hair density, figure out whether the change is significant.
 </aside>
 
-`r I(closeProblem())`
+`r I(endProblem())`

@@ -184,10 +184,10 @@ hljs.initHighlightingOnLoad();
 
 <p>Consider the data on the times it took runners to complete the Cherry Blossom ten-mile race in March 2005:</p>
 
-<pre><code class="r">run = fetchData(&quot;ten-mile-race.csv&quot;)
+<pre><code class="r">run = fetchData(&quot;TenMileRace&quot;)
 </code></pre>
 
-<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/ten-mile-race.csv
+<pre><code>## Data TenMileRace found in package.
 </code></pre>
 
 <pre><code class="r">names(run)
@@ -196,59 +196,44 @@ hljs.initHighlightingOnLoad();
 <pre><code>## [1] &quot;state&quot; &quot;time&quot;  &quot;net&quot;   &quot;age&quot;   &quot;sex&quot;
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-[1] &ldquo;state&rdquo; &ldquo;time&rdquo;  &ldquo;net&rdquo;   &ldquo;age&rdquo;   &ldquo;sex&rdquo;  </p>
-
 <p>Consider the <code>net</code> variable, which gives the time it took the runners to get from the start line to the finish line.</p>
 
 <p>Answer each of the following questions, giving both a quantitative argument and also an everyday English explanation.  Assessing statistical significance is a technical matter, but to interpret the substance of a relationship, you will have to put it in a real-world context.</p>
 
 <ul>
 <li><p>What is the relationship between net running time and the runner&#39;s age?  Is the relationship significant?  Is it substantial?<br/>
-<textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
-"pts":      0,
-"hint": "",
-"itemInfo": {
+<textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
 "setID": "SM-15-10-SD",
 "itemN":      1,
 "name": "time.age",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>What is the relationship between net running time and the runner&#39;s sex?  Is the relationship significant?  Is it substantial?<br/>
-<textarea cols='30' rows='3' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>What is the relationship between net running time and the runner&#39;s sex?  Is the relationship significant?  Is it substantial?<br/>
+<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
 "setID": "SM-15-10-SD",
 "itemN":      2,
 "name": "time.sex",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p></li>
-<li><p>Is there an interaction between sex and age?  Is the relationship significant?  Is it substantial?<br/>
-<textarea cols='30' rows='3' id='text3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info3'><option value='{
-"pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
+<li><p>Is there an interaction between sex and age?  Is the relationship significant?  Is it substantial?<br/>
+<textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
 "setID": "SM-15-10-SD",
 "itemN":      3,
 "name": "age.sex",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout3' value='spanvalue' class='shiny-html-output'></span></p></li>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p></li>
 </ul>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "text1", "text2", "text3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "time.age", "time.sex", "age.sex" ]'>problem roster</option></select></p>
 
 </body>
 

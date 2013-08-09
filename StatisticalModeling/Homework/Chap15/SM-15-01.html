@@ -215,273 +215,149 @@ hljs.initHighlightingOnLoad();
 ## F-statistic: 3.69 on 1 and 37 DF,  p-value: 0.0623
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)<br/>
-(Intercept)  25.1050     0.2847  88.180   &lt;2e-16 
-sexG         -0.7839     0.4079  -1.922   0.0623 </p>
-
 <p>Interpret this report, keeping in mind that the foot length is reported in centimeters.  (The reported value <em>&lt;2e-16</em> means \( p < 2 \times 10^{-16} \).)</p>
 
-<ul>
-<li>What is the point estimate of the difference between the lengths of boys and girls feet. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      1,
-"name": "pointEstimate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>What is the point estimate of the difference between the lengths of boys and girls feet. <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' feet are, on average, 25 centimeters long." 
 }'>Girls&#39; feet are, on average, 25 centimeters long.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      1,
-"name": "pointEstimate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Girls'feet are 0.4079 cm shorter than boys'." 
-}'>Girls&#39;feet are 0.4079 cm shorter than boys&#39;.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      1,
-"name": "pointEstimate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+"content": "Girls' feet are 0.4079 cm shorter than boys'." 
+}'>Girls&#39; feet are 0.4079 cm shorter than boys&#39;.</option> <option value='{
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' feet are 0.7839 cm shorter than boys'." 
 }'>Girls&#39; feet are 0.7839 cm shorter than boys&#39;.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      1,
-"name": "pointEstimate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Girls' feet are 1.922 cm shorter than boys'." 
-}'>Girls&#39; feet are 1.922 cm shorter than boys&#39;.</option> </select><span id='out1' class='shiny-html-output'> </span></li>
-</ul>
+"content": "Girls' feet are \( 1.922 \) cm shorter than boys'." 
+}'>Girls&#39; feet are \( 1.922 \) cm shorter than boys&#39;.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-15-1-SD",
+"itemN":      1,
+"name": "point.estimate",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
 The difference between the typical foot <em>length</em> of the two sexes is indicated by the <em>sexG</em> coefficient.  It&#39;s negative, meaning that level G (that is, girls) has a smaller typical foot length.
 </aside></p>
 
-<ul>
-<li>The confidence interval can be written as a point estimate plus-or-minus a margin of error: \( P \pm M \). What is the 95\% margin of error, \( M \), on the difference between boy&#39;s and girl&#39;s foot lengths. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      2,
-"name": "95percentM",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>The confidence interval can be written as a point estimate plus-or-minus a margin of error: \( P \pm M \).  What is the 95% margin of error, \( M \), on the difference between boy&#39;s and girl&#39;s foot lengths. <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "-0.78" 
 }'>-0.78</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      2,
-"name": "95percentM",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.28" 
 }'>0.28</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      2,
-"name": "95percentM",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.41" 
 }'>0.41</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      2,
-"name": "95percentM",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.6" 
 }'>0.6</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      2,
-"name": "95percentM",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.8" 
-}'>0.8</option> </select><span id='out2' class='shiny-html-output'> </span></li>
-</ul>
+}'>0.8</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-15-1-SD",
+"itemN":      2,
+"name": "95.marg.error",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
 The standard error on the <em>sexG</em> coefficient is 0.41.  Doubling that gives a 95% margin of error.<br/>
 </aside></p>
 
-<ul>
-<li>What is the Null Hypothesis being tested by the reported p-value \( 0.0623 \)? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      3,
-"name": "NullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>What is the Null Hypothesis being tested by the reported p-value \( 0.0623 \)? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Boys' feet are, on average, longer than girls' feet." 
 }'>Boys&#39; feet are, on average, longer than girls&#39; feet.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      3,
-"name": "NullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' feet are, on average,  shorter than boys' feet." 
 }'>Girls&#39; feet are, on average,  shorter than boys&#39; feet.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      3,
-"name": "NullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "All boys' feet are longer than all girls' feet." 
 }'>All boys&#39; feet are longer than all girls&#39; feet.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      3,
-"name": "NullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "No girl's foot is shorter than all boys' feet." 
 }'>No girl&#39;s foot is shorter than all boys&#39; feet.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      3,
-"name": "NullHypothesis",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "There is no difference, on average, between boys' footlengths\nand girls' footlengths." 
-}'>There is no difference, on average, between boys&#39; footlengths
-and girls&#39; footlengths.</option> </select><span id='out3' class='shiny-html-output'> </span></li>
-</ul>
+"content": "There is no difference, on average, between boys' footlengths and girls' footlengths." 
+}'>There is no difference, on average, between boys&#39; footlengths and girls&#39; footlengths.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-15-1-SD",
+"itemN":      3,
+"name": "null.hypothesis",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
 The p-value in a regression report relates to the null hypothesis that the corresponding coefficient is zero <em>in the population</em>.  So the p-value of \( 0.0623 \), which corresponds to the <em>sexG</em> coefficient, is against the null that that coefficient would be 0 in the population.  That means that in the population there is no difference between the foot <em>length</em> of girls and boys.
 </aside></p>
 
-<ul>
-<li>What is the Null Hypothesis being tested by the p-value on the intercept? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      4,
-"name": "NullHypothesis2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>What is the Null Hypothesis being tested by the p-value on the intercept? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Boys' and girls' feet are, on average, the same length." 
 }'>Boys&#39; and girls&#39; feet are, on average, the same length.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      4,
-"name": "NullHypothesis2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The length of kids' feet is, on average, zero." 
 }'>The length of kids&#39; feet is, on average, zero.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      4,
-"name": "NullHypothesis2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "The length of boys' feet is, on average, zero." 
 }'>The length of boys&#39; feet is, on average, zero.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      4,
-"name": "NullHypothesis2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "The length of girls' feet is, on average, zero." 
 }'>The length of girls&#39; feet is, on average, zero.</option> <option value='{
-"itemInfo": {
-"setID": "SM-15-1-SD",
-"itemN":      4,
-"name": "NullHypothesis2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' and boys' feet don't intercept." 
-}'>Girls&#39; and boys&#39; feet don&#39;t intercept.</option> </select><span id='out4' class='shiny-html-output'> </span></li>
-</ul>
+}'>Girls&#39; and boys&#39; feet don&#39;t intercept.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+ "setID": "SM-15-1-SD",
+"itemN":      4,
+"name": "null.hypothesis.intercept",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
@@ -513,69 +389,42 @@ The intercept in this model corresponds to the mean foot <em>length</em> of the 
 ## F-statistic: 7.35e+03 on 2 and 37 DF,  p-value: &lt;2e-16
 </code></pre>
 
-<p><strong>SHOULD MATCH</strong>
-Coefficients:
-     Estimate Std. Error t value Pr(&gt;|t|)<br/>
-sexB  25.1050     0.2847   88.18   &lt;2e-16
-sexG  24.3211     0.2921   83.26   &lt;2e-16</p>
-
 <p>Note that the p-values for both coefficients are practically zero, \( p < 2 \times 10^{-16} \).</p>
 
-<p>What is the Null Hypothesis tested by the p-value on <code>sexG</code>? <select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-15-1-SD",
-"itemN":      5,
-"name": "NullHypothesis3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>What is the Null Hypothesis tested by the p-value on <em>sexG</em>? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' feet have a different length, on average, than boys'." 
 }'>Girls&#39; feet have a different length, on average, than boys&#39;.</option> <option value='{
- "itemInfo": {
- "setID": "SM-15-1-SD",
-"itemN":      5,
-"name": "NullHypothesis3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' feet are no different in length, on average, than boys'." 
 }'>Girls&#39; feet are no different in length, on average, than boys&#39;.</option> <option value='{
- "itemInfo": {
- "setID": "SM-15-1-SD",
-"itemN":      5,
-"name": "NullHypothesis3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' footlengths are, on average, zero." 
 }'>Girls&#39; footlengths are, on average, zero.</option> <option value='{
- "itemInfo": {
- "setID": "SM-15-1-SD",
-"itemN":      5,
-"name": "NullHypothesis3",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "Girls' footlengths are, on average, greater than zero." 
-}'>Girls&#39; footlengths are, on average, greater than zero.</option> </select><span id='out5' class='shiny-html-output'> </span></p>
+}'>Girls&#39; footlengths are, on average, greater than zero.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
+ "setID": "SM-15-1-SD",
+"itemN":      5,
+"name": "null.hypothesis.sexG",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
-Since there&#39;s no intercept in this model, the <em>sexG</em> coefficient refers to the mean of the girls&#39; foot <em>length</em>.  So the p-value relates to the null hypothesis that the mean girls foot <em>length</em> is zero.  Again, that&#39;s obviously wrong, which is why the p-value is so small.</p>
+Since there&#39;s no intercept in this model, the <em>sexG</em> coefficient refers to the mean of the girls&#39; foot <em>length</em>.  So the p-value relates to the null hypothesis that the mean girls foot <em>length</em> is zero.  Again, that&#39;s obviously wrong, which is why the p-value is so small.
+</aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "point.estimate", "95.marg.error", "null.hypothesis", "null.hypothesis.intercept", "null.hypothesis.sexG" ]'>problem roster</option></select></p>
 
 </body>
 
