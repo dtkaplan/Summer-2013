@@ -17,12 +17,12 @@ Baker and Hornbach found that zebra mussels attached to *Amblema* had greater ph
 
 In this problem, you will use the data collected by Baker and Hornbach to reprise their statistical analysis.  The data are in the file <code>zebra-mussels.csv</code>. 
 
-| | GroupID | dry.mass | count | attachment | ammonia | O2 | 
-|:---|----:|---:|---:|---:|---:|---:|
+| | GroupID &nbsp; | &nbsp; dry.mass &nbsp; | &nbsp; count &nbsp; | &nbsp; attachment &nbsp; | &nbsp; ammonia &nbsp; | &nbsp; O2 | 
+|:---|:----:|:---:|:---:|:---:|:---:|:---:|
 | 1 | 1 | 0.55 | 20 | Rock | 0.075 | 0.082 |
 | 2 | 2 | 0.45 | 19 | Rock | 0.066 | 0.70 |
 | 3 | 3 | 0.37 | 20 | Rock | 0.074 | 0.062 |
-| | ... | and | so | on | ... | | |
+| | ... | *and* | *so* | *on* | ... | | |
 | 28 | 28 | 0.89 | 28 | Amblema | 0.248 | 2.68 |
 | 29 | 29 | 0.70 | 31 | Amblema | 0.258 | 2.26 |
 | 30 | 30 | 0.68 | 64 | Amblema | 0.235 | 2.05 |
@@ -32,12 +32,12 @@ In this problem, you will use the data collected by Baker and Hornbach to repris
 </aside>
 NOTE:     
  
-| GroupID | dry.mass | count | attachment | lipid | protein | carbo | ash | Kcal | ammonia  | O2|
-|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| GroupID &nbsp; | &nbsp; dry.mass &nbsp; | &nbsp; count &nbsp; | &nbsp; attachment &nbsp; | &nbsp; lipid &nbsp; | &nbsp; protein &nbsp; | &nbsp; carbo &nbsp; | &nbsp; ash &nbsp; | &nbsp; Kcal &nbsp; | &nbsp; ammonia &nbsp; | &nbsp; O2|
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | 1 | 0.55 | 20 | Rock | 8.1 | 47 | 22 | 5.5 | 3.6 | 0.075 | 0.82 |
 | 2 | 2 | 0.45 | 19 | Rock | 9.3 | 54 | 23 | 6.3 | 4.1 | 0.066 | 0.70 |
 | 3 | 3 | 0.37 | 20 | Rock | 9.1 | 49 | 21 | 5.6 | 3.7 | 0.074 | 0.62 |
-| | ... | and | so| on | ... | | |
+| | ... | *and* | *so* | *on* | ... | | |
 | 28 | 28 | 0.89 | 28 | Amblema | 8.2 | 60 | NA | 5.5 | NA | 0.248 | 2.68 |
 | 29 | 29 | 0.70 | 31 | Amblema | 9.4 | 49 | 21 | 5.8 | 3.8 | 0.258 | 2.26 |
 | 30 | 30 | 0.68 | 64 | Amblema | 8.0 | NA | 18 | NA | NA | 0.235 | 2.05 |
@@ -182,9 +182,6 @@ prob9=selectNumber(choices=c(0.0000005,0.0005,0.0001,0.001,0.01,0.1), correct=c(
 * Ammonia `r I(prob9)`
 
 
-```{r include=FALSE, results="hide"}
-I(textItem(name="soak", totalPts=2, rows=3))
-```
 The reason that including *ind.mass* as a covariate has improved the p-value is that *ind.mass* has soaked up the variance in the response variable.  Show an ANOVA report for one of the two models *mod3* or *mod4* and explain what in the report demonstrates that *ind.mass* is soaking up variance. `r I(textItem(name="soak", totalPts=2, rows=3))`
 
 <aside>
@@ -199,7 +196,7 @@ The *ind.mass* term has a large F value (109.26).    This means that it is accou
 In contrast to the dramatic effect of *ind.mass* on the p-values, including it as a covariate does not seem to affect much the coefficient on *attachment*.  What is it about *ind.mass* that explains this?
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="ind.mass")
 ```
 `r I(f(FALSE))` *ind.mass* is almost entirely uncorrelated with the response
 variable.     

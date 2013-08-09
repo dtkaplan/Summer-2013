@@ -10,15 +10,11 @@ Suppose that you have worked hard to carry out an experiment about baldness that
 
 You plot out your data:
 
-```{r moss,fig=TRUE,pdf=TRUE,echo=FALSE,figwidth=4,figheight=4}
+```{r}
 d = run.sim( bogus.groups, ngroups=5, 10, seed=123)
-d$group = factor(d$group, labels=c("Sage", "Kiwi", "Music","Moss","Peaches"))
-boxplot( val/8 ~ group, data=d, ylab="Follicle Count (per cm^2)",las=2)
 ```
-# also nice pictures from seed 116 and 122
-@ 
 
-\centerline{\includegraphics[width=3.5in]{Figures/multiple-moss}}
+![Moss](multiple-moss.png)
 
 It looks like the music treatment produced the lowest number of follicles, while moss produced the highest.  (Kiwi is a close second, but the range is so large that you aren't sure about it.)
 
@@ -38,7 +34,7 @@ Aha!  $p = 0.04$.  You have evidence that such treatments can have an effect.
 Or do you?  Admittedly, a p-value of 0.04 will not be terribly compelling to someone who doubts that music and moss affect follicle density in different ways.  But it is below the conventional threshold of 0.05.  Consider some of the things that could be wrong:
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="null.hypothesis")
 ```
 * What's the null hypothesis in the hypothesis test presented above?
 `r I(f(FALSE))` That Moss and Music are no different than a Control group.    

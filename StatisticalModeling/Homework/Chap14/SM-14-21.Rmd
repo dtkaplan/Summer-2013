@@ -7,7 +7,7 @@ startProblem("SM-14-21-SD")
 ```
 The table shows a brief data set that we will use to trace through a simple one-way ANOVA calculation by hand.
 
-Age | Group
+Age &nbsp; | &nbsp; Group
 |:---|:---|
 18 | Student
 22 | Student
@@ -31,7 +31,7 @@ We will do this by hand.  First, fit *Age* ~ *1* and enter the fitted values int
 
 **For *Age* ~ *1***
 
-Age | Group | Fitted
+Age &nbsp; | &nbsp; Group &nbsp; | &nbsp; Fitted
 |:---|:---|:---:|
 18 | Student | __ | 
 22 | Student | __ | 
@@ -47,7 +47,7 @@ Next, fit the model *Age* ~ *1* + *Group* and enter the fitted values into the t
 
 For *Age* ~ *1* + *Group*
 
-Age | Group | Fitted
+Age &nbsp; | &nbsp; Group &nbsp; | &nbsp; Fitted
 |:---|:---|:---:|
 18 | Student | __ |
 22 | Student | __ |
@@ -62,7 +62,7 @@ Finally, compute the sum of squares of the *Age* variable itself.  You might lik
 
 Enter the degrees of freedom and the sums of squares of the fitted values into the table below:
 
-Model | D.F. | Sum of Squares of Fitted Values
+Model &nbsp; | &nbsp; D.F. &nbsp; | &nbsp; Sum of Squares of Fitted Values
 |:---|---:|:---:|
 *Age* ~ *1* | __ | __ |
 *Age* ~ *1* + *Group* | __ | __ |
@@ -74,7 +74,7 @@ We are almost at the point where we can construct the ANOVA table.  At the heart
 Fill in the first two columns of the table.  Then go back and fill in the "mean square" column, which is just the sum of squares divided by the degrees of freedom.  Similarly, fill in the F column, which is the mean square for each model divided by the mean square for the perfect model.
 
 
-Model | $\Delta$ D.F. | $\Delta$ S.S. | M.S. | F ratio | p-value
+Model &nbsp; | &nbsp; $\Delta$ D.F. &nbsp; | &nbsp; $\Delta$ S.S. &nbsp; | &nbsp; M.S. &nbsp; | &nbsp; F ratio &nbsp; | &nbsp; p-value
 |:---|:---:|:---:|:---:|:---:|:---:|
 *Age* ~ *1* | __ | __ | __ | __ | __ |
 *Age* ~ *1* + *Group* | __ | __ | __ | __ | __ |
