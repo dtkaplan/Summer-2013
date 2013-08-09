@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 16 Prob. 1
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-1-SD")
+require(ScoreR)
+startProblem("SM-16-1-SD")
 ```
 The graphs show the link values and the corresponding probability values for a logistic model where $x$ is the explanatory variable.
 
@@ -55,4 +55,4 @@ prob7=selectNumber(choices=c(0.0, 0.25, 0.50, 0.75, 1.00), correct=c(1.00), tota
 ```
 * What probability corresponds to a link of $-\infty$? (This isn't on the graph.) `r I(prob7)`
 
-`r I(closeProblem())`
+`r I(endProblem())`

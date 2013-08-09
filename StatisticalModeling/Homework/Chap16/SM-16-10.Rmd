@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 16 Prob. 10
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-10-SD")
+require(ScoreR)
+startProblem("SM-16-10-SD")
 ```
 The National Osteoporosis Risk Assessment (NORA)[*siris-2001*] studied about 200,000 postmenopausal women aged 50 years or old in the United States. When
 entering the study, 14,412 of these women had osteoporosis as defined by a bone-mineral density "T score."  In studying the risk factors for the development of osteoporosis, the researchers fit a logistic regression model.
@@ -20,115 +20,115 @@ The 95% confidence interval on the odds ratio indicates the precision of the est
 
 For some variables, e.g., "college education or higher," no reference level is given.  This is simply because the variable has just two levels.  The other level serves as the reference.
 
-Age group (years) | Odds Ratio (95% CI)
+Age group (years) &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-50-54 | 1.00  (Referent)
-55-59 | 1.79  (1.56-2.06) 
-60-64 | 3.84  (3.37-4.37) 
-65-69 | 5.94  (5.24-6.74) 
-70-74 | 9.54  (8.42-10.81) 
-75-79 | 14.34 (12.64-16.26) 
-$\geq$ 80 | 22.56  (19.82-25.67) 
+50-54 | 1.00 &nbsp; (Referent)
+55-59 | 1.79 &nbsp; (1.56-2.06) 
+60-64 | 3.84 &nbsp; (3.37-4.37) 
+65-69 | 5.94 &nbsp; (5.24-6.74) 
+70-74 | 9.54 &nbsp; (8.42-10.81) 
+75-79 | 14.34 &nbsp; (12.64-16.26) 
+$\geq$ 80 | 22.56 &nbsp; (19.82-25.67) 
 
 
-Years since menopause | Odds Ratio (95% CI)
+Years since menopause &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-$\leq$ 5 | 1.00  (Referent) 
-6-10 | 0.79  (0.70-0.89) 
-11-15 | 0.83  (0.76-0.91)  
-16-20 | 0.96  (0.89-1.03) 
-21-25 | 1.01  (0.95-1.08) 
-26-30 | 1.02  (0.95-1.09) 
-31-35 | 1.10  (1.03-1.19)
-36-40 | 1.14  (1.05-1.24)
-$\geq$ 41 | 1.24  (1.14-1.35) 
+$\leq$ 5 | 1.00 &nbsp; (Referent) 
+6-10 | 0.79 &nbsp; (0.70-0.89) 
+11-15 | 0.83 &nbsp; (0.76-0.91)  
+16-20 | 0.96 &nbsp; (0.89-1.03) 
+21-25 | 1.01 &nbsp; (0.95-1.08) 
+26-30 | 1.02 &nbsp; (0.95-1.09) 
+31-35 | 1.10 &nbsp; (1.03-1.19)
+36-40 | 1.14 &nbsp; (1.05-1.24)
+$\geq$ 41 | 1.24 &nbsp; (1.14-1.35) 
 
 
-College educ or higher | Odds Ratio (95% CI)} 
+College educ or higher &nbsp; | &nbsp; Odds Ratio (95% CI)} 
 |:---|:---|
-| | 0.91  (0.87-0.94) 
+| | 0.91 &nbsp; (0.87-0.94) 
 
 
-Self-rated health status | Odds Ratio (95% CI)
+Self-rated health status &nbsp;| &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Excellent | 1.00  (Referent) 
-Very good | 1.04  (0.97-1.13) 
-Good      | 1.23  (1.14-1.33) 
-Fair/poor | 1.62  (1.50-1.76) 
+Excellent | 1.00 &nbsp; (Referent) 
+Very good | 1.04 &nbsp; (0.97-1.13) 
+Good      | 1.23 &nbsp; (1.14-1.33) 
+Fair/poor | 1.62 &nbsp; (1.50-1.76) 
 
 
-Fracture history | Odds Ratio (95% CI)
+Fracture history &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Hip   | 1.96  (1.75-2.20) 
-Wrist | 1.90  (1.77-2.03)
-Spine | 1.34  (1.17-1.54) 
-Rib   | 1.43  (1.32-1.56) 
+Hip   | 1.96 &nbsp; (1.75-2.20) 
+Wrist | 1.90 &nbsp; (1.77-2.03)
+Spine | 1.34 &nbsp; (1.17-1.54) 
+Rib   | 1.43 &nbsp; (1.32-1.56) 
 
 
-Maternal history of osteoporosis | Odds Ratio (95% CI)
+Maternal history of osteoporosis &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---:|:---|
-| |1.08  (1.01-1.17) 
+| |1.08 &nbsp; (1.01-1.17) 
 
 
-Maternal history of fracture | Odds Ratio (95% CI)
+Maternal history of fracture &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---:|:---|
-| | 1.16  (1.11-1.22)  
+| | 1.16 &nbsp; (1.11-1.22)  
 
 
-Race/ethnicity | Odds Ratio (95% CI)
+Race/ethnicity &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-White | 1.00  (Referent)
-African American | 0.55  (0.48-0.62)
-Native American | 0.97  (0.82-1.14) 
-Hispanic | 1.31  (1.19-1.44)
-Asian | 1.56  (1.32-1.85) 
+White | 1.00 &nbsp; (Referent)
+African American | 0.55 &nbsp; (0.48-0.62)
+Native American | 0.97 &nbsp; (0.82-1.14) 
+Hispanic | 1.31 &nbsp; (1.19-1.44)
+Asian | 1.56 &nbsp; (1.32-1.85) 
 
 
-Body mass index, kg/m2 | Odds Ratio (95% CI)
+Body mass index, kg/m2 &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-$\leq$ 23 | 1.00  (Referent)
-23.01-25.99 | 0.46  (0.44-0.48)
-26.00-29.99 | 0.27  (0.26-0.28)
-$\geq$ 30 | 0.16  (0.15-0.17)  
+$\leq$ 23 | 1.00 &nbsp; (Referent)
+23.01-25.99 | 0.46 &nbsp; (0.44-0.48)
+26.00-29.99 | 0.27 &nbsp; (0.26-0.28)
+$\geq$ 30 | 0.16 &nbsp; (0.15-0.17)  
 
 
-Current medication use | Odds Ratio (95% CI)
+Current medication use &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Cortisone | 1.63  (1.47-1.81)  
-Diuretics | 0.81  (0.76-0.85)
+Cortisone | 1.63 &nbsp; (1.47-1.81)  
+Diuretics | 0.81 &nbsp; (0.76-0.85)
 
 
-Estrogen use | Odds Ratio (95% CI)
+Estrogen use &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Former | 0.77  (0.73-0.80)
-Current | 0.27  (0.25-0.28)
+Former | 0.77 &nbsp; (0.73-0.80)
+Current | 0.27 &nbsp; (0.25-0.28)
 
 
-Cigarette smoking | Odds Ratio (95% CI)
+Cigarette smoking &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Former | 1.14  (1.10-1.19)
-Current | 1.58  (1.48-1.68)
+Former | 1.14 &nbsp; (1.10-1.19)
+Current | 1.58 &nbsp; (1.48-1.68)
 
 
-Regular Exercise | Odds Ratio (95% CI)
+Regular Exercise &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Regular | 0.86  (0.82-0.89)
+Regular | 0.86 &nbsp; (0.82-0.89)
 
 
-Alcohol use, drinks/wk | Odds Ratio (95% CI)
+Alcohol use, drinks/wk &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-None | 1.00  (Referent) 
-1-6 | 0.85  (0.80-0.90)  
-7-13 | 0.76  (0.69-0.83)
-$\geq$ 14 | 0.62  (0.54-0.71) 
+None | 1.00 &nbsp; (Referent) 
+1-6 | 0.85 &nbsp; (0.80-0.90)  
+7-13 | 0.76 &nbsp; (0.69-0.83)
+$\geq$ 14 | 0.62 &nbsp; (0.54-0.71) 
 
 
-Technology | Odds Ratio (95% CI)
+Technology &nbsp; | &nbsp; Odds Ratio (95% CI)
 |:---|:---|
-Heel x-ray | 1.00  (Referent)
-Forearm x-ray | 2.86  (2.75-2.99)
-Finger x-ray | 4.86  (4.56-5.18)
-Heel ultrasound | 0.79  (0.70-0.90)
+Heel x-ray | 1.00 &nbsp; (Referent)
+Forearm x-ray | 2.86 &nbsp; (2.75-2.99)
+Finger x-ray | 4.86 &nbsp; (4.56-5.18)
+Heel ultrasound &nbsp; | 0.79 &nbsp; (0.70-0.90)
 
 
 Since all the variables were included simultaneously in the model, the various coefficients can be interpreted as indicating partial change: the odds ratio comparing the given level to the reference level for each variable, adjusting for all the other variables as if they had been held constant.
@@ -169,7 +169,7 @@ In combining the odds ratios of multiple variables, you can *multiply* the indiv
 
 * What is the odds ratio of a women having osteoporosis who is in fair/poor health, drinks 7-13 drinks per week, and is Asian?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="odds.ratio")
 ```
 `r I(f(FALSE))` $0.76 \times 0.27 \times 1.00$    
 `r I(f(FALSE))` $1.62 \times 0.27 \times 1.56$    
@@ -196,4 +196,4 @@ Now suppose the woman was taking cortisone to treat arthritis. Knowing the absol
 [This problem is based on an item used in a test of the statistical
 expertise of medical residents reported in [windish-2007].]
 
-`r I(closeProblem())`
+`r I(endProblem())`

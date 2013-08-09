@@ -155,10 +155,10 @@ hr {
 
 <table><thead>
 <tr>
-<th align="left">Case</th>
-<th align="center">Age</th>
-<th align="center">Sex</th>
-<th align="center">Accident?</th>
+<th align="left">Case &nbsp;</th>
+<th align="center">&nbsp; Age &nbsp;</th>
+<th align="center">&nbsp; Sex &nbsp;</th>
+<th align="center">&nbsp; Accident?</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -201,9 +201,9 @@ hr {
 </tr>
 </thead><tbody>
 <tr>
-<td align="center">Intercept</td>
-<td align="center"><em>age</em></td>
-<td align="center"><em>sexF</em></td>
+<td align="center">Intercept &nbsp;</td>
+<td align="center">&nbsp; <em>age</em> &nbsp;</td>
+<td align="center">&nbsp; <em>sexF</em></td>
 </tr>
 <tr>
 <td align="center">35</td>
@@ -220,9 +220,9 @@ hr {
 </tr>
 </thead><tbody>
 <tr>
-<td align="center">Intercept</td>
-<td align="center"><em>age</em></td>
-<td align="center"><em>sexF</em></td>
+<td align="center">Intercept &nbsp;</td>
+<td align="center">&nbsp; <em>age</em> &nbsp;</td>
+<td align="center">&nbsp; <em>sexF</em></td>
 </tr>
 <tr>
 <td align="center">35</td>
@@ -237,428 +237,250 @@ hr {
 <li>Using the candidate A coefficients, what is the link value for case 1?</li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> \( 35 - 2\times 17 - 0 = 1 \)<br/>
-<label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> \( 35 - 2\times 17 - 1 = 0 \)<br/>
-<label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> \( 35 - 2\times 18 - 1 = -2 \)<br/>
-<label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "1",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> \( 35 - 2\times 19 - 1 = -4 \)    </p>
+}'> <b>D</b></label> \( 35 - 2\times 19 - 1 = -4 \)<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-16-5-SD",
+"itemN":      1,
+"name": "link.value.1",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <ul>
 <li>Using the candidate B coefficients, what is the link value for case 3?</li>
 </ul>
 
-<p><label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<p><label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> \( 35 - 2\times 18 - 0 = -1 \)<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> \( 35 - 2\times 18 - 1 = -2 \)<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
 }'> <b>C</b></label> \( 35 - 2\times 18 + 1 = 0 \)<br/>
-<label for='MCitem4'><input type='radio' name='MC2' id='MCitem4' value='{
+<label for='MCitem4'><input type='radio' name='ScoreR2' id='MCitem4' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "2",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> \( 35 - 2\times 18 - 2 = -3 \)    </p>
+}'> <b>D</b></label> \( 35 - 2\times 18 - 2 = -3 \)<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-16-5-SD",
+"itemN":      2,
+"name": "link.value.3",
+"totalpts":      1,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p>The link value is converted to a probability value by using the logistic transform.</p>
 
 <ul>
-<li><p>The link value under the candidate A coefficients for case 4 is \( 35 -2\times 19 - 1 = -4 \).  What is the corresponding probability value? (Hint: Plug in the link value to the logistic transform!) <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>The link value under the candidate A coefficients for case 4 is \( 35 -2\times 19 - 1 = -4 \).  What is the corresponding probability value? (Hint: Plug in the link value to the logistic transform!) <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.004" 
 }'>0.004</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.018" 
 }'>0.018</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.027" 
 }'>0.027</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.047" 
 }'>0.047</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.172" 
 }'>0.172</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      1,
-"name": "candidate.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.261" 
-}'>0.261</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>The link value under the candidate B coefficients for case 4 is \( 35 -2\times 19 - 0 = -3 \).  What is the corresponding probability value? <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>0.261</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      3,
+"name": "candidate.A",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The link value under the candidate B coefficients for case 4 is \( 35 -2\times 19 - 0 = -3 \).  What is the corresponding probability value? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.004" 
 }'>0.004</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.018" 
 }'>0.018</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.027" 
 }'>0.027</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.047" 
 }'>0.047</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.172" 
 }'>0.172</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      2,
-"name": "candidate.B",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.261" 
-}'>0.261</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+}'>0.261</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
+"setID": "SM-16-5-SD",
+"itemN":      4,
+"name": "candidate.B",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>The probability value is converted to a likelihood by calculating the probability of the observed outcome according to the probability value.  When the outcome is &ldquo;Yes,&rdquo; the likelihood is just the same as the probability value.  But when the outcome is &ldquo;No,&rdquo; the likelihood is 1 minus the probability value.</p>
 
 <ul>
-<li><p>The link value for case 3 using the candidate A coefficients is \( -1 \) and the corresponding probability value is \( 0.269 \).  What is the likelihood of the observed value of case 3 under the candidate A coefficients? <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      3,
-"name": "case.3.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>The link value for case 3 using the candidate A coefficients is \( -1 \) and the corresponding probability value is \( 0.269 \).  What is the likelihood of the observed value of case 3 under the candidate A coefficients? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      3,
-"name": "case.3.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.269" 
 }'>0.269</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      3,
-"name": "case.3.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.5" 
 }'>0.5</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      3,
-"name": "case.3.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.731" 
 }'>0.731</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      3,
-"name": "case.3.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1" 
-}'>1</option> </select><span id='out3' class='shiny-html-output'> </span></p></li>
-<li><p>The link value for case 2 using the candidate A coefficients is \( 1 \) and the corresponding probability value is \( 0.731 \).  What is the likelihood of the observed value of case 2 under the candidate A coefficients? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
+}'>1</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-16-5-SD",
-"itemN":      4,
-"name": "case.2.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"itemN":      5,
+"name": "case.3.A",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The link value for case 2 using the candidate A coefficients is \( 1 \) and the corresponding probability value is \( 0.731 \).  What is the likelihood of the observed value of case 2 under the candidate A coefficients? <select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0" 
 }'>0</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      4,
-"name": "case.2.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "content": "0.269" 
 }'>0.269</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      4,
-"name": "case.2.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.5" 
 }'>0.5</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      4,
-"name": "case.2.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "0.731" 
 }'>0.731</option> <option value='{
-"itemInfo": {
-"setID": "SM-16-5-SD",
-"itemN":      4,
-"name": "case.2.A",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "content": "1" 
-}'>1</option> </select><span id='out4' class='shiny-html-output'> </span></p></li>
+}'>1</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
+"setID": "SM-16-5-SD",
+"itemN":      6,
+"name": "case.2.A",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>To compute the likelihood of the entire set of observations under the candidate coefficients, multiply together the likelihoods for all the cases.  Do this calculation separately for the candidate A coefficients and the candidate B coefficients.  Show your work.  Say which of the two candidates gives the <em>bigger</em> likelihood? </p>
 
-<p><textarea cols='30' rows='4' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR7' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR7info'><option value='{
  "setID": "SM-16-5-SD",
-"itemN":      1,
+"itemN":      7,
 "name": "bigger.likelihood",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p>In an actual fitting calculation, the computer goes through large numbers of candidate coefficients in a systematic way to find the candidate with the largest possible likelihood: the maximum likelihood candidate.<br/>
 Explain why it makes sense to choose the candidate with the <em>maximum</em>  rather than the minimum likelihood.</p>
 
-<p><textarea cols='30' rows='4' id='text2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info2'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='4' id='ScoreR8' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR8info'><option value='{
  "setID": "SM-16-5-SD",
-"itemN":      2,
+"itemN":      8,
 "name": "maximum.likelihood",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
-"reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout2' value='spanvalue' class='shiny-html-output'></span></p>
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "MC1", "MC2", "text1", "text2" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "link.value.1", "link.value.3", "candidate.A", "candidate.B", "case.3.A", "case.2.A", "bigger.likelihood", "maximum.likelihood" ]'>problem roster</option></select></p>
 
 </body>
 

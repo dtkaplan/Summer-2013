@@ -2,15 +2,14 @@ Intro to Statistical Modeling Ch. 16 Prob. 2
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-2-SD")
+require(ScoreR)
+startProblem("SM-16-2-SD")
 ```
 The NASA space shuttle Challenger had a catastrophic accident during launch on January 28, 1986.  Photographic evidence from the launch showed that the accident resulted from a plume of hot flame from the side of one of the booster rockets which cut into the main fuel tank.  US President Reagan appointed a commission to investigate the accident.  The commission concluded that the jet was due to the failure of an O-ring gasket between segments of the booster rocket.
 
 ![Fig1](440px-Challenger_STS-51-L-launch.jpg)
 
-\centerline{\includegraphics[width=1.5in]{../Figures/440px-Challenger_STS-51-L-launch.jpg}}
-A NASA photograph showing the plume of flame from the side of the booster rocket during the Challenger launch.
+###### A NASA photograph showing the plume of flame from the side of the booster rocket during the Challenger launch.
 
 
 An important issue for the commission was whether the accident was avoidable.  Attention focused on the fact that the ground temperature at the time of launch was $31^\circ$ F, much lower than for any previous launch. Commission member and Nobel laureate physicist Richard Feynman famously demonstrated, using a glass of ice water and a C-clamp, that the O-rings were very inflexible when cold.  But did the data available to NASA **before the launch** indicate a high risk of an
@@ -18,8 +17,8 @@ O-ring failure?
 
 Here is the information available at the time of Challenger's launch from the previous shuttle launches:
 
-Flight | Temp | Damage | Flight | Temp | Damage
-|:---:|:---:|:---:|:---:|:---:|:---:|
+Flight &nbsp; | &nbsp; Temp &nbsp; | &nbsp; Damage &nbsp; | &nbsp; Flight &nbsp; | &nbsp; Temp &nbsp; | &nbsp; Damage
+|:---|:---:|:---:|:---:|:---:|:---:|
 STS-1 | 66 | no | STS-2 | 70 | yes 
 STS-3 | 69 | no | STS-4 | 80 | NA  
 STS-5 | 68 | no | STS-6 | 67 | no 
@@ -78,4 +77,4 @@ prob6=selectNumber(choices=c(0.08,0.23,0.83,0.94,0.985,0.9996,0.9999), correct=c
 
 A more complete analysis of the situation would take into account the fact that there are multiple O-rings in each booster, while the *Damage* variable describes whether *any* O-ring failed.  In addition, there were two O-rings on each booster segment, both of which would have to fail to create a leakage problem.  Thus, the probabilities estimated from this model and these data do not accurately reflect the probability of a catastrophic accident.
 
-`r I(closeProblem())`
+`r I(endProblem())`

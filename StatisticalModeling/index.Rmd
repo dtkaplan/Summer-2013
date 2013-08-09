@@ -407,7 +407,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 15.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-10.html) working
 
-* [Problem 15.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-10.html) not working, can't find the dataset about balding and hair follicle density
+* [Problem 15.11](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-11.html) not working, can't find the dataset about balding and hair follicle density
 
 * [Problem 15.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap15/SM-15-12a.html) working
 
@@ -431,7 +431,7 @@ Problems will be arranged according to their level of difficulty within their co
 
 * [Problem 16.05](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap16/SM-16-05.html) working
 
-* [Problem 16.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap16/SM-16-10.html) working, but really ugly charts
+* [Problem 16.10](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap16/SM-16-10.html) working
 
 * [Problem 16.12](http://dtkaplan.github.io/Summer-2013/StatisticalModeling/Homework/Chap16/SM-16-12.html) working
 

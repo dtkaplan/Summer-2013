@@ -2,8 +2,8 @@ Intro to Statistical Modeling Ch. 16 Prob. 5
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-5-SD")
+require(ScoreR)
+startProblem("SM-16-5-SD")
 ```
 This model traces through some of the steps in fitting a model of a yes/no process.  For specificity, pretend that the data are from observations of a random sample of teenaged drivers. The response variable is whether or not the driver was in an *accident* during one year (birthday to birthday).  The explanatory variables are *sex* and *age* of the driver.
  
@@ -11,7 +11,7 @@ The model being fit is *accident* ~ *1* + *age* + *sex*.
 
 Here is a very small, fictitious set of data. 
 
-Case | Age | Sex | Accident?
+Case &nbsp; | &nbsp; Age &nbsp; | &nbsp; Sex &nbsp; | &nbsp; Accident?
 |:---|:---:|:---:|:---:|
 1 | 17 | F | Yes 
 2 | 17 | M | No 
@@ -26,14 +26,14 @@ Consider these two different candidate coefficients:
 
 Candidate A Coefficients | | |
 |:---:|:---:|:---:|
-Intercept | *age* | *sexF*
+Intercept &nbsp; | &nbsp; *age* &nbsp; | &nbsp; *sexF*
 35 | -2 | -1 
 
 
 
 Candidate B Coefficients | | |
 |:---:|:---:|:---:|
-Intercept | *age* | *sexF*
+Intercept &nbsp; | &nbsp; *age* &nbsp; | &nbsp; *sexF*
 35 | -2 | 0
 
 
@@ -41,27 +41,23 @@ The link value is found by multiplying the coefficients by the values of the exp
 
 * Using the candidate A coefficients, what is the link value for case 1?
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="link.value.1")
 ```
 `r I(f(FALSE))` $35 - 2\times 17 - 0 = 1$    
 `r I(f(TRUE))` $35 - 2\times 17 - 1 = 0$    
 `r I(f(FALSE))` $35 - 2\times 18 - 1 = -2$    
-`r I(f(FALSE))` $35 - 2\times 19 - 1 = -4$    
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` $35 - 2\times 19 - 1 = -4$       
+`r I(f(finish=TRUE))`
 
 * Using the candidate B coefficients, what is the link value for case 3?
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="link.value.3")
 ```
 `r I(g(TRUE))` $35 - 2\times 18 - 0 = -1$    
 `r I(g(FALSE))` $35 - 2\times 18 - 1 = -2$    
 `r I(g(FALSE))` $35 - 2\times 18 + 1 = 0$    
 `r I(g(FALSE))` $35 - 2\times 18 - 2 = -3$    
-```{r include=FALSE, results="hide"}
-I(g(finish=TRUE))
-```
+`r I(g(finish=TRUE))`
 
 The link value is converted to a probability value by using the logistic transform.
 
@@ -89,17 +85,12 @@ prob4=selectNumber(choices=c(0.000,0.269,0.500,0.731,1.000), correct=c(0.269), t
 * The link value for case 2 using the candidate A coefficients is $1$ and the corresponding probability value is $0.731$.  What is the likelihood of the observed value of case 2 under the candidate A coefficients? `r I(prob4)`
 
 To compute the likelihood of the entire set of observations under the candidate coefficients, multiply together the likelihoods for all the cases.  Do this calculation separately for the candidate A coefficients and the candidate B coefficients.  Show your work.  Say which of the two candidates gives the *bigger* likelihood? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="bigger.likelihood", totalPts=2, rows=4))
-```
+
 `r I(textItem(name="bigger.likelihood", totalPts=2, rows=4))`
 
 In an actual fitting calculation, the computer goes through large numbers of candidate coefficients in a systematic way to find the candidate with the largest possible likelihood: the maximum likelihood candidate.  
 Explain why it makes sense to choose the candidate with the *maximum*  rather than the minimum likelihood.
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="maximum.likelihood", totalPts=2, rows=4))
-```
+
 `r I(textItem(name="maximum.likelihood", totalPts=2, rows=4))`
 
-
-`r I(closeProblem())`
+`r I(endProblem())`

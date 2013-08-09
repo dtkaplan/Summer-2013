@@ -2,32 +2,29 @@ Intro to Statistical Modeling Ch. 16 Prob. 4
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-16-4-SD")
+require(ScoreR)
+startProblem("SM-16-4-SD")
 ```
 George believes in astrology and wants to check whether a person's sign influences whether they are left- or right-handed.  With great effort, he collects data on 100 people, recording their dominant *hand* and their astrological *sign*.  He builds a logistic model *hand* ~ *sign*.  The deviance from the model *hand* ~ *1* is 102.8 on 99 degrees of freedom.  Including the *sign* term in the model reduces the deviance to 63.8 on 88 degrees of freedom.
 
 
 The *sign* term only reduced the degrees of freedom by 11 (that is, from 99 to 88) even though there are 12 astrological signs.  Why? 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1, name="sign.term")
 ```
 `r I(f(FALSE))` There must have been one sign not represented among the 100 people in George's sample.    
 `r I(f(TRUE))` *sign* is redundant with the intercept and so one level is lost.    
-`r I(f(FALSE))` *hand* uses up one degree of freedom.    
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+`r I(f(FALSE))` *hand* uses up one degree of freedom.       
+`r I(f(finish=TRUE))`
 
 According to theory, if *sign* were unrelated to *hand*, the 11 degrees of freedom ought to reduce the deviance by how much, on average?
 ```{r include=FALSE}
-g=newMC(totalPts=1)
+g=newMC(totalPts=1, name="deviance.reduction")
 ```
 `r I(g(TRUE))` $11/99 \times 102.8$   
 `r I(g(FALSE))` $1/11 \times 102.8$    
 `r I(g(FALSE))` to zero    
-`r I(g(FALSE))` None of the above.
-```{r include=FALSE, results='hide'}
-I(g(finish=TRUE))
-```
-`r I(closeProblem())`
+`r I(g(FALSE))` None of the above.    
+`r I(g(finish=TRUE))`
+
+`r I(endProblem())`
