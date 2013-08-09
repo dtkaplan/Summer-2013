@@ -2,38 +2,28 @@ Intro to Statistical Modeling Ch. 18 Reading Questions
 ========================================================
 ```{r include=FALSE}
 require(mosaic)
-require(WriteScoreR)
-newScorerSet("SM-18-RQ-SD")
+require(ScoreR)
+startProblem("SM-18-RQ-SD")
 ```
 
 * Is the point of a controlled experiment to create variability or to avoid variability? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="controlled", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="controlled", totalPts=2, rows=3))`
 
 * What is an experimental variable?  In what ways is it the same and in what ways different from an explanatory variable? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="experimental", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="experimental", totalPts=2, rows=3))`
 
 * What is the purpose of randomization in conducting an experiment?  What gets randomized? 
-```{r include=FALSE,eval=FALSE}
-I(textItem(name="randomization", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="randomization", totalPts=2, rows=3))`
 
 * Why might blocking be preferred to randomization? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="blocking", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="blocking", totalPts=2, rows=3))`
 
 * What is the point of matched sampling and instrumental variables? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="matching", totalPts=2, rows=3))
-```
+
  `r I(textItem(name="matching", totalPts=2, rows=3))`
 
-`r I(closeProblem())`
+`r I(endProblem())`
