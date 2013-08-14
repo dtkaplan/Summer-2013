@@ -35,7 +35,7 @@ Without the intercept, as in the second model, *domhand* accounts not just for t
 
 * Why does *domhand* have 1 degree of freedom in the first ANOVA report, but 2 degrees of freedom in the second?
 
-`r I(textItem(nname="domhand", totalPts=2, rows=3))`
+`r I(textItem(name="domhand", totalPts=2, rows=3))`
 
 <aside>
 ANSWER:    

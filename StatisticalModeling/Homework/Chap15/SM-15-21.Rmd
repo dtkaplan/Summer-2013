@@ -121,5 +121,4 @@ ANSWER:
 In (5), the data are being shuffled, just like a deck of cards is shuffled.  But each of the cases is being left intact, there is no randomization of variables with respect to one another.  Thus, the statement in (5) --- which is pretty useless --- just fits the model on shuffled data.  Keep in mind that \texttt{shuffle} will deal out all of the cases, as if the entire deck of shuffled cards were being dealt out.  So the shuffled data is the same as the original --- it's the same sample.
 </aside>
 
-
 `r I(endProblem())`

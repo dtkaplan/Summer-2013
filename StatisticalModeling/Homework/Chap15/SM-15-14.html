@@ -233,18 +233,22 @@ The first model includes an intercept term (which is almost always what you want
 <li>Why does <em>domhand</em> have 1 degree of freedom in the first ANOVA report, but 2 degrees of freedom in the second?</li>
 </ul>
 
-<pre><code>
-Error in textItem(nname = &quot;domhand&quot;, totalPts = 2, rows = 3) : 
-  unused argument (nname = &quot;domhand&quot;)
-
-</code></pre>
+<p><textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-15-4-SD",
+"itemN":      2,
+"name": "domhand",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
 In the model for the second report, the <em>domhand</em> variable has two model vectors, since there is no intercept.  In the first model, one of these two degrees of freedom is taken up by the intercept, so <em>domhand</em> contributes just one degree of freedom to the model.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "pvalue" ]'>problem roster</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "pvalue", "domhand" ]'>problem roster</option></select></p>
 
 </body>
 

@@ -57,13 +57,9 @@ Still another student suggests the model *score* ~ *student* + *order* in order 
 * Elaboration 2: *score* ~ *student* + *order* + *student*:*order* 
 
 ```{r include=FALSE}
-f=newMC(totalPts=1, name="additional.covariate")
+prob6=selectSet(totalPts=1, name="additional.covariate", "It's a good idea."=FALSE, "Bad idea since a person's sex probably has nothing to do with his or her score."=FALSE, "Useless, since the sex variable is redundant with the student variable."=TRUE)
 ```
-Why not include *sex* as an additional covariate, as in Elaboration 1, to take into account the possibility that males and females might have systematically different scores.    
-`r I(f(FALSE))` It's a good idea.    
-`r I(f(FALSE))` Bad idea since a person's sex probably has nothing to do with his or her score.        
-`r I(f(TRUE))` Useless, since *sex* is redundant with *student*.       
-`r I(f(finish=TRUE))`
+Why not include *sex* as an additional covariate, as in Elaboration 1, to take into account the possibility that males and females might have systematically different scores. `r I(prob6)`
 
 <aside>
 ANSWER:    

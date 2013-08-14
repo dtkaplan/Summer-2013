@@ -7,7 +7,7 @@ startProblem("SM-15-5-SD")
 ```
 A statistics student wrote:
 
-> I'm interested in the publishing business, particularly magazines, and thought I would try a statistical analysis of some of the features of magazines.  I looked at several different magazines, and recorded several variables, some of which I could measure from a single copy and some of which I deduced from my knowledge of the publishing business.
+> I'm interested in the publishing business, particularly magazines, and thought I would try a statistical analysis of some of the features of magazines. I looked at several different magazines, and recorded several variables, some of which I could measure from a single copy and some of which I deduced from my knowledge of the publishing business.
 
 * **magazine**  a number to identify the magazine 
 
@@ -31,7 +31,7 @@ Analysis of Variance Table
 
 Response: sentenceLength    
 
-| | &nbsp; Df &nbsp; | &nbsp; Sum Sq &nbsp; | &nbsp; Mean Sq &nbsp; | &nbsp; F value &nbsp; | &nbsp; Pr(>F) |
+| | &nbsp; Df &nbsp; | &nbsp; Sum Sq &nbsp; | &nbsp; Mean Sq &nbsp; | &nbsp; F value &nbsp; | &nbsp; Pr(>&#124;F&#124;) |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | sex &nbsp; | 1 | 0.222 | 0.222 | 0.0717 | 0.80626 |  
 | age | 3 | 71.067 | 23.689 | 7.6407 | ???? |  

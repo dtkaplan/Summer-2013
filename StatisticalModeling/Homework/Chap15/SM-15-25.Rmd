@@ -43,7 +43,7 @@ mod=lm( systolic~D,data=run.sim(vitaminD,100))
 summary(mod)
 ```
 **SHOULD MATCH**
-Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+Estimate & Std. Error & t value & Pr(>&#124;t&#124;) \\ 
   \hline
 (Intercept) & 137.9246 & 3.0052 & 45.90 & 0.0000 \\ 
   D & -0.0708 & 0.0462 & -1.53 & 0.1288 \\ 
@@ -78,7 +78,6 @@ If the power is greater than your boss's mandated 80%, you can make the sample s
 
 As you explore various sample sizes $n$, write down the power you got for each.
 
-
 **Sample Size:** `r I(textItem(name="sample.size", totalPts=2, rows=1))`
 
 **Power:** `r I(textItem(name="power", totalPts=2, rows=1))`
@@ -86,9 +85,9 @@ As you explore various sample sizes $n$, write down the power you got for each.
 #### Now you run your study
 After you have used the alternative hypothesis (as implemented in the simulation) to determine the appropriate sample size, you can go ahead and conduct your study.
 
-As it happens, we do not have veterans available in the classroom to allow you to do this.  So we will have to simulate the study itself.  We'll do that by using the same simulation program.  However, to emphasize that the alternative is *just a hypothesis* and not necessarily the real world, you will run the simulation somewhat differently.
+As it happens, we do not have veterans available in the classroom to allow you to do this. So we will have to simulate the study itself. We'll do that by using the same simulation program. However, to emphasize that the alternative is *just a hypothesis* and not necessarily the real world, you will run the simulation somewhat differently.
 
-To do this, note the day of the month on which you were born.  For example, if your birthday is Nov 7, then 7 is your magic number. Also, note the sample size you selected to achieve 80% power.   For the example, let's assume this is 20.  (It isn't!)
+To do this, note the day of the month on which you were born.  For example, if your birthday is Nov 7, then 7 is your magic number. Also, note the sample size you selected to achieve 80% power. For the example, let's assume this is 20.  (It isn't!)
 
 To collect the data in your "real" study, add another argument, <code>magic</code> to the <code>run.sim</code> command, like this:
 ```{r}
@@ -96,6 +95,6 @@ run.sim(vitaminD, magic=7, 20)
 ```
 (Remember, use your own magic number and your own value of the sample size $n$.)
 
-Now analyze your data, and determine the outcome of your hypothesis test.  Write down your p-value.  We'll tally up the various p-values in class.
+Now analyze your data, and determine the outcome of your hypothesis test. Write down your p-value.  We'll tally up the various p-values in class.
 
 `r I(closeProblem())`

@@ -211,7 +211,7 @@ two trials of a simulation of the Null in a model of the kidsfeet data:</p>
 ## 
 ## Coefficients:
 ##   (Intercept)         length  shuffle(sex)G  
-##        2.8744         0.2473         0.0096
+##        2.8405         0.2487         0.0074
 </code></pre>
 
 <pre><code class="r">lm(width ~ length + shuffle(sex), data = kids)
@@ -223,7 +223,7 @@ two trials of a simulation of the Null in a model of the kidsfeet data:</p>
 ## 
 ## Coefficients:
 ##   (Intercept)         length  shuffle(sex)G  
-##        2.8386         0.2476         0.0674
+##         2.397          0.270         -0.171
 </code></pre>
 
 <p>The test statistic summarizes the situation.  There are several possibilities, but here we will use \( R^2 \) from the model since this gives an indication of the quality of the model. </p>
@@ -231,19 +231,19 @@ two trials of a simulation of the Null in a model of the kidsfeet data:</p>
 <pre><code class="r">r.squared(lm(width ~ length + shuffle(sex), data = kids))
 </code></pre>
 
-<pre><code>## [1] 0.4125
+<pre><code>## [1] 0.45
 </code></pre>
 
 <pre><code class="r">r.squared(lm(width ~ length + shuffle(sex), data = kids))
 </code></pre>
 
-<pre><code>## [1] 0.4113
+<pre><code>## [1] 0.4316
 </code></pre>
 
 <pre><code class="r">r.squared(lm(width ~ length + shuffle(sex), data = kids))
 </code></pre>
 
-<pre><code>## [1] 0.4185
+<pre><code>## [1] 0.4435
 </code></pre>
 
 <p>By computing many such trials, we construct the sampling distribution under the Null &mdash; that is, the sampling distribution of the test statistic in the world in which the Null holds true.  We can automate this process using <code>do</code>:</p>
@@ -266,7 +266,7 @@ two trials of a simulation of the Null in a model of the kidsfeet data:</p>
 
 <pre><code>## 
 ## FALSE  TRUE 
-##   918    82
+##   909    91
 </code></pre>
 
 <p>Our p-value is about 9%.</p>
