@@ -1,0 +1,34 @@
+Applied Calculus Ch. 1 Sec. 7 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-1-7-2-SD")
+```
+
+```{r include=FALSE}
+prob1=selectSet(name="t=2", totalPts=1, "0.0"=FALSE,"0.025"=FALSE,"0.05"=FALSE,"0.10"=FALSE,"0.20"=TRUE,"0.30"=FALSE,"0.40"=FALSE,"0.60"=FALSE,"0.80"=FALSE, "none of these"=FALSE)
+```
+* Value at time $t=2$ hours: `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="t=4", totalPts=1,"0.0"=FALSE,"0.025"=FALSE,"0.05"=FALSE,"0.10"=TRUE,"0.20"=FALSE,"0.30"=FALSE,"0.40"=FALSE,"0.60"=FALSE,"0.80"=FALSE,"none of these"=FALSE)
+```
+* Value at time $t=4$ hours: `r I(prob2)`
+```{r include=FALSE}
+prob3=selectSet(name="t=6", totalPts=1, "0.0"=FALSE,"0.025"=FALSE,"0.05"=TRUE,"0.10"=FALSE,"0.20"=FALSE,"0.30"=FALSE,"0.40"=FALSE,"0.60"=FALSE,"0.80"=FALSE,"none of these"=FALSE)
+```
+* Value at time $t=6$ hours: `r I(prob3)`
+```{r include=FALSE}
+prob4=selectSet(name="t=8", totalPts=1,"0.0"=FALSE,"0.025"=TRUE,"0.05"=FALSE,"0.10"=FALSE,"0.20"=FALSE,"0.30"=FALSE,"0.40"=FALSE,"0.60"=FALSE,"0.80"=FALSE,"none of these"=FALSE)
+```
+* Value at time $t=8$ hours: `r I(prob4)`
+```{r include=FALSE}
+prob5=selectSet(name="t=10", totalPts=1, "0.0"=FALSE,"0.025"=FALSE,"0.05"=FALSE,"0.10"=FALSE,"0.20"=FALSE,"0.30"=FALSE,"0.40"=FALSE,"0.60"=FALSE,"0.80"=FALSE,"none of these"=TRUE)
+```
+* Value at time $t=10$ hours: `r I(prob5)`
+```{r include=FALSE}
+prob6=selectSet(name="0.04mg", totalPts=1, "5.3 hours"=FALSE, "6.6 hours"=TRUE, "6.9 hours"=FALSE, "8.2 hours"=FALSE)
+```
+* About when will the level of nicotine be reduced to 0.04 mg? `r I(prob6)`
+
+`r I(endProblem())`

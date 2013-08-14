@@ -33,3 +33,8 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 24](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S6-P24.html)
 
 * [HH Problem 28](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C-1-S6-P28.html)
+
+#### Section 7
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P2.html) WHERE IS THE CONTEXT INFORMATION??
+
+* [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P10.html) not complete
