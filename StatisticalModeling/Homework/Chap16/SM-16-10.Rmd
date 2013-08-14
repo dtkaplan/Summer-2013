@@ -180,9 +180,7 @@ I(f(finish=TRUE))
 ```
 
 * The two variables "age" and "years since menopause" are likely to be somewhat collinear.  Explain why.  What effect might this collinearity have on the width of the confidence intervals for the various variables associated with those variables?  If you were recommending to remove one of the variables in the list of potential risk factors, which one would it be? 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="collinear.variables", totalPts=2, rows=3))
-```
+
 `r I(textItem(name="collinear.variables", totalPts=2, rows=3))`
  
 Notice that the table gives no intercept coefficient.  The intercept corresponds to the probability of having osteoporosis when belonging to the reference level of each of the explanatory variables. Without knowing this, you cannot use the coefficients calculate the absolute risk of osteoporosis in the different conditions.  Instead, the odds ratios in the table tell about relative risk. Gigerenzer [gigerenzer-2002,gigerenzer-2008] points out that physicians and patients often have difficulty interpreting relative risks and
@@ -194,6 +192,6 @@ risk means converting from odds into probability.  The probability will be $0.12
 Now suppose the woman was taking cortisone to treat arthritis. Knowing the absolute risk (an increase of 40 women per 1000) puts the woman and her physician in a better position to compare the positive effects of cortisone for arthritis to the negative effects in terms of osteoporosis.  
 
 [This problem is based on an item used in a test of the statistical
-expertise of medical residents reported in [windish-2007].]
+expertise of medical residents reported in [**windish-2007**].]
 
 `r I(endProblem())`

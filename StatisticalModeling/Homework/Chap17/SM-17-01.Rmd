@@ -53,5 +53,4 @@ prob8=selectSet(name="8", totalPts=1, "A causes B."=FALSE, "B causes A."=FALSE, 
 ```
 * $A\causedBy C\causes D \causedBy E\causedBy B$ `r I(prob8)`
 
-
 `r I(endProblem())`

@@ -8,7 +8,6 @@ startProblem("SM-17-12-SD")
 
 Here is a somewhat complicated hypothetical causal network:
 
-
 ### Needs image from paths-108b
 
 \begin{tikzpicture}{scale=.6}
@@ -25,7 +24,6 @@ Here is a somewhat complicated hypothetical causal network:
 \straightLink{F}{C}{}
 \straightLink{C}{D}{}
 \end{tikzpicture}
-
 
 You are interested in studying the causal effect of F on D.  
 
@@ -56,7 +54,6 @@ Explain why this would not be a good thing to do if you want to study
 the causal connection between F and D.
 
 `r I(textItem(name="explain", totalPts=2, rows=3))`
-
 
 <aside>
 ANSWER:    

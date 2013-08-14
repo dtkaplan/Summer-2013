@@ -11,7 +11,6 @@ The NASA space shuttle Challenger had a catastrophic accident during launch on J
 
 ###### A NASA photograph showing the plume of flame from the side of the booster rocket during the Challenger launch.
 
-
 An important issue for the commission was whether the accident was avoidable.  Attention focused on the fact that the ground temperature at the time of launch was $31^\circ$ F, much lower than for any previous launch. Commission member and Nobel laureate physicist Richard Feynman famously demonstrated, using a glass of ice water and a C-clamp, that the O-rings were very inflexible when cold.  But did the data available to NASA **before the launch** indicate a high risk of an
 O-ring failure?
 
@@ -73,7 +72,6 @@ prob5=selectNumber(choices=c(0.08,0.23,0.83,0.94,0.985,0.9996,0.9999), correct=c
 prob6=selectNumber(choices=c(0.08,0.23,0.83,0.94,0.985,0.9996,0.9999), correct=c(0.9996), totalPts=1, name="31F.2")
 ```
 * $31^\circ$ F `r I(prob6)`
-
 
 A more complete analysis of the situation would take into account the fact that there are multiple O-rings in each booster, while the *Damage* variable describes whether *any* O-ring failed.  In addition, there were two O-rings on each booster segment, both of which would have to fail to create a leakage problem.  Thus, the probabilities estimated from this model and these data do not accurately reflect the probability of a catastrophic accident.
 

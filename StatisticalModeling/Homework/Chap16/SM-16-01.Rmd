@@ -11,12 +11,9 @@ The graphs show the link values and the corresponding probability values for a l
 
 ![Fig1](Log12-one.png)
 
-
 * Probability Values
 
 ![Fig2](Log12-two.png)
-
-
 
 Use the graphs to look up answers to the following.  Choose the closest possibility to what you see in the graphs.
 
