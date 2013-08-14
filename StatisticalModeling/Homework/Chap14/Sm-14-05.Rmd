@@ -13,7 +13,6 @@ We should interpret a p-value of, say, 0.03 differently in these two situations:
 
 2. The study that generated the p-value was one of 20 different studies but was the only one of the 20 studies that generated a p-value below 0.05.  In this case, the p-value has little genuine meaning since, even if the null hypothesis were true we wouldn't be surprised to see a p-value like 0.03 from the "best" of 20 studies.
 
-
 It's sometimes the case that "para-normal" phenomena --- mind-reading, for instance --- are subjected to studies and that the studies sometimes give low p-values.  It's hard to interpret the p-value directly because of the publication bias effect. We can, of course, ask that the study be repeated, but if there are many repeats that we never hear about (because they happened to generate large
 p-values), it can still be difficult to interpret the p-value. 
 
@@ -25,7 +24,7 @@ To explore this, consider the following result of a ficticious study of the poss
 Model:    tcells ~ posThinking          
 Coefficients:  
 
-| | &nbsp; Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(>t)
+| | &nbsp; Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(&#124;>t&#124;)
 |:---|:---:|:---:|:---:|:---:|
 (Intercept) &nbsp; | 3.6412 | 1.2506 | 2.912 | 0.00614      
 posThinking &nbsp; | 0.2325 | 0.1293 | 1.798 | 0.07847      
@@ -34,7 +33,6 @@ Here is a statement that can generate the p-value:
 ```{r eval=FALSE}
 2*(1-pt(1.798,df=48))
 ```
-
 
 ```{r include=FALSE}
 f=newMC(totalPts=1, name="pt")
@@ -48,7 +46,6 @@ Why is the the output of <code>pt</code> subtracted from 1?
 ```{r include=FALSE, results="hide"}
 I(f(finish=TRUE))
 ```
-
 
 The <code>df</code> in the statement stands for the degrees of freedom of the residual, just as in the F test.  There were 50 cases and two model vectors (the intercept and the posthinking indicator vector), so 48 degrees of freedom in the residual.
 

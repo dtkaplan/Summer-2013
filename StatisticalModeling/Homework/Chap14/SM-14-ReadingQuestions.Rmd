@@ -10,7 +10,6 @@ startProblem("SM-14-RQ-SD")
 
  `r I(textItem(name="permutation", totalPts=2, rows=3))`
 
-
 <aside>
 ANSWER:    
 By eliminating the relationship between the explanatory and response variables, you create a simulated world in which the Null Hypothesis is true.  This allows you to carry out a hypothesis test against that Null.  The result indicates how likely you would be to get the result you saw in your actual data in a world in which the Null Hypothesis is true.
@@ -25,11 +24,9 @@ ANSWER:
 The F statistic compares the "size" of the contribution of an explanatory term to the "size" of the residuals.  F measures "size" in a particular way: the sum of squares divided by the number of degrees of freedom.
 </aside>
 
-
 * What is a "degree of freedom?" 
 
  `r I(textItem(name="degree.of.freedom", totalPts=2, rows=3))`
-
 
 <aside>
 ANSWER:   
