@@ -404,9 +404,6 @@ An example is shown in the figure.</p>
 <pre><code class="r">compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;compare.many.groups&quot;
-</code></pre>
-
 <p>It happens that none of the p-values from this simulation were \( < 0.05 \).</p>
 
 <ol>
@@ -416,26 +413,13 @@ An example is shown in the figure.</p>
 <pre><code class="r">min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), control = &quot;A&quot;)$pvalue)
 </code></pre>
 
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
-</code></pre>
-
 <ol>
 <li>Now, run this statement a dozen times, using <code>do(12)*</code>.  Assign the results to an object <code>s</code>.</li>
 </ol>
 
 <pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8, seed = 111), 
     control = &quot;A&quot;)$pvalue)
-</code></pre>
-
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
-</code></pre>
-
-<pre><code class="r">s
-</code></pre>
-
-<pre><code>## Error: object &#39;s&#39; not found
+s
 </code></pre>
 
 <p>Don&#39;t be too surprised by the result.  You got exactly the same answer on each trial
@@ -446,16 +430,7 @@ because the same random &ldquo;seed&rdquo; was used every time.  </p>
 </ol>
 
 <pre><code class="r">s = do(12) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
-</code></pre>
-
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
-</code></pre>
-
-<pre><code class="r">s
-</code></pre>
-
-<pre><code>## Error: object &#39;s&#39; not found
+s
 </code></pre>
 
 <ol>
@@ -463,10 +438,6 @@ because the same random &ldquo;seed&rdquo; was used every time.  </p>
 </ol>
 
 <pre><code class="r">s = do(1000) * min(compare.many.groups(run.sim(bogus.groups, ngroups = 8), control = &quot;A&quot;)$pvalue)
-</code></pre>
-
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;.Min&#39;: Error: could not find function &quot;compare.many.groups&quot;
 </code></pre>
 
 <p>Then answer the following questions:</p>

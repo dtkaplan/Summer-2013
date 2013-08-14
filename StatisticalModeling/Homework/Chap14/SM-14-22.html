@@ -195,7 +195,7 @@ hljs.initHighlightingOnLoad();
 ## 
 ## Coefficients:
 ## (Intercept)     rand(3)1     rand(3)2     rand(3)3  
-##    8.990922    -0.018323    -0.019759    -0.000896
+##      8.9746      -0.0902       0.1308       0.0203
 </code></pre>
 
 <pre><code class="r">lm(width ~ rand(3), data = kids)
@@ -207,7 +207,7 @@ hljs.initHighlightingOnLoad();
 ## 
 ## Coefficients:
 ## (Intercept)     rand(3)1     rand(3)2     rand(3)3  
-##      8.9711       0.0395      -0.1142      -0.0838
+##      8.9690      -0.0494       0.0359      -0.1136
 </code></pre>
 
 <p>The coefficients are different in the two models because the
@@ -218,13 +218,13 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">r.squared(lm(width ~ rand(3), data = kids))
 </code></pre>
 
-<pre><code>## [1] 0.04614
+<pre><code>## [1] 0.05447
 </code></pre>
 
 <pre><code class="r">r.squared(lm(width ~ rand(3), data = kids))
 </code></pre>
 
-<pre><code>## [1] 0.1254
+<pre><code>## [1] 0.06311
 </code></pre>
 
 <p>Note that the \( R^2 \) values vary from trial to trial, because the vectors are random.</p>

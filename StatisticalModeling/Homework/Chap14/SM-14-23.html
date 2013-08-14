@@ -223,25 +223,28 @@ hljs.initHighlightingOnLoad();
 <p>Or do you?  Admittedly, a p-value of 0.04 will not be terribly compelling to someone who doubts that music and moss affect follicle density in different ways.  But it is below the conventional threshold of 0.05.  Consider some of the things that could be wrong:</p>
 
 <ul>
-<li>What&#39;s the null hypothesis in the hypothesis test presented above?
-<label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
+<li>What&#39;s the null hypothesis in the hypothesis test presented above? <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "A" 
-}'> <b>A</b></label> That Moss and Music are no different than a Control group.<br/>
-<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
+"content": "That Moss and Music are no different than a Control group." 
+}'>That Moss and Music are no different than a Control group.</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "B" 
-}'> <b>B</b></label> That Moss and Music are the same as each other.<br/>
-<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
+"content": "That Moss and Music are the same as each other." 
+}'>That Moss and Music are the same as each other.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> That Moss and Music have no effect.<br/></li>
+"content": "That Moss and Music have no effect." 
+}'>That Moss and Music have no effect.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+"setID": "SM-14-23-SD",
+"itemN":      1,
+"name": "null.hypothesis",
+"totalpts":      1,
+"type": "Fixed Choice" 
+}'>Info for Select Set</option></select></li>
 </ul>
 
 <p><aside>

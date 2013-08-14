@@ -34,15 +34,9 @@ Aha!  $p = 0.04$.  You have evidence that such treatments can have an effect.
 Or do you?  Admittedly, a p-value of 0.04 will not be terribly compelling to someone who doubts that music and moss affect follicle density in different ways.  But it is below the conventional threshold of 0.05.  Consider some of the things that could be wrong:
 
 ```{r include=FALSE}
-f=newMC(totalPts=1, name="null.hypothesis")
+prob3=selectSet(totalPts=1, name="null.hypothesis", "That Moss and Music are no different than a Control group."=FALSE, "That Moss and Music are the same as each other."=TRUE, "That Moss and Music have no effect."=FALSE)
 ```
-* What's the null hypothesis in the hypothesis test presented above?
-`r I(f(FALSE))` That Moss and Music are no different than a Control group.    
-`r I(f(TRUE))` That Moss and Music are the same as each other.    
-`r I(f(FALSE))` That Moss and Music have no effect.     
-```{r include=FALSE, results='hide'}
-I(f(finish=TRUE))
-```
+* What's the null hypothesis in the hypothesis test presented above? `r I(prob3)`
 
 <aside>
 ANSWER:     
@@ -62,6 +56,5 @@ The Bonferroni correction calls for the p-value to be adjusted based on the numb
 prob2=selectNumber(choices=c(0.005,0.01,0.04,0.05,0.20,0.40,0.80), correct=c(0.40), totalPts=1, name="multiplyBy")
 ```
 Using the "multiply by" approach to the Bonferroni correction, what is the p-value value on the Music-vs-Moss comparison? `r I(prob2)`
-
 
 `r I(endProblem())`

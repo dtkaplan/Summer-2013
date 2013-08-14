@@ -98,7 +98,7 @@ compare.many.groups( d, control="A")
   group1 group2      diff  pvalue
  
 2. It's helpful to combine the two statements above into a single statement.  That will make it easier to automate later on.  To do this, just put the statement that created <code>d</code> in place of <code>d</code>, as in the following.  (The statement is so long that it's spread over 3 lines.  You can cut it out of this page and into an R session, if you wish.)
-```{r}
+```{r eval=FALSE}
 compare.many.groups(run.sim( bogus.groups, ngroups=8,seed=111 ), control="A")
 ```
 
@@ -106,12 +106,12 @@ It happens that none of the p-values from this simulation were $< 0.05$.
 
 3. Extend the statement above to extract the smallest p-value.  This involves prefacing the statement with <code>min(</code> and following it with <code>$pvalue)</code>
 
-```{r}
+```{r eval=FALSE}
 min(compare.many.groups(run.sim( bogus.groups, ngroups=8,seed=111 ), control="A")$pvalue)
 ```
 
 4. Now, run this statement a dozen times, using <code>do(12)*</code>.  Assign the results to an object <code>s</code>.
-```{r}
+```{r eval=FALSE}
 s = do(12)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8,seed=111 ), control="A")$pvalue)
 s
 ``` 
@@ -119,13 +119,13 @@ Don't be too surprised by the result.  You got exactly the same answer on each t
 because the same random "seed" was used every time.  
 
 5. Delete the random seed, so that new random numbers will be generated on each trial.
-```{r}
+```{r eval=FALSE}
 s = do(12)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8 ), control="A")$pvalue)
 s
 ```
 
 6. The point of running a dozen trials was just to produce a manageable amount of output for you to read.  Now generate a thousand trials and, storing the results in <code>s</code>.  It will take about a minute for the computer to complete the calculation, more on older computers.
-```{r}
+```{r eval=FALSE}
 s = do(1000)*min(compare.many.groups(run.sim( bogus.groups, ngroups=8 ), control="A")$pvalue)
 ```
 Then answer the following questions:

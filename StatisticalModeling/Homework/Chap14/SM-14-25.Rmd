@@ -24,7 +24,6 @@ kids$length.inches = kids$length*.3937
 kids$width.inches = kids$width*.3937
 ```
 
-
 Here is a series of models using the two versions of the variables.  Notice that the p-values are the same in every case, regardless of the units used.
 
 ```{r}

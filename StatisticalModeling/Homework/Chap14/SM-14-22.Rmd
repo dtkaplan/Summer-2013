@@ -18,7 +18,6 @@ lm( width ~ rand(3), data=kids)
 lm( width ~ rand(3), data=kids)
 ```
  
-
 The coefficients are different in the two models because the
 "explanatory" vectors are random.
 
@@ -35,14 +34,12 @@ Note that the $R^2$ values vary from trial to trial, because the vectors are ran
 
 According to the principle of equipartition, **on average**, each random vector should contribute $1/(n-1)$ to the $R^2$ and the effect of multiple vectors is additive. So, for example, with $n=39$ cases, the three random vectors in the above example should result in an $R^2$ that is near $3/(39-1) = 0.08$.
 
-
 Repeat the above calculation of $R^2$ many times for $p=3$ random vectors and find the mean of the resulting $R^2$.  You can do the repetitions 100 times with a statement like this:
 ```{r eval=FALSE}
 samps=do(100)*r.squared(lm(width~rand(3),data=kids))
 ```
 
 Now do the same thing for $p=1,3,10,20,37$ and $38$.  Are the results consistent with the theory that, on average, $R^2$ should be $p/(n-1)$?
-
 
 Copy the table onto a piece of paper and enter your results in the empty second and third columns to hand in to your professor.  
 

@@ -10,11 +10,6 @@ Here is the report of a simple model of the foot-length data:
 kids = fetchData("KidsFeet");
 summary( lm( length ~ 1, data=kids ) )
 ```
-**SHOULD MATCH**    
-Coefficients:
-          Estimate   Std. Err.  t value Pr(>|t|)    
-(Intercept) 24.723       0.211    117.2   <2e-16 
-
 
 The summary report includes a p-value (written as $\verb+Pr(>|t|)+$).
 ```{r include=FALSE}
