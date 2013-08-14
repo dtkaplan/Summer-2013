@@ -194,7 +194,7 @@ hr {
 <th align="center">&nbsp; Sum Sq &nbsp;</th>
 <th align="center">&nbsp; Mean Sq &nbsp;</th>
 <th align="center">&nbsp; F value &nbsp;</th>
-<th align="center">&nbsp; Pr(&gt;F)</th>
+<th align="center">&nbsp; Pr(&#124;&gt;F&#124;)</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -298,11 +298,11 @@ The Null Hypothesis is generally a statement of &ldquo;no difference.&rdquo;
 <th align="center">Estimate &nbsp;</th>
 <th align="center">&nbsp; Std. Error &nbsp;</th>
 <th align="center">&nbsp; t value &nbsp;</th>
-<th align="center">&nbsp; Pr(&gt;t)</th>
+<th align="center">&nbsp; Pr(&#124;&gt;t&#124;)</th>
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">(Intercept)</td>
+<td align="left">(Intercept) &nbsp;</td>
 <td align="center">-0.9333</td>
 <td align="center">0.6360</td>
 <td align="center">-1.47</td>
@@ -358,8 +358,7 @@ The Null Hypothesis is generally a statement of &ldquo;no difference.&rdquo;
 ANSWER:<br/>
 Judging from the regression report, the margin of error (at the 95% level) on the estimate of the effect <em>treatTea</em> is \( \pm 1.8 \) degrees.  You want to bring it down to 0.2 degrees, or 9 times smaller.</p>
 
-<p>The standard error (and thus the margin of error) scales as \( 1/\sqrt{n} \) for large \( n \), so to make the margin of error 9 times smaller, you would need \( 9^2 = 81 \) more data. The original data set had \( n=6 \), so you will need roughly \( 6 \times 81 = 486 \) cases. This
-is just an estimate, since the standard error computed from the \( n=6 \) cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
+<p>The standard error (and thus the margin of error) scales as \( 1/\sqrt{n} \) for large \( n \), so to make the margin of error 9 times smaller, you would need \( 9^2 = 81 \) more data. The original data set had \( n=6 \), so you will need roughly \( 6 \times 81 = 486 \) cases. This is just an estimate, since the standard error computed from the \( n=6 \) cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
 </aside></p>
 
 <p><select style='visibility: hidden' width='5' name='roster'><option value='[ "effective", "null.hypothesis", "cases" ]'>problem roster</option></select></p>

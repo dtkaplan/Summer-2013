@@ -23,7 +23,6 @@ In this case, the series is simple:
 * *Age* ~ *1*
 * *Age* ~ *1* + *Group*
 
-
 For each of these nested models, you need to calculate the "degrees of
 freedom" and the sum of squares of the fitted model values. The degrees of freedom is the number of model vectors involved.  The sum of squares is found by fitting the model and adding up the squares of the fitted values.
 

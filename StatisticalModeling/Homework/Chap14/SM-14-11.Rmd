@@ -28,7 +28,6 @@ This is a fine way to calculate these quantities.  But, just to show the link of
 
 `r I(textItem(name="variance", totalPts=2, rows=2))`
 
-
 * Based on the above, explain why the calculation of the sample variance involves dividing by $N-1$ rather than $N$.
 
 `r I(textItem(name="Nminus1", totalPts=2, rows=2))`

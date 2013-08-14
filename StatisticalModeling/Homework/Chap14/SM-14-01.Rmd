@@ -19,7 +19,7 @@ Drug | -0.7
 
 Your friend is excited by these results.  When he fit the model *temperature change* ~ *Treatment* he got the following reports:
 
-| | Df &nbsp; | &nbsp; Sum Sq &nbsp; | &nbsp; Mean Sq &nbsp; | &nbsp; F value &nbsp; | &nbsp; Pr(>F) |
+| | Df &nbsp; | &nbsp; Sum Sq &nbsp; | &nbsp; Mean Sq &nbsp; | &nbsp; F value &nbsp; | &nbsp; Pr(&#124;>F&#124;) |
 |:---|:---:|:---:|:---:|:---:|:---:|
 treat | 1 | 0.13 | 0.13 |0.11 | 0.7555
 Residuals | 4 | 4.85 | 1.21 | | |
@@ -56,9 +56,9 @@ Your friend thinks for a while.  "I suppose no one would care about 0.2 degrees.
 
 "Then you have to make your measurement precise to about 0.2 degrees.  If such a precise measurement shows no difference, then it's reasonable to claim that your Tea and the drug are equivalent."  Using your friend's data, you fit the model and look at the regression report.
 
-| | Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(>t) 
+| | Estimate &nbsp; | &nbsp; Std. Error &nbsp; | &nbsp; t value &nbsp; | &nbsp; Pr(&#124;>t&#124;) 
 |:---|:---:|:---:|:---:|:---:|
-(Intercept) | -0.9333 | 0.6360 | -1.47 | 0.2161 
+(Intercept) &nbsp; | -0.9333 | 0.6360 | -1.47 | 0.2161 
 treatTea | 0.3000 | 0.8994 | 0.33 | 0.7555
 
 
@@ -73,8 +73,7 @@ prob3=selectNumber(choices=c(12,75,150,500,2000), correct=c(500), totalPts=1, na
 ANSWER:    
 Judging from the regression report, the margin of error (at the 95% level) on the estimate of the effect *treatTea* is $\pm 1.8$ degrees.  You want to bring it down to 0.2 degrees, or 9 times smaller.
 
-The standard error (and thus the margin of error) scales as $1/\sqrt{n}$ for large $n$, so to make the margin of error 9 times smaller, you would need $9^2 = 81$ more data. The original data set had $n=6$, so you will need roughly $6 \times 81 = 486$ cases. This
-is just an estimate, since the standard error computed from the $n=6$ cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
+The standard error (and thus the margin of error) scales as $1/\sqrt{n}$ for large $n$, so to make the margin of error 9 times smaller, you would need $9^2 = 81$ more data. The original data set had $n=6$, so you will need roughly $6 \times 81 = 486$ cases. This is just an estimate, since the standard error computed from the $n=6$ cases in the data is itself subject to sampling variation.  So, about 500 cases are needed: no point in trying to be more precise than this.
 </aside>
 
 `r I(endProblem())`

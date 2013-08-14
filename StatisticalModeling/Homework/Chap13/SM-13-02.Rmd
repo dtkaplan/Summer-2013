@@ -18,17 +18,10 @@ lines(x,d2, lwd=4, col='blue')
 text(80,.02,'Alternative', col='blue')
 ``` 
 
-
-<aside>
-NOTE:     
-Based on a suggestion from Susy Szumowski, Math 155 Fall 2006
-</aside> 
-
 ```{r include=FALSE}
 test=selectSet(name="99perSignificance", totalPts=1, "About 0.05"=FALSE, "About 0.30"=TRUE, "About 0.95"=FALSE, "Can't tell (even approximately) from the information given."=FALSE)
 ```
 Imagine that you set rejection criteria so that the power was 99%. What would be the significance of the test?  (Choose the best answer.) `r I(test)`
-
 
 We sometimes speak of the probability of Type I or Type II errors. We want to know what sort of probability these are.  To simplify notation, we'll define the following outcomes:
 
@@ -46,6 +39,5 @@ What is the probability of a Type I error? `r I(test2)`
 test3=selectSet(name="Type2", totalPts=1, "A joint probability: p(Reject and A)"=FALSE, "A joint probability: p(Fail and N)"=FALSE, "A conditional probabiltiy: p(Fail given N)"=FALSE, "A conditional probability: p(Fail given A)"=TRUE, "A marginal probability: p(N)"=FALSE, "A marginal probability: p(A)"=FALSE)
 ```
 What is the probability of a Type II error? `r I(test3)`
-
 
 `r I(endProblem())`

@@ -47,6 +47,7 @@ There are 30 cases altogether. The unit of analysis was not an individual zebra 
 
 
 The variables are:
+
 * *dry.mass* The mass of the dried tissue of the group, in grams.
 
 * *count*  How many mussels in the group.
@@ -79,7 +80,6 @@ ANSWER:
 Note that the coefficient on *attachmentRock* is negative, suggesting that the *dry.mass* of mussels attached to a rock is smaller than the reference group (those attached to other mussels. The corresponding p-value is small ($0.016$), suggesting that it's unlikely that a negative coefficient of this size would be the result of sampling variation.
 </aside>
 
-
 The *dry.mass* variable gives the mass of the entire group of mussels.  It might be that the mussels were systematically different in size on the two different substrates.  One way to look at this is to compute the dry mass per individual mussel. This can be calculated by dividing *dry.mass* by *count*:
 ```{r eval=FALSE}
 z$ind.mass = z$dry.mass / z$count
@@ -103,7 +103,7 @@ At first glance, the coefficient on *attachmentRock* seems positive, suggesting 
 
 
 In summarizing their results about oxygen uptake and nitrogen excretion, Baker and Hornbach wrote:
-> *Attachment substrate had significant effects on ammonia excretion and oxygen uptake rates. Dreissenids [that is, Zebra mussels] attached to Amblema had higher ammonia excretion rates ($p < 0.0001$) and higher oxygen uptake rates ($p < 0.0001$) compared to dreissenids attached to rocks.
+> *Attachment substrate had significant effects on ammonia excretion and oxygen uptake rates. Dreissenids [that is, Zebra mussels] attached to Amblema had higher ammonia excretion rates ($p < 0.0001$) and higher oxygen uptake rates ($p < 0.0001$) compared to dreissenids attached to rocks.*
 
 To check their statistics, fit these models for oxygen uptake per individual and ammonia excretion per individual:
 

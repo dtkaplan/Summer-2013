@@ -13,7 +13,7 @@ reported 2004 sighting was correct.  This is not an easy matter since the 2004 s
 |:----:|:----:|
 
 Pileated (left) and Ivory-billed Woodpeckers     
-Drawings by Ernest S Thompson & Rex Brasher
+###### Drawings by Ernest S Thompson & Rex Brasher
 
 
 This problem is motivated by the controversy over the Ivory-billed sighting, but the problem is a gross simplification.
@@ -25,16 +25,15 @@ Imagine a study where researchers display bird models in realistic observing con
 
 | | | Alternative | Null
 |:---:|:---:|:---:|:---:|
-Oberved | Code | Ivory-billed | Pileated
-Short & Dull | A | 0.01 | 0.60
+Oberved &nbsp; | &nbsp; Code &nbsp; | &nbsp; Ivory-billed &nbsp; | &nbsp; Pileated
+Short & Dull &nbsp; | A | 0.01 | 0.60
 Long & Dull | B | 0.10 | 0.13
 Short & Glossy | C | 0.04 | 0.20
 Long & Glossy | D | 0.60 | 0.05
-Short & White Back | E | 0.05 | 0.01
+Short & White Back &nbsp; | E | 0.05 | 0.01
 Long & White Back | F | 0.20 | 0.01
 
 For simplicity, each of the six possible observations has been given a code: A, B, C, and so on.
-
 
 #### The Bayesian Approach
 
@@ -104,10 +103,6 @@ bird9=selectSet(name="power2", totalPts=1, "0.01"=FALSE,"0.02"=FALSE,"0.05"=FALS
 ```
 * What would be the power of such a test? `r I(bird9)`
 
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="why", totalPts=2, rows=3))
-```
 Comparing the Bayesian and hypothesis-testing approaches, explain why you might reject the null hypothesis even if the observation was very likely to be a Pileated woodpecker.
 
 `r I(textItem(name="why", totalPts=2, rows=3))`
