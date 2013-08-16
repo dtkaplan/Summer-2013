@@ -1,0 +1,19 @@
+Applied Calculus Ch. 3 Sec. 2 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-2-2")
+```
+
+Find the derivative $dP/dt$ of the function $P = 3t^2 + 2 e^t$
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.2.2")
+```
+`r I(f(FALSE))` $6 t + 2$    
+`r I(f(FALSE))` $3 t^2 + 2$     
+`r I(f(TRUE))` $6 t + 2 e^t$    
+`r I(f(FALSE))` $t + e^t$     
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

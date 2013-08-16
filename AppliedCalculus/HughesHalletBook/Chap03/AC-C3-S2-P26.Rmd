@@ -1,0 +1,19 @@
+Applied Calculus Ch. 3 Sec. 2 Prob. 26
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-2-26")
+```
+
+Find the derivative $dR/dq$ of the function $R(q)  = q^2 - 2 \ln(q)$.
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.2.26")
+```
+`r I(f(FALSE))` $0$    
+`r I(f(FALSE))` $q - \ln(q)$     
+`r I(f(FALSE))` $2 q - 2$     
+`r I(f(TRUE))` $2 q - 2/q$     
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

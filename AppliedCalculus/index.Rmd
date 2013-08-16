@@ -100,3 +100,21 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 38](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P38.html) working
 
 * [HH Problem 46](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P46.html) working
+
+#### Section 2
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S2-P2.html) working
+
+* [HH Problem 12](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S2-P12.html) working
+
+* [HH Problem 16](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S2-P16.html) working
+
+* [HH Problem 26](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S2-P26.html) working
+
+#### Section 3
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S3-P2.html) working
+
+* [HH Problem 4](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S3-P2.html) working
+
+* [HH Problem 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S3-P6.html) working

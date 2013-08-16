@@ -1,0 +1,19 @@
+Applied Calculus Ch. 3 Sec. 2 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-2-12")
+```
+
+Find the derivative $dy/dt$ of the function $y = e^{0.7 t}$.
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.2.12")
+```
+`r I(f(FALSE))` $e^{0.7 t}$    
+`r I(f(FALSE))` $t e^{0.7 t}$     
+`r I(f(FALSE))` $0.7 e^t$     
+`r I(f(TRUE))` $0.7 e^{0.7 t}$    
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

@@ -1,0 +1,19 @@
+Applied Calculus Ch. 3 Sec. 3 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-3-2")
+```
+
+Find the derivative $df/dx$ of $f(x) = (x+1)^{99}$
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.3.2")
+```
+`r I(f(TRUE))` $99 (x+1)^{98}$    
+`r I(f(FALSE))` $99 x^{98}$     
+`r I(f(FALSE))` $98 (x+1)^{99}$    
+`r I(f(FALSE))` $98 x^{99}$     
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

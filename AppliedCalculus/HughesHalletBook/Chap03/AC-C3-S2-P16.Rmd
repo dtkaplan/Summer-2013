@@ -1,0 +1,19 @@
+Applied Calculus Ch. 3 Sec. 2 Prob. 16
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-2-16")
+```
+
+Find the derivative $dP/dt$ of the function $P = 200 e^{0.12 t}$.
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.2.16")
+```
+`r I(f(FALSE))` $200$     
+`r I(f(FALSE))` $200 t$     
+`r I(f(TRUE))` $24 e^{0.12 t}$     
+`r I(f(FALSE))` $24 e^t$    
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`
