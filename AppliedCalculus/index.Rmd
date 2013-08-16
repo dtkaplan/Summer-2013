@@ -34,7 +34,41 @@ The problems for Applied Calculus will be arranged according to their level of d
 
 * [HH Problem 28](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C-1-S6-P28.html)
 
+## Chapter 2
+
+#### Section 3
+
+* [HH Problem 14](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S3-P14.html) working
+
+* [HH Problem 38](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S3-P38.html) working
+
+* [HH Problem 40](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S3-P40.html) working
+
+#### Section 4
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P2.html) working
+
+* [HH Problem 4](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P4.html) working
+
+* [HH Problem 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P6.html) working
+
+* [HH Problem 8](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P8.html) working
+
+* [HH Problem 26](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P26.html) working
+
+* [HH Problem 28](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S4-P28.html) working
+
+#### Section 5
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S5-P2.html) working
+
+* [HH Problem 8](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S5-P8.html) working
+
+* [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S5-P10.html) working
+
+* [HH Problem 12](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap02/AC-C2-S5-P12.html) working
+
 #### Section 7
 * [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P2.html) WHERE IS THE CONTEXT INFORMATION??
 
-* [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P10.html) not complete
+* [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P10.html) working, but is it complete?
