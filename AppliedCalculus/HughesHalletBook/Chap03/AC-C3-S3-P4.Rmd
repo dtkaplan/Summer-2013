@@ -1,0 +1,18 @@
+Applied Calculus Ch. 3 Sec. 3 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-3-4")
+```
+
+Find the derivative $dw/dt$ of $w(t) = (t^2 + 1)^{100}$.
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.3.4")
+```
+`r I(f(FALSE))` $100 (2 t )^{99}$     
+`r I(f(TRUE))` $200 t (t^2 + 1 )^{99}$    
+`r I(f(FALSE))` $100 t (t^2 + 1 )^{99}$    
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

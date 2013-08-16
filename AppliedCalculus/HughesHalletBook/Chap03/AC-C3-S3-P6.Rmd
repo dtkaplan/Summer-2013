@@ -1,0 +1,18 @@
+Applied Calculus Ch. 3 Sec. 3 Prob. 6
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-3-6")
+```
+
+Find the derivative $dw/dr$ of the function $w(r) = (5r - 6)^3$.
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.3.6")
+```
+`r I(f(FALSE))` $3(5r-6)^2$     
+`r I(f(FALSE))` $15r^2 - 6^3$    
+`r I(f(TRUE))` $15 (5r-6)^2$    
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`
