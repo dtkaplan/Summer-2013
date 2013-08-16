@@ -6,6 +6,7 @@ The problems for Applied Calculus will be arranged according to their level of d
 ## Chapter 1  
 
 #### Section 2     
+
 * [HH Problem 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S2-P6.html) 
 
 * [HH Problem 8](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S2-P8.html)
@@ -17,6 +18,7 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 30](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S2-P30.html)
 
 #### Section 5
+
 * [HH Problem 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S5-P6.html)
 
 * [HH Problem 14](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S5-P14.html)
@@ -28,11 +30,18 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 24](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S5-P24.html)
 
 #### Section 6
+
 * [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S6-P2.html)
 
 * [HH Problem 24](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S6-P24.html)
 
 * [HH Problem 28](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C-1-S6-P28.html)
+
+#### Section 7
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/AC-C1-S7-P2.html) working
+
+* [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/AC-C1-S7-P10.html) working, but a duplicate with Ch. 2 Sec. 7 Prob. 10??
 
 ## Chapter 2
 
@@ -72,3 +81,22 @@ The problems for Applied Calculus will be arranged according to their level of d
 * [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P2.html) WHERE IS THE CONTEXT INFORMATION??
 
 * [HH Problem 10](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap01/C1-S7-P10.html) working, but is it complete?
+
+
+## Chapter 3
+
+#### Section 1
+
+* [HH Problem 2](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P2.html) working
+
+* [HH Problem 6](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P6.html) working
+
+* [HH Problem 8](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P8.html) working
+
+* [HH Problem 20](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P20.html) working
+
+* [HH Problem 30](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P30.html) working
+
+* [HH Problem 38](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P38.html) working
+
+* [HH Problem 46](http://dtkaplan.github.io/Summer-2013/AppliedCalculus/HughesHalletBook/Chap03/AC-C3-S1-P46.html) working

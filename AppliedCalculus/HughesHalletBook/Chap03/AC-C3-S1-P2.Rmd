@@ -1,0 +1,15 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-C3-S1-P2")
+```
+Following the notation in the book, we'll write the equation $y = 3x$ to stand for a function of $x$, that is, $y = f(x) = 3x$.
+
+```{r include=FALSE}
+prob1=selectSet(name="3.1.2", totalPts=1, "1"=FALSE, "3"=TRUE, "x"=FALSE, "3x"=FALSE)
+```
+Find the derivative $dy/dx$ of the function $y = 3x$. `r I(prob1)`
+
+`r I(endProblem())`

@@ -1,0 +1,19 @@
+Applied Calculus Ch. 1 Sec. 7 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-1-7-10")
+```
+
+According to the formula given in the book, $$N(t) = N_0 e^{t/500}$$
+```{r include=FALSE}
+prob1=selectSet(name="1.7.10", totalPts=1, "250 days"=FALSE, "309 days"=FALSE, "347 days"=TRUE, "382 days"=FALSE, "460 days"=FALSE, "500 days"=FALSE)
+```
+* Doubling time for the number of Wikipedia articles: `r I(prob1)`
+
+<aside>
+**Entirely optional**: As the problem in the book says, the exponential model was based on data from 2002 to 2006.  Wikipedia has continued to grow, but not exponentially.  See [this article in wikipedia](http://en.wikipedia.org/wiki/Wikipedia:Modelling_Wikipedia's_growth).
+</aside>
+
+`r I(endProblem())`

@@ -1,0 +1,24 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 38
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-1-38")
+```
+
+Let $f(x) = x^3 - 4 x^2 + 7 x - 11$.  Find the values of the derivatives
+
+```{r include=FALSE}
+prob1=selectNumber(choices=c(-11,-5,2,3,5,7,9,12,18,24), correct=c(7), totalPts=1, name="3.1.38a")
+```
+* $f\ '(0)$ `r I(prob1)`
+```{r include=FALSE}
+prob2=selectNumber(choices=c(-11,-5,2,3,5,7,9,12,18,24), correct=c(3), totalPts=1, name="3.1.38b")
+```
+* $f\ '(2)$ `r I(prob2)`
+```{r include=FALSE}
+prob3=selectNumber(choices=c(-11,-5,2,3,5,7,9,12,18,24), correct=c(18), totalPts=1, name="3.1.38c")
+```
+* $f\ '(-1)$  `r I(prob3)`
+
+`r I(endProblem())`

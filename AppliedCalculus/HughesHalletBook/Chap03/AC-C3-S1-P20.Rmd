@@ -1,0 +1,20 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 20
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-1-1-20")
+```
+Following the notation in the book, we'll write the equation $y = \sqrt{x}$ to stand for a function of $x$, that is, $y = f(x) = \sqrt{x}$.
+
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.1.20")
+```
+Find the derivative $dy/dx$ of the function $y = \sqrt{x}$.    
+`r I(f(FALSE))` $x$    
+`r I(f(FALSE))` $1/2$    
+`r I(f(FALSE))` $1/\sqrt{x}$    
+`r I(f(TRUE))` $1/ (2 \sqrt{x})$    
+`r I(f(finish=TRUE))`
+
+`r I(endProblem())`

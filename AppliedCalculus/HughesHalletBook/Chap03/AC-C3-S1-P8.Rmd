@@ -1,0 +1,15 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 8
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-1-8")
+```
+Following the notation in the book, we'll write the equation $y = 5x + 13$ to stand for a function of $x$, that is, $y = f(x) = 5x + 13$.
+
+```{r include=FALSE}
+prob1=selectSet(name="3.1.8", totalPts=1, "5"=TRUE, "18"=FALSE, "5x"=FALSE, "x + 13"=FALSE)
+```
+Find the derivative $dy/dx$ of the function $y = 5x + 13$. `r I(prob1)`
+
+`r I(endProblem())`

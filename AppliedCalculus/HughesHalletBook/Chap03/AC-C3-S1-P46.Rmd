@@ -1,0 +1,31 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 46
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-1-46")
+```
+
+If $f(t) = t^4 - 3 t^2 + 5 t$, find 
+
+* The first derivative with respect to $t$, that is $df/dt$ (or  $f\ '(t)$).
+```{r include=FALSE}
+f=newMC(totalPts=1, name="3.1.46a")
+```
+ `r I(f(FALSE))` $4t^3 - 8$     
+ `r I(f(FALSE))` $4 t^3 + 5 t$    
+ `r I(f(FALSE))` $4 t^3 - 3$    
+ `r I(f(TRUE))` $4 t^3 - 6 t + 5$    
+`r I(f(finish=TRUE))`
+
+* The second derivative with respect to $t$, that is $d^2f/dt^2$ (or  $f\ ' ' (t)$).
+```{r include=FALSE}
+g=newMC(totalPts=1, name="3.1.46b")
+```
+ `r I(g(FALSE))` $4 t^2 - 5$    
+ `r I(g(TRUE))` $12 t^2 - 6$     
+ `r I(g(FALSE))` $4 t^2 - 6$    
+ `r I(g(FALSE))` $12 t^2 - 5$    
+`r I(g(finish=TRUE))`
+
+`r I(endProblem())`

@@ -1,0 +1,15 @@
+Applied Calculus Ch. 3 Sec. 1 Prob. 30
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-3-1-30")
+```
+Following the notation in the book, we'll write the equation $y = a x^2 + b x + c$ to stand for a function of $x$, that is, $y = f(x) = a x^2 + b x + c$.
+
+```{r include=FALSE}
+prob1=selectSet(name="3.1.30", totalPts=1, "ax + b"=FALSE, "2a + bx"=FALSE, "2ax + b"=TRUE, "2ax + bx"=FALSE)
+```
+Find the derivative $dy/dx$ of the function $y = a x^2 + b x + c$. `r I(prob1)`
+
+`r I(endProblem())`
