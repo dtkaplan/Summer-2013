@@ -1,0 +1,20 @@
+Applied Calculus Ch. 2 Sec. 5 Prob. 8
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-5-8")
+```
+
+Figure 2.56 (in the book) shows part of the graph of cost and revenue for a car manufacturer.  Which is greater, marginal cost or marginal revenue, at 
+
+```{r include=FALSE}
+prob1=selectSet(name="2.5.8a", totalPts=1, "cost"=FALSE, "revenue"=TRUE, "neither"=FALSE)
+```
+* point $q_1$?  `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="2.5.8b", totalPts=1, "cost"=FALSE, "revenue"=TRUE, "neither"=FALSE)
+```
+* point $q_2$? `r I(prob2)`
+
+`r I(endProblem())`

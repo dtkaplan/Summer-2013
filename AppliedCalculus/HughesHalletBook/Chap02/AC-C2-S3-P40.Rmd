@@ -1,0 +1,15 @@
+Applied Calculus Ch. 2 Sec. 3 Prob. 40
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-3-40")
+```
+The graph in Figure 2.31 (in the book) shows the depletion of food stores in the human body during starvation.  
+
+Provide a brief (one or two sentence) answer to the following:
+
+* What seems to happen during the sixth week?  Why do you think this happens?    
+ `r I(textItem(name="2.3.40", totalPts=1, rows=3))`
+
+`r I(endProblem())`

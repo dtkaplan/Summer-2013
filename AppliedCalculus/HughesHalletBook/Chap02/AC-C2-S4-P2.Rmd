@@ -1,0 +1,14 @@
+Applied Calculus Ch. 2 Sec. 4 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-4-2")
+```
+
+```{r include=FALSE}
+prob1=selectSet(name="2.4.2", totalPts=1, "A"=FALSE, "B"=TRUE, "C"=FALSE, "D"=FALSE, "E"=FALSE)
+```
+At one of the labeled points on the graph in Figure 2.39 (in the book) both $dy/dx$ and $d^2y/d^2x$ are positive.  Which is it? `r I(prob1)`
+
+`r I(endProblem())`

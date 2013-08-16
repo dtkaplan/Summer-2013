@@ -1,0 +1,32 @@
+Applied Calculus Ch. 2 Sec. 4 Prob. 26
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-4-26")
+```
+
+Let $P(t)$ represent the price of a share of stock of a corporation at time $t$.  What does each of the following statements tell us about the signs of the first and second derivatives of $P(t)$?
+
+* "The price of the stock is rising faster and faster."
+```{r include=FALSE}
+prob1=selectSet(name="2.4.26a1", totalPts=1, "positive"=TRUE, "negative"=FALSE, "zero"=FALSE)
+```
+  * First derivative: `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="2.4.26a2", totalPts=1, "positive"=TRUE, "negative"=FALSE, "zero"=FALSE)
+```
+  * Second derivative: `r I(prob2)`
+
+
+* "The price of the stock is close to bottoming out."
+```{r include=FALSE}
+prob3=selectSet(name="2.4.26b1", totalPts=1, "positive"=FALSE, "negative"=TRUE, "zero"=FALSE)
+```
+  * First derivative: `r I(prob3)`
+```{r include=FALSE}
+prob4=selectSet(name="2.4.26b2", totalPts=1, "positive"=TRUE, "negative"=FALSE, "zero"=FALSE)
+```
+  * Second derivative: `r I(prob4)`
+
+`r I(endProblem())`

@@ -1,0 +1,36 @@
+Applied Calculus Ch. 2 Sec. 4 Prob. 28
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-4-28")
+```
+
+Each of the graphs --- marked as I, II, III, IV --- in Figure 2.42 (in the book) shows the position of a particle moving along the $x$-axis as a function of time, $0 \leq t \leq 5$.  The vertical scales of the graphs are the same.  During this time interval, which particle has:
+
+```{r include=FALSE}
+prob1=selectSet(name="2.4.28a", totalPts=1, "I"=FALSE, "II"=FALSE, "III"=FALSE, "IV"=TRUE)
+```
+* Constant velocity? `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="2.4.28b", totalPts=1, "I"=FALSE, "II"=FALSE, "III"=TRUE, "IV"=FALSE)
+```
+* The greatest initial velocity? `r I(prob2)`
+```{r include=FALSE}
+prob3=selectSet(name="2.4.28c", totalPts=1, "I"=FALSE, "II"=TRUE, "III"=FALSE, "IV"=FALSE)
+```
+* The greatest average velocity? `r I(prob3)`
+```{r include=FALSE}
+prob4=selectSet(name="2.4.28d", totalPts=1, "I"=TRUE, "II"=FALSE, "III"=FALSE, "IV"=FALSE)
+```
+* Zero average velocity? `r I(prob4)`
+```{r include=FALSE}
+prob5=selectSet(name="2.4.28e", totalPts=1, "I"=FALSE, "II"=FALSE, "III"=FALSE, "IV"=TRUE)
+```
+* Zero acceleration? `r I(prob5)`
+```{r include=FALSE}
+prob6=selectSet(name="2.4.28f", totalPts=1, "I"=FALSE, "II"=TRUE, "III"=FALSE, "IV"=FALSE)
+```
+* Positive acceleration throughout? `r I(prob6)`
+
+`r I(endProblem())`

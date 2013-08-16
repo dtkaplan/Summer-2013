@@ -1,0 +1,21 @@
+Applied Calculus Ch. 2 Sec. 4 Prob. 4
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-4-4")
+```
+
+Give the signs of the first and second derivative for the following function.  Each derivative is either positive everywhere, zero everywhere, or negative everywhere.
+
+#### Problem 4
+```{r include=FALSE}
+prob1=selectSet(name="2.4.4a", totalPts=1, "positive"=FALSE, "negative"=FALSE, "zero"=TRUE)
+```
+* First derivative: `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="2.4.4b", totalPts=1, "positive"=FALSE, "negative"=FALSE, "zero"=TRUE)
+```
+* Second derivative: `r I(prob2)`
+
+`r I(endProblem())`

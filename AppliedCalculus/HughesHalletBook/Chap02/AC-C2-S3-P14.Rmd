@@ -1,0 +1,28 @@
+Applied Calculus Ch. 2 Sec. 3 Prob. 14
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-3-14-SD")
+```
+
+Let $f(x)$ be the elevation in feet of the Mississippi River $x$ miles from its source in Lake Itasca, Minnesota. 
+
+```{r include=FALSE}
+prob1=selectSet(name="2.3.14a", totalPts=1, "feet"=FALSE, "miles"=FALSE, "feet-per-mile"=TRUE, "mile-per-foot"=FALSE)
+```
+* What are the units of $f\ '(x)$? `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectSet(name="2.13.14b", totalPts=1, "positive"=FALSE, "negative"=TRUE, "zero"=FALSE)
+```
+* What can you say about the sign of $f\ '(x)$? `r I(prob2)`
+
+```{r include=FALSE}
+prob3=selectSet(name="2.3.14c", totalPts=1, "positive"=TRUE, "negative"=FALSE, "zero"=FALSE)
+```
+* Now suppose that you measured the position $x$ not from Lake Itasca, but from the mouth of the river in the Gulf of Mexico?  What would be the sign of $f\ '(x)$ with $x$ measured from the Gulf? `r I(prob3)`
+
+Aside: At Lake Itasca, you can see precisely where the Mississippi begins, and so the starting point is well defined to a precision of a meter or so.  But it's very difficult to say precisely where the mouth of the river is --- there are many channels and the flow extends out a considerable way into the Gulf of Mexico.  So, it's probably best to refer to position from the source rather than from the mouth.
+
+`r I(endProblem())`

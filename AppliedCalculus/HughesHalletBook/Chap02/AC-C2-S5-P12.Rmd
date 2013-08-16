@@ -1,0 +1,28 @@
+Applied Calculus Ch. 2 Sec. 5 Prob. 12
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-5-12")
+```
+
+Cost (in $) and revenue functions for a charter bus company are shown in Figure 2.57 (in the book).      
+Cost and revenue are function of the size of the bus company, as measured by the number of busses in the fleet. 
+```{r include=FALSE}
+prob1=selectSet(name="2.5.12a", totalPts=1, "Yes"=TRUE, "No"=FALSE, "Unknown"=FALSE)
+```
+* Would a company with a fleet of size 50 busses make a profit? `r I(prob1)`
+```{r include=FALSE}
+prob2=selectSet(name="2.5.12b", totalPts=1, "Yes"=TRUE, "No"=FALSE, "Unknown"=FALSE)
+```
+* Would a company with a fleet of size 90 busses make a profit? `r I(prob2)`
+```{r include=FALSE}
+prob3=selectSet(name="2.5.12c", totalPts=1, "Yes"=FALSE, "No"=TRUE, "Unknown"=FALSE)
+```
+* Would a company with a fleet of size 125 busses make a profit? `r I(prob3)`
+```{r include=FALSE}
+prob4=selectNumber(choices=c(25,50,75,100), correct=c(75), totalPts=1, name="2.5.12d")
+```
+* What should the size of the company be to maximize the total profit? (Pick the closest answer.) `r I(prob4)`
+
+`r I(endProblem())`

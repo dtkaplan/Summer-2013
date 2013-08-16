@@ -1,0 +1,26 @@
+Applied Calculus Ch. 2 Sec. 5 Prob. 10
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-5-10")
+```
+
+To produce 1000 items the total cost is $5000 and the marginal cost is $25 per item.  Using just this information, estimate these costs:
+
+```{r include=FALSE}
+prob1=selectNumber(name="2.5.10a", totalPts=1, choices=c(4975,4995,5000,5005,5025,5075,5250,7500), correct=c(5025))
+```
+* Cost (in $)  of producing 1001 items: `r I(prob1)`
+
+```{r include=FALSE}
+prob2=selectNumber(name="2.5.10b", totalPts=1, choices=c(4975,4995,5000,5005,5025,5075,5250,7500), correct=c(4975))
+```
+* Cost (in $)  of producing 999 items: `r I(prob2)`
+
+```{r include=FALSE}
+prob3=selectNumber(name="2.5.10c", totalPts=1, choices=c(4975,4995,5000,5005,5025,5075,5250,7500), correct=c(7500))
+```
+* Cost (in $)  of producing 1100 items: `r I(prob3)`
+
+`r I(endProblem())`

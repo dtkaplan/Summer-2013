@@ -1,0 +1,14 @@
+Applied Calculus Ch. 2 Sec. 5 Prob. 2
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-C2-S5-P2")
+```
+
+```{r include=FALSE}
+prob1=selectNumber(choices=c(1,2,3,4,5,10,30), correct=c(3), totalPts=1, name="2.5.2")
+```
+It costs $4800 to produce 1295 items and it costs $4830 to produce 1305 items.  What is the approximate marginal cost (in dollars per item) at a level of 1300 items? `r I(prob1)`
+
+`r I(endProblem())`

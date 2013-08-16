@@ -1,0 +1,16 @@
+Applied Calculus Ch. 2 Sec. 3 Prob. 38
+========================================================
+```{r include=FALSE}
+require(mosaic)
+require(ScoreR)
+startProblem("AC-2-3-38")
+```
+
+The graph in Figure 2.31 (in the book) shows the depletion of food stores in the human body during starvation.  
+
+Provide a brief (one or two sentence) answer to the following:
+
+* The fat storage is linear for the first four weeks.  What does this tell you about the use of stored fat?    
+ `r I(textItem(name="2.3.38", totalPts=2, rows=3))`
+
+`r I(endProblem())`
