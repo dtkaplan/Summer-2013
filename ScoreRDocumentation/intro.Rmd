@@ -2,8 +2,8 @@ Writing ScoreR Problems
 ========================================================
 
 ```{r include=FALSE}
-require(WriteScoreR)
-newScorerSet("intro-DTK-2013-05-23")
+require(ScoreR)
+startProblem("intro-DTK-2013-05-23")
 ```
 
 <aside>
@@ -11,21 +11,19 @@ newScorerSet("intro-DTK-2013-05-23")
 ### With answers displayed!
 This example shows the conditional display of answers using the "aside" HTML flag.</aside>
 
-A **ScoreR** problem is a Rmd/HTML file containing zero or more items.  There are three types of items:
+A **ScoreR** problem is a Rmd/HTML file containing zero or more items.  There are different types of items:
 
 
 ### Selection from a set.
 
 This is intended for a set of short answers, e.g. one-word or number.
 
-DOCUMENT THIS IN selectSet.Rmd -- can use numbers in quotes, can use TRUE and FALSE to indicate correctness, can give a hint in the yes/no function.
-
 ```{r include=FALSE}
 spainrain = selectSet("Rain",reward="My Fair Lady!",
-                       Algeria=no(hint="Wrong continent"),
-                       "1492"=no(),
-                       Spain=yes())
-hurricanes= selectSet(name="Hurricanes", often=no(),usually=no(),"hardly ever"=yes())
+                       Algeria=list(credit=FALSE,hint="Wrong continent"),
+                       "1492"=FALSE,
+                       Spain=TRUE)
+hurricanes= selectSet(name="Hurricanes", often=FALSE,usually=FALSE,"hardly ever"=TRUE)
 horses = selectSet(name="Horses",Ascot=TRUE,Pimlico=TRUE,"Yankee Stadium"=FALSE)
 ```
 
@@ -64,7 +62,7 @@ You can re-size the text box on most browsers.
 2. The markup contains provisions for hints and rewards.  These are not yet displayed.
 3. In an interactive mode, the result will be shown immediately.
 
-`r I(closeProblem())`
+`r I(endProblem())`
 
 #### Danny Kaplan
 #### May 22, 2013

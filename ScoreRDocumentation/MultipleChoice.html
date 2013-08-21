@@ -190,80 +190,60 @@ hljs.initHighlightingOnLoad();
 
 <p>As with all <em>ScoreR</em> problem, the source Rmd file makes use of commands in the <code>WriteScoreR</code> package.  The function <code>newScorerSet()</code> is used to provide a unique ID to the problem. The following commands, which typically will be hidden from the reader by the use of the <code>include=FALSE</code> directive, do this.  </p>
 
-<pre><code class="r">require(WriteScoreR)
-newScorerSet(&quot;multiple-choice-DTK-2013-05-25&quot;)
+<pre><code class="r">require(ScoreR)
+startProblem(&quot;multiple-choice-DTK-2013-05-25&quot;)
 </code></pre>
 
 <h3>Three steps</h3>
 
-<p>There are three (simple) steps to creating a multiple-choice problem in <em>ScoreR</em>:
-1. Initialization of the question
-2. Creation of the individual items, typically embedded in <em>markdown</em> statements
-3. Termination of the question.</p>
+<p>There are three (simple) steps to creating a multiple-choice problem in <em>ScoreR</em>:</p>
+
+<ol>
+<li>Initialization of the question</li>
+<li>Creation of the individual items, typically embedded in <em>markdown</em> statements</li>
+<li>Termination of the question.</li>
+</ol>
 
 <p>Initialization is done with the <code>newMC()</code> function.</p>
 
-<pre><code class="r">f = newMC(totalPts = 5)  # Ordinarily, make this silent
+<pre><code class="r">f = newMC(totalPts = 5, name = &quot;minus1&quot;)  # Ordinarily, make this silent
 </code></pre>
 
 <p>The function name, in this case <code>f</code>, is arbitrary.  You will use that name to create the individual items with statements like <code>I(f(TRUE))</code> and I(f(FALSE)), which will be embedded in text.  For instance:</p>
 
-<p>Which of these is equal to \( -1 \)?</p>
-
-<ul>
-<li><label for='MCitem1'><input type='radio' name='MC1' id='MCitem1' value='{
-"pts":      0,
+<p>Which of these is equal to \( -1 \)?<br/>
+<label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
+ "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      1,
-"name": "1",
-"totalpts":      5 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
-}'> <b>A</b></label> The value of \( a x^2 + b x - c \) for all \( a \), \( b \), and \( c \)</li>
-<li><label for='MCitem2'><input type='radio' name='MC1' id='MCitem2' value='{
-"pts":      5,
+}'> <b>A</b></label> The value of \( a x^2 + b x - c \) for all \( a \), \( b \), and \( c \)<br/>
+<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
+ "pts":      5,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      1,
-"name": "1",
-"totalpts":      5 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
-}'> <b>B</b></label>  \( e^{i\pi} \)</li>
-<li><label for='MCitem3'><input type='radio' name='MC1' id='MCitem3' value='{
-"pts":      0,
+}'> <b>B</b></label>  \( e^{i\pi} \)<br/>
+<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
+ "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      1,
-"name": "1",
-"totalpts":      5 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "C" 
-}'> <b>C</b></label> \( \ln(0) \)</li>
-<li><label for='MCitem4'><input type='radio' name='MC1' id='MCitem4' value='{
-"pts":      0,
+}'> <b>C</b></label> \( \ln(0) \)<br/>
+<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
+ "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      1,
-"name": "1",
-"totalpts":      5 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "D" 
-}'> <b>D</b></label> There&#39;s no such thing as a negative number, just a negative attitude. </li>
-</ul>
+}'> <b>D</b></label> There&#39;s no such thing as a negative number, just a negative attitude.
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "multiple-choice-DTK-2013-05-25",
+"itemN":      1,
+"name": "minus1",
+"totalpts":      5,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p>After the items have been defined, terminate the question by calling the function with the argument <code>finish=TRUE</code></p>
 
@@ -277,45 +257,32 @@ newScorerSet(&quot;multiple-choice-DTK-2013-05-25&quot;)
 <p>You may prefer not to have bullet points before the individual items, yet still have each on it&#39;s own line.  To do this, in Markdown, put several blank spaces at the end of each line.</p>
 
 <p>Which of these is a movie?<br/>
-<label for='MCitem1'><input type='radio' name='MC2' id='MCitem1' value='{
+<label for='MCitem1'><input type='radio' name='ScoreR2' id='MCitem1' value='{
  "pts":      1,
 "hint": "",
-"itemInfo": {
- "setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      2,
-"name": "movietitle",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "A" 
 }'> <b>A</b></label> Gone with the Wind<br/>
-<label for='MCitem2'><input type='radio' name='MC2' id='MCitem2' value='{
+<label for='MCitem2'><input type='radio' name='ScoreR2' id='MCitem2' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
- "setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      2,
-"name": "movietitle",
-"totalpts":      1 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "B" 
 }'> <b>B</b></label> The Wind is Gone<br/>
-<label for='MCitem3'><input type='radio' name='MC2' id='MCitem3' value='{
+<label for='MCitem3'><input type='radio' name='ScoreR2' id='MCitem3' value='{
  "pts":      0,
 "hint": "",
-"itemInfo": {
+"reward": "Right!",
+"content": "C" 
+}'> <b>C</b></label> Go Wind, Go! 
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
  "setID": "multiple-choice-DTK-2013-05-25",
 "itemN":      2,
 "name": "movietitle",
-"totalpts":      1 
-},
+"totalpts":      1,
 "type": "MC",
-"reward": "Right!",
-"content": "C" 
-}'> <b>C</b></label> Go Wind, Go!   </p>
+"reward": "" 
+}'>Question info</option></select></p>
 
 <p>You can use the <code>markers</code> argument to <code>newMc()</code> to specify labels other than A,B,C,&hellip;.  You can also assign a name to the item and specify a reward for the correct answer.  Within the individual items (e.g., within <code>f()</code>), you can specify a hint.</p>
 
@@ -326,51 +293,34 @@ newScorerSet(&quot;multiple-choice-DTK-2013-05-25&quot;)
 
 <h4>What are the first words of Tolstoy&#39;s &ldquo;Anna Karenina&rdquo;?</h4>
 
-<ul>
-<li><label for='MCitem1'><input type='radio' name='MC3' id='MCitem1' value='{
-"pts":      4,
+<p><label for='MCitem1'><input type='radio' name='ScoreR3' id='MCitem1' value='{
+ "pts":      4,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      3,
-"name": "Anna Karenina",
-"totalpts":      4 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "Б" 
-}'> <b>Б</b></label> Happy families are all alike; every unhappy family is unhappy in its own way.</li>
-<li><label for='MCitem2'><input type='radio' name='MC3' id='MCitem2' value='{
-"pts":      0,
+}'> <b>Б</b></label> Happy families are all alike; every unhappy family is unhappy in its own way.<br/>
+<label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
+ "pts":      0,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      3,
-"name": "Anna Karenina",
-"totalpts":      4 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "Г" 
-}'> <b>Г</b></label> The prettiest belle of them all was Anna.  Also, the saddest.</li>
-<li><label for='MCitem3'><input type='radio' name='MC3' id='MCitem3' value='{
-"pts":      4,
+}'> <b>Г</b></label> The prettiest belle of them all was Anna.  Also, the saddest.<br/>
+<label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
+ "pts":      4,
 "hint": "",
-"itemInfo": {
-"setID": "multiple-choice-DTK-2013-05-25",
-"itemN":      3,
-"name": "Anna Karenina",
-"totalpts":      4 
-},
-"type": "MC",
 "reward": "Right!",
 "content": "Д" 
-}'> <b>Д</b></label> Все счастливые семьи похожи друг на друга, каждая несчастливая семья несчастлива по-своему.</li>
-</ul>
+}'> <b>Д</b></label> Все счастливые семьи похожи друг на друга, каждая несчастливая семья несчастлива по-своему.<br/>
+<input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "multiple-choice-DTK-2013-05-25",
+"itemN":      3,
+"name": "Anna Karenina",
+"totalpts":      4,
+"type": "MC",
+"reward": "" 
+}'>Question info</option></select></p>
 
-<p><span id='MCout3' class='shiny-html-output'> </span></p>
-
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "MC1", "MC2", "MC3" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "minus1", "movietitle", "Anna Karenina" ]'>problem roster</option></select></p>
 
 <h4>Danny Kaplan, May 25, 2013</h4>
 
