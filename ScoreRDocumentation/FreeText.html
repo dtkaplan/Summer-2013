@@ -213,7 +213,18 @@ startProblem(&quot;free-text-DTK-2013-05-25&quot;)
 
 <p>Note that the user <strong>must</strong> click on the radio buttons to the right of the box in order to submit the text.  <strong>To do</strong>: Replace with with a simple button, or change the updating rule so that an event is triggered only when the user leaves the box.  Currently, events are triggered every few characters or seconds, which leads to frequent updating when a user is editing.  <strong>Question</strong>: Is this a problem?  Perhaps it&#39;s alright to have the submission be automatic and frequent.</p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "question-topic" ]'>problem roster</option></select></p>
+<p>Here&#39;s another one, called &ldquo;question-topic2&rdquo;. It&#39;s worth only 5 points.<br/>
+<textarea cols='30' rows='4' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
+ "setID": "free-text-DTK-2013-05-25",
+"itemN":      2,
+"name": "question-topic2",
+"totalpts":      5,
+"type": "Free text",
+"hint": "",
+"reward": "" 
+}'>Question info for free text</option></select></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "question-topic", "question-topic2" ]'>problem roster</option></select></p>
 
 <h4>Danny Kaplan, May 26, 2013</h4>
 
