@@ -50,7 +50,7 @@ f = newMC(totalPts=5,name="Declaration") # Ordinarily, make this silent
 ### Free text.
 
 What would you like to write a question about?     
-`r I(textItem(name="question-topic",rows=3))`
+`r I(textItem(name="question-topic",rows=3,totalPts=4))`
 
 You can re-size the text box on most browsers.  
 
