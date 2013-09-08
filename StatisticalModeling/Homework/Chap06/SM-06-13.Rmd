@@ -24,8 +24,6 @@ f=newMC(totalPts=1, name="command")
 `r I(f(FALSE))` <code>bwplot( wage ~ sex, groups= sector, data=cps)</code>     
 `r I(f(TRUE))` <code> bwplot( wage ~ sex | sector, data=cps)</code>     
 `r I(f(FALSE))` <code> bwplot( wage ~ cross(sex,sector), data=cps)</code>
-```{r include=FALSE, results="hide"}
-I(f(finish=TRUE))
-```
+`r I(f(finish=TRUE))`
 
 `r I(endProblem())`
