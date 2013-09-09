@@ -15,7 +15,7 @@ Here are some useful operators for taking a quick look at data frames:
 <code>head</code> | Prints the first several lines of the data frame.
 
 Here are some examples of these commands applied to the <code>CO2</code>
-data frame:
+data frame.  (Notice that it's <code>"CO2"</code> and not <code>"C02"</code> --- an "oh", not a zero.)
 
 ```{r}
 CO2 = fetchData("CO2")
