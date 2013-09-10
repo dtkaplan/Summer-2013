@@ -8,10 +8,7 @@ startProblem("SM-01-1-01-SD")
 
 NOTE: Remember to load the <code>mosaic</code> package before starting:
 
-<code>load(mosaic)</code>
-
-
-
+<code>library(mosaic)</code>
 
 Each of the following statements has a syntax mistake.  Write the
 statements properly and give a sentence saying what was wrong. (Cut and paste the correct statement from R, along with any output that R gives and your sentence saying what was wrong in the original.)
