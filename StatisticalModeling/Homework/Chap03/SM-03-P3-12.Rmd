@@ -6,15 +6,15 @@ require(ScoreR)
 startProblem("SM-3-P12-SD")
 ```
 
-A standard deviation contest.  For the two questions below, you can choose numbers from the set $0,1,2,3,4,5,6,7,8$, and $9$.  Repeats are allowed.
+A standard deviation contest.  For the two questions below, you can choose numbers from the set 0,1,2,3,4,5,6,7,8, and 9.  Repeats are allowed.
 
 ```{r include=FALSE}
-contest=selectSet(name="largestdev", totalPts=1, "$0,3,6,9$"=FALSE, "$0,0,0,9$"=FALSE, "$0,0,9,9$"=TRUE, "$0,9,9,9$"=FALSE)
+contest=selectSet(name="largestdev", totalPts=1, "0,3,6,9"=FALSE, "0,0,0,9"=FALSE, "0,0,9,9"=TRUE, "0,9,9,9"=FALSE)
 ```
 * Which list of 4 numbers has the largest standard deviation such a list can possibly have? `r I(contest)`
   
 ```{r include=FALSE}
-contest2=selectSet(name="smallestdev", totalPts=1, "$0,3,6,9$"=FALSE, "$0,1,2,3$"=FALSE, "$5,5,6,6$"=FALSE, "$9,9,9,9$"=TRUE)
+contest2=selectSet(name="smallestdev", totalPts=1, "0,3,6,9"=FALSE, "0,1,2,3"=FALSE, "5,5,6,6"=FALSE, "9,9,9,9"=TRUE)
 ```
 * Which list of 4 numbers has the smallest standard deviation such a list can possibly have? `r I(contest2)`
 
