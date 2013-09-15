@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 4 Prob. 7</title>
 
@@ -190,25 +191,27 @@ hljs.initHighlightingOnLoad();
 
 <ul>
 <li><p>What is the standard deviation of the height?<br/>
-<textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR1info'><option value='{
+<textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-4-07-SD",
 "itemN":      1,
 "name": "StdDev",
 "totalpts":      2,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-4-07-SD" 
 }'>Question info for free text</option></select></p></li>
 <li><p>Calculate the grand mean and, from that, the residuals of the
 actual heights from the grand mean.<br/>
-<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR2info'><option value='{
+<textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-4-07-SD",
 "itemN":      2,
 "name": "GrandMean",
 "totalpts":      2,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-4-07-SD" 
 }'>Question info for free text</option></select></p></li>
 </ul>
 
@@ -235,47 +238,54 @@ model? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <o
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.51" 
+"content": "2.51",
+"uniqueID": "SM-4-07-SD" 
 }'>2.51</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.58" 
+"content": "2.58",
+"uniqueID": "SM-4-07-SD" 
 }'>2.58</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.92" 
+"content": "2.92",
+"uniqueID": "SM-4-07-SD" 
 }'>2.92</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "3.58" 
+"content": "3.58",
+"uniqueID": "SM-4-07-SD" 
 }'>3.58</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "3.82" 
+"content": "3.82",
+"uniqueID": "SM-4-07-SD" 
 }'>3.82</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
  "setID": "SM-4-07-SD",
 "itemN":      3,
 "name": "residuals",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-4-07-SD" 
 }'>Info for Select Set</option></select> </p>
 
 <ul>
 <li>Calculate the group-wise mean for the different sexes and, from
 that, the residuals of the actual heights from this group-wise
 model.<br/>
-<textarea cols='30' rows='3' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR4info'><option value='{
+<textarea cols='30' rows='3' id='ScoreR4' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
 "setID": "SM-4-07-SD",
 "itemN":      4,
 "name": "group-wiseMean",
 "totalpts":      2,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-4-07-SD" 
 }'>Question info for free text</option></select></li>
 </ul>
 
@@ -291,8 +301,8 @@ res1 = g$height - fitted(mod1, data = g)
 <pre><code class="r">sd(res1)
 </code></pre>
 
-<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
-## function &#39;sd&#39;: Error: object &#39;res1&#39; not found
+<pre><code>## Error: Error in is.data.frame(x): object &#39;res1&#39; not found Did you perhaps
+## omit data= ?
 </code></pre>
 
 <p></aside></p>
@@ -302,47 +312,54 @@ model? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <o
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "2.51" 
+"content": "2.51",
+"uniqueID": "SM-4-07-SD" 
 }'>2.51</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.58" 
+"content": "2.58",
+"uniqueID": "SM-4-07-SD" 
 }'>2.58</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.92" 
+"content": "2.92",
+"uniqueID": "SM-4-07-SD" 
 }'>2.92</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "3.58" 
+"content": "3.58",
+"uniqueID": "SM-4-07-SD" 
 }'>3.58</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "3.82" 
+"content": "3.82",
+"uniqueID": "SM-4-07-SD" 
 }'>3.82</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
  "setID": "SM-4-07-SD",
 "itemN":      5,
 "name": "residuals2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-4-07-SD" 
 }'>Info for Select Set</option></select></p>
 
 <ul>
 <li>Explain why the standard deviation of the residuals of the
 group-wise model less than the standard deviation of the residuals
 of the &ldquo;grand mean&rdquo; model.<br/>
-<textarea cols='30' rows='4' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR6info'><option value='{
+<textarea cols='30' rows='4' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
 "setID": "SM-4-07-SD",
 "itemN":      6,
 "name": "explain",
 "totalpts":      2,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-4-07-SD" 
 }'>Question info for free text</option></select></li>
 </ul>
 

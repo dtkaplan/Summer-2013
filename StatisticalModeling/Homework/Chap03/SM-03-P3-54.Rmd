@@ -13,7 +13,7 @@ percentiles:
 * What is the value that falls at a given percentage?  For instance, in the <code>ten-mile-race.csv</code> running data, how fast are the fastest 10% of runners? In R, you would ask in this way:
 
 ```{r}
-run = fetchData("ten-mile-race.csv")     
+run = fetchData("TenMileRace")     
 qdata(0.10, run$net)     
 ```
 

@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 3 Prob. 3.54</title>
 
@@ -191,10 +192,10 @@ percentiles:</p>
 <li>What is the value that falls at a given percentage?  For instance, in the <code>ten-mile-race.csv</code> running data, how fast are the fastest 10% of runners? In R, you would ask in this way:</li>
 </ul>
 
-<pre><code class="r">run = fetchData(&quot;ten-mile-race.csv&quot;)
+<pre><code class="r">run = fetchData(&quot;TenMileRace&quot;)
 </code></pre>
 
-<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/ten-mile-race.csv
+<pre><code>## Data TenMileRace found in package.
 </code></pre>
 
 <pre><code class="r">qdata(0.1, run$net)
@@ -238,24 +239,28 @@ runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> <code>pdata(0.35,run$age)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> <code>qdata(0.35,run$age)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> <code>pdata(35,run$age)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> <code>qdata(35,run$age)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
@@ -264,7 +269,8 @@ runners?</strong>     </p>
 "name": "correct.statement",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p>
 
 <ul>
@@ -272,48 +278,57 @@ runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "28" 
+"content": "28",
+"uniqueID": "SM-03-P54-SD" 
 }'>28</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "29" 
+"content": "29",
+"uniqueID": "SM-03-P54-SD" 
 }'>29</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "30" 
+"content": "30",
+"uniqueID": "SM-03-P54-SD" 
 }'>30</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "31" 
+"content": "31",
+"uniqueID": "SM-03-P54-SD" 
 }'>31</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "32" 
+"content": "32",
+"uniqueID": "SM-03-P54-SD" 
 }'>32</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "33" 
+"content": "33",
+"uniqueID": "SM-03-P54-SD" 
 }'>33</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "34" 
+"content": "34",
+"uniqueID": "SM-03-P54-SD" 
 }'>34</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "35" 
+"content": "35",
+"uniqueID": "SM-03-P54-SD" 
 }'>35</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      2,
 "name": "answer",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select></li>
 </ul></li>
 <li><p><strong>What&#39;s the <em>net</em> time that divides the slowest 20% of
@@ -327,24 +342,28 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> <code>pdata(0.20,run$net)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> <code>qdata(0.20, run$net)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> <code>pdata(0.80,run$net)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR3' id='MCitem4' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> <code>qdata(0.80, run$net)</code><br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
@@ -353,7 +372,8 @@ runners from the rest of the runners?</strong>     </p>
 "name": "correct.statement2",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p>
 
 <ul>
@@ -361,38 +381,45 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4921" 
+"content": "4921",
+"uniqueID": "SM-03-P54-SD" 
 }'>4921</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "5318" 
+"content": "5318",
+"uniqueID": "SM-03-P54-SD" 
 }'>5318</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "5988" 
+"content": "5988",
+"uniqueID": "SM-03-P54-SD" 
 }'>5988</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "6346" 
+"content": "6346",
+"uniqueID": "SM-03-P54-SD" 
 }'>6346</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "7123" 
+"content": "7123",
+"uniqueID": "SM-03-P54-SD" 
 }'>7123</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "7431" 
+"content": "7431",
+"uniqueID": "SM-03-P54-SD" 
 }'>7431</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      4,
 "name": "nettime",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select></li>
 </ul></li>
 <li><p><strong>What is the 95% coverage interval on age?</strong>     </p>
@@ -405,24 +432,28 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> <code>pdata(c(0.025,0.975),run$age)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR5' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> <code>qdata(c(0.025,0.975),run$age)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR5' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> <code>pdata(c(0.050,0.950),run$age)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR5' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> <code>qdata(c(0.050,0.950),run$age)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
@@ -431,7 +462,8 @@ runners from the rest of the runners?</strong>     </p>
 "name": "correct.statement3",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p>
 
 <ul>
@@ -442,24 +474,28 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> 22 to 60<br/>
 <label for='MCitem2'><input type='radio' name='ScoreR6' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> 20 to 65<br/>
 <label for='MCitem3'><input type='radio' name='ScoreR6' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> 25 to 59<br/>
 <label for='MCitem4'><input type='radio' name='ScoreR6' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> 20 to 60<br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
@@ -468,7 +504,8 @@ runners from the rest of the runners?</strong>     </p>
 "name": "95per",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p></li>
 <li><p><strong>What fraction of runners are 30 or younger?</strong>     </p>
 
@@ -480,24 +517,28 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> <code>pdata(30, run$age)</code>
 <label for='MCitem2'><input type='radio' name='ScoreR7' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> <code>qdata(30, run$age)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR7' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> <code>pdata(30.1, run$age)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR7' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> <code>qdata(30.1, run$age)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
@@ -506,7 +547,8 @@ runners from the rest of the runners?</strong>     </p>
 "name": "correct.statement4",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p>
 
 <ul>
@@ -514,38 +556,45 @@ runners from the rest of the runners?</strong>     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "29.3" 
+"content": "29.3",
+"uniqueID": "SM-03-P54-SD" 
 }'>29.3</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "30.1" 
+"content": "30.1",
+"uniqueID": "SM-03-P54-SD" 
 }'>30.1</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "33.7" 
+"content": "33.7",
+"uniqueID": "SM-03-P54-SD" 
 }'>33.7</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "35.9" 
+"content": "35.9",
+"uniqueID": "SM-03-P54-SD" 
 }'>35.9</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "38" 
+"content": "38",
+"uniqueID": "SM-03-P54-SD" 
 }'>38</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "39.3" 
+"content": "39.3",
+"uniqueID": "SM-03-P54-SD" 
 }'>39.3</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR8out'></input></small><select style='visibility: hidden' width='5' name='ScoreR8info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      8,
 "name": "<30",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select> </li>
 </ul></li>
 <li><p><strong>What fraction of runners are 65 or older?</strong>  (Caution: This isn&#39;t
@@ -559,36 +608,42 @@ yet in the form of a BELOW question.)     </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> <code>pdata(65, run$age)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR9' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> <code>pdata(64.99, run$age)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR9' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> <code>pdata(65.01, run$age)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR9' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> <code>1-pdata(65, run$age)</code><br/>
 <label for='MCitem5'><input type='radio' name='ScoreR9' id='MCitem5' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "E" 
 }'> <b>E</b></label> <code>1-pdata(64.99, run$age)</code><br/>
 <label for='MCitem6'><input type='radio' name='ScoreR9' id='MCitem6' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "F" 
 }'> <b>F</b></label> <code>1-pdata(65.01, run$age)</code><br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR9out'></input><select style='visibility: hidden' width='5' name='ScoreR9info'><option value='{
@@ -597,7 +652,8 @@ yet in the form of a BELOW question.)     </p>
 "name": "correct.statement5",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p></li>
 </ul>
 
@@ -611,33 +667,39 @@ Since <code>pdata</code> answers a <em>below</em> question, the first step is to
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.5" 
+"content": "0.5",
+"uniqueID": "SM-03-P54-SD" 
 }'>0.5</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "1.1" 
+"content": "1.1",
+"uniqueID": "SM-03-P54-SD" 
 }'>1.1</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "1.7" 
+"content": "1.7",
+"uniqueID": "SM-03-P54-SD" 
 }'>1.7</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.3" 
+"content": "2.3",
+"uniqueID": "SM-03-P54-SD" 
 }'>2.3</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.9" 
+"content": "2.9",
+"uniqueID": "SM-03-P54-SD" 
 }'>2.9</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR10out'></input></small><select style='visibility: hidden' width='5' name='ScoreR10info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":     10,
 "name": "65plus",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select></li>
 </ul>
 
@@ -652,81 +714,96 @@ run$to.start = run$time - run$net
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "164" 
+"content": "164",
+"uniqueID": "SM-03-P54-SD" 
 }'>164</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "192" 
+"content": "192",
+"uniqueID": "SM-03-P54-SD" 
 }'>192</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "213" 
+"content": "213",
+"uniqueID": "SM-03-P54-SD" 
 }'>213</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "294" 
+"content": "294",
+"uniqueID": "SM-03-P54-SD" 
 }'>294</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "324" 
+"content": "324",
+"uniqueID": "SM-03-P54-SD" 
 }'>324</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "351" 
+"content": "351",
+"uniqueID": "SM-03-P54-SD" 
 }'>351</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR11out'></input></small><select style='visibility: hidden' width='5' name='ScoreR11info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":     11,
 "name": "startline",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select> </p></li>
 <li><p><strong>What fraction of runners get to the start line before one
 minute?</strong>  (Caution: the times are measured in seconds.) In percent: <select name='ScoreR12'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "10" 
+"content": "10",
+"uniqueID": "SM-03-P54-SD" 
 }'>10</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "15" 
+"content": "15",
+"uniqueID": "SM-03-P54-SD" 
 }'>15</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "19" 
+"content": "19",
+"uniqueID": "SM-03-P54-SD" 
 }'>19</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "22" 
+"content": "22",
+"uniqueID": "SM-03-P54-SD" 
 }'>22</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "25" 
+"content": "25",
+"uniqueID": "SM-03-P54-SD" 
 }'>25</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "31" 
+"content": "31",
+"uniqueID": "SM-03-P54-SD" 
 }'>31</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "34" 
+"content": "34",
+"uniqueID": "SM-03-P54-SD" 
 }'>34</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR12out'></input></small><select style='visibility: hidden' width='5' name='ScoreR12info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":     12,
 "name": "fraction",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p><strong>What is the 95% coverage interval on the ages of female
 runners?</strong></p>
@@ -735,24 +812,28 @@ runners?</strong></p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "A" 
 }'> <b>A</b></label> 19 to 61 years<br/>
 <label for='MCitem2'><input type='radio' name='ScoreR13' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "B" 
 }'> <b>B</b></label> 22 to 61 years<br/>
 <label for='MCitem3'><input type='radio' name='ScoreR13' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "C" 
 }'> <b>C</b></label> 19 to 56 years<br/>
 <label for='MCitem4'><input type='radio' name='ScoreR13' id='MCitem4' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-03-P54-SD",
 "content": "D" 
 }'> <b>D</b></label> 22 to 56 years<br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR13out'></input><select style='visibility: hidden' width='5' name='ScoreR13info'><option value='{
@@ -761,39 +842,46 @@ runners?</strong></p>
 "name": "95per.fem.runners",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-03-P54-SD" 
 }'>Question info</option></select></p></li>
 <li><p><strong>What fraction of runners have a <em>net</em> time BELOW 4000 seconds?</strong>  (That is, don&#39;t include those who are at exactly 4000 seconds.) In percent: <select name='ScoreR14'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "3.72" 
+"content": "3.72",
+"uniqueID": "SM-03-P54-SD" 
 }'>3.72</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "4" 
+"content": "4",
+"uniqueID": "SM-03-P54-SD" 
 }'>4</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4.03" 
+"content": "4.03",
+"uniqueID": "SM-03-P54-SD" 
 }'>4.03</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4.07" 
+"content": "4.07",
+"uniqueID": "SM-03-P54-SD" 
 }'>4.07</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "5.21" 
+"content": "5.21",
+"uniqueID": "SM-03-P54-SD" 
 }'>5.21</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR14out'></input></small><select style='visibility: hidden' width='5' name='ScoreR14info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":     14,
 "name": "net.time<4000",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-03-P54-SD" 
 }'>Info for Select Set</option></select> </p></li>
 </ul>
 
