@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 3 Prob. 6</title>
 
@@ -184,16 +185,10 @@ hljs.initHighlightingOnLoad();
 questions about outliers using the 1.5 IQR rule of
 thumb.  To help, you execute the following command to create a function <code>outlier()</code> that indicates whether each case is an outlier. </p>
 
-<pre><code class="r">fetchData(&quot;outlier-function.R&quot;)
+<pre><code class="r">fetchData(&quot;outlier-function.R&quot;)  # reads in the function
 </code></pre>
 
-<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/outlier-function.R
-</code></pre>
-
-<pre><code>## [1] TRUE
-</code></pre>
-
-<p>Example:</p>
+<p><strong>Example</strong>: How many outliers are there in column of fathers&#39; heights?</p>
 
 <pre><code class="r">tally(~outlier(father), data = Galton)
 </code></pre>
@@ -203,95 +198,111 @@ thumb.  To help, you execute the following command to create a function <code>ou
 ##     9   889   898
 </code></pre>
 
-<ul>
-<li><p>Which of these statements will compute the number of cases that are outliers with respect to <em>height</em>?  (Remember that the data frame is named <code>Galton</code>.)</p>
+<p>As it happens, <code>outlier()</code> is an very simple problem that doesn&#39;t take the <code>~</code> and <code>data=</code> arguments.  But you can use it via <code>with()</code>, for instance, <code>with(data=Galton,outlier(father))</code>.</p>
+
+<p><strong>1.</strong> Which of these statements will tally the number of cases that are outliers with respect to <em>height</em>?  (Remember that the data frame is named <code>Galton</code>.)  Try each of the commands, some of which won&#39;t give anything like what you want.</p>
 
 <p><label for='MCitem1'><input type='radio' name='ScoreR1' id='MCitem1' value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-3-P6-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>~outlier(galton$height)</code><br/>
-<label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
-"pts":      1,
+}'> <b>A</b></label> <code>~with(data=Galton,outlier(height))</code><br/>
+  <label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-3-P6-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>tally(~outlier(galton$height))</code><br/>
-<label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
-"pts":      0,
+}'> <b>B</b></label> <code>tally(~outlier(height),data=Galton)</code><br/>
+  <label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-3-P6-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>~outlier(tally(galton$height))</code><br/>
-<label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
-"pts":      0,
+}'> <b>C</b></label> <code>~outlier(tally(~height, data=Galton))</code><br/>
+  <label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-3-P6-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>subset(galton, outlier(galton$height))</code><br/>
-<label for='MCitem5'><input type='radio' name='ScoreR1' id='MCitem5' value='{
-"pts":      0,
+}'> <b>D</b></label> <code>subset(Galton, outlier(height))</code><br/>
+  <label for='MCitem5'><input type='radio' name='ScoreR1' id='MCitem5' value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
+"uniqueID": "SM-3-P6-SD",
 "content": "E" 
-}'> <b>E</b></label> <code>~outlier(subset(galton, galton$height))</code><br/>
+}'> <b>E</b></label> <code>~outlier(subset(Galton, height))</code><br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
-"setID": "SM-3-P6-SD",
+ "setID": "SM-3-P6-SD",
 "itemN":      1,
 "name": "which.statement",
 "totalpts":      1,
 "type": "MC",
-"reward": "" 
-}'>Question info</option></select></p></li>
-<li><p>How many of the cases are outliers in <em>height</em> ? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"pts":      0,
+"reward": "",
+"uniqueID": "SM-3-P6-SD" 
+}'>Question info</option></select></p>
+
+<p><strong>2.</strong> How many of the cases are outliers in <em>height</em> ? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0" 
+"content": "0",
+"uniqueID": "SM-3-P6-SD" 
 }'>0</option> <option value='{
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "1" 
+"content": "1",
+"uniqueID": "SM-3-P6-SD" 
 }'>1</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2" 
+"content": "2",
+"uniqueID": "SM-3-P6-SD" 
 }'>2</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "3" 
+"content": "3",
+"uniqueID": "SM-3-P6-SD" 
 }'>3</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "5" 
+"content": "5",
+"uniqueID": "SM-3-P6-SD" 
 }'>5</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "10" 
+"content": "10",
+"uniqueID": "SM-3-P6-SD" 
 }'>10</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "15" 
+"content": "15",
+"uniqueID": "SM-3-P6-SD" 
 }'>15</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "20" 
+"content": "20",
+"uniqueID": "SM-3-P6-SD" 
 }'>20</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
-"setID": "SM-3-P6-SD",
+ "setID": "SM-3-P6-SD",
 "itemN":      2,
 "name": "height",
 "totalpts":      1,
-"type": "Fixed Choice" 
-}'>Info for Select Set</option></select></p></li>
-</ul>
+"type": "Fixed Choice",
+"uniqueID": "SM-3-P6-SD" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:         </p>
@@ -306,55 +317,61 @@ ANSWER:         </p>
 
 <p></aside></p>
 
-<ul>
-<li>How many of the cases are outliers in <em>mother</em>? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
-"pts":      0,
+<p><strong>3.</strong> How many of the cases are outliers in <em>mother</em>? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0" 
+"content": "0",
+"uniqueID": "SM-3-P6-SD" 
 }'>0</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "11" 
+"content": "11",
+"uniqueID": "SM-3-P6-SD" 
 }'>11</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "22" 
+"content": "22",
+"uniqueID": "SM-3-P6-SD" 
 }'>22</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "33" 
+"content": "33",
+"uniqueID": "SM-3-P6-SD" 
 }'>33</option> <option value='{
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "44" 
+"content": "44",
+"uniqueID": "SM-3-P6-SD" 
 }'>44</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "55" 
+"content": "55",
+"uniqueID": "SM-3-P6-SD" 
 }'>55</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "66" 
+"content": "66",
+"uniqueID": "SM-3-P6-SD" 
 }'>66</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
-"setID": "SM-3-P6-SD",
+ "setID": "SM-3-P6-SD",
 "itemN":      3,
 "name": "mother",
 "totalpts":      1,
-"type": "Fixed Choice" 
-}'>Info for Select Set</option></select></li>
-</ul>
+"type": "Fixed Choice",
+"uniqueID": "SM-3-P6-SD" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">tally(~outlier(Galton$mother))
+<pre><code class="r">tally(~outlier(mother), data = Galton)
 </code></pre>
 
 <pre><code>## 
@@ -364,55 +381,61 @@ ANSWER:</p>
 
 <p></aside></p>
 
-<ul>
-<li>How many of the cases are outliers in <em>father</em>? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
-"pts":      0,
+<p><strong>4.</strong> How many of the cases are outliers in <em>father</em>? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0" 
+"content": "0",
+"uniqueID": "SM-3-P6-SD" 
 }'>0</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4" 
+"content": "4",
+"uniqueID": "SM-3-P6-SD" 
 }'>4</option> <option value='{
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "9" 
+"content": "9",
+"uniqueID": "SM-3-P6-SD" 
 }'>9</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "14" 
+"content": "14",
+"uniqueID": "SM-3-P6-SD" 
 }'>14</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "19" 
+"content": "19",
+"uniqueID": "SM-3-P6-SD" 
 }'>19</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "24" 
+"content": "24",
+"uniqueID": "SM-3-P6-SD" 
 }'>24</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "29" 
+"content": "29",
+"uniqueID": "SM-3-P6-SD" 
 }'>29</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
-"setID": "SM-3-P6-SD",
+ "setID": "SM-3-P6-SD",
 "itemN":      4,
 "name": "father",
 "totalpts":      1,
-"type": "Fixed Choice" 
-}'>Info for Select Set</option></select></li>
-</ul>
+"type": "Fixed Choice",
+"uniqueID": "SM-3-P6-SD" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">tally(~outlier(Galton$father))
+<pre><code class="r">tally(~outlier(father), data = Galton)
 </code></pre>
 
 <pre><code>## 
@@ -422,56 +445,63 @@ ANSWER:</p>
 
 <p></aside></p>
 
-<ul>
-<li>Looking just at the cases where <em>mother</em> is an outlier, how
-many of the children involved (variable <em>sex</em>) are female? <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
-"pts":      0,
+<p><strong>5.</strong> Looking just at the cases where <em>mother</em> is an outlier (hint: use <code>subset()</code>), how
+  many of the children involved (variable <em>sex</em>) are female? This is harder<select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0" 
+"content": "0",
+"uniqueID": "SM-3-P6-SD" 
 }'>0</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "5" 
+"content": "5",
+"uniqueID": "SM-3-P6-SD" 
 }'>5</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "10" 
+"content": "10",
+"uniqueID": "SM-3-P6-SD" 
 }'>10</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "15" 
+"content": "15",
+"uniqueID": "SM-3-P6-SD" 
 }'>15</option> <option value='{
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "20" 
+"content": "20",
+"uniqueID": "SM-3-P6-SD" 
 }'>20</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "25" 
+"content": "25",
+"uniqueID": "SM-3-P6-SD" 
 }'>25</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "30" 
+"content": "30",
+"uniqueID": "SM-3-P6-SD" 
 }'>30</option> <option value='{
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "35" 
+"content": "35",
+"uniqueID": "SM-3-P6-SD" 
 }'>35</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
-"setID": "SM-3-P6-SD",
+ "setID": "SM-3-P6-SD",
 "itemN":      5,
 "name": "female",
 "totalpts":      1,
-"type": "Fixed Choice" 
-}'>Info for Select Set</option></select></li>
-</ul>
+"type": "Fixed Choice",
+"uniqueID": "SM-3-P6-SD" 
+}'>Info for Select Set</option></select></p>
 
 <p><aside></p>
 
@@ -479,8 +509,7 @@ many of the children involved (variable <em>sex</em>) are female? <select name='
 <p>ANSWER:</p>
 </blockquote>
 
-<pre><code class="r">foo = subset(Galton, outlier(mother))
-tally(foo$sex)
+<pre><code class="r">tally(~sex, data = subset(Galton, outlier(mother)))
 </code></pre>
 
 <pre><code>## 
