@@ -189,16 +189,16 @@ hljs.initHighlightingOnLoad();
 percentiles:</p>
 
 <ul>
-<li>What is the value that falls at a given percentage?  For instance, in the <code>ten-mile-race.csv</code> running data, how fast are the fastest 10% of runners? In R, you would ask in this way:</li>
+<li>What is the value that falls at a given percentage?  For instance, in the ten-mile race running data (<code>&quot;TenMileRace&quot;</code>), how fast are the fastest 10% of runners? In <code>&quot;TenMileRace&quot;</code>, the fastest runners are those with the shortest net running times.  In R, you would ask about the fastest 10% of runners in this way:</li>
 </ul>
 
-<pre><code class="r">run = fetchData(&quot;TenMileRace&quot;)
+<pre><code class="r">run = fetchData(&quot;TenMileRace&quot;)     
 </code></pre>
 
 <pre><code>## Data TenMileRace found in package.
 </code></pre>
 
-<pre><code class="r">qdata(0.1, run$net)
+<pre><code class="r">qdata(0.10, net, data=run)     
 </code></pre>
 
 <pre><code>##  10% 
@@ -213,7 +213,7 @@ So 10% of the runners have net times faster than or equal to 4409 seconds.</p>
 fraction of runners are faster than 4000 seconds?</li>
 </ul>
 
-<pre><code class="r">pdata(4000, run$net)
+<pre><code class="r">pdata(4000, net, data=run)   
 </code></pre>
 
 <pre><code>## [1] 0.0403
@@ -241,28 +241,28 @@ runners?</strong>     </p>
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>pdata(0.35,run$age)</code><br/>
+}'> <b>A</b></label> <code>pdata(0.35,age, data=run)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR1' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>qdata(0.35,run$age)</code><br/>
+}'> <b>B</b></label> <code>qdata(0.35,age, data=run)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR1' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>pdata(35,run$age)</code><br/>
+}'> <b>C</b></label> <code>pdata(35,age, data=run)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR1' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>qdata(35,run$age)</code>
+}'> <b>D</b></label> <code>qdata(35,age, data=run)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      1,
@@ -344,28 +344,28 @@ runners from the rest of the runners?</strong>     </p>
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>pdata(0.20,run$net)</code><br/>
+}'> <b>A</b></label> <code>pdata(0.20, net, data=run)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR3' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>qdata(0.20, run$net)</code><br/>
+}'> <b>B</b></label> <code>qdata(0.20, net, data=run)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR3' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>pdata(0.80,run$net)</code><br/>
+}'> <b>C</b></label> <code>pdata(0.80, net, data=run)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR3' id='MCitem4' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>qdata(0.80, run$net)</code><br/>
+}'> <b>D</b></label> <code>qdata(0.80, net, data=run)</code><br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      3,
@@ -434,28 +434,28 @@ runners from the rest of the runners?</strong>     </p>
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>pdata(c(0.025,0.975),run$age)</code><br/>
+}'> <b>A</b></label> <code>pdata(c(0.025,0.975), age, data=run)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR5' id='MCitem2' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>qdata(c(0.025,0.975),run$age)</code><br/>
+}'> <b>B</b></label> <code>qdata(c(0.025,0.975), age, data=run)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR5' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>pdata(c(0.050,0.950),run$age)</code><br/>
+}'> <b>C</b></label> <code>pdata(c(0.050,0.950), age, data=run)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR5' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>qdata(c(0.050,0.950),run$age)</code>
+}'> <b>D</b></label> <code>qdata(c(0.050,0.950), age, data=run)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      5,
@@ -519,28 +519,28 @@ runners from the rest of the runners?</strong>     </p>
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>pdata(30, run$age)</code>
+}'> <b>A</b></label> <code>pdata(30, age, data=run)</code>
 <label for='MCitem2'><input type='radio' name='ScoreR7' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>qdata(30, run$age)</code><br/>
+}'> <b>B</b></label> <code>qdata(30, age, data=run)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR7' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>pdata(30.1, run$age)</code><br/>
+}'> <b>C</b></label> <code>pdata(30.1, age, data=run)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR7' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>qdata(30.1, run$age)</code>
+}'> <b>D</b></label> <code>qdata(30.1, age, data=run)</code>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      7,
@@ -610,42 +610,42 @@ yet in the form of a BELOW question.)     </p>
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "A" 
-}'> <b>A</b></label> <code>pdata(65, run$age)</code><br/>
+}'> <b>A</b></label> <code>pdata(65, age, data=run)</code><br/>
 <label for='MCitem2'><input type='radio' name='ScoreR9' id='MCitem2' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "B" 
-}'> <b>B</b></label> <code>pdata(64.99, run$age)</code><br/>
+}'> <b>B</b></label> <code>pdata(64.99, age, data=run)</code><br/>
 <label for='MCitem3'><input type='radio' name='ScoreR9' id='MCitem3' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "C" 
-}'> <b>C</b></label> <code>pdata(65.01, run$age)</code><br/>
+}'> <b>C</b></label> <code>pdata(65.01, age, data=run)</code><br/>
 <label for='MCitem4'><input type='radio' name='ScoreR9' id='MCitem4' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "D" 
-}'> <b>D</b></label> <code>1-pdata(65, run$age)</code><br/>
+}'> <b>D</b></label> <code>1-pdata(65, age, data=run)</code><br/>
 <label for='MCitem5'><input type='radio' name='ScoreR9' id='MCitem5' value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "E" 
-}'> <b>E</b></label> <code>1-pdata(64.99, run$age)</code><br/>
+}'> <b>E</b></label> <code>1-pdata(64.99, age, data=run)</code><br/>
 <label for='MCitem6'><input type='radio' name='ScoreR9' id='MCitem6' value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
 "uniqueID": "SM-03-P54-SD",
 "content": "F" 
-}'> <b>F</b></label> <code>1-pdata(65.01, run$age)</code><br/>
+}'> <b>F</b></label> <code>1-pdata(65.01, age, data=run)</code><br/>
 <input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR9out'></input><select style='visibility: hidden' width='5' name='ScoreR9info'><option value='{
 "setID": "SM-03-P54-SD",
 "itemN":      9,
@@ -705,9 +705,8 @@ Since <code>pdata</code> answers a <em>below</em> question, the first step is to
 
 <p>The time it takes for a runner to get to the start line after the starting gun is fired is the difference between the <em>time</em> and <em>net</em>.       </p>
 
-<p><code>
-run$to.start = run$time - run$net
-</code></p>
+<pre><code class="r">run = transform(run, to.start=time-net)
+</code></pre>
 
 <ul>
 <li><p><strong>How long is it before 75% of runners get to the start line?</strong> In seconds: <select name='ScoreR11'><option value='NA' selected>UNANSWERED</option> <option value='{

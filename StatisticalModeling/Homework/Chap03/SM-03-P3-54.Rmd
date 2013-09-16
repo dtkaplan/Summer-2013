@@ -1,20 +1,22 @@
-Intro to Statistical Modeling Ch. 3 Prob. 3.54
-========================================================
+# Intro to Statistical Modeling Ch. 3 Prob. 3.54
+
 ```{r include=FALSE}
 require(mosaic)
 require(ScoreR)
+require(knitr)
 startProblem("SM-03-P54-SD")
+opts_chunk$set(tidy=FALSE)
 ```
 
 There are two kinds of questions that are often asked relating to
 percentiles:
 
 
-* What is the value that falls at a given percentage?  For instance, in the <code>ten-mile-race.csv</code> running data, how fast are the fastest 10% of runners? In R, you would ask in this way:
+* What is the value that falls at a given percentage?  For instance, in the ten-mile race running data (`"TenMileRace"`), how fast are the fastest 10% of runners? In `"TenMileRace"`, the fastest runners are those with the shortest net running times.  In R, you would ask about the fastest 10% of runners in this way:
 
 ```{r}
 run = fetchData("TenMileRace")     
-qdata(0.10, run$net)     
+qdata(0.10, net, data=run)     
 ```
 
 The answers is in the units of the  variable, in this case seconds.
@@ -24,7 +26,7 @@ So 10% of the runners have net times faster than or equal to 4409 seconds.
   fraction of runners are faster than 4000 seconds?
 
 ```{r}
-pdata(4000, run$net)     
+pdata(4000, net, data=run)   
 ```
 
 The answer includes those whose *net* time is exactly **equal to** or
@@ -41,10 +43,10 @@ questions about the running data.
 ```{r include=FALSE}
 f = newMC(totalPts=1, name="correct.statement")
 ```
-  `r I(f(FALSE))` <code>pdata(0.35,run$age)</code>     
-  `r I(f(TRUE))` <code>qdata(0.35,run$age)</code>     
-  `r I(f(FALSE))` <code>pdata(35,run$age)</code>     
-  `r I(f(FALSE))` <code>qdata(35,run$age)</code>
+  `r I(f(FALSE))` <code>pdata(0.35,age, data=run)</code>     
+  `r I(f(TRUE))` <code>qdata(0.35,age, data=run)</code>     
+  `r I(f(FALSE))` <code>pdata(35,age, data=run)</code>     
+  `r I(f(FALSE))` <code>qdata(35,age, data=run)</code>
 `r I(f(finish=TRUE))`
 
 ```{r include=FALSE}
@@ -58,10 +60,10 @@ run=selectNumber(choices=c(28,29,30,31,32,33,34,35), correct=c(31), totalPts=1, 
 ```{r include=FALSE}
 g=newMC(totalPts=1, name="correct.statement2")
 ```
-  `r I(g(FALSE))` <code>pdata(0.20,run$net)</code>     
-  `r I(g(FALSE))` <code>qdata(0.20, run$net)</code>     
-  `r I(g(FALSE))` <code>pdata(0.80,run$net)</code>     
-  `r I(g(TRUE))` <code>qdata(0.80, run$net)</code>    
+  `r I(g(FALSE))` <code>pdata(0.20, net, data=run)</code>     
+  `r I(g(FALSE))` <code>qdata(0.20, net, data=run)</code>     
+  `r I(g(FALSE))` <code>pdata(0.80, net, data=run)</code>     
+  `r I(g(TRUE))` <code>qdata(0.80, net, data=run)</code>    
 `r I(g(finish=TRUE))`
 
 ```{r include=FALSE}
@@ -77,10 +79,10 @@ ans=selectNumber(choices=c(4921,5318,5988,6346,7123,7431), correct=c(6346), tota
 ```{r include=FALSE}
 h=newMC(totalPts=1, name="correct.statement3")
 ```
-  `r I(h(FALSE))` <code>pdata(c(0.025,0.975),run$age)</code>     
-  `r I(h(TRUE))` <code>qdata(c(0.025,0.975),run$age)</code>     
-  `r I(h(FALSE))` <code>pdata(c(0.050,0.950),run$age)</code>     
-  `r I(h(FALSE))` <code>qdata(c(0.050,0.950),run$age)</code>
+  `r I(h(FALSE))` <code>pdata(c(0.025,0.975), age, data=run)</code>     
+  `r I(h(TRUE))` <code>qdata(c(0.025,0.975), age, data=run)</code>     
+  `r I(h(FALSE))` <code>pdata(c(0.050,0.950), age, data=run)</code>     
+  `r I(h(FALSE))` <code>qdata(c(0.050,0.950), age, data=run)</code>
 `r I(h(finish=TRUE))`
 
   * What will the answer be?
@@ -98,10 +100,10 @@ j=newMC(totalPts=1, name="95per")
 ```{r include=FALSE}
 k=newMC(totalPts=1, name="correct.statement4")
 ```
-  `r I(k(TRUE))` <code>pdata(30, run$age)</code>
-  `r I(k(FALSE))` <code>qdata(30, run$age)</code>     
-  `r I(k(FALSE))` <code>pdata(30.1, run$age)</code>     
-  `r I(k(FALSE))` <code>qdata(30.1, run$age)</code>
+  `r I(k(TRUE))` <code>pdata(30, age, data=run)</code>
+  `r I(k(FALSE))` <code>qdata(30, age, data=run)</code>     
+  `r I(k(FALSE))` <code>pdata(30.1, age, data=run)</code>     
+  `r I(k(FALSE))` <code>qdata(30.1, age, data=run)</code>
 `r I(k(finish=TRUE))`
 
 ```{r include=FALSE}
@@ -117,12 +119,12 @@ ans2=selectNumber(choices=c(29.3,30.1,33.7,35.9,38.0,39.3), correct=c(33.7), tot
 ```{r include=FALSE}
 l=newMC(totalPts=1, name="correct.statement5")
 ```
-  `r I(l(FALSE))` <code>pdata(65, run$age)</code>     
-  `r I(l(FALSE))` <code>pdata(64.99, run$age)</code>     
-  `r I(l(FALSE))` <code>pdata(65.01, run$age)</code>      
-  `r I(l(FALSE))` <code>1-pdata(65, run$age)</code>     
-  `r I(l(TRUE))` <code>1-pdata(64.99, run$age)</code>          
-  `r I(l(FALSE))` <code>1-pdata(65.01, run$age)</code>     
+  `r I(l(FALSE))` <code>pdata(65, age, data=run)</code>     
+  `r I(l(FALSE))` <code>pdata(64.99, age, data=run)</code>     
+  `r I(l(FALSE))` <code>pdata(65.01, age, data=run)</code>      
+  `r I(l(FALSE))` <code>1-pdata(65, age, data=run)</code>     
+  `r I(l(TRUE))` <code>1-pdata(64.99, age, data=run)</code>          
+  `r I(l(FALSE))` <code>1-pdata(65.01, age, data=run)</code>     
 `r I(l(finish=TRUE))`
 
 <aside>
@@ -137,9 +139,10 @@ ans3=selectNumber(choices=c(0.5,1.1,1.7,2.3,2.9), correct=c(1.1), totalPts=1, na
 
 The time it takes for a runner to get to the start line after the starting gun is fired is the difference between the *time* and *net*.       
 
-<code>
-run$to.start = run$time - run$net
-</code>
+```{r eval=FALSE}
+run = transform(run, to.start=time-net)
+```
+
 
 ```{r include=FALSE}
 ans4=selectNumber(choices=c(164,192,213,294,324,351), correct=c(351), totalPts=1, name="startline")
