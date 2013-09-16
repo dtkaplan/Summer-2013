@@ -33,15 +33,16 @@ $1300$, with a corresponding margin of error of $6500 \pm 1300$.
 ```{r include=FALSE}
 f=newMC(totalPts=1, name="confidence.interval")
 ```
-  * Using this rule of thumb, what should you report in as the
+Using this rule of thumb, what should you report in as the
 confidence interval?      
-  `r I(f(FALSE))` $0.3234 &plusmn 0.01837$     
-  `r I(f(FALSE))` $0.3234 &plusmn 0.0183$     
-  `r I(f(FALSE))` $0.0323 &plusmn 0.0184$    
-  `r I(f(FALSE))` $0.0323 &plusmn 0.018$     
-  `r I(f(TRUE))` $0.032 &plusmn 0.018$     
-  `r I(f(FALSE))` $0.032 &plusmn 0.01$     
-  `r I(f(FALSE))` $0.03 &plusmn 0.01$     
+`r I(f(FALSE))` $0.3234 &plusmn 0.01837$     
+`r I(f(FALSE))` $0.3234 &plusmn 0.0183$     
+`r I(f(FALSE))` $0.0323 &plusmn 0.0184$    
+`r I(f(FALSE))` $0.0323 &plusmn 0.018$     
+`r I(f(TRUE))` $0.032 &plusmn 0.018$     
+`r I(f(FALSE))` $0.032 &plusmn 0.01$     
+`r I(f(FALSE))` $0.03 &plusmn 0.01$   
+`r I(f(finish=TRUE))`
 
 
 * Now suppose the computer output were $99.63742573 \pm 1.48924367$.
@@ -49,11 +50,12 @@ confidence interval?
 ```{r include=FALSE}
 g=newMC(totalPts=1, name="confidence.interval.2")
 ```
-  * What should you report as the confidence interval?     
-  `r I(g(FALSE))` $100 &plusmn 1$     
-  `r I(g(FALSE))` $99 &plusmn 1.5$     
-  `r I(g(TRUE))` $99.6 &plusmn 1.5$     
-  `r I(g(FALSE))` $99.64 &plusmn 1.49$     
-  `r I(g(FALSE))` $99.647 &plusmn 1.489$
+What should you report as the confidence interval?     
+`r I(g(FALSE))` $100 &plusmn 1$     
+`r I(g(FALSE))` $99 &plusmn 1.5$     
+`r I(g(TRUE))` $99.6 &plusmn 1.5$     
+`r I(g(FALSE))` $99.64 &plusmn 1.49$     
+`r I(g(FALSE))` $99.647 &plusmn 1.489$ 
+`r I(g(finish=TRUE))`
 
 `r I(endProblem())`
