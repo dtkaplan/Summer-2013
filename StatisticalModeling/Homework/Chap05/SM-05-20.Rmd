@@ -7,7 +7,7 @@ startProblem("SM-05-20-SD")
 ```
 
 A perennial problem when writing scientific reports is figuring out
-how many significant digits to report.  It's na\"ive to 
+how many significant digits to report.  It's naïve to 
 copy all the digits from one's calculator or computer
 output; the data generally do not justify such
 precision. 
