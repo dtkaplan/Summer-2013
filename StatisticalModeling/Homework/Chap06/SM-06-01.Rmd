@@ -7,7 +7,7 @@ startProblem("SM-6-1-SD")
 ```
 
 ```{r include=FALSE}
-law=selectSet(name="variables", totalPts=1, "Response is quantitative; explanatory variable is quantitative."=FALSE, "Response is quantitative; explanatory variable is categorical."=FALSE, "Response is categorical; explanatory variable is quantitative."=FALSE, "Response is categorical; explanatory variable is categorical."=TRUE, "Response is categorical; explanatory variable is categorical."=FALSE)
+law=selectSet(name="variables", totalPts=1, "Response is quantitative; explanatory variable is quantitative."=FALSE, "Response is quantitative; explanatory variable is categorical."=FALSE, "Response is categorical; explanatory variable is quantitative."=FALSE, "Response is categorical; explanatory variable is categorical."=TRUE)
 ```
 In McClesky vs Georgia, lawyers presented data showing that for convicted murderers, a death sentence was more likely if the victim was white than if the victim was black.  For each case, they tabulated the race of the victim and the sentence (death or life in prison). Which of the following best describe the variables their models? `r I(law)`
 

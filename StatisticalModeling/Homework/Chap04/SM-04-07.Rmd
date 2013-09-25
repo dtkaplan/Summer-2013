@@ -6,33 +6,38 @@ require(ScoreR)
 startProblem("SM-4-07-SD")
 ```
 
-Read in the Galton height data
+Read in the Galton height data into an object called `g`.
 
 ```{r}
 g = fetchData("Galton")
 ```
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="StdDev", totalPts=2, rows=3))
-```
-
-* What is the standard deviation of the height?      
+* What is the standard deviation of the height? Enter the commands you used in the box, including the numerical result.     
 `r I(textItem(name="StdDev", totalPts=2, rows=3))`
-
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="GrandMean", totalPts=2, rows=3))
-```
-
-* Calculate the grand mean and, from that, the residuals of the
-  actual heights from the grand mean.      
-`r I(textItem(name="GrandMean", totalPts=2, rows=3))`
 
 <aside>
 ```{r}
-mean(height, data=g)
+sd( ~height, data=g )
+```
+</aside>
 
-res0 = g$height - 66.76069
-sd(res0)
+* Calculate the grand mean and, from that, the residuals from the actual heights from the grand mean.   There will be several hundred residuals, one for each case in `Galton`.  Cut and paste your commands here, but include just the first line or two of the residuals:   
+`r I(textItem(name="GrandMean", totalPts=2, rows=3))`
+
+<aside>
+```{r echo=1:2}
+mean(~ height, data=g)
+g = transform(g, resid=height-66.76069)
+g$resid[1:20]
+```
+or you could use `mm()`
+```{r results="hide"}
+mod0 = mm(height~1, data=g)
+resid(mod0)
+```
+
+```{r echo=FALSE}
+resid(mod0)[1:20]
 ```
 </aside>
 
@@ -42,21 +47,23 @@ stddev=selectNumber(choices=c(2.51,2.58,2.92,3.58,3.82), correct=c(3.58), totalP
 What is the standard deviation of the residuals from this "grand mean"
 model? `r I(stddev)` 
 
+<aside>
+If you used the `transform()` method, then you created a variable `resid` in the dataframe `g`.
+```{r}
+sd(~resid, data=g)
+```
+Things are a bit easier if you used `mm()`
+```{r}
+sd(resid(mod0))
+```
+</aside>
+              
+
 ```{r include=FALSE, eval=FALSE}
 I(textItem(name="group-wiseMean", totalPts=2, rows=3))
 ```
-* Calculate the group-wise mean for the different sexes and, from
-  that, the residuals of the actual heights from this group-wise
-  model.     
-  `r I(textItem(name="group-wiseMean", totalPts=2, rows=3))`
+* Calculate the group-wise mean for the different sexes and, from that, the standard deviation of the residuals of the actual heights from this group-wise model.  
 
-<aside>
-```{r}
-mod1 = mean( height ~ sex, data=g)
-res1 = g$height - fitted( mod1, data=g)
-sd(res1)
-```
-</aside>
 
 ```{r include=FALSE}
 stddev2=selectNumber(choices=c(2.51,2.58,2.92,3.58,3.82), correct=c(2.51), totalPts=1, name="residuals2")
@@ -65,13 +72,20 @@ stddev2=selectNumber(choices=c(2.51,2.58,2.92,3.58,3.82), correct=c(2.51), total
 What is the standard deviation of the residuals from this group-wise
 model? `r I(stddev2)`
 
+<aside>
+```{r}
+mod1 = mm( height ~ sex, data=g)
+sd(fitted(mod1))
+```
+</aside>
+
+
+
 ```{r include=FALSE, eval=FALSE}
 I(textItem(name="explain", totalPts=2, rows=4))
 ```
 
-* Explain why the standard deviation of the residuals of the
-  group-wise model less than the standard deviation of the residuals
-  of the "grand mean" model.      
+* Explain briefly why the standard deviation of the residuals of the group-wise model is less than the standard deviation of the residuals from the "grand mean" model.      
   `r I(textItem(name="explain", totalPts=2, rows=4))`
   
 `r I(endProblem())`
