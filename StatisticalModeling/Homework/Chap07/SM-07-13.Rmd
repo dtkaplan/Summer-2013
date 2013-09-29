@@ -8,13 +8,14 @@ startProblem("SM-7-13-SD")
 
 The graph shows schematically a possible relationship between used car price, mileage, and the car model year.  
 
-### How to do this part??
-\centerline{\begin{tikzpicture}[scale=1]
+```{r 7-13-fig, engine = "tikz", echo=FALSE,fig.ext = 'png', cache=TRUE}
+\begin{tikzpicture}[scale=2]
 \draw[->] (0,0) -- node[below] {Mileage} (5,0);
 \draw[->] (0,0) -- node[above,sloped] {Price} (0,5);
 \draw[blue,ultra thick] (.5,5.5) -- node[above,sloped] {Year 2007} (3,2);
 \draw[blue,ultra thick] (.5,2.5) -- node[above,sloped] {Year 2005} (4.5,.5);
-\end{tikzpicture}}
+\end{tikzpicture}
+```
 
 
 Consider the model *price* ~ *mileage* * *year*.  

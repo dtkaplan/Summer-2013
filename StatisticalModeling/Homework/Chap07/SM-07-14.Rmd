@@ -8,12 +8,14 @@ startProblem("SM-7-14-SD")
 
 The graph shows schematically a hypothesized relationship between how fast a person runs and the person's age and sex.
 
-\centerline{\begin{tikzpicture}[scale=1]
+```{r 7-14-fig, engine = "tikz", echo=FALSE,fig.ext = 'png', cache=TRUE}
+\begin{tikzpicture}[scale=2]
 \draw[->] (0,0) -- node[below] {Age} (5,0);
 \draw[->] (0,0) -- node[above,sloped] {Speed} (0,5);
 \draw[ultra thick,blue] (.7,5) -- node[above,sloped,pos=.2] {Men} (3.5,.5);
 \draw[ultra thick,black] (.5,3) -- node[above,sloped,pos=.8] {Women} (4.5,2);
-\end{tikzpicture}}
+\end{tikzpicture}
+```
 
 
 Consider the model *speed* ~ *age* $\star$ *sex*. 

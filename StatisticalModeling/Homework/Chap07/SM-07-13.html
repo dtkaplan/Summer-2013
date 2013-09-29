@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 7 Prob. 13</title>
 
@@ -149,14 +150,7 @@ hr {
 
 <p>The graph shows schematically a possible relationship between used car price, mileage, and the car model year.  </p>
 
-<h3>How to do this part??</h3>
-
-<p>\centerline{\begin{tikzpicture}[scale=1]
-\draw<a href="0,0">-&gt;</a> &ndash; node[below] {Mileage} (5,0);
-\draw<a href="0,0">-&gt;</a> &ndash; node[above,sloped] {Price} (0,5);
-\draw<a href=".5,5.5">blue,ultra thick</a> &ndash; node[above,sloped] {Year 2007} (3,2);
-\draw<a href=".5,2.5">blue,ultra thick</a> &ndash; node[above,sloped] {Year 2005} (4.5,.5);
-\end{tikzpicture}}</p>
+<p><img src="data:image/png;base64,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" alt="plot of chunk 7-13-fig"/> </p>
 
 <p>Consider the model <em>price</em> ~ <em>mileage</em> * <em>year</em>.  </p>
 
@@ -166,28 +160,33 @@ hr {
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Negative" 
+"content": "Negative",
+"uniqueID": "SM-7-13-SD" 
 }'>Negative</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Zero" 
+"content": "Zero",
+"uniqueID": "SM-7-13-SD" 
 }'>Zero</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Positive" 
+"content": "Positive",
+"uniqueID": "SM-7-13-SD" 
 }'>Positive</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "No way to tell from the information given" 
+"content": "No way to tell from the information given",
+"uniqueID": "SM-7-13-SD" 
 }'>No way to tell from the information given</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-7-13-SD",
 "itemN":      1,
 "name": "sign",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-13-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
@@ -199,28 +198,33 @@ The model <em>price</em> modeled by <em>mileage</em> \( \star \) <em>year</em> w
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Negative" 
+"content": "Negative",
+"uniqueID": "SM-7-13-SD" 
 }'>Negative</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Zero" 
+"content": "Zero",
+"uniqueID": "SM-7-13-SD" 
 }'>Zero</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Positive" 
+"content": "Positive",
+"uniqueID": "SM-7-13-SD" 
 }'>Positive</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "No way to tell from the information given" 
+"content": "No way to tell from the information given",
+"uniqueID": "SM-7-13-SD" 
 }'>No way to tell from the information given</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
  "setID": "SM-7-13-SD",
 "itemN":      2,
 "name": "sign2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-13-SD" 
 }'>Info for Select Set</option></select> </p>
 
 <p><aside>
@@ -232,28 +236,33 @@ From the graph, it&#39;s evident that prices are higher for year 2007 than for y
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Negative" 
+"content": "Negative",
+"uniqueID": "SM-7-13-SD" 
 }'>Negative</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Zero" 
+"content": "Zero",
+"uniqueID": "SM-7-13-SD" 
 }'>Zero</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Positive" 
+"content": "Positive",
+"uniqueID": "SM-7-13-SD" 
 }'>Positive</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "No way to tell from the information given" 
+"content": "No way to tell from the information given",
+"uniqueID": "SM-7-13-SD" 
 }'>No way to tell from the information given</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
  "setID": "SM-7-13-SD",
 "itemN":      3,
 "name": "sign3",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-13-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
