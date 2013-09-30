@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 7 Prob. 15</title>
 
@@ -136,10 +137,6 @@ hr {
 
 
 
-<!-- MathJax scripts -->
-<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 
 
 </head>
@@ -149,7 +146,8 @@ hr {
 
 <p>Consider this model of a child&#39;s height as a function of the father&#39;s height, the mother&#39;s height, and the sex of the child.</p>
 
-<p><em>height</em> ~ <em>father</em> \( \star \) <em>sex</em> + <em>mother</em> \( \star \) <em>sex</em> </p>
+<pre><code>height ~ father * sex + mother * sex
+</code></pre>
 
 <p>Use the Galton data <code>Galton</code> to fit the model and examine the coefficients.  Based on the coefficients, answer the following:</p>
 
@@ -158,117 +156,139 @@ hr {
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "They should be the same height." 
+"content": "They should be the same height.",
+"uniqueID": "SM-7-15-SD" 
 }'>They should be the same height.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.01 inches" 
+"content": "0.01 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.01 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.03 inches" 
+"content": "0.03 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.03 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.31 inches" 
+"content": "0.31 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.31 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.33 inches" 
+"content": "0.33 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.33 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.40 inches" 
+"content": "0.40 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.40 inches</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.41 inches" 
+"content": "0.41 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.41 inches</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-7-15-SD",
 "itemN":      1,
 "name": "Bill",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-15-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>Now imagine that Bill and Charley&#39;s fathers are the same height, but that Charley&#39;s mother is 1 inch taller than Bill&#39;s mother.  According to the model, how much taller should Charley be than Bill? <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "They should be the same height." 
+"content": "They should be the same height.",
+"uniqueID": "SM-7-15-SD" 
 }'>They should be the same height.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.01 inches" 
+"content": "0.01 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.01 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.03 inches" 
+"content": "0.03 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.03 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.31" 
+"content": "0.31",
+"uniqueID": "SM-7-15-SD" 
 }'>0.31</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.33 inches" 
+"content": "0.33 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.33 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.40 inches" 
+"content": "0.40 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.40 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.41 inches" 
+"content": "0.41 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.41 inches</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-7-15-SD",
 "itemN":      2,
 "name": "Charley",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-15-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>Now put the two parts together.  Bill&#39;s father is one inch taller than Charley&#39;s, but Charley&#39;s mother is one inch taller than Bill&#39;s.  How much taller is Bill than Charley? <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "They should be the same height." 
+"content": "They should be the same height.",
+"uniqueID": "SM-7-15-SD" 
 }'>They should be the same height.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.03 inches" 
+"content": "0.03 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.03 inches</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.08 inches" 
+"content": "0.08 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.08 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.13 inches" 
+"content": "0.13 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.13 inches</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.25 inches" 
+"content": "0.25 inches",
+"uniqueID": "SM-7-15-SD" 
 }'>0.25 inches</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-7-15-SD",
 "itemN":      3,
 "name": "Bill2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-7-15-SD" 
 }'>Info for Select Set</option></select></p></li>
 </ul>
 

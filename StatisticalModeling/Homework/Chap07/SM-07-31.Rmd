@@ -5,7 +5,7 @@ require(mosaic)
 require(ScoreR)
 startProblem("SM-7-31-SD")
 ```
-For the simple model *A* ~ *G* where *G* is a categorical variable, the
+For the simple model ` A ~ G` where `G` is a categorical variable, the
 coefficients will be group means.  More precisely, there will be an intercept that is the mean of one of the groups and the other coefficients will show how the mean of the other groups each differ from the reference group.
 
 Similarly, when there are two grouping variables, *G* and *H*, the model *A ~ *G + H + G:H* (which can be abbreviated *A* ~ *G* $\star$ *H*) will have coefficients that are the group-wise means of the crossed groups.  Perhaps "subgroup-wise means" is more appropriate, since there will be a separate mean for each subgroup of *G* divided along the lines of *H*.  The interaction term *G:H* allows the model to account for the influence of *H* separately for each level of *G*. 

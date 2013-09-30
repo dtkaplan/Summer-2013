@@ -8,7 +8,9 @@ startProblem("SM-7-15-SD")
 
 Consider this model of a child's height as a function of the father's height, the mother's height, and the sex of the child.
 
-*height* ~ *father* $\star$ *sex* + *mother* $\star$ *sex* 
+```
+height ~ father * sex + mother * sex
+```
 
 Use the Galton data `Galton` to fit the model and examine the coefficients.  Based on the coefficients, answer the following:
 
