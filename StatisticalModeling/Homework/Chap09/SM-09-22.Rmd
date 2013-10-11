@@ -6,9 +6,14 @@ require(ScoreR)
 startProblem("SM-9-22-SD")
 ```
 
-A data set on US Congressional Districts (provided by Prof. Julie Dolan),
-`CongressionalDistricts` contains information on the population of each
-congressional district in 2004.  There are 436 districts listed (corresponding to the 435 voting members of the House of Representatives from the 50 states and an additional district for Washington, D.C., whose citizens have only a non-voting "representative."
+A data set on US Congressional Districts (provided by Prof. Julie Dolan), contains information on the population of each
+congressional district in 2004.  
+```{r message=FALSE}
+districts = fetchData("congress.csv")
+nrow(districts)
+```
+
+There are 436 districts listed (corresponding to the 435 voting members of the House of Representatives from the 50 states and an additional district for Washington, D.C., whose citizens have only a non-voting "representative."
 
 The US Supreme Court  (Reynolds v. Sims, 377 US 533, 1964) ruled that state legislature districts had to be roughly equal in population: the one-person one-vote principle. Before this ruling, some states had grossly unequally sized districts.  For example,  one district in Connecticut for the state General Assembly had 191 people, while another district in the same state had 81,000.
 Los Angeles County had one representative in the California State Senate for a population of six million, while another county with only 14,000 residents also had one representative.
@@ -53,8 +58,6 @@ congress4=selectSet(name="residPattern", totalPts=1, "The residuals are all the 
 ```
 A box plot of the residuals shows a peculiar pattern.  What is it? `r I(congress4)`
 
-The variable *state* accounts for almost all of the variability from district to district.  That is, districts within a state are almost exactly the same size, but that size differs from state to state.  Why is there a state-to-state difference?  The number of districts within a state must be a whole number: 1, 2, 3, and so on.  Ideally, the district populations are the state population
-divided by the number of districts.  The number of districts is set to make the district population as even as possible between states, but exact equality isn't possible since the state populations differ. Notice that the largest and smallest districts (Montana and Wyoming, respectively) are in states with only a single district.  Adding a second district to Montana would dramatically reduce the district size below the national mean.  And even though Wyoming has a very
-low-population district, it's impossible to take a district away since Wyoming only has one.
+*Representing Montana and Wyoming* ... The variable *state* accounts for almost all of the variability from district to district.  That is, districts within a state are almost exactly the same size, but that size differs from state to state.  Why is there a state-to-state difference?  The number of districts within a state must be a whole number: 1, 2, 3, and so on.  Ideally, the district populations are the state population divided by the number of districts.  The number of districts is set to make the district population as even as possible between states, but exact equality isn't possible since the state populations differ. Notice that the largest and smallest districts (Montana and Wyoming, respectively) are in states with only a single district.  Adding a second district to Montana would dramatically reduce the district size below the national mean.  And even though Wyoming has a very low-population district, it's impossible to take a district away since Wyoming only has one.
 
 `r I(endProblem())`
