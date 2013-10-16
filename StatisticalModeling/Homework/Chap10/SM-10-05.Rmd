@@ -13,7 +13,7 @@ Consider two models that you are to fit to a single data set involving three var
 * **[Model 2]** *A* ~ *B* + *C*
 
 ```{r include=FALSE}
-f=newMC(totalPts=1)
+f=newMC(totalPts=1,name="simpson")
 ```
 When should you say that Simpson's Paradox is occuring?      
 `r I(f(FALSE))` When Model 2 has a lower $R^2$ than Model 1.     
