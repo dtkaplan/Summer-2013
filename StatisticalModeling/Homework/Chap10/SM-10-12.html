@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 10 Prob. 12</title>
 
@@ -196,25 +197,39 @@ way that adjusts for the other explanatory variables.</p>
 
 <p>The following statement will run a simulation of a poll in which 10,000 people are asked to rate their level of pessimism (on a scale from 0 to 10) and to indicate their age group and income level:</p>
 
+<pre><code class="r">fetchData(&quot;simulate.r&quot;)
+</code></pre>
+
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/simulate.r
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
 <pre><code class="r">poll = run.sim(economic.outlook.poll, 10000)
 </code></pre>
 
-<pre><code>## Error: could not find function &quot;run.sim&quot;
+<p>The output of the simulation will be a data frame that looks
+something like this:</p>
+
+<pre><code class="r">print.xtable(xtable(head(poll)), type = &quot;html&quot;)
 </code></pre>
 
-<p>The output of the simulation will be a data frame that looks
-something like this:
-**SHOULD LOOK LIKE THIS: <code><br/>
-/&gt; head(poll)
-             age               income pessimism
-1     [18 to 29]   [less than $20000]        10
-2     [40 to 64] [$50,000 to $99,999]         5
-3     [40 to 64]   [less than $20000]         9
-4     [40 to 64] [$50,000 to $99,999]         7
-5 [65 and older] [$50,000 to $99,999]         7
-6     [18 to 29]   [less than $20000]        10
-</code>
-Your output will differ because the simulation reflects random
+<!-- html table generated in R 3.0.1 by xtable 1.7-1 package -->
+
+<!-- Wed Oct 23 10:54:10 2013 -->
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> age </TH> <TH> income </TH> <TH> pessimism </TH>  </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> [30 to 39] </TD> <TD> [less than $20000] </TD> <TD align="right"> 8.00 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> [40 to 64] </TD> <TD> [$100,000 or more] </TD> <TD align="right"> 4.00 </TD> </TR>
+  <TR> <TD align="right"> 3 </TD> <TD> [40 to 64] </TD> <TD> [$50,000 to $99,999] </TD> <TD align="right"> 7.00 </TD> </TR>
+  <TR> <TD align="right"> 4 </TD> <TD> [30 to 39] </TD> <TD> [$100,000 or more] </TD> <TD align="right"> 2.00 </TD> </TR>
+  <TR> <TD align="right"> 5 </TD> <TD> [18 to 29] </TD> <TD> [less than $20000] </TD> <TD align="right"> 10.00 </TD> </TR>
+  <TR> <TD align="right"> 6 </TD> <TD> [18 to 29] </TD> <TD> [less than $20000] </TD> <TD align="right"> 9.00 </TD> </TR>
+   </TABLE>
+
+<p>Your output will differ because the simulation reflects random
 sampling.  </p>
 
 <ul>
@@ -222,54 +237,63 @@ sampling.  </p>
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Middle aged people have lower pessimism than young or old people." 
+"content": "Middle aged people have lower pessimism than young or old people.",
+"uniqueID": "SM-10-12-SD" 
 }'>Middle aged people have lower pessimism than young or old people.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Young people have the least pessimism." 
+"content": "Young people have the least pessimism.",
+"uniqueID": "SM-10-12-SD" 
 }'>Young people have the least pessimism.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "There is no relationship between age and pessimism" 
+"content": "There is no relationship between age and pessimism",
+"uniqueID": "SM-10-12-SD" 
 }'>There is no relationship between age and pessimism</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-10-12-SD",
 "itemN":      1,
 "name": "model1",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-10-12-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>Now construct the model <em>pessimism</em> ~ <em>income</em> - 1.  Look at the coefficients and choose the statement that best reflects the results: <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Higher income people are more pessimistic than low-income people." 
+"content": "Higher income people are more pessimistic than low-income people.",
+"uniqueID": "SM-10-12-SD" 
 }'>Higher income people are more pessimistic than low-income people.</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Higher income people are less pessimistic than low-income people." 
+"content": "Higher income people are less pessimistic than low-income people.",
+"uniqueID": "SM-10-12-SD" 
 }'>Higher income people are less pessimistic than low-income people.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "There is no relationship between income and pessimism" 
+"content": "There is no relationship between income and pessimism",
+"uniqueID": "SM-10-12-SD" 
 }'>There is no relationship between income and pessimism</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-10-12-SD",
 "itemN":      2,
 "name": "model2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-10-12-SD" 
 }'>Info for Select Set</option></select></p></li>
-<li><p>Construct a model in which you can look at the relationship between <em>pessimism</em> and <em>age</em> while <em>adjusting for</em> <em>income</em>.  That is, include <em>income</em> as a covariate in your model. Enter your model formula here: <textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR3info'><option value='{
+<li><p>Construct a model in which you can look at the relationship between <em>pessimism</em> and <em>age</em> while <em>adjusting for</em> <em>income</em>.  That is, include <em>income</em> as a covariate in your model. Enter your model formula here: <textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-10-12-SD",
 "itemN":      3,
 "name": "ModelFormula",
 "totalpts":      1,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-10-12-SD" 
 }'>Question info for free text</option></select></p></li>
 </ul>
 
@@ -277,23 +301,27 @@ sampling.  </p>
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Holding income constant, older people tend to have higher levels of pessimism than young people" 
+"content": "Holding income constant, older people tend to have higher levels of pessimism than young people",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding income constant, older people tend to have higher levels of pessimism than young people</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Holding income constant, young people tend to have higher levels of pessimism than old people" 
+"content": "Holding income constant, young people tend to have higher levels of pessimism than old people",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding income constant, young people tend to have higher levels of pessimism than old people</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Holding income constant, there is no relationship between age and pessimism." 
+"content": "Holding income constant, there is no relationship between age and pessimism.",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding income constant, there is no relationship between age and pessimism.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
  "setID": "SM-10-12-SD",
 "itemN":      4,
 "name": "model3",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-10-12-SD" 
 }'>Info for Select Set</option></select></p>
 
 <ul>
@@ -301,23 +329,27 @@ sampling.  </p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Holding age constant, higher income people are more pessimistic than low-income people." 
+"content": "Holding age constant, higher income people are more pessimistic than low-income people.",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding age constant, higher income people are more pessimistic than low-income people.</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Holding age constant, higher income people are less pessimistic than low-income people." 
+"content": "Holding age constant, higher income people are less pessimistic than low-income people.",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding age constant, higher income people are less pessimistic than low-income people.</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Holding age constant, there is no relationship between income and pessimism." 
+"content": "Holding age constant, there is no relationship between income and pessimism.",
+"uniqueID": "SM-10-12-SD" 
 }'>Holding age constant, there is no relationship between income and pessimism.</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-10-12-SD",
 "itemN":      5,
 "name": "model4",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-10-12-SD" 
 }'>Info for Select Set</option></select></li>
 </ul>
 

@@ -3,6 +3,7 @@ Intro to Statistical Modeling Ch. 10 Prob. 12
 ```{r include=FALSE}
 require(mosaic)
 require(ScoreR)
+require(xtable)
 startProblem("SM-10-12-SD")
 ```
 
@@ -22,20 +23,15 @@ way that adjusts for the other explanatory variables.
 The following statement will run a simulation of a poll in which 10,000 people are asked to rate their level of pessimism (on a scale from 0 to 10) and to indicate their age group and income level:
 
 ```{r}
+fetchData("simulate.r")
 poll = run.sim(economic.outlook.poll, 10000)
 ```
 The output of the simulation will be a data frame that looks
 something like this:
-**SHOULD LOOK LIKE THIS: <code>     
-/> head(poll)
-             age               income pessimism
-1     [18 to 29]   [less than $20000]        10
-2     [40 to 64] [$50,000 to $99,999]         5
-3     [40 to 64]   [less than $20000]         9
-4     [40 to 64] [$50,000 to $99,999]         7
-5 [65 and older] [$50,000 to $99,999]         7
-6     [18 to 29]   [less than $20000]        10
-</code>
+```{r results="asis"}
+print.xtable(xtable(head(poll)), type="html")
+````
+
 Your output will differ because the simulation reflects random
 sampling.  
 
