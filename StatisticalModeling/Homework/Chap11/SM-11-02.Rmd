@@ -22,7 +22,7 @@ calc=selectSet(name="70perc", totalPts=1, "The difference between them isn't 0.7
 * For a 70% interval, the 0.20 and 0.90 quantiles `r I(calc)`
 
 ```{r include=FALSE}
-calc2=selectSet(name="95perc", totalPts=1, "The difference between them isn't 0.95"=TRUE, "They are not symmetrical."=FALSE, "Nothing is wrong."=FALSE)
+calc2=selectSet(name="95percABC", totalPts=1, "The difference between them isn't 0.95"=TRUE, "They are not symmetrical."=FALSE, "Nothing is wrong."=FALSE)
 ```
 * For a 95% interval, the 0.05 and 0.95 quantiles. `r I(calc2)`
 
