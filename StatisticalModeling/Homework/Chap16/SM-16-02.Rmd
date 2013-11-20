@@ -25,8 +25,7 @@ STS-7 | 72 | no | STS-8 | 73 | no
 STS-9 | 70 | no | STS 41-B | 57 | yes  
 STS 41-C | 63 | yes | STS 41-D | 70 | yes 
 STS 41-G | 78 | no | STS 51-A | 67 | no 
-STS 51-B | 75 | no | %* on this one | |
-STS 51-C | 53 | yes | | |
+STS 51-B | 75 | no | STS 51-C | 53 | yes | | |
 STS 51-D | 67 | no | STS 51-F | 81 | no 
 STS 51-G | 70 | no | STS 51-I | 76 | no 
 STS 51-J | 79 | no | STS 61-A | 75 | yes
@@ -34,14 +33,11 @@ STS 61-B | 76 | no | STS 61-C | 58 | yes
 
 Using these data, you can fit a logistic model to estimate the probability of failure at any temperature.  
 ```{r}
-mod = glm(Damage ~ Temp, family='binomial')
-summary(mod)
+orings = fetchData("oring-damage.csv")
+mod = glm(damage ~ temp, family='binomial', data=orings)
+coef(mod)
 ```
-**SHOULD MATCH**
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)  
-(Intercept)  15.0429     7.3786   2.039   0.0415
-Temp         -0.2322     0.1082  -2.145   0.0320
+
 
 Use the coefficients to find the *link* value for these launch temperatures: 
 

@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 16 Prob. 2 </title>
 
@@ -265,17 +266,9 @@ O-ring failure?</p>
 <td align="left">STS 51-B</td>
 <td align="center">75</td>
 <td align="center">no</td>
-<td align="center">%* on this one</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="left">STS 51-C</td>
+<td align="center">STS 51-C</td>
 <td align="center">53</td>
 <td align="center">yes</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
 </tr>
 <tr>
 <td align="left">STS 51-D</td>
@@ -313,24 +306,19 @@ O-ring failure?</p>
 
 <p>Using these data, you can fit a logistic model to estimate the probability of failure at any temperature.  </p>
 
-<pre><code class="r">mod = glm(Damage ~ Temp, family = &quot;binomial&quot;)
+<pre><code class="r">orings = fetchData(&quot;oring-damage.csv&quot;)
 </code></pre>
 
-<pre><code>## Error: object &#39;Damage&#39; not found
+<pre><code>## Retrieving from http://www.mosaic-web.org/go/datasets/oring-damage.csv
 </code></pre>
 
-<pre><code class="r">summary(mod)
+<pre><code class="r">mod = glm(damage ~ temp, family = &quot;binomial&quot;, data = orings)
+coef(mod)
 </code></pre>
 
-<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
-## function &#39;summary&#39;: Error: object &#39;mod&#39; not found
+<pre><code>## (Intercept)        temp 
+##     15.0429     -0.2322
 </code></pre>
-
-<p><strong>SHOULD MATCH</strong>
-Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)<br/>
-(Intercept)  15.0429     7.3786   2.039   0.0415
-Temp         -0.2322     0.1082  -2.145   0.0320</p>
 
 <p>Use the coefficients to find the <em>link</em> value for these launch temperatures: </p>
 
@@ -339,127 +327,151 @@ Temp         -0.2322     0.1082  -2.145   0.0320</p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "-2.4" 
+"content": "-2.4",
+"uniqueID": "SM-16-2-SD" 
 }'>-2.4</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "-1.2" 
+"content": "-1.2",
+"uniqueID": "SM-16-2-SD" 
 }'>-1.2</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "1.6" 
+"content": "1.6",
+"uniqueID": "SM-16-2-SD" 
 }'>1.6</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.7" 
+"content": "2.7",
+"uniqueID": "SM-16-2-SD" 
 }'>2.7</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4.3" 
+"content": "4.3",
+"uniqueID": "SM-16-2-SD" 
 }'>4.3</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "7.8" 
+"content": "7.8",
+"uniqueID": "SM-16-2-SD" 
 }'>7.8</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "9.4" 
+"content": "9.4",
+"uniqueID": "SM-16-2-SD" 
 }'>9.4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      1,
 "name": "70F",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>\( 53^\circ \) F (the previous low temperature) <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "-2.4" 
+"content": "-2.4",
+"uniqueID": "SM-16-2-SD" 
 }'>-2.4</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "-1.2" 
+"content": "-1.2",
+"uniqueID": "SM-16-2-SD" 
 }'>-1.2</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "1.6" 
+"content": "1.6",
+"uniqueID": "SM-16-2-SD" 
 }'>1.6</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "2.7" 
+"content": "2.7",
+"uniqueID": "SM-16-2-SD" 
 }'>2.7</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4.3" 
+"content": "4.3",
+"uniqueID": "SM-16-2-SD" 
 }'>4.3</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "7.8" 
+"content": "7.8",
+"uniqueID": "SM-16-2-SD" 
 }'>7.8</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "9.4" 
+"content": "9.4",
+"uniqueID": "SM-16-2-SD" 
 }'>9.4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      2,
 "name": "53F",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>\( 31^\circ \) F (the Challenger temperature) <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "-2.4" 
+"content": "-2.4",
+"uniqueID": "SM-16-2-SD" 
 }'>-2.4</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "-1.2" 
+"content": "-1.2",
+"uniqueID": "SM-16-2-SD" 
 }'>-1.2</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "1.6" 
+"content": "1.6",
+"uniqueID": "SM-16-2-SD" 
 }'>1.6</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "2.7" 
+"content": "2.7",
+"uniqueID": "SM-16-2-SD" 
 }'>2.7</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "4.3" 
+"content": "4.3",
+"uniqueID": "SM-16-2-SD" 
 }'>4.3</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "7.8" 
+"content": "7.8",
+"uniqueID": "SM-16-2-SD" 
 }'>7.8</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "9.4" 
+"content": "9.4",
+"uniqueID": "SM-16-2-SD" 
 }'>9.4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      3,
 "name": "31F",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 </ul>
 
@@ -470,127 +482,151 @@ Temp         -0.2322     0.1082  -2.145   0.0320</p>
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.08" 
+"content": "0.08",
+"uniqueID": "SM-16-2-SD" 
 }'>0.08</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.23" 
+"content": "0.23",
+"uniqueID": "SM-16-2-SD" 
 }'>0.23</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.83" 
+"content": "0.83",
+"uniqueID": "SM-16-2-SD" 
 }'>0.83</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.94" 
+"content": "0.94",
+"uniqueID": "SM-16-2-SD" 
 }'>0.94</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.985" 
+"content": "0.985",
+"uniqueID": "SM-16-2-SD" 
 }'>0.985</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.9996" 
+"content": "0.9996",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9996</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.9999" 
+"content": "0.9999",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9999</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      4,
 "name": "70F.2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>\( 53^\circ \) F <select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.08" 
+"content": "0.08",
+"uniqueID": "SM-16-2-SD" 
 }'>0.08</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.23" 
+"content": "0.23",
+"uniqueID": "SM-16-2-SD" 
 }'>0.23</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.83" 
+"content": "0.83",
+"uniqueID": "SM-16-2-SD" 
 }'>0.83</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.94" 
+"content": "0.94",
+"uniqueID": "SM-16-2-SD" 
 }'>0.94</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.985" 
+"content": "0.985",
+"uniqueID": "SM-16-2-SD" 
 }'>0.985</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.9996" 
+"content": "0.9996",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9996</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.9999" 
+"content": "0.9999",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9999</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      5,
 "name": "53F.2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>\( 31^\circ \) F <select name='ScoreR6'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.08" 
+"content": "0.08",
+"uniqueID": "SM-16-2-SD" 
 }'>0.08</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.23" 
+"content": "0.23",
+"uniqueID": "SM-16-2-SD" 
 }'>0.23</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.83" 
+"content": "0.83",
+"uniqueID": "SM-16-2-SD" 
 }'>0.83</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.94" 
+"content": "0.94",
+"uniqueID": "SM-16-2-SD" 
 }'>0.94</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.985" 
+"content": "0.985",
+"uniqueID": "SM-16-2-SD" 
 }'>0.985</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.9996" 
+"content": "0.9996",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9996</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.9999" 
+"content": "0.9999",
+"uniqueID": "SM-16-2-SD" 
 }'>0.9999</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
 "setID": "SM-16-2-SD",
 "itemN":      6,
 "name": "31F.2",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-16-2-SD" 
 }'>Info for Select Set</option></select></p></li>
 </ul>
 
