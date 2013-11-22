@@ -19,16 +19,19 @@ and so on, 100 entries altogether
 
 * Here is an ANOVA table for a model of these data:
 
-```{r}
+```{r echo=FALSE,results="hide"}
 ID = 1:100 %/% 2
 when = factor(rep(c('before','after'),50))
-follicle.density = ID + codes(when) + rnorm(100,0,1.5)
+follicle.density = ID + 3*as.numeric(when) + rnorm(100,0,1.5)
+hair = data.frame(follicle.density=follicle.density, when=when,
+                  Subject.ID=as.factor(ID))
 anova(lm(follicle.density~when,data=hair))
 ```
-**SHOULD MATCH**
-Df  Sum Sq Mean Sq F value  p
+<pre>
+             Df   Sum Sq Mean Sq   F    p
 when         1    33.7   33.7  0.157 0.693
 Residuals   98 21077.5  215.1
+</pre>
 
 Does this table suggest that the treatment makes a difference?  Why or why not?
 
@@ -36,19 +39,20 @@ Does this table suggest that the treatment makes a difference?  Why or why not?
 
 <aside>
 ANSWER:   
-The *when* variable indicates whether there is a before-vs-after difference in the density of follicles.  The p-value is 0.693, which is much too large to suggest that the data provide evidence for *when* having an association with *follicle.density*.
+The *when* variable indicates whether there is a before-vs-after difference in the density of follicles.  The p-value is 0.69, which is much too large to suggest that the data provide evidence for *when* having an association with *follicle.density*.
 </aside>
 
 
 * Here's another ANOVA table
-```{r}
-anova(lm(follicle.density~when+Subject.ID, +  data=hair))
+```{r echo=FALSE,results="hide"}
+anova(lm(follicle.density~when+Subject.ID, data=hair))
 ```
-**SHOULD MATCH**
-Df  Sum Sq Mean Sq  F value p
-when        1    33.7   33.7  14.9  0.0002
-Subject.ID 49 20858.6  425.7 185.0  zero
+<pre>
+            Df  Sum Sq Mean Sq    F     p
+when        1    33.7   33.7    14.9  0.0002
+Subject.ID 49 20858.6  425.7  185.0  zero
 Residuals  97   218.9    2.3
+</pre>
 
 Why is the F-value on *when* different in this model than in the previous one?
 

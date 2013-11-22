@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Intro to Statistical Modeling Ch. 15 Prob. 11</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Intro to Statistical Modeling Ch. 15 Prob. 11</h1>
+
+<p>You are conducting an experiment of a treatment for balding.  You measure the hair follicle density before treatment and again after treatment.  The data table has the following variables (with a few examples shown):</p>
+
+<table><thead>
+<tr>
+<th align="left">Subject.ID &nbsp;</th>
+<th align="center">&nbsp; follicle.density &nbsp;</th>
+<th align="center">&nbsp; when &nbsp;</th>
+<th align="center">&nbsp; sex</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">A59</td>
+<td align="center">7.3</td>
+<td align="center">before</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="left">A59</td>
+<td align="center">7.9</td>
+<td align="center">after</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="left">A60</td>
+<td align="center">61.2</td>
+<td align="center">before</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="left">A60</td>
+<td align="center">61.4</td>
+<td align="center">after</td>
+<td align="center">F</td>
+</tr>
+</tbody></table>
+
+<p>and so on, 100 entries altogether </p>
+
+<ul>
+<li>Here is an ANOVA table for a model of these data:</li>
+</ul>
+
+<pre>
+             Df   Sum Sq Mean Sq   F    p
+when         1    33.7   33.7  0.157 0.693
+Residuals   98 21077.5  215.1
+</pre>
+
+<p>Does this table suggest that the treatment makes a difference?  Why or why not?</p>
+
+<p><textarea cols='30' rows='3' id='ScoreR1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
+ "setID": "SM-15-11-SD",
+"itemN":      1,
+"name": "difference",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "",
+"uniqueID": "SM-15-11-SD" 
+}'>Question info for free text</option></select></p>
+
+<p><aside>
+ANSWER:<br/>
+The <em>when</em> variable indicates whether there is a before-vs-after difference in the density of follicles.  The p-value is 0.69, which is much too large to suggest that the data provide evidence for <em>when</em> having an association with <em>follicle.density</em>.
+</aside></p>
+
+<ul>
+<li>Here&#39;s another ANOVA table</li>
+</ul>
+
+<pre>
+            Df  Sum Sq Mean Sq    F     p
+when        1    33.7   33.7    14.9  0.0002
+Subject.ID 49 20858.6  425.7  185.0  zero
+Residuals  97   218.9    2.3
+</pre>
+
+<p>Why is the F-value on <em>when</em> different in this model than in the previous one?</p>
+
+<p><textarea cols='30' rows='3' id='ScoreR2' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+ "setID": "SM-15-11-SD",
+"itemN":      2,
+"name": "Fvalue",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "",
+"uniqueID": "SM-15-11-SD" 
+}'>Question info for free text</option></select></p>
+
+<p><aside>
+ANSWER:<br/>
+It seems that the subject-to-subject variation in follicle density is very large.  So, by including <em>follicle.density</em> as a covariate, the residuals are reduced greatly.  (The mean-square residual goes from 215 when follicle density is not included in the model, to 2.3 when it is.)  Since the F statistic compares the mean square of the variable to that of the residuals, introducing the covariate makes <em>when</em> look much more significant.
+</aside></p>
+
+<ul>
+<li>What overall conclusion do you draw about the effectiveness of the treatment?  Is the effect of the treatment statistically significant?  Is it significant in practice?</li>
+</ul>
+
+<p><textarea cols='30' rows='3' id='ScoreR3' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
+ "setID": "SM-15-11-SD",
+"itemN":      3,
+"name": "conclusion",
+"totalpts":      2,
+"type": "Free text",
+"hint": "",
+"reward": "",
+"uniqueID": "SM-15-11-SD" 
+}'>Question info for free text</option></select></p>
+
+<p><aside>
+ANSWER:<br/>
+Any particular person who is considering treatment will want to know what the effect of the treatment is <em>while holding the person constant</em>.  That sounds somewhat silly, but of course the person should be held constant: I&#39;m interested in what the treatment will do for me in comparing before and after, not how density differs between some group of people before treatment and another group of people after treatment.  Since the p-value is so small, we have evidence that
+the treatment is associated with a change in follicle density.</p>
+
+<p>The ANOVA report doesn&#39;t say which way the change goes.  This could be easily seen in the regression report, by looking at the coefficient. Then you could judge how big the difference is, and, based on what you know about hair density, figure out whether the change is significant.
+</aside></p>
+
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "difference", "Fvalue", "conclusion" ]'>problem roster</option></select></p>
+
+</body>
+
+</html>
+
