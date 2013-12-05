@@ -14,42 +14,42 @@ $$
 Say whether the pathway connecting A and B is correlating or non-correlating.
 
 ```{r include=FALSE}
-prob1=selectSet(name="1", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
+prob1=selectSet(name="1a", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
 ```
 * $A\causes C\causes B$ `r I(prob1)`
 
 ```{r include=FALSE}
-prob2=selectSet(name="2", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
+prob2=selectSet(name="2a", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
 ```
 * $A\causedBy C\causedBy B$ `r I(prob2)`
 
 ```{r include=FALSE}
-prob3=selectSet(name="3", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
+prob3=selectSet(name="3a", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
 ```
 * $A\causedBy C\causes B$ `r I(prob3)`
 
 ```{r include=FALSE}
-prob4=selectSet(name="4", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
+prob4=selectSet(name="4a", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
 ```
 * $A\causes C\causedBy B$ `r I(prob4)`
 
 ```{r include=FALSE}
-prob5=selectSet(name="5", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
+prob5=selectSet(name="5a", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
 ```
 * $A\causes C\causedBy D \causes B$ `r I(prob5)`
 
 ```{r include=FALSE}
-prob6=selectSet(name="6", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
+prob6=selectSet(name="6a", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
 ```
 * $A\causes C\causedBy D \causedBy B$ `r I(prob6)`
 
 ```{r include=FALSE}
-prob7=selectSet(name="7", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
+prob7=selectSet(name="7a", totalPts=1, "correlating"=TRUE, "noncorrelating"=FALSE)
 ```
 * $A\causedBy C\causedBy D \causedBy B$ `r I(prob7)`
 
 ```{r include=FALSE}
-prob8=selectSet(name="8", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
+prob8=selectSet(name="8a", totalPts=1, "correlating"=FALSE, "noncorrelating"=TRUE)
 ```
 * $A\causedBy C\causes D \causedBy E\causedBy B$ `r I(prob8)`
 
