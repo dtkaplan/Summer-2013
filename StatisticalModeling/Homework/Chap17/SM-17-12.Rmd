@@ -8,8 +8,9 @@ startProblem("SM-17-12-SD")
 
 Here is a somewhat complicated hypothetical causal network:
 
-### Needs image from paths-108b
-
+<img src='path-graphics-5.svg' width='200'>
+<!--  Needs image from paths-108b-->
+```{r engine="tikz",eval=FALSE,echo=FALSE}
 \begin{tikzpicture}{scale=.6}
 \measurableNode{A}{(2,8)}{A}
 \measurableNode{B}{(4,6)}{B}
@@ -24,6 +25,7 @@ Here is a somewhat complicated hypothetical causal network:
 \straightLink{F}{C}{}
 \straightLink{C}{D}{}
 \end{tikzpicture}
+```
 
 You are interested in studying the causal effect of F on D.  
 

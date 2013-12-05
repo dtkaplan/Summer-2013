@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 10 Prob. 10</title>
 
@@ -149,56 +150,46 @@ hr {
 AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB, BB-, B+, B, B-, CCC+, CCC, CCC-, CC, C, and D. The AAA rating is the best. (&ldquo;The obligor&#39;s capacity to meet its financial commitment on the obligation is extremely strong.&rdquo;)  D is the worst. (&ldquo;The D&#39; rating category is used when payments on an obligation are not made on the date due &hellip;.&rdquo;)  </p>
 
 <ul>
-<li><p>The bond ratings are a categorical variable. <select name='in1'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-10-10-SD",
-"itemN":      1,
-"name": "TorF",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+<li><p>The bond ratings are a categorical variable. <select name='ScoreR1'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "TRUE" 
+"content": "TRUE",
+"uniqueID": "SM-10-10-SD" 
 }'>TRUE</option> <option value='{
-"itemInfo": {
+"pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "FALSE",
+"uniqueID": "SM-10-10-SD" 
+}'>FALSE</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-10-10-SD",
 "itemN":      1,
 "name": "TorF",
-"totalpts":      1 
-},
+"totalpts":      1,
 "type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "FALSE" 
-}'>FALSE</option> </select><span id='out1' class='shiny-html-output'> </span></p></li>
-<li><p>The bond ratings are an ordinal variable. <select name='in2'><option value='NA' selected>UNANSWERED</option> <option value='{
-"itemInfo": {
-"setID": "SM-10-10-SD",
-"itemN":      2,
-"name": "TorF2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
+"uniqueID": "SM-10-10-SD" 
+}'>Info for Select Set</option></select></p></li>
+<li><p>The bond ratings are an ordinal variable. <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "TRUE" 
+"content": "TRUE",
+"uniqueID": "SM-10-10-SD" 
 }'>TRUE</option> <option value='{
-"itemInfo": {
-"setID": "SM-10-10-SD",
-"itemN":      2,
-"name": "TorF2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "FALSE" 
-}'>FALSE</option> </select><span id='out2' class='shiny-html-output'> </span></p></li>
+"content": "FALSE",
+"uniqueID": "SM-10-10-SD" 
+}'>FALSE</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
+"setID": "SM-10-10-SD",
+"itemN":      2,
+"name": "TorF2",
+"totalpts":      1,
+"type": "Fixed Choice",
+"uniqueID": "SM-10-10-SD" 
+}'>Info for Select Set</option></select></p></li>
 </ul>
 
 <p>Bonds are a kind of debt; they pay interest and the principal is paid back at the end of a maturity period. The people and institutions who invest in bonds
@@ -288,190 +279,130 @@ are willing to accept somewhat lower interest payments in exchange for greater s
 </tr>
 </tbody></table>
 
-<p>How many explanatory variables are given in this table to account for the interest rate: <select name='in3'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      3,
-"name": "ExplanVariables",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>How many explanatory variables are given in this table to account for the interest rate: <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Two: Issue and Maturity" 
+"content": "Two: Issue and Maturity",
+"uniqueID": "SM-10-10-SD" 
 }'>Two: Issue and Maturity</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      3,
-"name": "ExplanVariables",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Three: Issue, Maturity, and S & P rating" 
+"content": "Three: Issue, Maturity, and S & P rating",
+"uniqueID": "SM-10-10-SD" 
 }'>Three: Issue, Maturity, and S &amp; P rating</option> <option value='{
- "itemInfo": {
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "Four: Issue, Maturity, S & P Rating, and Interest Rate",
+"uniqueID": "SM-10-10-SD" 
+}'>Four: Issue, Maturity, S &amp; P Rating, and Interest Rate</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
  "setID": "SM-10-10-SD",
 "itemN":      3,
 "name": "ExplanVariables",
-"totalpts":      1 
-},
+"totalpts":      1,
 "type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "Four: Issue, Maturity, S & P Rating, and Interest Rate" 
-}'>Four: Issue, Maturity, S &amp; P Rating, and Interest Rate</option> </select><span id='out3' class='shiny-html-output'> </span></p>
+"uniqueID": "SM-10-10-SD" 
+}'>Info for Select Set</option></select></p>
 
-<p>Judging from the table, and holding all other explanatory variables constant, what is the change in interest rate associated with a change from AAA to AA rating? <select name='in4'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      4,
-"name": "ChangeInRate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>Judging from the table, and holding all other explanatory variables constant, what is the change in interest rate associated with a change from AAA to AA rating? <select name='ScoreR4'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.05" 
+"content": "0.05",
+"uniqueID": "SM-10-10-SD" 
 }'>0.05</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      4,
-"name": "ChangeInRate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.15" 
+"content": "0.15",
+"uniqueID": "SM-10-10-SD" 
 }'>0.15</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      4,
-"name": "ChangeInRate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.25" 
+"content": "0.25",
+"uniqueID": "SM-10-10-SD" 
 }'>0.25</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      4,
-"name": "ChangeInRate",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.3" 
+"content": "0.3",
+"uniqueID": "SM-10-10-SD" 
 }'>0.3</option> <option value='{
- "itemInfo": {
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "0.4",
+"uniqueID": "SM-10-10-SD" 
+}'>0.4</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
  "setID": "SM-10-10-SD",
 "itemN":      4,
 "name": "ChangeInRate",
-"totalpts":      1 
-},
+"totalpts":      1,
 "type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "0.4" 
-}'>0.4</option> </select><span id='out4' class='shiny-html-output'> </span></p>
+"uniqueID": "SM-10-10-SD" 
+}'>Info for Select Set</option></select></p>
 
-<p>Again, holding all other explanatory variables constant, what is the change in interest rate for a 10-year compared to a 20-year maturity bond?  (Pick the closest answer.)<select name='in5'><option value='NA' selected>UNANSWERED</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      5,
-"name": "ChangeinRate2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+<p>Again, holding all other explanatory variables constant, what is the change in interest rate for a 10-year compared to a 20-year maturity bond?  (Pick the closest answer.)<select name='ScoreR5'><option value='NA' selected>UNANSWERED</option> <option value='{
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.15" 
+"content": "0.15",
+"uniqueID": "SM-10-10-SD" 
 }'>0.15</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      5,
-"name": "ChangeinRate2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "0.5" 
+"content": "0.5",
+"uniqueID": "SM-10-10-SD" 
 }'>0.5</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      5,
-"name": "ChangeinRate2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      1,
+ "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "0.85" 
+"content": "0.85",
+"uniqueID": "SM-10-10-SD" 
 }'>0.85</option> <option value='{
- "itemInfo": {
- "setID": "SM-10-10-SD",
-"itemN":      5,
-"name": "ChangeinRate2",
-"totalpts":      1 
-},
-"type": "Fixed Choice",
-"pts":      0,
+ "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "1.2" 
+"content": "1.2",
+"uniqueID": "SM-10-10-SD" 
 }'>1.2</option> <option value='{
- "itemInfo": {
+ "pts":      0,
+"hint": "",
+"reward": "Right!",
+"content": "1.45",
+"uniqueID": "SM-10-10-SD" 
+}'>1.45</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
  "setID": "SM-10-10-SD",
 "itemN":      5,
 "name": "ChangeinRate2",
-"totalpts":      1 
-},
+"totalpts":      1,
 "type": "Fixed Choice",
-"pts":      0,
-"hint": "",
-"reward": "Right!",
-"content": "1.45" 
-}'>1.45</option> </select><span id='out5' class='shiny-html-output'> </span></p>
+"uniqueID": "SM-10-10-SD" 
+}'>Info for Select Set</option></select></p>
 
 <p>Sometimes it is unclear when a variable should be considered quantitative and when it should be taken as categorical.  For example, the <em>maturity</em> variable looks on the surface to be quantitative (10-year, 20-year, 30-year, etc.).  What is it about these data that suggests that it would be unrealistic to treat <em>maturity</em> as a quantitative variable in a model of <em>interest rate</em>?</p>
 
-<p><textarea cols='30' rows='3' id='text1' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='info1'><option value='{
- "pts":      0,
-"hint": "",
-"itemInfo": {
+<p><textarea cols='30' rows='3' id='ScoreR6' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
  "setID": "SM-10-10-SD",
-"itemN":      1,
+"itemN":      6,
 "name": "maturity",
-"totalpts":      2 
-},
+"totalpts":      2,
 "type": "Free text",
+"hint": "",
 "reward": "",
-"content": "Free text" 
-}'>Ignore me</option></select><span id='tout1' value='spanvalue' class='shiny-html-output'></span></p>
+"uniqueID": "SM-10-10-SD" 
+}'>Question info for free text</option></select></p>
 
 <p><aside>
 ANSWER:<br/>
 If <em>maturity</em> were treated as a quantitative variable, the difference in interest rate between 10-year and 20-year maturity would be modeled as the same as the difference between 20-year and 30-year maturity.  Yet this is far from the case in the data.
 </aside></p>
 
-<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "in1", "in2", "in3", "in4", "in5", "text1" ]'>Ignore me</option></select></p>
+<p><select style='visibility: hidden' width='5' name='roster'><option value='[ "TorF", "TorF2", "ExplanVariables", "ChangeInRate", "ChangeinRate2", "maturity" ]'>problem roster</option></select></p>
 
 </body>
 

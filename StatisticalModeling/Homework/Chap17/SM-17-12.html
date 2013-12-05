@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 17 Prob. 12</title>
 
@@ -145,22 +146,9 @@ hr {
 
 <p>Here is a somewhat complicated hypothetical causal network:</p>
 
-<h3>Needs image from paths-108b</h3>
+<p><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTk5LjU2OTE4cHQiIGhlaWdodD0iMTk5LjU2OTE4cHQiIHZpZXdCb3g9Ii0xNC40MjYzNiA0Mi40NzkxMyAxOTkuNTY5MTggMTk5LjU2OTE4ICI+IAo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAyNDIuMDQ4MzEgKSBzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMCwtNDIuNDc5MTMgKSI+IAogICAgICAgICAKIDxnPiAKIDxnIHN0cm9rZT0icmdiKDAuMCUsMC4wJSwwLjAlKSI+IAogPGcgZmlsbD0icmdiKDAuMCUsMC4wJSwwLjAlKSI+IAogPGcgc3Ryb2tlLXdpZHRoPSIwLjRwdCI+IAogPGc+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8cGF0aCBkPSIgTSAgNDIuNjc5MTIgMjEzLjM5NTU4IGggIDI4LjQ1MjczIHYgIDI4LjQ1MjczIGggIC0yOC40NTI3MyBaICAiIC8+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjAsMC4wLDAuMCwxLjAsNTIuODM2MDksMjI0LjIwNTI5KSI+IAogPGcgZmlsbD0icmdiKDAuMCUsMC4wJSwwLjAlKSI+IAogPHRleHQgc3R5bGU9InN0cm9rZTpub25lIiB0cmFuc2Zvcm09InNjYWxlKDEsLTEpIHRyYW5zbGF0ZSg0LjA2OTQsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjx0c3BhbiBmb250LWZhbWlseT0iY21jc2MiIGZvbnQtc2l6ZT0iMTAiPkE8L3RzcGFuPjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8cGF0aCBkPSIgTSAgOTkuNTg0NjEgMTU2LjQ5MDEgaCAgMjguNDUyNzMgdiAgMjguNDUyNzMgaCAgLTI4LjQ1MjczIFogICIgLz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMCwwLjAsMC4wLDEuMCwxMDkuOTU2ODUsMTY3LjI5OTgpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDMuODU0MTMsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjx0c3BhbiBmb250LWZhbWlseT0iY21jc2MiIGZvbnQtc2l6ZT0iMTAiPkI8L3RzcGFuPjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8cGF0aCBkPSIgTSAgNDIuNjc5MTIgOTkuNTg0NjEgaCAgMjguNDUyNzMgdiAgMjguNDUyNzMgaCAgLTI4LjQ1MjczIFogICIgLz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMCwwLjAsMC4wLDEuMCw1Mi45NzQ5OCwxMTAuMzk0MzIpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDMuOTMwNTEsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjx0c3BhbiBmb250LWZhbWlseT0iY21jc2MiIGZvbnQtc2l6ZT0iMTAiPkM8L3RzcGFuPjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8cGF0aCBkPSIgTSAgNDIuNjc5MTIgNDIuNjc5MTIgaCAgMjguNDUyNzMgdiAgMjguNDUyNzMgaCAgLTI4LjQ1MjczIFogICIgLz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMCwwLjAsMC4wLDEuMCw1Mi43NTk2OSw1My40ODg4MykiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoNC4xNDU4LDApIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAgZm9udC1zaXplPSIxMCI+IAo8dHNwYW4gZm9udC1mYW1pbHk9ImNtY3NjIiBmb250LXNpemU9IjEwIj5EPC90c3Bhbj48L3RleHQ+IAo8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIGZpbGw9InJnYigxMDAuMCUsNzUuMCUsNzUuMCUpIj4gCiA8Zz4gCiA8ZyBmaWxsPSJyZ2IoMTAwLjAlLDc1LjAlLDc1LjAlKSI+IAogPHBhdGggZD0iIE0gIDE1Ni40OTAxIDk5LjU4NDYxIGggIDI4LjQ1MjczIHYgIDI4LjQ1MjczIGggIC0yOC40NTI3MyBaICAiIC8+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjAsMC4wLDAuMCwxLjAsMTY3LjAwODE4LDExMC4zOTQzMikiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMy43MDgyOCwwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPHRzcGFuIGZvbnQtZmFtaWx5PSJjbWNzYyIgZm9udC1zaXplPSIxMCI+RTwvdHNwYW4+PC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBmaWxsPSJyZ2IoMTAwLjAlLDc1LjAlLDc1LjAlKSI+IAogPGc+IAogPGcgZmlsbD0icmdiKDEwMC4wJSw3NS4wJSw3NS4wJSkiPiAKIDxwYXRoIGQ9IiBNICAtMTQuMjI2MzYgMTU2LjQ5MDEgaCAgMjguNDUyNzMgdiAgMjguNDUyNzMgaCAgLTI4LjQ1MjczIFogICIgLz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMCwwLjAsMC4wLDEuMCwtMy41NjI0NywxNjcuMjk5OCkiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMy41NjI0NywwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPHRzcGFuIGZvbnQtZmFtaWx5PSJjbWNzYyIgZm9udC1zaXplPSIxMCI+RjwvdHNwYW4+PC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjEuMHB0Ij4gCiA8cGF0aCBkPSIgTSAgNDIuNDc5MTMgMjEzLjIwMzA4IEwgIDE2LjQyMjY0IDE4Ny4xNDc1NSAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSwtMC43MDcxNCwwLjcwNzE0LC0wLjcwNzEsMTYuNDIyNjQsMTg3LjE0NzU1KSI+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIwLjhwdCI+IAogPGcgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAuMHB0Ij4gCiA8ZyBzdHJva2UtbGluZWNhcD0icm91bmQiPiAKIDxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiAKIDxwYXRoIGQ9IiBNICAtMS43NCAyLjMyIEMgIC0xLjU5NSAxLjQ1IDAuMCAwLjE0NDk5IDAuNDM1IDAuMCBDICAwLjAgLTAuMTQ0OTkgLTEuNTk1IC0xLjQ1IC0xLjc0IC0yLjMyICAiIHN0eWxlPSJmaWxsOm5vbmUiLz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxLDAuNzA3MTQsLTAuNzA3MTQsMC43MDcxLDE1LjkxNjU2LDE5Mi4wNjIwMykiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMC4wLDApIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAgZm9udC1zaXplPSIxMCI+IAo8L3RleHQ+IAo8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjEuMHB0Ij4gCiA8cGF0aCBkPSIgTSAgNzEuMzMxODUgMjEzLjIwMzA4IEwgIDk3LjM4ODM0IDE4Ny4xNDc1NSAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxLC0wLjcwNzE0LDAuNzA3MTQsMC43MDcxLDk3LjM4ODM0LDE4Ny4xNDc1NSkiPiAKIDxnPiAKIDxnIHN0cm9rZS13aWR0aD0iMC44cHQiPiAKIDxnIHN0cm9rZS1kYXNoYXJyYXk9Im5vbmUiIHN0cm9rZS1kYXNob2Zmc2V0PSIwLjBwdCI+IAogPGcgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4gCiA8ZyBzdHJva2UtbGluZWpvaW49InJvdW5kIj4gCiA8cGF0aCBkPSIgTSAgLTEuNzQgMi4zMiBDICAtMS41OTUgMS40NSAwLjAgMC4xNDQ5OSAwLjQzNSAwLjAgQyAgMC4wIC0wLjE0NDk5IC0xLjU5NSAtMS40NSAtMS43NCAtMi4zMiAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuNzA3MSwtMC43MDcxNCwwLjcwNzE0LDAuNzA3MSw5Ny44OTQ0MSwxOTIuMDYyMDMpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDAuMCwwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIxLjBwdCI+IAogPHBhdGggZD0iIE0gIDk5LjM4NDYxIDE1Ni4yOTc1OSBMICA3My4zMjgxMyAxMzAuMjQyMDcgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEsLTAuNzA3MTQsMC43MDcxNCwtMC43MDcxLDczLjMyODEzLDEzMC4yNDIwNykiPiAKIDxnPiAKIDxnIHN0cm9rZS13aWR0aD0iMC44cHQiPiAKIDxnIHN0cm9rZS1kYXNoYXJyYXk9Im5vbmUiIHN0cm9rZS1kYXNob2Zmc2V0PSIwLjBwdCI+IAogPGcgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4gCiA8ZyBzdHJva2UtbGluZWpvaW49InJvdW5kIj4gCiA8cGF0aCBkPSIgTSAgLTEuNzQgMi4zMiBDICAtMS41OTUgMS40NSAwLjAgMC4xNDQ5OSAwLjQzNSAwLjAgQyAgMC4wIC0wLjE0NDk5IC0xLjU5NSAtMS40NSAtMS43NCAtMi4zMiAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuNzA3MSwwLjcwNzE0LC0wLjcwNzE0LDAuNzA3MSw3Mi44MjIwNSwxMzUuMTU2NTQpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDAuMCwwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIxLjBwdCI+IAogPHBhdGggZD0iIE0gIDEyOC4yMzczNCAxNTYuMjk3NTkgTCAgMTU0LjI5MzgyIDEzMC4yNDIwNyAgIiBzdHlsZT0iZmlsbDpub25lIi8+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxLC0wLjcwNzE0LDAuNzA3MTQsMC43MDcxLDE1NC4yOTM4MiwxMzAuMjQyMDcpIj4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjAuOHB0Ij4gCiA8ZyBzdHJva2UtZGFzaGFycmF5PSJub25lIiBzdHJva2UtZGFzaG9mZnNldD0iMC4wcHQiPiAKIDxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+IAogPGcgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+IAogPHBhdGggZD0iIE0gIC0xLjc0IDIuMzIgQyAgLTEuNTk1IDEuNDUgMC4wIDAuMTQ0OTkgMC40MzUgMC4wIEMgIDAuMCAtMC4xNDQ5OSAtMS41OTUgLTEuNDUgLTEuNzQgLTIuMzIgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEsLTAuNzA3MTQsMC43MDcxNCwwLjcwNzEsMTU0Ljc5OTksMTM1LjE1NjU0KSI+IAogPGcgZmlsbD0icmdiKDAuMCUsMC4wJSwwLjAlKSI+IAogPHRleHQgc3R5bGU9InN0cm9rZTpub25lIiB0cmFuc2Zvcm09InNjYWxlKDEsLTEpIHRyYW5zbGF0ZSgwLjAsMCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiICBmb250LXNpemU9IjEwIj4gCjwvdGV4dD4gCjwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDxnPiAKIDxnIHN0cm9rZS13aWR0aD0iMS4wcHQiPiAKIDxwYXRoIGQ9IiBNICAxNC40MjYzNiAxNTYuMjk3NTkgTCAgNDAuNDgyODUgMTMwLjI0MjA3ICAiIHN0eWxlPSJmaWxsOm5vbmUiLz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEsLTAuNzA3MTQsMC43MDcxNCwwLjcwNzEsNDAuNDgyODUsMTMwLjI0MjA3KSI+IAogPGc+IAogPGcgc3Ryb2tlLXdpZHRoPSIwLjhwdCI+IAogPGcgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAuMHB0Ij4gCiA8ZyBzdHJva2UtbGluZWNhcD0icm91bmQiPiAKIDxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiAKIDxwYXRoIGQ9IiBNICAtMS43NCAyLjMyIEMgIC0xLjU5NSAxLjQ1IDAuMCAwLjE0NDk5IDAuNDM1IDAuMCBDICAwLjAgLTAuMTQ0OTkgLTEuNTk1IC0xLjQ1IC0xLjc0IC0yLjMyICAiIHN0eWxlPSJmaWxsOm5vbmUiLz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPGc+IAogPGc+IAogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxLC0wLjcwNzE0LDAuNzA3MTQsMC43MDcxLDQwLjk4ODkyLDEzNS4xNTY1NCkiPiAKIDxnIGZpbGw9InJnYigwLjAlLDAuMCUsMC4wJSkiPiAKIDx0ZXh0IHN0eWxlPSJzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSB0cmFuc2xhdGUoMC4wLDApIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiAgZm9udC1zaXplPSIxMCI+IAo8L3RleHQ+IAo8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjEuMHB0Ij4gCiA8cGF0aCBkPSIgTSAgNTYuOTA1NDkgOTkuMzg0NjEgTCAgNTYuOTA1NDkgNzQuMTY2ODUgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDxnPiAKIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMCwtMS4wLDEuMCwwLjAsNTYuOTA1NDksNzQuMTY2ODUpIj4gCiA8Zz4gCiA8ZyBzdHJva2Utd2lkdGg9IjAuOHB0Ij4gCiA8ZyBzdHJva2UtZGFzaGFycmF5PSJub25lIiBzdHJva2UtZGFzaG9mZnNldD0iMC4wcHQiPiAKIDxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+IAogPGcgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+IAogPHBhdGggZD0iIE0gIC0xLjc0IDIuMzIgQyAgLTEuNTk1IDEuNDUgMC4wIDAuMTQ0OTkgMC40MzUgMC4wIEMgIDAuMCAtMC4xNDQ5OSAtMS41OTUgLTEuNDUgLTEuNzQgLTIuMzIgICIgc3R5bGU9ImZpbGw6bm9uZSIvPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8Zz4gCiA8Zz4gCiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjAsLTEuMCwxLjAsMC4wLDYwLjczODQ2LDc1LjUzOTYpIj4gCiA8ZyBmaWxsPSJyZ2IoMC4wJSwwLjAlLDAuMCUpIj4gCiA8dGV4dCBzdHlsZT0ic3Ryb2tlOm5vbmUiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkgdHJhbnNsYXRlKDAuMCwwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgIGZvbnQtc2l6ZT0iMTAiPiAKPC90ZXh0PiAKPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiA8L2c+IAogPC9nPiAKIDwvZz4gCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+IAo8L3N2Zz4gCg==' width='200'></p>
 
-<p>\begin{tikzpicture}{scale=.6}
-\measurableNode{A}{(2,8)}{A}
-\measurableNode{B}{(4,6)}{B}
-\measurableNode{C}{(2,4)}{C}
-\measurableNode{D}{(2,2)}{D}
-\measurableNode{E}{(6,4)}{E}
-\measurableNode{F}{(0,6)}{F}
-\straightLink{A}{F}{}
-\straightLink{A}{B}{}
-\straightLink{B}{C}{}
-\straightLink{B}{E}{}
-\straightLink{F}{C}{}
-\straightLink{C}{D}{}
-\end{tikzpicture}</p>
+<!--  Needs image from paths-108b-->
 
 <p>You are interested in studying the causal effect of F on D.  </p>
 
@@ -172,67 +160,79 @@ hr {
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Blocks" 
+"content": "Blocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Blocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Unblocks" 
+"content": "Unblocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Unblocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Neither" 
+"content": "Neither",
+"uniqueID": "SM-17-12-SD" 
 }'>Neither</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
 "setID": "SM-17-12-SD",
 "itemN":      1,
 "name": "A",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-17-12-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>B:  <select name='ScoreR2'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Blocks" 
+"content": "Blocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Blocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Unblocks" 
+"content": "Unblocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Unblocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Neither" 
+"content": "Neither",
+"uniqueID": "SM-17-12-SD" 
 }'>Neither</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
 "setID": "SM-17-12-SD",
 "itemN":      2,
 "name": "B",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-17-12-SD" 
 }'>Info for Select Set</option></select></p></li>
 <li><p>C:  <select name='ScoreR3'><option value='NA' selected>UNANSWERED</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Blocks" 
+"content": "Blocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Blocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Unblocks" 
+"content": "Unblocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Unblocks</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Neither" 
+"content": "Neither",
+"uniqueID": "SM-17-12-SD" 
 }'>Neither</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
 "setID": "SM-17-12-SD",
 "itemN":      3,
 "name": "C",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-17-12-SD" 
 }'>Info for Select Set</option></select></p></li>
 </ul>
 
@@ -243,23 +243,27 @@ hr {
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Blocks" 
+"content": "Blocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Blocks</option> <option value='{
 "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "Unblocks" 
+"content": "Unblocks",
+"uniqueID": "SM-17-12-SD" 
 }'>Unblocks</option> <option value='{
 "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "Neither" 
+"content": "Neither",
+"uniqueID": "SM-17-12-SD" 
 }'>Neither</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
 "setID": "SM-17-12-SD",
 "itemN":      4,
 "name": "E",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-17-12-SD" 
 }'>Info for Select Set</option></select></li>
 </ul>
 
@@ -267,14 +271,15 @@ hr {
 Explain why this would not be a good thing to do if you want to study
 the causal connection between F and D.</p>
 
-<p><textarea cols='30' rows='3' id='ScoreR5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden'width='5' name='ScoreR5info'><option value='{
+<p><textarea cols='30' rows='3' id='ScoreR5' placeholder='Your answer here ...'></textarea><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
  "setID": "SM-17-12-SD",
 "itemN":      5,
 "name": "explain",
 "totalpts":      2,
 "type": "Free text",
 "hint": "",
-"reward": "" 
+"reward": "",
+"uniqueID": "SM-17-12-SD" 
 }'>Question info for free text</option></select></p>
 
 <p><aside>

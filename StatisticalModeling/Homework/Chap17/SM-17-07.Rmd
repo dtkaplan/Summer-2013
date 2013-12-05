@@ -36,7 +36,7 @@ g=newMC(totalPts=1, name="model2")
 ```{r include=FALSE}
 h=newMC(totalPts=1, name="model3")
 ```
-`r I(h(FALSE))` *A* *C* + *D*    
+`r I(h(FALSE))` *A* ~ *C* + *D*    
 `r I(h(FALSE))` *A* ~ *B* + *C*   
 `r I(h(FALSE))` *A* ~ *B* + *C* + *D*    
 `r I(h(TRUE))` Any of the above.    
