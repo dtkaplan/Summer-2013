@@ -14,7 +14,7 @@ Give an example of a model used for classification.
 
 `r I(textItem(name="example",rows=3, totalPts=2))`
 
-Often we describe personalities as "patient", "kind", "vengeful," etc.  How can these descriptions be used as models for prediciton?
+Often we describe personalities as "patient", "kind", "vengeful," etc.  How can these descriptions be used as models for prediction?
 
 `r I(textItem(name="personalities", rows=3, totalPts=2))`
 
