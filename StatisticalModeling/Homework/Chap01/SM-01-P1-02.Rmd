@@ -38,12 +38,6 @@ f = newMC(totalPts=1,name="seqsemi")
 `r I(f(FALSE))` It should be <code>seq(5 to 8)</code>.  
 `r I(f(finish=TRUE))`
 
-```{r include=FALSE, eval=FALSE}
-I(textItem(name="semicolon", rows=4, totalPts=2))
-```
-
-`r I(textItem(name="semicolon", rows=4, totalPts=2))`
-
 <aside>
 ANSWER: The semicolon is not a valid separator between arguments.  The statement should be <code>seq(5,8)</code>.
 </aside>

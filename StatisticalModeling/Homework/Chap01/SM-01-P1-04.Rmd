@@ -47,7 +47,7 @@ Notice that 10 isn't part of the returned value, even though 10 was specified as
 `r I(textItem(name="evenlyspaced", rows=3, totalPts=2))`
 
 <aside>
-ANSWER: Of course you could figure out what the distance would be between evenly spaced numbers in the interval 0 to 1, and use that as the value of the <code>by=</code> argument. (Note that the 10 numbers will have 9 intervals between them, so the spacing is $0.11111 \ldots$.) But <code>seq</code> will do this for you.     
+ANSWER : Of course you could figure out what the distance would be between evenly spaced numbers in the interval 0 to 1, and use that as the value of the <code>by=</code> argument. (Note that the 10 numbers will have 9 intervals between them, so the spacing is $0.11111 \ldots$.) But <code>seq</code> will do this for you.     
 ```{r}
 seq(0,1, length=10)
 ```
