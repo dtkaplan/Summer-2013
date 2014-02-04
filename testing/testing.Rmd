@@ -1,0 +1,9 @@
+<<>>=
+require(mosaic)
+@
+
+Just an Rnw document on an open github site.
+
+<<>>=
+xyplot( length ~ width, groups=sex, data=KidsFeet )
+@
