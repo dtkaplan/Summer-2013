@@ -7,11 +7,8 @@ startProblem("SM-02-P2-SD")
 ```
 
 Using the <code>table</code> operator and the comparison operators (such as
-<code>></code> or <code>==</code>), answer the following questions about the CO2 data.  You can read in the CO2 data with the statement 
+<code>></code> or <code>==</code>), answer the following questions about the CO2 data that comes already loaded into R.
 
-```{r}
-CO2 = fetchData("CO2") 
-```
 You can see the data set itself by giving the command
 
 ```{r results="hide"}
@@ -32,7 +29,7 @@ numberplants=selectNumber(choices=c(7,12,14,21,28,34), correct=c(7), name="MC1",
 <aside>
 ANSWER:
 ```{r}
-table(CO2$Plant=='MC1')
+tally(Plant=="MC1",data=CO2)
 ```
 </aside>
 
@@ -46,8 +43,8 @@ numberplants2=selectNumber(choices=c(8,12,14,16,23,54,92), correct=c(14), name="
 
 <aside>
 ANSWER:
-```{r}
-table( CO2$Plant == 'Mc1' | CO2$Plant == 'Mn1')
+```{r message=FALSE}
+tally( Plant %in% c('Mc1','Mn1'), data=CO2)
 ```
 </aside>
 
@@ -62,12 +59,12 @@ numberplants3=selectNumber(choices=c(8,12,14,16,21,23,54,92), correct=c(21), nam
 <aside>
 ANSWER:
 ```{r}
-table( CO2$Type=="Quebec" & CO2$Treatment=="nonchilled")
+tally(Type & Treatment, data=CO2 )
 ```   
 or, another way
 
 ```{r}
-with(CO2,table(Type, Treatment))
+tally(~Type=="Quebec" & Treatment=="nonchilled", data=CO2)
 ``` 
 </aside>
 
@@ -97,7 +94,7 @@ numberplants5=selectNumber(choices=c(12,24,36,48,60), correct=c(12), name="conc3
 <aside>
 ANSWER:
 ```{r}
-table( CO2$conc >= 300 & CO2$conc <=450)
+tally( conc >= 300 & conc <=450, data=CO2 )
 ```
 </aside>
 
@@ -111,10 +108,18 @@ numberplants6=selectNumber(choices=c(6,8,10,12,14,16), correct=c(6), name="concN
 
 <aside>
 ANSWER:
+You could do it this way and read out the corresponding number (6) from the right slot of the table.
 ```{r}
-table( CO2$Treatment == 'chilled' & 
-      CO2$conc >= 300 & CO2$conc <=450)
+tally( Treatment == 'chilled' & 
+       conc >= 300 & conc <=450, data=CO2)
 ```   
+Probably it's better to override the `tally()` behavior of using `&` and `|` to introduce a new dimension.  Instead, try either of these styles:
+```{r}
+tally( I(Treatment == 'chilled' & conc >= 300 & conc <=450),
+       data=CO2)
+tally( transform( Treatment == 'chilled' & conc >= 300 & conc <=450),
+       data=CO2)
+```
 </aside>
 
 
@@ -130,7 +135,7 @@ numberplants7=selectNumber(choices=c(17,33,34,51,68), correct=c(51), name="uptak
 <aside>
 ANSWER:
 ```{r}
-table(CO2$uptake < 0.1*CO2$conc)
+tally(uptake < 0.1*conc, data=CO2)
 ```
 </aside>
 

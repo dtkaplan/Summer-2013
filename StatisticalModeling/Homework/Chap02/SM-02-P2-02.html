@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
 <title>Intro to Statistical Modeling Ch. 2 Prob. 2</title>
 
@@ -181,13 +182,7 @@ hljs.initHighlightingOnLoad();
 <h1>Intro to Statistical Modeling Ch. 2 Prob. 2</h1>
 
 <p>Using the <code>table</code> operator and the comparison operators (such as
-<code>&gt;</code> or <code>==</code>), answer the following questions about the CO2 data.  You can read in the CO2 data with the statement </p>
-
-<pre><code class="r">CO2 = fetchData(&quot;CO2&quot;)
-</code></pre>
-
-<pre><code>## Data CO2 found in package.
-</code></pre>
+<code>&gt;</code> or <code>==</code>), answer the following questions about the CO2 data that comes already loaded into R.</p>
 
 <p>You can see the data set itself by giving the command</p>
 
@@ -203,49 +198,59 @@ cases satisfy various criteria:</p>
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "7" 
+"content": "7",
+"uniqueID": "SM-02-P2-SD" 
 }'>7</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "14" 
+"content": "14",
+"uniqueID": "SM-02-P2-SD" 
 }'>14</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "21" 
+"content": "21",
+"uniqueID": "SM-02-P2-SD" 
 }'>21</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "28" 
+"content": "28",
+"uniqueID": "SM-02-P2-SD" 
 }'>28</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "34" 
+"content": "34",
+"uniqueID": "SM-02-P2-SD" 
 }'>34</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR1out'></input></small><select style='visibility: hidden' width='5' name='ScoreR1info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      1,
 "name": "MC1",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(CO2$Plant == &quot;MC1&quot;)
+<pre><code class="r">tally(Plant == &quot;MC1&quot;, data = CO2)
+</code></pre>
+
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
 </code></pre>
 
 <pre><code>## 
-## FALSE 
-##    84
+##  TRUE FALSE Total 
+##     0    84    84
 </code></pre>
 
 <p></aside></p>
@@ -256,54 +261,62 @@ ANSWER:</p>
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "8" 
+"content": "8",
+"uniqueID": "SM-02-P2-SD" 
 }'>8</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "14" 
+"content": "14",
+"uniqueID": "SM-02-P2-SD" 
 }'>14</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "16" 
+"content": "16",
+"uniqueID": "SM-02-P2-SD" 
 }'>16</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "23" 
+"content": "23",
+"uniqueID": "SM-02-P2-SD" 
 }'>23</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "54" 
+"content": "54",
+"uniqueID": "SM-02-P2-SD" 
 }'>54</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "92" 
+"content": "92",
+"uniqueID": "SM-02-P2-SD" 
 }'>92</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR2out'></input></small><select style='visibility: hidden' width='5' name='ScoreR2info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      2,
 "name": "Mc1orMn1",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(CO2$Plant == &quot;Mc1&quot; | CO2$Plant == &quot;Mn1&quot;)
+<pre><code class="r">tally(Plant %in% c(&quot;Mc1&quot;, &quot;Mn1&quot;), data = CO2)
 </code></pre>
 
 <pre><code>## 
-## FALSE  TRUE 
-##    70    14
+##  TRUE FALSE Total 
+##    14    70    84
 </code></pre>
 
 <p></aside></p>
@@ -314,70 +327,85 @@ ANSWER:</p>
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "8" 
+"content": "8",
+"uniqueID": "SM-02-P2-SD" 
 }'>8</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "14" 
+"content": "14",
+"uniqueID": "SM-02-P2-SD" 
 }'>14</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "16" 
+"content": "16",
+"uniqueID": "SM-02-P2-SD" 
 }'>16</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "21" 
+"content": "21",
+"uniqueID": "SM-02-P2-SD" 
 }'>21</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "23" 
+"content": "23",
+"uniqueID": "SM-02-P2-SD" 
 }'>23</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "54" 
+"content": "54",
+"uniqueID": "SM-02-P2-SD" 
 }'>54</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "92" 
+"content": "92",
+"uniqueID": "SM-02-P2-SD" 
 }'>92</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR3out'></input></small><select style='visibility: hidden' width='5' name='ScoreR3info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      3,
 "name": "Quebec",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(CO2$Type == &quot;Quebec&quot; &amp; CO2$Treatment == &quot;nonchilled&quot;)
+<pre><code class="r">tally(Type &amp; Treatment, data = CO2)
 </code></pre>
 
-<pre><code>## 
-## FALSE  TRUE 
-##    63    21
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
+</code></pre>
+
+<pre><code>##              Treatment
+## Type          nonchilled chilled Total
+##   Quebec              21      21    42
+##   Mississippi         21      21    42
+##   Total               42      42    84
 </code></pre>
 
 <p>or, another way</p>
 
-<pre><code class="r">with(CO2, table(Type, Treatment))
+<pre><code class="r">tally(~Type == &quot;Quebec&quot; &amp; Treatment == &quot;nonchilled&quot;, data = CO2)
 </code></pre>
 
-<pre><code>##              Treatment
-## Type          nonchilled chilled
-##   Quebec              21      21
-##   Mississippi         21      21
+<pre><code>##                 Treatment == &quot;nonchilled&quot;
+## Type == &quot;Quebec&quot; TRUE FALSE Total
+##            TRUE    21    21    42
+##            FALSE   21    21    42
+##            Total   42    42    84
 </code></pre>
 
 <p></aside></p>
@@ -388,33 +416,39 @@ ANSWER:</p>
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "24" 
+"content": "24",
+"uniqueID": "SM-02-P2-SD" 
 }'>24</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "36" 
+"content": "36",
+"uniqueID": "SM-02-P2-SD" 
 }'>36</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "48" 
+"content": "48",
+"uniqueID": "SM-02-P2-SD" 
 }'>48</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "60" 
+"content": "60",
+"uniqueID": "SM-02-P2-SD" 
 }'>60</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR4out'></input></small><select style='visibility: hidden' width='5' name='ScoreR4info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      4,
 "name": "concentration",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
@@ -436,44 +470,55 @@ ANSWER:</p>
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "24" 
+"content": "24",
+"uniqueID": "SM-02-P2-SD" 
 }'>24</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "36" 
+"content": "36",
+"uniqueID": "SM-02-P2-SD" 
 }'>36</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "48" 
+"content": "48",
+"uniqueID": "SM-02-P2-SD" 
 }'>48</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "60" 
+"content": "60",
+"uniqueID": "SM-02-P2-SD" 
 }'>60</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR5out'></input></small><select style='visibility: hidden' width='5' name='ScoreR5info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      5,
 "name": "conc300to450",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(CO2$conc &gt;= 300 &amp; CO2$conc &lt;= 450)
+<pre><code class="r">tally(conc &gt;= 300 &amp; conc &lt;= 450, data = CO2)
 </code></pre>
 
-<pre><code>## 
-## FALSE  TRUE 
-##    72    12
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
+</code></pre>
+
+<pre><code>##            conc &lt;= 450
+## conc &gt;= 300 TRUE FALSE Total
+##       TRUE    12    36    48
+##       FALSE   36     0    36
+##       Total   48    36    84
 </code></pre>
 
 <p></aside></p>
@@ -484,49 +529,104 @@ ANSWER:</p>
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "6" 
+"content": "6",
+"uniqueID": "SM-02-P2-SD" 
 }'>6</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "8" 
+"content": "8",
+"uniqueID": "SM-02-P2-SD" 
 }'>8</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "10" 
+"content": "10",
+"uniqueID": "SM-02-P2-SD" 
 }'>10</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "12" 
+"content": "12",
+"uniqueID": "SM-02-P2-SD" 
 }'>12</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "14" 
+"content": "14",
+"uniqueID": "SM-02-P2-SD" 
 }'>14</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "16" 
+"content": "16",
+"uniqueID": "SM-02-P2-SD" 
 }'>16</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR6out'></input></small><select style='visibility: hidden' width='5' name='ScoreR6info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      6,
 "name": "concNonchilled",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
-ANSWER:</p>
+ANSWER:
+You could do it this way and read out the corresponding number (6) from the right slot of the table.</p>
 
-<pre><code class="r">table(CO2$Treatment == &quot;chilled&quot; &amp; CO2$conc &gt;= 300 &amp; CO2$conc &lt;= 450)
+<pre><code class="r">tally(Treatment == &quot;chilled&quot; &amp; conc &gt;= 300 &amp; conc &lt;= 450, data = CO2)
+</code></pre>
+
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
+</code></pre>
+
+<pre><code>## , , conc &lt;= 450 = TRUE
+## 
+##                       conc &gt;= 300
+## Treatment == &quot;chilled&quot; TRUE FALSE Total
+##                  TRUE     6    18    24
+##                  FALSE    6    18    24
+##                  Total   12    36    48
+## 
+## , , conc &lt;= 450 = FALSE
+## 
+##                       conc &gt;= 300
+## Treatment == &quot;chilled&quot; TRUE FALSE Total
+##                  TRUE    18     0    18
+##                  FALSE   18     0    18
+##                  Total   36     0    36
+## 
+## , , conc &lt;= 450 = Total
+## 
+##                       conc &gt;= 300
+## Treatment == &quot;chilled&quot; TRUE FALSE Total
+##                  TRUE    24    18    42
+##                  FALSE   24    18    42
+##                  Total   48    36    84
+</code></pre>
+
+<p>Probably it&#39;s better to override the <code>tally()</code> behavior of using <code>&amp;</code> and <code>|</code> to introduce a new dimension.  Instead, try either of these styles:</p>
+
+<pre><code class="r">tally(I(Treatment == &quot;chilled&quot; &amp; conc &gt;= 300 &amp; conc &lt;= 450), data = CO2)
+</code></pre>
+
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
 </code></pre>
 
 <pre><code>## 
-## FALSE  TRUE 
-##    78     6
+##  TRUE FALSE Total 
+##     6    78    84
+</code></pre>
+
+<pre><code class="r">tally(transform(Treatment == &quot;chilled&quot; &amp; conc &gt;= 300 &amp; conc &lt;= 450), data = CO2)
+</code></pre>
+
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
+</code></pre>
+
+<pre><code>## 
+##  TRUE FALSE Total 
+##     6    78    84
 </code></pre>
 
 <p></aside></p>
@@ -538,44 +638,53 @@ ANSWER:</p>
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "17" 
+"content": "17",
+"uniqueID": "SM-02-P2-SD" 
 }'>17</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "33" 
+"content": "33",
+"uniqueID": "SM-02-P2-SD" 
 }'>33</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "34" 
+"content": "34",
+"uniqueID": "SM-02-P2-SD" 
 }'>34</option> <option value='{
  "pts":      1,
 "hint": "",
 "reward": "Right!",
-"content": "51" 
+"content": "51",
+"uniqueID": "SM-02-P2-SD" 
 }'>51</option> <option value='{
  "pts":      0,
 "hint": "",
 "reward": "Right!",
-"content": "68" 
+"content": "68",
+"uniqueID": "SM-02-P2-SD" 
 }'>68</option></select><small><input type='text' readonly='readonly' style='color:green' size='3' id='ScoreR7out'></input></small><select style='visibility: hidden' width='5' name='ScoreR7info'><option value='{
  "setID": "SM-02-P2-SD",
 "itemN":      7,
 "name": "uptake",
 "totalpts":      1,
-"type": "Fixed Choice" 
+"type": "Fixed Choice",
+"uniqueID": "SM-02-P2-SD" 
 }'>Info for Select Set</option></select></p>
 
 <p><aside>
 ANSWER:</p>
 
-<pre><code class="r">table(CO2$uptake &lt; 0.1 * CO2$conc)
+<pre><code class="r">tally(uptake &lt; 0.1 * conc, data = CO2)
+</code></pre>
+
+<pre><code>## First argument should be a formula... But I&#39;ll try to guess what you meant
 </code></pre>
 
 <pre><code>## 
-## FALSE  TRUE 
-##    33    51
+##  TRUE FALSE Total 
+##    51    33    84
 </code></pre>
 
 <p></aside></p>
