@@ -90,7 +90,7 @@ I(textItem(name="addition", rows=4, totalPts=2))
 ANSWER: Don't punctuate numbers with commas, just the digits: <code>10000 + 4000</code>.
 </aside>
 
-* <code>sqrt(c(4,15,25,36)) = 4</code> intended to give
+* <code>sqrt(c(4,16,25,36)) = 4</code> intended to give
  <code>[1] FALSE TRUE FALSE FALSE</code>
  
 ```{r include=FALSE, eval=FALSE}
