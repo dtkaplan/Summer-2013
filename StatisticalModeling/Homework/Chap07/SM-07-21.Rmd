@@ -67,11 +67,11 @@ biggerThan3 = as.factor( geyser$duration > 3 )
 modA = lm( waiting ~ duration, data=geyser)
 
 plot(modA$fitted ~ geyser$duration, pch=c(5,15)[as.numeric(biggerThan3)],xlab='Duration', ylab='Waiting Time')
-legend( locator(1), legend=c('dur<3', 'dur>3'), pch=c(5,15))
+legend( x=4.25,y=90, legend=c('dur<3', 'dur>3'), pch=c(5,15))
 ```
 
-# foo = plot.model(waiting ~ duration*biggerThan3, data=geyser,group.var=biggerThan3, xvar=duration, main='')
-# foo = plot.model(waiting ~ duration+biggerThan3, data=geyser,group.var=biggerThan3, xvar=duration, main='')
+<!-- # foo = plot.model(waiting ~ duration*biggerThan3, data=geyser,group.var=biggerThan3, xvar=duration, main='')
+# foo = plot.model(waiting ~ duration+biggerThan3, data=geyser,group.var=biggerThan3, xvar=duration, main='') -->
 </aside>
 
 `r I(endProblem())`
